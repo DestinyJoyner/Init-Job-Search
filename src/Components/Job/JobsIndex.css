@@ -1,12 +1,13 @@
 .jobsIndex {
   display: grid;
-  grid-template-rows: auto 60vh;
+  grid-template-rows: auto fit-content;
   grid-auto-rows: min-content;
   row-gap: 15px;
   justify-items: center;
   overflow-y: scroll;
   overflow-x:hidden;
-  height: 90vh;
+  height: 85vh;
+  padding-bottom: 10vh;
 }
 
 .jobsIndex a {
