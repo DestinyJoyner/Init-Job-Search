@@ -3,6 +3,7 @@ import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
 import { Link, useNavigate } from "react-router-dom";
 import checkmark from "../../Assets/checkmark.png";
 import Header from "../Job/Header.js";
+import ShowPass from "./ShowPass";
 import "./Register.css";
 
 export default function Register() {
@@ -20,6 +21,8 @@ export default function Register() {
     setAccessRegTwo,
     setUnlockRec,
     unlockRec,
+    isPassHidden,
+    setIsPassHidden,
   } = useRecruiterProvider();
   const [newProfileForm, setNewProfileForm] = useState({
     first_name: "",
@@ -39,6 +42,7 @@ export default function Register() {
 
   const handleChange = (event, form) => {
     if (event.target.id === "isRecruiter") {
+      setIsPassHidden(true);
       setNewLoginForm({
         email: "",
         password: "",
@@ -188,106 +192,122 @@ export default function Register() {
       </div>
       {(newLoginForm.isRecruiter === "false" ||
         (newLoginForm.isRecruiter === "true" && unlockRec)) && (
-        <form className="recruiter-register-form" onSubmit={handleSubmit}>
-          <label htmlFor="first_name">
-            First Name<span>*</span>
-          </label>
-          <input
-            id="first_name"
-            type="text"
-            onChange={(event) => handleChange(event, "profile")}
-            value={newProfileForm["first_name"]}
-            required
-          />
-          <label htmlFor="last_name">
-            Last Name<span>*</span>
-          </label>
-          <input
-            id="last_name"
-            type="text"
-            onChange={(event) => handleChange(event, "profile")}
-            value={newProfileForm["last_name"]}
-            required
-          />
-          <label
-            htmlFor={
-              newLoginForm.isRecruiter === "true" ? "organization" : "education"
-            }
-          >
-            {newLoginForm.isRecruiter === "true" ? "Company" : "Education"}
-            <span>*</span>
-          </label>
-          <input
-            id={
-              newLoginForm.isRecruiter === "true" ? "organization" : "education"
-            }
-            type="text"
-            onChange={(event) => handleChange(event, "profile")}
-            value={
-              newLoginForm.isRecruiter === "true"
-                ? newProfileForm["organization"]
-                : newProfileForm["education"]
-            }
-            required
-          />
-          <label htmlFor="email">
-            Email<span>*</span>
-            {isEmailUnique !== false ? (
-              <img
-                className="register-checkmark"
-                src={checkmark}
-                alt="checkmark"
-              />
-            ) : (
-              ""
-            )}
-          </label>
-          <input
-            id="email"
-            type="email"
-            onChange={(event) => handleChange(event, "login")}
-            value={newLoginForm["email"]}
-            required
-          />
-          <label htmlFor="password">
-            Password<span>*</span>
-          </label>
-          <input
-            className="register-input-pass"
-            id="password"
-            type="password"
-            onChange={(event) => handleChange(event, "login")}
-            value={newLoginForm["password"]}
-            required
-          />
-          <p className="register-helper-text">
-            Include a lowercase, uppercase, number, and special symbol. 5 char
-            length min
-          </p>
-          <label htmlFor="password_two">
-            Confirm Password<span>*</span>
-          </label>
-          <input
-            className={`register-input-pass ${
-              passMatch() ? "pass-good" : null
-            }`}
-            id="password_two"
-            type="password"
-            onChange={(event) => handleChange(event, "login")}
-            value={newLoginForm["password_two"]}
-            required
-          />
-          <p className="recruiter-register-error">
-            {showError && !isEmailUnique
-              ? "Email is invalid or unavailable"
-              : showError && !passMatch()
-              ? "Password inputs do not match"
-              : showError && !checkPassReq(newLoginForm.password)
-              ? "Password requirements not met"
-              : ""}
-          </p>
-          <input id="recruiter-register-submit" type="submit" value="SUBMIT" />
-        </form>
+        <>
+          <form className="recruiter-register-form" onSubmit={handleSubmit}>
+            <label htmlFor="first_name">
+              First Name<span>*</span>
+            </label>
+            <input
+              id="first_name"
+              type="text"
+              onChange={(event) => handleChange(event, "profile")}
+              value={newProfileForm["first_name"]}
+              required
+            />
+            <label htmlFor="last_name">
+              Last Name<span>*</span>
+            </label>
+            <input
+              id="last_name"
+              type="text"
+              onChange={(event) => handleChange(event, "profile")}
+              value={newProfileForm["last_name"]}
+              required
+            />
+            <label
+              htmlFor={
+                newLoginForm.isRecruiter === "true"
+                  ? "organization"
+                  : "education"
+              }
+            >
+              {newLoginForm.isRecruiter === "true" ? "Company" : "Education"}
+              <span>*</span>
+            </label>
+            <input
+              id={
+                newLoginForm.isRecruiter === "true"
+                  ? "organization"
+                  : "education"
+              }
+              type="text"
+              onChange={(event) => handleChange(event, "profile")}
+              value={
+                newLoginForm.isRecruiter === "true"
+                  ? newProfileForm["organization"]
+                  : newProfileForm["education"]
+              }
+              required
+            />
+            <label htmlFor="email">
+              Email<span>*</span>
+              {isEmailUnique !== false ? (
+                <img
+                  className="register-checkmark"
+                  src={checkmark}
+                  alt="checkmark"
+                />
+              ) : (
+                ""
+              )}
+            </label>
+            <input
+              id="email"
+              type="email"
+              onChange={(event) => handleChange(event, "login")}
+              value={newLoginForm["email"]}
+              required
+            />
+            <label htmlFor="password">
+              Password<span>*</span>
+            </label>
+            <input
+              className="register-input-pass"
+              id="password"
+              type={isPassHidden ? "password" : "text"}
+              onChange={(event) => handleChange(event, "login")}
+              value={newLoginForm["password"]}
+              required
+            />
+            <p className="register-helper-text">
+              Include a lowercase, uppercase, number, and special symbol. 5 char
+              length min
+            </p>
+            <label htmlFor="password_two">
+              Confirm Password<span>*</span>
+            </label>
+            <input
+              className={`register-input-pass ${
+                passMatch() ? "pass-good" : null
+              }`}
+              id="password_two"
+              type={isPassHidden ? "password" : "text"}
+              onChange={(event) => handleChange(event, "login")}
+              value={newLoginForm["password_two"]}
+              required
+            />
+            <p className="recruiter-register-error">
+              {showError && !isEmailUnique
+                ? "Email is invalid or unavailable"
+                : showError && !passMatch()
+                ? "Password inputs do not match"
+                : showError && !checkPassReq(newLoginForm.password)
+                ? "Password requirements not met"
+                : ""}
+            </p>
+            <input
+              id="recruiter-register-submit"
+              type="submit"
+              value="SUBMIT"
+            />
+          </form>
+          <div className="first-pass-button">
+            <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} />
+          </div>
+          <div className="second-pass-button">
+            <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} />
+          </div>
+        </>
       )}
       {newLoginForm.isRecruiter === "true" && !unlockRec && (
         <form className="recruiter-locked" onSubmit={handleCodeSubmit}>

@@ -1,10 +1,10 @@
 #show-hide-button {
-    color: rgb(122, 113, 113);
-    opacity: 0.8;
+    color: rgb(102, 97, 97);
     background-color: white;
     border: none;
-    position: absolute;
-    right: 60px;
-    top: 331px;
+    position: relative;
+    width: 56px;
+    left: 282px;
+    bottom: 215px;
     font-weight: 600;
 }
