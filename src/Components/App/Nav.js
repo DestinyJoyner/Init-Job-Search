@@ -153,7 +153,7 @@ export default function Nav() {
         </p>
 
         {/* DEMO LOGIN */}
-        {!isSignedIn && !isRecruiterAcc && (
+        {/* {!isSignedIn && !isRecruiterAcc && (
           <div className="demo-login">
             <FiLogIn size={"30px"} color={"#0914ae"} />
             <span className="demo-label">Login:</span>
@@ -167,15 +167,15 @@ export default function Nav() {
               Recruiter
             </Link>
           </div>
-        )}
+        )} */}
 
         {/* Login  */}
-        {/* {(!isSignedIn && !isRecruiterAcc) && (
+        {(!isSignedIn && !isRecruiterAcc) && (
           <Link to="/login" onClick={() => navbarClick()}>
             <FiLogIn size={"30px"} color={"#0914ae"} />
             <span>Login</span>
           </Link>
-        )} */}
+        )}
 
         {/* Profile */}
         {(isSignedIn || isRecruiterAcc) && (
