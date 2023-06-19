@@ -1,6 +1,6 @@
 #show-hide-button {
     color: rgb(102, 97, 97);
-    background-color: white;
+    background-color: unset;
     border: none;
     position: relative;
     width: 56px;

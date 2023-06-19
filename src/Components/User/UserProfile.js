@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useUserProvider } from "../../Providers/UserProvider.js";
 import Header from "../Job/Header.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
-import userIcon from "../../Assets/USER.png";
+// import userIcon from "../../Assets/USER.png";
 import pencilBlack from "../../Assets/pencil-black.png";
 import pencilGrey from "../../Assets/pencil-grey.png";
 import "./UserProfile.css";
@@ -84,7 +84,8 @@ export default function UserProfile() {
                 />
               </div>
               <div className="icon-edit">
-                <img id="icon-user" src={userIcon} alt="user icon" />
+                {/* <img id="icon-user" src={userIcon} alt="user icon" /> */}
+                <div id="icon-user"><p>{userProfile["first_name"].charAt(0) + userProfile["last_name"].charAt(0)}</p></div>
                 {!isRecruiterAcc && (
                   <button
                     onClick={() => navigate(`/user/edit`)}

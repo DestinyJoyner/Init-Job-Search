@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { useUserProvider } from "../../Providers/UserProvider.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
-import userIcon from "../../Assets/USER.png";
+// import userIcon from "../../Assets/USER.png";
 import "./UserEdit.css";
 
 export default function UserEdit(props) {
@@ -120,7 +120,8 @@ export default function UserEdit(props) {
               <div />
             </div>
             <div className="icon-edit">
-              <img id="icon-user" src={userIcon} alt="user icon" />
+              {/* <img id="icon-user" src={userIcon} alt="user icon" /> */}
+              <div id="icon-user">{editForm["first_name"] && <p>{editForm["first_name"].charAt(0) + editForm["last_name"].charAt(0)}</p>}</div>
               <button
                 onClick={() => navigate(`/user/`)}
                 className="profile-button"

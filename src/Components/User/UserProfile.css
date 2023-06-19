@@ -44,6 +44,20 @@
   grid-template-columns: 1.5fr 1fr;
 }
 
+#icon-user {
+  background-color: var(--init-charcoal);
+  border: 2px solid var(--init-background);
+  color: white;
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+  text-align: center;
+  font-size: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .icon-edit {
   display: grid;
   height: 180px;
