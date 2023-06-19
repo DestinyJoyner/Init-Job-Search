@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRecruiterProvider } from "../../Providers/RecruiterProvider.js";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../Job/Header.js";
+import ShowPass from "./ShowPass.js";
 import "./Login.css";
 
 export default function Login() {
@@ -14,6 +15,8 @@ export default function Login() {
     setAuthToken,
     setIsRecruiterAcc,
     setUserID,
+    isPassHidden,
+    setIsPassHidden,
   } = useRecruiterProvider();
   const [loginForm, setLoginForm] = useState({
     email: "",
@@ -88,7 +91,7 @@ export default function Login() {
         <label htmlFor="password">Password</label>
         <input
           id="password"
-          type="password"
+          type={isPassHidden ? "password" : "text"}
           value={loginForm.password}
           onChange={handleChange}
           required
@@ -102,6 +105,7 @@ export default function Login() {
         />
         <input id="recruiter-login-submit" type="submit" value="LOG IN" />
       </form>
+      <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} />
       {/* <div className="recruiter-login-error">{failedLogin && "Invalid email, or password"}</div> */}
       <Link to="/register">Create account</Link>
     </div>

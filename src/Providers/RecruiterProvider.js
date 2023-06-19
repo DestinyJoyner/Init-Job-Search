@@ -11,6 +11,7 @@ function RecruiterProvider({ children }) {
     useContextProvider();
   const [recruiterData, setRecruiterData] = useState({});
   const [unlockRec, setUnlockRec] = useState(false)
+  const [isPassHidden, setIsPassHidden] = useState(true)
 
   useEffect(() => {
     recruiterID
@@ -37,6 +38,8 @@ function RecruiterProvider({ children }) {
         setAccessRegTwo,
         setUnlockRec,
         unlockRec,
+        isPassHidden,
+        setIsPassHidden
       }}
     >
       {children}
