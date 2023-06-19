@@ -1,5 +1,6 @@
 .dev-cards {
-  height: 90vh;
+  height: 85vh;
+  padding-bottom: 8vh;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
