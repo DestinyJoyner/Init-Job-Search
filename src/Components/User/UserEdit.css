@@ -1,3 +1,8 @@
+.profile {
+    height: 85vh;
+    padding-bottom: 10vh;
+}
+
 .input-profile {
     border: none;
     border-radius: 6px;
