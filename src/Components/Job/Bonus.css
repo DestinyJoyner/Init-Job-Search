@@ -1,0 +1,28 @@
+.bonus-card-skills {
+    grid-row: 1/4;
+    grid-column: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.797);
+    border: 1px solid #008F11 ;
+    border-radius: 20px;
+}
+ .bonus-card-skills svg {
+    width: 50px;
+    height: 100px;
+ }
+
+ .bonus-job {
+    background-image: url("https://thumbs.gfycat.com/AliveAdmirableEidolonhelvum-max-1mb.gif");
+    color: white;
+    border: 2px solid #008F11 ;
+ }
+
+ .bonus-job .job-card-title, .bonus-job .job-card-city, .bonus-job .job-card-divider {
+    color: white;
+ }
+ .bonus-job .job-card-divider {
+    border-left-color: #008F11;
+ }

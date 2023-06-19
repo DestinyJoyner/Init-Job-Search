@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContextProvider } from "../../Providers/Provider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import { v4 as uuidv4 } from "uuid";
 import SkillsComponent from "./SkillsComponent";
@@ -8,9 +9,11 @@ import { convertDate, convertCities } from "./Functions/JobFunctions";
 import { convertSkills } from "./Functions/SkillsFunctions";
 import { jobCompany, jobLocation, jobApplied } from "./Data/Icons";
 import { GrEdit } from "react-icons/gr";
+import { GiPill } from "react-icons/gi";
 import "./JobsShow.css";
 
 function JobsShow() {
+  const { triggerBonus } = useContextProvider()
   const {
     API,
     axios,
@@ -19,7 +22,7 @@ function JobsShow() {
     TASK,
     isRecruiterAcc,
     isSignedIn,
-    editAccess
+    editAccess,
   } = useJobProvider();
   const navigate = useNavigate();
   const [jobDetails, setJobDetails] = useState({});
@@ -70,6 +73,9 @@ function JobsShow() {
   }
 
   useEffect(() => {
+    if(jobID === '22' && !triggerBonus){
+      navigate("/not-found")
+    }
     if(userID){
       axios
       .get(`${API}/user-jobs/${userID}`)
@@ -90,8 +96,10 @@ function JobsShow() {
 
   return (
     <div className="job-show">
-      <section className="job-show-header">
-        <Header header={jobDetails.title} />
+      <section className={jobDetails.id !== 22 ? "job-show-header" : "job-show-header bonus-job"  }>
+        {
+          jobDetails.id !== 22 ?
+          <><Header header={jobDetails.title} />
         <div className="job-show-header-details">
           <span className="job-show-company">
             {jobCompany}
@@ -120,14 +128,30 @@ function JobsShow() {
         </button>
         :
         null
+        }</> :
+        <>
+        <Header header={jobDetails.title} />
+        <div className="bonus-show">
+          ...follow the white rabbit.
+        </div>
+        </>
         }
       </section>
+      {
+       jobDetails.id !== 22 ?
+       <SkillsComponent skillsArr={skillIdArr} justList={true} /> :
+       <section className="skills-component">
+       <GiPill color={"red"} size={"50px"} />
+       <GiPill color={"blue"} size={"50px"} />
+      </section>
+      }
 
-      <SkillsComponent skillsArr={skillIdArr} justList={true} />
+      {/* <SkillsComponent skillsArr={skillIdArr} justList={true} /> */}
 
       <section className="job-show-details">
         <div className="job-show-description">
           <span className="job-show-label">Description:</span>
+          <span className="job-disclaimer">*Not a real job posting. For Demo purposes ONLY*</span>
           <span>{jobDetails.details}</span>
         </div>
 
@@ -152,7 +176,7 @@ function JobsShow() {
        isRecruiterAcc || (isSignedIn && !applied ) ? (
         <button
           onClick={appliedButtonView === "EDIT" ? () => deleteJob() : applyButtonClick}
-          className={(isRecruiterAcc && !editAccess) || !isSignedIn && !isRecruiterAcc  ? "hide" : "job-show-apply"}
+          className={(isRecruiterAcc && !editAccess) || (!isSignedIn && !isRecruiterAcc)  || jobID === "22" ? "hide" : "job-show-apply"}
         >
           {appliedButtonView === "EDIT" ? "DELETE" : appliedButtonView}
         </button>

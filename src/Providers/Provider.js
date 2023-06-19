@@ -28,6 +28,7 @@ function Provider({ children }) {
   const [accessRegTwo, setAccessRegTwo] = useState(false);
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [triggerBonus, setTriggerBonus] = useState(false)
 
   function navbarClick() {
     setOpenNav(!openNav);
@@ -61,6 +62,8 @@ function Provider({ children }) {
           navbarClick,
           openNav,
           setOpenNav,
+          triggerBonus,
+          setTriggerBonus,
         }}
       >
         <Nav />
