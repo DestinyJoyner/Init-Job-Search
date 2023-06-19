@@ -1,6 +1,6 @@
 .jobsIndex {
   display: grid;
-  grid-template-rows: auto fit-content;
+  grid-template-rows: auto 60vh;
   grid-auto-rows: min-content;
   row-gap: 15px;
   justify-items: center;
