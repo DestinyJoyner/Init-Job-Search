@@ -2,7 +2,7 @@
   display: grid;
   /* grid-template-rows: 5vh 80vh; */
   grid-template-rows: 5vh 85vh;
-  height: 85vh;
+  height: 90vh;
   justify-items: center;
   align-items: center;
 }
