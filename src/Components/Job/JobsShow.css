@@ -1,6 +1,7 @@
 .job-show {
   display: grid;
-  grid-template-rows: 23vh 6vh 50vh 6vh;
+  /* grid-template-rows: 23vh 6vh 50vh 6vh; */
+  grid-template-rows: 23vh 6vh 50vh 10vh;
   justify-items: left;
   height: 85vh;
   width: 100%;

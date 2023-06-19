@@ -1,6 +1,7 @@
 .job-form-page {
   display: grid;
-  grid-template-rows: 5vh 80vh;
+  /* grid-template-rows: 5vh 80vh; */
+  grid-template-rows: 5vh 85vh;
   height: 85vh;
   justify-items: center;
   align-items: center;
