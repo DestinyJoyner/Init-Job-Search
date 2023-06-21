@@ -1,6 +1,6 @@
 import DMphoto from "../../Assets/DMphoto.jpeg";
 import SMPhoto from "../../Assets/SMphoto.jpg";
-import DJphoto from "../../Assets/DJphoto.jpg";
+import DJphoto from "../../Assets/DJphoto.png"
 import group from "../../Assets/group.png";
 
 export const team = {

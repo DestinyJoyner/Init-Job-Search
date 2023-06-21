@@ -5,7 +5,7 @@ import { IoMdMail } from "react-icons/io";
 import { team } from "./AboutData";
 import DMphoto from "../../Assets/DMphoto.jpeg";
 import SMphoto from "../../Assets/SMphoto.jpg";
-import DJphoto from "../../Assets/DJphoto.jpg";
+import DJphoto from "../../Assets/DJphoto.png"
 import Header from "../Job/Header";
 import "../App/AboutPage.css";
 
