@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid"
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import { team } from "./AboutData";
-import DMphoto from "../../Assets/DMphoto.jpeg";
+import DMphoto from "../../Assets/DMphoto.png";
 import SMphoto from "../../Assets/SMphoto.jpg";
 import DJphoto from "../../Assets/DJphoto.png"
 import Header from "../Job/Header";

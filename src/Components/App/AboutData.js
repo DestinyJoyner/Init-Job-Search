@@ -1,4 +1,4 @@
-import DMphoto from "../../Assets/DMphoto.jpeg";
+import DMphoto from "../../Assets/DMphoto.png";
 import SMPhoto from "../../Assets/SMphoto.jpg";
 import DJphoto from "../../Assets/DJphoto.png"
 import group from "../../Assets/group.png";
