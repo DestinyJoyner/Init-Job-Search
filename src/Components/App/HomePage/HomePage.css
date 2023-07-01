@@ -426,10 +426,10 @@
   grid-template-rows: 20vh 40vh 20vh;
   align-items: center;
   background-image: url("/public/init-tree-mint.png");
-  background-size: 100% 65%;
+  background-size: 33% 21%;
   background-repeat: no-repeat;
-  background-position-y: 250px ;
-  background-position-x: 7px ;
+  background-position-y: 575px ;
+  background-position-x: 20px ;
 }
 
 .home-final a {
@@ -442,9 +442,10 @@
   position: relative;
   background-image: url(/public/init-rotate-tree.png);
   background-color: var(--init-background);
-  background-size: 150px 150px;
-  background-position-x: -12px;
-  background-position-y: -18px;
+  background-size: 120px 120px;
+  background-repeat: no-repeat;
+  background-position-x: 8px;
+  background-position-y: -5px;
   display: grid;
   grid-template-columns: unset;
   grid-template-rows: unset;
@@ -465,17 +466,17 @@
 
 .home-final .home-register {
   left: 4vw;
-  top: 13vh;
+  top: 11vh;
 }
 
 .home-final .home-about {
   bottom: 8vh;
-  right: 1vw;
+  right: 3vw;
 }
 
 .home-final .home-sign {
   left: 61vw;
-  top: -17vh;
+  top: -19.5vh;
 }
 
 .home-final .final-quote {
@@ -525,4 +526,17 @@
 .dark .home-final {
   background-color: rgb(241, 235, 214);
   background-color: rgb(251, 226, 138);
+}
+
+.dark .home-final a, .dark .home-final a span {
+  background-color: var(--init-dark);
+  color: var(--init-gold);
+}
+
+.dark .home-final a {
+  background-image: url("/public/init-rotate-mint.png");
+}
+
+.dark .misc4 {
+  border-color: var(--init-mint);
 }
