@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { VscGithub } from "react-icons/vsc"
-import { GrLinkedin, GrMail } from "react-icons/gr"
+import { FaGithubSquare } from "react-icons/fa"
+import { GrLinkedin} from "react-icons/gr"
+import avatar from "../../Assets/init-footer.png"
 import pursuit from "../../Assets/pursuit-init-blue.png"
 import "./Footer.css";
 
@@ -8,22 +10,32 @@ export default function Footer() {
 
   return (
     <footer className="nav-footer">
-
-      <span className="nav-dev">
-        destinyjoyner@pursuit.org
-      </span>
+      <div>
+        <span className="square1">
+          <img src={avatar} alt="footer-avatar" />
+        </span>
+      </div>
+      <div>
+        <section className="square2">
+        <span>Destiny Joyner</span>
+      <span className="footer-email">destinyjoyner@pursuit.org</span>
+      <span>May 2023</span>
+        </section>
+      </div>
+      
     
-      <div className="footer-links">
+      <div>
+        <section className="footer-links">
         <span>
           <a 
           href= "https://github.com/DestinyJoyner" target="blank">
-            <VscGithub/>
+            <FaGithubSquare className="footer-git"/>
           </a>
         </span>
         <span>
           <a 
           href= "https://www.linkedin.com/in/destiny-joyner-934846243/" target="blank">
-            <GrLinkedin  />
+            <GrLinkedin className="footer-linked"  />
           </a>
         </span>
         <span className="pursuit-nav">
@@ -33,6 +45,8 @@ export default function Footer() {
           <img src={pursuit} alt="pursuit-logo" />
         </a>
       </span>
+        </section>
+        
       </div>
   </footer>
   );

@@ -1,13 +1,9 @@
 import { useContextProvider } from "../../Providers/Provider";
 import { useNavigate } from "react-router-dom";
 import SlideNav from "./SlideNav";
-
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
-
-
 import logo from "../../Assets/LOGO.png";
-
 import "./Nav.css";
 
 export default function Nav() {
@@ -17,6 +13,11 @@ export default function Nav() {
     setOpenNav,
   } = useContextProvider();
   const navigate = useNavigate();
+
+  function logoClick() {
+    navigate("/");
+    setOpenNav(false)
+  }
 
   return (
     <nav>
@@ -35,15 +36,10 @@ export default function Nav() {
       <img
         src={logo}
         alt="logo"
-        onClick={() => {
-          navigate("/");
-          setOpenNav(false);
-        }}
+        onClick={() => logoClick()}
       />
 
-      {/* sliding nav bar section */}
       <SlideNav />
     </nav>
-
   );
 }

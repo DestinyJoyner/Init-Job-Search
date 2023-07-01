@@ -1,34 +1,76 @@
 .nav-footer {
-  margin-top: 8vh;
+  margin-top: 2vh;
+  /* padding-bottom: 1vh; */
   display: grid;
+  grid-template-columns: 15% 65% 20%;
   align-items: center;
-  height: 8vh;
-  width: 90%;
-  justify-items: left;
-  align-items: center;
+  height: 15vh;
+  width: 95%;
   color: var(--init-background);
+  /* background-color:rgba(22, 16, 16, 0.149); */
+}
+
+.nav-footer div {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.square1, .square2, .footer-links {
+  position: relative;
+}
+
+.square1 {
+  height: 10vh;
+  align-self: flex-end;
+  left: 2vw;
+}
+.square1 img {
+  position: relative;
+  height: 12vh;
+  right: 2vw;
+  bottom: 2vh;
+}
+
+.square2 {
+  display: grid;
+  justify-items: center;
+  align-self: flex-end;
+  align-items: center;
+  z-index: 20;
+  height: 12vh;
   font-size: 16px;
   font-weight: 600;
 }
-
-.pursuit-nav img {
-  height: 2.8vh;
+.footer-email {
+  font-size: 15px;
 }
-
-.nav-footer svg {
-  color: var(--init-blue);
-  height: 1em;
-  width: 1em;
-}
-
 
 .footer-links {
-  grid-row: 3;
-  width: 40%;
+  height: 14vh;
+  margin-top: 1vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
+
+.footer-links svg{
+  color: var(--init-blue);
+}
+.footer-linked {
+  height: 1.3em;
+  width: 1.3em;
+}
+.footer-git {
+  height: 1.4em;
+  width: 1.4em;
+}
+.pursuit-nav img {
+  height: 3vh;
+}
+
+
 
 
 

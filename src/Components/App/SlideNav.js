@@ -115,7 +115,6 @@ function SlideNav() {
         </div>
         <span className="toggleBtn">Dark Mode</span>
       </label>
-
       <Footer />
     </aside>
   );
