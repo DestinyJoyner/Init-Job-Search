@@ -1,11 +1,8 @@
 nav {
-  display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  align-items: center;
-  justify-items: center;
   height: 10vh;
   width: 100%;
-  border-bottom: solid 2px #0cbdbd;
+  border-bottom: solid 2px var(--init-darkmint);
 }
 
 .burger {

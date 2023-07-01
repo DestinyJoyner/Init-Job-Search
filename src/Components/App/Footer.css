@@ -1,10 +1,9 @@
 .nav-footer {
   margin-top: 2vh;
-  /* padding-bottom: 1vh; */
   display: grid;
   grid-template-columns: 15% 65% 20%;
   align-items: center;
-  height: 15vh;
+  height: 12vh;
   width: 95%;
   color: var(--init-background);
   /* background-color:rgba(22, 16, 16, 0.149); */
@@ -16,20 +15,17 @@
   height: 100%;
 }
 
-.square1, .square2, .footer-links {
+.square1, .square2, .footer-links, .square1 img {
   position: relative;
+  height: 12vh;
 }
 
 .square1 {
-  height: 10vh;
   align-self: flex-end;
   left: 2vw;
 }
 .square1 img {
-  position: relative;
-  height: 12vh;
   right: 2vw;
-  bottom: 2vh;
 }
 
 .square2 {
@@ -38,7 +34,6 @@
   align-self: flex-end;
   align-items: center;
   z-index: 20;
-  height: 12vh;
   font-size: 16px;
   font-weight: 600;
 }
@@ -46,18 +41,6 @@
   font-size: 15px;
 }
 
-.footer-links {
-  height: 14vh;
-  margin-top: 1vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.footer-links svg{
-  color: var(--init-blue);
-}
 .footer-linked {
   height: 1.3em;
   width: 1.3em;

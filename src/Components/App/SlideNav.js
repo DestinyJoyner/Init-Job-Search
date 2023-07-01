@@ -8,6 +8,7 @@ import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { BiInfoCircle } from "react-icons/bi";
 import "./SlideNav.css";
+
 function SlideNav() {
   const {
     setTheme,
