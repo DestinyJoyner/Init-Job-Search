@@ -103,7 +103,7 @@ function SlideNav() {
           {<FiLogOut className="nav-icons"  />} <span>Logout</span>
         </Link>
       )}
-      <hr className="navHR"></hr>
+      <hr className="nav-line"></hr>
       <label className="switch">
         <div>
           <input
@@ -115,7 +115,7 @@ function SlideNav() {
         </div>
         <span className="toggleBtn">Dark Mode</span>
       </label>
-      
+
       <Footer />
     </aside>
   );

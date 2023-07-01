@@ -1,35 +1,35 @@
 .nav-footer {
-  margin-top: 7vh;
+  margin-top: 8vh;
   display: grid;
-  grid-template-rows: 1vh 3vh 5vh;
-  row-gap: .5vh;
   align-items: center;
-  height: 10vh;
-}
-
-.nav-footer .nav-dev {
-  color: var(--init-charcoal);
+  height: 8vh;
+  width: 90%;
+  justify-items: left;
+  align-items: center;
+  color: var(--init-background);
   font-size: 16px;
-  align-self: flex-end;
   font-weight: 600;
 }
 
-.nav-footer svg {
-  color: var(--init-charcoal);
-  height: 1.2em;
-  width: 1.2em;
-}
-
-.nav-footer .pursuit-nav {
-  all:unset;
-  grid-row: 1;
-}
-
 .pursuit-nav img {
-  height: 4vh;
-  position: relative;
-  right: 1.5vw;
+  height: 2.8vh;
 }
-.nav-footer div {
+
+.nav-footer svg {
+  color: var(--init-blue);
+  height: 1em;
+  width: 1em;
+}
+
+
+.footer-links {
   grid-row: 3;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+
+
+

@@ -37,12 +37,8 @@
     font-size: 22px;
   }
   
-  .slide-nav a:hover {
-    color: var(--init-gold);
-  }
-  
   .nav-line {
-    width: 88%;
+    width: 90%;
   }
   
   .slide-nav .nav-icons {

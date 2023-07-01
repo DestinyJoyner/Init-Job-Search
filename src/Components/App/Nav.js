@@ -23,17 +23,11 @@ export default function Nav() {
       {!openNav ? (
         <RxHamburgerMenu
           className="burger"
-          size={"35px"}
-          style={{ marginTop: "24px" }}
-          color={"#41CDBC"}
           onClick={() => navbarClick()}
         />
       ) : (
         <AiOutlineClose
           className="burger"
-          size={"35px"}
-          style={{ marginTop: "24px" }}
-          color={"#41CDBC"}
           onClick={() => navbarClick()}
         />
       )}
