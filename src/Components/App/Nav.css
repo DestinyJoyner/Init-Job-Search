@@ -202,38 +202,3 @@ input:checked + .slider:before {
   width: 90%;
 }
 
-/* nav-footer */
-
-.nav-footer {
-  margin-top: 7vh;
-  display: grid;
-  grid-template-rows: 1vh 3vh 5vh;
-  row-gap: .5vh;
-  align-items: center;
-  height: 10vh;
-}
-
-.nav-footer .nav-dev {
-  color: var(--init-charcoal);
-  font-size: 16px;
-  align-self: flex-end;
-}
-
-.nav-footer svg {
-  color: var(--init-charcoal);
-  height: 1.2em;
-  width: 1.2em;
-}
-.nav-footer .pursuit-nav {
-  all:unset;
-  grid-row: 1;
-}
-
-.pursuit-nav img {
-  height: 4vh;
-  position: relative;
-  right: 1.5vw;
-}
-.nav-footer div {
-  grid-row: 3;
-}
