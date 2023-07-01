@@ -33,14 +33,14 @@ nav a {
 .slide-nav {
   background-color: #0cbdbd;
   display: grid;
-  grid-template-rows: 0.7fr repeat(5, 0.5fr) 0.3fr 0.3fr;
+  grid-template-rows: 15vh repeat(5, 9vh) 5vh 0.3fr;
   align-items: center;
   position: fixed;
   left: 0;
   top: 10vh;
   width: 83vw;
   border-right: 40px solid #ffde59;
-  height: 85vh;
+  height: 90vh;
   z-index: 100;
   transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
   padding-left: 30px;
@@ -53,23 +53,19 @@ nav a {
   transform: translate3d(-110vw, 0, 0);
 }
 
-.slide-nav p {
-  position: relative;
-  right: 10px;
-}
-.slide-nav p span:first-child {
-  font-size: 40px;
-  font-weight: 900;
-}
 .slogan {
+  position: relative;
+  right: 3vw;
   font-family: Ysabeau;
   font-style: italic;
   font-size: 24px;
   color: var(--init-gold);
+  height: 5vh;
 }
 .slide-nav a {
   color: var(--init-blue);
   width: 70%;
+  font-size: 22px;
 }
 
 .slide-nav a:hover {
@@ -96,11 +92,13 @@ nav a {
   position: relative;
   bottom: 7px;
 }
-.slide-nav .logoutBtn {
+.logoutBtn {
   border: none;
   border-radius: 20px;
   font-size: 20px;
   font-weight: 600;
+  background: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .toggleTheme {
@@ -136,12 +134,21 @@ nav a {
 /* The switch - the box around the slider */
 .switch {
   position: relative;
-  display: inline-block;
-  width: 60px;
+  display: grid;
+  width: 70px;
   height: 34px;
   margin-bottom: 10px;
 }
 
+.toggleBtn {
+  position: relative;
+  left: 25vw;
+  top: .5vh;
+  font-size: 20px;
+  color: var(--init-background);
+  grid-column: 2;
+  width: 200px;
+}
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
@@ -170,7 +177,6 @@ nav a {
   left: 4px;
   bottom: 4px;
   background-color: #deeff9d0;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -178,14 +184,8 @@ input:checked + .slider {
   background-color: #050525;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  transform: translateX(36px);
 }
 
 /* Rounded sliders */
@@ -196,35 +196,44 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-.logoutBtn {
-  all: unset;
-  background: none;
-  margin-bottom: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-.toggleBtn {
-  position: relative;
-  left: 80px;
-  bottom: 44px;
-  font-size: 20px;
-  color: var(--init-background);
-}
 
 .navHR {
   width: 90%;
 }
 
+/* nav-footer */
 
-/* DEMO CSS */
-
-.demo-login span {
-  font-size: 20px;
-  color: var(--init-background);
-}
-.demo-login .demo-label {
-  padding-left: 20px;
-  padding-right: 10px;
-  font-weight: 600;
+.nav-footer {
+  margin-top: 7vh;
+  display: grid;
+  grid-template-rows: 1vh 3vh 5vh;
+  row-gap: .5vh;
+  align-items: center;
+  height: 10vh;
 }
 
+.nav-footer .nav-dev {
+  color: var(--init-charcoal);
+  font-size: 16px;
+  align-self: flex-end;
+}
+
+.nav-footer svg {
+  color: var(--init-charcoal);
+  height: 1.2em;
+  width: 1.2em;
+}
+.nav-footer .pursuit-nav {
+  all:unset;
+  grid-row: 1;
+}
+
+.pursuit-nav img {
+  height: 4vh;
+  position: relative;
+  right: 1.5vw;
+}
+.nav-footer div {
+  grid-row: 3;
+}

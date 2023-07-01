@@ -7,7 +7,11 @@ import { MdWorkOutline } from "react-icons/md";
 import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { BiInfoCircle } from "react-icons/bi";
+import { VscGithub } from "react-icons/vsc"
+import { GrLinkedin } from "react-icons/gr"
+import { TfiEmail } from "react-icons/tfi"
 import logo from "../../Assets/LOGO.png";
+import pursuit from "../../Assets/pursuit-logo.png"
 import "./Nav.css";
 
 export default function Nav() {
@@ -57,15 +61,6 @@ export default function Nav() {
     };
   }, [openNav]);
 
-  // function navbarClick() {
-  //   setOpenNav(!openNav);
-  // }
-
-  function loginClick() {
-    setIsSignedIn(true);
-    navbarClick();
-    navigate("/user");
-  }
 
   function logoutClick() {
     setIsSignedIn(false);
@@ -83,34 +78,6 @@ export default function Nav() {
 
   function profileClick() {
     isSignedIn ? navigate("/user") : navigate("/recruiter");
-  }
-
-  // Demo functions
-
-  function userDemo() {
-    setUserID(30);
-    localStorage.setItem("userID", 30)
-    if(localStorage.getItem("recruiterID")){
-      localStorage.removeItem("recruiterID")
-    }
-    setIsSignedIn(true);
-    setIsRecruiterAcc(false);
-    setRecruiterID(null);
-    navigate("/user");
-    navbarClick();
-  }
-
-  function recruiterDemo() {
-    setRecruiterID(1);
-    localStorage.setItem("recruiterID", 1)
-    if(localStorage.getItem("userID")){
-      localStorage.removeItem("userID")
-    }
-    setIsRecruiterAcc(true);
-    setIsSignedIn(false);
-    setUserID(null);
-    navigate("/recruiter");
-    navbarClick();
   }
 
   return (
@@ -144,30 +111,10 @@ export default function Nav() {
 
       {/* sliding nav bar section */}
       <aside
-        className={openNav ? " slide-nav nav-open" : " slide-nav nav-close"}
-      >
-        <p>
-          <br />
-
-          <span className="slogan">Your first tech opportunity awaits</span>
+        className={openNav ? " slide-nav nav-open" : " slide-nav nav-close"}>
+        <p className="slogan">
+         Your first tech opportunity awaits
         </p>
-
-        {/* DEMO LOGIN */}
-        {/* {!isSignedIn && !isRecruiterAcc && (
-          <div className="demo-login">
-            <FiLogIn size={"30px"} color={"#0914ae"} />
-            <span className="demo-label">Login:</span>
-            <Link to="/user" onClick={() => userDemo()}>
-              {" "}
-              User
-            </Link>
-            <span>{" | "}</span>
-            <Link to="/recruiter" onClick={() => recruiterDemo()}>
-              {" "}
-              Recruiter
-            </Link>
-          </div>
-        )} */}
 
         {/* Login  */}
         {(!isSignedIn && !isRecruiterAcc) && (
@@ -222,9 +169,37 @@ export default function Nav() {
             />
             <span className="slider round"></span>
           </div>
+          <span className="toggleBtn">Dark Mode</span>
         </label>
-        <span className="toggleBtn">Dark Mode</span>
+
+        {/* FOOTER INFO */}
+        <footer className="nav-footer">
+          <span className="nav-dev">Destiny J. 2023</span>
+          <span className="pursuit-nav">
+          <a 
+          href="https://www.pursuit.org/mission-vision" target="_blank"> <img src={pursuit} alt="pursuit-logo" /></a>
+          </span>
+          
+          <div>
+          <span>
+                <a href= "https://github.com/DestinyJoyner" target="blank">
+                    <VscGithub/>
+                </a>
+            </span>
+            <span>
+                <a href= "https://www.linkedin.com/in/destiny-joyner-934846243/" target="blank">
+                    <GrLinkedin  />
+                </a>
+                </span>
+            <span>
+                <a href= "mailto:destinyjoyner@pursuit.org" target="blank">
+                    <TfiEmail/>
+                </a>
+            </span>
+          </div>
+        </footer>
       </aside>
     </nav>
+
   );
 }

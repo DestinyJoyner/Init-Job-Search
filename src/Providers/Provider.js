@@ -1,7 +1,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
 import Nav from "../Components/App/Nav";
-import Footer from "../Components/App/Footer";
+// import Footer from "../Components/App/Footer";
 
 export const ContextData = createContext();
 export function useContextProvider() {
@@ -68,7 +68,6 @@ function Provider({ children }) {
       >
         <Nav />
         {children}
-        <Footer />
       </ContextData.Provider>
     </div>
   );
