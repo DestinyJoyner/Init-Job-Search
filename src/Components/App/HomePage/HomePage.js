@@ -5,7 +5,8 @@ import { TiArrowForward } from "react-icons/ti";
 import { BsCaretDownFill } from "react-icons/bs";
 import logo from "./Images/white-logo.png";
 import scan from "./Images/qr-code.png";
-import initTree from "./Images/init-tree-gold.png"
+import initTree from "./Images/init-tree-gold.png";
+import finalTree from "./Images/init-tree-blue.png";
 import teamStock from "./Images/team-stock.jpg";
 import stock2 from "./Images/init-stock(2).jpg";
 import stock3 from "./Images/init-stock(3).jpg";
@@ -17,7 +18,7 @@ import screen5 from "./Images/filter-screen.png";
 import "./HomePage.css";
 
 function HomePage() {
-  const refElement = useRef()
+  const refElement = useRef();
   const [textSwitch, setTextSwitch] = useState(false);
   const timeout = setInterval(() => {
     setTextSwitch(true);
@@ -26,9 +27,7 @@ function HomePage() {
   useEffect(() => {}, [textSwitch]);
 
   return (
-    <div 
-    ref={refElement}
-    className="home">
+    <div ref={refElement} className="home">
       <section>
         <div className={textSwitch ? "hidden" : "show home-landing"}>
           <h2 className="home-italic">Welcome To</h2>
@@ -61,12 +60,12 @@ function HomePage() {
           <Link className="home-register" to="/register">
             REGISTER NOW
           </Link>
-          <span className="text-scroll">LEARN MORE
-          <BsCaretDownFill /> </span>
+          <span className="text-scroll">
+            LEARN MORE
+            <BsCaretDownFill />{" "}
+          </span>
 
-          <ScrollArrow 
-          element={refElement}
-          />
+          <ScrollArrow element={refElement} />
         </div>
       </section>
       {/* SECOND SLIDE */}
@@ -96,15 +95,13 @@ function HomePage() {
             REGISTER NOW
           </Link>
           <Link className="home-sign" to="/login">
-          LOG IN
+            LOG IN
           </Link>
         </div>
-        
       </section>
       {/* THIRD SLIDE */}
       <section className="home-guide-2">
-
-      <div className="applied-screen">
+        <div className="applied-screen">
           <span>
             Keep Track of Your Job Applications!
             <TiArrowForward size={"30px"} />
@@ -137,10 +134,11 @@ function HomePage() {
             LOG IN
           </Link>
         </div>
-
       </section>
       {/* LAST SLIDE */}
       <section className="home-final">
+        <img src={finalTree} alt="init-tree" className="init-tree-final" />
+        
         <div className="misc4">
           <img src={teamStock} alt="misc" />
         </div>
@@ -155,9 +153,9 @@ function HomePage() {
           <span>inIT TEAM</span>
         </Link>
 
-        <span className="home-italic final-quote">Begin Your Tech Journey Today!</span>
-        {/* update qr code! */}
-        {/* <img className="qr-code" src={scan} alt="qr-code" /> */}
+        <span className="home-italic final-quote">
+          Begin Your Tech Journey Today!
+        </span>
       </section>
     </div>
   );
