@@ -44,7 +44,7 @@ export const team = {
     id: 6,
     name: "Click on a developer's icon to view more about them!",
     img: group,
-    bio: "inIT is an application designed for recent college and boot camp graduates looking for their first role in tech.\ninIT's frontend was developed using only React and CSS3, with no other frameworks or libraries. inIT utilizes a custom built API in an Express environment, postgreSQL for the database, only requiring BCrypt and JWT packages for it's authentication processes.",
+    bio: "inIT is an application designed for recent college and boot camp graduates looking for their first role in tech.inIT's frontend was developed using only React and CSS3, with no other frameworks or libraries. inIT utilizes a custom built API in an Express environment, postgreSQL for the database, only requiring BCrypt and JWT packages for it's authentication processes.",
     links: [1,2,3,90,91,0],
   },
 };
