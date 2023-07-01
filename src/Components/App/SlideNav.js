@@ -97,7 +97,7 @@ function SlideNav() {
       </Link>
       <Link to="/about" onClick={() => navbarClick()}>
         <BiInfoCircle className="nav-icons" />
-        <span>Meet the Team</span>
+        <span>About</span>
       </Link>
       {(isSignedIn || isRecruiterAcc) && (
         <Link className="logoutBtn" to="/" onClick={() => logoutClick()}>
