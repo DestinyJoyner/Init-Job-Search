@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import ScrollArrow from "./ScrollArrow";
 import { TiArrowForward } from "react-icons/ti";
+import { BsCaretDownFill } from "react-icons/bs";
 import logo from "./Images/white-logo.png";
 import scan from "./Images/qr-code.png";
 import initTree from "./Images/init-tree-gold.png"
@@ -60,7 +61,8 @@ function HomePage() {
           <Link className="home-register" to="/register">
             REGISTER NOW
           </Link>
-          <span className="text-scroll">LEARN MORE ABOUT inIT</span>
+          <span className="text-scroll">LEARN MORE
+          <BsCaretDownFill /> </span>
 
           <ScrollArrow 
           element={refElement}
@@ -139,7 +141,6 @@ function HomePage() {
       </section>
       {/* LAST SLIDE */}
       <section className="home-final">
-        <h2 className="home-italic">Begin Your Tech Journey Today!</h2>
         <div className="misc4">
           <img src={teamStock} alt="misc" />
         </div>
@@ -153,6 +154,8 @@ function HomePage() {
         <Link className="home-about" to="/about">
           <span>inIT TEAM</span>
         </Link>
+
+        <span className="home-italic final-quote">Begin Your Tech Journey Today!</span>
         {/* update qr code! */}
         {/* <img className="qr-code" src={scan} alt="qr-code" /> */}
       </section>
