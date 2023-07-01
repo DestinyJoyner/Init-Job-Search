@@ -11,6 +11,9 @@ import {
   SiGo,
   SiPhp,
   SiTypescript,
+  SiCss3,
+  SiJsonwebtokens,
+  SiPostgresql,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
@@ -30,6 +33,19 @@ const skillsObject = {
 };
 
 const skillsColorObject = {
+  91: (<SiPostgresql
+    color ={"white"}
+    style={{ backgroundColor: "#0064a5" }}
+    key={uuidv4()}
+    />),
+  90: (<SiJsonwebtokens
+    color ={"#F50057"}
+    key={uuidv4()}
+    />),
+  0: (<SiCss3 
+  color ={"#264de4"}
+  key={uuidv4()}
+  />),
   1: (
     <SiJavascript
       color={"#f0db4f"}
