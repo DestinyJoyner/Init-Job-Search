@@ -13,7 +13,11 @@
   --init-charcoal: rgb(22, 16, 16);
 }
 
-/* theme */
+body {
+  max-width: 450px;
+}
+
+/* DARK/LIGHT THEME*/
 
 .light {
   background-color: var(--init-background);
@@ -24,13 +28,20 @@
   color: var(--init-background);
 }
 
-/* links */
+/* LINKS*/
 a {
   text-decoration: none;
   color: var(-init-blue);
   font-weight: 600;
 }
 
-.App, footer, nav{
-  max-width: 450px;
+/* CENTERING CLASSES */
+.center {
+  margin: 0 auto;
+}
+
+.grid-center {
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }

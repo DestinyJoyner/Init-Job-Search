@@ -1,0 +1,135 @@
+/* sliding nav link https://www.kirupa.com/react/smooth_sliding_menu_react_motion.htm */
+.slide-nav {
+    background-color: #0cbdbd;
+    display: grid;
+    grid-template-rows: 15vh repeat(5, 9vh) 5vh 0.3fr;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 10vh;
+    width: 83vw;
+    border-right: 40px solid #ffde59;
+    height: 90vh;
+    z-index: 100;
+    transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
+    padding-left: 30px;
+  }
+  .nav-open {
+    transform: translate3d(0vw, 0, 0);
+    overflow: hidden;
+  }
+  .nav-close {
+    transform: translate3d(-110vw, 0, 0);
+  }
+  
+  .slogan {
+    position: relative;
+    font-family: Ysabeau;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--init-gold);
+    height: 5vh;
+  }
+  .slide-nav a {
+    color: var(--init-blue);
+    width: 70%;
+    font-size: 22px;
+  }
+  
+  .nav-line {
+    width: 90%;
+  }
+  
+  .slide-nav .nav-icons {
+    margin-right: 10%;
+    color: var(--init-blue);
+    width: 30px;
+    height: 30px;
+  }
+  .slide-nav a:first-child {
+    grid-row: 4;
+  }
+  .slide-nav a:nth-child(2) {
+    grid-row: 2;
+  }
+  .slide-nav a:nth-child(3) {
+    grid-row: 3;
+  }
+  .slide-nav a span {
+    position: relative;
+    bottom: 7px;
+  }
+  .logoutBtn {
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    background: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: grid;
+    width: 70px;
+    height: 34px;
+    margin-bottom: 10px;
+  }
+  
+  .toggleBtn {
+    position: relative;
+    left: 25vw;
+    top: .5vh;
+    font-size: 20px;
+    color: var(--init-background);
+    grid-column: 2;
+    width: 200px;
+  }
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #deeff9d0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #deeff9d0;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #050525;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(36px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

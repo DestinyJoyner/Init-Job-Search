@@ -1,15 +1,16 @@
 nav {
-  display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  align-items: center;
-  justify-items: center;
   height: 10vh;
   width: 100%;
-  border-bottom: solid 2px #0cbdbd;
+  border-bottom: solid 2px var(--init-darkmint);
 }
 
 .burger {
   margin-bottom: 1.6vh;
+  margin-top: 3vh;
+  width: 35px;
+  height: 35px;
+  color: var(--init-mint);
 }
 
 nav img {
@@ -19,212 +20,11 @@ nav img {
 }
 
 nav a {
-  color: #0914ae;
   font-size: 20px;
 }
-.nav-sign {
-  margin-top: 24px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-/* sliding nav link https://www.kirupa.com/react/smooth_sliding_menu_react_motion.htm */
-.slide-nav {
-  background-color: #0cbdbd;
-  display: grid;
-  grid-template-rows: 0.7fr repeat(5, 0.5fr) 0.3fr 0.3fr;
-  align-items: center;
-  position: fixed;
-  left: 0;
-  top: 10vh;
-  width: 83vw;
-  border-right: 40px solid #ffde59;
-  height: 85vh;
-  z-index: 100;
-  transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
-  padding-left: 30px;
-}
-.nav-open {
-  transform: translate3d(0vw, 0, 0);
-  overflow: hidden;
-}
-.nav-close {
-  transform: translate3d(-110vw, 0, 0);
-}
-
-.slide-nav p {
-  position: relative;
-  right: 10px;
-}
-.slide-nav p span:first-child {
-  font-size: 40px;
-  font-weight: 900;
-}
-.slogan {
-  font-family: Ysabeau;
-  font-style: italic;
-  font-size: 24px;
-  color: var(--init-gold);
-}
-.slide-nav a {
-  color: var(--init-blue);
-  width: 70%;
-}
-
-.slide-nav a:hover {
-  color: var(--init-gold);
-}
-
-.nav-line {
-  width: 88%;
-}
-
-.slide-nav a svg {
-  margin-right: 10%;
-}
-.slide-nav a:first-child {
-  grid-row: 4;
-}
-.slide-nav a:nth-child(2) {
-  grid-row: 2;
-}
-.slide-nav a:nth-child(3) {
-  grid-row: 3;
-}
-.slide-nav a span {
-  position: relative;
-  bottom: 7px;
-}
-.slide-nav .logoutBtn {
-  border: none;
-  border-radius: 20px;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.toggleTheme {
-  background-color: #0914ae;
-  border: none;
-  border-radius: 20px;
-  padding: 5px;
-  font-size: 16px;
-  width: 30%;
-  color: #0914ae;
-}
-
-.slide-nav button:hover {
-  border: 2px solid #ffde59;
-  color: #ffde59;
-}
-
-.footer-info {
-  grid-row: 7;
-  justify-self: left;
-  padding: 10%;
-  height: 60%;
-  width: 100%;
-  display: grid;
-  grid-template-rows: repeat(4, 0.3fr);
-  align-items: center;
-}
-
-.pursuit {
-  font-size: 18px;
-}
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  margin-bottom: 10px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #deeff9d0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #deeff9d0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #050525;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-.logoutBtn {
-  all: unset;
-  background: none;
-  margin-bottom: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.toggleBtn {
-  position: relative;
-  left: 80px;
-  bottom: 44px;
-  font-size: 20px;
-  color: var(--init-background);
-}
-
-.navHR {
-  width: 90%;
-}
 
 
-/* DEMO CSS */
 
-.demo-login span {
-  font-size: 20px;
-  color: var(--init-background);
-}
-.demo-login .demo-label {
-  padding-left: 20px;
-  padding-right: 10px;
-  font-weight: 600;
-}
+
+
 
