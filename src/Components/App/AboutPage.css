@@ -1,6 +1,6 @@
 .about {
   height: 88vh;
-  padding-bottom: 2vh;
+  padding-bottom: 5vh;
   width: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: auto .5fr 1.9fr;
@@ -9,6 +9,11 @@
 
 .about h1 {
   font-size: 32px;
+}
+
+.about hr {
+  width: 90%;
+  height: 1px;
 }
 
 .dev-icons {
@@ -51,7 +56,7 @@
   align-items: center;
 }
 .emptyState h2 {
-  width: 85%;
+  width: 90%;
   font-size: 22px;
 }
 
@@ -61,8 +66,7 @@
   width: 90%;
   height: 95%;
   overflow-y: scroll;
-  padding: 0 10px;
-  text-align: left;
+  padding: 5px 10px;
 }
 .emptyState p span, .about-dj {
   font-weight: 600;
@@ -96,11 +100,9 @@
 .about-bcrypt {
   color: rgb(115, 113, 113);
 }
-
 .emptyState img {
   height: 200px;
   border-radius: 20px;
-  /* border: 3px solid var(--init-blue); */
 }
 .emptyState .skills-component {
   grid-row: 6;
@@ -111,42 +113,53 @@
   height: 1.8em;
   width: 1.8em;
 }
+.emptyState hr:first-of-type{
+  grid-row: 3;
+}
 .emptyState hr:nth-of-type(2){
   grid-row: 5;
 }
 
-
-.dev-socials a {
-  padding: 10px 30px 10px 30px;
-  font-size: x-large;
-  color: #ffde59;
+/* DEV-CARD */
+.indiv-card {
+  grid-template-rows: 10% 5% 30% 5% 38% 2% 10%;
 }
-
-.socials-line {
+.indiv-card h2 {
+  font-size: 30px;
+}
+.indiv-card h4 {
+  font-size: 20px;
+  font-family: Ysabeau;
+}
+.indiv-card img {
+  height: 140px;
+  border-radius: 50%;
+}
+.indiv-card p {
+  grid-row: 5;
   width: 90%;
-  /* margin: 10px; */
-  height: 1px;
+  font-size: 17px;
+  overflow-y: scroll;
+  max-height: 90%;
+  padding-bottom: 5px;
 }
 
-.dev-title {
-  font-style: italic;
-  padding-bottom: 10px;
-  font-weight: 100;
+.dev-socials {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-
-
-.devicon2 {
-  height: 100px;
-  border-radius: 100px;
+.dev-socials svg {
+  height: 2.2em;
+  width: 2.2em;
+  fill: var(--init-gold);
 }
-
-.devPronoun {
-  font-family: ysabeau;
-  padding-bottom: 10px;
+.dev-socials .about-mail{
+  height: 2.7em;
+  width: 2.7em;
 }
-
-
-
 
 /* dark mode */
 .dark .devicon {
@@ -179,4 +192,8 @@
 .dark .emptyState  {
   background-color: var(--init-dark);
   color: var(--init-background);
+}
+
+.dark .dev-socials svg {
+  fill: var(--init-blue);
 }

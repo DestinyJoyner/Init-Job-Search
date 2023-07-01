@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid"
 import SkillsComponent from "../Job/SkillsComponent.js"
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
+import { GrMail } from "react-icons/gr"
 import { team } from "./AboutData";
 import DMphoto from "../../Assets/DMphoto.png";
 import SMphoto from "../../Assets/SMphoto.jpg";
@@ -13,7 +14,7 @@ import "../App/AboutPage.css";
 function AboutPage(props) {
   const [profileCard, setProfileCard] = useState(team["6"]);
 
-  const iconArr = [<BsGithub />, <BsLinkedin />, <IoMdMail />];
+  const iconArr = [<BsGithub />, <BsLinkedin />, <GrMail className="about-mail" />];
 
   function aboutCard(e) {
     if (profileCard.id === +e.target.id) {
@@ -53,18 +54,19 @@ function AboutPage(props) {
           <h2>{profileCard.name}</h2>
           <img src={profileCard.img}></img>
           <p>{profileCard.bio}</p>
-          <hr className="socials-line"></hr>
+          <hr/>
           <SkillsComponent justList={true}
           skillsArr={profileCard.links} />
-          <hr className="socials-line"></hr>
+          <hr/>
         </div>
       ) : (
         <div className="indiv-card grid-center">
           <h2>{profileCard.name}</h2>
           <h4 className="devPronoun">{profileCard.pronoun}</h4>
           <img className="devicon2" src={profileCard.img}></img>
+          <h3>{profileCard.role}</h3>
           <p>{profileCard.bio}</p>
-          <hr className="socials-line"></hr>
+          <hr/>
           <div className="dev-socials">
             {profileCard.links.length > 0 &&
               profileCard.links.map((el, i) => (
