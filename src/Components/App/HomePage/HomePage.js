@@ -6,7 +6,7 @@ import { BsCaretDownFill } from "react-icons/bs";
 import logo from "./Images/white-logo.png";
 import scan from "./Images/qr-code.png";
 import initTree from "./Images/init-tree-gold.png";
-import finalTree from "./Images/init-tree-blue.png";
+import finalTree from "./Images/init-tree-mint.png";
 import teamStock from "./Images/team-stock.jpg";
 import stock2 from "./Images/init-stock(2).jpg";
 import stock3 from "./Images/init-stock(3).jpg";
@@ -137,8 +137,8 @@ function HomePage() {
       </section>
       {/* LAST SLIDE */}
       <section className="home-final">
-        <img src={finalTree} alt="init-tree" className="init-tree-final" />
-        
+        {/* <img src={finalTree} alt="init-tree" className="init-tree-final" /> */}
+
         <div className="misc4">
           <img src={teamStock} alt="misc" />
         </div>

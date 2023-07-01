@@ -232,6 +232,8 @@
 }
 .home-final {
   background-color: rgba(241, 235, 214, 0.805);
+  /* background-color: var(--init-background); */
+  /* background-color: rgba(254, 232, 150, 0.737); */
 }
 
 .home .home-app-guide,
@@ -423,6 +425,11 @@
   grid-template-columns: 3fr 1fr 3fr;
   grid-template-rows: 20vh 40vh 20vh;
   align-items: center;
+  background-image: url("/public/init-tree-mint.png");
+  background-size: 100% 65%;
+  background-repeat: no-repeat;
+  background-position-y: 250px ;
+  background-position-x: 7px ;
 }
 
 .home-final a {
@@ -430,11 +437,14 @@
   transform: rotate(-45deg);
   border: 3px solid var(--init-mint);
   box-shadow: 2px 2px 10px black;
-  height: 120px;
-  width: 120px;
+  height: 130px;
+  width: 130px;
   position: relative;
-  background-image: url(/public/init-back-gold-tree.jpg);
-  background-size: cover;
+  background-image: url(/public/init-rotate-tree.png);
+  background-color: var(--init-background);
+  background-size: 150px 150px;
+  background-position-x: -12px;
+  background-position-y: -18px;
   display: grid;
   grid-template-columns: unset;
   grid-template-rows: unset;
@@ -445,7 +455,7 @@
   background-color: var(--init-background);
   color: var(--init-blue);
   padding: 2px;
-  font-size: 22px;
+  font-size: 24px;
   transform: rotate(45deg);
   text-align: center;
   border-radius: 20px;
@@ -454,34 +464,35 @@
 }
 
 .home-final .home-register {
-  left: 6vw;
-  top: 9vh;
+  left: 4vw;
+  top: 13vh;
 }
 
 .home-final .home-about {
   bottom: 8vh;
-  right: 8vw;
+  right: 1vw;
 }
 
 .home-final .home-sign {
   left: 61vw;
-  top: -21vh;
+  top: -17vh;
 }
 
 .home-final .final-quote {
-  grid-row: 3 ;
-  grid-column: 1/4;
-  color: var(--init-darkmint);
-  font-size: 45px;
-  padding: 20px;
+  grid-row: 1 ;
+  grid-column: 2/4;
+  width: 70%;
+  /* color: var(--init-blue); */
+  color: #4c616c;
+  font-size: 32px;
   font-weight: 600;
   justify-self: center;
   text-align: center;
 }
 
 .misc4 {
-  height: 160px;
-  width: 160px;
+  height: 130px;
+  width: 130px;
   grid-column: 1;
   grid-row: 1;
   align-self: center;
@@ -489,10 +500,10 @@
   left: 3vw;
 }
 .misc4 img {
-  height: 150px;
+  height: 125px;
   position: relative;
-  right: 5vw;
-  top: .5vh;
+  right: 6vw;
+  top: .3vh;
 }
 
 .init-tree-final {
@@ -513,4 +524,5 @@
 }
 .dark .home-final {
   background-color: rgb(241, 235, 214);
+  background-color: rgb(251, 226, 138);
 }
