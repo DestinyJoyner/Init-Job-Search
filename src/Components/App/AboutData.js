@@ -9,7 +9,9 @@ export const team = {
     name: "Destiny Joyner",
     pronoun: "She/Her",
     img: DJphoto,
-    bio: "Born and raised in New York City, Destiny always had a flare for solving math and logic puzzles. She wants to expand her coding knowledge aiming to build immersive worlds inside of the virtual universe. Destiny worked on the back end and front end development of inIT",
+    bio:
+    <> <h3 className="about-dj">Front/Back-End Developer for inIT</h3>Born and raised in New York City, Destiny always had a flare for solving math and logic puzzles.<br/> She wants to expand her coding knowledge aiming to build immersive worlds inside of the virtual universe. 
+    </>,
     links: [
       "https://github.com/DestinyJoyner",
       "https://www.linkedin.com/in/destinyjoyner/",
@@ -44,7 +46,8 @@ export const team = {
     id: 6,
     name: "Click on a developer's icon to view more about them!",
     img: group,
-    bio: "inIT is an application designed for recent college and boot camp graduates looking for their first role in tech.inIT's frontend was developed using only React and CSS3, with no other frameworks or libraries. inIT utilizes a custom built API in an Express environment, postgreSQL for the database, only requiring BCrypt and JWT packages for it's authentication processes.",
+    bio:<>
+    <span className="about-init">inIT</span> is an application designed for recent college and boot camp graduates looking for their first role in tech. <br/><br/> <span className="about-init">inIT's</span> frontend was developed using only <span className="about-react">React</span> and <span className="about-css">CSS3</span>, with no other frameworks or libraries. <br/><br/> <span className="about-init">inIT</span> utilizes a custom built API in an <span className="about-express">Express/Node JS</span> environment, <span className="about-postgres">PostgreSQL</span> for the database, only requiring <span className="about-bcrypt">BCrypt</span> and <span className="about-jwt">JWT</span> packages for it's authentication processes.</>,
     links: [1,2,3,90,91,0],
   },
 };

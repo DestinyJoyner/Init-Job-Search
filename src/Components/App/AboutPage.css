@@ -3,7 +3,7 @@
   padding-bottom: 2vh;
   width: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: auto .4fr 1.9fr;
+  grid-template-rows: auto .5fr 1.9fr;
   text-align: center;
 }
 
@@ -14,6 +14,7 @@
 .dev-icons {
   grid-template-columns: repeat(3,1fr);
   width: 100%;
+  padding-top: 5px;
 }
 
 .devicon {
@@ -61,11 +62,45 @@
   height: 95%;
   overflow-y: scroll;
   padding: 0 10px;
+  text-align: left;
 }
+.emptyState p span, .about-dj {
+  font-weight: 600;
+}
+.about-dj{
+  font-size: 18px;
+  position: relative;
+  bottom: 2vh;
+}
+.about-init {
+  color: var(--init-charcoal);
+}
+.dark .about-init {
+  color: var(--init-mint);
+}
+.about-react {
+  color: #61DBFB;
+}
+.about-css {
+  color: #264de4;
+}
+.about-express {
+  color: #3c873a ;
+}
+.about-postgres {
+  color: #0064a5;
+}
+.about-jwt {
+  color: #F50057;
+}
+.about-bcrypt {
+  color: rgb(115, 113, 113);
+}
+
 .emptyState img {
   height: 200px;
   border-radius: 20px;
-  border: 3px solid var(--init-blue);
+  /* border: 3px solid var(--init-blue); */
 }
 .emptyState .skills-component {
   grid-row: 6;
@@ -79,6 +114,7 @@
 .emptyState hr:nth-of-type(2){
   grid-row: 5;
 }
+
 
 .dev-socials a {
   padding: 10px 30px 10px 30px;
@@ -132,9 +168,7 @@
   padding-top: 1vh;
   align-self: center;
 }
-.dark .emptyState img{
-  border-color: var(--init-dark);
-}
+
 .dark .emptyState .skills-component {
   background-color: var(--init-background);
   border-radius: 20px;
