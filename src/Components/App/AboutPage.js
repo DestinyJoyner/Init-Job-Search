@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid"
+import SkillsComponent from "../Job/SkillsComponent.js"
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import { team } from "./AboutData";
@@ -23,9 +24,9 @@ function AboutPage(props) {
   }
 
   return (
-    <div className="dev-cards">
+    <div className="about grid-center">
       <Header header={"Meet The Team"} />
-      <div className="dev-icons">
+      <div className="dev-icons grid-center">
         <img
           id="1"
           className="devicon"
@@ -45,15 +46,20 @@ function AboutPage(props) {
           onClick={(event) => aboutCard(event)}
         ></img>
       </div>
-      {profileCard.links.length === 0 ? (
-        <div className="emptyState">
+      {
+      profileCard.id === 6 ? 
+      (
+        <div className="emptyState grid-center">
           <h2>{profileCard.name}</h2>
           <img src={profileCard.img}></img>
           <p>{profileCard.bio}</p>
           <hr className="socials-line"></hr>
+          <SkillsComponent justList={true}
+          skillsArr={profileCard.links} />
+          <hr className="socials-line"></hr>
         </div>
       ) : (
-        <div className="indiv-card">
+        <div className="indiv-card grid-center">
           <h2>{profileCard.name}</h2>
           <h4 className="devPronoun">{profileCard.pronoun}</h4>
           <img className="devicon2" src={profileCard.img}></img>

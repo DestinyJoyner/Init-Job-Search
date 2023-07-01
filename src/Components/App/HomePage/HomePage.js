@@ -4,7 +4,6 @@ import ScrollArrow from "./ScrollArrow";
 import { TiArrowForward } from "react-icons/ti";
 import { BsCaretDownFill } from "react-icons/bs";
 import logo from "./Images/white-logo.png";
-import scan from "./Images/qr-code.png";
 import initTree from "./Images/init-tree-gold.png";
 import finalTree from "./Images/init-tree-mint.png";
 import teamStock from "./Images/team-stock.jpg";

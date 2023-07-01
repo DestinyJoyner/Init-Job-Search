@@ -1,7 +1,7 @@
 import DMphoto from "../../Assets/DMphoto.png";
 import SMPhoto from "../../Assets/SMphoto.jpg";
 import DJphoto from "../../Assets/DJphoto.png"
-import group from "../../Assets/group.png";
+import group from "../../Assets/init-team.png";
 
 export const team = {
   1: {
@@ -42,9 +42,9 @@ export const team = {
   },
   6: {
     id: 6,
-    name: "Select a Team Member",
+    name: "Click on a developer's icon to view more about them!",
     img: group,
-    bio: "Click on a team member's icon to view more about them!",
-    links: [],
+    bio: "inIT is an application designed for recent college and boot camp graduates looking for their first role in tech.\ninIT's frontend was developed using only React and CSS3, with no other frameworks or libraries. inIT utilizes a custom built API in an Express environment, postgreSQL for the database, only requiring BCrypt and JWT packages for it's authentication processes.",
+    links: [1,2,3],
   },
 };

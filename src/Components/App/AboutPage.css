@@ -1,18 +1,27 @@
-.dev-cards {
-  height: 85vh;
-  padding-bottom: 8vh;
+.about {
+  height: 88vh;
+  padding-bottom: 2vh;
   width: 100%;
-  display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr 0.5fr auto;
+  grid-template-rows: auto .4fr 1.9fr;
   text-align: center;
-  justify-content: center;
 }
-/* .dev-img {
-  height: 30%;
-  border-radius: 100px;
-  border: 5px solid #ffde59;
-} */
+
+.about h1 {
+  font-size: 32px;
+}
+
+.dev-icons {
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+}
+
+.devicon {
+  height: 100px;
+  border: 3px solid var(--init-blue);
+  border-radius: 50%;
+}
+
 .dev-cards h2 {
   font-size: 20px;
   position: relative;
@@ -29,17 +38,47 @@
 
 .indiv-card,
 .emptyState {
-  display: grid;
-  grid-template-rows: auto;
-  justify-items: center;
-  justify-self: center;
-  border-radius: 30px;
-  margin-top: 10px;
-  padding: 15px;
-  height: 470px;
-  width: 80%;
-  background-color: #0cbdbd;
-  align-self: center;
+  border-radius: 20px;
+  height: 95%;
+  width: 90%;
+  background-color: var(--init-mint);
+}
+
+/* EMPTY STATE */
+.emptyState {
+  grid-template-rows: 12% 40% 2% 35% 2% 8%;
+  align-items: center;
+}
+.emptyState h2 {
+  width: 85%;
+  font-size: 22px;
+}
+
+.emptyState p {
+  grid-row: 4;
+  font-size: 18px;
+  width: 90%;
+  height: 90%;
+  overflow-y: scroll;
+  text-align: left;
+  padding: 0 10px;
+}
+.emptyState img {
+  height: 200px;
+  border-radius: 20px;
+  border: 3px solid var(--init-blue);
+}
+.emptyState .skills-component {
+  grid-row: 6;
+  height: 5vh;
+  align-items: center;
+}
+.emptyState .skills-component svg {
+  height: 1.8em;
+  width: 1.8em;
+}
+.emptyState hr:nth-of-type(2){
+  grid-row: 5;
 }
 
 .dev-socials a {
@@ -50,7 +89,7 @@
 
 .socials-line {
   width: 90%;
-  margin: 10px;
+  /* margin: 10px; */
   height: 1px;
 }
 
@@ -60,12 +99,6 @@
   font-weight: 100;
 }
 
-.devicon {
-  height: 85px;
-  border: 3px solid var(--init-blue);
-  border-radius: 100px;
-  margin: 4px;
-}
 
 .devicon2 {
   height: 100px;
@@ -77,26 +110,8 @@
   padding-bottom: 10px;
 }
 
-.emptyState {
-  grid-template-rows: auto 60% 5% 20%;
-  align-items: center;
-}
 
-.emptyState h2 {
-  height: fit-content;
-}
-.emptyState p {
-  grid-row: 4;
-  font-size: 20px;
-  height: fit-content;
-}
-.emptyState img {
-  height: 250px;
-}
 
-.dev-icons {
-  margin-top: 12px;
-}
 
 /* dark mode */
 .dark .devicon {
