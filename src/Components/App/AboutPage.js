@@ -2,7 +2,6 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid"
 import SkillsComponent from "../Job/SkillsComponent.js"
 import { BsLinkedin, BsGithub } from "react-icons/bs";
-import { IoMdMail } from "react-icons/io";
 import { GrMail } from "react-icons/gr"
 import { team } from "./AboutData";
 import DMphoto from "../../Assets/DMphoto.png";
