@@ -67,7 +67,7 @@
   height: 95%;
   overflow-y: scroll;
   padding: 5px 10px;
-  background-color: var(--init-darkmint);
+  /* background-color: var(--init-dark); */
 }
 .emptyState p span, .about-dj {
   font-weight: 600;
@@ -109,6 +109,10 @@
   grid-row: 6;
   height: 5vh;
   align-items: center;
+  background-color: var(--init-background);
+  border-radius: 20px;
+  width: 95%;
+  margin-top: 3px;
 }
 .emptyState .skills-component svg {
   height: 1.8em;
@@ -181,13 +185,6 @@
   height: 83%;
   padding-top: 1vh;
   align-self: center;
-}
-
-.dark .emptyState .skills-component {
-  background-color: var(--init-background);
-  border-radius: 20px;
-  width: 95%;
-  margin-top: 3px;
 }
 
 .dark .emptyState  {
