@@ -1,37 +1,34 @@
 .filter-bar {
     grid-row: 2;
-    margin-top: 1.5vh;
+   max-height: 28vh;
+   width: 100%;
+   display: grid;
+   grid-template-rows: 4vh 23vh;
+  justify-items: center;
+  /* align-items: center; */
+ 
 }
 
 .filter-bar-arrow {
-    align-self: center;
-    display: flex;
-    font-size: 13px;
-    width: 100%;
-    height: 2vh;
-    margin-left: 12px;
+    position: relative;
+    left: 3vw;
+    width: 90%;
 }
 .filter-bar-arrow svg {
-    margin-right: 5px;
     position: relative;
-    bottom: 5px;
+    right: 1vw;
 }
 .filter-bar-arrow span{
     background-color: var(--init-background);
     border: var(--init-mint) 1px solid;
     font-size: 14px;
-    height: 2vh;
     border-radius: 20px;
-    font-weight: 300;
     width: fit-content; 
     text-align: center;
     padding: 2px 8px;
-}
-.filter-span {
     position: relative;
-    bottom: .5vh;
+    bottom: .5vh ;
 }
-
 .expand-text {
     color: var(--init-blue);
 }
@@ -41,8 +38,8 @@
     background-color: unset;
     font-size: 18px;
     position: relative;
-    bottom: .6vh;
-    left: 5vw;
+    left: 8vw;
+    bottom: .5vh;
 }
 .remote-checkbox {
     accent-color: var(--init-blue);
@@ -50,44 +47,44 @@
     height: 20px;
     background-color: var(--init-background);
     position: relative;
-    bottom: .3vh;
-    left: 5vw;
+    /* top: .5vh; */
+    left: 8vw;
+    
 }
 .filter-remote {
     bottom: .5vh;
     left: 5vw;
 }
 .filter-bar-arrow .filter-remote-label {
-    bottom: 1vh;
+    /* bottom: 1vh; */
     background-color: unset;
 }
 
 .filter-bar-expanded {
-    width: 86vw;
+    width: 95%;
     background-color: var(--init-mint);
     border: 2px solid var(--init-blue);
     border-radius: 20px;
     display: grid;
-    grid-template-columns: 1.7fr 1fr;
-    grid-template-rows: 1fr .1fr 2fr;
+    grid-template-columns: 1fr .5fr;
+    grid-template-rows: 1fr .1fr 3fr;
     row-gap: 8px;
     align-items: center;
-    padding: 5px;
     overflow: hidden;
     visibility: hidden;
     height: 0;
     transition: all .4s ease-in-out;
     position: relative;
-    left: 3vw;
+    /* left: 3vw; */
 }
 
-.filter-bar-expanded:target{
+/* .filter-bar-expanded:target{
     height: 14vh;
-}
+} */
 .slide-down {
-    height: 20vh;
+    height: 22vh;
     visibility: visible;
-    margin-top: 1vh;
+    /* margin-top: 1vh; */
 }
 
 .filter-bar-expanded hr {
@@ -136,10 +133,11 @@
 .filter-bar-skills .skills-component {
     grid-column: span 2;
     display: grid;
-    grid-template-columns: repeat(4,.5fr);
+    grid-template-columns: repeat(4,1fr);
+    /* width: 90%; */
     row-gap: 5px;
     justify-items: center;
-    height: 110px;
+    /* height: 110px; */
     position: relative;
     bottom: .6vh;
 }

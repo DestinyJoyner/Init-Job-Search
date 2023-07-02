@@ -67,7 +67,6 @@
   height: 95%;
   overflow-y: scroll;
   padding: 5px 10px;
-  /* background-color: var(--init-dark); */
 }
 .emptyState p span, .about-dj {
   font-weight: 600;
