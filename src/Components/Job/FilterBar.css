@@ -5,17 +5,17 @@
    display: grid;
    grid-template-rows: 4vh 23vh;
   justify-items: center;
-  /* align-items: center; */
- 
 }
 
-.filter-bar-arrow {
+ .filter-bar-arrow, .filter-bar-arrow svg, .remote-label, .remote-checkbox{
     position: relative;
+ }
+
+.filter-bar-arrow {
     left: 3vw;
     width: 90%;
 }
 .filter-bar-arrow svg {
-    position: relative;
     right: 1vw;
 }
 .filter-bar-arrow span{
@@ -42,18 +42,11 @@
     bottom: .5vh;
 }
 .remote-checkbox {
+    background-color: var(--init-background);
     accent-color: var(--init-blue);
     width: 20px;
     height: 20px;
-    background-color: var(--init-background);
-    position: relative;
-    /* top: .5vh; */
-    left: 8vw;
-    
-}
-.filter-remote {
-    bottom: .5vh;
-    left: 5vw;
+    left: 8vw; 
 }
 .filter-bar-arrow .filter-remote-label {
     /* bottom: 1vh; */

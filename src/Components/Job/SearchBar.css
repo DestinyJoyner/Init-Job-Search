@@ -15,10 +15,14 @@
     z-index: 1;
 }
 
+.search-component label {
+    width: 100%;
+} 
+
 .searchbar {
     grid-row: 1;
     border: 2px solid var(--init-mint);
-    width: 85vw;
+    width: 90%;
     height: 4vh;
     border-radius: 20px;
     text-indent: 10vw;
