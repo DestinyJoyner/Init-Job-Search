@@ -440,12 +440,12 @@
   height: 130px;
   width: 130px;
   position: relative;
-  background-image: url(/public/init-rotate-tree.png);
+  background-image: url(/public/logo-rotate.png);
+  background-size: 700px 700px;
   background-color: var(--init-background);
-  background-size: 120px 120px;
   background-repeat: no-repeat;
-  background-position-x: 8px;
-  background-position-y: -5px;
+  background-position-x: -315px;
+  background-position-y: -250px;
   display: grid;
   grid-template-columns: unset;
   grid-template-rows: unset;
