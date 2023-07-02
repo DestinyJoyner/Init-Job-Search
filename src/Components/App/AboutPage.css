@@ -52,7 +52,7 @@
 
 /* EMPTY STATE */
 .emptyState {
-  grid-template-rows: 12% 40% 2% 35% 2% 8%;
+  grid-template-rows: 12% 35% 2% 40% 2% 8%;
   align-items: center;
 }
 .emptyState h2 {
@@ -63,10 +63,11 @@
 .emptyState p {
   grid-row: 4;
   font-size: 18px;
-  width: 90%;
+  width: 85%;
   height: 95%;
   overflow-y: scroll;
   padding: 5px 10px;
+  background-color: var(--init-darkmint);
 }
 .emptyState p span, .about-dj {
   font-weight: 600;
@@ -192,8 +193,22 @@
 .dark .emptyState  {
   background-color: var(--init-dark);
   color: var(--init-background);
+  border: 2px solid var(--init-gold);
 }
-
+.dark .emptyState p {
+  background-color: var(--init-dark);
+}
+.dark .indiv-card  {
+  background-color: var(--init-dark);
+  color: var(--init-background);
+  border: 2px solid var(--init-gold);
+}
+.dark .dev-socials {
+  background-color: var(--init-gold);
+  border-radius: 20px;
+  height: 80%;
+}
 .dark .dev-socials svg {
   fill: var(--init-blue);
+  margin-top: .5vh;
 }
