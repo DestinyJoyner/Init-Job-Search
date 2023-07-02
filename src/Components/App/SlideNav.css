@@ -2,7 +2,7 @@
 .slide-nav {
     background-color: #0cbdbd;
     display: grid;
-    grid-template-rows: 15vh repeat(5, 9vh) 5vh 0.3fr;
+    grid-template-rows: 15vh repeat(5, 9vh) 5vh 8vh 5vh 10vh  ;
     align-items: center;
     position: fixed;
     left: 0;
@@ -34,7 +34,7 @@
   }
   .slide-nav a {
     color: var(--init-blue);
-    width: 70%;
+    /* width: 70%; */
     font-size: 22px;
   }
   

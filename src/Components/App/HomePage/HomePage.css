@@ -451,10 +451,14 @@
   grid-template-rows: unset;
   justify-items: center;
   align-items: center;
+
+  /* background-color: #5cd0d0; */
 }
 .home-final a span {
   background-color: var(--init-background);
   color: var(--init-blue);
+  /* background-color: #5cd0d0; ;
+  color: var(--init-background); */
   padding: 2px;
   font-size: 24px;
   transform: rotate(45deg);
