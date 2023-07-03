@@ -1,6 +1,6 @@
 .filter-bar {
     grid-row: 2;
-   max-height: 28vh;
+   max-height: 30vh;
    width: 100%;
    display: grid;
    grid-template-rows: 4vh 23vh;
@@ -49,49 +49,47 @@
     left: 8vw; 
 }
 .filter-bar-arrow .filter-remote-label {
-    /* bottom: 1vh; */
     background-color: unset;
 }
 
 .filter-bar-expanded {
     width: 95%;
-    background-color: var(--init-mint);
-    border: 2px solid var(--init-blue);
+    /* background-color: var(--init-mint); */
+    background-color: white;
+    /* border: 2px solid var(--init-blue); */
+    border: 2px solid var(--init-mint);
     border-radius: 20px;
+    padding-bottom: 1vh;
     display: grid;
     grid-template-columns: 1fr .5fr;
     grid-template-rows: 1fr .1fr 3fr;
-    row-gap: 8px;
+    row-gap: .5vh;
     align-items: center;
     overflow: hidden;
     visibility: hidden;
     height: 0;
     transition: all .4s ease-in-out;
-    position: relative;
-    /* left: 3vw; */
+    /* position: relative; */
+
 }
 
 /* .filter-bar-expanded:target{
     height: 14vh;
 } */
 .slide-down {
-    height: 22vh;
+    height: 24vh;
     visibility: visible;
-    /* margin-top: 1vh; */
 }
 
 .filter-bar-expanded hr {
     grid-row: 2;
     grid-column: span 2;
-    border: var(--init-blue) 1px solid;
+    /* border: var(--init-blue) 1px solid; */
+    border: var(--init-mint) 1px solid;
     width: 90%;
     justify-self: center;
     position: relative;
     bottom: .5vh;
-}
-
-.filter-bar-expanded svg {
-    color: var(--init-background);
 }
 
 .filter-bar-expanded select {
@@ -101,42 +99,59 @@
     height: 35px;
     margin-left: 10px;
     border-radius: 20px;
-    border: 1px solid var(--init-blue);
+    /* border: 1px solid var(--init-blue); */
+    border: 1px solid var(--init-mint);
     font-size: 17px;
     text-align: center;
     background-color: var(--init-background); 
+    /* background-color: rgb(229, 227, 227) ; */
+    color: var(--init-blue);
 }
 
 .filter-bar-toggle {
     grid-column:2;
     grid-row: 1;
-    width: 100%;
+    color: var(--init-mint);
+    position: relative;
+    right: 3vw;
 }
 .filter-bar-toggle span {
     position: relative;
     bottom: .5vh;
-    left: 1.5vw;
+    left: 1vw;
     font-size: 18px;
     color: var(--init-blue);
 }
 .filter-bar-skills {
     grid-column: span 2;
-    height: 100%;
+    justify-self: center;
+    display: grid;
+    background-color: var(--init-background);
+    border: 1px solid var(--init-mint);
+    border-radius: 20px;
+    padding-top: .5vh;
+    height: 95%;
+    width: 95%;
 }
 .filter-bar-skills .skills-component {
+    margin-top: .5vh;
     grid-column: span 2;
+    height: 95%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     /* width: 90%; */
     row-gap: 5px;
     justify-items: center;
     /* height: 110px; */
-    position: relative;
-    bottom: .6vh;
+    /* position: relative;
+    bottom: .6vh; */
 }
+
 .filter-bar-skills .skills-component svg {
     height: 2em;
     width: 2em;  
+    color: rgb(144, 143, 143);
+    /* color: rgb(194, 192, 192) ; */
 }
 
 .filter-bar-skills .skills-checkboxes {
