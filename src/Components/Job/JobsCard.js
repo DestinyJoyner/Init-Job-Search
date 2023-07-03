@@ -9,15 +9,16 @@ function JobsCard({ jobObj }) {
   const combineSkills = skills.map((el) => el);
 
   return (
-    <Link to={`/jobs/${job_id}`}>
+    <Link to={`/jobs/${job_id}`} className="grid-center">
       <div className="job-card">
+        <section className="job-card-details">
         <span className="job-card-title">{title}</span>
         <section className="job-card-company">
           <span>{company}</span>
           {full_remote && <span className="job-card-remote">REMOTE</span>}
         </section>
         <span className="job-card-city">{convertCities(city)}</span>
-        <span className="job-card-divider"></span>
+        </section>
         <section className="job-card-skills">
           <SkillsComponent skillsArr={combineSkills} justList={true} />
         </section>
