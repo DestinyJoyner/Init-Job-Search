@@ -1,16 +1,23 @@
 .jobsIndex {
   display: grid;
-  grid-template-rows: auto fit-content;
+  grid-template-rows: auto fit-content ;
   grid-auto-rows: min-content;
-  row-gap: 15px;
+  row-gap: 1vh;
   justify-items: center;
-  overflow-y: scroll;
-  overflow-x:hidden;
   height: 85vh;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
+  width: 100%;
+}
+
+.jobListings {
+  height: 100%;
+  grid-row: 2;
+  width: 95%;
+  row-gap: 1vh;
 }
 
 .jobsIndex a {
-  width: 90%;
+  width: 96%;
+  height: 18vh;
   color: var(--init-charcoal);
 }

@@ -1,7 +1,9 @@
 .search-component {
     display: grid;
-    grid-template-rows: 5vh auto;
-    max-height: 30vh;
+    justify-items: center;
+    grid-template-rows: 6vh auto;
+    width: 100%;
+    min-height: 8vh;
 }
 
 .search-component .search-bar-icon {
@@ -11,9 +13,14 @@
     z-index: 1;
 }
 
+.search-component label {
+    width: 100%;
+} 
+
 .searchbar {
+    grid-row: 1;
     border: 2px solid var(--init-mint);
-    width: 85vw;
+    width: 90%;
     height: 4vh;
     border-radius: 20px;
     text-indent: 10vw;

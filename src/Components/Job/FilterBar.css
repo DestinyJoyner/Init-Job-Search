@@ -1,191 +1,184 @@
 .filter-bar {
-    grid-row: 2;
-    margin-top: 1.5vh;
+  grid-row: 2;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 4vh auto;
+  justify-items: center;
+}
+
+.filter-bar-arrow,
+.filter-bar-arrow svg,
+.remote-label,
+.remote-checkbox,
+.filter-bar-toggle,
+.filter-bar-arrow span,
+.filter-bar-skills .skills-checkboxes,
+.filter-bar-skills .skills-checkboxes label span {
+  position: relative;
 }
 
 .filter-bar-arrow {
-    align-self: center;
-    display: flex;
-    font-size: 13px;
-    width: 100%;
-    height: 2vh;
-    margin-left: 12px;
+  left: 3vw;
+  width: 90%;
 }
 .filter-bar-arrow svg {
-    margin-right: 5px;
-    position: relative;
-    bottom: 5px;
+  right: 1vw;
 }
-.filter-bar-arrow span{
-    background-color: var(--init-background);
-    border: var(--init-mint) 1px solid;
-    font-size: 14px;
-    height: 2vh;
-    border-radius: 20px;
-    font-weight: 300;
-    width: fit-content; 
-    text-align: center;
-    padding: 2px 8px;
+.filter-bar-arrow span {
+  background-color: var(--init-background);
+  border: var(--init-mint) 1px solid;
+  font-size: 14px;
+  border-radius: 20px;
+  width: fit-content;
+  text-align: center;
+  padding: 2px 8px;
+  bottom: 0.5vh;
 }
-.filter-span {
-    position: relative;
-    bottom: .5vh;
-}
-
 .expand-text {
-    color: var(--init-blue);
+  color: var(--init-blue);
 }
 
 .filter-bar-arrow .remote-label {
-    border: unset;
-    background-color: unset;
-    font-size: 18px;
-    position: relative;
-    bottom: .6vh;
-    left: 5vw;
+  border: unset;
+  background-color: unset;
+  font-size: 18px;
+  left: 8vw;
+  bottom: 0.5vh;
 }
 .remote-checkbox {
-    accent-color: var(--init-blue);
-    width: 20px;
-    height: 20px;
-    background-color: var(--init-background);
-    position: relative;
-    bottom: .3vh;
-    left: 5vw;
-}
-.filter-remote {
-    bottom: .5vh;
-    left: 5vw;
+  background-color: var(--init-background);
+  accent-color: var(--init-blue);
+  width: 20px;
+  height: 20px;
+  left: 8vw;
 }
 .filter-bar-arrow .filter-remote-label {
-    bottom: 1vh;
-    background-color: unset;
+  background-color: unset;
 }
 
 .filter-bar-expanded {
-    width: 86vw;
-    background-color: var(--init-mint);
-    border: 2px solid var(--init-blue);
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: 1.7fr 1fr;
-    grid-template-rows: 1fr .1fr 2fr;
-    row-gap: 8px;
-    align-items: center;
-    padding: 5px;
-    overflow: hidden;
-    visibility: hidden;
-    height: 0;
-    transition: all .4s ease-in-out;
-    position: relative;
-    left: 3vw;
+  width: 95%;
+  background-color: white;
+  border: 2px solid var(--init-mint);
+  border-radius: 20px;
+  padding-bottom: 1vh;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: 1fr 0.1fr 3fr;
+  row-gap: 0.5vh;
+  align-items: center;
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+  transition: all 0.4s ease-in-out;
 }
 
-.filter-bar-expanded:target{
-    height: 14vh;
-}
 .slide-down {
-    height: 20vh;
-    visibility: visible;
-    margin-top: 1vh;
+  height: 24vh;
+  visibility: visible;
 }
 
 .filter-bar-expanded hr {
-    grid-row: 2;
-    grid-column: span 2;
-    border: var(--init-blue) 1px solid;
-    width: 90%;
-    justify-self: center;
-    position: relative;
-    bottom: .5vh;
-}
-
-.filter-bar-expanded svg {
-    color: var(--init-background);
+  grid-row: 2;
+  grid-column: span 2;
+  border: var(--init-mint) 1px solid;
+  width: 90%;
+  justify-self: center;
+  position: relative;
+  bottom: 0.5vh;
 }
 
 .filter-bar-expanded select {
-    grid-column: 1;
-    grid-row: 1;
-    width: 80%;
-    height: 35px;
-    margin-left: 10px;
-    border-radius: 20px;
-    border: 1px solid var(--init-blue);
-    font-size: 17px;
-    text-align: center;
-    background-color: var(--init-background); 
+  grid-column: 1;
+  grid-row: 1;
+  width: 80%;
+  height: 35px;
+  margin-left: 10px;
+  border-radius: 20px;
+  border: 1px solid var(--init-mint);
+  font-size: 17px;
+  text-align: center;
+  background-color: var(--init-background);
+  color: var(--init-blue);
 }
 
 .filter-bar-toggle {
-    grid-column:2;
-    grid-row: 1;
-    width: 100%;
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--init-mint);
+  right: 3vw;
 }
 .filter-bar-toggle span {
-    position: relative;
-    bottom: .5vh;
-    left: 1.5vw;
-    font-size: 18px;
-    color: var(--init-blue);
+  position: relative;
+  bottom: 0.5vh;
+  left: 1vw;
+  font-size: 18px;
+  color: var(--init-blue);
 }
 .filter-bar-skills {
-    grid-column: span 2;
-    height: 100%;
+  grid-column: span 2;
+  justify-self: center;
+  display: grid;
+  background-color: var(--init-background);
+  border: 1px solid var(--init-mint);
+  border-radius: 20px;
+  padding-top: 0.5vh;
+  height: 95%;
+  width: 95%;
 }
 .filter-bar-skills .skills-component {
-    grid-column: span 2;
-    display: grid;
-    grid-template-columns: repeat(4,.5fr);
-    row-gap: 5px;
-    justify-items: center;
-    height: 110px;
-    position: relative;
-    bottom: .6vh;
+  margin-top: 0.5vh;
+  grid-column: span 2;
+  height: 95%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 1vh;
+  justify-items: center;
 }
+
 .filter-bar-skills .skills-component svg {
-    height: 2em;
-    width: 2em;  
+  height: 2em;
+  width: 2em;
+  color: rgb(144, 143, 143);
 }
 
 .filter-bar-skills .skills-checkboxes {
-    grid-column: span 2;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    row-gap: 1px;
-    align-items: center;
-    position: relative;
-    left: 4vw;
+  grid-column: span 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1px;
+  align-items: center;
+  left: 4vw;
 }
 .filter-bar-skills .skills-checkboxes label {
-    margin-left: 1vw;
-    height: 3vh;
+  margin-left: 1vw;
+  height: 3vh;
 }
 .filter-bar-skills .skills-checkboxes label input {
-    margin-right: 1.2vw;
-    height: 20px;
-    width: 20px;
+  margin-right: 1.2vw;
+  height: 20px;
+  width: 20px;
 }
 .filter-bar-skills .skills-checkboxes label span {
-    position: relative;
-    bottom: .45vh;
-    font-size: 16px;
+  bottom: 0.45vh;
+  font-size: 16px;
 }
 
 /* DARK MODE UPDATES */
-.dark .filter-bar-arrow .expand-text{
-    background-color: var(--init-mint);
+.dark .filter-bar-arrow .expand-text {
+  background-color: var(--init-mint);
 }
 .dark .filter-arrow-up {
-    fill: var(--init-gold);
+  fill: var(--init-gold);
 }
 .dark .remote-checkbox {
-    accent-color: var(--init-gold)
+  accent-color: var(--init-gold);
 }
 .dark .filter-bar-arrow .expand-text {
-    background-color: var(--init-background);
+  background-color: var(--init-background);
 }
-.dark .filter-bar-arrow .expand-text, .dark .filter-bar-skills .skills-checkboxes label span{
-    color: var(--init-blue);
+.dark .filter-bar-arrow .expand-text,
+.dark .filter-bar-skills .skills-checkboxes label span {
+  color: var(--init-blue);
 }

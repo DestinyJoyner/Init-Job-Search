@@ -425,11 +425,6 @@
   grid-template-columns: 3fr 1fr 3fr;
   grid-template-rows: 20vh 40vh 20vh;
   align-items: center;
-  background-image: url("/public/init-tree-mint.png");
-  background-size: 33% 21%;
-  background-repeat: no-repeat;
-  background-position-y: 575px ;
-  background-position-x: 20px ;
 }
 
 .home-final a {
@@ -440,15 +435,13 @@
   height: 130px;
   width: 130px;
   position: relative;
-  background-image: url(/public/init-rotate-tree.png);
+  background-image: url(/public/logo-rotate.png);
+  background-size: 700px 700px;
   background-color: var(--init-background);
-  background-size: 120px 120px;
   background-repeat: no-repeat;
-  background-position-x: 8px;
-  background-position-y: -5px;
+  background-position-x: -315px;
+  background-position-y: -250px;
   display: grid;
-  grid-template-columns: unset;
-  grid-template-rows: unset;
   justify-items: center;
   align-items: center;
 }
@@ -483,7 +476,6 @@
   grid-row: 1 ;
   grid-column: 2/4;
   width: 70%;
-  /* color: var(--init-blue); */
   color: #4c616c;
   font-size: 32px;
   font-weight: 600;
@@ -508,9 +500,9 @@
 }
 
 .init-tree-final {
-  grid-row: 1;
-  grid-column: 2/4;
-  height: 19vh;
+  grid-row: 3;
+  grid-column: 2;
+  height: 20vh;
   justify-self: center;
   position: relative;
 }
@@ -524,7 +516,7 @@
   background-color: #81c2ee;
 }
 .dark .home-final {
-  background-color: rgb(241, 235, 214);
+  /* background-color: rgb(241, 235, 214); */
   background-color: rgb(251, 226, 138);
 }
 
@@ -533,9 +525,6 @@
   color: var(--init-gold);
 }
 
-.dark .home-final a {
-  background-image: url("/public/init-rotate-mint.png");
-}
 
 .dark .misc4 {
   border-color: var(--init-mint);

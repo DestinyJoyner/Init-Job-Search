@@ -136,7 +136,7 @@ function HomePage() {
       </section>
       {/* LAST SLIDE */}
       <section className="home-final">
-        {/* <img src={finalTree} alt="init-tree" className="init-tree-final" /> */}
+        <img src={finalTree} alt="init-tree" className="init-tree-final" />
 
         <div className="misc4">
           <img src={teamStock} alt="misc" />

@@ -13,6 +13,7 @@ function JobsIndex() {
    return (
        <div className="jobsIndex">
            <SearchBar />
+           <section className="jobListings grid-center">
            { !triggerBonus ?
                jobs.map(obj =>{
                 if(obj["job_id"] !== 22){
@@ -26,6 +27,7 @@ function JobsIndex() {
                <Bonus 
                jobObj={bonus}/>
            }
+           </section>
        </div>
    );
 }
