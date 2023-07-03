@@ -13,11 +13,12 @@ function JobsCard({ jobObj }) {
       <div className="job-card">
         <section className="job-card-details">
         <span className="job-card-title">{title}</span>
-        <section className="job-card-company">
-          <span>{company}</span>
-          {full_remote && <span className="job-card-remote">REMOTE</span>}
-        </section>
+          <span className="job-card-company">{company}</span>
+          {/* {full_remote && <span className="job-card-remote">REMOTE</span>} */}
+          <section className="job-card-location">
         <span className="job-card-city">{convertCities(city)}</span>
+        {full_remote && <span className="job-card-remote">REMOTE</span>}
+        </section>
         </section>
         <section className="job-card-skills">
           <SkillsComponent skillsArr={combineSkills} justList={true} />
