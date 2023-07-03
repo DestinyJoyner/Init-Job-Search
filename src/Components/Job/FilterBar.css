@@ -26,6 +26,7 @@
 }
 .filter-bar-arrow span {
   background-color: var(--init-background);
+  background-color: white;
   border: var(--init-mint) 1px solid;
   font-size: 14px;
   border-radius: 20px;
@@ -58,8 +59,9 @@
 
 .filter-bar-expanded {
   width: 95%;
-  background-color: white;
-  border: 2px solid var(--init-mint);
+  background-color: #31d3c0;
+  /* background: radial-gradient(circle, rgba(222,239,249,1) 0%, rgba(65,205,188,1) 100%); */
+  border: 2px solid var(--init-blue);
   border-radius: 20px;
   padding-bottom: 1vh;
   display: grid;
@@ -81,11 +83,11 @@
 .filter-bar-expanded hr {
   grid-row: 2;
   grid-column: span 2;
-  border: var(--init-mint) 1px solid;
+  border: var(--init-blue) 1px solid;
   width: 90%;
   justify-self: center;
   position: relative;
-  bottom: 0.5vh;
+  /* bottom: 0.5vh; */
 }
 
 .filter-bar-expanded select {
@@ -95,17 +97,18 @@
   height: 35px;
   margin-left: 10px;
   border-radius: 20px;
-  border: 1px solid var(--init-mint);
+  border: 1px solid var(--init-blue);
   font-size: 17px;
   text-align: center;
   background-color: var(--init-background);
+  /* background-color:rgba(255, 255, 255, 0.879); */
   color: var(--init-blue);
 }
 
 .filter-bar-toggle {
   grid-column: 2;
   grid-row: 1;
-  color: var(--init-mint);
+  color: var(--init-blue);
   right: 3vw;
 }
 .filter-bar-toggle span {
@@ -119,12 +122,13 @@
   grid-column: span 2;
   justify-self: center;
   display: grid;
-  background-color: var(--init-background);
-  border: 1px solid var(--init-mint);
+  /* background-color: var(--init-background); */
+  /* background-color:rgba(255, 255, 255, 0.834); */
+  /* border: 1px solid var(--init-blue); */
   border-radius: 20px;
   padding-top: 0.5vh;
   height: 95%;
-  width: 95%;
+  width: 98%;
 }
 .filter-bar-skills .skills-component {
   margin-top: 0.5vh;
@@ -137,9 +141,10 @@
 }
 
 .filter-bar-skills .skills-component svg {
-  height: 2em;
-  width: 2em;
-  color: rgb(144, 143, 143);
+  height: 2.25em;
+  width: 2.25em;
+  /* color: rgb(110, 109, 109); */
+  color: var(--init-background);
 }
 
 .filter-bar-skills .skills-checkboxes {
@@ -167,7 +172,7 @@
 
 /* DARK MODE UPDATES */
 .dark .filter-bar-arrow .expand-text {
-  background-color: var(--init-mint);
+  background-color: white;
 }
 .dark .filter-arrow-up {
   fill: var(--init-gold);
@@ -175,9 +180,7 @@
 .dark .remote-checkbox {
   accent-color: var(--init-gold);
 }
-.dark .filter-bar-arrow .expand-text {
-  background-color: var(--init-background);
-}
+
 .dark .filter-bar-arrow .expand-text,
 .dark .filter-bar-skills .skills-checkboxes label span {
   color: var(--init-blue);
