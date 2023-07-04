@@ -1,6 +1,5 @@
 .search-component {
     display: grid;
-    justify-items: center;
     grid-template-rows: 6vh auto;
     row-gap: 1vh;
     width: 100%;
@@ -8,15 +7,7 @@
 
 }
 
-/* .search-component .search-bar-icon {
-    position: relative;
-    left: 6vw;
-    top: .7vh;
-    z-index: 1;
-} */
-
-.search-component label {
-    width: 100%;
+.search-component .search-bar-label {
     grid-row: 1;
     display: flex;
 } 
@@ -24,20 +15,16 @@
 .search-bar-logo {
     height: 35px;
     position: relative;
-    left: 6vw;
+    left: 4vw;
     top: .9vh;
     z-index: 10;
 }
 .searchbar {
-    /* grid-row: 1; */
-    /* border: 2px solid var(--init-mint); */
-    width: 90%;
+    width: 85%;
     height: 4vh;
-    /* border-radius: 20px; */
-    text-indent: 10vw;
+    text-indent: 9vw;
     font-size: 20px;
     position: relative;
     right: 3vw;
     margin-top: 1vh;
-
 }

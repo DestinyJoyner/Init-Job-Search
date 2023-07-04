@@ -101,7 +101,7 @@ function SearchBar() {
 
   return (
     <section className="search-component">
-      <label htmlFor={search}>
+      <label htmlFor={search} className="searchbar-label">
         {/* {searchIcon} */}
         <img src={searchLogo} alt="search-logo" className="search-bar-logo" />
         <input

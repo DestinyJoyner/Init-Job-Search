@@ -12,6 +12,7 @@ import { BiChevronDown } from "react-icons/bi"
 import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
+
 function FilterBar({ searchOptions, setSearchOptions }) {
   const [filterOptions, setFilterOptions] = useState(false);
   const [cityDropdown, setCityDropdown] = useState("");
@@ -53,9 +54,12 @@ function FilterBar({ searchOptions, setSearchOptions }) {
           }
         />
         <span className="filter-skills"
-        onClick={() => setFilterOptions(!filterOptions)}><span>Skills</span><BiChevronDown size={"20px"}/></span>
-      <span className="filter-bar-arrow">
-        {/* {!filterOptions ? (
+        onClick={() => setFilterOptions(!filterOptions)}>
+          <span>Skills</span>
+            <BiChevronDown size={"20px"}/>
+        </span>
+      {/* <span className="filter-bar-arrow">
+        {!filterOptions ? (
           <BsCaretDownFill
             className="filter-arrow-up"
             onClick={() => setFilterOptions(!filterOptions)}
@@ -75,8 +79,8 @@ function FilterBar({ searchOptions, setSearchOptions }) {
           onClick={() => setFilterOptions(!filterOptions)}
         >
           {filterOptions ? "Collapse Filter Options" : "Expand Filter Options"}
-        </span> */}
-        {/* <label htmlFor="remote-checkbox">
+        </span>
+        <label htmlFor="remote-checkbox">
           <input
             className={
               filterOptions
@@ -106,8 +110,8 @@ function FilterBar({ searchOptions, setSearchOptions }) {
           >
             Remote
           </span>
-        </label> */}
-      </span>
+        </label>
+      </span> */}
 
       {/* expanded filter bar */}
       <section
@@ -143,14 +147,14 @@ function FilterBar({ searchOptions, setSearchOptions }) {
         </span>
 
         <div className="filter-bar-skills">
-          {!skillView ? (
+          {!skillView ? 
             <SkillsComponent
               key={uuidv4()}
               checkedArr={searchOptions.skills}
               stateVar={searchOptions}
               setFunction={setSearchOptions}
             />
-          ) : (
+           : 
             <SkillsComponent
               key={uuidv4()}
               checkbox={true}
@@ -159,7 +163,7 @@ function FilterBar({ searchOptions, setSearchOptions }) {
                 handleSkillSelection(event, searchOptions, setSearchOptions)
               }
             />
-          )}
+          }
         </div>
         <hr />
       </section>
