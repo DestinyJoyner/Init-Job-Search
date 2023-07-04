@@ -1,8 +1,8 @@
 .filter-bar {
   grid-row: 2;
-  width: 90%;
+  width: 94%;
   display: grid;
-  grid-template-columns: 1.2fr repeat(2,1fr);
+  grid-template-columns: 1fr 1fr .5fr;
   grid-template-rows: 4vh auto;
   row-gap: .5vh;
   justify-items: center;
@@ -32,13 +32,26 @@
   border: unset;
   background-color: unset;
   accent-color: var(--init-blue);
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   /* left: 3vw; */
 }
 .filter-checkbox span {
   width: 100%;
   left: 2vw;
+}
+
+.filter-skills {
+  align-self: center;
+  border-bottom: 2px solid var(--init-mint);
+  padding-bottom: 1.6vh;
+}
+.filter-skills span {
+  top: .8vh;
+}
+.filter-skills svg {
+  left: 3.5vw;
+  top: 1.3vh;
 }
 
 
@@ -49,7 +62,7 @@
 .filter-bar-toggle,
 .filter-bar-arrow span,
 .filter-bar-skills .skills-checkboxes,
-.filter-bar-skills .skills-checkboxes label span, .filter-checkbox input, .filter-checkbox span {
+.filter-bar-skills .skills-checkboxes label span, .filter-checkbox input, .filter-checkbox span, .filter-skills svg,.filter-skills span{
   position: relative;
 }
 

@@ -8,6 +8,7 @@ import {
   handleSkillSelection,
 } from "./Functions/SearchBarFunctions.js";
 import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
+import { BiChevronDown } from "react-icons/bi"
 import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
@@ -51,6 +52,8 @@ function FilterBar({ searchOptions, setSearchOptions }) {
             )
           }
         />
+        <span className="filter-skills"
+        onClick={() => setFilterOptions(!filterOptions)}><span>Skills</span><BiChevronDown size={"20px"}/></span>
       <span className="filter-bar-arrow">
         {/* {!filterOptions ? (
           <BsCaretDownFill
