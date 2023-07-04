@@ -19,8 +19,40 @@ function FilterBar({ searchOptions, setSearchOptions }) {
 
   return (
     <div className="filter-bar">
+      <label htmlFor="filter-checkbox" className="filter-checkbox">
+          <input
+            id="isRemote"
+            type="checkbox"
+            value={remoteSearch}
+            checked={remoteSearch}
+            onChange={(event) =>
+              handleSearchBar(
+                event,
+                remoteSearch,
+                setRemoteSearch,
+                searchOptions,
+                setSearchOptions
+              )
+            }
+          />
+          <span>Remote</span>
+        </label>
+       <Dropdown
+          idVal={"city"}
+          stateVar={cityDropdown}
+          optionsArray={dropdownCities}
+          onChange={(event) =>
+            handleSearchBar(
+              event,
+              cityDropdown,
+              setCityDropdown,
+              searchOptions,
+              setSearchOptions
+            )
+          }
+        />
       <span className="filter-bar-arrow">
-        {!filterOptions ? (
+        {/* {!filterOptions ? (
           <BsCaretDownFill
             className="filter-arrow-up"
             onClick={() => setFilterOptions(!filterOptions)}
@@ -40,8 +72,8 @@ function FilterBar({ searchOptions, setSearchOptions }) {
           onClick={() => setFilterOptions(!filterOptions)}
         >
           {filterOptions ? "Collapse Filter Options" : "Expand Filter Options"}
-        </span>
-        <label htmlFor="remote-checkbox">
+        </span> */}
+        {/* <label htmlFor="remote-checkbox">
           <input
             className={
               filterOptions
@@ -71,7 +103,7 @@ function FilterBar({ searchOptions, setSearchOptions }) {
           >
             Remote
           </span>
-        </label>
+        </label> */}
       </span>
 
       {/* expanded filter bar */}
@@ -82,7 +114,7 @@ function FilterBar({ searchOptions, setSearchOptions }) {
             : "filter-bar-expanded slide-up"
         }
       >
-        <Dropdown
+        {/* <Dropdown
           idVal={"city"}
           stateVar={cityDropdown}
           optionsArray={dropdownCities}
@@ -95,7 +127,7 @@ function FilterBar({ searchOptions, setSearchOptions }) {
               setSearchOptions
             )
           }
-        />
+        /> */}
         {/* skills search options */}
         <span className="filter-bar-toggle">
           <MdChangeCircle

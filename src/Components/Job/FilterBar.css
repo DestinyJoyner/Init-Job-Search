@@ -1,10 +1,46 @@
 .filter-bar {
   grid-row: 2;
-  width: 100%;
+  width: 90%;
   display: grid;
+  grid-template-columns: 1.2fr repeat(2,1fr);
   grid-template-rows: 4vh auto;
+  row-gap: .5vh;
   justify-items: center;
+  
+  font-size: 18px;
 }
+
+/* Dropdown */
+.filter-bar select {
+  grid-column: 1;
+  height: 4.5vh;
+  width: 100%;
+  font-size: 18px;
+  text-align: left;
+  border: none;
+  border-bottom: 2px solid var(--init-mint);
+  background-color: var(--init-background);
+  color: var(--init-charcoal);
+}
+
+/* Remote Checkbox */
+.filter-checkbox {
+  grid-column: 3;
+  align-items: center;
+}
+.filter-checkbox input {
+  border: unset;
+  background-color: unset;
+  accent-color: var(--init-blue);
+  width: 35px;
+  height: 35px;
+  /* left: 3vw; */
+}
+.filter-checkbox span {
+  width: 100%;
+  left: 2vw;
+}
+
 
 .filter-bar-arrow,
 .filter-bar-arrow svg,
@@ -13,7 +49,7 @@
 .filter-bar-toggle,
 .filter-bar-arrow span,
 .filter-bar-skills .skills-checkboxes,
-.filter-bar-skills .skills-checkboxes label span {
+.filter-bar-skills .skills-checkboxes label span, .filter-checkbox input, .filter-checkbox span {
   position: relative;
 }
 
@@ -39,7 +75,7 @@
   color: var(--init-blue);
 }
 
-.filter-bar-arrow .remote-label {
+/* .filter-bar-arrow .remote-label {
   border: unset;
   background-color: unset;
   font-size: 18px;
@@ -55,7 +91,7 @@
 }
 .filter-bar-arrow .filter-remote-label {
   background-color: unset;
-}
+} */
 
 .filter-bar-expanded {
   width: 95%;
@@ -90,7 +126,7 @@
   /* bottom: 0.5vh; */
 }
 
-.filter-bar-expanded select {
+/* .filter-bar-expanded select {
   grid-column: 1;
   grid-row: 1;
   width: 80%;
@@ -101,9 +137,8 @@
   font-size: 17px;
   text-align: center;
   background-color: var(--init-background);
-  /* background-color:rgba(255, 255, 255, 0.879); */
   color: var(--init-blue);
-}
+} */
 
 .filter-bar-toggle {
   grid-column: 2;
