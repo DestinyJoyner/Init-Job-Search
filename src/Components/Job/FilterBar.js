@@ -165,7 +165,7 @@ function FilterBar({ searchOptions, setSearchOptions }) {
             />
           }
         </div>
-        <hr />
+        {/* <hr /> */}
       </section>
     </div>
   );
