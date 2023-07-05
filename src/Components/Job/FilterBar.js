@@ -7,7 +7,6 @@ import {
   handleSearchBar,
   handleSkillSelection,
 } from "./Functions/SearchBarFunctions.js";
-import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
 import { BiChevronDown } from "react-icons/bi"
 import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
@@ -19,9 +18,23 @@ function FilterBar({ searchOptions, setSearchOptions }) {
   const [remoteSearch, setRemoteSearch] = useState(false);
   const [skillView, setSkillView] = useState(false);
 
+  function remoteClick(){
+
+  }
+
   return (
     <div className="filter-bar">
-      <label htmlFor="filter-checkbox" className="filter-checkbox">
+      <button 
+      id="isRemote"
+      className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
+      onClick={(event) => handleSearchBar(
+        event,
+        remoteSearch,
+        setRemoteSearch,
+        searchOptions,
+        setSearchOptions
+      ) }>REMOTE</button>
+      {/* <label htmlFor="filter-checkbox" className="filter-checkbox">
           <input
             id="isRemote"
             type="checkbox"
@@ -38,7 +51,7 @@ function FilterBar({ searchOptions, setSearchOptions }) {
             }
           />
           <span>Remote</span>
-        </label>
+        </label> */}
        <Dropdown
           idVal={"city"}
           stateVar={cityDropdown}
@@ -58,60 +71,6 @@ function FilterBar({ searchOptions, setSearchOptions }) {
           <span>Skills</span>
             <BiChevronDown size={"20px"}/>
         </span>
-      {/* <span className="filter-bar-arrow">
-        {!filterOptions ? (
-          <BsCaretDownFill
-            className="filter-arrow-up"
-            onClick={() => setFilterOptions(!filterOptions)}
-            color={"#41CDBC"}
-            size={"25px"}
-          />
-        ) : (
-          <BsCaretUpFill
-            className="filter-arrow-up"
-            onClick={() => setFilterOptions(!filterOptions)}
-            color={"#0914AE"}
-            size={"25px"}
-          />
-        )}
-        <span
-          className={filterOptions ? "filter-span expand-text" : "expand-text"}
-          onClick={() => setFilterOptions(!filterOptions)}
-        >
-          {filterOptions ? "Collapse Filter Options" : "Expand Filter Options"}
-        </span>
-        <label htmlFor="remote-checkbox">
-          <input
-            className={
-              filterOptions
-                ? "filter-remote remote-checkbox"
-                : "remote-checkbox"
-            }
-            id="isRemote"
-            type="checkbox"
-            value={remoteSearch}
-            checked={remoteSearch}
-            onChange={(event) =>
-              handleSearchBar(
-                event,
-                remoteSearch,
-                setRemoteSearch,
-                searchOptions,
-                setSearchOptions
-              )
-            }
-          />
-          <span
-            className={
-              filterOptions
-                ? "filter-remote-label remote-label"
-                : "remote-label"
-            }
-          >
-            Remote
-          </span>
-        </label>
-      </span> */}
 
       {/* expanded filter bar */}
       <section
@@ -121,20 +80,7 @@ function FilterBar({ searchOptions, setSearchOptions }) {
             : "filter-bar-expanded slide-up"
         }
       >
-        {/* <Dropdown
-          idVal={"city"}
-          stateVar={cityDropdown}
-          optionsArray={dropdownCities}
-          onChange={(event) =>
-            handleSearchBar(
-              event,
-              cityDropdown,
-              setCityDropdown,
-              searchOptions,
-              setSearchOptions
-            )
-          }
-        /> */}
+      
         {/* skills search options */}
         <span className="filter-bar-toggle">
           <MdChangeCircle

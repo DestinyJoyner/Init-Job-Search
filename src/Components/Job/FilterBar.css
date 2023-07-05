@@ -44,6 +44,22 @@
   bottom: .2vh;
 }
 
+/* remote button */
+.filter-remote-button {
+  all: unset;
+  color: var(--init-blue);
+  top: .2vh;
+  right: 1vw;
+  
+}
+.remote-clicked {
+  background-color: var(--init-gold);
+  border-radius: 20px;
+  padding: 0 5px;
+  color: var(--init-charcoal);
+  font-weight: 600;
+}
+
 .filter-skills {
   grid-column: 2;
   grid-row: 1;
@@ -67,7 +83,7 @@
 .filter-bar-toggle,
 .filter-bar-arrow span,
 .filter-bar-skills .skills-checkboxes,
-.filter-bar-skills .skills-checkboxes label span, .filter-checkbox input, .filter-checkbox span, .filter-skills svg,.filter-skills span{
+.filter-bar-skills .skills-checkboxes label span, .filter-checkbox input, .filter-checkbox span, .filter-skills svg,.filter-skills span, .filter-remote-button{
   position: relative;
 }
 
