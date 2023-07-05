@@ -2,14 +2,14 @@
 .slide-nav {
     background-color: #0cbdbd;
     display: grid;
-    grid-template-rows: 15vh repeat(5, 9vh) 5vh 8vh 5vh 10vh  ;
+    grid-template-rows: 20vh 5vh repeat(5, 9vh) 5vh 8vh 10vh  ;
     align-items: center;
     position: fixed;
     left: 0;
-    top: 10vh;
+    top: 5vh;
     width: 83vw;
     border-right: 40px solid #ffde59;
-    height: 90vh;
+    height: 98vh;
     z-index: 100;
     transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
     padding-left: 30px;
@@ -21,6 +21,28 @@
   .nav-close {
     transform: translate3d(-110vw, 0, 0);
   }
+
+  .slide-nav-header {
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    height: 100%;
+    width: 110%;
+    position: relative;
+    right: 8vw;
+  }
+
+  .slide-nav-header-logo-container {
+    display: grid;
+    justify-items: center;
+    background-color: var(--init-background);
+   padding: 1vh 0;
+  }
+
+  .slide-nav-header-logo {
+    grid-column: 1;
+  }
   
   .slogan {
     position: relative;
@@ -28,9 +50,13 @@
     font-style: italic;
     font-size: 24px;
     color: var(--init-gold);
-    height: 5vh;
-    width: 90%;
+    width: 100%;
     text-align: center;
+  }
+
+  .top-slide-nav-line {
+    grid-row: 2;
+    width: 90%;
   }
   .slide-nav a {
     color: var(--init-blue);
@@ -38,7 +64,8 @@
     font-size: 22px;
   }
   
-  .nav-line {
+  .bottom-slide-nav-line {
+    grid-row: 8;
     width: 90%;
   }
   

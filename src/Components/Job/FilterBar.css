@@ -50,14 +50,13 @@
   color: var(--init-blue);
   top: .2vh;
   right: 1vw;
-  
+  font-weight: 600;
 }
 .remote-clicked {
   background-color: var(--init-gold);
   border-radius: 20px;
   padding: 0 5px;
   color: var(--init-charcoal);
-  font-weight: 600;
 }
 
 .filter-skills {
