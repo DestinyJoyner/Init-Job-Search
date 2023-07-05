@@ -1,10 +1,80 @@
 .filter-bar {
   grid-row: 2;
-  width: 100%;
+  width: 98%;
   display: grid;
+  grid-template-columns: .7fr .5fr .5fr;
   grid-template-rows: 4vh auto;
+  row-gap: .5vh;
   justify-items: center;
+  font-size: 18px;
 }
+
+/* Dropdown */
+.filter-bar select {
+  grid-column: 1;
+  grid-row: 1;
+  height: 4.5vh;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  /* border-bottom: 2px solid var(--init-mint); */
+  background-color: var(--init-background);
+  color: var(--init-charcoal);
+}
+
+/* Remote Checkbox */
+.filter-checkbox {
+  grid-column: 3;
+  align-items: center;
+  justify-self: left;
+}
+.filter-checkbox input {
+  border: unset;
+  background-color: unset;
+  accent-color: var(--init-blue);
+  width: 25px;
+  height: 25px;
+  top: .5vh;
+
+}
+.filter-checkbox span {
+  width: 100%;
+  left: 2vw;
+  bottom: .2vh;
+}
+
+/* remote button */
+.filter-remote-button {
+  all: unset;
+  color: var(--init-blue);
+  top: .2vh;
+  right: 1vw;
+  
+}
+.remote-clicked {
+  background-color: var(--init-gold);
+  border-radius: 20px;
+  padding: 0 5px;
+  color: var(--init-charcoal);
+  font-weight: 600;
+}
+
+.filter-skills {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  /* border-bottom: 2px solid var(--init-mint); */
+  padding-bottom: 1.6vh;
+}
+.filter-skills span {
+  top: .8vh;
+}
+.filter-skills svg {
+  left: 3.5vw;
+  top: 1.3vh;
+}
+
 
 .filter-bar-arrow,
 .filter-bar-arrow svg,
@@ -13,60 +83,20 @@
 .filter-bar-toggle,
 .filter-bar-arrow span,
 .filter-bar-skills .skills-checkboxes,
-.filter-bar-skills .skills-checkboxes label span {
+.filter-bar-skills .skills-checkboxes label span, .filter-checkbox input, .filter-checkbox span, .filter-skills svg,.filter-skills span, .filter-remote-button{
   position: relative;
 }
 
-.filter-bar-arrow {
-  left: 3vw;
-  width: 90%;
-}
-.filter-bar-arrow svg {
-  right: 1vw;
-}
-.filter-bar-arrow span {
-  background-color: var(--init-background);
-  background-color: white;
-  border: var(--init-mint) 1px solid;
-  font-size: 14px;
-  border-radius: 20px;
-  width: fit-content;
-  text-align: center;
-  padding: 2px 8px;
-  bottom: 0.5vh;
-}
-.expand-text {
-  color: var(--init-blue);
-}
-
-.filter-bar-arrow .remote-label {
-  border: unset;
-  background-color: unset;
-  font-size: 18px;
-  left: 8vw;
-  bottom: 0.5vh;
-}
-.remote-checkbox {
-  background-color: var(--init-background);
-  accent-color: var(--init-blue);
-  width: 20px;
-  height: 20px;
-  left: 8vw;
-}
-.filter-bar-arrow .filter-remote-label {
-  background-color: unset;
-}
-
 .filter-bar-expanded {
+  grid-column: span 3;
+  grid-row: 2;
   width: 95%;
-  background-color: #31d3c0;
-  /* background: radial-gradient(circle, rgba(222,239,249,1) 0%, rgba(65,205,188,1) 100%); */
-  border: 2px solid var(--init-blue);
-  border-radius: 20px;
-  padding-bottom: 1vh;
+  border:none;
+  border-top: 2px solid var(--init-mint);
+  border-bottom: 2px solid var(--init-mint);
+  /* border-radius: 20px; */
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
-  grid-template-rows: 1fr 0.1fr 3fr;
+  grid-template-rows: 1fr 3fr;
   row-gap: 0.5vh;
   align-items: center;
   overflow: hidden;
@@ -76,99 +106,77 @@
 }
 
 .slide-down {
-  height: 24vh;
+  height: 21vh;
   visibility: visible;
 }
 
-.filter-bar-expanded hr {
+/* .filter-bar-expanded hr {
   grid-row: 2;
-  grid-column: span 2;
-  border: var(--init-blue) 1px solid;
+  border: var(--init-mint) 1px solid;
   width: 90%;
   justify-self: center;
-  position: relative;
-  /* bottom: 0.5vh; */
-}
-
-.filter-bar-expanded select {
-  grid-column: 1;
-  grid-row: 1;
-  width: 80%;
-  height: 35px;
-  margin-left: 10px;
-  border-radius: 20px;
-  border: 1px solid var(--init-blue);
-  font-size: 17px;
-  text-align: center;
-  background-color: var(--init-background);
-  /* background-color:rgba(255, 255, 255, 0.879); */
-  color: var(--init-blue);
-}
+} */
 
 .filter-bar-toggle {
-  grid-column: 2;
   grid-row: 1;
   color: var(--init-blue);
-  right: 3vw;
+  /* top: .5vh; */
+  justify-self: center;
 }
 .filter-bar-toggle span {
   position: relative;
-  bottom: 0.5vh;
+  bottom: 0.6vh;
   left: 1vw;
   font-size: 18px;
   color: var(--init-blue);
 }
-.filter-bar-skills {
-  grid-column: span 2;
-  justify-self: center;
-  display: grid;
-  /* background-color: var(--init-background); */
-  /* background-color:rgba(255, 255, 255, 0.834); */
-  /* border: 1px solid var(--init-blue); */
-  border-radius: 20px;
-  padding-top: 0.5vh;
-  height: 95%;
-  width: 98%;
-}
-.filter-bar-skills .skills-component {
-  margin-top: 0.5vh;
-  grid-column: span 2;
-  height: 95%;
+
+.filter-bar-expanded .skills-component {
+  /* margin-top: 0.5vh; */
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  row-gap: 1vh;
+  row-gap: .5vh;
   justify-items: center;
+  margin-bottom: .5vh;
 }
 
-.filter-bar-skills .skills-component svg {
-  height: 2.25em;
-  width: 2.25em;
-  /* color: rgb(110, 109, 109); */
-  color: var(--init-background);
+.filter-bar-expanded .skills-component svg {
+  height: 2em;
+  width: 2em;
+  color: rgb(167, 167, 167);
+  /* color: var(--init-charcoal); */
 }
 
-.filter-bar-skills .skills-checkboxes {
-  grid-column: span 2;
+.filter-bar-expanded .skills-checkboxes {
+  height: 100%;
+  grid-row: 3;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 1px;
-  align-items: center;
-  left: 4vw;
+  grid-template-columns:repeat(3,1fr);
+  row-gap: 1.5vh;
+  column-gap: 7vw;
+  justify-items: center;
+  margin-left: 2vw;
+  margin-bottom: 1vh;
 }
-.filter-bar-skills .skills-checkboxes label {
+
+.filter-bar-expanded .skills-checkboxes label {
+  display: grid;
+  grid-template-columns: .5fr 6fr;
   margin-left: 1vw;
-  height: 3vh;
+  width: 100px;
+  /* height: 20px; */
 }
-.filter-bar-skills .skills-checkboxes label input {
-  margin-right: 1.2vw;
+.filter-bar-expanded .skills-checkboxes label input {
   height: 20px;
   width: 20px;
 }
-.filter-bar-skills .skills-checkboxes label span {
-  bottom: 0.45vh;
-  font-size: 16px;
+.filter-bar-expanded .skills-checkboxes label span {
+  font-size: 18px;
+  left: 1vw;
 }
+
 
 /* DARK MODE UPDATES */
 .dark .filter-bar-arrow .expand-text {
