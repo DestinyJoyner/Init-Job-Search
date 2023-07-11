@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { useContextProvider } from "../../Providers/Provider";
 import Header from "../Job/Header";
 import SkillsComponent from "../Job/SkillsComponent.js";
 import { team } from "./AboutData";
@@ -8,6 +9,7 @@ import { GrMail } from "react-icons/gr";
 import "../App/AboutPage.css";
 
 function AboutPage() {
+  const { setAppHeader } = useContextProvider()
   const [profileCard, setProfileCard] = useState(team["6"]);
 
   const iconArr = [
@@ -24,9 +26,11 @@ function AboutPage() {
     }
   }
 
+  useEffect(() => setAppHeader("About inIT"), [])
+
   return (
     <div className="about grid-center">
-      <Header header={"Meet The Team"} />
+      {/* <Header header={"Meet The Team"} /> */}
       <div className="dev-icons grid-center">
         <img
           id="1"

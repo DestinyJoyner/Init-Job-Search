@@ -42,15 +42,18 @@
    padding: 1vh 0;
   }
 
+  .slide-nav-header-logo{
+    height: 78px;
+  }
   .slide-nav-close {
-    grid-column: 1;
+    grid-column: 3;
     grid-row: 1;
     align-self: center;
     height: 2.5em;
     width: 2.5em;
     color: var(--init-blue);
     position: relative;
-    left: 6vw;
+    right: 3vw;
   }
 
   .slide-nav-header-logo {
