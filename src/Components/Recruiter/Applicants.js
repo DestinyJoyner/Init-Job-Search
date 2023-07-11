@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useJobProvider } from "../../Providers/JobProvider";
+import { useContextProvider } from "../../Providers/Provider";
 import { v4 as uuidv4 } from "uuid";
 import Header from "../Job/Header.js";
 import ApplicantCard from "./ApplicantCard";
@@ -9,6 +10,7 @@ import "./Applicants.css";
 
 export default function Applicants() {
   const { recruiterJobs, recruiterID, showAccess, setShowAccess, jobID, isSignedIn, isRecruiterAcc } = useJobProvider();
+  const {setAppHeader} = useContextProvider()
   const navigate = useNavigate();
   const [applicants, setApplicants] = useState([]);
   const [thisJob, setThisJob] = useState({});
@@ -25,11 +27,12 @@ export default function Applicants() {
       navigate("/not-found")
     }
   }, [jobID, recruiterJobs.length]);
+  setAppHeader("Applicants")
 
   return (
     showAccess &&
       <div className="job-applicant-page">
-      <Header header={"Job Applicants"} />
+      {/* <Header header={"Job Applicants"} /> */}
       <section className="job-applicant-job-details">
         <Link to={`/jobs/${thisJob.id}`} className="applicant-title">
           <h2>{thisJob.title}</h2>

@@ -1,7 +1,7 @@
 .job-applicant-page {
-    height: 84vh;
+    height: 95vh;
     display: grid;
-    grid-template-rows: 5vh 16vh 58vh 5vh;
+    grid-template-rows: 16vh 58vh 5vh;
 }
 
 .job-applicant-page .app-header {
