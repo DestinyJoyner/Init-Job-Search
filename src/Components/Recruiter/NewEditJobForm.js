@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { useContextProvider } from "../../Providers/Provider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import Header from "../Job/Header.js";
 import TextInput from "../Job/Inputs/TextInput";
@@ -26,6 +27,7 @@ export default function NewEditJobForm({ edit }) {
     isRecruiterAcc,
     isSignedIn,
   } = useJobProvider();
+  const {setAppHeader} = useContextProvider()
   const navigate = useNavigate();
   const [originalData, setOriginalData] = useState({});
   const [jobDropdown, setJobDropdown] = useState("");
@@ -150,6 +152,7 @@ export default function NewEditJobForm({ edit }) {
   //   useEffect for edit
   useEffect(() => {
     if (edit) {
+      setAppHeader("Edit Job Posting")
       axios
         .get(`${API}/jobs/${jobID}`)
         .then(({ data }) => {
@@ -173,15 +176,19 @@ export default function NewEditJobForm({ edit }) {
         })
         .catch((err) => console.log(err));
     }
+    else {
+      setAppHeader("Post New Job")
+    }
     if (isSignedIn || !isRecruiterAcc) {
       navigate("/not-found");
     }
+   
   }, []);
 
   return (
     ((isRecruiterAcc && !edit) || editAccess) && (
       <div className="job-form-page">
-        <Header header={edit ? "Edit Post" : "New Job"} />
+        {/* <Header header={edit ? "Edit Post" : "New Job"} /> */}
 
         <form className="job-form" onSubmit={(event) => handleSubmit(event)}>
           <TextInput
