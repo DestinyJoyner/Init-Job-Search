@@ -9,9 +9,10 @@ function Header({header, noBack}) {
         <div className="app-header">
         {!noBack && <TfiAngleLeft
         size={"25px"}
+        className="app-header-back"
         onClick={() => navigate(-1)}
         />}
-        <h1>{header}</h1>
+        <h1><span>{header}</span></h1>
         </div>
     );
 }

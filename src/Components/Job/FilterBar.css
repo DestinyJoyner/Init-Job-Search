@@ -50,14 +50,13 @@
   color: var(--init-blue);
   top: .2vh;
   right: 1vw;
-  
+  font-weight: 600;
 }
 .remote-clicked {
   background-color: var(--init-gold);
   border-radius: 20px;
   padding: 0 5px;
   color: var(--init-charcoal);
-  font-weight: 600;
 }
 
 .filter-skills {
@@ -192,4 +191,17 @@
 .dark .filter-bar-arrow .expand-text,
 .dark .filter-bar-skills .skills-checkboxes label span {
   color: var(--init-blue);
+}
+
+.dark .filter-bar select {
+  background-color: var(--init-dark);
+  color: var(--init-background);
+}
+
+.dark .filter-remote-button {
+  color: var(--init-gold);
+}
+
+.dark .remote-clicked {
+  color: var(--init-charcoal);
 }

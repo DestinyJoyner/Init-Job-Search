@@ -30,6 +30,9 @@ function Provider({ children }) {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [triggerBonus, setTriggerBonus] = useState(false)
 
+  const[appHeader, setAppHeader] = useState("")
+
+
   function navbarClick() {
     setOpenNav(!openNav);
   }
@@ -64,6 +67,8 @@ function Provider({ children }) {
           setOpenNav,
           triggerBonus,
           setTriggerBonus,
+          appHeader,
+          setAppHeader,
         }}
       >
         <Nav />

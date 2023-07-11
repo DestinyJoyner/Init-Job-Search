@@ -13,7 +13,7 @@ import { GiPill } from "react-icons/gi";
 import "./JobsShow.css";
 
 function JobsShow() {
-  const { triggerBonus } = useContextProvider()
+  const { triggerBonus, setAppHeader, } = useContextProvider()
   const {
     API,
     axios,
@@ -90,16 +90,20 @@ function JobsShow() {
       .then(({ data }) => {
         setJobDetails(data);
         setSkillIdArr(convertSkills(data.skills));
+        // setAppHeader(data.title)
       })
       .catch((err) => console.log(err));
   }, [reload, jobID, applied]);
+  useEffect(() => setAppHeader("Job Details"), [])
 
   return (
     <div className="job-show">
       <section className={jobDetails.id !== 22 ? "job-show-header" : "job-show-header bonus-job"  }>
         {
           jobDetails.id !== 22 ?
-          <><Header header={jobDetails.title} />
+          <>
+          {/* <Header header={jobDetails.title} /> */}
+          <h2>{jobDetails.title}</h2>
         <div className="job-show-header-details">
           <span className="job-show-company">
             {jobCompany}

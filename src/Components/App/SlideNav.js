@@ -7,6 +7,8 @@ import { MdWorkOutline } from "react-icons/md";
 import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { BiInfoCircle } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
+import logo from "../../Assets/LOGO.png";
 import "./SlideNav.css";
 
 function SlideNav() {
@@ -57,9 +59,18 @@ function SlideNav() {
 
   return (
     <aside className={openNav ? " slide-nav nav-open" : " slide-nav nav-close"}>
-        <p className="slogan">
+      <section  className="slide-nav-header">
+        <div className="slide-nav-header-logo-container">
+        <img src={logo} alt="init-logo" className="slide-nav-header-logo" />
+        <AiOutlineClose className="slide-nav-close" onClick={() => navbarClick()} />
+        </div>
+        
+      <p className="slogan">
         Your first tech opportunity awaits
         </p>
+      </section>
+      <hr className="top-slide-nav-line"></hr>
+        
 
       {/* Login  */}
       {!isSignedIn && !isRecruiterAcc && (
@@ -104,7 +115,7 @@ function SlideNav() {
           {<FiLogOut className="nav-icons"  />} <span>Logout</span>
         </Link>
       )}
-      <hr className="nav-line"></hr>
+      <hr className="bottom-slide-nav-line"></hr>
       <label className="switch">
         <div>
           <input

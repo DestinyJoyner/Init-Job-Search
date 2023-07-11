@@ -1,16 +1,16 @@
 .job-form-page {
   display: grid;
   /* grid-template-rows: 5vh 80vh; */
-  grid-template-rows: 5vh 85vh;
-  height: 90vh;
+  /* grid-template-rows: 5vh 85vh; */
+  height: 95vh;
   justify-items: center;
   align-items: center;
 }
 
 .job-form {
   display: grid;
-  grid-template-rows: repeat(2, 6.5vh) 5vh 17vh 16vh 16vh 6vh;
-  row-gap: 1vh;
+  grid-template-rows: repeat(2, 7vh) 6vh 20vh 25vh 17vh 6vh;
+  row-gap: .5vh;
   height: 100%;
   width: 96%;
   justify-items: left;
@@ -111,29 +111,31 @@
   background-color: var(--init-background);
   border-width: 1.5px;
   width: 103%;
-  height: 9vh;
+  height: 15vh;
   padding: 5px 0px;
   padding-left: 3px;
   font-size: 18px;
   position: relative;
   right: 0.8vw;
+  bottom: 2vh;
 }
 
 .job-form label:nth-of-type(3) {
   margin-left: 3vw;
-  margin-top: 1vh;
+  /* margin-top: 1vh; */
 }
 
 .job-textarea {
   position: relative;
-  bottom: 0.5vh;
+  bottom: 2.5vh;
 }
 
 /* Tasks */
 .job-form-tasks {
   width: 95%;
   display: grid;
-  height: 15vh;
+  height: 25vh;
+  margin-top: 6vh;
 }
 
 .task-header {
@@ -141,8 +143,10 @@
   display: grid;
   grid-template-columns: 40% 50% 10%;
   width: 100%;
-  margin-right: 1vw;
-  padding-top: 2px;
+  position: relative;
+  bottom: 2vh;
+  /* margin-right: 1vw; */
+  /* padding-top: 2px; */
 }
 .task-header span:nth-child(2) {
   justify-self: right;
@@ -169,7 +173,7 @@
 .task-container {
   border-bottom: 1px solid var(--init-blue);
   width: 95%;
-  height: 12vh;
+  height: 20vh;
   max-height: 15vh;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -198,8 +202,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 95%;
-  height: 10vh;
-  margin-bottom: 3vh;
+  height: 15vh;
+  /* margin-bottom: 3vh; */
   justify-items: left;
 }
 

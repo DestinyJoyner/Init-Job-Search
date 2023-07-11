@@ -12,11 +12,12 @@ import "./RecruiterProfile.css";
 
 export default function RecruiterProfile() {
   const navigate = useNavigate();
-  const { recruiterID, axios, API, theme, isRecruiterAcc } =
+  const { recruiterID, axios, API, theme, isRecruiterAcc, setAppHeader } =
     useRecruiterProvider();
   const [recruiterDetails, setRecruiterDetails] = useState({});
 
   useEffect(() => {
+   setAppHeader("Profile")
     recruiterID
       ? axios
           .get(`${API}/recruiters/${recruiterID}`)
@@ -37,7 +38,7 @@ export default function RecruiterProfile() {
   return (
     recruiterDetails.id && (
       <div className="recruiter-profile">
-        <Header header={"Recruiter Details"} />
+        {/* <Header header={"Recruiter Details"} /> */}
         <div className="recruiter-profile-top">
           <div>
             <p>

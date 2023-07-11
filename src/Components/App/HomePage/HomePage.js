@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useContextProvider } from "../../../Providers/Provider";
 import { Link } from "react-router-dom";
 import ScrollArrow from "./ScrollArrow";
 import { TiArrowForward } from "react-icons/ti";
@@ -17,6 +18,7 @@ import screen5 from "./Images/filter-screen.png";
 import "./HomePage.css";
 
 function HomePage() {
+  const {setAppHeader} = useContextProvider()
   const refElement = useRef();
   const [textSwitch, setTextSwitch] = useState(false);
   const timeout = setInterval(() => {
@@ -24,6 +26,7 @@ function HomePage() {
   }, 3000);
 
   useEffect(() => {}, [textSwitch]);
+  useEffect(() => setAppHeader("Welcome to inIT"), [])
 
   return (
     <div ref={refElement} className="home">

@@ -1,4 +1,4 @@
-.app-header {
+/* .app-header {
     display: grid;
     grid-template-columns: 10% 80% 10%;
     align-items: center;
@@ -14,7 +14,7 @@
     justify-self: center;
     grid-column: 2;
     font-size: 36px;
-}
+} */
 
 .dark .app-header {
     background-color: var(--init-gold);

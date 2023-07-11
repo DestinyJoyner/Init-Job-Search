@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useContextProvider } from "../../Providers/Provider.js";
 import { useJobProvider } from "../../Providers/JobProvider.js";
 import { v4 as uuidv4 } from 'uuid';
@@ -7,8 +8,10 @@ import Bonus from "./Bonus.js";
 import "./JobsIndex.css"
 
 function JobsIndex() {
-    const { triggerBonus } = useContextProvider()
+    const { triggerBonus, setAppHeader } = useContextProvider()
    const { jobs, bonus } = useJobProvider()
+
+   useEffect(() => setAppHeader("inIT Jobs"), [])
 
    return (
        <div className="jobsIndex">

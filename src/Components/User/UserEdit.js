@@ -1,9 +1,12 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { useUserProvider } from "../../Providers/UserProvider.js";
+import { useContextProvider } from "../../Providers/Provider.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
 // import userIcon from "../../Assets/USER.png";
 import "./UserEdit.css";
+
 
 export default function UserEdit(props) {
   const navigate = useNavigate();
@@ -19,6 +22,8 @@ export default function UserEdit(props) {
     userSkills,
     setUserSkills,
   } = useUserProvider();
+
+  const {setAppHeader} = useContextProvider()
 
 
   const handleChange = (event) => {
@@ -70,6 +75,8 @@ export default function UserEdit(props) {
           .catch((error) => console.log(error))
       : navigate("/user");
   };
+
+  useEffect(() => setAppHeader("Edit Profile"), [])
 
   return (
     <div>
