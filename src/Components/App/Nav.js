@@ -17,11 +17,8 @@ export default function Nav() {
 
   return (
     <nav className="grid-center">
-      {!openNav ? (
         <RxHamburgerMenu className="burger" onClick={() => navbarClick()} />
-      ) : (
-        <AiOutlineClose className="burger" onClick={() => navbarClick()} />
-      )}
+      
 
       <img src={logo} alt="logo" onClick={() => logoClick()} />
 

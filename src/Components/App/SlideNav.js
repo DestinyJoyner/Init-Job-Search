@@ -7,6 +7,7 @@ import { MdWorkOutline } from "react-icons/md";
 import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { BiInfoCircle } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../Assets/LOGO.png";
 import "./SlideNav.css";
 
@@ -61,6 +62,7 @@ function SlideNav() {
       <section  className="slide-nav-header">
         <div className="slide-nav-header-logo-container">
         <img src={logo} alt="init-logo" className="slide-nav-header-logo" />
+        <AiOutlineClose className="slide-nav-close" onClick={() => navbarClick()} />
         </div>
         
       <p className="slogan">
