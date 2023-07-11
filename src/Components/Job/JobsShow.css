@@ -1,9 +1,9 @@
 .job-show {
   display: grid;
   /* grid-template-rows: 23vh 6vh 50vh 6vh; */
-  grid-template-rows: 23vh 6vh 50vh 10vh;
+  grid-template-rows: 20vh 7vh 55vh 10vh;
   justify-items: left;
-  height: 90vh;
+  height: 92vh;
   width: 100%;
   color: #1d262b;
   padding-bottom: 2.5vh;
@@ -24,6 +24,9 @@
 
 .job-show-header {
   width: 100%;
+  /* justify-self: center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px; */
   background-color: var(--init-mint);
   display: grid;
   grid-template-columns: 0.12fr 1fr;
@@ -32,12 +35,14 @@
   align-items: center;
   justify-items: left;
 }
-
+/* 
 .job-show .app-header {
   grid-column: span 2;
   height: 100%;
-}
-.job-show .app-header h1 {
+} */
+.job-show-header h2 {
+  grid-column: 2;
+  align-self: center;
   font-size: 30px;
   justify-self: left;
   margin-left: 4vw;
@@ -146,7 +151,7 @@
   grid-template-rows: auto;
   row-gap: 10px;
   width: 94%;
-  height: 48vh;
+  height: 53vh;
   overflow-y: auto;
   overflow-x: hidden;
   justify-items: left;
@@ -193,6 +198,7 @@
   font-size: 600;
   color: var(--init-blue);
   margin-right: 2vh;
+  height: 100%;
 }
 
 .job-show-applied {

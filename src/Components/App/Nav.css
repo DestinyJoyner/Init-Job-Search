@@ -40,9 +40,23 @@ nav .app-header {
  text-align: center;
  display: grid;
  align-items: center;
+ width: 100%;
+ height: 6vh;
+ color: rgb(79, 77, 77) ;
+ color: var(--init-gold);
+ 
  }
  nav .app-header h1 span {
-  font-size: 32px;
+  font-size: 20px;
+ }
+
+ /* dark mode */
+ .dark nav {
+  background-color: var(--init-gold); 
+ }
+
+ .dark .app-header h1 {
+  color: var(--init-dark);
  }
 
 
