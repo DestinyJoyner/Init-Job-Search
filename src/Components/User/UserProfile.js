@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useUserProvider } from "../../Providers/UserProvider.js";
+import { useContextProvider } from "../../Providers/Provider.js";
 import Header from "../Job/Header.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
 // import userIcon from "../../Assets/USER.png";
@@ -20,11 +21,15 @@ export default function UserProfile() {
     email,
     userID,
   } = useUserProvider();
+  const {setAppHeader} = useContextProvider()
   const [viewLess, setViewLess] = useState(true);
 
   useEffect(() => {
     if (isRecruiterAcc && !userID) {
       navigate("/recruiter");
+    }
+    else {
+      setAppHeader("Profile")
     }
   }, []);
 

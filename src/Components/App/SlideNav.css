@@ -185,3 +185,7 @@
   .dark .slide-nav-header-logo-container{
     background-color: var(--init-dark);
   }
+
+  .dark .slide-nav-close {
+    color: var(--init-gold);
+  }

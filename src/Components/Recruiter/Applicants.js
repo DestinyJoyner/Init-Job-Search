@@ -27,7 +27,8 @@ export default function Applicants() {
       navigate("/not-found")
     }
   }, [jobID, recruiterJobs.length]);
-  setAppHeader("Applicants")
+  useEffect(() => setAppHeader("Applicants"), [])
+// applicants page add skills or corresponding skills for applicant/ space for more info on job posting etc..... -> alter color scheme???
 
   return (
     showAccess &&
