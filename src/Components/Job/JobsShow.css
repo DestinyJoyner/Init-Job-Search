@@ -27,7 +27,8 @@
   /* justify-self: center;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px; */
-  background-color: var(--init-mint);
+  /* background-color: var(--init-mint); */
+  background-color: var(--init-background);
   display: grid;
   grid-template-columns: 0.12fr 1fr;
   grid-template-rows: 2fr 1fr 0.5fr 0.5fr 0.5fr;

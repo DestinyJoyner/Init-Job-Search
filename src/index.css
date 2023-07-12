@@ -17,12 +17,13 @@
 
 body {
   max-width: 450px;
+  /* background-color: var(--init-mint); */
 }
 
 /* DARK/LIGHT THEME*/
 
 .light {
-  background-color: var(--init-background);
+  background-color: var(--init-mint);
   color: var(--init-charcoal);
 }
 .dark {

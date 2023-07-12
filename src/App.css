@@ -1,4 +1,16 @@
 .App {
-  height: 92vh;
+  height: 95vh;
   overflow-y: scroll;
+  border-top-right-radius: 45px;
+  border-top-left-radius: 45px;
+  /* border: 2px solid red; */
+  z-index: 10;
+  position: relative;
+  bottom: 2vh;
+  background-color: var(--init-background);
+  padding-top: .5vh;
+}
+
+.dark .App {
+  background-color: var(--init-dark);
 }
