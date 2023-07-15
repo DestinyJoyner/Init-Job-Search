@@ -37,7 +37,7 @@ export default function RecruiterProfile() {
   }
   return (
     recruiterDetails.id && (
-      <div className="recruiter-profile">
+      <div className="recruiter-profile grid-center center">
         {/* <Header header={"Recruiter Details"} /> */}
         <div className="recruiter-profile-top">
           <div>
@@ -52,7 +52,7 @@ export default function RecruiterProfile() {
           <img src={RecruiterIcon} alt="recruiter icon" />
         </div>
         <div className="jobs-posted-header">
-          <h2>Jobs Posted</h2>
+          <h2>Jobs Posted ({recruiterDetails.jobs_posted.length})</h2>
           <img
             src={theme === "light" ? PlusBlue : PlusGold}
             alt="plus icon"

@@ -1,14 +1,17 @@
-.recruiter-profile .app-header h1 {
-    font-size: 28px;
+.recruiter-profile {
+    height: 92vh;
+    width: 98%;
+    grid-template-rows: 16vh 10vh 55vh 10vh;
 }
 
+
 .recruiter-profile-top {
-    margin: 20px 30px;
+    height: 100%;
+    width: 98%;
     font-size: 22px;
     display: grid;
     grid-template-columns: 2.5fr 1fr;
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--init-blue);
+    border-bottom: 2px solid var(--init-darkmint);
 }
 
 .recruiter-profile-top svg {
@@ -22,12 +25,14 @@
 }
 
 .recruiter-profile-top p {
+    margin: 2vh 0 0 3vw;
     padding-bottom: 10px;
     font-weight: 600;
 }
 
 .recruiter-profile-top img {
-    margin: 0 auto;
+    margin-top: 2vh;
+    /* margin: 0 auto; */
     height: 60px;
     border: 2px solid var(--init-charcoal);
     padding: 4px;
@@ -36,36 +41,41 @@
 }
 
 .recruiter-jobs {
-    margin: 20px 30px;
+    /* margin: 20px 30px; */
+    width: 94%;
     display: grid;
-    grid-auto-rows: 70px ;
+    grid-auto-rows: 13vh ;
     row-gap: 10px;
     overflow-y: scroll;
-    height: 48vh;
+    height: 54vh;
+    padding: 2vh;
 }
 
 .recruiter-profile .jobs-posted-header {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr .5fr;
+    width: 92%;
+    justify-items: left;
 }
 
 .recruiter-profile .jobs-posted-header img {
     height: 40px;
-    position: relative;
-    bottom: 4px
+    margin-left: 3vw;
 }
 
 .recruiter-profile .jobs-posted-header h2 {
-    margin: 0 30px;
     font-size: 28px;
-    margin-bottom: 4px;
+    align-self: center;
 }
 
 .recruiter-profile-new-job {
-    justify-content: center;
-    width: 100%;
-    display: flex;
-    font-size: 24px;
+    justify-self: center;
+    font-size: 26px;
+    border-top: 2px solid var(--init-darkmint);
+    width: 98%;
+    text-align: center;
+    padding-top: 2vh;
+    margin-top: 1vh;
 }
 
 .dark .recruiter-profile-top svg {
@@ -74,7 +84,7 @@ stroke: var(--init-background);
 }
 
 .dark .recruiter-profile-top {
-    border-color: var(--init-background);
+    border-color: var(--init-darkmint);
 }
 
 .dark .recruiter-profile-new-job {

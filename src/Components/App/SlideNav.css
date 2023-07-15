@@ -2,7 +2,7 @@
 .slide-nav {
     background-color: #0cbdbd;
     display: grid;
-    grid-template-rows: 20vh 5vh repeat(5, 9vh) 5vh 8vh 10vh  ;
+    grid-template-rows: 20vh 5vh repeat(5, 10vh) 5vh 8vh 10vh  ;
     align-items: center;
     position: fixed;
     left: 0;

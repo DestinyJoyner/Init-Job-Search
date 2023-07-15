@@ -1,14 +1,8 @@
 .about {
-  height: 88vh;
-  padding-bottom: 5vh;
+  height: 92vh;
   width: 100%;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto .5fr 1.9fr;
+  grid-template-rows: 15vh 75vh;
   text-align: center;
-}
-
-.about h1 {
-  font-size: 32px;
 }
 
 .about hr {
@@ -19,7 +13,7 @@
 .dev-icons {
   grid-template-columns: repeat(3,1fr);
   width: 100%;
-  padding-top: 5px;
+ align-self: center;
 }
 
 .devicon {
@@ -45,7 +39,7 @@
 .indiv-card,
 .emptyState {
   border-radius: 20px;
-  height: 95%;
+  height: 98%;
   width: 90%;
   background-color: var(--init-mint);
 }

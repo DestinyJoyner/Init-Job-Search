@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ScrollArrow from "./ScrollArrow";
 import { TiArrowForward } from "react-icons/ti";
 import { BsCaretDownFill } from "react-icons/bs";
-import logo from "./Images/white-logo.png";
+import logo from "../../../Assets/LOGO.png";
 import initTree from "./Images/init-tree-gold.png";
 import finalTree from "./Images/init-tree-mint.png";
 import teamStock from "./Images/team-stock.jpg";
@@ -23,7 +23,7 @@ function HomePage() {
   const [textSwitch, setTextSwitch] = useState(false);
   const timeout = setInterval(() => {
     setTextSwitch(true);
-  }, 3000);
+  }, 4000);
 
   useEffect(() => {}, [textSwitch]);
   useEffect(() => setAppHeader("Welcome to inIT"), [])

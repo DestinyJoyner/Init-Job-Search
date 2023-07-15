@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { TfiAngleLeft } from "react-icons/tfi";
+import { MdArrowBackIosNew } from "react-icons/md"
 import "./Header.css"
 
 function Header({header, noBack}) {
@@ -7,8 +8,8 @@ function Header({header, noBack}) {
 
     return (
         <div className="app-header">
-        {!noBack && <TfiAngleLeft
-        size={"25px"}
+        {!noBack && <MdArrowBackIosNew
+        size={"35px"}
         className="app-header-back"
         onClick={() => navigate(-1)}
         />}

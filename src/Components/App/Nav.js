@@ -1,26 +1,17 @@
-import { useNavigate } from "react-router-dom";
 import { useContextProvider } from "../../Providers/Provider";
 import SlideNav from "./SlideNav";
 import Header from "../Job/Header.js"
-import { RxHamburgerMenu } from "react-icons/rx";
-import { AiOutlineClose } from "react-icons/ai";
-import logo from "../../Assets/LOGO.png";
+import hamburger from "../../Assets/blue-hamburger-menu.png"
 import "./Nav.css";
 
 export default function Nav() {
-  const { navbarClick, openNav, setOpenNav, appHeader } = useContextProvider();
-  const navigate = useNavigate();
-
-  function logoClick() {
-    navigate("/");
-    setOpenNav(false);
-  }
+  const { navbarClick, appHeader } = useContextProvider();
 
   return (
     <nav className="grid-center">
-        <RxHamburgerMenu className="burger" onClick={() => navbarClick()} />
+      <img src={hamburger} alt="hamburger-menu"
+      className="burger" onClick={() => navbarClick()} />
       <Header header={appHeader} />
-
       <SlideNav />
     </nav>
   );

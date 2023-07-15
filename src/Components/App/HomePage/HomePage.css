@@ -2,7 +2,7 @@
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 90vh;
+  height: 92vh;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -38,9 +38,10 @@
   row-gap: 4vh;
   position:fixed;
   right: 2.5vw;
-  top: 13vh;
+  top: 11vh;
   z-index: 30;
-  background-color: rgba(22, 16, 16, 0.497);
+  /* background-color: rgba(22, 16, 16, 0.497); */
+  background-color: #4c616c82;
   padding: 7px 4px;
   border-radius: 20px;
   width: 4vw;
@@ -67,27 +68,35 @@
 .home-landing {
   font-size: 24px;
   display: grid;
-  grid-template-rows: 10vh 1vh 58vh 1vh 12vh;
+  grid-template-rows: 15vh 1vh 65vh 1vh 15vh;
   justify-items: center;
-  background-color: var(--init-mint);
-  height: 100%;
-  position: relative;
+  background-color: var(--init-background);
+  height: 100vh;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .home-landing h2 {
   grid-row: 1;
-  font-size: 52px;
-  color: white;
+  font-size: 65px;
   margin-top: 1vh;
+  color: var(--init-mint);
+  margin-right: 8vw;
 }
 .home-landing span {
   align-self: center;
   text-align: center;
-  font-size: 28px;
-  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--init-mint);
   width: 100%;
+  margin-right: 8vw;
 }
 .home-landing hr {
-  width: 85%;
+  width: 85%;margin-right: 8vw;
   border: 2px solid var(--init-gold);
   height: 0;
 }
@@ -97,6 +106,8 @@
   height: 50vh;
   margin-top: 5vh;
   grid-row: 3;
+  position: relative;
+  right: 2vw;
 }
 
 .home-mission {
@@ -108,7 +119,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: var(--init-mint);
+  background-color: var(--init-background);
 }
 
 .home-mission p {
@@ -125,6 +136,7 @@
   right: 0.5vw;
   font-size: 32px;
   padding: 2px;
+  color: var(--init-darkmint);
 }
 
 .home-mission .home-register,
@@ -148,7 +160,8 @@
   grid-column: 1/4;
   grid-row: 3;
   top: 17vh;
-  color: var(--init-gold);
+  /* color: var(--init-darkmint); */
+  color: #4c616c;
   height: fit-content;
   font-weight: 600;
   font-size: 18px;
@@ -160,7 +173,7 @@
   left: 3vw;
   height: 1.3em;
   width: 1.3em;
-  fill: var(--init-gold);
+  fill: var(--init-darkmint);
 }
 
 .mission img {
@@ -231,9 +244,9 @@
   background-color: #81c2eeb4;
 }
 .home-final {
-  background-color: rgba(241, 235, 214, 0.805);
+  /* background-color: rgba(241, 235, 214, 0.805); */
   /* background-color: var(--init-background); */
-  /* background-color: rgba(254, 232, 150, 0.737); */
+  background-color: rgba(250, 229, 154, 0.737);
 }
 
 .home .home-app-guide,
@@ -301,7 +314,7 @@
 .navbar-screen {
   height: 230px;
   top: 3vh;
-  right: 4vw;
+  right: 7vw;
 }
 
 .profile-screen {
@@ -398,7 +411,7 @@
 .applied-screenshot {
   height: 130px;
   padding: 3px;
-  right: 4vw;
+  right: 7vw;
  bottom: 2vh;
 }
 
@@ -420,7 +433,7 @@
 /* Last Slide */
 
 .home-final {
-  padding-top: 1vh;
+  padding-top: 4vh;
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
   grid-template-rows: 20vh 40vh 20vh;
@@ -430,7 +443,7 @@
 .home-final a {
   border-radius: 50px 0px 50px 0px;
   transform: rotate(-45deg);
-  border: 3px solid var(--init-mint);
+  /* border: 3px solid var(--init-mint); */
   box-shadow: 2px 2px 10px black;
   height: 130px;
   width: 130px;
@@ -448,7 +461,7 @@
 .home-final a span {
   background-color: var(--init-background);
   color: var(--init-blue);
-  padding: 2px;
+  padding: 5px;
   font-size: 24px;
   transform: rotate(45deg);
   text-align: center;
@@ -464,7 +477,7 @@
 
 .home-final .home-about {
   bottom: 8vh;
-  right: 3vw;
+  right: 2vw;
 }
 
 .home-final .home-sign {
@@ -502,13 +515,31 @@
 .init-tree-final {
   grid-row: 3;
   grid-column: 2;
-  height: 20vh;
+  height: 25vh;
   justify-self: center;
   position: relative;
+  right: 5vw;
+  top: 2vh;
 }
 
 
 /* dark mode */
+
+.dark .home-mission {
+  background-color: var(--init-dark);
+}
+.dark .home-mission p {
+  color: var(--init-background);
+}
+.dark .home-mission a {
+  color: var(--init-gold);
+}
+.dark .home-mission .text-scroll{
+  color: var(--init-background);
+}
+.dark .home-mission .text-scroll svg{
+  fill: var(--init-gold);
+} 
 .dark .home-app-guide {
   background-color: #96ece2 ;
 }
@@ -517,13 +548,10 @@
 }
 .dark .home-final {
   /* background-color: rgb(241, 235, 214); */
-  background-color: rgb(251, 226, 138);
+  /* background-color: rgb(249, 230, 160); */
+  background-color: var(--init-background);
 }
 
-.dark .home-final a, .dark .home-final a span {
-  background-color: var(--init-dark);
-  color: var(--init-gold);
-}
 
 
 .dark .misc4 {

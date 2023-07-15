@@ -6,9 +6,9 @@ import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk } from "react-icons/cg";
 
 
-const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#FFDE59"} />
+const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
 
-const jobLocation = <GoLocation size={"20px"} color={"#FFDE59"} />
+const jobLocation = <GoLocation size={"20px"} color={"#41cdbc"} />
 
 const jobApplied = <BsClipboardCheck color={"black"} size={"40px"} />
           
