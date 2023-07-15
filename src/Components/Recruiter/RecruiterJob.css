@@ -1,4 +1,5 @@
 .recruiter-job {
+    width: 96%;
     border: 1px solid var(--init-charcoal);
     border-radius: 6px;
     padding: 6px;
