@@ -3,8 +3,8 @@ import { useContextProvider } from "../../Providers/Provider";
 import SlideNav from "./SlideNav";
 import Header from "../Job/Header.js"
 import { RxHamburgerMenu } from "react-icons/rx";
-import { AiOutlineClose } from "react-icons/ai";
-import logo from "../../Assets/LOGO.png";
+import { GiHamburgerMenu } from "react-icons/gi"
+import hamburger from "../../Assets/blue-hamburger-menu.png"
 import "./Nav.css";
 
 export default function Nav() {
@@ -18,7 +18,9 @@ export default function Nav() {
 
   return (
     <nav className="grid-center">
-        <RxHamburgerMenu className="burger" onClick={() => navbarClick()} />
+      <img src={hamburger} alt="hamburger-menu"
+      className="burger2" onClick={() => navbarClick()} />
+        {/* <RxHamburgerMenu className="burger" onClick={() => navbarClick()} /> */}
       <Header header={appHeader} />
 
       <SlideNav />

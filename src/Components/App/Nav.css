@@ -2,15 +2,18 @@ nav {
   grid-template-columns: .5fr 3fr .5fr;
   height: 8vh;
   width: 100%;
-  border-bottom: solid 2px var(--init-darkmint);
-  background-color: var(--init-mint);
+  /* border-bottom: solid 2px var(--init-darkmint); */
+  background-color: var(--init-background);
 }
 
-
+.burger2 {
+  height: 45px;
+  margin-right: 3vw;
+}
 
 .burger {
-  width: 2em;
-  height: 2em;
+  width: 2.5em;
+  height: 2.5em;
   color: var(--init-blue);
   grid-column: 3;
   /* justify-self: right; */
@@ -44,10 +47,11 @@ nav .app-header {
  height: 6vh;
  color: rgb(79, 77, 77) ;
  color: var(--init-gold);
+ color: var(--init-darkmint);
  
  }
  nav .app-header h1 span {
-  font-size: 20px;
+  font-size: 24px;
  }
 
  /* dark mode */
