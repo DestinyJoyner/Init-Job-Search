@@ -1,12 +1,12 @@
 .job-show {
   display: grid;
-  grid-template-rows: 21vh .5vh 6vh 55vh 7vh;
+  grid-template-rows: 22vh .5vh 5vh 54vh 6vh;
   row-gap: .5vh;
   justify-items: left;
   height: 92vh;
   width: 100%;
   color: #1d262b;
-  padding-bottom: 2.5vh;
+  padding-bottom: 2vh;
 }
 
 .hide {
@@ -26,7 +26,7 @@
   padding-left: 5vw;
   display: grid;
   grid-template-rows: 2fr 1fr 0.5fr 0.5fr 0.5fr;
-  column-gap: 2vw;
+  /* column-gap: 2vw; */
   align-items: center;
   justify-items: left;
 }
@@ -49,6 +49,9 @@
   position: relative;
   /* left: 9vw; */
   padding: 1vh 0;
+  padding-right: 5vw;
+  padding-bottom: 2vh;
+  /* height: 9vh; */
 }
 
 .job-show-header-details {
@@ -164,7 +167,7 @@
   grid-template-rows: auto;
   row-gap: 10px;
   width: 94%;
-  height: 53vh;
+  height: 52vh;
   overflow-y: auto;
   overflow-x: hidden;
   justify-items: left;
@@ -211,6 +214,7 @@
   font-size: 600;
   color: var(--init-blue);
   margin-right: 2vh;
+  padding-top: 1.5vh;
   height: 100%;
 }
 
@@ -223,6 +227,7 @@
   align-self: center;
   align-items: center;
   justify-items: center;
+  padding-top: 1.5vh;
 }
 .job-show-applied svg {
   grid-column: 1;
