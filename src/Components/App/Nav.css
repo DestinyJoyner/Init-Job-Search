@@ -2,12 +2,15 @@ nav {
   grid-template-columns: .5fr 3fr .5fr;
   height: 8vh;
   width: 100%;
-  /* border-bottom: solid 2px var(--init-darkmint); */
-  background-color: var(--init-background);
+  border-bottom: solid 2px var(--init-gold);
+  /* background-color: var(--init-darkmint); */
+  background-color: var(--init-darkmint);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .burger2 {
-  height: 45px;
+  height: 42px;
   margin-right: 3vw;
 }
 
@@ -32,6 +35,8 @@ nav .app-header {
   grid-column: 1;
   align-self: center;
   color: var(--init-blue);
+  margin-left: 3vw;
+  /* color: var(--init-dark); */
  }
 
  nav .app-header h1 {
@@ -43,15 +48,22 @@ nav .app-header {
  text-align: center;
  display: grid;
  align-items: center;
- width: 100%;
- height: 6vh;
- color: rgb(79, 77, 77) ;
+ width: 85%;
+ height: 7vh;
+ /* color: rgb(79, 77, 77) ; */
  color: var(--init-gold);
- color: var(--init-darkmint);
- 
+padding: .7vw;
+/* padding-left: 1vw; */
+  /* background-color: var(--init-darkmint);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: .3vh; */
  }
  nav .app-header h1 span {
   font-size: 24px;
+  height: 5vh;
+  padding-top: 1.5vh;
+  ;
  }
 
  /* dark mode */

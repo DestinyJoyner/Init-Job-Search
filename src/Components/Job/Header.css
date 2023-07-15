@@ -16,6 +16,10 @@
     font-size: 36px;
 } */
 
+.app-header svg {
+    color: var(--init-gold);
+}
+
 .dark .app-header {
     background-color: var(--init-gold);
     color: var(--init-charcoal);
