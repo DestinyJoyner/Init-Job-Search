@@ -11,7 +11,7 @@
     font-size: 22px;
     display: grid;
     grid-template-columns: 2.5fr 1fr;
-    border-bottom: 2px solid var(--init-blue);
+    border-bottom: 2px solid var(--init-darkmint);
 }
 
 .recruiter-profile-top svg {
@@ -44,7 +44,7 @@
     /* margin: 20px 30px; */
     width: 94%;
     display: grid;
-    grid-auto-rows: 90px ;
+    grid-auto-rows: 13vh ;
     row-gap: 10px;
     overflow-y: scroll;
     height: 54vh;
@@ -71,7 +71,7 @@
 .recruiter-profile-new-job {
     justify-self: center;
     font-size: 26px;
-    border-top: 2px solid var(--init-blue);
+    border-top: 2px solid var(--init-darkmint);
     width: 98%;
     text-align: center;
     padding-top: 2vh;

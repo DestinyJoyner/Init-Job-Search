@@ -1,28 +1,63 @@
 .recruiter-job {
-    width: 96%;
-    border: 1px solid var(--init-charcoal);
-    border-radius: 6px;
-    padding: 6px;
-    background-color: var(--init-gold);
+    width: 98%;
+    /* border: 2px solid var(--init-blue); */
+    border-radius: 20px;
+    /* padding: 6px; */
+    /* background-color: var(--init-darkmint); */
+    background: linear-gradient(90deg, var(--init-darkmint)  0%, var(--init-blue) 100%);
     color: var(--init-charcoal);
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    /* display: grid;
+    grid-template-columns: 2fr .6fr;
     row-gap: 4px;
-    font-size: 20px;
+    font-size: 20px; */
 }
 
-.recruiter-job a{
+.recruiter-job-details {
+    height: 84%;
+    width: 96%;
+    display: grid;
+    grid-template-columns: 2fr .7fr;
+    align-items: center;
+    row-gap: 4px;
+    font-size: 20px;
+    background-color:rgba(255, 255, 255, 0.885);
+    border-radius: 10px;
+    
+}
+
+.recruiter-job a:first-of-type{
     text-align: left;
     justify-content: left;
 }
 
 .recruiter-job-title {
-    grid-column: 1/3;
+    grid-column: 1;
     font-size: 22px;
+    margin-left: 3vw;
+    font-weight: 900;
+    /* color: var(--init-gold); */
+}
+
+.recruiter-job-details p {
+    margin-left: 3vw;
+    font-weight: 600;
 }
 
 .recruiter-job-applicants{
-    font-size: 20px;
+    height: 80%;
+    margin-right: 3vw;
+    grid-column: 2;
+    grid-row: 1/3;
+    grid-template-rows: .2fr 1fr;
+}
+.recruiter-job-applicants span:first-of-type{
+    font-size: 14px;
+    height: fit-content;
+    width: fit-content;
+    color: var(--init-charcoal);
+}
+.recruiter-job-applicants .applicant-count {
+    font-size: 35px;
 }
 
 .dark .recruiter-job a{
