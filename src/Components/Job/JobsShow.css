@@ -1,6 +1,5 @@
 .job-show {
   display: grid;
-  /* grid-template-rows: 23vh 6vh 50vh 6vh; */
   grid-template-rows: 21vh .5vh 6vh 55vh 7vh;
   row-gap: .5vh;
   justify-items: left;
@@ -14,7 +13,6 @@
   display: none;
 }
 .job-disclaimer {
- 
   font-size: 16px;
   margin-left: 3px;
   padding: 3px 0px;
@@ -35,7 +33,7 @@
 
 .job-show-header-border-bottom {
   grid-row: 2;
-  border-top: 1px solid var(--init-blue);
+  border-top: 2px solid var(--init-blue);
   width: 94%;
   justify-self: center;
   height: 0;
@@ -94,19 +92,22 @@
 .job-show-header hr:first-of-type {
   border: var(--init-mint) 1px solid;
   width: 90%;
-  /* grid-column: 2; */
   grid-column: 1;
   grid-row: 3;
-  /* justify-self: center; */
   margin-top: 3px;
 }
 
 .job-show-remote {
   color: black;
-  /* grid-column: 2; */
+ background-color: var(--init-gold);
+ width: fit-content;
+ margin-left: 7vw;
+ border-radius: 20px;
+ padding: 4px;
+ padding-left: 8px;
   grid-column: 1;
   grid-row: 4/6;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 .job-show-remote span {
@@ -133,11 +134,12 @@
   grid-row: 4/6;
   justify-self: right;
   color: var(--init-blue);
-  border: 1px solid var(--init-gold);
-  background-color: var(--init-gold);
+  /* border: 1px solid var(--init-gold); */
+  /* background-color: var(--init-mint); */
   padding: 2px;
   position: relative;
   right: 12vw;
+  font-size: 22px ;
 }
 
 .job-show-edit svg {
@@ -230,7 +232,7 @@
   font-size: 22px;
   font-weight: 500;
   color: var(--init-blue);
-  background-color: var(--init-gold);
+  /* background-color: var(--init-gold); */
   padding: 5px;
 }
 
@@ -239,9 +241,6 @@
 .dark .job-show-details,
 .dark .job-show-applied, .dark .job-show-header  {
   color: var(--init-background);
-}
-.dark .job-show-remote {
-  color: var(--init-mint);
 }
 
 .dark .job-show-label,
@@ -256,8 +255,8 @@
   fill: var(--init-mint);
 }
 .dark .job-show-applied span:first-of-type {
-  color: var(--init-blue);
-  background-color: var(--init-mint);
+  color: var(--init-gold);
+  /* background-color: var(--init-mint); */
   padding: 5px;
 }
 
@@ -269,12 +268,15 @@
   /* fill: var(--init-mint); */
   fill:var(--init-gold)
 }
-.dark .job-show-header hr {
-  /* border: var(--init-mint) 1px solid; */
-  border: var(--init-gold) 1px solid;
+.dark .job-show-remote {
+  /* background-color: var(--init-dark);
+  color: var(--init-background);
+  border: 1px solid var(--init-mint); */
+  background-color: var(--init-mint);
 }
 .dark .job-show-header-applied {
-  background-color: var(--init-mint);
+  /* background-color: var(--init-mint); */
+  color: var(--init-gold);
 }
 .dark .job-show-header-border-bottom {
   border-color: var(--init-mint);
