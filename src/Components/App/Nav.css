@@ -3,77 +3,22 @@ nav {
   height: 8vh;
   width: 100%;
   border-bottom: solid 2px var(--init-gold);
-  /* background-color: var(--init-darkmint); */
   background-color: var(--init-darkmint);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.burger2 {
-  height: 42px;
-  margin-right: 3vw;
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
 }
 
 .burger {
-  width: 2.5em;
-  height: 2.5em;
-  color: var(--init-blue);
+  height: 42px;
+  margin-right: 3vw;
   grid-column: 3;
-  /* justify-self: right; */
 }
-
-nav .app-header {
-  all:unset;
-  grid-column: 1/3;
-  grid-row: 1;
-  width: 100%;
-  display: grid;
-  grid-template-columns: .5fr 3fr;
-  justify-items: center;
-}
- nav .app-header .app-header-back {
-  grid-column: 1;
-  align-self: center;
-  color: var(--init-blue);
-  margin-left: 3vw;
-  /* color: var(--init-dark); */
- }
-
- nav .app-header h1 {
-  /* border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background-color: var(--init-background);
- width: 100%;
-  height: 5vh; */
- text-align: center;
- display: grid;
- align-items: center;
- width: 85%;
- height: 7vh;
- /* color: rgb(79, 77, 77) ; */
- color: var(--init-gold);
-padding: .7vw;
-/* padding-left: 1vw; */
-  /* background-color: var(--init-darkmint);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  margin-top: .3vh; */
- }
- nav .app-header h1 span {
-  font-size: 24px;
-  height: 5vh;
-  padding-top: 1.5vh;
-  ;
- }
 
  /* dark mode */
  .dark nav {
   background-color: var(--init-gold); 
  }
 
- .dark .app-header h1 {
-  color: var(--init-dark);
- }
 
 
 
