@@ -84,7 +84,7 @@ stroke: var(--init-background);
 }
 
 .dark .recruiter-profile-top {
-    border-color: var(--init-background);
+    border-color: var(--init-darkmint);
 }
 
 .dark .recruiter-profile-new-job {
