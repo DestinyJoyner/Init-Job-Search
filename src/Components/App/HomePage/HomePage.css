@@ -67,27 +67,35 @@
 .home-landing {
   font-size: 24px;
   display: grid;
-  grid-template-rows: 10vh 1vh 58vh 1vh 12vh;
+  grid-template-rows: 15vh 1vh 65vh 1vh 15vh;
   justify-items: center;
-  background-color: var(--init-mint);
-  height: 100%;
-  position: relative;
+  background-color: var(--init-background);
+  height: 100vh;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .home-landing h2 {
   grid-row: 1;
-  font-size: 52px;
-  color: white;
+  font-size: 65px;
   margin-top: 1vh;
+  color: var(--init-mint);
+  margin-right: 8vw;
 }
 .home-landing span {
   align-self: center;
   text-align: center;
-  font-size: 28px;
-  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--init-mint);
   width: 100%;
+  margin-right: 8vw;
 }
 .home-landing hr {
-  width: 85%;
+  width: 85%;margin-right: 8vw;
   border: 2px solid var(--init-gold);
   height: 0;
 }
@@ -97,6 +105,8 @@
   height: 50vh;
   margin-top: 5vh;
   grid-row: 3;
+  position: relative;
+  right: 2vw;
 }
 
 .home-mission {
