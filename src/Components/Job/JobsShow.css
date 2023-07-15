@@ -22,8 +22,9 @@
 }
 
 .job-show-header {
-  width: 100%;
-  padding-left: 5vw;
+  width: 94%;
+  justify-self: center;
+  /* padding-left: 5vw; */
   display: grid;
   grid-template-rows: 2fr 1fr 0.5fr 0.5fr 0.5fr;
   /* column-gap: 2vw; */
@@ -51,6 +52,7 @@
   padding: 1vh 0;
   padding-right: 5vw;
   padding-bottom: 2vh;
+  margin-left: 3vw;
   /* height: 9vh; */
 }
 
@@ -65,6 +67,7 @@
   justify-items: left;
   align-items: center;
   font-size: 19px;
+  margin-left: 3vw;
 }
 
 .job-show-company {
@@ -94,7 +97,7 @@
 
 .job-show-header hr:first-of-type {
   border: var(--init-mint) 1px solid;
-  width: 90%;
+  width: 100%;
   grid-column: 1;
   grid-row: 3;
   margin-top: 3px;
@@ -104,7 +107,7 @@
   color: black;
  background-color: var(--init-gold);
  width: fit-content;
- margin-left: 7vw;
+ margin-left: 10vw;
  border-radius: 20px;
  padding: 4px;
  padding-left: 8px;
@@ -127,7 +130,7 @@
   font-weight: 500;
   font-size: 24px;
   position: relative;
-  right: 12vw;
+  right: 5vw;
 }
 
 .job-show-header-applied {
@@ -141,7 +144,7 @@
   /* background-color: var(--init-mint); */
   padding: 2px;
   position: relative;
-  right: 12vw;
+  right: 5vw;
   font-size: 22px ;
 }
 
@@ -167,7 +170,7 @@
   grid-template-rows: auto;
   row-gap: 10px;
   width: 94%;
-  height: 52vh;
+  height: 53vh;
   overflow-y: auto;
   overflow-x: hidden;
   justify-items: left;
@@ -214,7 +217,7 @@
   font-size: 600;
   color: var(--init-blue);
   margin-right: 2vh;
-  padding-top: 1.5vh;
+  margin-top: 3vh;
   height: 100%;
 }
 
@@ -227,7 +230,7 @@
   align-self: center;
   align-items: center;
   justify-items: center;
-  padding-top: 1.5vh;
+  margin-top: 3vh;
 }
 .job-show-applied svg {
   grid-column: 1;
