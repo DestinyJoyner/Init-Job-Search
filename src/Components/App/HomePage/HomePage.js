@@ -23,7 +23,7 @@ function HomePage() {
   const [textSwitch, setTextSwitch] = useState(false);
   const timeout = setInterval(() => {
     setTextSwitch(true);
-  }, 3000);
+  }, 4000);
 
   useEffect(() => {}, [textSwitch]);
   useEffect(() => setAppHeader("Welcome to inIT"), [])
