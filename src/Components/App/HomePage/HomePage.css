@@ -2,7 +2,7 @@
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 90vh;
+  height: 92vh;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -38,7 +38,7 @@
   row-gap: 4vh;
   position:fixed;
   right: 2.5vw;
-  top: 10vh;
+  top: 11vh;
   z-index: 30;
   /* background-color: rgba(22, 16, 16, 0.497); */
   background-color: #4c616c82;
@@ -244,9 +244,9 @@
   background-color: #81c2eeb4;
 }
 .home-final {
-  background-color: rgba(241, 235, 214, 0.805);
+  /* background-color: rgba(241, 235, 214, 0.805); */
   /* background-color: var(--init-background); */
-  /* background-color: rgba(254, 232, 150, 0.737); */
+  background-color: rgba(250, 229, 154, 0.737);
 }
 
 .home .home-app-guide,
@@ -433,7 +433,7 @@
 /* Last Slide */
 
 .home-final {
-  padding-top: 2vh;
+  padding-top: 4vh;
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
   grid-template-rows: 20vh 40vh 20vh;
@@ -524,6 +524,22 @@
 
 
 /* dark mode */
+
+.dark .home-mission {
+  background-color: var(--init-dark);
+}
+.dark .home-mission p {
+  color: var(--init-background);
+}
+.dark .home-mission a {
+  color: var(--init-gold);
+}
+.dark .home-mission .text-scroll{
+  color: var(--init-background);
+}
+.dark .home-mission .text-scroll svg{
+  fill: var(--init-gold);
+} 
 .dark .home-app-guide {
   background-color: #96ece2 ;
 }
@@ -532,13 +548,10 @@
 }
 .dark .home-final {
   /* background-color: rgb(241, 235, 214); */
-  background-color: rgb(251, 226, 138);
+  /* background-color: rgb(249, 230, 160); */
+  background-color: var(--init-background);
 }
 
-.dark .home-final a, .dark .home-final a span {
-  background-color: var(--init-dark);
-  color: var(--init-gold);
-}
 
 
 .dark .misc4 {
