@@ -75,8 +75,9 @@
   width: 90%;
   height: 80%;
   border-radius: 10px;
-  background-color: var(--init-background);
+  /* background-color: var(--init-background); */
   background: radial-gradient(circle, rgba(222,239,249,1) 55%, rgba(65,205,188,1) 100%);
+  /* background-color: var(--init-mint); */
 }
 .job-card-skills .skills-component {
   width: 100%;

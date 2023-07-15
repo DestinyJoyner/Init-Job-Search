@@ -1,7 +1,8 @@
 .job-show {
   display: grid;
   /* grid-template-rows: 23vh 6vh 50vh 6vh; */
-  grid-template-rows: 20vh 7vh 55vh 10vh;
+  grid-template-rows: 21vh .5vh 6vh 55vh 7vh;
+  row-gap: .5vh;
   justify-items: left;
   height: 92vh;
   width: 100%;
@@ -25,23 +26,22 @@
 .job-show-header {
   width: 100%;
   padding-left: 5vw;
-  /* justify-self: center;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px; */
-  background-color: var(--init-mint);
   display: grid;
-  /* grid-template-columns: 0.12fr 1fr; */
-  grid-template-columns: 1fr;
   grid-template-rows: 2fr 1fr 0.5fr 0.5fr 0.5fr;
   column-gap: 2vw;
   align-items: center;
   justify-items: left;
 }
-/* 
-.job-show .app-header {
-  grid-column: span 2;
-  height: 100%;
-} */
+
+.job-show-header-border-bottom {
+  grid-row: 2;
+  border-top: 1px solid var(--init-blue);
+  width: 94%;
+  justify-self: center;
+  height: 0;
+  align-self: center;
+}
+
 .job-show-header h2 {
   /* grid-column: 2; */
   grid-column: 1;
@@ -49,7 +49,7 @@
   font-size: 30px;
   justify-self: left;
   position: relative;
-  left: 9vw;
+  /* left: 9vw; */
   padding: 1vh 0;
 }
 
@@ -91,8 +91,8 @@
   margin-left: 1vw;
 }
 
-.job-show-header hr {
-  border: var(--init-gold) 1px solid;
+.job-show-header hr:first-of-type {
+  border: var(--init-mint) 1px solid;
   width: 90%;
   /* grid-column: 2; */
   grid-column: 1;
@@ -105,8 +105,8 @@
   color: black;
   /* grid-column: 2; */
   grid-column: 1;
-  grid-row: 4;
-  font-size: 15px;
+  grid-row: 4/6;
+  font-size: 18px;
   font-weight: 500;
 }
 .job-show-remote span {
@@ -119,7 +119,7 @@
   grid-column: 1;
   grid-row: 4/6;
   justify-self: right;
-  color: var(--init-gold);
+  color: var(--init-blue);
   font-weight: 500;
   font-size: 24px;
   position: relative;
@@ -145,7 +145,9 @@
 }
 
 .job-show .skills-component {
+  grid-row: 3;
   width: 100%;
+  justify-self: center;
   align-items: center;
   padding: 5px 0px;
 }
@@ -168,7 +170,7 @@
   margin: 0 2vw;
   padding: 1vh 0;
   border-bottom: var(--init-blue) 2px solid;
-  border-top: var(--init-blue) 2px solid;
+  /* border-top: var(--init-blue) 2px solid; */
 }
 
 .job-show-description {
@@ -191,7 +193,7 @@
 .job-show-label {
   font-weight: 700;
   font-size: 20px;
-  border-bottom: var(--init-blue) 1px solid;
+  border-bottom: var(--init-mint) 1px solid;
   margin-bottom: 5px;
   grid-row: 1;
   grid-column: 1;
@@ -235,8 +237,11 @@
 /* DARK MODE UPDATES */
 
 .dark .job-show-details,
-.dark .job-show-applied {
-  color: white;
+.dark .job-show-applied, .dark .job-show-header  {
+  color: var(--init-background);
+}
+.dark .job-show-remote {
+  color: var(--init-mint);
 }
 
 .dark .job-show-label,
@@ -246,9 +251,7 @@
 .dark .job-show-label {
   color: var(--init-gold);
 }
-.dark .job-show-details {
-  border-top: var(--init-mint) 2px solid;
-}
+
 .dark .job-show-applied svg {
   fill: var(--init-mint);
 }
@@ -257,12 +260,7 @@
   background-color: var(--init-mint);
   padding: 5px;
 }
-.dark .job-show-header {
-  /* background-color: var(--init-gold); */
-  background-color: var(--init-darkmint);
-  /* background-color: var(--init-dark);
-  color: white; */
-}
+
 .dark .job-show-company svg {
   /* stroke: var(--init-mint); */
   stroke: var(--init-gold);
@@ -278,6 +276,9 @@
 .dark .job-show-header-applied {
   background-color: var(--init-mint);
 }
+.dark .job-show-header-border-bottom {
+  border-color: var(--init-mint);
+}
 .dark .job-show .skills-component {
   background-color: var(--init-background);
   width: 90%;
@@ -287,11 +288,8 @@
   border-radius: 20px;
   border: var(--init-mint) 2px solid;
 }
-.dark .job-show-apply {
+.dark .job-show-apply, .dark .job-show-header-apply {
   color: var(--init-gold);
-}
-.dark .job-show-header-apply {
-  color: var(--init-blue);
 }
 
 /* BONUS */

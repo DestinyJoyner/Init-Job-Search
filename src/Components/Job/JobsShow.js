@@ -9,11 +9,10 @@ import { convertDate, convertCities } from "./Functions/JobFunctions";
 import { convertSkills } from "./Functions/SkillsFunctions";
 import { jobCompany, jobLocation, jobApplied } from "./Data/Icons";
 import { GrEdit } from "react-icons/gr";
-import { GiPill } from "react-icons/gi";
 import "./JobsShow.css";
 
 function JobsShow() {
-  const { triggerBonus, setAppHeader, } = useContextProvider()
+  const { setAppHeader} = useContextProvider()
   const {
     API,
     axios,
@@ -73,9 +72,6 @@ function JobsShow() {
   }
 
   useEffect(() => {
-    if(jobID === '22' && !triggerBonus){
-      navigate("/not-found")
-    }
     if(userID){
       axios
       .get(`${API}/user-jobs/${userID}`)
@@ -90,20 +86,16 @@ function JobsShow() {
       .then(({ data }) => {
         setJobDetails(data);
         setSkillIdArr(convertSkills(data.skills));
-        // setAppHeader(data.title)
       })
       .catch((err) => console.log(err));
   }, [reload, jobID, applied]);
+
   useEffect(() => setAppHeader("Job Details"), [])
 
   return (
     <div className="job-show">
-      <section className={jobDetails.id !== 22 ? "job-show-header" : "job-show-header bonus-job"  }>
-        {
-          jobDetails.id !== 22 ?
-          <>
-          {/* <Header header={jobDetails.title} /> */}
-          <h2>{jobDetails.title}</h2>
+      <section className="job-show-header">
+      <h2>{jobDetails.title}</h2>
         <div className="job-show-header-details">
           <span className="job-show-company">
             {jobCompany}
@@ -132,25 +124,15 @@ function JobsShow() {
         </button>
         :
         null
-        }</> :
-        <>
-        <Header header={jobDetails.title} />
-        <div className="bonus-show">
-          ...follow the white rabbit.
-        </div>
-        </>
         }
+        {/* <hr className="job-show-header-border-bottom" /> */}
       </section>
-      {
-       jobDetails.id !== 22 ?
-       <SkillsComponent skillsArr={skillIdArr} justList={true} /> :
-       <section className="skills-component">
-       <GiPill color={"red"} size={"50px"} />
-       <GiPill color={"blue"} size={"50px"} />
-      </section>
-      }
 
-      {/* <SkillsComponent skillsArr={skillIdArr} justList={true} /> */}
+       <hr className="job-show-header-border-bottom" />
+   
+      <SkillsComponent 
+      skillsArr={skillIdArr} 
+      justList={true} />
 
       <section className="job-show-details">
         <div className="job-show-description">
