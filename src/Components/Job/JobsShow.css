@@ -1,6 +1,6 @@
 .job-show {
   display: grid;
-  grid-template-rows: 20vh 7vh 55vh 8vh;
+  grid-template-rows: 21vh 6vh 55vh 8vh;
   row-gap: .5vh;
   justify-items: left;
   height: 92vh;
@@ -34,6 +34,7 @@
 
 .jobShow_header_logo{
   height: 50px;
+  max-width: 60px;
   grid-column: 1;
   grid-row: 1;
   margin-left: 3vw;
@@ -93,6 +94,7 @@
   text-align: center;
   border-radius: 20px;
   padding: 5px;
+  padding-top: 7px;
   font-size: 14px;
   margin-left: 3vw;
 }
@@ -118,7 +120,7 @@
 .job-show .skills-component {
   grid-row: 2;
   width: 100%;
-  padding: 5px 0px;
+  padding: 1vh 0px;
 }
 
 .job-show .skills-component svg {
