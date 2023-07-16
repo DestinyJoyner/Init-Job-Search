@@ -62,7 +62,7 @@ export default function RecruiterProfile() {
         <div className="recruiter-jobs">
           {recruiterDetails.jobs_posted.length > 0 &&
             recruiterDetails.jobs_posted.map((e) => (
-              <RecruiterJob object={e} key={uuidv4()} />
+              <RecruiterJob jobObject={e} key={uuidv4()} />
             ))}
         </div>
         <Link className="recruiter-profile-new-job" to="/jobs/new">
