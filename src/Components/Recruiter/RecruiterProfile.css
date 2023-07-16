@@ -41,11 +41,9 @@
 }
 
 .recruiter-jobs {
-    /* margin: 20px 30px; */
     width: 94%;
     display: grid;
-    grid-auto-rows: 13vh ;
-    row-gap: 10px;
+    row-gap: 1vh;
     overflow-y: scroll;
     height: 54vh;
     padding: 2vh;

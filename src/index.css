@@ -13,6 +13,7 @@
   --init-dark: #050525;
   --init-rust: rgb(186, 26, 26);
   --init-charcoal: rgb(22, 16, 16);
+  --init-faded-gray: rgb(79, 77, 77);
 }
 
 body {
