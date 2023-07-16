@@ -7,9 +7,9 @@ import SkillsComponent from "./SkillsComponent";
 import { convertDate, convertCities } from "./Functions/JobFunctions";
 import { convertSkills } from "./Functions/SkillsFunctions";
 import convertCompanyForLogo from "./Data/CompanyLogos";
-import {  jobApplied } from "./Data/Icons";
+import { jobApplied } from "./Data/Icons";
 import { GrEdit } from "react-icons/gr";
-import { BsFillCircleFill } from "react-icons/bs"
+import { BsFillCircleFill } from "react-icons/bs";
 import "./JobsShow.css";
 
 function JobsShow() {
@@ -100,20 +100,27 @@ function JobsShow() {
   return (
     <div className="job-show">
       <section className="job-show-header">
-        <img src={jobDetails.company &&convertCompanyForLogo(jobDetails.company.toLowerCase())} alt ="company-logo" 
-        className="job-show-header-company-logo"/>
-        <h2>{jobDetails.title}</h2>
-        <div className="job-show-header-details">
-          <span className="job-show-company">
-          {jobDetails.company}
-          </span>
-          <BsFillCircleFill color={"#41cdbc"} size={"8px"} />
-          <span className="job-show-location">
-          {jobDetails.city && convertCities(jobDetails.city)}
-          </span>
+        <img
+          src={
+            jobDetails.company &&
+            convertCompanyForLogo(jobDetails.company.toLowerCase())
+          }
+          alt="company-logo"
+          className="jobShow_header_logo"
+        />
+
+        <div className="jobShow_header_details">
+          <h2 className="jobShow_header_details_title">{jobDetails.title}</h2>
+          <section className="jobShow_header_details_company">
+            <span className="job-show-company">{jobDetails.company}</span>
+            <BsFillCircleFill color={"#41cdbc"} size={"8px"} />
+            <span className="job-show-location">
+              {jobDetails.city && convertCities(jobDetails.city)}
+            </span>
+          </section>
         </div>
-        {/* <hr /> */}
-        {jobDetails.full_remote && (
+          <section className="jobShow_header_options">
+          {jobDetails.full_remote && (
           <span className="job-show-remote">
             <span>REMOTE</span>
           </span>
@@ -122,15 +129,14 @@ function JobsShow() {
           <button onClick={applyButtonClick} className={appliedButtonClass}>
             <span>
               {appliedButtonView}
-              {!isSignedIn && isRecruiterAcc && editAccess && (
-                <GrEdit size={"25px"} color={"#ffde59"} />
-              )}
             </span>
           </button>
         ) : null}
-      </section>
+          </section>
+       
 
-      <hr className="job-show-header-border-bottom" />
+        <hr className="jobShow_header_border-bottom" />
+      </section>
 
       <SkillsComponent skillsArr={skillIdArr} justList={true} />
 
@@ -164,8 +170,7 @@ function JobsShow() {
             appliedButtonView === "EDIT" ? () => deleteJob() : applyButtonClick
           }
           className={
-            (isRecruiterAcc && !editAccess) ||
-            (!isSignedIn && !isRecruiterAcc) 
+            (isRecruiterAcc && !editAccess) || (!isSignedIn && !isRecruiterAcc)
               ? "hide"
               : "job-show-apply"
           }
