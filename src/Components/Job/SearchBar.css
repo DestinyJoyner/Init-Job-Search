@@ -27,3 +27,14 @@
     right: 3vw;
     margin-top: 1vh;
 }
+
+/* DARK MODE */
+.dark .searchbar::placeholder{
+    color: var(--init-background);
+}
+.dark .searchbar:focus {
+    background-color: var(--init-dark);
+}
+.dark .searchbar {
+    color: var(--init-background);
+}

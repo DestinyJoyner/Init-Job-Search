@@ -58,7 +58,7 @@
   height: fit-content;
   width: fit-content;
   padding: 2px 4px;
-  background-color: #ffde59c7;
+  background-color: var(--init-gold);
   border-radius: 20px;
   margin-right: 2vw;
 }
@@ -95,4 +95,9 @@
 .job-card svg {
   height: 2em;
   width: 2em;
+}
+
+/* DARK MODE */
+.dark .job-card {
+  border: 2px solid var(--init-mint);
 }
