@@ -1,9 +1,8 @@
 .search-component {
     display: grid;
-    grid-template-rows: 6vh auto;
-    row-gap: 1vh;
+    grid-template-rows: 8vh auto;
+    row-gap: .5vh;
     width: 100%;
-    min-height: 8vh;
 
 }
 
@@ -21,7 +20,7 @@
 }
 .searchbar {
     width: 85%;
-    height: 4vh;
+    height: 5vh;
     text-indent: 9vw;
     font-size: 20px;
     position: relative;

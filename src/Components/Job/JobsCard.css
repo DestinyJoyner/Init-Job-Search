@@ -1,31 +1,31 @@
 .job-card {
-  background-color:rgba(255, 255, 255, 0.839);
-  color: var(--init-charcoal) ;
+  background-color: white;
+  color: var(--init-charcoal);
   border-radius: 14px;
-  width: 94%;
-  height: 16vh;
+  width: 90%;
+  height: 15vh;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2.2fr;
   align-items: center;
   justify-items: left;
-  padding: .5vw;
+  padding: 0.5vw;
 }
 
 .job-card-details {
   grid-column: 2;
   grid-row: 1;
-  height: 100%;
+  height: 80%;
   width: 100%;
   align-items: center;
   display: grid;
+  row-gap: 0.5vh;
 }
 
 .job-card-title {
-  font-size: 23px;
-  font-weight: 900;
+  font-size: 22px;
+  font-weight: 600;
   grid-row: 1;
   grid-column: 1;
-  margin-left: 0px;
 }
 
 .job-card-company {
@@ -45,7 +45,7 @@
 }
 .job-card-city {
   grid-column: 1;
-  color: rgb(79, 77, 77);
+  color: var(--init-faded-gray);
   font-weight: 100;
   font-size: 16px;
 }
@@ -60,24 +60,29 @@
   padding: 2px 4px;
   background-color: #ffde59c7;
   border-radius: 20px;
-  justify-self: center;
+  margin-right: 2vw;
 }
 
 .job-card-company,
 .job-card-title,
-.job-card-location{
+.job-card-location {
   padding-left: 10px;
 }
 
 .job-card-skills {
   justify-self: center;
   grid-column: 1;
-  width: 90%;
-  height: 80%;
+  width: 100%;
+  height: 85%;
   border-radius: 10px;
-  /* background-color: var(--init-background); */
-  background: radial-gradient(circle, rgba(222,239,249,1) 55%, rgba(65,205,188,1) 100%);
-  /* background-color: var(--init-mint); */
+  background-color: var(--init-mint);
+  background: linear-gradient(
+    90deg,
+    rgb(83, 215, 199) 55%,
+    rgba(12, 189, 189, 1) 100%
+  );
+  position: relative;
+  right: 4vw;
 }
 .job-card-skills .skills-component {
   width: 100%;
@@ -88,6 +93,6 @@
   justify-items: center;
 }
 .job-card svg {
-  height: 1.7em;
-  width: 1.7em;
+  height: 2em;
+  width: 2em;
 }
