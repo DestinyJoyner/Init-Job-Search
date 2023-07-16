@@ -7,6 +7,12 @@
     padding-right: 5px;
 }
 
+.recruiter-job-company-logo {
+    grid-column: 1;
+    grid-row: 1/4;
+    height: 50px;
+}
+
 .recruiter-job-details {
     height: 100%;
     width: 100%;
