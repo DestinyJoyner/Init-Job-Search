@@ -8,6 +8,7 @@ import { convertDate, convertCities } from "./Functions/JobFunctions";
 import { convertSkills } from "./Functions/SkillsFunctions";
 import { jobCompany, jobLocation, jobApplied } from "./Data/Icons";
 import { GrEdit } from "react-icons/gr";
+import { BsFillCircleFill } from "react-icons/bs"
 import "./JobsShow.css";
 
 function JobsShow() {
@@ -99,15 +100,14 @@ function JobsShow() {
         <h2>{jobDetails.title}</h2>
         <div className="job-show-header-details">
           <span className="job-show-company">
-            {jobCompany}
-            <span>{jobDetails.company}</span>
+          {jobDetails.company}
           </span>
+          <BsFillCircleFill color={"#41cdbc"} size={"8px"} />
           <span className="job-show-location">
-            {jobLocation}
-            <span>{jobDetails.city && convertCities(jobDetails.city)}</span>
+          {jobDetails.city && convertCities(jobDetails.city)}
           </span>
         </div>
-        <hr />
+        {/* <hr /> */}
         {jobDetails.full_remote && (
           <span className="job-show-remote">
             <span>REMOTE</span>
