@@ -245,8 +245,8 @@
 }
 .home-final {
   /* background-color: rgba(241, 235, 214, 0.805); */
-  /* background-color: var(--init-background); */
-  background-color: rgba(250, 229, 154, 0.737);
+  background-color: var(--init-background);
+  /* background-color: rgba(250, 229, 154, 0.737); */
 }
 
 .home .home-app-guide,
@@ -524,7 +524,9 @@
 
 
 /* dark mode */
-
+.dark .home-scroll-container svg {
+  color: var(--init-gold);
+}
 .dark .home-mission {
   background-color: var(--init-dark);
 }
@@ -549,10 +551,19 @@
 .dark .home-final {
   /* background-color: rgb(241, 235, 214); */
   /* background-color: rgb(249, 230, 160); */
-  background-color: var(--init-background);
+  background-color: var(--init-dark);
 }
-
-
+.dark .home-final a {
+  border: 3px solid var(--init-gold);
+  background-color: var(--init-dark);
+}
+.dark .home-final a span {
+  background-color: var(--init-dark);
+  color: var(--init-gold);
+}
+.dark .home-final .final-quote{
+  color: var(--init-background);
+}
 
 .dark .misc4 {
   border-color: var(--init-mint);

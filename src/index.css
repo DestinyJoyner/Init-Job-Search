@@ -2,9 +2,7 @@
 
 * {
   margin: 0;
-  /* overflow-y: scroll; */
-  /* overflow-x: hidden; */
-  font-family: "Work Sans", Poppins, Cabin, Ysabeau;
+  font-family: "Work Sans",Poppins, Cabin, Ysabeau;
   --init-mint: #41cdbc;
   --init-darkmint: #0cbdbd;
   --init-gold: #ffde59;
@@ -13,6 +11,7 @@
   --init-dark: #050525;
   --init-rust: rgb(186, 26, 26);
   --init-charcoal: rgb(22, 16, 16);
+  --init-faded-gray: rgb(79, 77, 77);
 }
 
 body {
