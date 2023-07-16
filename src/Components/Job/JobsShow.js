@@ -119,21 +119,18 @@ function JobsShow() {
             </span>
           </section>
         </div>
-          <section className="jobShow_header_options">
+        <section className="jobShow_header_options">
           {jobDetails.full_remote && (
-          <span className="job-show-remote">
-            <span>REMOTE</span>
-          </span>
-        )}
-        {isSignedIn || (isRecruiterAcc && editAccess) ? (
-          <button onClick={applyButtonClick} className={appliedButtonClass}>
-            <span>
-              {appliedButtonView}
+            <span className="job-show-remote">
+              <span>REMOTE</span>
             </span>
-          </button>
-        ) : null}
-          </section>
-       
+          )}
+          {isSignedIn || (isRecruiterAcc && editAccess) ? (
+            <button onClick={applyButtonClick} className={appliedButtonClass}>
+              <span>{appliedButtonView}</span>
+            </button>
+          ) : null}
+        </section>
 
         <hr className="jobShow_header_border-bottom" />
       </section>
@@ -178,11 +175,8 @@ function JobsShow() {
           {appliedButtonView === "EDIT" ? "DELETE" : appliedButtonView}
         </button>
       ) : isSignedIn && applied ? (
-        <div className="job-show-applied">
-          {jobApplied}
-          <span onClick={applyButtonClick}>
-            APPLIED ON {convertDate(applied["date_applied"])}
-          </span>
+        <div className="job-show-applied" onClick={applyButtonClick}>
+          APPLIED ON {convertDate(applied["date_applied"])}
         </div>
       ) : null}
     </div>

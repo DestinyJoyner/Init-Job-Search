@@ -85,7 +85,7 @@ const skillsColorObject = {
     />,
   ],
   9: [<SiSwift color={"#F05138"} key={uuidv4()} />],
-  10: [<SiGo color={"white"} key={uuidv4()} />],
+  10: [<SiGo color={"black"} key={uuidv4()} />],
   11: [
     <SiTypescript
       color={"#007acc"}
