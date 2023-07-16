@@ -6,7 +6,8 @@ import { v4 as uuidv4 } from "uuid";
 import SkillsComponent from "./SkillsComponent";
 import { convertDate, convertCities } from "./Functions/JobFunctions";
 import { convertSkills } from "./Functions/SkillsFunctions";
-import { jobCompany, jobLocation, jobApplied } from "./Data/Icons";
+import convertCompanyForLogo from "./Data/CompanyLogos";
+import {  jobApplied } from "./Data/Icons";
 import { GrEdit } from "react-icons/gr";
 import { BsFillCircleFill } from "react-icons/bs"
 import "./JobsShow.css";
@@ -28,6 +29,8 @@ function JobsShow() {
   const [skillIdArr, setSkillIdArr] = useState([]);
   const [reload, setReload] = useState(false);
   const [applied, setApplied] = useState(false);
+
+  // const companyLogo = convertCompanyForLogo(jobDetails.company.toLowerCase())
 
   const applyButtonClick =
     !isSignedIn && !isRecruiterAcc
@@ -97,6 +100,8 @@ function JobsShow() {
   return (
     <div className="job-show">
       <section className="job-show-header">
+        <img src={jobDetails.company &&convertCompanyForLogo(jobDetails.company.toLowerCase())} alt ="company-logo" 
+        className="job-show-header-company-logo"/>
         <h2>{jobDetails.title}</h2>
         <div className="job-show-header-details">
           <span className="job-show-company">

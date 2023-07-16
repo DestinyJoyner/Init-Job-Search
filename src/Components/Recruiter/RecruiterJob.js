@@ -1,23 +1,18 @@
 import { Link } from "react-router-dom";
 import { convertCities } from "../Job/Functions/JobFunctions";
-import findCompanyLogo from "../Job/Data/CompanyLogos.js"
+import convertCompanyForLogo from "../Job/Data/CompanyLogos.js"
 
 import "./RecruiterJob.css";
 
 export default function RecruiterJob({ jobObject }) {
   const { title, company, city, users, id } = jobObject;
 
-  function convertCompanyForLogo(str){
-    const removeSpaces = str.replaceAll(" ", "")
-    const combineCompanyName = removeSpaces.split("").join("")
-    return findCompanyLogo(combineCompanyName)
-  }
-  const companyName = convertCompanyForLogo(company.toLowerCase())
+  const companyLogo = convertCompanyForLogo(company.toLowerCase())
 
   return (
     <div className="recruiter-job grid-center">
       <img className="recruiter-job-company-logo"
-      src= {companyName}
+      src= {companyLogo}
       alt ="company-logo"/>
       <Link to={`/jobs/${id}`} className="recruiter-job-title">
           {title}
