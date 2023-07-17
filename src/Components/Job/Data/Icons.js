@@ -4,6 +4,7 @@ import { GoLocation } from "react-icons/go";
 import { BsClipboardCheck } from "react-icons/bs";
 import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk } from "react-icons/cg";
+import { BsFillCircleFill } from "react-icons/bs";
 
 
 const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
@@ -16,11 +17,14 @@ const searchIcon =  <CiSearch size ={"28px"} color={"#41CDBC"} className="search
 
 const asterisk = <CgAsterisk color={"#BA1A1A"} size={"15px"} />
 
+const bulletPoint = <BsFillCircleFill />
+
 export {
     jobCompany,
     jobLocation,
     jobApplied,
     searchIcon,
     asterisk,
+    bulletPoint,
 
 }

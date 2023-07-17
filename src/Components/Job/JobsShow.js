@@ -7,10 +7,8 @@ import SkillsComponent from "./SkillsComponent";
 import { convertDate, convertCities } from "./Functions/JobFunctions";
 import { convertSkills } from "./Functions/SkillsFunctions";
 import convertCompanyForLogo from "./Data/CompanyLogos";
-import { jobApplied } from "./Data/Icons";
-import { GrEdit } from "react-icons/gr";
-import { BsFillCircleFill } from "react-icons/bs";
-import "./JobsShow.css";
+import { bulletPoint } from "./Data/Icons";
+import "./JobsShow.scss";
 
 function JobsShow() {
   const { setAppHeader } = useContextProvider();
@@ -30,7 +28,6 @@ function JobsShow() {
   const [reload, setReload] = useState(false);
   const [applied, setApplied] = useState(false);
 
-  // const companyLogo = convertCompanyForLogo(jobDetails.company.toLowerCase())
 
   const applyButtonClick =
     !isSignedIn && !isRecruiterAcc
@@ -52,10 +49,10 @@ function JobsShow() {
 
   const appliedButtonClass =
     isRecruiterAcc && !isSignedIn
-      ? "job-show-header-apply job-show-edit"
+      ? "jobShow_header_apply"
       : !applied && isSignedIn
-      ? "job-show-header-apply"
-      : "job-show-header-applied";
+      ? "jobShow_header_apply"
+      : "jobShow_header_applied";
 
   // ADDED DELETE FOR RECRUITERS
   function deleteJob() {
@@ -98,8 +95,8 @@ function JobsShow() {
   useEffect(() => setAppHeader("Job Details"), []);
 
   return (
-    <div className="job-show">
-      <section className="job-show-header">
+    <div className="jobShow">
+      <section className="jobShow_header">
         <img
           src={
             jobDetails.company &&
@@ -112,16 +109,16 @@ function JobsShow() {
         <div className="jobShow_header_details">
           <h2 className="jobShow_header_details_title">{jobDetails.title}</h2>
           <section className="jobShow_header_details_company">
-            <span className="job-show-company">{jobDetails.company}</span>
-            <BsFillCircleFill color={"#41cdbc"} size={"8px"} />
-            <span className="job-show-location">
+            <span>{jobDetails.company}</span>
+            {bulletPoint}
+            <span>
               {jobDetails.city && convertCities(jobDetails.city)}
             </span>
           </section>
         </div>
         <section className="jobShow_header_options">
           {jobDetails.full_remote && (
-            <span className="job-show-remote">
+            <span className="jobShow_header_options_remote">
               <span>REMOTE</span>
             </span>
           )}
@@ -137,16 +134,16 @@ function JobsShow() {
 
       <SkillsComponent skillsArr={skillIdArr} justList={true} />
 
-      <section className="job-show-details">
-        <div className="job-show-description">
-          <span className="job-show-label">Description:</span>
+      <section className="jobShow_details">
+        <div className="jobShow_details_description">
+          <span className="jobShow_details_description_label">Description:</span>
           <span className="job-disclaimer">*Not a real job posting*</span>
           <span>{jobDetails.details}</span>
         </div>
 
-        <div className="job-show-description">
-          <span className="job-show-label">Tasks:</span>
-          <span className="job-show-role-list">
+        <div className="jobShow_details_description">
+          <span className="jobShow_details_description_label">Tasks:</span>
+          <span className="jobShow_details_description_label_role-list">
             {jobDetails.tasks &&
               jobDetails.tasks.split(`${TASK}`).map((el) => {
                 if (el) {
@@ -169,13 +166,13 @@ function JobsShow() {
           className={
             (isRecruiterAcc && !editAccess) || (!isSignedIn && !isRecruiterAcc)
               ? "hide"
-              : "job-show-apply"
+              : "jobShow_apply"
           }
         >
           {appliedButtonView === "EDIT" ? "DELETE" : appliedButtonView}
         </button>
       ) : isSignedIn && applied ? (
-        <div className="job-show-applied" onClick={applyButtonClick}>
+        <div className="jobShow_applied" onClick={applyButtonClick}>
           APPLIED ON {convertDate(applied["date_applied"])}
         </div>
       ) : null}
