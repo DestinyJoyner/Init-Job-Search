@@ -7,7 +7,7 @@ import NoAccess from "../App/NoAccess";
 import RecruiterIcon from "../../Assets/RECRUITER.png";
 import PlusBlue from "../../Assets/plus-blue.png";
 import PlusGold from "../../Assets/plus-gold.png";
-import { jobCompany } from "../Job/Data/Icons";
+import { badge, badgeOutline } from "../Job/Data/Icons";
 import convertCompanyForLogo from "../Job/Data/CompanyLogos";
 import "./RecruiterProfile.scss";
 
@@ -36,22 +36,23 @@ export default function RecruiterProfile() {
     recruiterDetails.id && (
       <div className="recruiterProfile grid-center center">
         <div className="recruiterProfile_header">
-          <span className="recruiterProfile_header_name">{`${recruiterDetails.first_name}${recruiterDetails.last_name}`}
+          <span className="recruiterProfile_header_name">{`${recruiterDetails.first_name} ${recruiterDetails.last_name}`}
           </span>
           <span className="recruiterProfile_header_company">
+          {recruiterDetails.organization}
+          </span>
             <img 
             className="recruiterProfile_header_company_logo"
             src={convertCompanyForLogo(recruiterDetails.organization.toLowerCase())} 
             alt = "recruiter-company"/>
-            <span className="recruiterProfile_header_company_name">
-              {recruiterDetails.organization}
-            </span>
-            </span>
-          
-          <img src={RecruiterIcon} alt="recruiter icon" />
+            
+          <div className="recruiterProfile_header_badge">{badge}
+          <span>Recruiter</span></div>
+          {/* <img src={RecruiterIcon} alt="recruiter icon"
+          className="recruiterProfile_header_icon" /> */}
         </div>
 
-        
+
         <div className="jobs-posted-header">
           <h2>Jobs Posted ({recruiterDetails.jobs_posted.length})</h2>
           <img

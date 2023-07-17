@@ -7,7 +7,9 @@ import googleLogo from "../../../Assets/companyLogos/google.png";
 import hubspotLogo from "../../../Assets/companyLogos/hubspot.png";
 import nvidiaLogo from "../../../Assets/companyLogos/nvidia.png";
 import shopifyLogo from "../../../Assets/companyLogos/shopify.png";
+import techItEasyLogo from "../../../Assets/companyLogos/techiteasy.jpeg"
 
+// techiteasylogo-> https://dribbble.com/shots/3753975-Tech-it-easy
 const companyLogoObject = {
   blackstone: blackstoneLogo,
   citi: citiLogo,
@@ -17,6 +19,7 @@ const companyLogoObject = {
   hubspot: hubspotLogo,
   nvidia: nvidiaLogo,
   shopify: shopifyLogo,
+  techiteasy : techItEasyLogo
 };
 
 const defaultCompany = noLogo;

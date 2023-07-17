@@ -7,36 +7,69 @@
         {
             height: 100%;
             width: 98%;
-            font-size: 22px;
             display: grid;
-            grid-template-columns: 2.5fr 1fr;
+            align-items: center;
+            justify-items: left;
+            font-size: 22px;
+            padding-top: 2vh;
+            padding-bottom: 1vh;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 40% 30% 30%;
+            column-gap: 5vw;
             border-bottom: 2px solid var(--init-darkmint);
             
-            & svg {
-                fill: black;
-                stroke: black;
-                height: 1.2em;
-                width: 1.2em;
-                position: relative;
-                top: 4px;
-                margin-right: 4px;
-            }
-
-            & p {
-                margin: 2vh 0 0 3vw;
-                padding-bottom: 10px;
+            &_badge {
+                grid-column: 2;
+                grid-row: 3;
+                display: grid;
+                grid-template-columns: auto auto;
+        
                 font-weight: 600;
+                position: relative;
+                right: 2vw;
+                & svg {
+                    fill: var(--init-charcoal);
+                    background-color: white;
+                    padding: 5px;
+                    border-radius: 50%;
+                    height: 1.4em;
+                    width: 1.4em;
+                    
+                }
+                & span{
+                    align-self: center;
+                    margin-left: 1vw;
+                    font-size: 16px;
+                }
             }
-
-            & img {
+            &_name {
+                grid-column: 2;
+                grid-row: 1;
+                font-weight: 900;
                 margin-top: 2vh;
-                /* margin: 0 auto; */
-                height: 60px;
-                border: 2px solid var(--init-charcoal);
-                padding: 4px;
-                border-radius: 50%;
-                background-color: white;
+                font-size: 24px;
             }
+            &_company {
+                grid-column:2;
+                grid-row: 2;
+                font-style: italic;
+                font-size: 20px;
+
+                &_logo {
+                    grid-column: 1;
+                    grid-row: 1/4;
+                    height: 100px;
+                    border-radius: 50%;
+                    max-width: 100px;
+                    border: 1px solid var(--init-charcoal);
+                }
+            
+            }
+        &_icon {
+            grid-column: span 3;
+            grid-row: 1;
+        }
+               
     }
 }
 
@@ -52,8 +85,9 @@
 .recruiterProfile .jobs-posted-header {
     display: grid;
     grid-template-columns: 2fr .5fr;
-    width: 92%;
+    width: 94%;
     justify-items: left;
+    margin-top: 1vh;
 }
 
 .recruiterProfile .jobs-posted-header img {
@@ -64,6 +98,7 @@
 .recruiterProfile .jobs-posted-header h2 {
     font-size: 28px;
     align-self: center;
+    text-decoration: underline;
 }
 
 .recruiter-profile-new-job {

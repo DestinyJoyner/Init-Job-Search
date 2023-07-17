@@ -1,10 +1,10 @@
-
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { GoLocation } from "react-icons/go";
 import { BsClipboardCheck } from "react-icons/bs";
 import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk } from "react-icons/cg";
 import { BsFillCircleFill } from "react-icons/bs";
+import {FaIdBadge, FaRegIdBadge} from "react-icons/fa"
 
 
 const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
@@ -19,6 +19,10 @@ const asterisk = <CgAsterisk color={"#BA1A1A"} size={"15px"} />
 
 const bulletPoint = <BsFillCircleFill />
 
+const badge = <FaIdBadge />
+const badgeOutline = <FaRegIdBadge />
+
+
 export {
     jobCompany,
     jobLocation,
@@ -26,5 +30,7 @@ export {
     searchIcon,
     asterisk,
     bulletPoint,
+    badge, 
+    badgeOutline
 
 }
