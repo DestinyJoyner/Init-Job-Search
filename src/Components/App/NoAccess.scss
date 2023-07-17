@@ -1,0 +1,25 @@
+.userLoginPrompt {
+    height: 60vh;
+    width: 90vw;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5vh;
+
+    & h2 {
+       text-align: center;
+    }
+
+    &_link {
+        all: unset;
+        font-size: 36px;
+        color: var(--init-blue);
+        font-weight: 600;
+    }
+    & img {
+        height: 12vh;
+    }
+    
+}
