@@ -177,52 +177,24 @@
   width: 2em;
 }
 
-/* DARK MODE UPDATES */
-
-.dark .job-show-details,
-.dark .job-show-applied, .dark .job-show-header  {
+/* DARK MODE */
+.dark .jobShow_details, .dark .jobShow_header {
   color: var(--init-background);
+} 
+
+.dark .jobShow_header_logo {
+  background-color: var(--init-background);
 }
 
-.dark .job-show-label,
-.dark .job-show-details {
-  border-bottom: var(--init-mint) 2px solid;
-}
-.dark .job-show-label {
-  color: var(--init-gold);
-}
-
-.dark .job-show-applied svg {
-  fill: var(--init-mint);
-}
-.dark .job-show-applied span:first-of-type {
-  color: var(--init-gold);
-  /* background-color: var(--init-mint); */
-  padding: 5px;
-}
-
-.dark .job-show-company svg {
-  /* stroke: var(--init-mint); */
-  stroke: var(--init-gold);
-}
-.dark .job-show-location svg {
-  /* fill: var(--init-mint); */
-  fill:var(--init-gold)
-}
-.dark .job-show-remote {
-  /* background-color: var(--init-dark);
-  color: var(--init-background);
-  border: 1px solid var(--init-mint); */
-  background-color: var(--init-mint);
-}
-.dark .job-show-header-applied {
-  /* background-color: var(--init-mint); */
-  color: var(--init-gold);
-}
-.dark .job-show-header-border-bottom {
+.dark .jobShow_header_border-bottom, .dark .jobShow_details {
   border-color: var(--init-mint);
 }
-.dark .job-show .skills-component {
+
+.dark .jobShow_applied, .dark .jobShow_apply, .dark .jobShow_header_apply, .dark .jobShow_header_applied, .dark .jobShow_details_description_label, .dark .jobShow_header_details_company svg  {
+  color: var(--init-gold);
+}
+
+.dark .jobShow .skills-component {
   background-color: var(--init-background);
   width: 90%;
   margin: 6px 0px;
@@ -230,9 +202,6 @@
   justify-self: center;
   border-radius: 20px;
   border: var(--init-mint) 2px solid;
-}
-.dark .job-show-apply, .dark .job-show-header-apply {
-  color: var(--init-gold);
 }
 
 /* BONUS */
