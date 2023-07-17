@@ -205,34 +205,34 @@
 }
 
 /* BONUS */
-.bonus-job .app-header {
-  background-image: url("https://thumbs.gfycat.com/AliveAdmirableEidolonhelvum-max-1mb.gif");
-}
+// .bonus-job .app-header {
+//   background-image: url("https://thumbs.gfycat.com/AliveAdmirableEidolonhelvum-max-1mb.gif");
+// }
 
-.bonus-show {
-  background-color: black;
-  color: #00ff41;
-  grid-row: 2;
-  grid-column: span 2;
-  grid-row: 2/6;
-  height: 3vh;
-  width: fit-content;
-  justify-self: center;
-  align-self: center;
-  overflow: hidden;
-  padding: 0px 10px;
-  border-right: 0.15em solid grey;
-  white-space: nowrap;
-  width: 12em;
-  animation: type 10s steps(60, end);
-}
+// .bonus-show {
+//   background-color: black;
+//   color: #00ff41;
+//   grid-row: 2;
+//   grid-column: span 2;
+//   grid-row: 2/6;
+//   height: 3vh;
+//   width: fit-content;
+//   justify-self: center;
+//   align-self: center;
+//   overflow: hidden;
+//   padding: 0px 10px;
+//   border-right: 0.15em solid grey;
+//   white-space: nowrap;
+//   width: 12em;
+//   animation: type 10s steps(60, end);
+// }
 
-.dark .bonus-job .app-header {
-  color: var(--init-background);
-}
-@keyframes type {
-  from {
-    width: 0;
-  }
-}
+// .dark .bonus-job .app-header {
+//   color: var(--init-background);
+// }
+// @keyframes type {
+//   from {
+//     width: 0;
+//   }
+// }
 
