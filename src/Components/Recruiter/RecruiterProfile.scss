@@ -18,17 +18,15 @@
             column-gap: 5vw;
             border-bottom: 2px solid var(--init-darkmint);
             
-            &_badge {
+            &_icon {
                 grid-column: 2;
                 grid-row: 3;
                 display: grid;
                 grid-template-columns: auto auto;
-        
                 font-weight: 600;
                 position: relative;
                 right: 2vw;
                 & svg {
-                    fill: var(--init-charcoal);
                     background-color: white;
                     padding: 5px;
                     border-radius: 50%;
@@ -61,15 +59,10 @@
                     height: 100px;
                     border-radius: 50%;
                     max-width: 100px;
-                    border: 1px solid var(--init-charcoal);
+                    // border: 1px solid var(--init-charcoal);
                 }
             
-            }
-        &_icon {
-            grid-column: span 3;
-            grid-row: 1;
-        }
-               
+            }  
     }
 }
 
@@ -98,7 +91,7 @@
 .recruiterProfile .jobs-posted-header h2 {
     font-size: 28px;
     align-self: center;
-    text-decoration: underline;
+    // text-decoration: underline;
 }
 
 .recruiter-profile-new-job {

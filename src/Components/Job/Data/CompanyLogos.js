@@ -6,10 +6,12 @@ import goldmanLogo from "../../../Assets/companyLogos/goldman-sachs.png";
 import googleLogo from "../../../Assets/companyLogos/google.png";
 import hubspotLogo from "../../../Assets/companyLogos/hubspot.png";
 import nvidiaLogo from "../../../Assets/companyLogos/nvidia.png";
+import pellSoftwareLogo from "../../../Assets/companyLogos/pellsoftware.png"
+import silverStarLogo from "../../../Assets/companyLogos/silverstar.jpeg"
 import shopifyLogo from "../../../Assets/companyLogos/shopify.png";
-import techItEasyLogo from "../../../Assets/companyLogos/techiteasy.jpeg"
+import techItEasyLogo from "../../../Assets/companyLogos/techiteasy.png"
+import umbrellaCorpLogo from "../../../Assets/companyLogos/umbrellacorporation.png"
 
-// techiteasylogo-> https://dribbble.com/shots/3753975-Tech-it-easy
 const companyLogoObject = {
   blackstone: blackstoneLogo,
   citi: citiLogo,
@@ -18,8 +20,11 @@ const companyLogoObject = {
   google: googleLogo,
   hubspot: hubspotLogo,
   nvidia: nvidiaLogo,
+  pellsoftware: pellSoftwareLogo,
+  silverstartechnology: silverStarLogo,
   shopify: shopifyLogo,
-  techiteasy : techItEasyLogo
+  techiteasy : techItEasyLogo,
+  umbrellacorporation : umbrellaCorpLogo
 };
 
 const defaultCompany = noLogo;

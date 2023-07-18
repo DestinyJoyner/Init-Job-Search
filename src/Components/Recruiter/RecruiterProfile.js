@@ -7,7 +7,7 @@ import NoAccess from "../App/NoAccess";
 import RecruiterIcon from "../../Assets/RECRUITER.png";
 import PlusBlue from "../../Assets/plus-blue.png";
 import PlusGold from "../../Assets/plus-gold.png";
-import { badge, badgeOutline } from "../Job/Data/Icons";
+import { recruiter } from "../Job/Data/Icons";
 import convertCompanyForLogo from "../Job/Data/CompanyLogos";
 import "./RecruiterProfile.scss";
 
@@ -18,7 +18,7 @@ export default function RecruiterProfile() {
   const [recruiterDetails, setRecruiterDetails] = useState({});
 
   useEffect(() => {
-   setAppHeader("Profile")
+    setAppHeader("Profile");
     recruiterID
       ? axios
           .get(`${API}/recruiters/${recruiterID}`)
@@ -28,30 +28,31 @@ export default function RecruiterProfile() {
   }, [recruiterID]);
 
   if (!isRecruiterAcc) {
-    return (
-     <NoAccess />
-    );
+    return <NoAccess />;
   }
   return (
     recruiterDetails.id && (
       <div className="recruiterProfile grid-center center">
         <div className="recruiterProfile_header">
-          <span className="recruiterProfile_header_name">{`${recruiterDetails.first_name} ${recruiterDetails.last_name}`}
+          <span className="recruiterProfile_header_name">
+            {`${recruiterDetails.first_name} ${recruiterDetails.last_name}`}
           </span>
           <span className="recruiterProfile_header_company">
-          {recruiterDetails.organization}
+            {recruiterDetails.organization}
           </span>
-            <img 
+          <img
             className="recruiterProfile_header_company_logo"
-            src={convertCompanyForLogo(recruiterDetails.organization.toLowerCase())} 
-            alt = "recruiter-company"/>
-            
-          <div className="recruiterProfile_header_badge">{badge}
-          <span>Recruiter</span></div>
-          {/* <img src={RecruiterIcon} alt="recruiter icon"
-          className="recruiterProfile_header_icon" /> */}
-        </div>
+            src={convertCompanyForLogo(
+              recruiterDetails.organization.toLowerCase()
+            )}
+            alt="recruiter-company"
+          />
 
+          <div className="recruiterProfile_header_icon">
+            {recruiter}
+            <span>Recruiter</span>
+          </div>
+        </div>
 
         <div className="jobs-posted-header">
           <h2>Jobs Posted ({recruiterDetails.jobs_posted.length})</h2>
