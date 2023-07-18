@@ -34,7 +34,7 @@
       }
       & span {
         align-self: center;
-        margin-left: 1vw;
+        margin-left: 2vw;
         font-size: 16px;
       }
     }
@@ -92,6 +92,7 @@
   &_jobsList {
     width: 94%;
     display: grid;
+    grid-template-rows: max-content;
     row-gap: 1vh;
     overflow-y: scroll;
     height: 52vh;
@@ -124,6 +125,9 @@
                 color: var(--init-gold);
              }
         }
+    }
+    &_jobsList {
+      border-color: var(--init-darkmint);
     }
     &_new-job-link {
         color: var(--init-gold);

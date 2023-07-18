@@ -14,6 +14,7 @@
     grid-column: 1;
     grid-row: 1/4;
     height: 50px;
+    max-width: 50px;
 }
 
 .recruiter-job-details {
@@ -58,14 +59,19 @@
 .dark .recruiter-job {
     border-color: var(--init-darkmint);
 }
+
+.dark .recruiter-job-company-logo {
+    border: 1px solid var(--init-background);
+    background-color: var(--init-background);
+}
+
+.dark .recruiter-job-details .recruiter-job-company, .dark .recruiter-job-details .recruiter-job-city  {
+    color: var(--init-background);
+}
 .dark .recruiter-job a{
-    color: var(--init-blue);
+    color: var(--init-gold);
 }
 
 .dark .recruiter-job-company {
     color: var(--init-charcoal);
-}
-
-.dark .recruiter-job-details {
-    background-color: var(--init-gold);
 }
