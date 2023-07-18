@@ -7,6 +7,9 @@
     padding-right: 5px;
 }
 
+.recruiter-job:first-of-type {
+    border-top: none;
+}
 .recruiter-job-company-logo {
     grid-column: 1;
     grid-row: 1/4;
