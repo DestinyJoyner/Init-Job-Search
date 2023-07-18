@@ -1,11 +1,9 @@
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { GoLocation } from "react-icons/go";
-import { BsClipboardCheck } from "react-icons/bs";
+import { BsClipboardCheck, BsFillCircleFill, BsFillPlusCircleFill  } from "react-icons/bs";
 import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk } from "react-icons/cg";
-import { BsFillCircleFill } from "react-icons/bs";
 import {FaUserTie} from "react-icons/fa"
-
 
 const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
 
@@ -21,6 +19,8 @@ const bulletPoint = <BsFillCircleFill />
 
 const recruiter = <FaUserTie />
 
+const addJob = <BsFillPlusCircleFill />
+
 
 export {
     jobCompany,
@@ -29,7 +29,8 @@ export {
     searchIcon,
     asterisk,
     bulletPoint,
-    recruiter
+    recruiter,
+    addJob
  
 
 }

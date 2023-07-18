@@ -2,8 +2,8 @@
   background-color: white;
   color: var(--init-charcoal);
   border-radius: 14px;
-  width: 90%;
-  height: 15vh;
+  width: 100%;
+  height: inherit;
   display: grid;
   grid-template-columns: 1fr 2.2fr;
   align-items: center;

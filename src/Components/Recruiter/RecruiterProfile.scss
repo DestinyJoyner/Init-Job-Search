@@ -1,100 +1,99 @@
 .recruiterProfile {
-    height: 92vh;
+  height: 92vh;
+  width: 98%;
+  grid-template-rows: 16vh 10vh 55vh 10vh;
+
+  &_header {
+    height: 100%;
     width: 98%;
-    grid-template-rows: 16vh 10vh 55vh 10vh;
+    display: grid;
+    align-items: center;
+    justify-items: left;
+    font-size: 22px;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 40% 30% 30%;
+    column-gap: 5vw;
+    border-bottom: 2px solid var(--init-darkmint);
 
-    &_header 
-        {
-            height: 100%;
-            width: 98%;
-            display: grid;
-            align-items: center;
-            justify-items: left;
-            font-size: 22px;
-            padding-top: 2vh;
-            padding-bottom: 1vh;
-            grid-template-columns: 1fr 3fr;
-            grid-template-rows: 40% 30% 30%;
-            column-gap: 5vw;
-            border-bottom: 2px solid var(--init-darkmint);
-            
-            &_icon {
-                grid-column: 2;
-                grid-row: 3;
-                display: grid;
-                grid-template-columns: auto auto;
-                font-weight: 600;
-                position: relative;
-                right: 2vw;
-                & svg {
-                    background-color: white;
-                    padding: 5px;
-                    border-radius: 50%;
-                    height: 1.4em;
-                    width: 1.4em;
-                    
-                }
-                & span{
-                    align-self: center;
-                    margin-left: 1vw;
-                    font-size: 16px;
-                }
-            }
-            &_name {
-                grid-column: 2;
-                grid-row: 1;
-                font-weight: 900;
-                margin-top: 2vh;
-                font-size: 24px;
-            }
-            &_company {
-                grid-column:2;
-                grid-row: 2;
-                font-style: italic;
-                font-size: 20px;
-
-                &_logo {
-                    grid-column: 1;
-                    grid-row: 1/4;
-                    height: 100px;
-                    border-radius: 50%;
-                    max-width: 100px;
-                    // border: 1px solid var(--init-charcoal);
-                }
-            
-            }  
+    &_icon {
+      grid-column: 2;
+      grid-row: 3;
+      display: grid;
+      grid-template-columns: auto auto;
+      font-weight: 600;
+      position: relative;
+      right: 2vw;
+      & svg {
+        background-color: white;
+        padding: 5px;
+        border-radius: 50%;
+        height: 1.4em;
+        width: 1.4em;
+      }
+      & span {
+        align-self: center;
+        margin-left: 1vw;
+        font-size: 16px;
+      }
     }
-}
+    &_name {
+      grid-column: 2;
+      grid-row: 1;
+      font-weight: 900;
+      margin-top: 2vh;
+      font-size: 24px;
+    }
+    &_company {
+      grid-column: 2;
+      grid-row: 2;
+      font-style: italic;
+      font-size: 20px;
 
-.recruiter-jobs {
+      &_logo {
+        grid-column: 1;
+        grid-row: 1/4;
+        height: 80px;
+        border-radius: 50%;
+        max-width: 100px;
+        margin-bottom: 2vh;
+        // border: 1px solid var(--init-charcoal);
+      }
+    }
+  }
+
+  &_jobsPosted {
+    &_header {
+      display: grid;
+      grid-template-columns: 2fr 0.5fr;
+      width: 94%;
+      justify-items: left;
+      margin-top: 1vh;
+
+      & svg {
+        height: 2.5em;
+        width: 2.5em;
+        color: var(--init-blue);
+        margin-top: 1.2vh;
+      }
+      & h2 {
+        font-size: 28px;
+        align-self: center;
+      }
+    }
+  }
+
+  &_jobsList {
     width: 94%;
     display: grid;
     row-gap: 1vh;
     overflow-y: scroll;
     height: 54vh;
     padding: 2vh;
-}
+  }
 
-.recruiterProfile .jobs-posted-header {
-    display: grid;
-    grid-template-columns: 2fr .5fr;
-    width: 94%;
-    justify-items: left;
-    margin-top: 1vh;
-}
-
-.recruiterProfile .jobs-posted-header img {
-    height: 40px;
-    margin-left: 3vw;
-}
-
-.recruiterProfile .jobs-posted-header h2 {
-    font-size: 28px;
-    align-self: center;
-    // text-decoration: underline;
-}
-
-.recruiter-profile-new-job {
+  &_new-job-link {
     justify-self: center;
     font-size: 26px;
     border-top: 2px solid var(--init-darkmint);
@@ -102,17 +101,18 @@
     text-align: center;
     padding-top: 2vh;
     margin-top: 1vh;
+  }
 }
 
 .dark .recruiter-profile-top svg {
-fill: var(--init-background);
-stroke: var(--init-background);
+  fill: var(--init-background);
+  stroke: var(--init-background);
 }
 
 .dark .recruiter-profile-top {
-    border-color: var(--init-darkmint);
+  border-color: var(--init-darkmint);
 }
 
 .dark .recruiter-profile-new-job {
-    color: var(--init-gold);
+  color: var(--init-gold);
 }

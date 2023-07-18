@@ -4,10 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
 import RecruiterJob from "./RecruiterJob.js";
 import NoAccess from "../App/NoAccess";
-import RecruiterIcon from "../../Assets/RECRUITER.png";
+
 import PlusBlue from "../../Assets/plus-blue.png";
 import PlusGold from "../../Assets/plus-gold.png";
-import { recruiter } from "../Job/Data/Icons";
+import { recruiter, addJob } from "../Job/Data/Icons";
 import convertCompanyForLogo from "../Job/Data/CompanyLogos";
 import "./RecruiterProfile.scss";
 
@@ -54,21 +54,19 @@ export default function RecruiterProfile() {
           </div>
         </div>
 
-        <div className="jobs-posted-header">
+        <div className="recruiterProfile_jobsPosted_header">
           <h2>Jobs Posted ({recruiterDetails.jobs_posted.length})</h2>
-          <img
-            src={theme === "light" ? PlusBlue : PlusGold}
-            alt="plus icon"
-            onClick={() => navigate("/jobs/new")}
-          />
+          <Link to="/jobs/new">{addJob}</Link>
         </div>
-        <div className="recruiter-jobs">
-          {recruiterDetails.jobs_posted.length > 0 &&
+        <div className="recruiterProfile_jobsList">
+          {recruiterDetails.jobs_posted.length > 0 ?
             recruiterDetails.jobs_posted.map((e) => (
               <RecruiterJob jobObject={e} key={uuidv4()} />
-            ))}
+            )) :
+            <p>No Current Job Postings</p>
+          }
         </div>
-        <Link className="recruiter-profile-new-job" to="/jobs/new">
+        <Link className="recruiterProfile_new-job-link" to="/jobs/new">
           POST A JOB
         </Link>
       </div>
