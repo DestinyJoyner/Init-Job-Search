@@ -4,75 +4,42 @@ import { useJobProvider } from "../../Providers/JobProvider.js";
 import { v4 as uuidv4 } from "uuid";
 import JobsCard from "./JobsCard";
 import SearchBar from "./SearchBar.js";
-import "./JobsIndex.css";
+import { handlePagination } from "./JobsIndexFunctions.js";
+import "./JobsIndex.scss";
 
 function JobsIndex() {
   const { setAppHeader } = useContextProvider();
-  const { jobs, queryStart, setQueryStart, jobQuery } =
-    useJobProvider();
+  const { jobs, queryStart, setQueryStart, jobQuery } = useJobProvider();
 
-    const [hideNextButton, setHideNextButton] = useState(false)
-    const [hidePrevButton, setHidePrevButton] = useState(false)
-
-
-  function handlePagination(e, stateVar, setFunction) {
-    const buttonValue = e.target.value;
-    if(buttonValue === "next" ){
-        setHidePrevButton(false)
-        if(stateVar + 4 <= jobs.length){
-            stateVar + 8 >= jobs.length ? 
-            setHideNextButton(true) :
-            setHideNextButton(false)
-
-            setFunction(stateVar + 4) 
-            }
-            
-        else {
-            setHideNextButton(true)
-        }
-    }
-    if(buttonValue === "previous"){
-        setHideNextButton(false)
-        if(stateVar -4 >= 0){
-            stateVar -8 < 0 ?
-            setHidePrevButton(true) :
-            setHidePrevButton(false)
-
-            setFunction(stateVar - 4) 
-        }
-        else {
-            setHidePrevButton(true)
-        }
-    }
-  }
+  const [hideNextButton, setHideNextButton] = useState(false);
+  const [hidePrevButton, setHidePrevButton] = useState(true);
 
   useEffect(() => setAppHeader("inIT Jobs"), []);
 
   return (
     <div className="jobsIndex">
       <SearchBar />
+      <section className="jobsIndex_buttons">
       <button
-      className={hideNextButton ? "hide" : "show"}
-        value={"next"}
-        onClick={(event) => handlePagination(event, queryStart, setQueryStart)}
-      >
-        Next
-      </button>
-      <button
-      className={hidePrevButton ?"hide" : "show"}
+        className={hidePrevButton ? "hide" : " jobsIndex_buttons_prev show"}
         value={"previous"}
-        onClick={(event) => handlePagination(event, queryStart, setQueryStart)}
+        onClick={(event) => handlePagination(event, queryStart, setQueryStart, setHidePrevButton, setHideNextButton,jobs)}
       >
-        Prev
+       {"<"}
       </button>
-      <section className="jobListings grid-center">
+      <button
+        className={hideNextButton ? "hide" : " jobsIndex_buttons_next show"}
+        value={"next"}
+        onClick={(event) => handlePagination(event, queryStart, setQueryStart, setHideNextButton, setHidePrevButton,jobs)}
+      >
+        {">"}
+      </button>
+      </section>
+     
+      <section className="jobsIndex_listings grid-center">
         {
         jobQuery.length > 0 &&
-        jobQuery.map(obj => 
-          <JobsCard 
-          key={uuidv4()} 
-          jobObj={obj} />
-        )}
+          jobQuery.map((obj) => <JobsCard key={uuidv4()} jobObj={obj} />)}
       </section>
     </div>
   );

@@ -1,0 +1,37 @@
+.jobsIndex {
+  display: grid;
+  grid-auto-rows: min-content;
+  row-gap: 2vh;
+  justify-items: center;
+  height: 88vh;
+  padding-bottom: 5vh;
+  width: 100%;
+
+  &_buttons {
+    width: 80%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+    & >* {
+      all: unset;
+      color: var(--init-blue);
+      font-weight: 600;
+      font-size: 40px;
+    }
+  }
+
+  &_listings {
+    height: 100%;
+    grid-row: 2;
+    width: 95%;
+    row-gap: 2vh;
+  }
+
+  & a {
+    width: 90%;
+    height: 15vh;
+    color: var(--init-charcoal);
+    border-radius: 20px;
+  }
+}
+
