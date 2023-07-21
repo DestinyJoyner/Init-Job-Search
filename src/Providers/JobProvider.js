@@ -24,6 +24,9 @@ function JobProvider({ children }) {
   const navigate = useNavigate()
   const [jobs, setJobs] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
+
+  const [jobQuery, setJobQuery] = useState([])
+   const [queryStart, setQueryStart] = useState(0)
   const [recruiterJobs, setRecruiterJobs] = useState([]);
 
   const [editAccess, setEditAccess] = useState(false);
@@ -39,9 +42,19 @@ function JobProvider({ children }) {
         setSearchResult(data);
       })
       .catch((error) => console.log(error));
+
       axios.get(`${API}/jobs/22`)
       .then(({data}) => setBonus(data))
       .catch(err=> console.log(err))
+
+    axios.get(`${API}/jobs?start=${queryStart}&limit=4`)
+    .then(({data}) => 
+    {
+      if(data.length > 0){
+      setJobQuery(data)
+    }
+    })
+    .catch(err => console.log(err))
   }, []);
 
   useEffect(() => {
@@ -78,6 +91,13 @@ function JobProvider({ children }) {
     }
   }, [recruiterID, jobID]);
 
+  // useEffect for job pagination
+  useEffect(() => {
+    axios.get(`${API}/jobs?start=${queryStart}&limit=4`)
+    .then(({data}) => setJobQuery(data))
+    .catch(err => console.log(err))
+   },[queryStart])
+
   return (
     <JobContextData.Provider
       value={{
@@ -102,6 +122,10 @@ function JobProvider({ children }) {
         setShowAccess,
         bonus,
         setBonus,
+        jobQuery,
+        setJobQuery,
+        queryStart,
+        setQueryStart
       }}
     >
       {children}

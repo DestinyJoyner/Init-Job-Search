@@ -28,7 +28,6 @@ function JobsShow() {
   const [reload, setReload] = useState(false);
   const [applied, setApplied] = useState(false);
 
-
   const applyButtonClick =
     !isSignedIn && !isRecruiterAcc
       ? null
