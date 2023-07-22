@@ -47,6 +47,16 @@ a {
   justify-items: center;
 }
 
+/* HIDE */
+.hide {
+  /* display: none; */
+  visibility: hidden;
+}
+.show {
+  /* display: unset; */
+  visibility: visible;
+}
+
 /* INPUTS */
 
 input[type="text"] {

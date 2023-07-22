@@ -1,61 +1,77 @@
 .recruiter-job {
     width: 98%;
-    height: 11vh;
-    grid-template-columns: 55% 45%;
-    grid-template-rows: repeat(3,.5fr);
-    background-color: white;
-    border-radius: 18px;
+    height: 12vh;
+    grid-template-columns: 15% 60% 25%;
+    border-top: 2px solid var(--init-charcoal);
+    justify-items: left;
     padding-right: 5px;
-    border: 1px solid var(--init-gold);  
+}
+
+.recruiter-job:first-of-type {
+    border-top: none;
+}
+.recruiter-job-company-logo {
+    grid-column: 1;
+    grid-row: 1/4;
+    height: 50px;
+    max-width: 50px;
 }
 
 .recruiter-job-details {
     height: 100%;
     width: 100%;
-    background-color: var(--init-darkmint);
     display: grid;
-    grid-column: 1;
-    grid-row: 1/4;
+    grid-column: 2;
+    grid-row: 2/4;
     align-items: center;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
 }
 
-
 .recruiter-job-title {
+    grid-column: 2/4;
     font-size: 19px;
     margin-left: 3vw;
-    color: var(--init-blue);    
+    color: var(--init-blue);  
 }
 .recruiter-job-company {
     font-weight: 600;
-    text-align: center;
+    margin-left: 3vw;
 }
 .recruiter-job-city {
     color: var(--init-faded-gray);
+    margin-left: 3vw;
 }
 .recruiter-job-applicants{
-    grid-column: 2;
-}
-.recruiter-job-applicants span{
+    grid-column: 3;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
     font-size: 18px;
-    height: fit-content;
-    width: fit-content;
+}
+.recruiter-job-applicants .applicant-count {
+    grid-row: 2;
+    justify-self: center;
     color: var(--init-blue);
+    align-self: flex-end;
+    font-size: 20px;
 }
 
 /* DARK MODE */
 .dark .recruiter-job {
     border-color: var(--init-darkmint);
 }
+
+.dark .recruiter-job-company-logo {
+    border: 1px solid var(--init-background);
+    background-color: var(--init-background);
+}
+
+.dark .recruiter-job-details .recruiter-job-company, .dark .recruiter-job-details .recruiter-job-city  {
+    color: var(--init-background);
+}
 .dark .recruiter-job a{
-    color: var(--init-blue);
+    color: var(--init-gold);
 }
 
 .dark .recruiter-job-company {
     color: var(--init-charcoal);
-}
-
-.dark .recruiter-job-details {
-    background-color: var(--init-gold);
 }

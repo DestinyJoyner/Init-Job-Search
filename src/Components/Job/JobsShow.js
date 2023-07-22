@@ -6,9 +6,9 @@ import { v4 as uuidv4 } from "uuid";
 import SkillsComponent from "./SkillsComponent";
 import { convertDate, convertCities } from "./Functions/JobFunctions";
 import { convertSkills } from "./Functions/SkillsFunctions";
-import { jobCompany, jobLocation, jobApplied } from "./Data/Icons";
-import { GrEdit } from "react-icons/gr";
-import "./JobsShow.css";
+import convertCompanyForLogo from "./Data/CompanyLogos";
+import { bulletPoint } from "./Data/Icons";
+import "./JobsShow.scss";
 
 function JobsShow() {
   const { setAppHeader } = useContextProvider();
@@ -48,10 +48,10 @@ function JobsShow() {
 
   const appliedButtonClass =
     isRecruiterAcc && !isSignedIn
-      ? "job-show-header-apply job-show-edit"
+      ? "jobShow_header_apply"
       : !applied && isSignedIn
-      ? "job-show-header-apply"
-      : "job-show-header-applied";
+      ? "jobShow_header_apply"
+      : "jobShow_header_applied";
 
   // ADDED DELETE FOR RECRUITERS
   function deleteJob() {
@@ -94,51 +94,55 @@ function JobsShow() {
   useEffect(() => setAppHeader("Job Details"), []);
 
   return (
-    <div className="job-show">
-      <section className="job-show-header">
-        <h2>{jobDetails.title}</h2>
-        <div className="job-show-header-details">
-          <span className="job-show-company">
-            {jobCompany}
-            <span>{jobDetails.company}</span>
-          </span>
-          <span className="job-show-location">
-            {jobLocation}
-            <span>{jobDetails.city && convertCities(jobDetails.city)}</span>
-          </span>
-        </div>
-        <hr />
-        {jobDetails.full_remote && (
-          <span className="job-show-remote">
-            <span>REMOTE</span>
-          </span>
-        )}
-        {isSignedIn || (isRecruiterAcc && editAccess) ? (
-          <button onClick={applyButtonClick} className={appliedButtonClass}>
-            <span>
-              {appliedButtonView}
-              {!isSignedIn && isRecruiterAcc && editAccess && (
-                <GrEdit size={"25px"} color={"#ffde59"} />
-              )}
-            </span>
-          </button>
-        ) : null}
-      </section>
+    <div className="jobShow">
+      <section className="jobShow_header">
+        <img
+          src={
+            jobDetails.company &&
+            convertCompanyForLogo(jobDetails.company.toLowerCase())
+          }
+          alt="company-logo"
+          className="jobShow_header_logo"
+        />
 
-      <hr className="job-show-header-border-bottom" />
+        <div className="jobShow_header_details">
+          <h2 className="jobShow_header_details_title">{jobDetails.title}</h2>
+          <section className="jobShow_header_details_company">
+            <span>{jobDetails.company}</span>
+            {bulletPoint}
+            <span>
+              {jobDetails.city && convertCities(jobDetails.city)}
+            </span>
+          </section>
+        </div>
+        <section className="jobShow_header_options">
+          {jobDetails.full_remote && (
+            <span className="jobShow_header_options_remote">
+              <span>REMOTE</span>
+            </span>
+          )}
+          {isSignedIn || (isRecruiterAcc && editAccess) ? (
+            <button onClick={applyButtonClick} className={appliedButtonClass}>
+              <span>{appliedButtonView}</span>
+            </button>
+          ) : null}
+        </section>
+
+        <hr className="jobShow_header_border-bottom" />
+      </section>
 
       <SkillsComponent skillsArr={skillIdArr} justList={true} />
 
-      <section className="job-show-details">
-        <div className="job-show-description">
-          <span className="job-show-label">Description:</span>
+      <section className="jobShow_details">
+        <div className="jobShow_details_description">
+          <span className="jobShow_details_description_label">Description:</span>
           <span className="job-disclaimer">*Not a real job posting*</span>
           <span>{jobDetails.details}</span>
         </div>
 
-        <div className="job-show-description">
-          <span className="job-show-label">Tasks:</span>
-          <span className="job-show-role-list">
+        <div className="jobShow_details_description">
+          <span className="jobShow_details_description_label">Tasks:</span>
+          <span className="jobShow_details_description_label_role-list">
             {jobDetails.tasks &&
               jobDetails.tasks.split(`${TASK}`).map((el) => {
                 if (el) {
@@ -159,20 +163,16 @@ function JobsShow() {
             appliedButtonView === "EDIT" ? () => deleteJob() : applyButtonClick
           }
           className={
-            (isRecruiterAcc && !editAccess) ||
-            (!isSignedIn && !isRecruiterAcc) 
+            (isRecruiterAcc && !editAccess) || (!isSignedIn && !isRecruiterAcc)
               ? "hide"
-              : "job-show-apply"
+              : "jobShow_apply"
           }
         >
           {appliedButtonView === "EDIT" ? "DELETE" : appliedButtonView}
         </button>
       ) : isSignedIn && applied ? (
-        <div className="job-show-applied">
-          {jobApplied}
-          <span onClick={applyButtonClick}>
-            APPLIED ON {convertDate(applied["date_applied"])}
-          </span>
+        <div className="jobShow_applied" onClick={applyButtonClick}>
+          APPLIED ON {convertDate(applied["date_applied"])}
         </div>
       ) : null}
     </div>

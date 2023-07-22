@@ -3,7 +3,6 @@ import { useContextProvider } from "../../Providers/Provider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import FilterBar from "./FilterBar";
 import { handleSearchBar } from "./Functions/SearchBarFunctions";
-import { searchIcon } from "./Data/Icons";
 import searchLogo from "../../Assets/footer-logo.png"
 import "./SearchBar.css";
 
@@ -102,7 +101,6 @@ function SearchBar() {
   return (
     <section className="search-component">
       <label htmlFor={search} className="searchbar-label">
-        {/* {searchIcon} */}
         <img src={searchLogo} alt="search-logo" className="search-bar-logo" />
         <input
           className="searchbar"

@@ -1,28 +1,36 @@
 import { Link } from "react-router-dom";
 import { convertCities } from "../Job/Functions/JobFunctions";
+import convertCompanyForLogo from "../Job/Data/CompanyLogos.js"
 
 import "./RecruiterJob.css";
 
 export default function RecruiterJob({ jobObject }) {
   const { title, company, city, users, id } = jobObject;
+
+  const companyLogo = convertCompanyForLogo(company.toLowerCase())
+
   return (
     <div className="recruiter-job grid-center">
-      <div className="recruiter-job-details">
-        <Link to={`/jobs/${id}`} className="recruiter-job-title">
+      <img className="recruiter-job-company-logo"
+      src= {companyLogo}
+      alt ="company-logo"/>
+      <Link to={`/jobs/${id}`} className="recruiter-job-title">
           {title}
         </Link>
-      </div>
-      <span className="recruiter-job-company">{company}</span>
+      <div className="recruiter-job-details">
+        <span className="recruiter-job-company">{company}</span>
         <span className="recruiter-job-city">{convertCities(city)}</span>
-        <Link
+      </div>
+        <div
           className="recruiter-job-applicants"
-          to={`/jobs/${id}/applicants`}
         >
-          <span>Applicants ({users ? users.length : "0"})</span>
-          {/* <span className="applicant-count">
+          <span>Applicants</span>
+          <Link className="applicant-count"
+          to={`/jobs/${id}/applicants`}
+          >
             ({users ? users.length : "0"})
-          </span> */}
-        </Link>
+          </Link>
+        </div>
     </div>
   );
 }
