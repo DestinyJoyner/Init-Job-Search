@@ -14,7 +14,7 @@ import pelotonLogo from "../../../Assets/companyLogos/peloton.png"
 import salesforceLogo from "../../../Assets/companyLogos/salesforce.png"
 import silverStarLogo from "../../../Assets/companyLogos/silverstar.jpeg"
 import shopifyLogo from "../../../Assets/companyLogos/shopify.png";
-import techItEasyLogo from "../../../Assets/companyLogos/techiteasy.png"
+import techItEasyLogo from "../../../Assets/companyLogos/techiteasy.jpeg"
 import umbrellaCorpLogo from "../../../Assets/companyLogos/umbrellacorporation.png"
 
 const companyLogoObject = {

@@ -4,7 +4,7 @@ import { useJobProvider } from "../../Providers/JobProvider";
 import FilterBar from "./FilterBar";
 import { handleSearchBar } from "./Functions/SearchBarFunctions";
 import searchLogo from "../../Assets/footer-logo.png"
-import "./SearchBar.css";
+import "./SearchBar.scss";
 
 function SearchBar() {
   const { setTriggerBonus } = useContextProvider()

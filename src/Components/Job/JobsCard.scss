@@ -51,7 +51,7 @@
     grid-column: 1;
     grid-row: 3;
     display: flex;
-    column-gap: 3vw;
+    column-gap: 5vw;
     align-items: center;
     color: var(--init-faded-gray);
     font-weight: 100;
@@ -94,7 +94,3 @@
   }
 }
 
-/* DARK MODE */
-.dark .job-card {
-  border: 2px solid var(--init-mint);
-}
