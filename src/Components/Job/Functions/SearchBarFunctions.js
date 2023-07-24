@@ -11,7 +11,8 @@ function handleSearchBar(event, stateVar1, setFunction1, stateVar2, setFunction2
       }
     if(id === "city"){
         setFunction1(value)
-        setFunction2({...stateVar2, [id] : value})
+        const trimInput = value.replaceAll(" ", "")
+        setFunction2({...stateVar2, [id] : trimInput.toLowerCase()})
     }
     if(id === "searchbar"){
         setFunction1(value)

@@ -18,13 +18,21 @@ function FilterBar({ searchOptions, setSearchOptions }) {
   const [remoteSearch, setRemoteSearch] = useState(false);
   const [skillView, setSkillView] = useState(false);
 
-  function remoteClick(){
-
+  function remoteClick(event){
+    event.preventDefault()
+    setRemoteSearch(!remoteSearch)
+    setSearchOptions({
+      ...searchOptions, ["isRemote"] : !searchOptions["isRemote"]
+    })
   }
 
   return (
     <div className="filter-bar">
-      <button 
+       <button 
+      id="isRemote"
+      className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
+      onClick={(e) => remoteClick(e)}>REMOTE</button>
+      {/* <button 
       id="isRemote"
       className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
       onClick={(event) => handleSearchBar(
@@ -33,7 +41,7 @@ function FilterBar({ searchOptions, setSearchOptions }) {
         setRemoteSearch,
         searchOptions,
         setSearchOptions
-      ) }>REMOTE</button>
+      ) }>REMOTE</button> */}
       {/* <label htmlFor="filter-checkbox" className="filter-checkbox">
           <input
             id="isRemote"
