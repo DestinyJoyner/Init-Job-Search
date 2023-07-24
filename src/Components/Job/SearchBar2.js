@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useContextProvider } from "../../Providers/Provider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import FilterBar from "./FilterBar";
 import { handleSearchBar } from "./Functions/SearchBarFunctions";
@@ -8,8 +7,7 @@ import { IoOptionsSharp } from "react-icons/io5";
 import "./SearchBar.scss";
 
 function SearchBar2() {
-  const { setTriggerBonus } = useContextProvider();
-  const { setJobs, searchResult, API, axios, setJobQuery } = useJobProvider();
+  const { setJobs, searchResult, API, axios, setJobQuery, searchQueryRoute, setSearchQueryRoute, queryStart, setQueryStart } = useJobProvider();
   const [search, setSearch] = useState("");
   const [searchOptions, setSearchOptions] = useState({
     searchbar: "",
@@ -32,8 +30,9 @@ function SearchBar2() {
 
   function handleSearchFilterSubmit(e, searchObj) {
     e.preventDefault();
+    setQueryStart(0)
     const { searchbar, isRemote, city, skills } = searchObj;
-    let searchRoute = `${API}/jobs?start=0&limit=4`;
+    let searchRoute = "";
     if (searchbar) {
       searchRoute += `&input=${searchbar.toLowerCase()}`;
     }
@@ -46,15 +45,26 @@ function SearchBar2() {
     // if (!isRemote) {
     //   searchRoute += `&remote=false`;
     // }
-    console.log(searchRoute)
-    axios.get(`${searchRoute}`)
-      .then(({ data }) => {
-        console.log(data)
-        setJobQuery(data);
-      })
-      .catch((err) => console.log(err));
+    // console.log(searchRoute)
+
+    setSearchQueryRoute(searchRoute)
+    // axios.get(`${searchRoute}`)
+    //   .then(({ data }) => {
+    //     // console.log(data)
+    //     setJobQuery(data);
+    //   })
+    //   .catch((err) => console.log(err));
   }
 
+  // useEffect(() => {
+  //    axios.get(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`)
+  //     .then(({ data }) => {
+  //       // console.log(data)
+  //       setJobQuery(data);
+  //     })
+  //     .catch((err) => console.log(err));
+
+  // }, [queryStart])
   return (
     <form
       className="searchComponent"
