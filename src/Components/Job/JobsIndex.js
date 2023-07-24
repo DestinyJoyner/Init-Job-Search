@@ -4,6 +4,8 @@ import { useJobProvider } from "../../Providers/JobProvider.js";
 import { v4 as uuidv4 } from "uuid";
 import JobsCard from "./JobsCard";
 import SearchBar from "./SearchBar.js";
+
+import SearchBar2 from "./SearchBar2.js";
 import { handlePagination } from "./JobsIndexFunctions.js";
 import "./JobsIndex.scss";
 
@@ -14,11 +16,17 @@ function JobsIndex() {
   const [hideNextButton, setHideNextButton] = useState(false);
   const [hidePrevButton, setHidePrevButton] = useState(true);
 
-  useEffect(() => setAppHeader("inIT Jobs"), []);
+  useEffect(() => {
+    setAppHeader("inIT Jobs")
+    if(jobQuery.length < 4){
+        setHideNextButton(true)
+    }
+}, []);
 
   return (
     <div className="jobsIndex">
-      <SearchBar />
+      {/* <SearchBar /> */}
+      <SearchBar2 />
       <section className="jobsIndex_buttons">
       <button
         className={hidePrevButton ? "hide" : " jobsIndex_buttons_prev show"}
