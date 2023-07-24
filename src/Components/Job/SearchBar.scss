@@ -5,7 +5,6 @@
     width: 100%;
 
     &_searchBar {
-
         &_label {
             grid-row: 1;
             display: flex;
@@ -38,12 +37,6 @@
         }
     }
 
-    &_divider {
-        width: 92%;
-        justify-self: center;
-        border: 1px solid var(--init-charcoal);
-    }
-
     &_submit {
         all: unset;
         width: fit-content;
@@ -52,17 +45,26 @@
         color: var(--init-blue);
         font-size: 22px;
     }
-
 }
 
 
 /* DARK MODE */
-.dark .searchbar::placeholder{
-    color: var(--init-background);
+.dark .searchComponent {
+    &_searchBar {
+        &_input {
+            color: var(--init-background);
+            &::placeholder {
+                color: var(--init-background);
+            }
+        }
+        &_filterIcon {
+            color: var(--init-gold);
+        }
+    }
+    
+    &_submit {
+        color: var(--init-gold);
+    }
+    
 }
-.dark .searchbar:focus {
-    background-color: var(--init-dark);
-}
-.dark .searchbar {
-    color: var(--init-background);
-}
+

@@ -12,7 +12,7 @@ import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
 
-function FilterBar({ searchOptions, setSearchOptions }) {
+function FilterBar({ searchOptions, setSearchOptions}) {
   const [filterOptions, setFilterOptions] = useState(false);
   const [cityDropdown, setCityDropdown] = useState("");
   const [remoteSearch, setRemoteSearch] = useState(false);
