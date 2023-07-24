@@ -11,6 +11,7 @@ import nikeLogo from "../../../Assets/companyLogos/nike.png"
 import nvidiaLogo from "../../../Assets/companyLogos/nvidia.png";
 import pellSoftwareLogo from "../../../Assets/companyLogos/pellsoftware.png"
 import pelotonLogo from "../../../Assets/companyLogos/peloton.png"
+import salesforceLogo from "../../../Assets/companyLogos/salesforce.png"
 import silverStarLogo from "../../../Assets/companyLogos/silverstar.jpeg"
 import shopifyLogo from "../../../Assets/companyLogos/shopify.png";
 import techItEasyLogo from "../../../Assets/companyLogos/techiteasy.png"
@@ -32,7 +33,8 @@ const companyLogoObject = {
   nike : nikeLogo,
   peloton: pelotonLogo,
   appinventiv: appinventivLogo,
-  apple : appleLogo
+  apple : appleLogo,
+  salesforce : salesforceLogo
 };
 
 const defaultCompany = noLogo;
