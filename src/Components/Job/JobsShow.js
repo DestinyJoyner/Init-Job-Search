@@ -28,6 +28,8 @@ function JobsShow() {
   const [reload, setReload] = useState(false);
   const [applied, setApplied] = useState(false);
 
+  const [jobDetailsToggle, setJobDetailsToggle] = useState(false)
+
   const applyButtonClick =
     !isSignedIn && !isRecruiterAcc
       ? null
@@ -104,9 +106,29 @@ function JobsShow() {
           alt="company-logo"
           className="jobShow_header_logo"
         />
+<span className="jobShow_header_company">{jobDetails.company}</span>
 
-        <div className="jobShow_header_details">
+<h2 className="jobShow_header_title">{jobDetails.title}</h2>
+<section className="jobShow_header_location">
+<span className="jobShow_header_location_city">
+              {jobDetails.city && convertCities(jobDetails.city)}
+            </span>
+
+          {jobDetails.full_remote && (
+            <span className="jobShow_header_location_remote">
+              <span>Remote</span>
+            </span>
+          )}
+          
+        </section>
+        <hr/>
+
+
+        {/* <div className="jobShow_header_details">
           <h2 className="jobShow_header_details_title">{jobDetails.title}</h2>
+            <span>
+              {jobDetails.city && convertCities(jobDetails.city)}
+            </span>
           <section className="jobShow_header_details_company">
             <span>{jobDetails.company}</span>
             {bulletPoint}
@@ -114,8 +136,8 @@ function JobsShow() {
               {jobDetails.city && convertCities(jobDetails.city)}
             </span>
           </section>
-        </div>
-        <section className="jobShow_header_options">
+        </div> */}
+        {/* <section className="jobShow_header_options">
           {jobDetails.full_remote && (
             <span className="jobShow_header_options_remote">
               <span>REMOTE</span>
@@ -126,14 +148,46 @@ function JobsShow() {
               <span>{appliedButtonView}</span>
             </button>
           ) : null}
-        </section>
+        </section> */}
 
-        <hr className="jobShow_header_border-bottom" />
+        {/* <hr className="jobShow_header_border-bottom" /> */}
       </section>
 
       <SkillsComponent skillsArr={skillIdArr} justList={true} />
 
-      <section className="jobShow_details">
+      <section className="jobShow_detail">
+        <div className="jobShow_detail_buttons">
+          <button className="jobShow_detail_button_description"
+          onClick={() => setJobDetailsToggle(false)}>Description</button>
+          <button className="jobShow_detail_button_tasks"
+          onClick={() => setJobDetailsToggle(true)}>Tasks</button>
+        </div>
+
+        <section className="jobShow_details_description">
+          {
+            !jobDetailsToggle ?
+           <>
+            <span className="job-disclaimer">*Not a real job posting*</span>
+            <span>{jobDetails.details}</span>
+            </>
+          :
+          <span className="jobShow_details_description_label_role-list">
+          {jobDetails.tasks &&
+            jobDetails.tasks.split(`${TASK}`).map((el) => {
+              if (el) {
+                return (
+                  <li key={uuidv4()}>
+                    <span>{el}</span>
+                  </li>
+                );
+              }
+            })}
+        </span>
+}
+        </section>
+        </section>
+      
+      {/* <section className="jobShow_details">
         <div className="jobShow_details_description">
           <span className="jobShow_details_description_label">Description:</span>
           <span className="job-disclaimer">*Not a real job posting*</span>
@@ -155,7 +209,7 @@ function JobsShow() {
               })}
           </span>
         </div>
-      </section>
+      </section> */}
 
       {isRecruiterAcc || (isSignedIn && !applied) ? (
         <button

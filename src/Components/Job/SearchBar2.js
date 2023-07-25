@@ -48,23 +48,12 @@ function SearchBar2() {
     // console.log(searchRoute)
 
     setSearchQueryRoute(searchRoute)
-    // axios.get(`${searchRoute}`)
-    //   .then(({ data }) => {
-    //     // console.log(data)
-    //     setJobQuery(data);
-    //   })
-    //   .catch((err) => console.log(err));
+
   }
-
-  // useEffect(() => {
-  //    axios.get(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`)
-  //     .then(({ data }) => {
-  //       // console.log(data)
-  //       setJobQuery(data);
-  //     })
-  //     .catch((err) => console.log(err));
-
-  // }, [queryStart])
+  // SEND SKILLS ARR AS KEY IN OBJ WITH SEARCH QUERY -> FILTER ON ABCKEND GET ALL JOBS ROUTE WITH SKILLID
+useEffect(() => {
+  console.log(searchOptions.skills)
+}, [searchOptions.skills.length])
   return (
     <form
       className="searchComponent"

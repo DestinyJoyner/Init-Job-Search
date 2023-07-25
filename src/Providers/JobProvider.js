@@ -8,7 +8,7 @@ export function useJobProvider() {
   return useContext(JobContextData);
 }
 const TASK = process.env.REACT_APP_TASK_BREAK;
-
+// loading carousel until page loads/ data retrieved i.e => api sleep (jobs show etc..)
 function JobProvider({ children }) {
   const {
     API,
@@ -94,9 +94,7 @@ function JobProvider({ children }) {
   // useEffect for job pagination
   useEffect(() => {
     axios.get(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`)
-    .then(({data}) => {
-      console.log(data, searchQueryRoute)
-      setJobQuery(data)})
+    .then(({data}) => setJobQuery(data))
     .catch(err => console.log(err))
    },[queryStart, searchQueryRoute])
 

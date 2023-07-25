@@ -16,7 +16,7 @@ nav {
 
  /* dark mode */
  .dark nav {
-  background-color: var(--init-gold); 
+  /* background-color: var(--init-gold);  */
  }
 
 
