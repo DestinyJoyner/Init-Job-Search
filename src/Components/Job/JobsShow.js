@@ -157,9 +157,9 @@ function JobsShow() {
 
       <section className="jobShow_detail">
         <div className="jobShow_detail_buttons">
-          <button className="jobShow_detail_button_description"
+          <button className={!jobDetailsToggle ?"jobShow_detail_buttons_description jobDetailSelected": "jobShow_detail_buttons_description" }
           onClick={() => setJobDetailsToggle(false)}>Description</button>
-          <button className="jobShow_detail_button_tasks"
+          <button className={jobDetailsToggle ?"jobShow_detail_buttons_tasks jobDetailSelected" : "jobShow_detail_buttons_tasks"}
           onClick={() => setJobDetailsToggle(true)}>Tasks</button>
         </div>
 
@@ -171,7 +171,7 @@ function JobsShow() {
             <span>{jobDetails.details}</span>
             </>
           :
-          <span className="jobShow_details_description_label_role-list">
+          <ul className="jobShow_details_description_label_role-list">
           {jobDetails.tasks &&
             jobDetails.tasks.split(`${TASK}`).map((el) => {
               if (el) {
@@ -182,7 +182,7 @@ function JobsShow() {
                 );
               }
             })}
-        </span>
+        </ul>
 }
         </section>
         </section>

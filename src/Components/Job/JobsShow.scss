@@ -1,6 +1,6 @@
 .jobShow {
   display: grid;
-  grid-template-rows: 25vh 4vh 55vh 8vh;
+  grid-template-rows: 25vh 6vh 55vh 6vh;
   row-gap: .5vh;
   justify-items: left;
   height: 92vh;
@@ -19,7 +19,7 @@
       // justify-items: left;
       justify-items: center;
       padding: 0 2vh;
-      margin-top: 1vh;
+      padding-top: 2vh;
       // background-color: var(--init-mint);
 
       &_logo {
@@ -27,7 +27,7 @@
         max-width: 60px;
         grid-row: 1;
         // margin-left: 3vw;
-        background-color:#0cbdbdaf ;
+        background-color:var(--init-mint);
         padding: 8px;
         border-radius: 10px;
     }
@@ -128,13 +128,18 @@
   }
 
   &_detail {
+    grid-row: 3;
+    height: fit-content;
     margin-top: 2vh;
-    width: 100%;
-    // justify-self: center;
+    width: 96%;
+    display: grid;
+    grid-template-rows: 5vh auto;
+    row-gap: 2vh;
+    border-bottom: 2px solid var(--init-mint);
     &_buttons {
-      display: flex;
-      column-gap: 10vw;
-      justify-content: space-evenly ;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      justify-items: center;
       height: 5vh;
       border: 1px solid var(--init-charcoal);
       border-radius: 20px;
@@ -154,10 +159,10 @@
   &_details {
     grid-row: 3;
     display: grid;
-    grid-template-rows: auto;
+    // grid-template-rows: auto;
     row-gap: 1vh;
     width: 94%;
-    height: 50vh;
+    height: fit-content;
     overflow-y: auto;
     overflow-x: hidden;
     justify-items: left;
@@ -169,8 +174,9 @@
 
     &_description {
       display: grid;
-      width: 92%;
+      width: 94%;
       justify-self: center;
+      margin-left: 5vw;
 
       &_label {
         font-weight: 700;
@@ -184,12 +190,11 @@
 
         &_role-list {
           display: grid;
-          grid-template-rows: auto;
+          grid-auto-rows: auto;
+          row-gap: 2vh;
 
           & li {
-            width: 100%;
-            list-style-position: outside;
-            padding-left: 0.2em;
+            width: 95%;
           }
         }
       }
@@ -227,16 +232,47 @@
  font-weight: 600;
 }
 
+// detail togg;e buttons
+.jobShow_detail_buttons_description, .jobShow_detail_buttons_tasks{
+  padding: 0vh 3vh;
+  border-radius: 18px;
+}
+
+.jobShow_detail_buttons_tasks {
+  width: 50%;
+  text-indent: 3vw;
+  padding: 0 3.8vh;
+
+}
+ul {
+  list-style-position: outside;
+}
+.jobShow_details_description {
+  overflow-y: scroll;
+  height: min-content;
+  // border: 1px solid red;
+
+  width: 96%;
+  padding: 1vh 0;
+}
+
+.jobDetailSelected, .jobShow_header_location_remote {
+  background-color: var(--init-mint);
+  color: var(--init-gold);
+  font-weight: 600;
+}
+
 .jobShow .skills-component {
   grid-row: 2;
   width: 100%;
-  padding-top: 1vh;
+  align-items: center;
+  // padding-top: 1vh;
   // padding: .5vh 0px;
 }
 
 .jobShow .skills-component svg {
-  height: 1.7em;
-  width: 1.7em;
+  height: 1.9em;
+  width: 1.9em;
 }
 
 /* DARK MODE */
