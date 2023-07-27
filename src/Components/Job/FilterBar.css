@@ -1,6 +1,7 @@
 .filter-bar {
   grid-row: 2;
-  width: 98%;
+  width: 94%;
+  justify-self: center;
   display: grid;
   grid-template-columns: .7fr .5fr .5fr;
   grid-template-rows: 4vh auto;
@@ -18,29 +19,9 @@
   font-size: 20px;
   text-align: center;
   border: none;
-  background-color: var(--init-background);
+  background-color: transparent;
   color: var(--init-charcoal);
-}
-
-/* Remote Checkbox */
-.filter-checkbox {
-  grid-column: 3;
-  align-items: center;
-  justify-self: left;
-}
-.filter-checkbox input {
-  border: unset;
-  background-color: unset;
-  accent-color: var(--init-blue);
-  width: 25px;
-  height: 25px;
-  top: .5vh;
-
-}
-.filter-checkbox span {
-  width: 100%;
-  left: 2vw;
-  bottom: .2vh;
+  margin-right: 5vw;
 }
 
 /* remote button */
@@ -48,7 +29,7 @@
   all: unset;
   color: var(--init-blue);
   top: .2vh;
-  right: 1vw;
+  right: 3vw;
   font-weight: 600;
 }
 .remote-clicked {
@@ -65,12 +46,12 @@
   padding-bottom: 1.6vh;
 }
 .filter-skills span {
-  top: .8vh;
+  top: .9vh;
+  right: 2vw;
   font-size: 20px;
 }
 .filter-skills svg {
-  left: 3.5vw;
-  top: 1.3vh;
+  top: 1.2vh;
 }
 
 
@@ -92,7 +73,6 @@
   border:none;
   border-top: 2px solid var(--init-mint);
   border-bottom: 2px solid var(--init-mint);
-  /* border-radius: 20px; */
   display: grid;
   grid-template-rows: 1fr 3fr;
   row-gap: 0.5vh;
@@ -101,6 +81,9 @@
   visibility: hidden;
   height: 0;
   transition: all 0.4s ease-in-out;
+
+  background-color: rgba(126, 126, 126, 0.3);
+  /* background-color: rgb(245, 245, 245); */
 }
 
 .slide-down {
@@ -122,6 +105,7 @@
   color: var(--init-blue);
 }
 
+
 .filter-bar-expanded .skills-component {
   height: 100%;
   display: grid;
@@ -134,7 +118,8 @@
 .filter-bar-expanded .skills-component svg {
   height: 2em;
   width: 2em;
-  color: rgb(167, 167, 167);
+  /* color: rgb(124, 123, 123); */
+  color: white;
 }
 
 .filter-bar-expanded .skills-checkboxes {
@@ -156,6 +141,7 @@
   margin-left: 1vw;
   width: 100px;
 }
+
 .filter-bar-expanded .skills-checkboxes label input {
   height: 20px;
   width: 20px;

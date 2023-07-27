@@ -1,25 +1,45 @@
 /* sliding nav link https://www.kirupa.com/react/smooth_sliding_menu_react_motion.htm */
+
+.slide-nav-container {
+  display: grid;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 15% 80%;
+  z-index: 100;
+  transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
+}
+.slide-nav-transparent {
+  grid-column: 1;
+  grid-row: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(83, 82, 82, 0.4)
+}
 .slide-nav {
     background-color: #0cbdbd;
     display: grid;
+    grid-column: 2;
     grid-template-rows: 20vh 5vh repeat(5, 10vh) 5vh 8vh 10vh  ;
     align-items: center;
-    position: fixed;
+    /* position: fixed;
     left: 0;
-    top: 0;
-    width: 83vw;
-    border-right: 40px solid #ffde59;
+    top: 0; */
+    width: 100%;
+    /* border-right: 40px solid var(--init-gold); */
     height: 100vh;
-    z-index: 100;
-    transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
-    padding-left: 30px;
+    /* z-index: 100;
+    transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1); */
+    padding-left: 20px;
   }
   .nav-open {
     transform: translate3d(0vw, 0, 0);
     overflow: hidden;
   }
   .nav-close {
-    transform: translate3d(-110vw, 0, 0);
+    transform: translate3d(110vw, 0, 0);
   }
 
   .slide-nav-header {
@@ -30,7 +50,7 @@
     height: 100%;
     width: 110%;
     position: relative;
-    right: 8vw;
+    right: 5.1vw;
   }
 
   .slide-nav-header-logo-container {
@@ -53,7 +73,7 @@
     width: 2.5em;
     color: var(--init-blue);
     position: relative;
-    right: 3vw;
+    right: 5vw;
   }
 
   .slide-nav-header-logo {
@@ -80,6 +100,7 @@
     color: var(--init-blue);
     /* width: 70%; */
     font-size: 22px;
+    margin-left: 2vw;
   }
   
   .bottom-slide-nav-line {
@@ -88,7 +109,7 @@
   }
   
   .slide-nav .nav-icons {
-    margin-right: 10%;
+    margin-right: 6vw;
     color: var(--init-blue);
     width: 30px;
     height: 30px;
@@ -122,6 +143,7 @@
     width: 70px;
     height: 34px;
     margin-bottom: 10px;
+    margin-left: 2vw;
   }
   
   .toggleBtn {
@@ -182,9 +204,11 @@
   }
 
   /* Dark Mode */
+
   .dark .slide-nav-header-logo-container{
     background-color: var(--init-dark);
   }
+
 
   .dark .slide-nav-close {
     color: var(--init-gold);

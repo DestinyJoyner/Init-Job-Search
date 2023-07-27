@@ -1,5 +1,6 @@
 .jobsIndex {
   display: grid;
+  // grid-template-rows: auto;
   grid-auto-rows: min-content;
   row-gap: 2vh;
   justify-items: center;
@@ -24,14 +25,22 @@
     height: 100%;
     grid-row: 2;
     width: 95%;
-    row-gap: 2vh;
+    row-gap: 2.5vh;
   }
 
   & a {
-    width: 90%;
+    width: 94%;
     height: 15vh;
     color: var(--init-charcoal);
     border-radius: 20px;
   }
 }
 
+// DARK MODE
+.dark .jobsIndex {
+  &_buttons {
+    & >*{
+      color: var(--init-gold);
+    }
+  }
+}

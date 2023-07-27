@@ -1,238 +1,209 @@
 .jobShow {
   display: grid;
-  grid-template-rows: 21vh 6vh 55vh 8vh;
-  row-gap: .5vh;
+  grid-template-rows: 25vh 8vh 48vh 0.2vh 8vh;
+  row-gap: 0.5vh;
   justify-items: left;
   height: 92vh;
   width: 100%;
   color: var(--init-charcoal);
   padding-bottom: 2vh;
 
-    &_header {
-      width: 94%;
-      justify-self: center;
-      display: grid;
-      grid-template-columns: 20% 80%;
-      grid-template-rows: 60% 35% 5%;
-      align-items: center;
-      justify-items: left;
-      padding: 1vh 0;
-
-      &_logo {
-        height: 50px;
-        max-width: 60px;
-        grid-column: 1;
-        grid-row: 1;
-        margin-left: 3vw;
-    }
-      &_details {
-        grid-column: 2;
-        grid-row: 1;
-
-        &_title {
-          font-size: 24px;
-          padding: 1vh 0;
-          margin-left: 3vw;
-        }
-        &_company {
-          width: fit-content;
-          height: 100%;
-          display: flex;
-          column-gap: 8px;
-          font-size: 18px;
-          margin-left: 3vw;
-        }
-        & svg {
-          position: relative;
-          top: .8vh;
-          height: 8px;
-          width: 8px;
-          color: var(--init-mint);
-        }
-      }
-    &_options {
-      grid-column: 2;
-      grid-row: 2;
-      width: 94%;
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      font-weight: 600;
-      margin-top: 1vh;
-
-      &_remote{
-        grid-column: 1;
-        justify-self: left;
-        color: black;
-        background-color: var(--init-gold);
-        width: 20vw;
-        text-align: center;
-        border-radius: 20px;
-        padding: 5px;
-        padding-top: 7px;
-        font-size: 14px;
-        margin-left: 3vw;
-      }
-    }
-    &_apply, &_applied {
-      all: unset;
-      grid-column: 2;
-      justify-self: right;
-      color: var(--init-blue);
-      font-size: 26px;
-    }
-    &_border-bottom {
-      grid-column: span 2;
-      grid-row: 3;
-      margin-top: 2vh;
-      border-top: 2px solid var(--init-blue);
-      width: 94%;
-      justify-self: center;
-      height: 0;
-    }
-  }
-  &_details {
-    grid-row: 3;
-    display: grid;
-    grid-template-rows: auto;
-    row-gap: 1vh;
-    width: 94%;
-    height: 50vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    justify-items: left;
-    text-align: left;
-    margin: 0 2vw;
-    padding: 1vh 0;
-    padding-bottom: 3vh;
-    border-bottom: var(--init-blue) 2px solid;
-
-    &_description {
-      display: grid;
-      width: 92%;
-      justify-self: center;
-
-      &_label {
-        font-weight: 700;
-        font-size: 20px;
-        border-bottom: var(--init-mint) 1px solid;
-        margin-bottom: 5px;
-        grid-row: 1;
-        grid-column: 1;
-        width: fit-content;
-        height: fit-content;
-
-        &_role-list {
-          display: grid;
-          grid-template-rows: auto;
-
-          & li {
-            width: 100%;
-            list-style-position: outside;
-            padding-left: 0.2em;
-          }
-        }
-      }
-    }
-  }
-  &_apply {
-    all: unset;
-    justify-self: center; 
-    font-size: 34px;
-    font-weight: 600;
-    color: var(--init-blue);
+  &_header {
+    width: 98%;
     height: 100%;
-  }
-  &_applied {
-    width: fit-content;
-    height: fit-content;
     justify-self: center;
+    grid-template-rows: 40% 15% 20% 15% 5%;
+    padding-top: 2vh;
+
+    &_logo {
+      height: 80px;
+      max-width: 100px;
+      grid-row: 1;
+      padding: 8px;
+      border-radius: 20px;
+    }
+
+    &_company {
+      grid-row: 2;
+      font-size: 18px;
+      margin-top: 1vh;
+    }
+    &_title {
+      grid-row: 3;
+    }
+    &_location {
+      grid-row: 4;
+      display: flex;
+      column-gap: 4vw;
+      align-items: center;
+
+      &_remote {
+        padding: 2px 5px;
+        border-radius: 10px;
+      }
+    }
+    & hr {
+      grid-row: 5;
+      border: 1px solid var(--init-darkmint);
+      width: 90%;
+    }
+  }
+
+  .skills-component {
+    grid-row: 2;
+    align-items: center;
+    justify-self: center;
+    border-radius: 20px;
+    background-color: white;
+    width: 86%;
+    height: 50%;
     align-self: center;
-    text-align: center;
-    font-size: 26px;
+    margin: 0.6vh 0;
+    border: 2px solid var(--init-mint);
+    & svg {
+      height: 1.9em;
+      width: 1.9em;
+    }
+  }
+
+  .jobDetailSelected,
+  .jobShow_header_location_remote {
+    background-color: var(--init-darkmint);
+    color: var(--init-gold);
     font-weight: 600;
-    color: var(--init-blue);
+  }
+
+  &_jobDetails {
+    grid-row: 3;
+    width: 96%;
+    display: grid;
+    grid-template-rows: 5vh auto;
+    row-gap: 2vh;
+
+    &_buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      height: 5vh;
+      border: 1px solid var(--init-mint);
+      border-radius: 20px;
+      width: 70%;
+      margin: 0 auto;
+
+      & > * {
+        all: unset;
+        padding: 0vh 3vh;
+        border-radius: 18px;
+      }
+
+      &_tasks {
+        width: 50%;
+        text-indent: 3vw;
+        padding: 0 3.8vh;
+      }
+    }
+
+    &_overview {
+      overflow-y: scroll;
+      width: 92%;
+      padding: 1vh 0;
+      min-height: fit-content;
+      max-height: 52vh;
+      margin-left: 6vw;
+      font-size: 17px;
+
+      &_description {
+        display: grid;
+
+        &_disclaimer {
+          font-size: 16px;
+          position: relative;
+          bottom: 0.5vh;
+          font-weight: 600;
+          padding-bottom: 0.5vh;
+        }
+      }
+
+      &_tasks {
+        margin-top: 2vh;
+        padding-inline-start: 20px;
+        list-style-position: outside;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2vh;
+        width: 88%;
+      }
+    }
+  }
+
+  &_divider {
+    width: 90%;
+    border: 1px solid var(--init-darkmint);
+    justify-self: center;
+  }
+
+  &_actionButtons {
+    display: grid;
+    grid-template-columns: 0.45fr 0.55fr;
+    width: 90%;
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+
+    & > * {
+      all: unset;
+      font-size: 30px;
+      color: var(--init-blue);
+      font-weight: 600;
+    }
+    &_apply,
+    &_applied,
+    &_notSignedIn {
+      grid-column: span 2;
+    }
+    &_notSignedIn {
+      display: flex;
+      width: 100%;
+      font-size: 24px;
+      justify-content: space-evenly;
+    }
   }
 }
 
 .hide {
   display: none;
 }
-.job-disclaimer {
-  font-size: 16px;
-  margin-left: 3px;
-  padding: 3px 0px;
-  position: relative;
-  bottom: 0.5vh;
- font-weight: 600;
-}
-
-.jobShow .skills-component {
-  grid-row: 2;
-  width: 100%;
-  padding: 1vh 0px;
-}
-
-.jobShow .skills-component svg {
-  height: 2em;
-  width: 2em;
-}
 
 /* DARK MODE */
-.dark .jobShow_details, .dark .jobShow_header {
-  color: var(--init-background);
-} 
+.dark .jobShow {
+  &_header {
+    color: var(--init-background);
+    &_logo {
+      background-color: var(--init-background);
+    }
+  }
+  &_jobDetails {
+    &_buttons {
+      color: var(--init-background);
+    }
+    &_overview {
+      color: var(--init-background);
+    }
+  }
+  &_actionButtons {
+    & > *,
+    &_notSignedIn a {
+      color: var(--init-gold);
+    }
+  }
 
-.dark .jobShow_header_logo {
-  background-color: var(--init-background);
+  .skills-component {
+    background-color: var(--init-background);
+  }
+
+  .jobDetailSelected,
+  .jobShow_header_location_remote {
+    background-color: var(--init-gold);
+    color: var(--init-dark);
+  }
 }
-
-.dark .jobShow_header_border-bottom, .dark .jobShow_details {
-  border-color: var(--init-mint);
-}
-
-.dark .jobShow_applied, .dark .jobShow_apply, .dark .jobShow_header_apply, .dark .jobShow_header_applied, .dark .jobShow_details_description_label, .dark .jobShow_header_details_company svg  {
-  color: var(--init-gold);
-}
-
-.dark .jobShow .skills-component {
-  background-color: var(--init-background);
-  width: 90%;
-  margin: 6px 0px;
-  align-self: center;
-  justify-self: center;
-  border-radius: 20px;
-  border: var(--init-mint) 2px solid;
-}
-
-/* BONUS */
-// .bonus-job .app-header {
-//   background-image: url("https://thumbs.gfycat.com/AliveAdmirableEidolonhelvum-max-1mb.gif");
-// }
-
-// .bonus-show {
-//   background-color: black;
-//   color: #00ff41;
-//   grid-row: 2;
-//   grid-column: span 2;
-//   grid-row: 2/6;
-//   height: 3vh;
-//   width: fit-content;
-//   justify-self: center;
-//   align-self: center;
-//   overflow: hidden;
-//   padding: 0px 10px;
-//   border-right: 0.15em solid grey;
-//   white-space: nowrap;
-//   width: 12em;
-//   animation: type 10s steps(60, end);
-// }
-
-// .dark .bonus-job .app-header {
-//   color: var(--init-background);
-// }
-// @keyframes type {
-//   from {
-//     width: 0;
-//   }
-// }
-

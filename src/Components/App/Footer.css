@@ -10,6 +10,7 @@
   width: 95%;
   color: var(--init-background);
   font-size: 15px;
+  margin-left: 2vw;
 }
 
 .footer-init {
@@ -24,6 +25,7 @@
   width: 80%;
   position: relative;
   top: 1.3vh;
+  right: 2vw;
 }
 
 .footer-linked {

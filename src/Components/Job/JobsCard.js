@@ -1,25 +1,35 @@
 import { Link } from "react-router-dom";
-import { convertCities } from "./Functions/JobFunctions";
 import SkillsComponent from "./SkillsComponent";
-import "./JobsCard.css";
+import { convertCities } from "./Functions/JobFunctions";
+import convertCompanyForLogo from "./Data/CompanyLogos";
+import "./JobsCard.scss";
 
 function JobsCard({ jobObj }) {
   const { title, company, skill_id, full_remote, city, id } = jobObj;
+
   const skills = typeof skill_id === "number" ? [skill_id] : skill_id;
+
   const combineSkills = skills.map((el) => el);
+
+  const companyLogo = convertCompanyForLogo(company.toLowerCase());
 
   return (
     <Link to={`/jobs/${id}`} className="grid-center">
-      <div className="job-card">
-        <section className="job-card-details">
-        <span className="job-card-title">{title}</span>
-        <span className="job-card-company">{company}</span>
-          <section className="job-card-location">
-        <span className="job-card-city">{convertCities(city)}</span>
-        {full_remote && <span className="job-card-remote">REMOTE</span>}
+      <div className="jobCard">
+        <img className="jobCard_logo" src={companyLogo} alt={company} />
+
+        <section className="jobCard_details">
+          <span className="jobCard_details_title">{title}</span>
+          <span className="jobCard_details_company">{company}</span>
         </section>
-        </section>
-        <section className="job-card-skills">
+
+        <span className="jobCard_location">
+          <span className="jobCard_location_city">{convertCities(city)}</span>
+
+          {full_remote && <span className="jobCard_location_remote">REMOTE</span>}
+        </span>
+
+        <section className="jobCard_skills">
           <SkillsComponent skillsArr={combineSkills} justList={true} />
         </section>
       </div>

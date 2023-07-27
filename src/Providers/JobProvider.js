@@ -7,8 +7,8 @@ export const JobContextData = createContext();
 export function useJobProvider() {
   return useContext(JobContextData);
 }
-const TASK = process.env.REACT_APP_TASK_BREAK;
-
+// const TASK = process.env.REACT_APP_TASK_BREAK;
+// loading carousel until page loads/ data retrieved i.e => api sleep (jobs show etc..)
 function JobProvider({ children }) {
   const {
     API,
@@ -26,7 +26,10 @@ function JobProvider({ children }) {
   const [searchResult, setSearchResult] = useState([]);
 
   const [jobQuery, setJobQuery] = useState([])
-   const [queryStart, setQueryStart] = useState(0)
+  const [queryStart, setQueryStart] = useState(0)
+
+  const defaultJobSearchQuery = `${API}/jobs?start=${queryStart}&limit=4`
+  const [searchQueryRoute, setSearchQueryRoute] = useState("")
   const [recruiterJobs, setRecruiterJobs] = useState([]);
 
   const [editAccess, setEditAccess] = useState(false);
@@ -43,11 +46,8 @@ function JobProvider({ children }) {
       })
       .catch((error) => console.log(error));
 
-      axios.get(`${API}/jobs/22`)
-      .then(({data}) => setBonus(data))
-      .catch(err=> console.log(err))
 
-    axios.get(`${API}/jobs?start=${queryStart}&limit=4`)
+    axios.get(defaultJobSearchQuery)
     .then(({data}) => 
     {
       if(data.length > 0){
@@ -93,10 +93,10 @@ function JobProvider({ children }) {
 
   // useEffect for job pagination
   useEffect(() => {
-    axios.get(`${API}/jobs?start=${queryStart}&limit=4`)
+    axios.get(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`)
     .then(({data}) => setJobQuery(data))
     .catch(err => console.log(err))
-   },[queryStart])
+   },[queryStart, searchQueryRoute])
 
   return (
     <JobContextData.Provider
@@ -109,7 +109,6 @@ function JobProvider({ children }) {
         setJobs,
         searchResult,
         setSearchResult,
-        TASK,
         recruiterID,
         setRecruiterID,
         editAccess,
@@ -125,7 +124,9 @@ function JobProvider({ children }) {
         jobQuery,
         setJobQuery,
         queryStart,
-        setQueryStart
+        setQueryStart,
+        searchQueryRoute,
+        setSearchQueryRoute
       }}
     >
       {children}

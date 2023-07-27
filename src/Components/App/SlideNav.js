@@ -58,77 +58,90 @@ function SlideNav() {
   }
 
   return (
-    <aside className={openNav ? " slide-nav nav-open" : " slide-nav nav-close"}>
-      <section  className="slide-nav-header">
-        <div className="slide-nav-header-logo-container">
-        <img src={logo} alt="init-logo" className="slide-nav-header-logo" />
-        <AiOutlineClose className="slide-nav-close" onClick={() => navbarClick()} />
-        </div>
-        
-      <p className="slogan">
-        Your first tech opportunity awaits
-        </p>
-      </section>
-      <hr className="top-slide-nav-line"></hr>
-        
+    <div
+      className={
+        openNav
+          ? " slide-nav-container nav-open"
+          : " slide-nav-container nav-close"
+      }
+    >
+      <div
+        className="slide-nav-transparent"
+        onClick={() => navbarClick()}
+      ></div>
 
-      {/* Login  */}
-      {!isSignedIn && !isRecruiterAcc && (
-        <Link to="/login" onClick={() => navbarClick()}>
-          <FiLogIn className="nav-icons" />
-          <span>Login</span>
-        </Link>
-      )}
+      <aside className="slide-nav">
+        <section className="slide-nav-header">
+          <div className="slide-nav-header-logo-container">
+            <img src={logo} alt="init-logo" className="slide-nav-header-logo" />
+            <AiOutlineClose
+              className="slide-nav-close"
+              onClick={() => navbarClick()}
+            />
+          </div>
 
-      {/* Profile */}
-      {(isSignedIn || isRecruiterAcc) && (
-        <Link
-          to={isSignedIn ? "/user" : "/recruiter"}
-          onClick={() => navbarClick()}
-        >
-          <CgProfile className="nav-icons"  />
-          <span>Profile</span>
-        </Link>
-      )}
+          <p className="slogan">Your first tech opportunity awaits</p>
+        </section>
+        <hr className="top-slide-nav-line"></hr>
 
-      {!isSignedIn && !isRecruiterAcc && (
-        <Link to="/register" onClick={() => navbarClick()}>
-          <FiUserPlus className="nav-icons" />
-          <span>Register</span>
-        </Link>
-      )}
+        {/* Login  */}
+        {!isSignedIn && !isRecruiterAcc && (
+          <Link to="/login" onClick={() => navbarClick()}>
+            <FiLogIn className="nav-icons" />
+            <span>Login</span>
+          </Link>
+        )}
 
-      <Link to="/" onClick={() => navbarClick()}>
-        <AiOutlineHome className="nav-icons" />
-        <span>Home</span>
-      </Link>
-      <Link to="/jobs" onClick={() => navbarClick()}>
-        <MdWorkOutline className="nav-icons" />
-        <span>Jobs</span>
-      </Link>
-      <Link to="/about" onClick={() => navbarClick()}>
-        <BiInfoCircle className="nav-icons" />
-        <span>About</span>
-      </Link>
-      {(isSignedIn || isRecruiterAcc) && (
-        <Link className="logoutBtn" to="/" onClick={() => logoutClick()}>
-          {<FiLogOut className="nav-icons"  />} <span>Logout</span>
+        {/* Profile */}
+        {(isSignedIn || isRecruiterAcc) && (
+          <Link
+            to={isSignedIn ? "/user" : "/recruiter"}
+            onClick={() => navbarClick()}
+          >
+            <CgProfile className="nav-icons" />
+            <span>Profile</span>
+          </Link>
+        )}
+
+        {!isSignedIn && !isRecruiterAcc && (
+          <Link to="/register" onClick={() => navbarClick()}>
+            <FiUserPlus className="nav-icons" />
+            <span>Register</span>
+          </Link>
+        )}
+
+        <Link to="/" onClick={() => navbarClick()}>
+          <AiOutlineHome className="nav-icons" />
+          <span>Home</span>
         </Link>
-      )}
-      <hr className="bottom-slide-nav-line"></hr>
-      <label className="switch">
-        <div>
-          <input
-            type="checkbox"
-            checked={isChecked}
-            onChange={(event) => toggleTheme(event)}
-          />
-          <span className="slider round"></span>
-        </div>
-        <span className="toggleBtn">Dark Mode</span>
-      </label>
-      <Footer />
-    </aside>
+        <Link to="/jobs" onClick={() => navbarClick()}>
+          <MdWorkOutline className="nav-icons" />
+          <span>Jobs</span>
+        </Link>
+        <Link to="/about" onClick={() => navbarClick()}>
+          <BiInfoCircle className="nav-icons" />
+          <span>About</span>
+        </Link>
+        {(isSignedIn || isRecruiterAcc) && (
+          <Link className="logoutBtn" to="/login" onClick={() => logoutClick()}>
+            {<FiLogOut className="nav-icons" />} <span>Logout</span>
+          </Link>
+        )}
+        <hr className="bottom-slide-nav-line"></hr>
+        <label className="switch">
+          <div>
+            <input
+              type="checkbox"
+              checked={isChecked}
+              onChange={(event) => toggleTheme(event)}
+            />
+            <span className="slider round"></span>
+          </div>
+          <span className="toggleBtn">Dark Mode</span>
+        </label>
+        <Footer />
+      </aside>
+    </div>
   );
 }
 
