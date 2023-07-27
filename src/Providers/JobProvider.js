@@ -7,7 +7,7 @@ export const JobContextData = createContext();
 export function useJobProvider() {
   return useContext(JobContextData);
 }
-const TASK = process.env.REACT_APP_TASK_BREAK;
+// const TASK = process.env.REACT_APP_TASK_BREAK;
 // loading carousel until page loads/ data retrieved i.e => api sleep (jobs show etc..)
 function JobProvider({ children }) {
   const {
@@ -109,7 +109,6 @@ function JobProvider({ children }) {
         setJobs,
         searchResult,
         setSearchResult,
-        TASK,
         recruiterID,
         setRecruiterID,
         editAccess,

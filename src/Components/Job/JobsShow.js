@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../../Providers/Provider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import { v4 as uuidv4 } from "uuid";
@@ -10,17 +10,15 @@ import convertCompanyForLogo from "./Data/CompanyLogos";
 import "./JobsShow.scss";
 
 function JobsShow() {
-  const { setAppHeader } = useContextProvider();
+  const { setAppHeader, API, axios } = useContextProvider();
   const {
-    API,
-    axios,
     jobID,
     userID,
-    TASK,
     isRecruiterAcc,
     isSignedIn,
     editAccess,
   } = useJobProvider();
+  const TASK = process.env.REACT_APP_TASK_BREAK;
   const navigate = useNavigate();
   const [jobDetails, setJobDetails] = useState({});
   const [skillIdArr, setSkillIdArr] = useState([]);
@@ -176,7 +174,16 @@ function JobsShow() {
           >
             APPLY NOW
           </button>
-        ) : null}
+        ) : (
+          <div className="jobShow_actionButtons_notSignedIn">
+            <Link className="jjobShow_actionButtons_apply" to="/login">
+              LOG IN
+            </Link>
+            <Link className="jobShow_actionButtons_apply" to="/register">
+              REGISTER NOW
+            </Link>
+          </div>
+        )}
       </section>
     </div>
   );

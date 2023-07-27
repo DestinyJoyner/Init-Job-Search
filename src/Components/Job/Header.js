@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { IoArrowBackCircleOutline } from "react-icons/io5"
+import { BiArrowBack} from "react-icons/bi"
 import "./Header.css"
 
 function Header({header, noBack}) {
@@ -7,8 +7,8 @@ function Header({header, noBack}) {
 
     return (
         <div className="app-header">
-        {!noBack && <IoArrowBackCircleOutline
-        size={"40px"}
+        {!noBack && <BiArrowBack
+        size={"36px"}
         className="app-header-back"
         onClick={() => navigate(-1)}
         />}

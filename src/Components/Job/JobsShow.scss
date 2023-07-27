@@ -131,11 +131,14 @@
       color: var(--init-blue);
       font-weight: 600;
     }
-    &_apply {
+    &_apply, &_applied, &_notSignedIn {
       grid-column: span 2;
     }
-    &_applied {
-      grid-column: span 2;
+    &_notSignedIn {
+      display: flex;
+      width: 100%;
+      font-size: 26px;
+      justify-content: space-evenly;
     }
   }
 }
@@ -157,7 +160,7 @@
   justify-self: center;
   border-radius: 20px;
   background-color: white;
-  width: 90%;
+  width: 86%;
   margin: .6vh 0;
   border: 2px solid var(--init-mint);
 }
@@ -169,7 +172,6 @@
 
 
 /* DARK MODE */
-
 .dark .jobShow {
   &_header {
     color: var(--init-background);
@@ -186,20 +188,19 @@
     }
   } 
   &_actionButtons {
-    & >* {
+    & >*, &_notSignedIn a {
       color: var(--init-gold);
     }
   }
-  
-}
 
-.dark .jobDetailSelected,
-.dark .jobShow_header_location_remote {
+  .skills-component {
+    background-color: var(--init-background);
+  }
+
+  .jobDetailSelected, .jobShow_header_location_remote {
   background-color: var(--init-gold);
   color: var(--init-dark);
 }
-
-.dark .jobShow .skills-component {
-  background-color: var(--init-background);
 }
+
 
