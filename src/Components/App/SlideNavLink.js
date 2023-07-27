@@ -28,7 +28,7 @@ function SlideNavLink({ path, label, clickfunction }) {
       to={`${path}`}
       className="slideNav_link"
       onClick={() => {
-        !clickfunction ? navbarClick() : clickfunction;
+        !clickfunction ? navbarClick() : clickfunction();
       }}
     >
       {navIconObj[label]}
