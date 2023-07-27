@@ -100,6 +100,7 @@
     color: var(--init-blue);
     /* width: 70%; */
     font-size: 22px;
+    margin-left: 2vw;
   }
   
   .bottom-slide-nav-line {
@@ -108,7 +109,7 @@
   }
   
   .slide-nav .nav-icons {
-    margin-right: 10%;
+    margin-right: 6vw;
     color: var(--init-blue);
     width: 30px;
     height: 30px;
@@ -142,6 +143,7 @@
     width: 70px;
     height: 34px;
     margin-bottom: 10px;
+    margin-left: 2vw;
   }
   
   .toggleBtn {
