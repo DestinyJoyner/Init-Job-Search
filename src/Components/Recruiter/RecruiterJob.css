@@ -61,7 +61,7 @@
 }
 
 .dark .recruiter-job-company-logo {
-    border: 1px solid var(--init-background);
+    border: 2px solid var(--init-background);
     background-color: var(--init-background);
 }
 
