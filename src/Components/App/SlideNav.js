@@ -58,7 +58,9 @@ function SlideNav() {
   }
 
   return (
-    <aside className={openNav ? " slide-nav nav-open" : " slide-nav nav-close"}>
+    <div className={openNav ? " slide-nav-container nav-open" : " slide-nav-container nav-close"}>
+       <div className="slide-nav-transparent"></div>
+    <aside className="slide-nav">
       <section  className="slide-nav-header">
         <div className="slide-nav-header-logo-container">
         <img src={logo} alt="init-logo" className="slide-nav-header-logo" />
@@ -129,6 +131,7 @@ function SlideNav() {
       </label>
       <Footer />
     </aside>
+    </div>
   );
 }
 
