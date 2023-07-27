@@ -1,6 +1,6 @@
 .jobShow {
   display: grid;
-  grid-template-rows: 25vh 6vh 52vh .2vh 6vh;
+  grid-template-rows: 25vh 6vh 52vh 0.2vh 6vh;
   row-gap: 0.5vh;
   justify-items: left;
   height: 92vh;
@@ -47,6 +47,28 @@
       border: 1px solid var(--init-darkmint);
       width: 90%;
     }
+  }
+
+  .skills-component {
+    grid-row: 2;
+    align-items: center;
+    justify-self: center;
+    border-radius: 20px;
+    background-color: white;
+    width: 86%;
+    margin: 0.6vh 0;
+    border: 2px solid var(--init-mint);
+    & svg {
+      height: 1.9em;
+      width: 1.9em;
+    }
+  }
+
+  .jobDetailSelected,
+  .jobShow_header_location_remote {
+    background-color: var(--init-darkmint);
+    color: var(--init-gold);
+    font-weight: 600;
   }
 
   &_jobDetails {
@@ -97,16 +119,18 @@
           position: relative;
           bottom: 0.5vh;
           font-weight: 600;
-          padding-bottom: .5vh;
+          padding-bottom: 0.5vh;
         }
       }
 
       &_tasks {
+        margin-top: 2vh;
+        padding-inline-start: 20px;
         list-style-position: outside;
         display: flex;
         flex-direction: column;
         row-gap: 2vh;
-        width: 85%;
+        width: 88%;
       }
     }
   }
@@ -131,13 +155,15 @@
       color: var(--init-blue);
       font-weight: 600;
     }
-    &_apply, &_applied, &_notSignedIn {
+    &_apply,
+    &_applied,
+    &_notSignedIn {
       grid-column: span 2;
     }
     &_notSignedIn {
       display: flex;
       width: 100%;
-      font-size: 26px;
+      font-size: 24px;
       justify-content: space-evenly;
     }
   }
@@ -146,30 +172,6 @@
 .hide {
   display: none;
 }
-
-.jobDetailSelected,
-.jobShow_header_location_remote {
-  background-color: var(--init-darkmint);
-  color: var(--init-gold);
-  font-weight: 600;
-}
-
-.jobShow .skills-component {
-  grid-row: 2;
-  align-items: center;
-  justify-self: center;
-  border-radius: 20px;
-  background-color: white;
-  width: 86%;
-  margin: .6vh 0;
-  border: 2px solid var(--init-mint);
-}
-
-.jobShow .skills-component svg {
-  height: 1.9em;
-  width: 1.9em;
-}
-
 
 /* DARK MODE */
 .dark .jobShow {
@@ -186,9 +188,10 @@
     &_overview {
       color: var(--init-background);
     }
-  } 
+  }
   &_actionButtons {
-    & >*, &_notSignedIn a {
+    & > *,
+    &_notSignedIn a {
       color: var(--init-gold);
     }
   }
@@ -197,10 +200,9 @@
     background-color: var(--init-background);
   }
 
-  .jobDetailSelected, .jobShow_header_location_remote {
-  background-color: var(--init-gold);
-  color: var(--init-dark);
+  .jobDetailSelected,
+  .jobShow_header_location_remote {
+    background-color: var(--init-gold);
+    color: var(--init-dark);
+  }
 }
-}
-
-

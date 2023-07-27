@@ -113,7 +113,7 @@ function SlideNav() {
         <span>About</span>
       </Link>
       {(isSignedIn || isRecruiterAcc) && (
-        <Link className="logoutBtn" to="/" onClick={() => logoutClick()}>
+        <Link className="logoutBtn" to="/login" onClick={() => logoutClick()}>
           {<FiLogOut className="nav-icons"  />} <span>Logout</span>
         </Link>
       )}
