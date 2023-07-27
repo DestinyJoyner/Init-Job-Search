@@ -39,7 +39,7 @@ const navJobs = <MdWorkOutline className="slideNav_link_icons" />
 
 const navAbout = <BiInfoCircle className="slideNav_link_icons" />
 
-const navLogout = <FiLogOut className="slideNav_icons" />
+const navLogout = <FiLogOut className="slideNav_link_icons" />
 
 export {
     jobCompany,

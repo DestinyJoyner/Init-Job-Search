@@ -1,47 +1,25 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContextProvider } from "../../Providers/Provider";
-import Footer from "./Footer";
+import { useNavProvider } from "../../Providers/NavProvider";
+import DarkModeSlider from "./DarkModeSlider";
 import SlideNavLink from "./SlideNavLink";
-import {
-  navLogout,
-  navProfile,
-} from "../Job/Data/Icons";
+import Footer from "./Footer";
+
 import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../Assets/LOGO.png";
 import "./SlideNav.css";
 
 function SlideNav() {
   const {
-    setTheme,
     isSignedIn,
     setIsSignedIn,
     setRecruiterID,
     setIsRecruiterAcc,
     setUserID,
     isRecruiterAcc,
-    navbarClick,
-    openNav,
-    setOpenNav,
   } = useContextProvider();
-  // const navigate = useNavigate();
-  const darkModeSwitch =
-    localStorage.getItem("theme") === "dark" ? true : false;
-
-  //   STATE DECLARATIONS
-  const [isChecked, setIsChecked] = useState(darkModeSwitch);
-
-  const toggleTheme = (e) => {
-    const checkbox = e.target.checked;
-    if (checkbox) {
-      setTheme("dark");
-      setIsChecked(true);
-    } else {
-      setTheme("light");
-      setIsChecked(false);
-    }
-    navbarClick();
-  };
+  const {navbarClick, openNav} = useNavProvider()
 
   function logoutClick() {
     setIsSignedIn(false);
@@ -91,13 +69,9 @@ function SlideNav() {
 
         {/* Profile */}
         {(isSignedIn || isRecruiterAcc) && (
-          <Link
-            to={isSignedIn ? "/user" : "/recruiter"}
-            onClick={() => navbarClick()}
-          >
-            {navProfile}
-            <span>Profile</span>
-          </Link>
+          <SlideNavLink 
+          path={isSignedIn ? "/user" : "/recruiter"}
+          label={"Profile"}/>
         )}
 
         {!isSignedIn && !isRecruiterAcc && (
@@ -111,22 +85,13 @@ function SlideNav() {
         <SlideNavLink path={"/about"} label={"About"} />
 
         {(isSignedIn || isRecruiterAcc) && (
-          <Link className="logoutBtn" to="/login" onClick={() => logoutClick()}>
-            {navLogout} <span>Logout</span>
-          </Link>
+          <SlideNavLink 
+          path={"/logout"}
+          label={"Logout"}
+          clickfunction={logoutClick}/>
         )}
         <hr className="bottom-slide-nav-line"></hr>
-        <label className="switch">
-          <div>
-            <input
-              type="checkbox"
-              checked={isChecked}
-              onChange={(event) => toggleTheme(event)}
-            />
-            <span className="slider round"></span>
-          </div>
-          <span className="toggleBtn">Dark Mode</span>
-        </label>
+        <DarkModeSlider />
         <Footer />
       </aside>
     </div>

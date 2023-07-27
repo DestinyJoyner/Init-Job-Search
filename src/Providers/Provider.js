@@ -1,7 +1,7 @@
-import { useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext, useState } from "react";
 import axios from "axios";
+import NavProvider from "./NavProvider";
 import Nav from "../Components/App/Nav";
-// import Footer from "../Components/App/Footer";
 
 export const ContextData = createContext();
 export function useContextProvider() {
@@ -24,22 +24,12 @@ function Provider({ children }) {
   const [authToken, setAuthToken] = useState(
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc3RpbnlAZW1haWwuY29tIiwiaWF0IjoxNjg5NDQ3OTk3LCJleHAiOjE2OTIwMzk5OTd9.phVrR89Mw7TvMwv_f9WhZgs4uWI0A3MBONrG50DheUE"
   );
-  const [openNav, setOpenNav] = useState(false);
   const [accessRegTwo, setAccessRegTwo] = useState(false);
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const [triggerBonus, setTriggerBonus] = useState(false)
+  const [triggerBonus, setTriggerBonus] = useState(false);
 
-  const[appHeader, setAppHeader] = useState("")
-
-
-  function navbarClick() {
-    setOpenNav(!openNav);
-  }
-
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  const [appHeader, setAppHeader] = useState("");
 
   axios.defaults.headers.common["authorization"] = `Bearer ${authToken}`;
 
@@ -62,16 +52,15 @@ function Provider({ children }) {
           setRecruiterID,
           accessRegTwo,
           setAccessRegTwo,
-          navbarClick,
-          openNav,
-          setOpenNav,
           triggerBonus,
           setTriggerBonus,
           appHeader,
           setAppHeader,
         }}
       >
-        <Nav />
+        <NavProvider>
+          <Nav />
+        </NavProvider>
         {children}
       </ContextData.Provider>
     </div>
