@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useNavProvider } from "../../Providers/NavProvider";
+import { useNavProvider } from "../../../../Providers/NavProvider";
 import {
   navAbout,
   navHome,
@@ -8,7 +8,7 @@ import {
   navLogout,
   navProfile,
   navRegister,
-} from "../Job/Data/Icons";
+} from "../../../Job/Data/Icons";
 
 function SlideNavLink({ path, label, clickfunction }) {
   const { navbarClick } = useNavProvider();

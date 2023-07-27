@@ -1,9 +1,9 @@
-import { useNavProvider } from "../../Providers/NavProvider";
+import { useNavProvider } from "../../../../Providers/NavProvider";
 import SlideNavLinkList from "./SlideNavLinkList";
-import DarkModeSlider from "./DarkModeSlider";
-import Footer from "./Footer";
+import DarkModeSlider from "./DarkModeSlider/DarkModeSlider";
+import Footer from "../../Footer";
 import { AiOutlineClose } from "react-icons/ai";
-import logo from "../../Assets/LOGO.png";
+import logo from "../../../../Assets/LOGO.png"
 import "./SlideNav.scss";
 
 function SlideNav() {

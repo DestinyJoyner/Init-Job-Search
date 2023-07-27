@@ -1,5 +1,5 @@
-import { useContextProvider } from "../../Providers/Provider";
-import { useNavProvider } from "../../Providers/NavProvider";
+import { useContextProvider } from "../../../../Providers/Provider";
+import { useNavProvider } from "../../../../Providers/NavProvider";
 import SlideNavLink from "./SlideNavLink";
 
 function SlideNavLinkList() {

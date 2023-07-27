@@ -1,7 +1,7 @@
 import { useContext, createContext, useState } from "react";
 import axios from "axios";
 import NavProvider from "./NavProvider";
-import Nav from "../Components/App/Nav";
+import Nav from "../Components/App/NavBar/Nav";
 
 export const ContextData = createContext();
 export function useContextProvider() {
