@@ -29,7 +29,7 @@ function JobProvider({ children }) {
   const [queryStart, setQueryStart] = useState(0)
 
   const defaultJobSearchQuery = `${API}/jobs?start=${queryStart}&limit=4`
-  const [searchQueryRoute, setSearchQueryRoute] = useState(defaultJobSearchQuery)
+  const [searchQueryRoute, setSearchQueryRoute] = useState("")
   const [recruiterJobs, setRecruiterJobs] = useState([]);
 
   const [editAccess, setEditAccess] = useState(false);
