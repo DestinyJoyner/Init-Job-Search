@@ -1,6 +1,6 @@
 .jobShow {
   display: grid;
-  grid-template-rows: 25vh 6vh 52vh 0.2vh 6vh;
+  grid-template-rows: 25vh 8vh 48vh 0.2vh 8vh;
   row-gap: 0.5vh;
   justify-items: left;
   height: 92vh;
@@ -56,6 +56,8 @@
     border-radius: 20px;
     background-color: white;
     width: 86%;
+    height: 50%;
+    align-self: center;
     margin: 0.6vh 0;
     border: 2px solid var(--init-mint);
     & svg {
@@ -73,7 +75,6 @@
 
   &_jobDetails {
     grid-row: 3;
-    margin-top: 1vh;
     width: 96%;
     display: grid;
     grid-template-rows: 5vh auto;
