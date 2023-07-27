@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContextProvider } from "../../Providers/Provider";
 import Footer from "./Footer";
-import { AiOutlineHome } from "react-icons/ai";
-import { MdWorkOutline } from "react-icons/md";
-import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
-import { CgProfile } from "react-icons/cg";
-import { BiInfoCircle } from "react-icons/bi";
+import SlideNavLink from "./SlideNavLink";
+import {
+  navLogout,
+  navProfile,
+} from "../Job/Data/Icons";
 import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../Assets/LOGO.png";
 import "./SlideNav.css";
@@ -24,7 +24,7 @@ function SlideNav() {
     openNav,
     setOpenNav,
   } = useContextProvider();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const darkModeSwitch =
     localStorage.getItem("theme") === "dark" ? true : false;
 
@@ -86,10 +86,7 @@ function SlideNav() {
 
         {/* Login  */}
         {!isSignedIn && !isRecruiterAcc && (
-          <Link to="/login" onClick={() => navbarClick()}>
-            <FiLogIn className="nav-icons" />
-            <span>Login</span>
-          </Link>
+          <SlideNavLink path={"/login"} label={"Login"} />
         )}
 
         {/* Profile */}
@@ -98,33 +95,24 @@ function SlideNav() {
             to={isSignedIn ? "/user" : "/recruiter"}
             onClick={() => navbarClick()}
           >
-            <CgProfile className="nav-icons" />
+            {navProfile}
             <span>Profile</span>
           </Link>
         )}
 
         {!isSignedIn && !isRecruiterAcc && (
-          <Link to="/register" onClick={() => navbarClick()}>
-            <FiUserPlus className="nav-icons" />
-            <span>Register</span>
-          </Link>
+          <SlideNavLink path={"/register"} label={"Register"} />
         )}
 
-        <Link to="/" onClick={() => navbarClick()}>
-          <AiOutlineHome className="nav-icons" />
-          <span>Home</span>
-        </Link>
-        <Link to="/jobs" onClick={() => navbarClick()}>
-          <MdWorkOutline className="nav-icons" />
-          <span>Jobs</span>
-        </Link>
-        <Link to="/about" onClick={() => navbarClick()}>
-          <BiInfoCircle className="nav-icons" />
-          <span>About</span>
-        </Link>
+        <SlideNavLink path={"/"} label={"Home"} />
+
+        <SlideNavLink path={"/jobs"} label={"Jobs"} />
+
+        <SlideNavLink path={"/about"} label={"About"} />
+
         {(isSignedIn || isRecruiterAcc) && (
           <Link className="logoutBtn" to="/login" onClick={() => logoutClick()}>
-            {<FiLogOut className="nav-icons" />} <span>Logout</span>
+            {navLogout} <span>Logout</span>
           </Link>
         )}
         <hr className="bottom-slide-nav-line"></hr>
