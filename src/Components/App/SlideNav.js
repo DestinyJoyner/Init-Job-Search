@@ -4,7 +4,7 @@ import DarkModeSlider from "./DarkModeSlider";
 import Footer from "./Footer";
 import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../Assets/LOGO.png";
-import "./SlideNav.css";
+import "./SlideNav.scss";
 
 function SlideNav() {
   const { navbarClick, openNav } = useNavProvider();
@@ -13,31 +13,28 @@ function SlideNav() {
     <div
       className={
         openNav
-          ? " slide-nav-container nav-open"
-          : " slide-nav-container nav-close"
+          ? " slideNav_container slideNav_open"
+          : " slideNav_container slideNav_close"
       }
     >
-      <div
-        className="slide-nav-transparent"
-        onClick={() => navbarClick()}
-      ></div>
+      <div className="slideNav_transparent" onClick={() => navbarClick()}></div>
 
-      <aside className="slide-nav">
-        <section className="slide-nav-header">
-          <div className="slide-nav-header-logo-container">
-            <img src={logo} alt="init-logo" className="slide-nav-header-logo" />
+      <aside className="slideNav">
+        <section className="slideNav_header">
+          <div className="slideNav_header_logo_container">
+            <img src={logo} alt="init-logo" className="slideNav_header_logo" />
             <AiOutlineClose
-              className="slide-nav-close"
+              className="slideNav_closeButton"
               onClick={() => navbarClick()}
             />
           </div>
-
-          <p className="slogan">Your first tech opportunity awaits</p>
+          <p className="slideNav_header_slogan">
+            Your first tech opportunity awaits
+          </p>
         </section>
-        <hr className="top-slide-nav-line"></hr>
-
+        <hr className="slideNav_divider"></hr>
         <SlideNavLinkList />
-        <hr className="bottom-slide-nav-line"></hr>
+        <hr className="slideNav_divider"></hr>
         <DarkModeSlider />
         <Footer />
       </aside>
