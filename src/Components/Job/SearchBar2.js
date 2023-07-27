@@ -52,7 +52,7 @@ function SearchBar2() {
   }
   // SEND SKILLS ARR AS KEY IN OBJ WITH SEARCH QUERY -> FILTER ON ABCKEND GET ALL JOBS ROUTE WITH SKILLID
 useEffect(() => {
-  console.log(searchOptions.skills)
+  // console.log(searchOptions.skills)
 }, [searchOptions.skills.length])
   return (
     <form

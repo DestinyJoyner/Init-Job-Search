@@ -1,67 +1,77 @@
 .searchComponent {
-  display: grid;
-  grid-template-rows: 7vh auto;
-  row-gap: 0.5vh;
-  width: 100%;
+    display: grid;
+    grid-template-rows: 7vh auto;
+    row-gap: .5vh;
+    width: 100%;
 
-  &_searchBar {
-    &_label {
-      grid-row: 1;
-      display: flex;
+    &_searchBar {
+        &_label {
+            grid-row: 1;
+            // display: flex;
+            display:grid;
+            grid-template-columns: .5fr 5fr .5fr;
+            & >* {
+              grid-row: 1;
+            }
+        }
+
+        &_logo {
+          grid-column: 1;
+            height: 35px;
+            position: relative;
+            left: 4vw;
+            top: 1.5vh;
+            z-index: 10;
+        }
+
+        &_input {
+          grid-column: 1/4;
+            width: 85%;
+            height: 5vh;
+            text-indent: 8vw;
+            font-size: 20px;
+            position: relative;
+            left: 6vw;
+            margin-top: 1vh;
+        }
+        &_filterIcon {
+          grid-column: 3;
+            position: relative;
+            right: 8vw;
+            top: 2vh;
+            height: 2.2em;
+            width: 2.2em;
+            color: var(--init-blue);
+        }
     }
 
-    &_logo {
-      height: 35px;
-      position: relative;
-      left: 4vw;
-      top: 0.9vh;
-      z-index: 10;
+    &_submit {
+        all: unset;
+        width: fit-content;
+        margin-left: 6vw;
+        font-weight: 600;
+        color: var(--init-blue);
+        font-size: 22px;
     }
-
-    &_input {
-      width: 85%;
-      height: 5vh;
-      text-indent: 9vw;
-      font-size: 20px;
-      position: relative;
-      right: 3vw;
-      margin-top: 1vh;
-    }
-    &_filterIcon {
-      position: relative;
-      right: 11vw;
-      top: 2vh;
-      height: 2.2em;
-      width: 2.2em;
-      color: var(--init-blue);
-    }
-  }
-
-  &_submit {
-    all: unset;
-    width: fit-content;
-    margin-left: 6vw;
-    font-weight: 600;
-    color: var(--init-blue);
-    font-size: 22px;
-  }
 }
+
 
 /* DARK MODE */
 .dark .searchComponent {
-  &_searchBar {
-    &_input {
-      color: var(--init-background);
-      &::placeholder {
-        color: var(--init-background);
-      }
+    &_searchBar {
+        &_input {
+            color: var(--init-background);
+            &::placeholder {
+                color: var(--init-background);
+            }
+        }
+        &_filterIcon {
+            color: var(--init-gold);
+        }
     }
-    &_filterIcon {
-      color: var(--init-gold);
-    }
-  }
-
-  &_submit {
-    color: var(--init-gold);
-  }
+    
+    &_submit {
+        color: var(--init-gold);
+    }   
 }
+
