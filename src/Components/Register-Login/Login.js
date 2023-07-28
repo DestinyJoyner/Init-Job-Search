@@ -87,7 +87,7 @@ useEffect(() => {
         src={initLogo} alt="logo" />
         <span className="slideNav_header_slogan">Your first tech opportunity awaits</span>
       </section>
-      
+
       <form className="login_form grid-center" onSubmit={handleSubmit}>
         <label 
         className="login_form_label"
@@ -143,7 +143,7 @@ useEffect(() => {
       className="login_register">
         New to inIT? <br/>Create an account</Link>
 
-        <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} />
+        {/* <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} /> */}
     </div>
   );
 }

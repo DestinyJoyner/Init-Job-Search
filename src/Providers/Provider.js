@@ -64,12 +64,12 @@ useEffect(() => {
           setLoading,
         }}
       >
-        {loading && <Loading /> }
         <NavProvider>
           <Nav />
+          {loading && <Loading />} 
           {children}
         </NavProvider>
-
+        
       </ContextData.Provider>
     </div>
   );

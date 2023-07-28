@@ -16,6 +16,7 @@ function JobProvider({ children }) {
     isRecruiterAcc,
     recruiterID,
     setLoading,
+    loading
   } = useContextProvider();
   const { jobID } = useParams();
   const navigate = useNavigate();
@@ -40,20 +41,19 @@ function JobProvider({ children }) {
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(`${API}/jobs`)
+    axios.get(`${API}/jobs`)
       .then(({ data }) => {
         setJobs(data);
         setSearchResult(data);
       })
       .catch((error) => console.log(error));
 
-    axios
-      .get(defaultJobSearchQuery)
+    axios.get(defaultJobSearchQuery)
       .then(({ data }) => {
        
         if (data.length > 0) {
           setJobQuery(data);
+          console.log(loading)
           setLoading(false);
         }
       })
@@ -123,6 +123,7 @@ function JobProvider({ children }) {
       .then(({ data }) => setJobQuery(data))
       .catch((err) => console.log(err));
   }, [queryStart, searchQueryRoute]);
+
 
   return (
     <JobContextData.Provider
