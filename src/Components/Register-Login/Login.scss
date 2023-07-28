@@ -44,6 +44,7 @@
     &_input {
       width: 100%;
       height: 3vh;
+      font-size: 20px;
 
       &::placeholder{
         font-size: 20px;
@@ -75,17 +76,6 @@
           display: flex;
           column-gap: 2vw;
           align-self: flex-end;
-          
-          // & svg {
-          //   height: 1.5em;
-          //   width: 1.5em;
-          //   color: var(--init-darkmint);
-          //   position: relative;
-          //   bottom: .1vh;
-          // }
-          & span {
-            align-self: flex-end;
-          }
         }
       }
     }
@@ -95,7 +85,6 @@
       color: var(--init-blue);
       font-weight: 600;
       font-size: 28px;
-
     }
   }
 
@@ -110,11 +99,6 @@
 .recruiter-login-error {
     color: var(--init-rust);
     font-weight: 600;
-    /* border: 3px solid green; */
-    /* margin-top: 25px; */
-    height: 40px;
-    margin-top: 15px;
-    /* margin-bottom: 5px; */
     font-size: 26px;
 }
 

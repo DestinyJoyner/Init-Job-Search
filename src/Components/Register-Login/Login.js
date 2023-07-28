@@ -87,9 +87,7 @@ useEffect(() => {
         src={initLogo} alt="logo" />
         <span className="slideNav_header_slogan">Your first tech opportunity awaits</span>
       </section>
-      {/* <div className="recruiter-login-error">
-        {failedLogin && "Invalid email, or password"}
-      </div> */}
+      
       <form className="login_form grid-center" onSubmit={handleSubmit}>
         <label 
         className="login_form_label"
@@ -118,7 +116,7 @@ useEffect(() => {
           required
         />
         </label>
-       
+
         <label 
         className="login_form_isRecruiter_label"
         htmlFor="isRecruiter">
@@ -137,12 +135,15 @@ useEffect(() => {
        
         <input className="login_form_submit" type="submit" value="LOG IN" />
       </form>
-      {/* <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} /> */}
-      {/* <div className="recruiter-login-error">{failedLogin && "Invalid email, or password"}</div> */}
+      {failedLogin && 
+      <div className="recruiter-login-error">"Invalid email, or password"</div>
+      }
       <Link 
       to="/register"
       className="login_register">
         New to inIT? <br/>Create an account</Link>
+
+        <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} />
     </div>
   );
 }
