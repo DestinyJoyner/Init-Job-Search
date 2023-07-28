@@ -17,10 +17,13 @@ function JobsIndex() {
 
   useEffect(() => {
     setAppHeader("inIT Jobs")
-    if(jobQuery.length < 4){
+    if(jobQuery.length !== 4){
         setHideNextButton(true)
     }
-}, [jobQuery.length]);
+    else {
+      setHideNextButton(false)
+    }
+}, [queryStart, jobQuery.length]);
 
   return (
     <div className="jobsIndex">

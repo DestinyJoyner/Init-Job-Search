@@ -30,16 +30,22 @@ function HomePage() {
   // useEffect(() => {}, [textSwitch]);
   useEffect(() => {
     setAppHeader("Welcome to inIT")
-    setLoading(false)
+
     const timeout = setInterval(() => {
       setTextSwitch(true);
+      setLoading(false)
     }, 4000);
   }, [])
 
   return (
     <div ref={refElement} className="home">
       <section>
-        <div className={textSwitch ? "hidden" : "show home-landing"}>
+        <div 
+        onClick={() => {
+          setLoading(false)
+          setTextSwitch(true)
+        }}
+        className={textSwitch ? "hidden" : "show home-landing"}>
           <h2 className="home-italic">Welcome To</h2>
           <hr />
           <img src={logo} alt="logo" className="home-logo" />

@@ -5,23 +5,24 @@ import { useRecruiterProvider } from "../../Providers/RecruiterProvider.js";
 import { Link, useNavigate } from "react-router-dom";
 import ShowPass from "./ShowPass.js";
 import { loginEmail, loginPassword, recruiter } from "../Job/Data/Icons.js";
-import initLogo from "../../Assets/LOGO.png"
+import initLogo from "../../Assets/LOGO.png";
 import "./Login.scss";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { axios,
+  const {
+    axios,
     API,
     setRecruiterID,
     setIsSignedIn,
     setAuthToken,
     setIsRecruiterAcc,
-    setUserID,} = useContextProvider()
-    const {setAppHeader} = useNavProvider()
-  const {
-    isPassHidden,
-    setIsPassHidden,
-  } = useRecruiterProvider();
+    setUserID,
+    setLoading,
+    isSignedIn, isRecruiterAcc
+  } = useContextProvider();
+  const { setAppHeader } = useNavProvider();
+  const { isPassHidden, setIsPassHidden } = useRecruiterProvider();
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
@@ -75,75 +76,81 @@ export default function Login() {
         setFailedLogin(true);
       });
   };
-useEffect(() => {
-  setAppHeader("Log In")
-}, [])
+  useEffect(() => {
+    if(isSignedIn || isRecruiterAcc){
+      navigate(isSignedIn ? "/user" : "/recruiter")
+      // setLoading(true)
+    }
+    else {
+      setAppHeader("Log In");
+    setLoading(false);
+    }
+    
+  }, []);
 
   return (
+    // (!isSignedIn && !isRecruiterAcc) &&
     <div className="login grid-center">
       <section className="login_header">
-        <img 
-        className="login_header_logo"
-        src={initLogo} alt="logo" />
-        <span className="slideNav_header_slogan">Your first tech opportunity awaits</span>
+        <img className="login_header_logo" src={initLogo} alt="logo" />
+        <span className="slideNav_header_slogan">
+          Your first tech opportunity awaits
+        </span>
       </section>
 
       <form className="login_form grid-center" onSubmit={handleSubmit}>
-        <label 
-        className="login_form_label"
-        htmlFor="email">{loginEmail}
-        <input
-          id="email"
-          type="email"
-          placeholder="Email address"
-          className="login_form_input"
-          value={loginForm.email}
-          onChange={handleChange}
-          required
-        />
-        </label>
-        
-        <label 
-        className="login_form_label"
-        htmlFor="password">{loginPassword}
-        <input
-          id="password"
-          type={isPassHidden ? "password" : "text"}
-          placeholder="Password"
-          className="login_form_input"
-          value={loginForm.password}
-          onChange={handleChange}
-          required
-        />
+        <label className="login_form_label grid-center" htmlFor="email">
+          {loginEmail}
+          <input
+            id="email"
+            type="email"
+            placeholder="Email address"
+            className="login_form_input"
+            value={loginForm.email}
+            onChange={handleChange}
+            required
+          />
         </label>
 
-        <label 
-        className="login_form_isRecruiter_label"
-        htmlFor="isRecruiter">
-           {recruiter}
-         <input
-          id="isRecruiter"
-          type="checkbox"
-          checked={loginForm.isRecruiter}
-          className="login_form_isRecruiter"
-          onChange={handleChange}
-        />
-          <span className="login_form_isRecruiter_label_text" >
-         I am a Recruiter
+        <label className="login_form_label grid-center" htmlFor="password">
+          {loginPassword}
+          <input
+            id="password"
+            type={isPassHidden ? "password" : "text"}
+            placeholder="Password"
+            className="login_form_input"
+            value={loginForm.password}
+            onChange={handleChange}
+            required
+          />
+          <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} />
+        </label>
+
+        <label className="login_form_isRecruiter_label" htmlFor="isRecruiter">
+          {recruiter}
+          <input
+            id="isRecruiter"
+            type="checkbox"
+            checked={loginForm.isRecruiter}
+            className="login_form_isRecruiter"
+            onChange={handleChange}
+          />
+          <span className="login_form_isRecruiter_label_text">
+            I am a Recruiter
           </span>
         </label>
-       
+
         <input className="login_form_submit" type="submit" value="LOG IN" />
       </form>
-      {failedLogin && 
-      <div className="recruiter-login-error">"Invalid email, or password"</div>
-      }
-      <Link 
-      to="/register"
-      className="login_register">
-        New to inIT? <br/>Create an account</Link>
-
-        {/* <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} /> */}
+      {failedLogin && (
+        <div className="recruiter-login-error">
+          "Invalid Email, or Password"
+        </div>
+      )}
+      <Link to="/register" className="login_register">
+        New to inIT? <br />
+        Create an account
+      </Link>
     </div>
   );
 }

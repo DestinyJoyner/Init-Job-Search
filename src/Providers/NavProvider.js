@@ -24,6 +24,7 @@ const [openNav, setOpenNav] = useState(false);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+
   return (
       <NavBarData.Provider
         value={{

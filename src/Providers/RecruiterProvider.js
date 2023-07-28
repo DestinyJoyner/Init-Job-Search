@@ -7,7 +7,7 @@ export function useRecruiterProvider() {
 }
 
 function RecruiterProvider({ children }) {
-  const { API, axios, theme, setIsSignedIn, setAuthToken, isRecruiterAcc, setIsRecruiterAcc, setUserID, recruiterID, setRecruiterID, setAccessRegTwo, setLoading } =
+  const { API, axios, theme, setIsSignedIn, setAuthToken, isRecruiterAcc, setIsRecruiterAcc, setUserID, recruiterID, setRecruiterID, setAccessRegTwo, setLoading, loading } =
     useContextProvider();
 
   const [recruiterData, setRecruiterData] = useState({});
@@ -27,7 +27,7 @@ function RecruiterProvider({ children }) {
   }, [recruiterID]);
 
   useEffect(() => {
-    setLoading(false)
+    setLoading(true)
   }, [])
 
   return (
