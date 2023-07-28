@@ -51,9 +51,10 @@ function JobProvider({ children }) {
     axios
       .get(defaultJobSearchQuery)
       .then(({ data }) => {
-        setLoading(false);
+       
         if (data.length > 0) {
           setJobQuery(data);
+          setLoading(false);
         }
       })
       .catch((err) => console.log(err));

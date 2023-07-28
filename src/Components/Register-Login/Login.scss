@@ -53,26 +53,36 @@
     &_isRecruiter {
       height: 3vh;
       width: 3vh;
+      margin-left: 4vw;
 
       &_label {
         width: 100%;
-        margin-right: 8vw;
+        margin-right: 7vw;
         justify-content: center;
         display: flex;
         align-items: center;
-        column-gap: 5vw;
+        column-gap: 3vw;
+
+        & svg {
+          height: 1.4em;
+          width: 1.4em;
+          color: var(--init-darkmint);
+          position: relative;
+          bottom: .2vh;
+        }
 
         &_text {
           display: flex;
-          column-gap: 3vw;
+          column-gap: 2vw;
+          align-self: flex-end;
           
-          & svg {
-            height: 1.5em;
-            width: 1.5em;
-            color: var(--init-darkmint);
-            position: relative;
-            bottom: .1vh;
-          }
+          // & svg {
+          //   height: 1.5em;
+          //   width: 1.5em;
+          //   color: var(--init-darkmint);
+          //   position: relative;
+          //   bottom: .1vh;
+          // }
           & span {
             align-self: flex-end;
           }

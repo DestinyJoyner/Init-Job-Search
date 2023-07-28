@@ -122,6 +122,7 @@ useEffect(() => {
         <label 
         className="login_form_isRecruiter_label"
         htmlFor="isRecruiter">
+           {recruiter}
          <input
           id="isRecruiter"
           type="checkbox"
@@ -130,8 +131,7 @@ useEffect(() => {
           onChange={handleChange}
         />
           <span className="login_form_isRecruiter_label_text" >
-          {recruiter}
-          <span>I am a Recruiter</span>
+         I am a Recruiter
           </span>
         </label>
        
