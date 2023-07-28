@@ -8,6 +8,9 @@ export function useNavProvider() {
 
 function NavProvider({ children }) {
 const {theme, setTheme } = useContextProvider()
+
+const [appHeader, setAppHeader] = useState("");
+
 const [openNav, setOpenNav] = useState(false);
 
   function navbarClick() {
@@ -21,10 +24,11 @@ const [openNav, setOpenNav] = useState(false);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-
   return (
       <NavBarData.Provider
         value={{
+          appHeader,
+          setAppHeader,
           navbarClick,
           openNav,
           setOpenNav,

@@ -19,6 +19,7 @@ function JobProvider({ children }) {
     setIsRecruiterAcc,
     recruiterID,
     setRecruiterID,
+    setLoading
   } = useContextProvider();
   const { jobID } = useParams();
   const navigate = useNavigate()
@@ -35,7 +36,6 @@ function JobProvider({ children }) {
   const [editAccess, setEditAccess] = useState(false);
   const [showAccess, setShowAccess] = useState(isRecruiterAcc)
 
-  const [bonus, setBonus] = useState({})
 
   useEffect(() => {
     axios
@@ -50,6 +50,7 @@ function JobProvider({ children }) {
     axios.get(defaultJobSearchQuery)
     .then(({data}) => 
     {
+      setLoading(false)
       if(data.length > 0){
       setJobQuery(data)
     }
@@ -119,8 +120,6 @@ function JobProvider({ children }) {
         setIsRecruiterAcc,
         showAccess,
         setShowAccess,
-        bonus,
-        setBonus,
         jobQuery,
         setJobQuery,
         queryStart,

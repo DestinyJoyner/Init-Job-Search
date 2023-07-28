@@ -1,4 +1,3 @@
-import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import SlideNav from "./SlideNav/SlideNav";
 import Header from "../../Job/Header.js"
@@ -6,8 +5,7 @@ import hamburger from "../../../Assets/blue-hamburger-menu.png"
 import "./Nav.scss";
 
 export default function Nav() {
-  const { appHeader } = useContextProvider();
-  const { navbarClick } = useNavProvider()
+  const { navbarClick, appHeader } = useNavProvider()
 
   return (
     <nav className="navBar grid-center">

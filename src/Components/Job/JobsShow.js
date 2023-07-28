@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../../Providers/Provider";
+import { useNavProvider } from "../../Providers/NavProvider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import { v4 as uuidv4 } from "uuid";
 import SkillsComponent from "./SkillsComponent";
@@ -10,7 +11,8 @@ import convertCompanyForLogo from "./Data/CompanyLogos";
 import "./JobsShow.scss";
 
 function JobsShow() {
-  const { setAppHeader, API, axios } = useContextProvider();
+  const { API, axios, setLoading } = useContextProvider();
+  const { setAppHeader } = useNavProvider()
   const {
     jobID,
     userID,
@@ -57,6 +59,7 @@ function JobsShow() {
     axios
       .get(`${API}/jobs/${jobID}`)
       .then(({ data }) => {
+        setLoading(false)
         setJobDetails(data);
         setSkillIdArr(convertSkills(data.skills));
       })
