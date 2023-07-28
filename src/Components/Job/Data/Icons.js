@@ -5,7 +5,7 @@ import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk, CgProfile  } from "react-icons/cg";
 import {FaUserTie} from "react-icons/fa"
 import { AiOutlineHome, AiOutlineClose  } from "react-icons/ai";
-import { MdWorkOutline } from "react-icons/md";
+import { MdWorkOutline, MdOutlineMail, MdLockOutline } from "react-icons/md";
 import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
 import { BiInfoCircle } from "react-icons/bi";
 
@@ -15,6 +15,9 @@ const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
 const jobLocation = <GoLocation size={"20px"} color={"#41cdbc"} />
 
 const jobApplied = <BsClipboardCheck color={"black"} size={"40px"} />
+
+const loginEmail = <MdOutlineMail />
+const loginPassword = <MdLockOutline />
           
 const searchIcon =  <CiSearch size ={"28px"} color={"#41CDBC"} className="search-bar-icon" />
 
@@ -56,7 +59,7 @@ export {
     navLogin,
     navLogout,
     navProfile,
-    navRegister
- 
-
+    navRegister,
+    loginPassword,
+    loginEmail
 }

@@ -1,20 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useContextProvider } from "../../Providers/Provider.js";
+import { useNavProvider } from "../../Providers/NavProvider.js";
 import { useRecruiterProvider } from "../../Providers/RecruiterProvider.js";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../Job/Header.js";
 import ShowPass from "./ShowPass.js";
-import "./Login.css";
+import { loginEmail, loginPassword, recruiter } from "../Job/Data/Icons.js";
+import initLogo from "../../Assets/LOGO.png"
+import "./Login.scss";
 
 export default function Login() {
   const navigate = useNavigate();
-  const {
-    axios,
+  const { axios,
     API,
     setRecruiterID,
     setIsSignedIn,
     setAuthToken,
     setIsRecruiterAcc,
-    setUserID,
+    setUserID,} = useContextProvider()
+    const {setAppHeader} = useNavProvider()
+  const {
     isPassHidden,
     setIsPassHidden,
   } = useRecruiterProvider();
@@ -71,43 +75,74 @@ export default function Login() {
         setFailedLogin(true);
       });
   };
+useEffect(() => {
+  setAppHeader("Log In")
+}, [])
 
   return (
-    <div className="recruiter-login">
-      {/* <h1>Log in</h1> */}
-      <Header header={"Log In"} />
-      <div className="recruiter-login-error">
+    <div className="login grid-center">
+      <section className="login_header">
+        <img 
+        className="login_header_logo"
+        src={initLogo} alt="logo" />
+        <span className="slideNav_header_slogan">Your first tech opportunity awaits</span>
+      </section>
+      {/* <div className="recruiter-login-error">
         {failedLogin && "Invalid email, or password"}
-      </div>
-      <form className="recruiter-login-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
+      </div> */}
+      <form className="login_form grid-center" onSubmit={handleSubmit}>
+        <label 
+        className="login_form_label"
+        htmlFor="email">{loginEmail}
         <input
           id="email"
           type="email"
+          placeholder="Email address"
+          className="login_form_input"
           value={loginForm.email}
           onChange={handleChange}
           required
         />
-        <label htmlFor="password">Password</label>
+        </label>
+        
+        <label 
+        className="login_form_label"
+        htmlFor="password">{loginPassword}
         <input
           id="password"
           type={isPassHidden ? "password" : "text"}
+          placeholder="Password"
+          className="login_form_input"
           value={loginForm.password}
           onChange={handleChange}
           required
         />
-        <label htmlFor="isRecruiter">I am a recruiter</label>
-        <input
+        </label>
+       
+        <label 
+        className="login_form_isRecruiter_label"
+        htmlFor="isRecruiter">
+         <input
           id="isRecruiter"
           type="checkbox"
           checked={loginForm.isRecruiter}
+          className="login_form_isRecruiter"
           onChange={handleChange}
         />
-        <input id="recruiter-login-submit" type="submit" value="LOG IN" />
+          <span className="login_form_isRecruiter_label_text" >
+          {recruiter}
+          <span>I am a Recruiter</span>
+          </span>
+        </label>
+       
+        <input className="login_form_submit" type="submit" value="LOG IN" />
       </form>
-      <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} />
+      {/* <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} /> */}
       {/* <div className="recruiter-login-error">{failedLogin && "Invalid email, or password"}</div> */}
-      <Link to="/register">Create account</Link>
+      <Link 
+      to="/register"
+      className="login_register">
+        New to inIT? <br/>Create an account</Link>
     </div>
   );
 }

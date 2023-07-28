@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useUserProvider } from "../../Providers/UserProvider.js";
 import { useContextProvider } from "../../Providers/Provider.js";
+import { useNavProvider } from "../../Providers/NavProvider.js";
 import Header from "../Job/Header.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
-// import userIcon from "../../Assets/USER.png";
 import pencilBlack from "../../Assets/pencil-black.png";
 import pencilGrey from "../../Assets/pencil-grey.png";
 import "./UserProfile.css";
@@ -20,8 +20,10 @@ export default function UserProfile() {
     isRecruiterAcc,
     email,
     userID,
+    
   } = useUserProvider();
-  const {setAppHeader} = useContextProvider()
+  const {setAppHeader} = useNavProvider()
+  const {setLoading} = useContextProvider()
   const [viewLess, setViewLess] = useState(true);
 
   useEffect(() => {
@@ -30,6 +32,7 @@ export default function UserProfile() {
     }
     else {
       setAppHeader("Profile")
+      setLoading(false)
     }
   }, []);
 

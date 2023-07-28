@@ -7,9 +7,9 @@ export function useRecruiterProvider() {
 }
 
 function RecruiterProvider({ children }) {
-  const { API, axios, theme, setIsSignedIn, setAuthToken, isRecruiterAcc, setIsRecruiterAcc, setUserID, recruiterID, setRecruiterID, setAccessRegTwo, setAppHeader, setLoading } =
+  const { API, axios, theme, setIsSignedIn, setAuthToken, isRecruiterAcc, setIsRecruiterAcc, setUserID, recruiterID, setRecruiterID, setAccessRegTwo, setLoading } =
     useContextProvider();
-    
+
   const [recruiterData, setRecruiterData] = useState({});
   const [unlockRec, setUnlockRec] = useState(false)
   const [isPassHidden, setIsPassHidden] = useState(true)
@@ -26,6 +26,10 @@ function RecruiterProvider({ children }) {
       : null;
   }, [recruiterID]);
 
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+
   return (
     <RecruiterContextData.Provider
       value={{
@@ -33,7 +37,6 @@ function RecruiterProvider({ children }) {
         setRecruiterID,
         API,
         axios,
-        theme,
         setIsSignedIn,
         setAuthToken,
         isRecruiterAcc,
@@ -44,7 +47,6 @@ function RecruiterProvider({ children }) {
         unlockRec,
         isPassHidden,
         setIsPassHidden,
-        setAppHeader
       }}
     >
       {children}

@@ -19,6 +19,7 @@ function UserProvider({ children }) {
     accessRegTwo,
     setAccessRegTwo,
     isRecruiterAcc,
+    setLoading,
   } = useContextProvider();
   const [userProfile, setUserProfile] = useState({});
   const [editForm, setEditForm] = useState({});
@@ -43,6 +44,7 @@ function UserProvider({ children }) {
           setUserProfile(data);
           setEditForm(data);
           setUserSkills(data.skills["skill_ids"]);
+          setLoading(false)
         })
         .catch((error) => {
           console.log(error);
