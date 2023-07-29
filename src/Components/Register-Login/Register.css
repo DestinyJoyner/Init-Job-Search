@@ -46,8 +46,8 @@
 
 .recruiter-register-form input,
 .recruiter-register select {
-  border: none;
-  border-radius: 6px;
+  /* border: none; */
+  /* border-radius: 6px; */
   /* margin: 10px 35px 2px 35px; */
   height: 32px;
   margin-top: 20px;
@@ -166,3 +166,7 @@
 .dark #recruiter-register-submit {
   background-color: var(--init-gold);
 }
+
+
+
+

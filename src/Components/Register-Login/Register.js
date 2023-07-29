@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useContextProvider } from "../../Providers/Provider";
 import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
 import { Link, useNavigate } from "react-router-dom";
+import RadioSliderButtons from "../App/RadioSliderButton/RadioSliderButtons";
+import LoginHeader from "./LoginHeader.js"
 import checkmark from "../../Assets/checkmark.png";
-import Header from "../Job/Header.js";
 import ShowPass from "./ShowPass";
 import "./Register.css";
 
@@ -10,8 +12,7 @@ export default function Register() {
   const navigate = useNavigate();
   const recCode = process.env.REACT_APP_REC_CODE;
   const [codeInput, setCodeInput] = useState("");
-  const {
-    API,
+  const {  API,
     axios,
     setRecruiterID,
     setIsSignedIn,
@@ -19,11 +20,15 @@ export default function Register() {
     setIsRecruiterAcc,
     setUserID,
     setAccessRegTwo,
+  setLoading } = useContextProvider()
+  const {
     setUnlockRec,
     unlockRec,
     isPassHidden,
     setIsPassHidden,
   } = useRecruiterProvider();
+  // Radio Button State
+  const [userType, setUserType] = useState("applicant")
   const [newProfileForm, setNewProfileForm] = useState({
     first_name: "",
     last_name: "",
@@ -173,23 +178,32 @@ export default function Register() {
     }
   };
 
+  useEffect(() => setLoading(false),[])
   return (
     <div className="recruiter-register">
-      <Header header={"Register"} />
-      <Link to="/login">Already have an account? Log in</Link>
+      <LoginHeader />
+
+    <RadioSliderButtons
+    button1={"Applicant"}
+    button2={"Recruiter"}
+    setFunction={setUserType} />
+
+
+
+      {/* <Link to="/login">Already have an account? Log in</Link>
       <div className="start-form">
         {newLoginForm.isRecruiter === "" && (
           <h2>Select account type to start</h2>
-        )}
-        <select
+        )} */}
+        {/* <select
           id="isRecruiter"
           onChange={(event) => handleChange(event, "login")}
         >
           <option value="">Account type</option>
           <option value={false}>Applicant</option>
           <option value={true}>Recruiter</option>
-        </select>
-      </div>
+        </select> */}
+      {/* </div> */}
       {(newLoginForm.isRecruiter === "false" ||
         (newLoginForm.isRecruiter === "true" && unlockRec)) && (
         <>

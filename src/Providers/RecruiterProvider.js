@@ -27,7 +27,7 @@ function RecruiterProvider({ children }) {
   }, [recruiterID]);
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(false)
   }, [])
 
   return (

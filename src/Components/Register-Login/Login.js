@@ -3,9 +3,10 @@ import { useContextProvider } from "../../Providers/Provider.js";
 import { useNavProvider } from "../../Providers/NavProvider.js";
 import { useRecruiterProvider } from "../../Providers/RecruiterProvider.js";
 import { Link, useNavigate } from "react-router-dom";
+import LoginHeader from "./LoginHeader.js";
 import ShowPass from "./ShowPass.js";
 import { loginEmail, loginPassword, recruiter } from "../Job/Data/Icons.js";
-import initLogo from "../../Assets/LOGO.png";
+
 import "./Login.scss";
 
 export default function Login() {
@@ -19,7 +20,8 @@ export default function Login() {
     setIsRecruiterAcc,
     setUserID,
     setLoading,
-    isSignedIn, isRecruiterAcc
+    isSignedIn,
+    isRecruiterAcc,
   } = useContextProvider();
   const { setAppHeader } = useNavProvider();
   const { isPassHidden, setIsPassHidden } = useRecruiterProvider();
@@ -77,26 +79,19 @@ export default function Login() {
       });
   };
   useEffect(() => {
-    if(isSignedIn || isRecruiterAcc){
-      navigate(isSignedIn ? "/user" : "/recruiter")
+    if (isSignedIn || isRecruiterAcc) {
+      navigate(isSignedIn ? "/user" : "/recruiter");
       // setLoading(true)
-    }
-    else {
+    } else {
       setAppHeader("Log In");
-    setLoading(false);
+      setLoading(false);
     }
-    
   }, []);
 
   return (
     // (!isSignedIn && !isRecruiterAcc) &&
     <div className="login grid-center">
-      <section className="login_header">
-        <img className="login_header_logo" src={initLogo} alt="logo" />
-        <span className="slideNav_header_slogan">
-          Your first tech opportunity awaits
-        </span>
-      </section>
+      <LoginHeader />
 
       <form className="login_form grid-center" onSubmit={handleSubmit}>
         <label className="login_form_label grid-center" htmlFor="email">

@@ -47,6 +47,12 @@ a {
   justify-items: center;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* HIDE */
 .hide {
   /* display: none; */

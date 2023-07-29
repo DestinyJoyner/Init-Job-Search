@@ -4,20 +4,6 @@
   row-gap: 1vh;
   padding-bottom: 3vh;
 
-  &_header {
-    display: grid;
-    grid-row: 1;
-    justify-items: center;
-
-    &_logo{
-      height: 12vh;
-      max-width: 15vh;
-    }
-    .slideNav_header_slogan {
-      color: var(--init-charcoal);
-    }
-  }
-
   &_form {
     margin-top: 3vh;
     width: 100%;

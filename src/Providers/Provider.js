@@ -33,7 +33,7 @@ function Provider({ children }) {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlc3RpbnlAZW1haWwuY29tIiwiaWF0IjoxNjkwNTE1MzQwLCJleHAiOjE2OTMxMDczNDB9.XhqhfH5bKHcQzjtBbWYOSkFCwX9iSFIiOXe-bNO2oFg"
   );
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [accessRegTwo, setAccessRegTwo] = useState(false);
 
 
