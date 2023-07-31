@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useContextProvider } from "../../Providers/Provider";
 import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
 import { Link, useNavigate } from "react-router-dom";
-import RadioSliderButtons from "../App/RadioSliderButton/RadioSliderButtons";
+import SliderButtons from "../App/SliderButton/SliderButtons";
 import LoginHeader from "./LoginHeader.js"
 import checkmark from "../../Assets/checkmark.png";
 import ShowPass from "./ShowPass";
@@ -183,7 +183,7 @@ export default function Register() {
     <div className="recruiter-register">
       <LoginHeader />
 
-    <RadioSliderButtons
+    <SliderButtons
     button1={"Applicant"}
     button2={"Recruiter"}
     setFunction={setUserType} />
