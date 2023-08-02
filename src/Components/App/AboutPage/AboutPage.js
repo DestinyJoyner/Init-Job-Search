@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useContextProvider } from "../../Providers/Provider";
-import Header from "../Job/Header";
-import SkillsComponent from "../Job/SkillsComponent.js";
+import { useNavProvider } from "../../../Providers/NavProvider.js";
+import SkillsComponent from "../../Job/SkillsComponent.js";
 import { team } from "./AboutData";
+import logo from "../../../Assets/LOGO.png"
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
-import "../App/AboutPage.css";
+import "./AboutPage.css";
 
 function AboutPage() {
-  const { setAppHeader } = useContextProvider()
-  const [profileCard, setProfileCard] = useState(team["6"]);
+  const { setAppHeader } = useNavProvider()
+  const [profileCard, setProfileCard] = useState(team["2"]);
 
   const iconArr = [
     <BsGithub />,
@@ -20,7 +20,7 @@ function AboutPage() {
 
   function aboutCard(e) {
     if (profileCard.id === +e.target.id) {
-      setProfileCard(team["6"]);
+      setProfileCard(team["2"]);
     } else {
       setProfileCard(team[e.target.id]);
     }
@@ -30,7 +30,6 @@ function AboutPage() {
 
   return (
     <div className="about grid-center">
-      {/* <Header header={"Meet The Team"} /> */}
       <div className="dev-icons grid-center">
         <img
           id="1"
@@ -38,20 +37,17 @@ function AboutPage() {
           src={team["1"].img}
           onClick={(event) => aboutCard(event)}
         ></img>
+        <span className="devLogo">
         <img
           id="2"
-          className="devicon"
-          src={team["2"].img}
+          className=""
+          src={logo}
           onClick={(event) => aboutCard(event)}
-        ></img>
-        <img
-          id="3"
-          className="devicon"
-          src={team["3"].img}
-          onClick={(event) => aboutCard(event)}
-        ></img>
+        />
+        </span>
+        
       </div>
-      {profileCard.id === 6 ? (
+      {profileCard.id === 2 ? (
         <div className="emptyState grid-center">
           <h2>{profileCard.name}</h2>
           <img src={profileCard.img}></img>
