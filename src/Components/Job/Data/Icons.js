@@ -45,9 +45,9 @@ const navAbout = <BiInfoCircle className="slideNav_link_icons" />
 const navLogout = <FiLogOut className="slideNav_link_icons" />
 
 //  Form emailVerification icons
-const emailValid = <IoShieldCheckmarkOutline color={"green"} />
+const emailValid = <IoShieldCheckmarkOutline color={"green"} size={"1.4em"} />
 
-const emailInvalid = <BiError color ={"rgb(186, 26, 26)"} />
+const emailInvalid = <BiError color ={"rgb(186, 26, 26)"} size={"1.4em"} />
 
 export {
     jobCompany,

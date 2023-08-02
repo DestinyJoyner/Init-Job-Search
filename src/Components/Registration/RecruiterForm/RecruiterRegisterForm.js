@@ -4,6 +4,7 @@ import TextInput from "../../FormInputs/TextInput";
 import EmailInput from "../../FormInputs/EmailInput";
 import PasswordInput from "../../FormInputs/PasswordInput";
 import "./RecruiterRegisterForm.scss";
+import "../../FormInputs/FormInputs.scss"
 
 function RecruiterRegisterForm(props) {
   const { API, axios } = useContextProvider()
@@ -12,9 +13,12 @@ function RecruiterRegisterForm(props) {
     last_name: "",
     organization: "",
     email: "",
-    password: ""
+    password: "",
+    isRecruiter: true
   })
   const [availableEmail, setAvailableEmail] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [confirmPasswordValue, setConfirmPasswordValue] = useState("")
  
   // USE EFFECTS
 
@@ -62,10 +66,26 @@ function RecruiterRegisterForm(props) {
       formKey={"password"}
       stateVar={recruiterForm}
       setFunction={setRecruiterForm}
+      showPasswordStateVar={showPassword}
+      showPasswordSetFunction={setShowPassword}
       />
 
-      
+      <PasswordInput 
+      label={"Confirm Password"}
+      value={confirmPasswordValue}
+      formKey={"password"}
+      stateVar={confirmPasswordValue}
+      setFunction={setConfirmPasswordValue}
+      showPasswordStateVar={showPassword}
+      confirmPassword={true}
+      />
 
+      <input 
+      type="submit"
+      value="REGISTER"
+      className="formInput_submitButton"
+      />
+      
     </form>
   );
 }

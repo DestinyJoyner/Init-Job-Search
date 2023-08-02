@@ -1,10 +1,13 @@
 import { handleFormInput } from "../FormFunctions/FormFunctions.js"
+import { asterisk } from "../Job/Data/Icons.js";
 
 function TextInput({label, value, formKey, stateVar, setFunction }) {
     return (
-        <label htmlFor={formKey}>
-            <span className="formInput_label">
-                {label}
+        <label 
+        className="formInput_label"
+        htmlFor={formKey}>
+            <span>
+                {asterisk}{label}
             </span>
             <input
             className="formInput_text"

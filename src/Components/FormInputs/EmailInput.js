@@ -4,7 +4,7 @@ import {
   handleFormInput,
   registrationEmailCheck,
 } from "../FormFunctions/FormFunctions.js";
-import { emailInvalid, emailValid } from "../Job/Data/Icons.js";
+import { emailInvalid, emailValid, asterisk } from "../Job/Data/Icons.js";
 
 function EmailInput({
   userType,
@@ -31,18 +31,18 @@ function EmailInput({
 
   return (
     <label 
-    className="registerForm_email_label"
+    className="formInput_email_label"
     htmlFor={formKey}>
       {!validEmailStateVar || !value  ? 
       emailInvalid : 
       emailValid}
-      <span className="formInput_label">{label}</span>
+      <span>{asterisk}{label}</span>
       <input
         type="email"
         id={formKey}
         value={value}
         placeholder="email@email.com"
-        onChange={() => handleFormInput(event, stateVar, setFunction)}
+        onChange={(event) => handleFormInput(event, stateVar, setFunction)}
       />
     </label>
   );

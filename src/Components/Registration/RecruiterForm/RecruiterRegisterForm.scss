@@ -1,4 +1,10 @@
 .recruiterRegisterForm {
+    height: 65vh;
+    width: 85%;
     display: grid;
-    grid-template-rows: 8vh 5vh ;
+    grid-auto-rows: 9vh;
+    row-gap: .5vh;
+    & > * input {
+        font-size: 20px;
+    }
 }
