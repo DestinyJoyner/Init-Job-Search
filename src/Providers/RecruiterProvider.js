@@ -1,5 +1,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import { useContextProvider } from "./Provider";
+import RegistrationPage from "../Components/Registration/RegistrationPage";
+
 
 export const RecruiterContextData = createContext();
 export function useRecruiterProvider() {
@@ -49,6 +51,7 @@ function RecruiterProvider({ children }) {
         setIsPassHidden,
       }}
     >
+     
       {children}
     </RecruiterContextData.Provider>
   );

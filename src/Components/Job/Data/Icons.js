@@ -1,14 +1,14 @@
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { GoLocation } from "react-icons/go";
-import { BsClipboardCheck, BsFillCircleFill, BsFillPlusCircleFill  } from "react-icons/bs";
+import { BsClipboardCheck, BsFillCircleFill, BsFillPlusCircleFill, BsCheck  } from "react-icons/bs";
 import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk, CgProfile  } from "react-icons/cg";
 import {FaUserTie} from "react-icons/fa"
 import { AiOutlineHome, AiOutlineClose  } from "react-icons/ai";
 import { MdWorkOutline, MdOutlineMail, MdLockOutline } from "react-icons/md";
 import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
-import { BiInfoCircle } from "react-icons/bi";
-
+import { BiInfoCircle, BiError } from "react-icons/bi";
+import { IoShieldCheckmarkOutline } from "react-icons/io5"
 
 const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
 
@@ -44,6 +44,11 @@ const navAbout = <BiInfoCircle className="slideNav_link_icons" />
 
 const navLogout = <FiLogOut className="slideNav_link_icons" />
 
+//  Form emailVerification icons
+const emailValid = <IoShieldCheckmarkOutline color={"green"} />
+
+const emailInvalid = <BiError color ={"rgb(186, 26, 26)"} />
+
 export {
     jobCompany,
     jobLocation,
@@ -61,5 +66,7 @@ export {
     navProfile,
     navRegister,
     loginPassword,
-    loginEmail
+    loginEmail,
+    emailValid,
+    emailInvalid
 }

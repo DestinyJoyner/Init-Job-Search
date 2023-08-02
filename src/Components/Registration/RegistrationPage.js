@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import LoginHeader from "../Register-Login/LoginHeader";
 import SliderButtons from "../App/SliderButton/SliderButtons";
 import ApplicantRegisterForm from "./ApplicantForm/ApplicantRegisterForm.js"
