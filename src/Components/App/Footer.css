@@ -9,7 +9,7 @@
   height: 10vh;
   width: 95%;
   color: var(--init-background);
-  font-size: 15px;
+  /* font-size: 15px; */
   margin-left: 2vw;
 }
 
@@ -22,23 +22,23 @@
   grid-row: 3;
   display:flex;
   justify-content: space-between;
+  align-items: center;
   width: 80%;
   position: relative;
   top: 1.3vh;
-  right: 2vw;
 }
 
 .footer-linked {
-  height: 1.3em;
-  width: 1.3em;
+  height: 1.8em;
+  width: 1.8em;
 }
 .footer-git {
-  height: 1.4em;
-  width: 1.4em;
+  height: 2.15em;
+  width: 2.15em;
 }
 .footer-mail {
-  height: 1.4em;
-  width: 1.4em;
+  height: 1.8em;
+  width: 1.8em;
 }
 .pursuit-nav  {
   height: 3.3vh;

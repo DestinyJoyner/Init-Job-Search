@@ -46,3 +46,20 @@
     transition: 0.25s ease-out;
   }
 }
+
+
+.dark .sliderButton {
+  &_container {
+    color: var(--init-background);
+    .buttonSelected {
+      color: var(--init-dark);
+    }
+  }
+  &_buttons {
+    background-color: unset;
+  }
+  &_slider {
+    background-color: var(--init-gold);
+    
+  }
+}
