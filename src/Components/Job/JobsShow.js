@@ -4,6 +4,7 @@ import { useContextProvider } from "../../Providers/Provider";
 import { useNavProvider } from "../../Providers/NavProvider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import { v4 as uuidv4 } from "uuid";
+import SliderButtons from "../App/SliderButton/SliderButtons.js";
 import SkillsComponent from "./SkillsComponent";
 import { convertDate, convertCities } from "./Functions/JobFunctions";
 import convertCompanyForLogo from "./Data/CompanyLogos";
@@ -74,31 +75,14 @@ function JobsShow() {
         <SkillsComponent skillsArr={jobSkills} justList={true} />
 
         <section className="jobShow_jobDetails">
-          <div className="jobShow_jobDetails_buttons">
-            <button
-              className={
-                !jobDetailsToggle
-                  ? "jobShow_jobDetails_buttons_description jobDetailSelected"
-                  : "jobShow_jobDetails_buttons_description"
-              }
-              onClick={() => setJobDetailsToggle(false)}
-            >
-              Description
-            </button>
-            <button
-              className={
-                jobDetailsToggle
-                  ? "jobShow_jobDetails_buttons_tasks jobDetailSelected"
-                  : "jobShow_jobDetails_buttons_tasks"
-              }
-              onClick={() => setJobDetailsToggle(true)}
-            >
-              Tasks
-            </button>
-          </div>
+          <SliderButtons
+            button1={"Description"}
+            button2={"Tasks"}
+            setFunction={setJobDetailsToggle}
+          />
 
           <section className="jobShow_jobDetails_overview">
-            {!jobDetailsToggle ? (
+            {jobDetailsToggle === "description" ? (
               <div className="jobShow_jobDetails_overview_description">
                 <span className="jobShow_jobDetails_overview_description_disclaimer">
                   *Not a real job posting*
