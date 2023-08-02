@@ -19,7 +19,7 @@ function JobsShow() {
   const TASK = process.env.REACT_APP_TASK_BREAK;
   const navigate = useNavigate();
   const [reload, setReload] = useState(false);
-  const [jobDetailsToggle, setJobDetailsToggle] = useState(false);
+  const [jobDetailsToggle, setJobDetailsToggle] = useState("description");
 
   function deleteJob() {
     axios

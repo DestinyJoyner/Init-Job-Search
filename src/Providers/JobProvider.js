@@ -53,7 +53,6 @@ function JobProvider({ children }) {
        
         if (data.length > 0) {
           setJobQuery(data);
-          console.log(loading)
           setLoading(false);
         }
       })
