@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { useContextProvider } from "../../../Providers/Provider.js";
+import { useContextProvider } from "../../Providers/Provider.js";
 import {
   handleFormInput,
   registrationEmailCheck,
-} from "../../FormFunctions/FormFunctions.js";
-import { emailInvalid, emailValid } from "../../Job/Data/Icons.js";
+} from "../FormFunctions/FormFunctions.js";
+import { emailInvalid, emailValid } from "../Job/Data/Icons.js";
 
 function EmailInput({
   userType,
@@ -30,11 +30,13 @@ function EmailInput({
   }, [value]);
 
   return (
-    <label htmlFor={formKey}>
+    <label 
+    className="registerForm_email_label"
+    htmlFor={formKey}>
       {!validEmailStateVar || !value  ? 
       emailInvalid : 
       emailValid}
-      {label}
+      <span className="formInput_label">{label}</span>
       <input
         type="email"
         id={formKey}

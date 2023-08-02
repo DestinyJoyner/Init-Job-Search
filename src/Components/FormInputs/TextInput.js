@@ -1,4 +1,4 @@
-import { handleFormInput } from "../../FormFunctions/FormFunctions.js"
+import { handleFormInput } from "../FormFunctions/FormFunctions.js"
 
 function TextInput({label, value, formKey, stateVar, setFunction }) {
     return (

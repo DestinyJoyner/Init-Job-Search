@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useContextProvider } from "../../../Providers/Provider";
-import TextInput from "../../App/FormInputs/TextInput";
+import TextInput from "../../FormInputs/TextInput";
+import EmailInput from "../../FormInputs/EmailInput";
+import PasswordInput from "../../FormInputs/PasswordInput";
 import "./RecruiterRegisterForm.scss";
-import EmailInput from "../../App/FormInputs/EmailInput";
-import { registrationEmailCheck } from "../../FormFunctions/FormFunctions";
 
 function RecruiterRegisterForm(props) {
   const { API, axios } = useContextProvider()
@@ -17,15 +17,6 @@ function RecruiterRegisterForm(props) {
   const [availableEmail, setAvailableEmail] = useState(false)
  
   // USE EFFECTS
-  // EMAIL VERIFICATION
-  // useEffect(() => {
-  //   const emailValue = recruiterForm["email"]
-  //   if(registrationEmailCheck(emailValue)){
-  //     axios.get(`${API}/emails/recruiters/${emailValue}`)
-  //       .then(({ data }) => setAvailableEmail(data.isEmailUnique))
-  //       .catch((err) => console.log(err));
-  //   }
-  // },[recruiterForm["email"]])
 
   return (
     <form className="recruiterRegisterForm">
@@ -64,6 +55,16 @@ function RecruiterRegisterForm(props) {
       validEmailStateVar={availableEmail}
       validEmailSetFunction={setAvailableEmail}
       />
+
+      <PasswordInput 
+      label={"Password"}
+      value={recruiterForm["password"]}
+      formKey={"password"}
+      stateVar={recruiterForm}
+      setFunction={setRecruiterForm}
+      />
+
+      
 
     </form>
   );
