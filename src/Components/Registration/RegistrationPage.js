@@ -7,7 +7,7 @@ import ApplicantRegisterForm from "./ApplicantForm/ApplicantRegisterForm.js";
 import RecruiterRegisterForm from "./RecruiterForm/RecruiterRegisterForm";
 import "./RegistrationPage.scss";
 
-function RegistrationPage(props) {
+function RegistrationPage() {
   const { setAppHeader } = useNavProvider();
   const [userType, setUserType] = useState("applicant");
 

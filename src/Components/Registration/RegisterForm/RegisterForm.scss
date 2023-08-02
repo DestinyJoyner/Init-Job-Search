@@ -1,0 +1,89 @@
+.registerForm {
+  height: 65vh;
+  width: 85%;
+  display: grid;
+  grid-auto-rows: 9vh;
+  row-gap: 0.5vh;
+  & > * input {
+    font-size: 20px;
+  }
+  .formInput {
+    &_label {
+      display: grid;
+      grid-template-rows: 1fr 0.5fr;
+      height: 8vh;
+
+      & span:first-of-type {
+        grid-row: 2;
+      }
+
+      & input {
+        &::placeholder {
+          font-size: 18px;
+        }
+      }
+    }
+    &_email_label {
+      display: grid;
+      grid-template-rows: 1fr 0.5fr;
+      & svg {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: right;
+        align-self: center;
+      }
+      & span {
+        grid-row: 2;
+        grid-column: 1;
+      }
+      & input {
+        grid-column: 1;
+        grid-row: 1;
+        &::placeholder {
+          font-size: 18px;
+        }
+      }
+    }
+    &_password_label {
+      display: grid;
+      grid-template-rows: 1fr 0.5fr;
+      margin-top: 1vh;
+
+      &_text {
+        grid-row: 2;
+        grid-column: 1;
+        display: grid;
+        grid-template-columns: 1.3fr 3fr;
+      }
+      & input {
+        grid-row: 1;
+        grid-column: 1;
+        &::placeholder {
+          font-size: 18px;
+        }
+      }
+      &_helperText {
+        grid-column: 2;
+        font-style: italic;
+        font-size: 12px;
+      }
+
+      .showHidePass,
+      &_confirmIcon {
+        grid-row: 1;
+        grid-column: 1;
+        justify-self: right;
+        margin: 0 0 0.5vh 0;
+        align-self: center;
+      }
+    }
+
+    &_submitButton {
+      all: unset;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--init-blue);
+      justify-self: left;
+    }
+  }
+}

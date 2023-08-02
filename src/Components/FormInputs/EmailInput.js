@@ -3,7 +3,7 @@ import { useContextProvider } from "../../Providers/Provider.js";
 import {
   handleFormInput,
   registrationEmailCheck,
-} from "../FormFunctions/FormFunctions.js";
+} from "../FormFunctions/RegisterFormFunctions.js";
 import { emailInvalid, emailValid, asterisk } from "../Job/Data/Icons.js";
 
 function EmailInput({

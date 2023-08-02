@@ -2,7 +2,7 @@ import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
 import NavProvider from "./NavProvider";
 import Nav from "../Components/App/NavBar/Nav";
-import Loading from "../Components/App/Error-Loading/Loading.js"
+import Loading from "../Components/App/LoadingPage/Loading.js"
 
 export const ContextData = createContext();
 export function useContextProvider() {
