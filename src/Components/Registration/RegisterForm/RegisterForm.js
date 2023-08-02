@@ -8,12 +8,21 @@ import {
   checkPasswordMatchAndValid,
   checkIfFormInputsHaveValue,
 } from "../../FormFunctions/RegisterFormFunctions";
-import { handleRecruiterRegisterForm, handleApplicantRegisterForm } from "../../FormFunctions/RegisterFormSubmitFunctions";
+import {
+  handleRecruiterRegisterForm,
+  handleApplicantRegisterForm,
+} from "../../FormFunctions/RegisterFormSubmitFunctions";
 import "./RegisterForm.scss";
 
 function RegisterForm({ formObj, formType }) {
-    const {setRecruiterID, setIsSignedIn, setIsRecruiterAcc, setUserID, setAuthToken } =useContextProvider()
-    const navigate = useNavigate()
+  const {
+    setRecruiterID,
+    setIsSignedIn,
+    setIsRecruiterAcc,
+    setUserID,
+    setAuthToken,
+  } = useContextProvider();
+  const navigate = useNavigate();
 
   const [registerForm, setRegisterForm] = useState(formObj);
   const [availableEmail, setAvailableEmail] = useState(false);
@@ -22,9 +31,18 @@ function RegisterForm({ formObj, formType }) {
   const [passwordMatch, setPasswordMatch] = useState(false);
   const [allowSubmit, setAllowSubmit] = useState(false);
 
-  const handleRegistrationFormSubmit= (e) =>
+  const handleRegistrationFormSubmit = (e) =>
     formType === "recruiter"
-      ? handleRecruiterRegisterForm(e, registerForm,setRecruiterID,setIsSignedIn,setUserID,setIsRecruiterAcc, setAuthToken,navigate) 
+      ? handleRecruiterRegisterForm(
+          e,
+          registerForm,
+          setRecruiterID,
+          setIsSignedIn,
+          setUserID,
+          setIsRecruiterAcc,
+          setAuthToken,
+          navigate
+        )
       : handleApplicantRegisterForm(e, registerForm);
 
   // Password
@@ -49,7 +67,10 @@ function RegisterForm({ formObj, formType }) {
   }, [registerForm, passwordMatch, availableEmail]);
 
   return (
-    <form className="registerForm" onSubmit={(event) =>handleRegistrationFormSubmit(event)}>
+    <form
+      className="registerForm"
+      onSubmit={(event) => handleRegistrationFormSubmit(event)}
+    >
       <TextInput
         label={"First Name"}
         value={registerForm["first_name"]}
@@ -77,8 +98,8 @@ function RegisterForm({ formObj, formType }) {
       ) : (
         <TextInput
           label={"Education"}
-          value={registerForm["school"]}
-          formKey={"school"}
+          value={registerForm["education"]}
+          formKey={"education"}
           stateVar={registerForm}
           setFunction={setRegisterForm}
         />

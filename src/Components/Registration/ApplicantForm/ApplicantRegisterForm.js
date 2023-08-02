@@ -1,11 +1,11 @@
 import { useState } from "react";
 import RegisterForm from "../RegisterForm/RegisterForm";
 
-function ApplicantRegisterForm(props) {
+function ApplicantRegisterForm() {
   const [applicantForm, setApplicantForm] = useState({
     first_name: "",
     last_name: "",
-    school: "",
+    education: "",
     email: "",
     password: "",
   });
