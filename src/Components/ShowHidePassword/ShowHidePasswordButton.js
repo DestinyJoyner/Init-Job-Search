@@ -1,6 +1,7 @@
 import "./ShowHidePasswordButton.scss"
 
 function ShowHidePasswordButton({setFunction, stateVar}) {
+    
     function togglePassword(e){
         e.preventDefault()
         setFunction(!stateVar)

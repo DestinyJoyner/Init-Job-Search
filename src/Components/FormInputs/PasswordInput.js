@@ -1,6 +1,6 @@
 import ShowHidePasswordButton from "../ShowHidePassword/ShowHidePasswordButton";
 import { handleFormInput } from "../FormFunctions/FormFunctions";
-import { asterisk } from "../Job/Data/Icons";
+import { asterisk, emailInvalid, emailValid } from "../Job/Data/Icons";
 
 function PasswordInput({
   label,
@@ -11,6 +11,7 @@ function PasswordInput({
   showPasswordStateVar,
   showPasswordSetFunction,
   confirmPassword,
+  passwordMatch
 }) {
   const handlePasswordValue = confirmPassword
     ? (event) => setFunction(event.target.value)
@@ -37,6 +38,10 @@ function PasswordInput({
           setFunction={showPasswordSetFunction}
         />
       )}
+      {
+        confirmPassword &&
+        <span className="formInput_password_label_confirmIcon">{passwordMatch ? emailValid : emailInvalid}</span>
+      }
 
       <input
         type={showPasswordStateVar ? "text" : "password"}

@@ -27,6 +27,10 @@ function EmailInput({
         .then(({ data }) => validEmailSetFunction(data.isEmailUnique))
         .catch((err) => console.log(err));
     }
+    else {
+      validEmailSetFunction(false)
+    }
+      
   }, [value]);
 
   return (

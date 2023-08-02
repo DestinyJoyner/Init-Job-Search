@@ -60,8 +60,9 @@
             font-style: italic;
             font-size: 12px;
         }
+     
 
-        .showHidePass {
+        .showHidePass, &_confirmIcon {
             grid-row: 1;
             grid-column: 1;
             justify-self: right;
