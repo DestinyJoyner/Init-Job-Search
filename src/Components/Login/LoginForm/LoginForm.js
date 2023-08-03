@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useContextProvider } from "../../../Providers/Provider.js";
 import { useNavigate } from "react-router-dom";
-import ShowHidePasswordButton from "../../ShowHidePassword/ShowHidePasswordButton.js";
-import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
+import LoginEmailInput from "../../FormInputs/LoginFormInputs/LoginEmailInput.js";
+import LoginPasswordInput from "../../FormInputs/LoginFormInputs/LoginPasswordInput.js";
+import LoginCheckbox from "../../FormInputs/LoginFormInputs/LoginCheckbox.js";
 import { handleLoginSubmit } from "../../Functions/FormFunctions/LoginFormSubmitFunctions.js";
-import { loginEmail, loginPassword, recruiter } from "../../Job/Data/Icons.js";
 import "./LoginForm.scss";
-import "../../FormInputs/FormInputs.scss";
+import "../../FormInputs/LoginFormInputs/LoginFormInputs.scss"
 
 export default function LoginForm({setFailedLogin, setFailedMessage}) {
   const {
@@ -17,28 +17,18 @@ export default function LoginForm({setFailedLogin, setFailedMessage}) {
     setUserID,
   } = useContextProvider();
   const navigate = useNavigate();
+
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
     isRecruiter: false,
   });
-  const [showPassword, setShowPassword] = useState(false);
-
-  // useEffect(() => {
-  //   if (isSignedIn || isRecruiterAcc) {
-  //     navigate(isSignedIn ? "/user" : "/recruiter");
-  //   } else {
-  //     setAppHeader("Log In");
-  //     setLoading(false);
-  //   }
-  // }, []);
 
   useEffect(() => {
     setFailedLogin(false);
   }, [loginForm]);
 
   return (
-    // (!isSignedIn && !isRecruiterAcc) &&
       <form
         className="loginForm grid-center"
         onSubmit={(event) =>
@@ -56,60 +46,28 @@ export default function LoginForm({setFailedLogin, setFailedMessage}) {
           )
         }
       >
-        <label className="loginForm_label grid-center" htmlFor="email">
-          {loginEmail}
-          <input
-            id="email"
-            type="email"
-            placeholder="Email address"
-            className="login_form_input"
-            value={loginForm.email}
-            onChange={(event) =>
-              handleFormInput(event, loginForm, setLoginForm)
-            }
-            required
-          />
-        </label>
+        <LoginEmailInput 
+        formKey={"email"}
+        value={loginForm["email"]}
+        placeholder={"Email Address"}
+        stateVar={loginForm}
+        setFunction={setLoginForm}/>
 
-        <label
-          className="formInput_password_label grid-center"
-          htmlFor="password"
-        >
-          {loginPassword}
-          <input
-            id="password"
-            type={!showPassword ? "password" : "text"}
-            placeholder="Password"
-            className="login_form_input"
-            value={loginForm.password}
-            onChange={(event) =>
-              handleFormInput(event, loginForm, setLoginForm)
-            }
-            required
-          />
-          <ShowHidePasswordButton
-            setFunction={setShowPassword}
-            stateVar={showPassword}
-          />
-        </label>
+        <LoginPasswordInput 
+        formKey={"password"}
+        value={loginForm["password"]}
+        placeholder={"Password"}
+        stateVar={loginForm}
+        setFunction={setLoginForm}/>
 
-        <label className="login_form_isRecruiter_label" htmlFor="isRecruiter">
-          {recruiter}
-          <input
-            id="isRecruiter"
-            type="checkbox"
-            checked={loginForm.isRecruiter}
-            className="login_form_isRecruiter"
-            onChange={(event) =>
-              handleFormInput(event, loginForm, setLoginForm)
-            }
-          />
-          <span className="login_form_isRecruiter_label_text">
-            I am a Recruiter
-          </span>
-        </label>
+        <LoginCheckbox 
+        formKey={"isRecruiter"}
+        value={loginForm["isRecruiter"]}
+        stateVar={loginForm}
+        setFunction={setLoginForm}/>
 
-        <input className="login_form_submit" type="submit" value="LOG IN" />
+        <input className="loginForm_submitButton" type="submit" 
+        value="LOG IN" />
       </form>
      
   );

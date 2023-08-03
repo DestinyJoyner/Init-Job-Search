@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import LoginHeader from "../LoginHeader/LoginHeader";
 import LoginForm from "../LoginForm/LoginForm";
 import "./LoginPage.scss";
 
-function LoginPage(props) {
+function LoginPage() {
   const { setLoading, isSignedIn, isRecruiterAcc } = useContextProvider();
   const { setAppHeader } = useNavProvider();
+  const navigate = useNavigate();
   const [failedLogin, setFailedLogin] = useState(false);
-  const [failedLoginMessage, setFailedLoginMessage] = useState("")
+  const [failedLoginMessage, setFailedLoginMessage] = useState("");
 
   useEffect(() => {
     if (isSignedIn || isRecruiterAcc) {
@@ -25,15 +26,15 @@ function LoginPage(props) {
     <div className="loginPage grid-center">
       <LoginHeader />
 
-      <LoginForm 
-      setFailedLogin={setFailedLogin}
-      setFailedMessage={setFailedLoginMessage} />
+      <LoginForm
+        setFailedLogin={setFailedLogin}
+        setFailedMessage={setFailedLoginMessage}
+      />
 
       {failedLogin && (
-        <div className="loginPage_error">
-          {failedLoginMessage}
-        </div>
+        <div className="loginPage_error">{failedLoginMessage}</div>
       )}
+
       <Link to="/register" className="loginPage_register">
         New to inIT? <br />
         Create an account

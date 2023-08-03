@@ -2,7 +2,7 @@
   font-size: 20px;
   grid-template-rows: 20vh 40vh 12vh 10vh;
   row-gap: 1vh;
-  padding-bottom: 3vh;
+  padding-bottom: 4vh;
 
   &_error {
     text-align: center;
@@ -17,5 +17,12 @@
     width: 80%;
     border-top: 2px solid var(--init-gold);
     padding-top: 2vh;
+  }
+}
+
+.dark .loginPage {
+  &_register {
+    color: var(--init-darkmint);
+    border-color: var(--init-darkmint);
   }
 }
