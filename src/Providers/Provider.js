@@ -34,10 +34,9 @@ function Provider({ children }) {
   );
 
   const [loading, setLoading] = useState(false)
-  const [accessRegTwo, setAccessRegTwo] = useState(false);
-
 
   axios.defaults.headers.common["authorization"] = `Bearer ${authToken}`;
+
 useEffect(() => {
   // setLoading(true)
 },[])
@@ -58,8 +57,6 @@ useEffect(() => {
           setIsRecruiterAcc,
           recruiterID,
           setRecruiterID,
-          accessRegTwo,
-          setAccessRegTwo,
           loading, 
           setLoading,
         }}

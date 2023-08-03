@@ -1,7 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import { useContextProvider } from "./Provider";
-import RegistrationPage from "../Components/Registration/RegistrationPage";
-
 
 export const RecruiterContextData = createContext();
 export function useRecruiterProvider() {
@@ -9,12 +7,11 @@ export function useRecruiterProvider() {
 }
 
 function RecruiterProvider({ children }) {
-  const { API, axios, theme, setIsSignedIn, setAuthToken, isRecruiterAcc, setIsRecruiterAcc, setUserID, recruiterID, setRecruiterID, setAccessRegTwo, setLoading, loading } =
+  const { API, axios, theme, setIsSignedIn, setAuthToken, isRecruiterAcc, setIsRecruiterAcc, setUserID, recruiterID, setRecruiterID, setLoading, loading } =
     useContextProvider();
 
   const [recruiterData, setRecruiterData] = useState({});
   const [unlockRec, setUnlockRec] = useState(false)
-  const [isPassHidden, setIsPassHidden] = useState(true)
 
   useEffect(() => {
     recruiterID
@@ -44,11 +41,8 @@ function RecruiterProvider({ children }) {
         isRecruiterAcc,
         setIsRecruiterAcc,
         setUserID,
-        setAccessRegTwo,
         setUnlockRec,
         unlockRec,
-        isPassHidden,
-        setIsPassHidden,
       }}
     >
      

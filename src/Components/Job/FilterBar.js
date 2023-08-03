@@ -6,7 +6,7 @@ import { dropdownCities } from "./Data/Cities.js";
 import {
   handleSearchBar,
   handleSkillSelection,
-} from "./Functions/SearchBarFunctions.js";
+} from "../Functions/SearchFunctions/SearchBarFunctions.js";
 import { BiChevronDown } from "react-icons/bi"
 import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";

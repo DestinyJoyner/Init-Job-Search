@@ -1,7 +1,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useContextProvider } from "./Provider.js";
-import { convertSkills } from "../Components/Job/Functions/SkillsFunctions.js";
+import { convertSkills } from "../Components/Functions/ConvertFunctions/ConversionFunctions.js";
 
 export const JobContextData = createContext();
 export function useJobProvider() {

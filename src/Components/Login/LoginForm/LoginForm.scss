@@ -10,32 +10,41 @@
     grid-template-rows: 9vh 9vh 8vh 10vh;
     row-gap: 1vh;
 
-    &_label {
+    &_label,
+    .formInput_password_label {
       grid-template-columns: 1fr 4fr 1fr;
       width: 75%;
       column-gap: 2vw;
-
-      & svg {
-        height: 1.8em;
-        width: 1.8em;
-        color: var(--init-darkmint);
-        position: relative;
-        top: .3vh;
-      }
     }
 
-    &_input {
+    &_input,
+    .formInput_password_label input {
       grid-column: 2/4;
       grid-row: 1;
       width: 100%;
       height: 3vh;
       font-size: 20px;
-      padding-bottom: .5vh;
-
-      &::placeholder{
+      padding-bottom: 0.5vh;
+      &::placeholder {
         font-size: 20px;
       }
-   
+    }
+
+    &_label svg,
+    .formInput_password_label svg {
+      height: 1.8em;
+      width: 1.8em;
+      color: var(--init-darkmint);
+      position: relative;
+      top: 0.3vh;
+    }
+
+    .formInput_password_label {
+      grid-template-rows: 1fr;
+      margin-top: 0;
+      & button {
+        grid-column: 3;
+      }
     }
 
     &_isRecruiter {
@@ -56,7 +65,7 @@
           width: 1.4em;
           color: var(--init-darkmint);
           position: relative;
-          bottom: .2vh;
+          bottom: 0.2vh;
         }
 
         &_text {
@@ -82,27 +91,24 @@
     border-top: 2px solid var(--init-gold);
     padding-top: 2vh;
   }
-
 }
-
 
 .recruiter-login-error {
-    color: var(--init-rust);
-    font-weight: 600;
-    font-size: 26px;
+  color: var(--init-rust);
+  font-weight: 600;
+  font-size: 26px;
 }
 
-
 .dark .recruiter-login {
-    color: var(--init-background);
+  color: var(--init-background);
 }
 
 .dark #recruiter-login-submit {
-    color: var(--init-blue);
-    background-color: var(--init-gold)
+  color: var(--init-blue);
+  background-color: var(--init-gold);
 }
 
 .dark .recruiter-login a {
-    border-top: 2px solid var(--init-gold);
-    color: var(--init-gold);
+  border-top: 2px solid var(--init-gold);
+  color: var(--init-gold);
 }

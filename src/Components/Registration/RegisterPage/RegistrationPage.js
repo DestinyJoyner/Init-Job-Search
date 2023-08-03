@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useNavProvider } from "../../Providers/NavProvider";
-import LoginHeader from "../Login/LoginHeader/LoginHeader.js";
-import SliderButtons from "../App/SliderButton/SliderButtons";
-import ApplicantRegisterForm from "./ApplicantForm/ApplicantRegisterForm.js";
-import RecruiterRegisterForm from "./RecruiterForm/RecruiterRegisterForm";
+import { useNavProvider } from "../../../Providers/NavProvider";
+import LoginHeader from "../../Login/LoginHeader/LoginHeader.js";
+import SliderButtons from "../../SliderButton/SliderButtons";
+import ApplicantRegisterForm from "../ApplicantForm/ApplicantRegisterForm.js";
+import RecruiterRegisterForm from "../RecruiterForm/RecruiterRegisterForm";
 import "./RegistrationPage.scss";
 
 function RegistrationPage() {

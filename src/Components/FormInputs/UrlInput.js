@@ -1,4 +1,4 @@
-import { handleFormInput } from '../FormFunctions/RegisterFormFunctions';
+import { handleFormInput } from '../Functions/FormFunctions/RegisterFormFunctions';
 
 function UrlInput({label,formKey, value, stateVar, setFunction}) {
 

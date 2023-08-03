@@ -1,5 +1,5 @@
 import ShowHidePasswordButton from "../ShowHidePassword/ShowHidePasswordButton";
-import { handleFormInput } from "../FormFunctions/RegisterFormFunctions";
+import { handleFormInput } from "../Functions/FormFunctions/RegisterFormFunctions";
 import { asterisk, emailInvalid, emailValid } from "../Job/Data/Icons";
 
 function PasswordInput({

@@ -6,15 +6,12 @@ import { useNavProvider } from "../../../Providers/NavProvider";
 import SkillsComponent from "../../Job/SkillsComponent";
 import TextAreaInput from "../../FormInputs/TextAreaInput.js";
 import UrlInput from "../../FormInputs/UrlInput.js";
-import { handleSkillsCheckbox } from "../../FormFunctions/RegisterFormFunctions.js";
-import { handleApplicantFormTwoSubmit } from "../../FormFunctions/RegisterFormSubmitFunctions";
+import { handleSkillsCheckbox } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
+import { handleApplicantFormTwoSubmit } from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
 import { asterisk } from "../../Job/Data/Icons";
 import "./ApplicantFormTwo.scss";
 
-function ApplicantRegisterFormTwo({
-  setHideSliderButtons,
-  setApplicantFormTwoAccess,
-}) {
+function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
   const { setLoading } = useContextProvider();
   const { setAppHeader } = useNavProvider();
   const { applicantDetails } = useUserProvider();

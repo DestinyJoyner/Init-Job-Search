@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { useContextProvider } from "../../Providers/Provider.js";
-import { useNavProvider } from "../../Providers/NavProvider.js";
-import { useRecruiterProvider } from "../../Providers/RecruiterProvider.js";
+import { useContextProvider } from "../../../Providers/Provider.js";
+import { useNavProvider } from "../../../Providers/NavProvider.js";
 import { Link, useNavigate } from "react-router-dom";
-import LoginHeader from "./LoginHeader/LoginHeader.js";
-import ShowPass from "../Register-Login/ShowPass.js";
-import { loginEmail, loginPassword, recruiter } from "../Job/Data/Icons.js";
-
+import LoginHeader from "../LoginHeader/LoginHeader.js";
+import ShowHidePasswordButton from "../../ShowHidePassword/ShowHidePasswordButton.js";
+import { loginEmail, loginPassword, recruiter } from "../../Job/Data/Icons.js";
 import "./LoginForm.scss";
+import "../../FormInputs/FormInputs.scss"
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -24,13 +23,13 @@ export default function LoginForm() {
     isRecruiterAcc,
   } = useContextProvider();
   const { setAppHeader } = useNavProvider();
-  const { isPassHidden, setIsPassHidden } = useRecruiterProvider();
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
     isRecruiter: false,
   });
   const [failedLogin, setFailedLogin] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleChange = (event) => {
     if (event.target.id === "isRecruiter") {
@@ -107,18 +106,21 @@ export default function LoginForm() {
           />
         </label>
 
-        <label className="login_form_label grid-center" htmlFor="password">
+        <label className="formInput_password_label grid-center" htmlFor="password">
           {loginPassword}
           <input
             id="password"
-            type={isPassHidden ? "password" : "text"}
+            type={!showPassword ? "password" : "text"}
             placeholder="Password"
             className="login_form_input"
             value={loginForm.password}
             onChange={handleChange}
             required
           />
-          <ShowPass stateVar={isPassHidden} setFunction={setIsPassHidden} />
+         <ShowHidePasswordButton
+         setFunction={setShowPassword}
+         stateVar={showPassword}
+         />
         </label>
 
         <label className="login_form_isRecruiter_label" htmlFor="isRecruiter">

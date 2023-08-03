@@ -1,8 +1,0 @@
-#show-hide-button {
-    grid-column: 3;
-    grid-row: 1;
-    color: rgb(102, 97, 97);
-    background-color: unset;
-    border: none;
-    font-weight: 600;
-}

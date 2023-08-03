@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import SkillsComponent from "./SkillsComponent";
-import { convertCities } from "./Functions/JobFunctions";
+import { convertCities } from "../Functions/ConvertFunctions/ConversionFunctions";
 import convertCompanyForLogo from "./Data/CompanyLogos";
 import "./JobsCard.scss";
 

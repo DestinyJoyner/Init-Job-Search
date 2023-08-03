@@ -4,9 +4,9 @@ import { useContextProvider } from "../../Providers/Provider";
 import { useNavProvider } from "../../Providers/NavProvider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import { v4 as uuidv4 } from "uuid";
-import SliderButtons from "../App/SliderButton/SliderButtons.js";
+import SliderButtons from "../SliderButton/SliderButtons.js";
 import SkillsComponent from "./SkillsComponent";
-import { convertDate, convertCities } from "./Functions/JobFunctions";
+import { convertDate, convertCities } from "../Functions/ConvertFunctions/ConversionFunctions";
 import convertCompanyForLogo from "./Data/CompanyLogos";
 import "./JobsShow.scss";
 

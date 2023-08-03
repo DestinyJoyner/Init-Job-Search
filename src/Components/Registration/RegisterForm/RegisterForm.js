@@ -7,11 +7,11 @@ import PasswordInput from "../../FormInputs/PasswordInput";
 import {
   checkPasswordMatchAndValid,
   checkIfFormInputsHaveValue,
-} from "../../FormFunctions/RegisterFormFunctions";
+} from "../../Functions/FormFunctions/RegisterFormFunctions";
 import {
   handleRecruiterRegisterForm,
   handleApplicantRegisterForm,
-} from "../../FormFunctions/RegisterFormSubmitFunctions";
+} from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
 import "./RegisterForm.scss";
 
 function RegisterForm({ formObj, formType, registerPartTwo }) {

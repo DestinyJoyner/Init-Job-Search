@@ -1,10 +1,7 @@
 function handleSearchBar(event, stateVar1, setFunction1, stateVar2, setFunction2 ){
     const id = event.target.id
     const value = event.target.value
-    // if(id === "isRemote"){
-    //   setFunction1(!stateVar1)
-    //   setFunction2({...stateVar2, [id] : event.target.checked })  
-    // }
+ 
     if(id === "isRemote"){
         setFunction1(!stateVar1)
         setFunction2({...stateVar2, [id] : !stateVar1 })  

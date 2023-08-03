@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { handleFormInput } from "../FormFunctions/RegisterFormFunctions";
+import { handleFormInput } from "../Functions/FormFunctions/RegisterFormFunctions";
 
 function TextAreaInput({label,formKey, value, placeholder, stateVar, setFunction}) {
     const remainingChars = value ? 160 - value.length : 160

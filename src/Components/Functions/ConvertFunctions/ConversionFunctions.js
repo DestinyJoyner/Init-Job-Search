@@ -1,4 +1,4 @@
-import { dropdownCities } from "../Data/Cities";
+import {dropdownCities} from "../../Job/Data/Cities.js"
 
 function convertDate(str){
     const strArr= str.split("T")[0].split("-")
@@ -18,9 +18,20 @@ function convertTasks(str) {
 
   }
 
+  function convertSkills(arr, setFunction) {
+    const newArr = arr.map((obj) => +Object.keys(obj)[0]);
+    if(setFunction){
+        setFunction(newArr)
+    }
+    else {
+      return newArr
+    }
+  }
+
 
 export {
     convertDate,
     convertTasks,
     convertCities,
+    convertSkills
 }

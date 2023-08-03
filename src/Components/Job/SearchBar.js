@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useContextProvider } from "../../Providers/Provider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import FilterBar from "./FilterBar";
-import { handleSearchBar } from "./Functions/SearchBarFunctions";
+import { handleSearchBar } from "../Functions/SearchFunctions/SearchBarFunctions";
 import searchLogo from "../../Assets/footer-logo.png"
 import "./SearchBar.scss";
 

@@ -33,7 +33,7 @@ function handleApplicantRegisterForm(
   axios
     .post(`${API}/users`, reqObj)
     .then(({ data }) => {
-      setRegisterTwoForm(true)
+      setRegisterTwoForm(true);
       setRecruiter(null);
       setSignedIn(true);
       setRecruiterAcc(false);
@@ -50,14 +50,13 @@ function handleApplicantRegisterForm(
 // applicant form 2 submit (put)
 const handleApplicantFormTwoSubmit = (e, formObj, skillsArr, navigate) => {
   e.preventDefault();
-  const {id} = formObj
+  const { id } = formObj;
   axios
     .put(`${API}/users/${id}`, {
       profile: formObj,
       skills: skillsArr,
     })
     .then(() => {
-      // setRegisterTwoForm(false);
       navigate("/user");
     })
     .catch((err) => console.log(err));
@@ -111,7 +110,8 @@ function handleRecruiterRegisterForm(
     .catch((err) => console.log(err));
 }
 
-export { 
-  handleApplicantRegisterForm, handleRecruiterRegisterForm,
-  handleApplicantFormTwoSubmit 
+export {
+  handleApplicantRegisterForm,
+  handleRecruiterRegisterForm,
+  handleApplicantFormTwoSubmit,
 };
