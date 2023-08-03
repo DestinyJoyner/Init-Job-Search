@@ -1,7 +1,14 @@
 function handleFormInput(e, stateVar, setFunction) {
   const value = e.target.value;
   const id = e.target.id;
-  setFunction({ ...stateVar, [id]: value });
+  
+  if( id=== "isRecruiter"){
+    const checked = e.target.checked
+    setFunction({...stateVar, [id]: checked})
+  }
+  else{
+    setFunction({ ...stateVar, [id]: value })
+  }
 }
 
 // handleSKillsCheckboxes
