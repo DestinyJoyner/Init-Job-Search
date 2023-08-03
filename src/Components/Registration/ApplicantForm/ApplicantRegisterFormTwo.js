@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useContextProvider } from "../../../Providers/Provider";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import SkillsComponent from "../../Job/SkillsComponent";
@@ -12,7 +11,6 @@ import { asterisk } from "../../Job/Data/Icons";
 import "./ApplicantFormTwo.scss";
 
 function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
-  const { setLoading } = useContextProvider();
   const { setAppHeader } = useNavProvider();
   const { applicantDetails } = useUserProvider();
   const navigate = useNavigate();
@@ -26,7 +24,6 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
 
   useEffect(() => {
     setApplicantFormTwo(applicantDetails);
-    // setLoading(false)
   }, [applicantDetails]);
 
   return (
