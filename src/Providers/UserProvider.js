@@ -27,7 +27,7 @@ function UserProvider({ children }) {
   const [userJobs, setUserJobs] = useState([]);
   const [email, setEmail] = useState("");
 
-  const [applicantDetails, setApplicantDetails] = useState(null)
+  const [applicantDetails, setApplicantDetails] = useState({})
 
   useEffect(() => {
     userID
@@ -40,6 +40,7 @@ function UserProvider({ children }) {
 
   useEffect(() => {
     if (userID !== null) {
+      setLoading(true)
       axios
         .get(`${API}/users/${userID}`)
         .then(({ data }) => {
@@ -60,6 +61,7 @@ function UserProvider({ children }) {
             (a, b) => new Date(b.date_applied) - new Date(a.date_applied)
           );
           setUserJobs(jobsSorted);
+          setLoading(false)
         })
         .catch((error) => console.log(error));
     }

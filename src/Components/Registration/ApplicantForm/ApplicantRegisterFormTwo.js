@@ -16,17 +16,18 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
   const { setAppHeader } = useNavProvider();
   const { applicantDetails } = useUserProvider();
   const navigate = useNavigate();
-  const [applicantFormTwo, setApplicantFormTwo] = useState({});
+  const [applicantFormTwo, setApplicantFormTwo] = useState(applicantDetails);
   const [applicantFormSkills, setApplicantFormSkills] = useState([]);
 
   useEffect(() => {
-    setApplicantFormTwo(applicantDetails);
     setAppHeader("Add Profile Details");
     setHideSliderButtons(true);
-    setLoading(true);
   }, []);
 
-  useEffect(() => setLoading(false), [applicantDetails]);
+  useEffect(() => {
+    setApplicantFormTwo(applicantDetails);
+    // setLoading(false)
+  }, [applicantDetails]);
 
   return (
     <div className="applicantFormTwo grid-center">
