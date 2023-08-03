@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { useContextProvider } from "../../../Providers/Provider.js";
-import { useNavProvider } from "../../../Providers/NavProvider.js";
-import { Link, useNavigate } from "react-router-dom";
-import LoginHeader from "../LoginHeader/LoginHeader.js";
+import { useNavigate } from "react-router-dom";
 import ShowHidePasswordButton from "../../ShowHidePassword/ShowHidePasswordButton.js";
 import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
 import { handleLoginSubmit } from "../../Functions/FormFunctions/LoginFormSubmitFunctions.js";
@@ -10,36 +8,30 @@ import { loginEmail, loginPassword, recruiter } from "../../Job/Data/Icons.js";
 import "./LoginForm.scss";
 import "../../FormInputs/FormInputs.scss";
 
-export default function LoginForm() {
+export default function LoginForm({setFailedLogin, setFailedMessage}) {
   const {
     setRecruiterID,
     setIsSignedIn,
     setAuthToken,
     setIsRecruiterAcc,
     setUserID,
-    setLoading,
-    isSignedIn,
-    isRecruiterAcc,
   } = useContextProvider();
-  const { setAppHeader } = useNavProvider();
   const navigate = useNavigate();
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
     isRecruiter: false,
   });
-  const [failedLogin, setFailedLogin] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  useEffect(() => {
-    if (isSignedIn || isRecruiterAcc) {
-      navigate(isSignedIn ? "/user" : "/recruiter");
-      // setLoading(true)
-    } else {
-      setAppHeader("Log In");
-      setLoading(false);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (isSignedIn || isRecruiterAcc) {
+  //     navigate(isSignedIn ? "/user" : "/recruiter");
+  //   } else {
+  //     setAppHeader("Log In");
+  //     setLoading(false);
+  //   }
+  // }, []);
 
   useEffect(() => {
     setFailedLogin(false);
@@ -47,11 +39,8 @@ export default function LoginForm() {
 
   return (
     // (!isSignedIn && !isRecruiterAcc) &&
-    <div className="login grid-center">
-      <LoginHeader />
-
       <form
-        className="login_form grid-center"
+        className="loginForm grid-center"
         onSubmit={(event) =>
           handleLoginSubmit(
             event,
@@ -61,11 +50,13 @@ export default function LoginForm() {
             setRecruiterID,
             setIsSignedIn,
             setIsRecruiterAcc,
+            setFailedLogin,
+            setFailedMessage,
             navigate
           )
         }
       >
-        <label className="login_form_label grid-center" htmlFor="email">
+        <label className="loginForm_label grid-center" htmlFor="email">
           {loginEmail}
           <input
             id="email"
@@ -120,15 +111,6 @@ export default function LoginForm() {
 
         <input className="login_form_submit" type="submit" value="LOG IN" />
       </form>
-      {failedLogin && (
-        <div className="recruiter-login-error">
-          "Invalid Email, or Password"
-        </div>
-      )}
-      <Link to="/register" className="login_register">
-        New to inIT? <br />
-        Create an account
-      </Link>
-    </div>
+     
   );
 }

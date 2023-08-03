@@ -1,0 +1,21 @@
+.loginPage {
+  font-size: 20px;
+  grid-template-rows: 20vh 40vh 12vh 10vh;
+  row-gap: 1vh;
+  padding-bottom: 3vh;
+
+  &_error {
+    text-align: center;
+    color: var(--init-rust);
+    font-weight: 600;
+    font-size: 26px;
+  }
+
+  &_register {
+    grid-row: 4;
+    text-align: center;
+    width: 80%;
+    border-top: 2px solid var(--init-gold);
+    padding-top: 2vh;
+  }
+}

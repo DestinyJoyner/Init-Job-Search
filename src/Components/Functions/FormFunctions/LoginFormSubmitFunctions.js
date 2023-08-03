@@ -47,6 +47,8 @@ function handleLoginSubmit(
   setRecruiter,
   setSignedIn,
   setRecruiterAcc,
+  setFailedLogin,
+  setFailedLoginMessage,
   navigate
 ) {
   e.preventDefault();
@@ -79,6 +81,7 @@ function handleLoginSubmit(
     .catch((error) => {
       console.log(error);
       setFailedLogin(true);
+      setFailedLoginMessage(error.response.data.error)
     });
 }
 

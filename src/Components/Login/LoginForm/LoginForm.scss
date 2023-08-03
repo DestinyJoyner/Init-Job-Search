@@ -1,10 +1,5 @@
-.login {
-  font-size: 20px;
-  grid-template-rows: 20vh 40vh 12vh 10vh;
-  row-gap: 1vh;
-  padding-bottom: 3vh;
+.loginForm {
 
-  &_form {
     margin-top: 3vh;
     width: 100%;
     grid-template-rows: 9vh 9vh 8vh 10vh;
@@ -82,22 +77,11 @@
       font-weight: 600;
       font-size: 28px;
     }
-  }
+  
 
-  &_register {
-    grid-row: 4;
-    text-align: center;
-    width: 80%;
-    border-top: 2px solid var(--init-gold);
-    padding-top: 2vh;
-  }
+ 
 }
 
-.recruiter-login-error {
-  color: var(--init-rust);
-  font-weight: 600;
-  font-size: 26px;
-}
 
 .dark .recruiter-login {
   color: var(--init-background);
