@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { convertCities } from "../Job/Functions/JobFunctions";
+import { convertCities } from "../Functions/ConvertFunctions/ConversionFunctions";
 import convertCompanyForLogo from "../Job/Data/CompanyLogos.js"
 
 import "./RecruiterJob.css";

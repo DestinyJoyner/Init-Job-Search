@@ -1,0 +1,23 @@
+.navBar {
+  grid-template-columns: .5fr 3fr .5fr;
+  height: 8vh;
+  width: 100%;
+  border-bottom: solid 2px var(--init-gold);
+  background-color: var(--init-darkmint);
+
+  &_burger {
+    height: 42px;
+    margin-right: 3vw;
+    grid-column: 3;
+  }
+}
+
+ .dark .navBar {
+  background-color: var(--init-gold); 
+ }
+
+
+
+
+
+

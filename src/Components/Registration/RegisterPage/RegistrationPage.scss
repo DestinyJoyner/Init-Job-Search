@@ -1,0 +1,37 @@
+.registrationPage {
+  grid-template-rows: 10vh 8vh 65vh 5vh;
+  row-gap: .5vh;
+
+  .loginHeader {
+    max-height: 8vh;
+    row-gap: 0vh;
+    margin-bottom: .5vh;
+    &_logo{
+      height: 7vh;
+    }
+   &_slogan {
+      font-size: 20px;
+    }
+  }
+
+  &_userType {
+    margin-top: 1.5vh;
+    display: grid;
+    row-gap: .8vh;
+    & span {
+        justify-self: center;
+    }
+
+    .sliderButton {
+        &_buttons {
+          height: 3.5vh;
+          &_button {
+            height: 3.5vh;
+          }
+        }
+        &_slider {
+          height: 3.5vh;
+        }
+      }
+  }
+}

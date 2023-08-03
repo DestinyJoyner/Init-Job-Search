@@ -9,9 +9,8 @@ import User from "../../Pages/User.js";
 import JobProvider from "../../Providers/JobProvider.js";
 import RecruiterProvider from "../../Providers/RecruiterProvider.js"
 import Recruiter from "../../Pages/Recruiter.js";
-import RegisterComponent from "../../Pages/RegisterComponent.js";
-import RegisterComponent2 from "../../Pages/RegisterComponent2.js"
-import LoginComponent from "../../Pages/LoginComponent.js";
+import Register from "../../Pages/Register.js";
+import Login from "../../Pages/Login.js";
 import JobForm from "../../Pages/JobForm.js";
 import JobApplicants from "../../Pages/JobApplicants.js";
 
@@ -21,9 +20,8 @@ function RouteComponent() {
       <Route path="/">
         <Route index element={<Home />} />
         {/* LOGIN ROUTES */}
-        <Route path="login" element={<LoginComponent />} />
-        <Route path="register" element={<RegisterComponent />} />
-        <Route path="register-continue" element={<RegisterComponent2 />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         {/* USER ROUTES */}
         <Route path="user">
           <Route index element={<User />} />

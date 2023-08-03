@@ -1,0 +1,17 @@
+.loginHeader {
+    display: grid;
+    grid-row: 1;
+    justify-items: center;
+    row-gap: 1vh;
+
+    &_logo{
+      height: 12vh;
+      max-width: 15vh;
+    }
+   &_slogan {
+      color: var(--init-charcoal);
+      font-family: Ysabeau;
+      font-style: italic;
+      font-size: 22px;
+    }
+  }

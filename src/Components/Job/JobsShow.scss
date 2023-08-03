@@ -17,7 +17,7 @@
 
     &_logo {
       height: 80px;
-      max-width: 100px;
+      max-width: 100%;
       grid-row: 1;
       padding: 8px;
       border-radius: 20px;
@@ -66,6 +66,24 @@
     }
   }
 
+  .sliderButton {
+    &_container {
+      justify-self: center;
+      margin-left: 3vw;
+    }
+
+    &_buttons {
+      height: 5vh;
+
+      &_button {
+        height: 5vh;
+      }
+    }
+    &_slider {
+      height: 5vh;
+    }
+  }
+
   .jobDetailSelected,
   .jobShow_header_location_remote {
     background-color: var(--init-darkmint);
@@ -79,29 +97,6 @@
     display: grid;
     grid-template-rows: 5vh auto;
     row-gap: 2vh;
-
-    &_buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      justify-items: center;
-      height: 5vh;
-      border: 1px solid var(--init-mint);
-      border-radius: 20px;
-      width: 70%;
-      margin: 0 auto;
-
-      & > * {
-        all: unset;
-        padding: 0vh 3vh;
-        border-radius: 18px;
-      }
-
-      &_tasks {
-        width: 50%;
-        text-indent: 3vw;
-        padding: 0 3.8vh;
-      }
-    }
 
     &_overview {
       overflow-y: scroll;

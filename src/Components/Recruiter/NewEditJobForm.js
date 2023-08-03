@@ -2,32 +2,25 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { useContextProvider } from "../../Providers/Provider";
+import { useNavProvider } from "../../Providers/NavProvider";
 import { useJobProvider } from "../../Providers/JobProvider";
-import Header from "../Job/Header.js";
 import TextInput from "../Job/Inputs/TextInput";
 import TextArea from "../Job/Inputs/TextArea";
 import Checkbox from "../Job/Inputs/Checkbox";
 import Dropdown from "../Job/Inputs/Dropdown";
 import SkillsComponent from "../Job/SkillsComponent.js";
 import { dropdownCities } from "../Job/Data/Cities";
-import { handleSearchBar } from "../Job/Functions/SearchBarFunctions";
-import { convertTasks } from "../Job/Functions/JobFunctions";
-import { convertSkills } from "../Job/Functions/SkillsFunctions";
+import { handleSearchBar } from "../Functions/SearchFunctions/SearchBarFunctions";
+import { convertTasks, convertSkills } from "../Functions/ConvertFunctions/ConversionFunctions";
 import { asterisk } from "../Job/Data/Icons.js";
 import { IoMdAddCircle } from "react-icons/io";
 import "./NewEditJobForm.css";
 
 export default function NewEditJobForm({ edit }) {
-  const {
-    API,
-    axios,
-    jobID,
-    recruiterID,
-    editAccess,
-    isRecruiterAcc,
-    isSignedIn,
-  } = useJobProvider();
-  const {setAppHeader} = useContextProvider()
+  const { jobID, editAccess } = useJobProvider();
+  const { setAppHeader } = useNavProvider();
+  const { API, axios, recruiterID, isSignedIn, isRecruiterAcc } =
+    useContextProvider();
   const navigate = useNavigate();
   const [originalData, setOriginalData] = useState({});
   const [jobDropdown, setJobDropdown] = useState("");
@@ -116,12 +109,11 @@ export default function NewEditJobForm({ edit }) {
               }
             })
             .map((arr) => arr[1]);
-            if(editValues.length !== originalValues.length){
-              checkStr = false
-            }
-            else {
-              checkStr = editValues.every((el, i) => el === originalValues[i]);
-            } 
+          if (editValues.length !== originalValues.length) {
+            checkStr = false;
+          } else {
+            checkStr = editValues.every((el, i) => el === originalValues[i]);
+          }
         }
         if (checkSkill && checkTask && checkStr) {
           navigate(`/jobs/${jobID}`);
@@ -152,7 +144,7 @@ export default function NewEditJobForm({ edit }) {
   //   useEffect for edit
   useEffect(() => {
     if (edit) {
-      setAppHeader("Edit Job Posting")
+      setAppHeader("Edit Job Posting");
       axios
         .get(`${API}/jobs/${jobID}`)
         .then(({ data }) => {
@@ -175,21 +167,17 @@ export default function NewEditJobForm({ edit }) {
           setJobDropdown(data.city);
         })
         .catch((err) => console.log(err));
-    }
-    else {
-      setAppHeader("Post New Job")
+    } else {
+      setAppHeader("Post New Job");
     }
     if (isSignedIn || !isRecruiterAcc) {
       navigate("/not-found");
     }
-   
   }, []);
 
   return (
     ((isRecruiterAcc && !edit) || editAccess) && (
       <div className="job-form-page">
-        {/* <Header header={edit ? "Edit Post" : "New Job"} /> */}
-
         <form className="job-form" onSubmit={(event) => handleSubmit(event)}>
           <TextInput
             label={"Job Title"}
@@ -265,9 +253,7 @@ export default function NewEditJobForm({ edit }) {
               ))}
             </div>
             <section className="task-header">
-              <span className="task-req">
-                Min. 1 Job Task req. 
-              </span>
+              <span className="task-req">Min. 1 Job Task req.</span>
               <span onClick={(event) => taskButton(event)}>
                 Click to Add A Task
               </span>

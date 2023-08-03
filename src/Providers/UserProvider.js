@@ -19,12 +19,15 @@ function UserProvider({ children }) {
     accessRegTwo,
     setAccessRegTwo,
     isRecruiterAcc,
+    setLoading,
   } = useContextProvider();
   const [userProfile, setUserProfile] = useState({});
   const [editForm, setEditForm] = useState({});
   const [userSkills, setUserSkills] = useState([]);
   const [userJobs, setUserJobs] = useState([]);
   const [email, setEmail] = useState("");
+
+  const [applicantDetails, setApplicantDetails] = useState(null)
 
   useEffect(() => {
     userID
@@ -40,9 +43,11 @@ function UserProvider({ children }) {
       axios
         .get(`${API}/users/${userID}`)
         .then(({ data }) => {
+          setApplicantDetails(data)
           setUserProfile(data);
           setEditForm(data);
           setUserSkills(data.skills["skill_ids"]);
+          setLoading(false)
         })
         .catch((error) => {
           console.log(error);
@@ -81,6 +86,7 @@ function UserProvider({ children }) {
         setAccessRegTwo,
         isRecruiterAcc,
         email,
+        applicantDetails
       }}
     >
       {children}

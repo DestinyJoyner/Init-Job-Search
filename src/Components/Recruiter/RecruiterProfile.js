@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
+import { useContextProvider } from "../../Providers/Provider";
+import { useNavProvider } from "../../Providers/NavProvider";
 import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
 import RecruiterJob from "./RecruiterJob.js";
 import NoAccess from "../App/NoAccess";
@@ -9,8 +11,10 @@ import convertCompanyForLogo from "../Job/Data/CompanyLogos";
 import "./RecruiterProfile.scss";
 
 export default function RecruiterProfile() {
-  const { recruiterID, axios, API, isRecruiterAcc, setAppHeader } =
-    useRecruiterProvider();
+  const { API, axios, isRecruiterAcc,recruiterID, } = useContextProvider()
+  // const { recruiterID, axios, API, isRecruiterAcc} =
+  //   useRecruiterProvider();
+    const {setAppHeader} = useNavProvider()
   const [recruiterDetails, setRecruiterDetails] = useState({});
 
   useEffect(() => {

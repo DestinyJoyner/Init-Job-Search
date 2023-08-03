@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavProvider } from "../../../Providers/NavProvider";
 import { useContextProvider } from "../../../Providers/Provider";
 import { Link } from "react-router-dom";
 import ScrollArrow from "./ScrollArrow";
@@ -18,20 +19,33 @@ import screen5 from "./Images/filter-screen.png";
 import "./HomePage.css";
 
 function HomePage() {
-  const {setAppHeader} = useContextProvider()
+  const {setLoading} = useContextProvider()
+  const {setAppHeader} = useNavProvider()
   const refElement = useRef();
   const [textSwitch, setTextSwitch] = useState(false);
-  const timeout = setInterval(() => {
-    setTextSwitch(true);
-  }, 4000);
+  // const timeout = setInterval(() => {
+  //   setTextSwitch(true);
+  // }, 4000);
 
-  useEffect(() => {}, [textSwitch]);
-  useEffect(() => setAppHeader("Welcome to inIT"), [])
+  // useEffect(() => {}, [textSwitch]);
+  useEffect(() => {
+    setAppHeader("Welcome to inIT")
+
+    const timeout = setInterval(() => {
+      setTextSwitch(true);
+      setLoading(false)
+    }, 4000);
+  }, [])
 
   return (
     <div ref={refElement} className="home">
       <section>
-        <div className={textSwitch ? "hidden" : "show home-landing"}>
+        <div 
+        onClick={() => {
+          setLoading(false)
+          setTextSwitch(true)
+        }}
+        className={textSwitch ? "hidden" : "show home-landing"}>
           <h2 className="home-italic">Welcome To</h2>
           <hr />
           <img src={logo} alt="logo" className="home-logo" />

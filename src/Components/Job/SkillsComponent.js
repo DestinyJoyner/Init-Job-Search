@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSkillProvider } from "../../Providers/SkillProvider.js";
 import { v4 as uuidv4 } from "uuid";
-import { skillClick } from "./Functions/SearchBarFunctions";
+import { skillClick } from "../Functions/SearchFunctions/SearchBarFunctions";
 import { skillsColorObject, skillsObject } from "./Data/Skills";
 import "./SkillsComponent.css";
 
