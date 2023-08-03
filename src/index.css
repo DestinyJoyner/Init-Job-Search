@@ -107,3 +107,5 @@ textarea:focus {
 .dark input::placeholder {
   color: var(--init-background);
 }
+
+

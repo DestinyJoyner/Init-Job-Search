@@ -35,3 +35,9 @@
       }
   }
 }
+
+.dark .registrationPage {
+  & a {
+    color: var(--init-gold);
+  }
+}
