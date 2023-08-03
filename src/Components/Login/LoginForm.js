@@ -3,7 +3,7 @@ import { useContextProvider } from "../../Providers/Provider.js";
 import { useNavProvider } from "../../Providers/NavProvider.js";
 import { useRecruiterProvider } from "../../Providers/RecruiterProvider.js";
 import { Link, useNavigate } from "react-router-dom";
-import LoginHeader from "../Register-Login/LoginHeader.js";
+import LoginHeader from "./LoginHeader/LoginHeader.js";
 import ShowPass from "../Register-Login/ShowPass.js";
 import { loginEmail, loginPassword, recruiter } from "../Job/Data/Icons.js";
 

@@ -4,6 +4,21 @@ function handleFormInput(e, stateVar, setFunction) {
     setFunction({...stateVar, [id] : value})
   }
 
+  // handleSKillsCheckboxes
+  function handleSkillsCheckbox (e, skillsArr, setSkillsFunction, formStateVar, setFormFunction) {
+      const id = +e.target.id;
+      if (!skillsArr.includes(id) && skillsArr.length < 4) {
+        setSkillsFunction([...skillsArr, id]);
+        setFormFunction({ ...formStateVar, ["skills"]: [...skillsArr, id] });
+      } else {
+        const removeSkill = skillsArr.filter((el) => el !== id);
+        setSkillsFunction(removeSkill);
+        setFormFunction({ ...formStateVar, ["skills"]: removeSkill});
+      }
+    
+  }
+
+
   function registrationEmailCheck(value){
     const validEmailSyntax = value.includes("@") && value.includes(".")
     const atSymbolIndex = value.indexOf("@")
@@ -41,4 +56,5 @@ function handleFormInput(e, stateVar, setFunction) {
     checkPasswordRequirements,
     checkPasswordMatchAndValid,
     checkIfFormInputsHaveValue,
+    handleSkillsCheckbox
   }

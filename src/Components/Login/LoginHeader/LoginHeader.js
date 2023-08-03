@@ -1,4 +1,4 @@
-import initLogo from "../../Assets/LOGO.png";
+import initLogo from "../../../Assets/LOGO.png";
 import "./LoginHeader.scss"
 
 function LoginHeader() {

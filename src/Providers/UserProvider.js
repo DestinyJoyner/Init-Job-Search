@@ -27,6 +27,8 @@ function UserProvider({ children }) {
   const [userJobs, setUserJobs] = useState([]);
   const [email, setEmail] = useState("");
 
+  const [applicantDetails, setApplicantDetails] = useState({})
+
   useEffect(() => {
     userID
       ? axios
@@ -41,6 +43,7 @@ function UserProvider({ children }) {
       axios
         .get(`${API}/users/${userID}`)
         .then(({ data }) => {
+          setApplicantDetails(data)
           setUserProfile(data);
           setEditForm(data);
           setUserSkills(data.skills["skill_ids"]);
@@ -83,6 +86,7 @@ function UserProvider({ children }) {
         setAccessRegTwo,
         isRecruiterAcc,
         email,
+        applicantDetails
       }}
     >
       {children}

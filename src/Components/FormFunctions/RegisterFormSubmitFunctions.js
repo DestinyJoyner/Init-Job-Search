@@ -2,46 +2,49 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 // applicant submit
-function handleApplicantRegisterForm(e, formObj,setRecruiter,
-    setSignedIn,
-    setUser,
-    setRecruiterAcc,
-    setToken,
-    navigate) {
-    e.preventDefault();
+function handleApplicantRegisterForm(
+  e,
+  formObj,
+  setRecruiter,
+  setSignedIn,
+  setUser,
+  setRecruiterAcc,
+  setToken,
+  navigate,
+  setRegisterTwoForm
+) {
+  e.preventDefault();
 
-    const { first_name, last_name, education, email, password} =
-      formObj;
-  
-    const reqObj = {
-      profile: {
-        first_name: first_name,
-        last_name: last_name,
-        education: education
-      },
-      login: {
-        email: email,
-        password: password,
-      },
-      skills: []
-    };
+  const { first_name, last_name, education, email, password } = formObj;
 
-    axios.post(`${API}/users`,reqObj)
-    .then(({data}) => {
-        // set second registerform state true
-        setRecruiter(null)
-        setSignedIn(true)
-        setRecruiterAcc(false)
-        setUser(data.id)
+  const reqObj = {
+    profile: {
+      first_name: first_name,
+      last_name: last_name,
+      education: education,
+    },
+    login: {
+      email: email,
+      password: password,
+    },
+    skills: [],
+  };
+
+  axios
+    .post(`${API}/users`, reqObj)
+    .then(({ data }) => {
+      setRegisterTwoForm(true)
+      setRecruiter(null);
+      setSignedIn(true);
+      setRecruiterAcc(false);
+      setUser(data.id);
     })
     .then(() => {
-        axios.post(`${API}/logins`, reqObj["login"])
-        .then(({data}) => {
-            setToken(data.token)
-            navigate("/register-continue")
-        })
+      axios.post(`${API}/logins`, reqObj["login"]).then(({ data }) => {
+        setToken(data.token);
+      });
     })
-    .catch(err=> console.log(err))
+    .catch((err) => console.log(err));
 }
 
 // recruiter submit

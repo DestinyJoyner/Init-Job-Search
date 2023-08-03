@@ -14,7 +14,7 @@ import {
 } from "../../FormFunctions/RegisterFormSubmitFunctions";
 import "./RegisterForm.scss";
 
-function RegisterForm({ formObj, formType }) {
+function RegisterForm({ formObj, formType, registerPartTwo }) {
   const {
     setRecruiterID,
     setIsSignedIn,
@@ -43,7 +43,17 @@ function RegisterForm({ formObj, formType }) {
           setAuthToken,
           navigate
         )
-      : handleApplicantRegisterForm(e, registerForm);
+      : handleApplicantRegisterForm(
+          e,
+          registerForm,
+          setRecruiterID,
+          setIsSignedIn,
+          setUserID,
+          setIsRecruiterAcc,
+          setAuthToken,
+          navigate,
+          registerPartTwo
+        );
 
   // Password
   useEffect(() => {

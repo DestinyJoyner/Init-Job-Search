@@ -13,18 +13,18 @@ export default function Register2() {
   const { API, axios, userID, accessRegTwo, setAccessRegTwo } =
     useUserProvider();
 
-  useEffect(() => {
-    if (!accessRegTwo) {
-      navigate("/register");
-    }
-  }, [accessRegTwo]);
+  // useEffect(() => {
+  //   if (!accessRegTwo) {
+  //     navigate("/register");
+  //   }
+  // }, [accessRegTwo]);
 
-  useEffect(() => {
-    axios
-      .get(`${API}/users/${userID}`)
-      .then(({ data }) => setUserDetails(data))
-      .catch((err) => console.log(err));
-  }, [userID]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${API}/users/${userID}`)
+  //     .then(({ data }) => setUserDetails(data))
+  //     .catch((err) => console.log(err));
+  // }, [userID]);
 
   const handleChange = (event) => {
     setUserDetails({ ...userDetails, [event.target.id]: event.target.value });
@@ -54,9 +54,9 @@ export default function Register2() {
   };
 
   return (
-    accessRegTwo && (
+    (
       <div className="registration-two">
-        <Header header={"Add more account details"} noBack={true} />
+        {/* <Header header={"Add more account details"} noBack={true} /> */}
         <form className="form-register-two" onSubmit={handleSubmit}>
           <label htmlFor="bio">About me</label>
           <textarea
