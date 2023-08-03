@@ -4,8 +4,8 @@ import { useContextProvider } from "../../../Providers/Provider";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import SkillsComponent from "../../Job/SkillsComponent";
-import TextAreaInput from "../../FormInputs/TextAreaInput.js";
-import UrlInput from "../../FormInputs/UrlInput.js";
+import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
+import RegisterUrlInput from "../../FormInputs/RegisterFormInputs/RegisterUrlInput";
 import { handleSkillsCheckbox } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
 import { handleApplicantFormTwoSubmit } from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
 import { asterisk } from "../../Job/Data/Icons";
@@ -44,7 +44,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
         }
         className="applicantFormTwo_form"
       >
-        <TextAreaInput
+        <RegisterTextAreaInput
           label={"Bio"}
           formKey={"bio"}
           value={applicantFormTwo["bio"]}
@@ -53,7 +53,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           setFunction={setApplicantFormTwo}
         />
 
-        <UrlInput
+        <RegisterUrlInput
           label={"Portfolio Project 1"}
           formKey={"project_one"}
           value={applicantFormTwo["project_one"]}
@@ -61,7 +61,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           setFunction={setApplicantFormTwo}
         />
 
-        <UrlInput
+        <RegisterUrlInput
           label={"Portfolio Project 2"}
           formKey={"project_two"}
           value={applicantFormTwo["project_two"]}

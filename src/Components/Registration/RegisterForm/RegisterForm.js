@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContextProvider } from "../../../Providers/Provider";
-import TextInput from "../../FormInputs/TextInput";
-import EmailInput from "../../FormInputs/EmailInput";
-import PasswordInput from "../../FormInputs/PasswordInput";
+import RegisterTextInput from "../../FormInputs/RegisterFormInputs/RegisterTextInput";
+import RegisterEmailInput from "../../FormInputs/RegisterFormInputs/RegisterEmailInput";
+import RegisterPasswordInput from "../../FormInputs/RegisterFormInputs/RegisterPasswordInput";
 import {
   checkPasswordMatchAndValid,
   checkIfFormInputsHaveValue,
@@ -13,6 +13,7 @@ import {
   handleApplicantRegisterForm,
 } from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
 import "./RegisterForm.scss";
+import "../../FormInputs/RegisterFormInputs/RegisterFormInputs.scss"
 
 function RegisterForm({ formObj, formType, registerPartTwo }) {
   const {
@@ -81,7 +82,7 @@ function RegisterForm({ formObj, formType, registerPartTwo }) {
       className="registerForm"
       onSubmit={(event) => handleRegistrationFormSubmit(event)}
     >
-      <TextInput
+      <RegisterTextInput
         label={"First Name"}
         value={registerForm["first_name"]}
         formKey={"first_name"}
@@ -89,7 +90,7 @@ function RegisterForm({ formObj, formType, registerPartTwo }) {
         setFunction={setRegisterForm}
       />
 
-      <TextInput
+      <RegisterTextInput
         label={"Last Name"}
         value={registerForm["last_name"]}
         formKey={"last_name"}
@@ -98,7 +99,7 @@ function RegisterForm({ formObj, formType, registerPartTwo }) {
       />
 
       {formType === "recruiter" ? (
-        <TextInput
+        <RegisterTextInput
           label={"Organization/Company"}
           value={registerForm["organization"]}
           formKey={"organization"}
@@ -106,7 +107,7 @@ function RegisterForm({ formObj, formType, registerPartTwo }) {
           setFunction={setRegisterForm}
         />
       ) : (
-        <TextInput
+        <RegisterTextInput
           label={"Education"}
           value={registerForm["education"]}
           formKey={"education"}
@@ -115,7 +116,7 @@ function RegisterForm({ formObj, formType, registerPartTwo }) {
         />
       )}
 
-      <EmailInput
+      <RegisterEmailInput
         label={"Email Address"}
         value={registerForm["email"]}
         formKey={"email"}
@@ -126,7 +127,7 @@ function RegisterForm({ formObj, formType, registerPartTwo }) {
         validEmailSetFunction={setAvailableEmail}
       />
 
-      <PasswordInput
+      <RegisterPasswordInput
         label={"Password"}
         value={registerForm["password"]}
         formKey={"password"}
@@ -136,7 +137,7 @@ function RegisterForm({ formObj, formType, registerPartTwo }) {
         showPasswordSetFunction={setShowPassword}
       />
 
-      <PasswordInput
+      <RegisterPasswordInput
         label={"Confirm Password"}
         value={confirmPasswordValue}
         formKey={"confirmPassword"}

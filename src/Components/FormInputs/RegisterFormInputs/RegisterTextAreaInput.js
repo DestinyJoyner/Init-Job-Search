@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { handleFormInput } from "../Functions/FormFunctions/RegisterFormFunctions";
+import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions";
 
-function TextAreaInput({label,formKey, value, placeholder, stateVar, setFunction}) {
+function RegisterTextAreaInput({label,formKey, value, placeholder, stateVar, setFunction}) {
     const remainingChars = value ? 160 - value.length : 160
 
     useEffect(() => {},[value])
@@ -21,4 +21,4 @@ function TextAreaInput({label,formKey, value, placeholder, stateVar, setFunction
     );
 }
 
-export default TextAreaInput;
+export default RegisterTextAreaInput;
