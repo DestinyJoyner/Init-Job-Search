@@ -65,15 +65,32 @@ a {
 
 /* INPUTS */
 
-input[type="text"], input[type="password"], input[type="email"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="url"] {
   border: none;
   border-bottom: 2px solid var(--init-mint);
   background-color: unset;
 }
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus {
   outline: none;
+}
+
+input[type="submit"] {
+  background: unset;
+  border: unset;
+  text-transform: uppercase;
+  color: var(--init-blue);
+  font-weight: 600;
 }
 
 select:focus {
   outline: none;
+}
+
+textarea {
+  border-color: var(--init-mint);
+  background-color: unset;
+}
+
+textarea:focus {
+  outline-color: var(--init-darkmint);
 }

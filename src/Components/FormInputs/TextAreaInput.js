@@ -7,9 +7,9 @@ function TextAreaInput({label,formKey, value, placeholder, stateVar, setFunction
     useEffect(() => {},[value])
 
     return (
-        <label className="applicantFormTwo_input_textarea_label">
-            <span>{label}</span>
-            <span>Remaining Chars:{remainingChars}</span>
+        <label className="applicantFormTwo_form_input_textarea_label">
+            <span className="applicantFormTwo_form_input_textarea_label_text">{label}</span>
+            <span className="applicantFormTwo_form_input_textarea_label_helpText">Remaining Chars: {remainingChars}</span>
             <textarea 
             id={formKey}
             maxLength={160}

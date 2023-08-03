@@ -47,6 +47,22 @@ function handleApplicantRegisterForm(
     .catch((err) => console.log(err));
 }
 
+// applicant form 2 submit (put)
+const handleApplicantFormTwoSubmit = (e, formObj, skillsArr, navigate) => {
+  e.preventDefault();
+  const {id} = formObj
+  axios
+    .put(`${API}/users/${id}`, {
+      profile: formObj,
+      skills: skillsArr,
+    })
+    .then(() => {
+      // setRegisterTwoForm(false);
+      navigate("/user");
+    })
+    .catch((err) => console.log(err));
+};
+
 // recruiter submit
 function handleRecruiterRegisterForm(
   e,
@@ -95,4 +111,7 @@ function handleRecruiterRegisterForm(
     .catch((err) => console.log(err));
 }
 
-export { handleApplicantRegisterForm, handleRecruiterRegisterForm };
+export { 
+  handleApplicantRegisterForm, handleRecruiterRegisterForm,
+  handleApplicantFormTwoSubmit 
+};

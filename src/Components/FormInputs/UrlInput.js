@@ -1,11 +1,11 @@
-import React from 'react';
 import { handleFormInput } from '../FormFunctions/RegisterFormFunctions';
 
 function UrlInput({label,formKey, value, stateVar, setFunction}) {
 
     return (
-       <label className="applicantFormInput_url_label">
-        <span>{label}</span>
+       <label className="applicantFormTwo_form_input_url_label">
+        <span className="applicantFormTwo_form_input_url_label_text">{label}</span>
+        <span className="applicantFormTwo_form_input_url_label_helpText">Link to live site, git repo, etc</span>
         <input 
         type="url"
         id={formKey}

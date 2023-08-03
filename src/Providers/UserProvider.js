@@ -27,7 +27,7 @@ function UserProvider({ children }) {
   const [userJobs, setUserJobs] = useState([]);
   const [email, setEmail] = useState("");
 
-  const [applicantDetails, setApplicantDetails] = useState({})
+  const [applicantDetails, setApplicantDetails] = useState(null)
 
   useEffect(() => {
     userID
