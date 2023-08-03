@@ -1,0 +1,64 @@
+.loginForm {
+  &_label {
+    grid-template-columns: 1fr 4fr 1fr;
+    width: 75%;
+    column-gap: 2vw;
+  }
+  &_input {
+    grid-column: 2/4;
+    grid-row: 1;
+    width: 100%;
+    height: 3vh;
+    font-size: 20px;
+    padding-bottom: 0.5vh;
+    &::placeholder {
+      font-size: 20px;
+    }
+    &_password {
+      grid-template-rows: 1fr;
+      margin-top: 0;
+      & button {
+        grid-column: 3;
+        grid-row: 1;
+      }
+    }
+  }
+  & svg {
+    height: 1.8em;
+    width: 1.8em;
+    color: var(--init-darkmint);
+    position: relative;
+    top: 0.3vh;
+  }
+  &_checkbox {
+    height: 3vh;
+    width: 3vh;
+    margin-left: 4vw;
+    &_label {
+      width: 100%;
+      margin-right: 7vw;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      column-gap: 3vw;
+      &_text {
+        display: flex;
+        column-gap: 2vw;
+        align-self: flex-end;
+      }
+      & svg {
+        height: 1.4em;
+        width: 1.4em;
+        color: var(--init-darkmint);
+        position: relative;
+        bottom: 0.2vh;
+      }
+    }
+  }
+}
+
+.dark .loginForm {
+  &_input {
+    color: var(--init-background);
+  }
+}

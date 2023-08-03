@@ -1,16 +1,16 @@
-import { handleFormInput } from "../Functions/FormFunctions/RegisterFormFunctions.js"
-import { asterisk } from "../Job/Data/Icons.js";
+import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions.js"
+import { asterisk } from "../../Job/Data/Icons.js";
 
-function TextInput({label, value, formKey, stateVar, setFunction }) {
+function RegisterTextInput({label, value, formKey, stateVar, setFunction }) {
     return (
         <label 
-        className="formInput_label"
+        className="registerFormInput_label"
         htmlFor={formKey}>
             <span>
                 {asterisk}{label}
             </span>
             <input
-            className="formInput_text"
+            className="registerFormInput_text"
             type="text"
             value = {value}
             id= {formKey}
@@ -20,4 +20,4 @@ function TextInput({label, value, formKey, stateVar, setFunction }) {
     );
 }
 
-export default TextInput;
+export default RegisterTextInput;

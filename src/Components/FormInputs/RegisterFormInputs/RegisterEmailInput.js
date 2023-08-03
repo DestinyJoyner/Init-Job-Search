@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { useContextProvider } from "../../Providers/Provider.js";
+import { useContextProvider } from "../../../Providers/Provider.js";
 import {
   handleFormInput,
   registrationEmailCheck,
-} from "../Functions/FormFunctions/RegisterFormFunctions.js";
-import { emailInvalid, emailValid, asterisk } from "../Job/Data/Icons.js";
+} from "../../Functions/FormFunctions/RegisterFormFunctions.js";
+import { emailInvalid, emailValid, asterisk } from "../../Job/Data/Icons.js";
 
-function EmailInput({
+function RegisterEmailInput({
   userType,
   label,
   formKey,
@@ -35,7 +35,7 @@ function EmailInput({
 
   return (
     <label 
-    className="formInput_email_label"
+    className="registerFormInput_email_label"
     htmlFor={formKey}>
       {!validEmailStateVar || !value  ? 
       emailInvalid : 
@@ -52,4 +52,4 @@ function EmailInput({
   );
 }
 
-export default EmailInput;
+export default RegisterEmailInput;

@@ -1,32 +1,30 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useContextProvider } from "../../../Providers/Provider";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import SkillsComponent from "../../Job/SkillsComponent";
-import TextAreaInput from "../../FormInputs/TextAreaInput.js";
-import UrlInput from "../../FormInputs/UrlInput.js";
+import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
+import RegisterUrlInput from "../../FormInputs/RegisterFormInputs/RegisterUrlInput";
 import { handleSkillsCheckbox } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
 import { handleApplicantFormTwoSubmit } from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
 import { asterisk } from "../../Job/Data/Icons";
 import "./ApplicantFormTwo.scss";
 
 function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
-  const { setLoading } = useContextProvider();
   const { setAppHeader } = useNavProvider();
   const { applicantDetails } = useUserProvider();
   const navigate = useNavigate();
-  const [applicantFormTwo, setApplicantFormTwo] = useState({});
+  const [applicantFormTwo, setApplicantFormTwo] = useState(applicantDetails);
   const [applicantFormSkills, setApplicantFormSkills] = useState([]);
 
   useEffect(() => {
-    setApplicantFormTwo(applicantDetails);
     setAppHeader("Add Profile Details");
     setHideSliderButtons(true);
-    setLoading(true);
   }, []);
 
-  useEffect(() => setLoading(false), [applicantDetails]);
+  useEffect(() => {
+    setApplicantFormTwo(applicantDetails);
+  }, [applicantDetails]);
 
   return (
     <div className="applicantFormTwo grid-center">
@@ -44,7 +42,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
         }
         className="applicantFormTwo_form"
       >
-        <TextAreaInput
+        <RegisterTextAreaInput
           label={"Bio"}
           formKey={"bio"}
           value={applicantFormTwo["bio"]}
@@ -53,7 +51,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           setFunction={setApplicantFormTwo}
         />
 
-        <UrlInput
+        <RegisterUrlInput
           label={"Portfolio Project 1"}
           formKey={"project_one"}
           value={applicantFormTwo["project_one"]}
@@ -61,7 +59,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           setFunction={setApplicantFormTwo}
         />
 
-        <UrlInput
+        <RegisterUrlInput
           label={"Portfolio Project 2"}
           formKey={"project_two"}
           value={applicantFormTwo["project_two"]}

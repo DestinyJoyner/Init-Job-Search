@@ -15,3 +15,9 @@
       font-size: 22px;
     }
   }
+
+  .dark .loginHeader {
+    &_slogan {
+      color: var(--init-background);
+    }
+  }

@@ -2,7 +2,7 @@
 
 * {
   margin: 0;
-  font-family: "Work Sans",Poppins, Cabin, Ysabeau;
+  font-family: "Work Sans", Poppins, Cabin, Ysabeau;
   --init-mint: #41cdbc;
   --init-darkmint: #0cbdbd;
   --init-gold: #ffde59;
@@ -65,12 +65,18 @@ a {
 
 /* INPUTS */
 
-input[type="text"], input[type="password"], input[type="email"], input[type="url"] {
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"] {
   border: none;
   border-bottom: 2px solid var(--init-mint);
   background-color: unset;
 }
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus {
   outline: none;
 }
 
@@ -94,3 +100,12 @@ textarea {
 textarea:focus {
   outline-color: var(--init-darkmint);
 }
+
+.dark input {
+  border-color: var(--init-gold);
+}
+.dark input::placeholder {
+  color: var(--init-background);
+}
+
+

@@ -1,114 +1,21 @@
-.login {
-  font-size: 20px;
-  grid-template-rows: 20vh 40vh 12vh 10vh;
-  row-gap: 1vh;
-  padding-bottom: 3vh;
-
-  &_form {
+.loginForm {
     margin-top: 3vh;
     width: 100%;
     grid-template-rows: 9vh 9vh 8vh 10vh;
     row-gap: 1vh;
 
-    &_label,
-    .formInput_password_label {
-      grid-template-columns: 1fr 4fr 1fr;
-      width: 75%;
-      column-gap: 2vw;
-    }
-
-    &_input,
-    .formInput_password_label input {
-      grid-column: 2/4;
-      grid-row: 1;
-      width: 100%;
-      height: 3vh;
-      font-size: 20px;
-      padding-bottom: 0.5vh;
-      &::placeholder {
-        font-size: 20px;
-      }
-    }
-
-    &_label svg,
-    .formInput_password_label svg {
-      height: 1.8em;
-      width: 1.8em;
-      color: var(--init-darkmint);
-      position: relative;
-      top: 0.3vh;
-    }
-
-    .formInput_password_label {
-      grid-template-rows: 1fr;
-      margin-top: 0;
-      & button {
-        grid-column: 3;
-      }
-    }
-
-    &_isRecruiter {
-      height: 3vh;
-      width: 3vh;
-      margin-left: 4vw;
-
-      &_label {
-        width: 100%;
-        margin-right: 7vw;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        column-gap: 3vw;
-
-        & svg {
-          height: 1.4em;
-          width: 1.4em;
-          color: var(--init-darkmint);
-          position: relative;
-          bottom: 0.2vh;
-        }
-
-        &_text {
-          display: flex;
-          column-gap: 2vw;
-          align-self: flex-end;
-        }
-      }
-    }
-
-    &_submit {
-      all: unset;
-      color: var(--init-blue);
-      font-weight: 600;
+    &_submitButton {
       font-size: 28px;
     }
+}
+
+// DARK MODE
+.dark .loginForm {
+  & svg {
+    color: var(--init-gold);
   }
-
-  &_register {
-    grid-row: 4;
-    text-align: center;
-    width: 80%;
-    border-top: 2px solid var(--init-gold);
-    padding-top: 2vh;
+  &_submitButton {
+    color: var(--init-gold);
   }
 }
 
-.recruiter-login-error {
-  color: var(--init-rust);
-  font-weight: 600;
-  font-size: 26px;
-}
-
-.dark .recruiter-login {
-  color: var(--init-background);
-}
-
-.dark #recruiter-login-submit {
-  color: var(--init-blue);
-  background-color: var(--init-gold);
-}
-
-.dark .recruiter-login a {
-  border-top: 2px solid var(--init-gold);
-  color: var(--init-gold);
-}

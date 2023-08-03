@@ -1,6 +1,6 @@
-import { handleFormInput } from '../Functions/FormFunctions/RegisterFormFunctions';
+import { handleFormInput } from '../../Functions/FormFunctions/RegisterFormFunctions';
 
-function UrlInput({label,formKey, value, stateVar, setFunction}) {
+function RegisterUrlInput({label,formKey, value, stateVar, setFunction}) {
 
     return (
        <label className="applicantFormTwo_form_input_url_label">
@@ -17,4 +17,4 @@ function UrlInput({label,formKey, value, stateVar, setFunction}) {
     );
 }
 
-export default UrlInput;
+export default RegisterUrlInput;
