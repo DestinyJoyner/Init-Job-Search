@@ -3,10 +3,9 @@ import { useUserProvider } from "../../../Providers/UserProvider";
 import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import RegisterTextInput from "../../FormInputs/RegisterFormInputs/RegisterTextInput";
-import RegisterUrlInput from "../../FormInputs/RegisterFormInputs/RegisterUrlInput";
 import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
 import SkillsCheckboxes from "../../SkillsCheckboxes/SkillsCheckboxes";
-import { asterisk } from "../../Job/Data/Icons";
+import ProjectLinkInputs from "../../ProjectLinkInputs/ProjectLinkInputs";
 
 import "./ApplicantProfileEditForm.scss";
 
@@ -72,66 +71,9 @@ function ApplicantProfileEditForm(props) {
         placeholder={"Tell recruiters about yourself..."}
       />
 
-      <section className="applicantProfileEditForm_projects_header">
-        <span className="applicantProfileEditForm_projects_header_label">
-          My Technical Projects
-        </span>
-        <span className="applicantProfileEditForm_projects_header_helpText">
-          {asterisk}Provide max. of 2
-        </span>
-      </section>
-      {/* links w/ title and about fields */}
-      <section className="applicantProfileEditForm_projects_details">
-        <div className="applicantProfileEditForm_projects_details_one">
-          <RegisterTextInput
-            label={"Project 1 Name"}
-            value={applicantEditForm["project_one_name"]}
-            formKey={"project_one_name"}
-            stateVar={applicantEditForm}
-            setFunction={setApplicantEditForm}
-          />
-          <RegisterUrlInput
-            label={"Technical Project 1 Link"}
-            value={applicantEditForm["project_one"]}
-            formKey={"project_one"}
-            stateVar={applicantEditForm}
-            setFunction={setApplicantEditForm}
-          />
-          <RegisterTextAreaInput
-            label={"Project 1 Details"}
-            formKey={"project_one_details"}
-            value={applicantEditForm["project_one_details"]}
-            stateVar={applicantEditForm}
-            setFunction={setApplicantEditForm}
-            placeholder={"A brief description of this project....."}
-          />
-        </div>
-
-        <div className="applicantProfileEditForm_projects_details_two">
-          <RegisterTextInput
-            label={"Project 2 Name"}
-            value={applicantEditForm["project_two_name"]}
-            formKey={"project_two_name"}
-            stateVar={applicantEditForm}
-            setFunction={setApplicantEditForm}
-          />
-          <RegisterUrlInput
-            label={"Technical Project 2"}
-            value={applicantEditForm["project_two"]}
-            formKey={"project_two"}
-            stateVar={applicantEditForm}
-            setFunction={setApplicantEditForm}
-          />
-          <RegisterTextAreaInput
-            label={"Project 2 Details"}
-            formKey={"project_two_details"}
-            value={applicantEditForm["project_two_details"]}
-            stateVar={applicantEditForm}
-            setFunction={setApplicantEditForm}
-            placeholder={"A brief description of this project....."}
-          />
-        </div>
-      </section>
+      <ProjectLinkInputs 
+      stateVar={applicantEditForm}
+      setFunction={setApplicantEditForm}/>
 
       <SkillsCheckboxes
         skillsIdArr={applicantSkillIds}
