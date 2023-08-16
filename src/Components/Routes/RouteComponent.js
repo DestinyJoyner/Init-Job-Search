@@ -7,7 +7,6 @@ import Jobs from "../../Pages/Jobs.js";
 import JobsShow from "../Job/JobsShow.js";
 import User from "../../Pages/User.js";
 import JobProvider from "../../Providers/JobProvider.js";
-import RecruiterProvider from "../../Providers/RecruiterProvider.js"
 import Recruiter from "../../Pages/Recruiter.js";
 import Register from "../../Pages/Register.js";
 import Login from "../../Pages/Login.js";
@@ -29,19 +28,12 @@ function RouteComponent() {
         </Route>
         {/* RECRUITER ROUTES */}
         <Route path="recruiter">
-          <Route
-            index
-            element={
-              <RecruiterProvider>
-                <Recruiter />
-              </RecruiterProvider>
-            }
-          />
+          <Route index element={<Recruiter />} />
         </Route>
         {/* JOBS ROUTES */}
         <Route path="jobs">
           <Route index element={<Jobs />} />
-          <Route path="new" element={<JobForm edit = {false} />} />
+          <Route path="new" element={<JobForm edit={false} />} />
           <Route path=":jobID">
             <Route
               index

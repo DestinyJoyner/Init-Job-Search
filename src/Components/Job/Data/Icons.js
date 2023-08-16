@@ -9,6 +9,7 @@ import { MdWorkOutline, MdOutlineMail, MdLockOutline } from "react-icons/md";
 import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
 import { BiInfoCircle, BiError } from "react-icons/bi";
 import { IoShieldCheckmarkOutline } from "react-icons/io5"
+import { GrEdit } from "react-icons/gr"
 
 const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
 
@@ -49,6 +50,9 @@ const emailValid = <IoShieldCheckmarkOutline color={"green"} size={"1.4em"} />
 
 const emailInvalid = <BiError color ={"rgb(186, 26, 26)"} size={"1.4em"} />
 
+// Edit
+const editPencil = <GrEdit />
+
 export {
     jobCompany,
     jobLocation,
@@ -68,5 +72,6 @@ export {
     loginPassword,
     loginEmail,
     emailValid,
-    emailInvalid
+    emailInvalid,
+    editPencil
 }

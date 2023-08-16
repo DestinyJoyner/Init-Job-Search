@@ -13,8 +13,9 @@
 .recruiter-job-company-logo {
     grid-column: 1;
     grid-row: 1/4;
-    height: 50px;
-    max-width: 50px;
+    height: 40px;
+    min-width: 40px;
+   max-width: 100%;
 }
 
 .recruiter-job-details {

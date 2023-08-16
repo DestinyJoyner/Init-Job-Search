@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useJobProvider } from "../../Providers/JobProvider";
 import { useContextProvider } from "../../Providers/Provider";
+import { useNavProvider } from "../../Providers/NavProvider";
 import { v4 as uuidv4 } from "uuid";
 import Header from "../Job/Header.js";
 import ApplicantCard from "./ApplicantCard";
@@ -10,7 +11,7 @@ import "./Applicants.css";
 
 export default function Applicants() {
   const { recruiterJobs, recruiterID, showAccess, setShowAccess, jobID, isSignedIn, isRecruiterAcc } = useJobProvider();
-  const {setAppHeader} = useContextProvider()
+  const {setAppHeader} = useNavProvider()
   const navigate = useNavigate();
   const [applicants, setApplicants] = useState([]);
   const [thisJob, setThisJob] = useState({});
@@ -23,9 +24,9 @@ export default function Applicants() {
     if (filter && filter.users) {
       setApplicants(filter.users);
     }
-    if(isSignedIn || !showAccess || !isRecruiterAcc ){
-      navigate("/not-found")
-    }
+    // if( !isRecruiterAcc ){
+    //   navigate("/not-found")
+    // }
   }, [jobID, recruiterJobs.length]);
   useEffect(() => setAppHeader("Applicants"), [])
 // applicants page add skills or corresponding skills for applicant/ space for more info on job posting etc..... -> alter color scheme???

@@ -14,11 +14,11 @@ function JobsShow() {
   const { API, axios, userID, isRecruiterAcc, isSignedIn } =
     useContextProvider();
   const { setAppHeader } = useNavProvider();
-  const { jobID, editAccess, jobDetails, applied, jobSkills } =
+  const { jobID, editAccess, jobDetails, jobSkills } =
     useJobProvider();
   const TASK = process.env.REACT_APP_TASK_BREAK;
   const navigate = useNavigate();
-  const [reload, setReload] = useState(false);
+  const [applied, setApplied] = useState(false);
   const [jobDetailsToggle, setJobDetailsToggle] = useState("description");
 
   function deleteJob() {
@@ -35,13 +35,21 @@ function JobsShow() {
     };
     axios
       .post(`${API}/user-jobs`, obj)
-      .then(() => setReload(!reload))
+      .then(({data}) => setApplied(data.date_applied))
       .catch((err) => console.log(err));
   }
 
-  useEffect(() => {}, [reload]);
-
-  useEffect(() => setAppHeader("Job Details"), []);
+  useEffect(() => {
+    setAppHeader("Job Details")
+    if(userID && jobID){
+      axios.get(`${API}/user-jobs/${userID}/${jobID}`)
+      .then(({data}) => 
+      data.date_applied ? 
+      setApplied(data.date_applied) : 
+      null)
+      .catch(err => console.log(err))
+    }
+  }, []);
 
   return (
     jobDetails.id && (
@@ -127,7 +135,7 @@ function JobsShow() {
               className="jobShow_actionButtons_applied"
               onClick={() => navigate("/user")}
             >
-              APPLIED ON {convertDate(applied["date_applied"])}
+              APPLIED ON {convertDate(applied)}
             </div>
           ) : isSignedIn && !applied ? (
             <button

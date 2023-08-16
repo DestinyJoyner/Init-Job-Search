@@ -3,43 +3,33 @@ import { useNavigate, Link } from "react-router-dom";
 import { useUserProvider } from "../../Providers/UserProvider.js";
 import { useContextProvider } from "../../Providers/Provider.js";
 import { useNavProvider } from "../../Providers/NavProvider.js";
-import Header from "../Job/Header.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
-import pencilBlack from "../../Assets/pencil-black.png";
-import pencilGrey from "../../Assets/pencil-grey.png";
+import { convertDate } from "../Functions/ConvertFunctions/ConversionFunctions.js";
+import { editPencil } from "../Job/Data/Icons.js";
 import "./UserProfile.css";
+// edit page, keep icon on top of form??
 
 export default function UserProfile() {
+  const { loading, setLoading, isRecruiterAcc, userID } = useContextProvider();
+  const { userJobs, email, applicantDetails } = useUserProvider();
+  const { setAppHeader } = useNavProvider();
   const navigate = useNavigate();
-  const {
-    userProfile,
-    userJobs,
-    isSignedIn,
-    setIsSignedIn,
-    theme,
-    isRecruiterAcc,
-    email,
-    userID,
-    
-  } = useUserProvider();
-  const {setAppHeader} = useNavProvider()
-  const {setLoading} = useContextProvider()
+
   const [viewLess, setViewLess] = useState(true);
 
   useEffect(() => {
     if (isRecruiterAcc && !userID) {
       navigate("/recruiter");
+    } 
+    if(isRecruiterAcc){
+      setAppHeader("Applicant Profile")
     }
     else {
-      setAppHeader("Profile")
-      setLoading(false)
+      setAppHeader("Profile");
     }
   }, []);
+  useEffect(() => setLoading(false), [loading])
 
-  const dateFormat = (date) => {
-    const newDate = date.split("T")[0].split("-");
-    return `${newDate[1]}/${newDate[2]}/${newDate[0].substring(2)}`;
-  };
 
   const mapJobs = (jobs) => {
     const val = viewLess ? 2 : jobs.length;
@@ -51,7 +41,7 @@ export default function UserProfile() {
             <Link to={`/jobs/${id}`}>{title}</Link>
           </strong>
           <br />
-          <em>{company}</em> - {dateFormat(date_applied)}
+          <em>{company}</em> - {convertDate(date_applied)}
         </p>
       ) : null
     );
@@ -68,42 +58,41 @@ export default function UserProfile() {
         </div>
       )}
 
-      {userProfile.id && (
+      {applicantDetails.id && (
         <>
-          {isRecruiterAcc && <Header header={"Applicant Profile"} />}
           <div className="profile">
             <div className="top-profile">
               <div>
                 <p>Name</p>
                 <p className="bold label-spacing">
-                  {userProfile["first_name"] + " " + userProfile["last_name"]}
+                  {applicantDetails["first_name"] + " " + applicantDetails["last_name"]}
                 </p>
                 <br />
                 <p>Education</p>
-                <p className="bold label-spacing">{userProfile.education}</p>
+                <p className="bold label-spacing">{applicantDetails.education}</p>
                 <br />
                 <p>Skills & Technologies</p>
                 <SkillsComponent
                   // sorting ascending for skill ids
-                  skillsArr={userProfile.skills["skill_ids"].sort(
+                  skillsArr={applicantDetails.skills["skill_ids"].sort(
                     (a, b) => a - b
                   )}
                   justList={true}
                 />
               </div>
               <div className="icon-edit">
-                {/* <img id="icon-user" src={userIcon} alt="user icon" /> */}
-                <div id="icon-user"><p>{userProfile["first_name"].charAt(0) + userProfile["last_name"].charAt(0)}</p></div>
+                <div id="icon-user">
+                  <p>
+                    {applicantDetails["first_name"].charAt(0) +
+                      applicantDetails["last_name"].charAt(0)}
+                  </p>
+                </div>
                 {!isRecruiterAcc && (
                   <button
                     onClick={() => navigate(`/user/edit`)}
                     className="profile-button"
                   >
-                    EDIT{" "}
-                    <img
-                      src={theme === "light" ? pencilBlack : pencilGrey}
-                      alt="pencil"
-                    />
+                    EDIT {editPencil}
                   </button>
                 )}
               </div>
@@ -112,8 +101,8 @@ export default function UserProfile() {
             <p>Portfolio Projects</p>
             <ul className="portfolio">
               <li className="bold label-spacing">
-                {userProfile["project_one"] ? (
-                  <a href={userProfile["project_one"]} target="_blank">
+                {applicantDetails["project_one"] ? (
+                  <a href={applicantDetails["project_one"]} target="_blank">
                     Project one
                   </a>
                 ) : (
@@ -121,8 +110,8 @@ export default function UserProfile() {
                 )}
               </li>
               <li className="bold">
-                {userProfile["project_two"] ? (
-                  <a href={userProfile["project_two"]} target="_blank">
+                {applicantDetails["project_two"] ? (
+                  <a href={applicantDetails["project_two"]} target="_blank">
                     Project two
                   </a>
                 ) : (
@@ -133,7 +122,7 @@ export default function UserProfile() {
             <br />
             <p>About me</p>
             <p className="bio-section bold label-spacing">
-              {userProfile.bio || "add a short bio"}
+              {applicantDetails.bio || "add a short bio"}
             </p>
             <br />
             {isRecruiterAcc && (
