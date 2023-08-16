@@ -8,7 +8,7 @@ function ProjectLinkInputs({stateVar, setFunction}) {
     return (
         <>
         <section className="projectLinkInputs_header">
-        <span className="projectLinkInputs_header__label">
+        <span className="projectLinkInputs_header_label">
           My Technical Projects
         </span>
         <span className="projectLinkInputs_header_helpText">

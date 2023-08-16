@@ -7,12 +7,12 @@
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 6vh 6vh 10vh 4vh 30vh 21vh 3vh;
-  row-gap: 2vh;
-  column-gap: 2vw;
+  row-gap: 2.5vh;
+  column-gap: 3vw;
 
   .registerFormInput_label {
     & span {
-        font-size: 14px;
+      font-size: 14px;
     }
     & input {
       font-size: 18px;
@@ -31,12 +31,20 @@
   .applicantFormTwo_form_input_url_label {
     grid-column: span 2;
     & span {
-        font-size: 14px;
+      font-size: 14px;
     }
   }
+
+  .applicantFormTwo_form_input_textarea_label {
+    & span {
+      position: relative;
+      left: 1vw;
+    }
+  }
+
   & label {
     & textarea {
-        width: 94%;
+      width: 94%;
       font-size: 16px;
       margin-top: 1vh;
       height: 6vh;
@@ -50,7 +58,7 @@
   .skillsCheckboxes {
     grid-row: 6;
     grid-column: span 2;
-    height: 16vh;
+    height: 18vh;
   }
 
   &_submitButton {

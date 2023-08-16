@@ -9,7 +9,7 @@ import ProjectLinkInputs from "../../ProjectLinkInputs/ProjectLinkInputs";
 
 import "./ApplicantProfileEditForm.scss";
 
-function ApplicantProfileEditForm(props) {
+function ApplicantProfileEditForm() {
   const {
     applicantEditForm,
     setApplicantEditForm,
