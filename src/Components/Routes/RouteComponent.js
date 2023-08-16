@@ -5,7 +5,7 @@ import Error from "../../Pages/Error.js";
 import Home from "../../Pages/Home.js";
 import Jobs from "../../Pages/Jobs.js";
 import JobsShow from "../Job/JobsShow.js";
-import User from "../../Pages/User.js";
+import Applicant from "../../Pages/Applicant.js";
 import JobProvider from "../../Providers/JobProvider.js";
 import Recruiter from "../../Pages/Recruiter.js";
 import Register from "../../Pages/Register.js";
@@ -23,7 +23,7 @@ function RouteComponent() {
         <Route path="register" element={<Register />} />
         {/* USER ROUTES */}
         <Route path="user">
-          <Route index element={<User />} />
+          <Route index element={<Applicant />} />
           <Route path="edit" element={<Edit />} />
         </Route>
         {/* RECRUITER ROUTES */}

@@ -18,8 +18,8 @@ function ApplicantProfileHeader({applicantDetails, applicantSkills}) {
             <SkillsComponent justList={true}
             skillsArr={applicantSkills}/>
           </div>
-          <div className="applicantProfile_header_about">
-            <span className="applicantProfile_header_about_header">About Me:</span>
+          <div className="applicantProfile_sectionHeader applicantProfile_header_about">
+            <span className="applicantProfile_sectionHeader_text">About Me:</span>
             <p className="applicantProfile_header_about_text">{bio} </p>
           </div>
         </section>

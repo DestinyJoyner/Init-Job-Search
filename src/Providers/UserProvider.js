@@ -20,7 +20,7 @@ function UserProvider({ children }) {
   const [editForm, setEditForm] = useState({});
   const [userSkills, setUserSkills] = useState([]);
   const [userJobs, setUserJobs] = useState([]);
-  const [email, setEmail] = useState("");
+  const [applicantEmail, setApplicantEmail] = useState("");
   const [applicantDetails, setApplicantDetails] = useState({})
   const [applicantJobs, setApplicantJobs] = useState([])
   const [applicantSkillIds, setApplicantSkillIds] = useState([])
@@ -30,7 +30,7 @@ function UserProvider({ children }) {
     userID
       ? axios
           .get(`${API}/logins/${userID}`)
-          .then(({ data }) => setEmail(data.email))
+          .then(({ data }) => setApplicantEmail(data.email))
           .catch((error) => console.log(error))
       : null;
   }, [userID]);
@@ -73,7 +73,7 @@ function UserProvider({ children }) {
         setEditForm,
         userSkills,
         setUserSkills,
-        email,
+        applicantEmail,
         applicantDetails,
          setApplicantDetails,
          applicantJobs,

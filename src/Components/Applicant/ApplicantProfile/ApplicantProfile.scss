@@ -1,15 +1,32 @@
 .applicantProfile {
-  height: 88vh;
-  padding-bottom: 3vh;
-  border: 1px solid red;
-  grid-template-rows: 30vh 15vh 40vh;
-  // background-color: var(--init-mint);
+  height: 91vh;
+// //   padding-bottom: 3vh;
+  grid-template-rows: 28vh 8vh 48vh 5vh;
+//   background: linear-gradient(
+//     90deg,
+//     rgb(83, 215, 199) 55%,
+//     rgba(12, 189, 189, 1) 100%
+//   );
+
+
+
+  &_sectionHeader {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5vh;
+    &_text {
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: underline;
+    text-decoration-color: var(--init-mint);
+    }
+  }
 
   &_header {
+    
     padding: 0vh 0 0 1vw;
     width: 98%;
     height: 100%;
-    border: 1px solid green;
     display: grid;
     align-items: center;
     grid-template-columns: 25% 75%;
@@ -60,20 +77,47 @@
       width: 92%;
       height: fit-content;
       margin-left: 3vw;
-     display: flex;
-     flex-direction: column;
-     row-gap: .5vh;
-      &_header {
-        font-weight: 600;
-        font-size: 18px;
-        text-decoration: underline;
-        text-decoration-color: var(--init-mint);
-      }
+     .applicantProfile_sectionHeader_text {
+        text-decoration-color: var(--init-charcoal);
+     }
       &_text {
         height: fit-content;
         max-height: 10vh;
         overflow-y: scroll;
       }
     }
+  }
+  &_applicantDetails {
+    // background-color: white;
+    text-indent: 1vw;
+    border-radius: 10px;
+    padding-top: 1vh;
+    height: 48vh;
+    width: 94%;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-rows: 8vh 29vh 6vh;
+    row-gap: 1vh;
+    .applicantProfile_sectionHeader {
+        &_text {
+            font-size: 24px;
+        &_span {
+            font-size: 18px;
+        }
+        }
+ }   
+ &_projects {
+    display: grid;
+    grid-template-rows: 5vh 12vh 12vh;
+    &_link{
+        font-size: 22px;
+    }
+
+ }
+  }
+
+  &_edit {
+    font-size: 28px;
+    align-self: flex-end;
   }
 }
