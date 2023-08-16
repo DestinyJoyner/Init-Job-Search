@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../../Providers/Provider";
 import { useNavProvider } from "../../Providers/NavProvider";
 import { useJobProvider } from "../../Providers/JobProvider";
+import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
 import { v4 as uuidv4 } from "uuid";
 import SliderButtons from "../SliderButton/SliderButtons.js";
 import SkillsComponent from "./SkillsComponent";
@@ -14,12 +15,14 @@ function JobsShow() {
   const { API, axios, userID, isRecruiterAcc, isSignedIn } =
     useContextProvider();
   const { setAppHeader } = useNavProvider();
-  const { jobID, editAccess, jobDetails, jobSkills } =
+  const { jobID, jobDetails, jobSkills } =
     useJobProvider();
+  const { editAccess } = useRecruiterProvider()
   const TASK = process.env.REACT_APP_TASK_BREAK;
   const navigate = useNavigate();
   const [applied, setApplied] = useState(false);
   const [jobDetailsToggle, setJobDetailsToggle] = useState("description");
+
 
   function deleteJob() {
     axios

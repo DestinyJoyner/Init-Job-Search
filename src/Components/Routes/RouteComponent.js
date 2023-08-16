@@ -7,6 +7,7 @@ import Jobs from "../../Pages/Jobs.js";
 import JobsShow from "../Job/JobsShow.js";
 import Applicant from "../../Pages/Applicant.js";
 import JobProvider from "../../Providers/JobProvider.js";
+import RecruiterProvider from "../../Providers/RecruiterProvider.js";
 import Recruiter from "../../Pages/Recruiter.js";
 import Register from "../../Pages/Register.js";
 import Login from "../../Pages/Login.js";
@@ -39,7 +40,9 @@ function RouteComponent() {
               index
               element={
                 <JobProvider>
+                  <RecruiterProvider>
                   <JobsShow />
+                  </RecruiterProvider>
                 </JobProvider>
               }
             />
