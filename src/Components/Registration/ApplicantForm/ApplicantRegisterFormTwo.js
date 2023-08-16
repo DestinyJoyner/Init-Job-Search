@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserProvider } from "../../../Providers/UserProvider";
+import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import SkillsComponent from "../../Job/SkillsComponent";
 import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
 import RegisterUrlInput from "../../FormInputs/RegisterFormInputs/RegisterUrlInput";
+import SkillsCheckboxes from "../../SkillsCheckboxes/SkillsCheckboxes";
 import { handleSkillsCheckbox } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
 import { handleApplicantFormTwoSubmit } from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
 import { asterisk } from "../../Job/Data/Icons";
@@ -13,6 +15,7 @@ import "./ApplicantFormTwo.scss";
 function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
   const { setAppHeader } = useNavProvider();
   const { applicantDetails } = useUserProvider();
+  const { setLoading } = useContextProvider()
   const navigate = useNavigate();
   const [applicantFormTwo, setApplicantFormTwo] = useState(applicantDetails);
   const [applicantFormSkills, setApplicantFormSkills] = useState([]);
@@ -24,6 +27,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
 
   useEffect(() => {
     setApplicantFormTwo(applicantDetails);
+    setLoading(false)
   }, [applicantDetails]);
 
   return (
@@ -67,7 +71,12 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           setFunction={setApplicantFormTwo}
         />
 
-        <section className="applicantFormTwo_form_skills">
+        <SkillsCheckboxes 
+         skillsIdArr={applicantFormSkills} 
+         setSkillIdArr={setApplicantFormSkills} formStateVar={applicantFormTwo} formSetFunction={setApplicantFormTwo}
+        />
+
+        {/* <section className="applicantFormTwo_form_skills">
           <span className="applicantFormTwo_form_skills_header">
             My Skills & Technologies
           </span>
@@ -87,7 +96,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
               )
             }
           />
-        </section>
+        </section> */}
 
         <input
           className="applicantFormTwo_form_submitButton"

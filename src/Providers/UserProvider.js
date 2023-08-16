@@ -17,6 +17,7 @@ function UserProvider({ children }) {
   const [applicantDetails, setApplicantDetails] = useState({});
   const [applicantJobs, setApplicantJobs] = useState([]);
   const [applicantSkillIds, setApplicantSkillIds] = useState([]);
+  const [applicantEditForm, setApplicantEditForm] = useState({})
 
   useEffect(() => {
     if (userID) {
@@ -34,7 +35,7 @@ function UserProvider({ children }) {
         .get(`${API}/users/${userID}`)
         .then(({ data }) => {
           setApplicantDetails(data);
-          setEditForm(data);
+          setApplicantEditForm(data);
           setApplicantSkillIds(data.skills["skill_ids"]);
         })
         .catch((error) => {
@@ -56,8 +57,6 @@ function UserProvider({ children }) {
       value={{
         userJobs,
         setUserJobs,
-        editForm,
-        setEditForm,
         userSkills,
         setUserSkills,
         applicantEmail,
@@ -65,6 +64,9 @@ function UserProvider({ children }) {
         setApplicantDetails,
         applicantJobs,
         applicantSkillIds,
+        setApplicantSkillIds,
+        applicantEditForm,
+        setApplicantEditForm
       }}
     >
       {children}

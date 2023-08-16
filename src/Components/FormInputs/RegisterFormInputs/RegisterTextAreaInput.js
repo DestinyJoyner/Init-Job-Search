@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions";
 
 function RegisterTextAreaInput({label,formKey, value, placeholder, stateVar, setFunction}) {
-    const remainingChars = value ? 160 - value.length : 160
+    const remainingChars = value ? 255 - value.length : 255
 
     useEffect(() => {},[value])
 
@@ -12,7 +12,7 @@ function RegisterTextAreaInput({label,formKey, value, placeholder, stateVar, set
             <span className="applicantFormTwo_form_input_textarea_label_helpText">Remaining Chars: {remainingChars}</span>
             <textarea 
             id={formKey}
-            maxLength={160}
+            maxLength={255}
             value={value}
             placeholder={placeholder}
             onChange={(event) => handleFormInput(event, stateVar, setFunction)}

@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import About from "../../Pages/About.js";
-import Edit from "../../Pages/Edit.js";
+import ApplicantEdit from "../../Pages/ApplicantEdit.js";
 import Error from "../../Pages/Error.js";
 import Home from "../../Pages/Home.js";
 import Jobs from "../../Pages/Jobs.js";
@@ -24,7 +24,7 @@ function RouteComponent() {
         {/* USER ROUTES */}
         <Route path="user">
           <Route index element={<Applicant />} />
-          <Route path="edit" element={<Edit />} />
+          <Route path="edit" element={<ApplicantEdit />} />
         </Route>
         {/* RECRUITER ROUTES */}
         <Route path="recruiter">

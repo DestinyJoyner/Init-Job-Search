@@ -1,0 +1,49 @@
+.skillsCheckboxes {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 15% 85%;
+    height: 15vh;
+    &_label {
+      grid-row: 1;
+      grid-column: 1;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    &_helpText {
+      grid-row: 1;
+      grid-column: 2;
+      font-size: 14px;
+      font-style: italic;
+    }
+    .skills-checkboxes {
+     
+      border-top: 1px solid var(--init-mint);
+      border-bottom: 1px solid var(--init-mint);
+      overflow-y: scroll;
+      grid-row: 2;
+      grid-column: span 2;
+      width:100%;
+      height: 100%;
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4,1fr);
+      column-gap: 3vw;
+      & label {
+        
+        display: flex;
+        align-items: center;
+        
+
+        & input {
+          height: 1.2em;
+          width: 1.2em;
+        }
+        & span {
+          margin-left: 2vw;
+          font-size: 18px;
+        }
+      }
+    }
+  }

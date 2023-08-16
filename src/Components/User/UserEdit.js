@@ -5,7 +5,6 @@ import { useUserProvider } from "../../Providers/UserProvider.js";
 import { useContextProvider } from "../../Providers/Provider.js";
 import { useNavProvider } from "../../Providers/NavProvider.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
-// import userIcon from "../../Assets/USER.png";
 import "./UserEdit.css";
 
 
