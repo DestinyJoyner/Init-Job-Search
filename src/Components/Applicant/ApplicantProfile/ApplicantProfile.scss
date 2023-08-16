@@ -1,3 +1,77 @@
 .applicantProfile {
-    
+  height: 88vh;
+  padding-bottom: 3vh;
+  border: 1px solid red;
+  grid-template-rows: 30vh 15vh 40vh;
+  // background-color: var(--init-mint);
+
+  &_header {
+    padding: 2vh 0 0 1vw;
+    width: 98%;
+    height: 100%;
+    border: 1px solid green;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 55% 45%;
+
+    &_icon {
+      grid-column: 1;
+      background-color: var(--init-charcoal);
+      border: 2px solid var(--init-background);
+      color: white;
+      border-radius: 50%;
+      height: 90px;
+      width: 90px;
+      font-size: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &_details {
+      padding-left: 3vw;
+      grid-column: 2;
+      width: 90%;
+      height: 13vh;
+      display: grid;
+      grid-template-rows: 4vh 4vh 5vh;
+      align-items: center;
+
+      &_name {
+        font-weight: 600;
+        font-size: 24px;
+      }
+      .skills-component {
+        height: 4vh;
+        width: 90%;
+        background-color: white;
+        border: 2px solid var(--init-mint);
+        border-radius: 20px;
+        align-items: center;
+        & svg {
+          height: 1.6em;
+          width: 1.6em;
+        }
+      }
+    }
+    &_about {
+      grid-column: span 2;
+      width: 85%;
+      margin-left: 3vw;
+      display: grid;
+      row-gap: .5vh;
+      &_header {
+        font-weight: 600;
+        font-size: 18px;
+        text-decoration: underline;
+        text-decoration-color: var(--init-mint);
+      }
+      &_text {
+        height: fit-content;
+        max-height: 8vh;
+        overflow-y: scroll;
+      }
+    }
+  }
 }

@@ -36,7 +36,7 @@ function UserProvider({ children }) {
   }, [userID]);
 
   useEffect(() => {
-    
+    setLoading(true)
     if (userID !== null) {
       axios
         .get(`${API}/users/${userID}`)
@@ -44,7 +44,7 @@ function UserProvider({ children }) {
           setApplicantDetails(data)
           setEditForm(data);
           setApplicantSkillIds(data.skills["skill_ids"]);
-          setLoading(false)
+          // setLoading(false)
         })
         .catch((error) => {
           console.log(error);
@@ -60,6 +60,8 @@ function UserProvider({ children }) {
     }
     
   }, [isSignedIn, userID]);
+
+
   
 
   return (
