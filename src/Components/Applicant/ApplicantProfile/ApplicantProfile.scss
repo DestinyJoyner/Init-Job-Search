@@ -6,7 +6,7 @@
   // background-color: var(--init-mint);
 
   &_header {
-    padding: 2vh 0 0 1vw;
+    padding: 0vh 0 0 1vw;
     width: 98%;
     height: 100%;
     border: 1px solid green;
@@ -57,10 +57,12 @@
     }
     &_about {
       grid-column: span 2;
-      width: 85%;
+      width: 92%;
+      height: fit-content;
       margin-left: 3vw;
-      display: grid;
-      row-gap: .5vh;
+     display: flex;
+     flex-direction: column;
+     row-gap: .5vh;
       &_header {
         font-weight: 600;
         font-size: 18px;
@@ -69,7 +71,7 @@
       }
       &_text {
         height: fit-content;
-        max-height: 8vh;
+        max-height: 10vh;
         overflow-y: scroll;
       }
     }
