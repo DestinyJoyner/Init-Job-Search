@@ -24,6 +24,8 @@ const {
   userID,
   isSignedIn,
   setIsSignedIn,
+  setLoading,
+  loading
 } =  useContextProvider()
   const {setAppHeader} = useNavProvider()
 
@@ -78,7 +80,15 @@ const {
       : navigate("/user");
   };
 
-  useEffect(() => setAppHeader("Edit Profile"), [])
+  useEffect(() =>
+    setAppHeader("Edit Profile")
+ , [])
+
+  useEffect(() => {
+    if(editForm.id){
+        setLoading(false)
+    }
+  },[editForm])
 
   return (
     <div>

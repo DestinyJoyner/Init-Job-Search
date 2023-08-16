@@ -45,9 +45,16 @@ function ApplicantProfile() {
 
         }
 
-        <Link
-        className="applicantProfile_edit" 
-        to="/user/edit">EDIT PROFILE</Link>
+        {
+            profileInfoToggle === "details" ?
+            <Link
+            className="applicantProfile_edit" 
+            to="/user/edit">EDIT PROFILE</Link> :
+            <Link
+            className="applicantProfile_edit" 
+            to="/jobs">SEARCH JOBS</Link>
+        }
+       
       </div>
     )
   );
