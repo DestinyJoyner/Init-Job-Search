@@ -1,4 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useContextProvider } from "./Provider";
 
 export const RecruiterContextData = createContext();
@@ -7,45 +8,71 @@ export function useRecruiterProvider() {
 }
 
 function RecruiterProvider({ children }) {
-  const { API, axios, theme, setIsSignedIn, setAuthToken, isRecruiterAcc, setIsRecruiterAcc, setUserID, recruiterID, setRecruiterID, setLoading, loading } =
-    useContextProvider();
+  const {
+    API,
+    axios,
+    isRecruiterAcc,
+    recruiterID,
+    setLoading,
+  } = useContextProvider();
 
-  const [recruiterData, setRecruiterData] = useState({});
-  const [unlockRec, setUnlockRec] = useState(false)
+  const { jobID } = useParams();
 
-  useEffect(() => {
-    recruiterID
-      ? axios
-          .get(`${API}/recruiters/${recruiterID}`)
-          .then((res) => {
-            setLoading(false)
-            setRecruiterData(res.data)
-          })
-          .catch((error) => console.log(error))
-      : null;
-  }, [recruiterID]);
+  const [recruiterDetails, setRecruiterDetails] = useState({});
+  const [recruiterJobs, setRecruiterJobs] = useState([]);
+  const [editAccess, setEditAccess] = useState(false);
+  const [showAccess, setShowAccess] = useState(isRecruiterAcc);
+  const [unlockRec, setUnlockRec] = useState(false);
 
   useEffect(() => {
-    setLoading(false)
-  }, [])
+    if (recruiterID) {
+      axios
+        .get(`${API}/recruiters/${recruiterID}`)
+        .then(({ data }) => {
+          setRecruiterDetails(data)
+          setRecruiterJobs(data["jobs_posted"]);
+          if (jobID) {
+            const applicantAccess = data["jobs_posted"].find(
+              ({ id }) => id === +jobID
+            );
+            if (applicantAccess) {
+              setShowAccess(true);
+            } else {
+              setShowAccess(false);
+            }
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+    if (jobID && recruiterID) {
+      axios
+        .get(`${API}/jobs/${jobID}`)
+        .then(({ data }) => {
+          if (data["recruiter_id"] === +recruiterID) {
+            setEditAccess(true);
+          } else {
+            if (!editAccess && !showAccess && !isRecruiterAcc)
+              navigate("/not-found");
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [recruiterID, jobID]);
+
+ 
 
   return (
     <RecruiterContextData.Provider
       value={{
-        recruiterID,
-        setRecruiterID,
-        API,
-        axios,
-        setIsSignedIn,
-        setAuthToken,
-        isRecruiterAcc,
-        setIsRecruiterAcc,
-        setUserID,
+        recruiterDetails,
+        recruiterJobs,
+        editAccess,
+        showAccess,
         setUnlockRec,
         unlockRec,
       }}
     >
-     
+      
       {children}
     </RecruiterContextData.Provider>
   );

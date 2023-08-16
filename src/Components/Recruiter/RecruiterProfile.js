@@ -11,29 +11,20 @@ import convertCompanyForLogo from "../Job/Data/CompanyLogos";
 import "./RecruiterProfile.scss";
 
 export default function RecruiterProfile() {
-  const { API, axios, isRecruiterAcc,recruiterID, } = useContextProvider()
-  // const { recruiterID, axios, API, isRecruiterAcc} =
-  //   useRecruiterProvider();
-    const {setAppHeader} = useNavProvider()
-  const [recruiterDetails, setRecruiterDetails] = useState({});
+  const { isRecruiterAcc, setLoading, loading } = useContextProvider();
+  const { recruiterDetails, recruiterJobs } = useRecruiterProvider();
+  const { setAppHeader } = useNavProvider();
 
   useEffect(() => {
     setAppHeader("Profile");
-    recruiterID
-      ? axios
-          .get(`${API}/recruiters/${recruiterID}`)
-          .then(({ data }) => setRecruiterDetails(data))
-          .catch((error) => console.log(error))
-      : null;
-  }, [recruiterID]);
+  }, []);
 
   if (!isRecruiterAcc) {
     return <NoAccess />;
   }
   return (
     recruiterDetails.id && (
-      <div 
-      className="recruiterProfile grid-center center">
+      <div className="recruiterProfile grid-center center">
         <div className="recruiterProfile_header">
           <span className="recruiterProfile_header_name">
             {`${recruiterDetails.first_name} ${recruiterDetails.last_name}`}
@@ -55,24 +46,21 @@ export default function RecruiterProfile() {
         </div>
         <hr />
         <div className="recruiterProfile_jobsPosted_header">
-          <h2>
-            Jobs Posted ({recruiterDetails.jobs_posted.length})
-          </h2>
+          <h2>Jobs Posted ({recruiterJobs.length})</h2>
           <Link to="/jobs/new">{addJob}</Link>
         </div>
-  
+
         <div className="recruiterProfile_jobsList">
-          {
-          recruiterDetails.jobs_posted.length > 0 ?
-            recruiterDetails.jobs_posted.map(e => 
-              <RecruiterJob jobObject={e} key={uuidv4()} />) :
+          {recruiterJobs.length > 0 ? (
+            recruiterJobs.map((e) => (
+              <RecruiterJob jobObject={e} key={uuidv4()} />
+            ))
+          ) : (
             <p>No Current Job Postings</p>
-          }
+          )}
         </div>
-       
-        <Link 
-        className="recruiterProfile_new-job-link" 
-        to="/jobs/new">
+
+        <Link className="recruiterProfile_new-job-link" to="/jobs/new">
           POST A JOB
         </Link>
       </div>

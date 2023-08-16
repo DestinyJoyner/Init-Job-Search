@@ -7,7 +7,7 @@ export function useNavProvider() {
 }
 
 function NavProvider({ children }) {
-const {theme, setTheme } = useContextProvider()
+const {theme } = useContextProvider()
 
 const [appHeader, setAppHeader] = useState("");
 

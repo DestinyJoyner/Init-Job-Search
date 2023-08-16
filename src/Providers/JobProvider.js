@@ -23,10 +23,6 @@ function JobProvider({ children }) {
   const [jobs, setJobs] = useState([]);
   const [jobDetails, setJobDetails] = useState({});
   const [jobSkills, setJobSkills] = useState([]);
-  const [applied, setApplied] = useState(false);
-
-  const [recruiterJobs, setRecruiterJobs] = useState([]);
-
   // Search
   const [searchResult, setSearchResult] = useState([]);
 
@@ -36,11 +32,7 @@ function JobProvider({ children }) {
   const defaultJobSearchQuery = `${API}/jobs?start=${queryStart}&limit=4`;
   const [searchQueryRoute, setSearchQueryRoute] = useState("");
 
-  const [editAccess, setEditAccess] = useState(false);
-  const [showAccess, setShowAccess] = useState(isRecruiterAcc);
-
   useEffect(() => {
-    setLoading(true);
     axios.get(`${API}/jobs`)
       .then(({ data }) => {
         setJobs(data);
@@ -50,69 +42,22 @@ function JobProvider({ children }) {
 
     axios.get(defaultJobSearchQuery)
       .then(({ data }) => {
-       
         if (data.length > 0) {
           setJobQuery(data);
-          setLoading(false);
         }
       })
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
-    if (recruiterID) {
-      axios
-        .get(`${API}/recruiters/${recruiterID}`)
-        .then(({ data }) => {
-          setRecruiterJobs(data["jobs_posted"]);
-          if (jobID) {
-            const applicantAccess = data["jobs_posted"].find(
-              ({ id }) => id === +jobID
-            );
-            if (applicantAccess) {
-              setShowAccess(true);
-            } else {
-              setShowAccess(false);
-            }
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-    if (jobID && recruiterID) {
-      axios
-        .get(`${API}/jobs/${jobID}`)
-        .then(({ data }) => {
-          if (data["recruiter_id"] === +recruiterID) {
-            setEditAccess(true);
-          } else {
-            if (!editAccess && !showAccess && !isRecruiterAcc)
-              navigate("/not-found");
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [recruiterID, jobID]);
-
-  useEffect(() => {
-    if (userID) {
-      axios
-        .get(`${API}/user-jobs/${userID}`)
-        .then(({ data }) => {
-          const match = data.find(({ id }) => id === +jobID);
-          setApplied(match);
-        })
-        .catch((err) => console.log(err));
-    }
-    if(jobID){
     axios
       .get(`${API}/jobs/${jobID}`)
       .then(({ data }) => {
         setJobDetails(data);
         setJobSkills(convertSkills(data.skills));
-        setLoading(false);
       })
       .catch((err) => console.log(err));
-    }
+    
   }, [jobID]);
 
   // useEffect for job pagination
@@ -132,8 +77,6 @@ function JobProvider({ children }) {
         setJobs,
         searchResult,
         setSearchResult,
-        recruiterJobs,
-        editAccess,
         jobQuery,
         setJobQuery,
         queryStart,
@@ -142,7 +85,6 @@ function JobProvider({ children }) {
         setSearchQueryRoute,
         jobDetails,
         jobSkills,
-        applied,
       }}
     >
       {children}

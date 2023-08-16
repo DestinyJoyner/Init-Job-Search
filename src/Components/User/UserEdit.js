@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { useUserProvider } from "../../Providers/UserProvider.js";
 import { useContextProvider } from "../../Providers/Provider.js";
+import { useNavProvider } from "../../Providers/NavProvider.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
 // import userIcon from "../../Assets/USER.png";
 import "./UserEdit.css";
@@ -11,19 +12,20 @@ import "./UserEdit.css";
 export default function UserEdit(props) {
   const navigate = useNavigate();
   const {
-    API,
-    axios,
-    userID,
     userProfile,
     editForm,
     setEditForm,
-    isSignedIn,
-    setIsSignedIn,
     userSkills,
     setUserSkills,
   } = useUserProvider();
-
-  const {setAppHeader} = useContextProvider()
+const {
+  API,
+  axios,
+  userID,
+  isSignedIn,
+  setIsSignedIn,
+} =  useContextProvider()
+  const {setAppHeader} = useNavProvider()
 
 
   const handleChange = (event) => {
