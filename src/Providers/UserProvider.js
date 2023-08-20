@@ -30,7 +30,7 @@ function UserProvider({ children }) {
 
   useEffect(() => {
     setLoading(true);
-    if (userID !== null) {
+    if (userID) {
       axios
         .get(`${API}/users/${userID}`)
         .then(({ data }) => {

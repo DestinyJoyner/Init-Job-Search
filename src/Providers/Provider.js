@@ -25,7 +25,7 @@ function Provider({ children }) {
   );
  
   const [userID, setUserID] = useState(localUserID);
-  
+  console.log(userID)
   const [recruiterID, setRecruiterID] = useState(localRecruiterID);
   
   // authToken will be manually hardcoded for now
