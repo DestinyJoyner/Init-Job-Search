@@ -36,9 +36,10 @@
         }
         &_filterIcon {
           grid-column: 3;
+          align-self: center;
             position: relative;
             right: 8vw;
-            top: 2vh;
+            // top: 2vh;
             height: 2.2em;
             width: 2.2em;
             color: var(--init-blue);
