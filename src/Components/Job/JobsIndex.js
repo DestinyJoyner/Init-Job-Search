@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useContextProvider } from "../../Providers/Provider.js";
 import { useNavProvider } from "../../Providers/NavProvider.js";
 import { useJobProvider } from "../../Providers/JobProvider.js";
 import { v4 as uuidv4 } from "uuid";
@@ -10,6 +11,7 @@ import "./JobsIndex.scss";
 
 function JobsIndex() {
   const { setAppHeader } = useNavProvider();
+  const { setLoading } = useContextProvider()
   const { jobs, queryStart, setQueryStart, jobQuery } = useJobProvider();
 
   const [hideNextButton, setHideNextButton] = useState(false);
@@ -24,6 +26,10 @@ function JobsIndex() {
       setHideNextButton(false)
     }
 }, [queryStart, jobQuery.length]);
+
+useEffect(() => {
+  setLoading(false)
+},[jobQuery])
 
   return (
     <div className="jobsIndex">

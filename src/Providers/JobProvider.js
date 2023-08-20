@@ -33,6 +33,7 @@ function JobProvider({ children }) {
   const [searchQueryRoute, setSearchQueryRoute] = useState("");
 
   useEffect(() => {
+    setLoading(true)
     axios.get(`${API}/jobs`)
       .then(({ data }) => {
         setJobs(data);
@@ -62,10 +63,12 @@ function JobProvider({ children }) {
 
   // useEffect for job pagination
   useEffect(() => {
+    setLoading(true)
     axios
       .get(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`)
       .then(({ data }) => setJobQuery(data))
       .catch((err) => console.log(err));
+
       console.log(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`, "api search query")
   }, [queryStart, searchQueryRoute]);
 
