@@ -6,6 +6,7 @@ import RegisterTextInput from "../../FormInputs/RegisterFormInputs/RegisterTextI
 import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
 import SkillsCheckboxes from "../../SkillsCheckboxes/SkillsCheckboxes";
 import ProjectLinkInputs from "../../ProjectLinkInputs/ProjectLinkInputs";
+import { applicantSubmitEditForm } from "../../Functions/ApplicantFunctions/ApplicantFunctions";
 
 import "./ApplicantProfileEditForm.scss";
 
@@ -28,7 +29,9 @@ function ApplicantProfileEditForm() {
   useEffect(() => setAppHeader("Edit Profile"), []);
 
   return (
-    <form className="applicantProfileEditForm center">
+    <form 
+    onSubmit={(event) => applicantSubmitEditForm(event)}
+    className="applicantProfileEditForm center">
       <RegisterTextInput
         label={"First Name"}
         value={applicantEditForm["first_name"]}

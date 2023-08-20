@@ -81,6 +81,12 @@
       }
     }
   }
+  .sliderButton{
+    &_buttons_button, &_slider{
+      height: 4vh;
+    }
+  }
+  
   &_applicantDetails,
   &_appliedJobs {
     align-self: normal;

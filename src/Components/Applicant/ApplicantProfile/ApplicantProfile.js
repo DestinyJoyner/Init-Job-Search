@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useContextProvider } from "../../../Providers/Provider";
-import NoAccess from "../../App/NoAccess.js";
 import ApplicantProfileHeader from "./ApplicantProfileHeader";
 import SliderButtons from "../../SliderButton/SliderButtons";
 import ApplicantProfileDetails from "./ApplicantProfileDetails";
@@ -22,10 +21,6 @@ function ApplicantProfile() {
     }
   },[applicantDetails])
  
-
-  if (!userID) {
-    return <NoAccess />;
-  }
   return (
     !loading && (
       <div className="applicantProfile grid-center">

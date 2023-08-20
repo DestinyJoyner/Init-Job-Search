@@ -45,7 +45,6 @@ function SearchBar2() {
     // if (!isRemote) {
     //   searchRoute += `&remote=false`;
     // }
-    // console.log(searchRoute)
 
     setSearchQueryRoute(searchRoute)
 

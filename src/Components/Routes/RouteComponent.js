@@ -34,7 +34,8 @@ function RouteComponent() {
         {/* JOBS ROUTES */}
         <Route path="jobs">
           <Route index element={<Jobs />} />
-          <Route path="new" element={<JobForm edit={false} />} />
+          <Route path="new" element={
+          <RecruiterProvider ><JobForm edit={false} /></RecruiterProvider>} />
           <Route path=":jobID">
             <Route
               index
@@ -47,7 +48,7 @@ function RouteComponent() {
               }
             />
             <Route path="applicants" element={<JobApplicants />} />
-            <Route path="edit" element={<JobForm edit={true} />} />
+            <Route path="edit" element={<RecruiterProvider><JobForm edit={true} /> </RecruiterProvider>} />
           </Route>
         </Route>
         {/* ABOUT ROUTE */}
