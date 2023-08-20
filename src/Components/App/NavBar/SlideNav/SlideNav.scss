@@ -16,7 +16,8 @@
   }
 
   &_close {
-    transform: translate3d(var(--slidenav), 0, 0); 
+    // transform: translate3d(var(--slidenav), 0, 0); 
+    transform: translate3d(110vw, 0, 0); 
   }
 
   &_container {

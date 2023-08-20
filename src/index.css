@@ -111,8 +111,8 @@ textarea:focus {
 }
 
 
-@media (min-width: 850px) {
+/* @media (min-width: 850px) {
   * {
-    --slidenav:calc(450px);
+    --slidenav:calc(110vw);
   }
-}
+} */
