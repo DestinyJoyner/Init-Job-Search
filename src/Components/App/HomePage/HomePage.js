@@ -39,6 +39,7 @@ function HomePage() {
 
   return (
     <div ref={refElement} className="home">
+      <ScrollArrow element={refElement} />
       <section>
         <div 
         onClick={() => {
@@ -81,7 +82,7 @@ function HomePage() {
             <BsCaretDownFill />{" "}
           </span>
 
-          <ScrollArrow element={refElement} />
+          {/* <ScrollArrow element={refElement} /> */}
         </div>
       </section>
       {/* SECOND SLIDE */}

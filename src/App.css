@@ -1,4 +1,5 @@
 .App {
   height: 92vh;
   overflow-y: scroll;
+  max-width: inherit;
 }

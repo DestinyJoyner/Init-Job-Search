@@ -15,7 +15,8 @@
 }
 
 body {
-  max-width: 450px;
+  max-width: 398px;
+  margin: 0 auto;
 }
 
 /* DARK/LIGHT THEME*/

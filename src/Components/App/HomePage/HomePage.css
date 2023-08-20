@@ -3,7 +3,9 @@
   overflow-y: scroll;
   overflow-x: hidden;
   height: 92vh;
-  width: 100%;
+  /* width: 100%; */
+  /* width: inherit; */
+  max-width: 390px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -36,10 +38,13 @@
   flex-direction: column;
   align-items: center;
   row-gap: 4vh;
-  position:fixed;
-  right: 2.5vw;
-  top: 11vh;
+  position:sticky;
+  left: 90%;
+  top: 2vh;
   z-index: 30;
+  /* right: 2.5vw;
+  top: 11vh;
+  z-index: 30; */
   /* background-color: rgba(22, 16, 16, 0.497); */
   background-color: #4c616c82;
   padding: 7px 4px;
