@@ -5,7 +5,6 @@ import { useUserProvider } from "../../Providers/UserProvider.js";
 import { useContextProvider } from "../../Providers/Provider.js";
 import { useNavProvider } from "../../Providers/NavProvider.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
-// import userIcon from "../../Assets/USER.png";
 import "./UserEdit.css";
 
 
@@ -24,6 +23,8 @@ const {
   userID,
   isSignedIn,
   setIsSignedIn,
+  setLoading,
+  loading
 } =  useContextProvider()
   const {setAppHeader} = useNavProvider()
 
@@ -78,7 +79,15 @@ const {
       : navigate("/user");
   };
 
-  useEffect(() => setAppHeader("Edit Profile"), [])
+  useEffect(() =>
+    setAppHeader("Edit Profile")
+ , [])
+
+  useEffect(() => {
+    if(editForm.id){
+        setLoading(false)
+    }
+  },[editForm])
 
   return (
     <div>

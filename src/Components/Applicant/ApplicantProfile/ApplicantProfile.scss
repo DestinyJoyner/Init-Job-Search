@@ -1,3 +1,163 @@
 .applicantProfile {
-    
+  height: 91vh;
+  // //   padding-bottom: 3vh;
+  grid-template-rows: 28vh 8vh 48vh 5vh;
+  //   background: linear-gradient(
+  //     90deg,
+  //     rgb(83, 215, 199) 55%,
+  //     rgba(12, 189, 189, 1) 100%
+  //   );
+
+  &_sectionHeader {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5vh;
+    &_text {
+      font-weight: 600;
+      font-size: 18px;
+      text-decoration: underline;
+      text-decoration-color: var(--init-mint);
+    }
+  }
+
+  &_header {
+    padding: 0vh 0 0 1vw;
+    width: 98%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 55% 45%;
+
+    &_icon {
+      grid-column: 1;
+      background-color: var(--init-charcoal);
+      border: 2px solid var(--init-background);
+      color: white;
+      border-radius: 50%;
+      height: 90px;
+      width: 90px;
+      font-size: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &_details {
+      padding-left: 3vw;
+      grid-column: 2;
+      width: 90%;
+      height: 13vh;
+      display: grid;
+      grid-template-rows: 4vh 4vh 5vh;
+      align-items: center;
+
+      &_name {
+        font-weight: 600;
+        font-size: 24px;
+      }
+      .skills-component {
+        height: 4vh;
+        width: 90%;
+        background-color: white;
+        border: 2px solid var(--init-mint);
+        border-radius: 20px;
+        align-items: center;
+        & svg {
+          height: 1.6em;
+          width: 1.6em;
+        }
+      }
+    }
+    &_about {
+      grid-column: span 2;
+      width: 92%;
+      height: fit-content;
+      margin-left: 3vw;
+      &_text {
+        height: fit-content;
+        max-height: 10vh;
+        overflow-y: scroll;
+      }
+    }
+  }
+  .sliderButton{
+    &_buttons_button, &_slider{
+      height: 4vh;
+    }
+  }
+  
+  &_applicantDetails,
+  &_appliedJobs {
+    align-self: normal;
+    text-indent: 1vw;
+    border-radius: 10px;
+    padding-top: 1vh;
+    height: fit-content;
+    max-height: 48vh;
+    width: 94%;
+    overflow-y: scroll;
+    display: grid;
+  }
+  &_applicantDetails {
+    grid-template-rows: 8vh 29vh 6vh;
+    row-gap: 1vh;
+    .applicantProfile_sectionHeader {
+      &_text {
+        font-size: 24px;
+        &_span {
+          font-size: 18px;
+        }
+      }
+    }
+    &_projects {
+      display: grid;
+      grid-template-rows: 5vh 12vh 12vh;
+      &_link {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &_appliedJobs {
+    grid-template-rows: 5vh auto;
+    .applicantProfile_sectionHeader_text {
+      font-size: 24px;
+    }
+    &_container {
+      display: grid;
+      align-items: center;
+      row-gap: 2vh;
+      &_card {
+        height: 7vh;
+        border-bottom: 1px solid var(--init-charcoal);
+        display: grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: 1fr 1fr;
+        &_title {
+          font-size: 19px;
+        }
+        &_company {
+          grid-row: 2;
+          grid-column: 1;
+          font-weight: 500;
+          font-size: 17px;
+        }
+        &_date {
+          font-weight: 500;
+        }
+      }
+    }
+    &_noJobs {
+      justify-self: center;
+      margin-top: 5vh;
+      align-self: flex-start;
+      font-size: 20px;
+    }
+  }
+
+  &_edit {
+    font-size: 28px;
+    align-self: flex-end;
+  }
 }

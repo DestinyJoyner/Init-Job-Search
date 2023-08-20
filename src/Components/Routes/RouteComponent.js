@@ -1,12 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import About from "../../Pages/About.js";
-import Edit from "../../Pages/Edit.js";
+import ApplicantEdit from "../../Pages/ApplicantEdit.js";
 import Error from "../../Pages/Error.js";
 import Home from "../../Pages/Home.js";
 import Jobs from "../../Pages/Jobs.js";
 import JobsShow from "../Job/JobsShow.js";
-import User from "../../Pages/User.js";
+import Applicant from "../../Pages/Applicant.js";
 import JobProvider from "../../Providers/JobProvider.js";
+import RecruiterProvider from "../../Providers/RecruiterProvider.js";
 import Recruiter from "../../Pages/Recruiter.js";
 import Register from "../../Pages/Register.js";
 import Login from "../../Pages/Login.js";
@@ -23,8 +24,8 @@ function RouteComponent() {
         <Route path="register" element={<Register />} />
         {/* USER ROUTES */}
         <Route path="user">
-          <Route index element={<User />} />
-          <Route path="edit" element={<Edit />} />
+          <Route index element={<Applicant />} />
+          <Route path="edit" element={<ApplicantEdit />} />
         </Route>
         {/* RECRUITER ROUTES */}
         <Route path="recruiter">
@@ -33,18 +34,21 @@ function RouteComponent() {
         {/* JOBS ROUTES */}
         <Route path="jobs">
           <Route index element={<Jobs />} />
-          <Route path="new" element={<JobForm edit={false} />} />
+          <Route path="new" element={
+          <RecruiterProvider ><JobForm edit={false} /></RecruiterProvider>} />
           <Route path=":jobID">
             <Route
               index
               element={
                 <JobProvider>
+                  <RecruiterProvider>
                   <JobsShow />
+                  </RecruiterProvider>
                 </JobProvider>
               }
             />
             <Route path="applicants" element={<JobApplicants />} />
-            <Route path="edit" element={<JobForm edit={true} />} />
+            <Route path="edit" element={<RecruiterProvider><JobForm edit={true} /> </RecruiterProvider>} />
           </Route>
         </Route>
         {/* ABOUT ROUTE */}

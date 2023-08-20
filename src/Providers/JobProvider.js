@@ -66,6 +66,7 @@ function JobProvider({ children }) {
       .get(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`)
       .then(({ data }) => setJobQuery(data))
       .catch((err) => console.log(err));
+      console.log(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`, "api search query")
   }, [queryStart, searchQueryRoute]);
 
 

@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { useContextProvider } from "../../../Providers/Provider";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useNavProvider } from "../../../Providers/NavProvider";
+import ApplicantProfile from "../ApplicantProfile/ApplicantProfile";
+import ApplicantProfileRecruiterView from "../ApplicantProfile/ApplicantProfileRecruiterView";
+import NoAccess from "../../App/NoAccess";
 
 import "./ApplicantProfilePage.scss";
 
@@ -19,12 +22,19 @@ function ApplicantProfilePage(props) {
     } else {
       setAppHeader("Profile");
     }
-    setLoading(false);
   }, []);
+  
+  if (!userID) {
+    return <NoAccess />;
+  }
 
   return (
   <div className="applicantProfile_page">
-
+    {
+      !isRecruiterAcc ? 
+      <ApplicantProfile /> :
+      <ApplicantProfileRecruiterView />
+    }
   </div>);
 }
 

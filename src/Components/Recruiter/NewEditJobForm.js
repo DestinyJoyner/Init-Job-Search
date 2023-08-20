@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useContextProvider } from "../../Providers/Provider";
 import { useNavProvider } from "../../Providers/NavProvider";
 import { useJobProvider } from "../../Providers/JobProvider";
+import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
 import TextInput from "../Job/Inputs/TextInput";
 import TextArea from "../Job/Inputs/TextArea";
 import Checkbox from "../Job/Inputs/Checkbox";
@@ -17,7 +18,8 @@ import { IoMdAddCircle } from "react-icons/io";
 import "./NewEditJobForm.css";
 
 export default function NewEditJobForm({ edit }) {
-  const { jobID, editAccess } = useJobProvider();
+  const { jobID } = useJobProvider();
+const { editAccess } = useRecruiterProvider()
   const { setAppHeader } = useNavProvider();
   const { API, axios, recruiterID, isSignedIn, isRecruiterAcc } =
     useContextProvider();

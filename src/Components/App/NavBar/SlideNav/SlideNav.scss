@@ -16,10 +16,11 @@
   }
 
   &_close {
-    transform: translate3d(110vw, 0, 0);
+    transform: translate3d(var(--slidenav), 0, 0); 
   }
 
   &_container {
+    max-width: 400px;
     display: grid;
     position: fixed;
     left: 0;
@@ -40,14 +41,16 @@
   }
 
   &_header {
+  
     grid-row: 1;
     display: grid;
     grid-template-rows: 1fr 1fr;
     align-items: center;
     height: 100%;
-    width: 110%;
+    width: 107%;
     position: relative;
-    right: 5.1vw;
+    right: 1.8vw;
+
 
     &_logo {
       grid-column: 2;
@@ -82,7 +85,7 @@
     width: 2.5em;
     color: var(--init-blue);
     position: relative;
-    right: 5vw;
+    right: 1vw;
   }
 
   &_divider {
@@ -126,4 +129,16 @@
   &_closeButton {
     color: var(--init-gold);
   }
+}
+
+@media (max-width:500px) {
+  .slideNav {
+    &_header {
+      right: 5vw;
+    }
+    &_close {
+      transform: translate3d(450px, 0, 0); 
+    }
+  }
+  
 }
