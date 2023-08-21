@@ -15,7 +15,6 @@ function JobProvider({ children }) {
   const [jobDetails, setJobDetails] = useState({});
   const [jobSkills, setJobSkills] = useState([]);
   // Search
-  // const [searchResult, setSearchResult] = useState([]);
   const [jobQuery, setJobQuery] = useState([]);
   const [queryStart, setQueryStart] = useState(0);
 
