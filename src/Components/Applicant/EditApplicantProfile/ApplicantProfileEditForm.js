@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
@@ -16,9 +17,11 @@ function ApplicantProfileEditForm() {
     setApplicantEditForm,
     applicantSkillIds,
     setApplicantSkillIds,
+    applicantDetails
   } = useUserProvider();
   const { setAppHeader } = useNavProvider();
   const { setLoading } = useContextProvider();
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (applicantEditForm.id) {
@@ -30,7 +33,7 @@ function ApplicantProfileEditForm() {
 
   return (
     <form 
-    onSubmit={(event) => applicantSubmitEditForm(event)}
+    onSubmit={(event) => applicantSubmitEditForm(event, applicantDetails, applicantEditForm, navigate)}
     className="applicantProfileEditForm center">
       <RegisterTextInput
         label={"First Name"}

@@ -1,16 +1,13 @@
-function applicantJobSortByDateDesc(arr) {
-    const sortDateDesc = arr.sort((a,b) => {
-        const dateA = new Date(a.date_applied)
-        const dateB = new Date(b.date_applied)
-        return dateB - dateA
-    })
-   return sortDateDesc
-}
+import axios from "axios";
+const API = process.env.REACT_APP_API_URL;
+
 
 function checkIfEditsWereMade(originalObj, editedObj) {
     for (const key in editedObj){
-        if(editedObj[key] !== originalObj[key]){
-            return true
+        if(key !== "skills"){
+            if(editedObj[key] !== originalObj[key]){
+                return true
+            }
         }
     }
     return false
@@ -33,8 +30,22 @@ function checkIfSkillArrWasEdited(originalArr, editedArr) {
 }
 
 
-function applicantSubmitEditForm(e,originalObj, editedObj) {
+function applicantSubmitEditForm(e,originalObj, editedObj, navigate) {
     e.preventDefault()
+    const changesToProfileDetails = checkIfEditsWereMade(originalObj, editedObj)
+
+    const changesToSkills = checkIfSkillArrWasEdited(originalObj["skills"]["skill_ids"], editedObj.skills)
+
+    if(changesToProfileDetails || changesToSkills){
+        const editedDetailsObj = {
+            profile: editedObj,
+            skills: editedObj.skills
+        }
+
+        axios.put(`${API}/users/${originalObj.id}`, editedDetailsObj)
+        .then(() => navigate("/user"))
+        .catch(err => console.log(err))
+    }
 }
 
 export {
