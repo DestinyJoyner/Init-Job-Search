@@ -110,9 +110,9 @@ textarea:focus {
   color: var(--init-background);
 }
 
-
-/* @media (min-width: 850px) {
-  * {
-    --slidenav:calc(110vw);
-  }
-} */
+/*  greyed out buttons */
+.greyed-out {
+  all: unset;
+  color: grey;
+  opacity: .5;
+}

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useContextProvider } from "../../../Providers/Provider";
@@ -7,7 +7,7 @@ import RegisterTextInput from "../../FormInputs/RegisterFormInputs/RegisterTextI
 import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
 import SkillsCheckboxes from "../../SkillsCheckboxes/SkillsCheckboxes";
 import ProjectLinkInputs from "../../ProjectLinkInputs/ProjectLinkInputs";
-import { applicantSubmitEditForm } from "../../Functions/ApplicantFunctions/ApplicantFunctions";
+import { applicantSubmitEditForm, checkIfEditsMade } from "../../Functions/ApplicantFunctions/ApplicantFunctions";
 
 import "./ApplicantProfileEditForm.scss";
 
@@ -22,11 +22,18 @@ function ApplicantProfileEditForm() {
   const { setAppHeader } = useNavProvider();
   const { setLoading } = useContextProvider();
   const navigate = useNavigate()
+  const [buttonAccess, setButtonAccess] = useState(false)
 
   useEffect(() => {
     if (applicantEditForm.id) {
       setLoading(false);
     }
+    if(Array.isArray(applicantEditForm.skills)){
+      const edited = checkIfEditsMade(applicantDetails, applicantEditForm)
+     
+      edited ? setButtonAccess(true) : setButtonAccess(false)
+    }
+   
   }, [applicantEditForm]);
 
   useEffect(() => setAppHeader("Edit Profile"), []);
@@ -89,8 +96,8 @@ function ApplicantProfileEditForm() {
       />
       
       <input 
-      className="applicantProfileEditForm_submitButton"
-      type="submit" value="SAVE" />
+      className={buttonAccess ? "applicantProfileEditForm_submitButton" : "applicantProfileEditForm_submitButton greyed-out"}
+      type={buttonAccess ? "submit" : "button"} value="SAVE" />
     </form>
   );
 }
