@@ -4,7 +4,7 @@ import { useNavProvider } from "../../Providers/NavProvider.js";
 import { useJobProvider } from "../../Providers/JobProvider.js";
 import { v4 as uuidv4 } from "uuid";
 import JobsCard from "./JobsCard";
-import SearchBar2 from "./SearchBar2.js";
+import SearchBar from "./SearchBar.js";
 import NoSearchResults from "../App/NoSearchResults/NoSearchResults.js";
 import { handlePagination } from "../Functions/SearchFunctions/JobsIndexFunctions.js";
 import "./JobsIndex.scss";
@@ -33,7 +33,7 @@ useEffect(() => {
 
   return (
     <div className="jobsIndex">
-      <SearchBar2 />
+      <SearchBar />
       <section className="jobsIndex_buttons">
       <button
         className={hidePrevButton ? "hide" : " jobsIndex_buttons_prev show"}

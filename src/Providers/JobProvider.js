@@ -11,10 +11,11 @@ export function useJobProvider() {
 function JobProvider({ children }) {
   const { API, axios, setLoading } = useContextProvider();
   const { jobID } = useParams();
+  const [jobs, setJobs] = useState([])
   const [jobDetails, setJobDetails] = useState({});
   const [jobSkills, setJobSkills] = useState([]);
   // Search
-  const [searchResult, setSearchResult] = useState([]);
+  // const [searchResult, setSearchResult] = useState([]);
   const [jobQuery, setJobQuery] = useState([]);
   const [queryStart, setQueryStart] = useState(0);
 
@@ -26,8 +27,7 @@ function JobProvider({ children }) {
     axios
       .get(`${API}/jobs`)
       .then(({ data }) => {
-        // setJobs(data);
-        setSearchResult(data);
+        setJobs(data);
       })
       .catch((error) => console.log(error));
 
@@ -68,8 +68,8 @@ function JobProvider({ children }) {
     <JobContextData.Provider
       value={{
         jobID,
-        searchResult,
-        setSearchResult,
+        jobs,
+        setJobs,
         jobQuery,
         setJobQuery,
         queryStart,
