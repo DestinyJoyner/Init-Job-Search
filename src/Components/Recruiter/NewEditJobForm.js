@@ -21,7 +21,7 @@ export default function NewEditJobForm({ edit }) {
   const { jobID } = useJobProvider();
 const { editAccess } = useRecruiterProvider()
   const { setAppHeader } = useNavProvider();
-  const { API, axios, recruiterID, isSignedIn, isRecruiterAcc } =
+  const { API, axios, recruiterID, isSignedIn, isRecruiterAcc, setLoading, loading } =
     useContextProvider();
   const navigate = useNavigate();
   const [originalData, setOriginalData] = useState({});
@@ -146,7 +146,7 @@ const { editAccess } = useRecruiterProvider()
   //   useEffect for edit
   useEffect(() => {
     if (edit) {
-      setAppHeader("Edit Job Posting");
+      setAppHeader("Edit Job");
       axios
         .get(`${API}/jobs/${jobID}`)
         .then(({ data }) => {
@@ -171,14 +171,21 @@ const { editAccess } = useRecruiterProvider()
         .catch((err) => console.log(err));
     } else {
       setAppHeader("Post New Job");
+      setLoading(false)
     }
     if (isSignedIn || !isRecruiterAcc) {
       navigate("/not-found");
     }
-  }, []);
+  }, [loading]);
+
+  useEffect(() => {
+    if(jobForm.id){
+      setLoading(false)
+    }
+  }, [jobForm])
 
   return (
-    ((isRecruiterAcc && !edit) || editAccess) && (
+    ((isRecruiterAcc && !edit) || editAccess || !loading)&& (
       <div className="job-form-page">
         <form className="job-form" onSubmit={(event) => handleSubmit(event)}>
           <TextInput

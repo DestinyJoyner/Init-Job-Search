@@ -148,13 +148,13 @@ function RegisterForm({ formObj, formType, registerPartTwo }) {
         passwordMatch={passwordMatch}
       />
 
-      {allowSubmit && (
+     
         <input
-          type="submit"
+          type={allowSubmit ? "submit" : "button"}
           value="REGISTER"
-          className="formInput_submitButton"
+          className={ allowSubmit ?"formInput_submitButton" : "formInput_submitButton greyed-out"}
         />
-      )}
+      
     </form>
   );
 }
