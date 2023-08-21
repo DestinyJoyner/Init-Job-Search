@@ -34,10 +34,15 @@ function checkIfEditsMade(originalObj, editedObj) {
     editedObj
   );
 
-  const changesToSkills = checkIfSkillArrWasEdited(
-    originalObj["skills"]["skill_ids"],
-    editedObj.skills
-  );
+  let changesToSkills = false
+  if(Array.isArray(editedObj.skills)){
+    changesToSkills = 
+    checkIfSkillArrWasEdited(
+      originalObj["skills"]["skill_ids"],
+      editedObj.skills
+    );
+  }
+ 
 
   if (changesToProfileDetails || changesToSkills) {
     return true;
