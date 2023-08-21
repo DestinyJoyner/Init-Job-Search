@@ -1,7 +1,7 @@
 # inIT Job Search Engine
 
 <p align="center">
-<img src ="/Users/destinyjoyner/9.1/inIT-My-Way/Init-Job-Search/src/Assets/LOGO.png" alt="init-logo" height="200px"/>
+<img src ="src/Assets/LOGO.png" alt="init-logo" height="200px"/>
 </p>
 
 <br>
