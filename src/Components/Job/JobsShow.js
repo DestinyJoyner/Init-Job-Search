@@ -12,7 +12,7 @@ import convertCompanyForLogo from "./Data/CompanyLogos";
 import "./JobsShow.scss";
 
 function JobsShow() {
-  const { API, axios, userID, isRecruiterAcc, isSignedIn } =
+  const { API, axios, userID, isRecruiterAcc, isSignedIn, setLoading, loading } =
     useContextProvider();
   const { setAppHeader } = useNavProvider();
   const { jobID, jobDetails, jobSkills } =
@@ -54,8 +54,10 @@ function JobsShow() {
     }
   }, []);
 
+  useEffect(() => setLoading(false), [jobDetails])
+
   return (
-    jobDetails.id && (
+    !loading && (
       <div className="jobShow">
         <section className="jobShow_header grid-center">
           <img
