@@ -1,5 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useContextProvider } from "./Provider.js";
 import { convertSkills } from "../Components/Functions/ConvertFunctions/ConversionFunctions.js";
 
@@ -9,23 +9,12 @@ export function useJobProvider() {
 }
 
 function JobProvider({ children }) {
-  const {
-    API,
-    axios,
-    userID,
-    isRecruiterAcc,
-    recruiterID,
-    setLoading,
-    loading
-  } = useContextProvider();
+  const { API, axios, setLoading } = useContextProvider();
   const { jobID } = useParams();
-  const navigate = useNavigate();
-  const [jobs, setJobs] = useState([]);
   const [jobDetails, setJobDetails] = useState({});
   const [jobSkills, setJobSkills] = useState([]);
   // Search
   const [searchResult, setSearchResult] = useState([]);
-
   const [jobQuery, setJobQuery] = useState([]);
   const [queryStart, setQueryStart] = useState(0);
 
@@ -33,15 +22,17 @@ function JobProvider({ children }) {
   const [searchQueryRoute, setSearchQueryRoute] = useState("");
 
   useEffect(() => {
-    setLoading(true)
-    axios.get(`${API}/jobs`)
+    setLoading(true);
+    axios
+      .get(`${API}/jobs`)
       .then(({ data }) => {
-        setJobs(data);
+        // setJobs(data);
         setSearchResult(data);
       })
       .catch((error) => console.log(error));
 
-    axios.get(defaultJobSearchQuery)
+    axios
+      .get(defaultJobSearchQuery)
       .then(({ data }) => {
         if (data.length > 0) {
           setJobQuery(data);
@@ -51,34 +42,32 @@ function JobProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    axios
-      .get(`${API}/jobs/${jobID}`)
-      .then(({ data }) => {
-        setJobDetails(data);
-        setJobSkills(convertSkills(data.skills));
-      })
-      .catch((err) => console.log(err));
-    
+    if (jobID) {
+      axios
+        .get(`${API}/jobs/${jobID}`)
+        .then(({ data }) => {
+          setJobDetails(data);
+          setJobSkills(convertSkills(data.skills));
+        })
+        .catch((err) => console.log(err));
+    }
   }, [jobID]);
 
   // useEffect for job pagination
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     axios
       .get(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`)
       .then(({ data }) => setJobQuery(data))
       .catch((err) => console.log(err));
 
-      console.log(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`, "api search query")
+    // console.log(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`, "api search query")
   }, [queryStart, searchQueryRoute]);
-
 
   return (
     <JobContextData.Provider
       value={{
         jobID,
-        jobs,
-        setJobs,
         searchResult,
         setSearchResult,
         jobQuery,
@@ -88,7 +77,7 @@ function JobProvider({ children }) {
         searchQueryRoute,
         setSearchQueryRoute,
         jobDetails,
-        jobSkills
+        jobSkills,
       }}
     >
       {children}

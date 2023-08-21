@@ -4,8 +4,8 @@ import { useNavProvider } from "../../Providers/NavProvider.js";
 import { useJobProvider } from "../../Providers/JobProvider.js";
 import { v4 as uuidv4 } from "uuid";
 import JobsCard from "./JobsCard";
-import SearchBar from "./SearchBar.js";
 import SearchBar2 from "./SearchBar2.js";
+import NoSearchResults from "../App/NoSearchResults/NoSearchResults.js";
 import { handlePagination } from "../Functions/SearchFunctions/JobsIndexFunctions.js";
 import "./JobsIndex.scss";
 
@@ -33,7 +33,6 @@ useEffect(() => {
 
   return (
     <div className="jobsIndex">
-      {/* <SearchBar /> */}
       <SearchBar2 />
       <section className="jobsIndex_buttons">
       <button
@@ -54,8 +53,11 @@ useEffect(() => {
      
       <section className="jobsIndex_listings grid-center">
         {
-        jobQuery.length > 0 &&
-          jobQuery.map((obj) => <JobsCard key={uuidv4()} jobObj={obj} />)}
+        jobQuery.length > 0 ?
+          jobQuery.map((obj) => <JobsCard key={uuidv4()} jobObj={obj} />) 
+          :
+        <NoSearchResults />
+        }
       </section>
     </div>
   );

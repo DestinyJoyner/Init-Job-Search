@@ -1,0 +1,10 @@
+.noSearchResults {
+    margin-top: 3vh;
+    row-gap: 2vh;
+    &_header {
+        font-size: 22px;
+    }
+    &_text {
+        font-size: 17px;
+    }
+}

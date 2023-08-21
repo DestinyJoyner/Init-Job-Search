@@ -1,13 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState,} from "react";
 import { useJobProvider } from "../../Providers/JobProvider";
 import FilterBar from "./FilterBar";
-import { handleSearchBar } from "../Functions/SearchFunctions/SearchBarFunctions";
 import searchLogo from "../../Assets/footer-logo.png";
 import { IoOptionsSharp } from "react-icons/io5";
 import "./SearchBar.scss";
 
 function SearchBar2() {
-  const { setJobQuery, searchQueryRoute, setSearchQueryRoute, queryStart, setQueryStart } = useJobProvider();
+  const { setSearchQueryRoute, setQueryStart } = useJobProvider();
   const [search, setSearch] = useState("");
   const [searchOptions, setSearchOptions] = useState({
     searchbar: "",
@@ -32,7 +31,9 @@ function SearchBar2() {
     e.preventDefault();
     setQueryStart(0)
     const { searchbar, isRemote, city, skills } = searchObj;
+
     let searchRoute = "";
+    
     if (searchbar) {
       searchRoute += `&input=${searchbar.toLowerCase()}`;
     }
