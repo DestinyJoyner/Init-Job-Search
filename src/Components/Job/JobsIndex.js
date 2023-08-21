@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import JobsCard from "./JobsCard";
 import SearchBar from "./SearchBar.js";
 import SearchBar2 from "./SearchBar2.js";
-import { handlePagination } from "./JobsIndexFunctions.js";
+import { handlePagination } from "../Functions/SearchFunctions/JobsIndexFunctions.js";
 import "./JobsIndex.scss";
 
 function JobsIndex() {

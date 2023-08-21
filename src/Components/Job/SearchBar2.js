@@ -7,7 +7,7 @@ import { IoOptionsSharp } from "react-icons/io5";
 import "./SearchBar.scss";
 
 function SearchBar2() {
-  const { setJobs, searchResult, API, axios, setJobQuery, searchQueryRoute, setSearchQueryRoute, queryStart, setQueryStart } = useJobProvider();
+  const { setJobQuery, searchQueryRoute, setSearchQueryRoute, queryStart, setQueryStart } = useJobProvider();
   const [search, setSearch] = useState("");
   const [searchOptions, setSearchOptions] = useState({
     searchbar: "",
@@ -42,17 +42,13 @@ function SearchBar2() {
     if (isRemote) {
       searchRoute += `&remote=true`;
     }
-    // if (!isRemote) {
-    //   searchRoute += `&remote=false`;
-    // }
-
+    if (skills.length > 0) {
+     const skillsStr = skills.join(',')
+     searchRoute += `&skills=${skillsStr}`
+    }
     setSearchQueryRoute(searchRoute)
-
   }
-  // SEND SKILLS ARR AS KEY IN OBJ WITH SEARCH QUERY -> FILTER ON ABCKEND GET ALL JOBS ROUTE WITH SKILLID
-useEffect(() => {
-  // console.log(searchOptions.skills)
-}, [searchOptions.skills.length])
+
   return (
     <form
       className="searchComponent"

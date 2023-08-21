@@ -88,7 +88,7 @@ function JobProvider({ children }) {
         searchQueryRoute,
         setSearchQueryRoute,
         jobDetails,
-        jobSkills,
+        jobSkills
       }}
     >
       {children}
