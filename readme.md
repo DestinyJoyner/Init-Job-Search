@@ -8,6 +8,9 @@
 
 [inIt Deployed Site](https://init-job-search-engine.netlify.app/)
 
+!!! Currently inIT is best viewed on a mobile device. <br>
+On desktop right click -> Inspect -> Select device icon in top left corner !!!
+
 iniT utilizes a custom built API [here](https://init-job-search.onrender.com/)
 
 [inIT's Backend API repo](https://github.com/DestinyJoyner/Init-Job-Search-Backend)
