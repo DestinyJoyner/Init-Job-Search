@@ -180,3 +180,7 @@
 .dark .remote-clicked {
   color: var(--init-charcoal);
 }
+
+.dark .filter-bar-toggle , .dark .filter-bar-toggle span {
+  color: var(--init-gold);
+}
