@@ -132,19 +132,23 @@
         height: 7vh;
         border-bottom: 1px solid var(--init-charcoal);
         display: grid;
-        grid-template-columns: 70% 30%;
+        grid-template-columns: 57% 43%;
         grid-template-rows: 1fr 1fr;
         &_title {
           font-size: 19px;
+          grid-row: 1;
+          grid-column: span 2;
         }
         &_company {
           grid-row: 2;
           grid-column: 1;
           font-weight: 500;
           font-size: 17px;
+          color: var(--init-faded-gray);
         }
-        &_date {
-          font-weight: 500;
+        &_applied {
+        grid-row: 2;
+        grid-column: 2;
         }
       }
     }
