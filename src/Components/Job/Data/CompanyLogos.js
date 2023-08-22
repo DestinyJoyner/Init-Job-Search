@@ -7,8 +7,10 @@ import noLogo from "../../../Assets/companyLogos/default-company.png";
 import geeksandfriesLogo from "../../../Assets/companyLogos/geeksandfries.jpeg"
 import goldmanLogo from "../../../Assets/companyLogos/goldman-sachs.png";
 import googleLogo from "../../../Assets/companyLogos/google.png";
+import hatchworksLogo from "../../../Assets/companyLogos/hatchworks.png"
 import hubspotLogo from "../../../Assets/companyLogos/hubspot.png";
 import nikeLogo from "../../../Assets/companyLogos/nike.png"
+import njpathLogo from "../../../Assets/companyLogos/njpath.png"
 import nvidiaLogo from "../../../Assets/companyLogos/nvidia.png";
 import patternedLearningLogo from "../../../Assets/companyLogos/patterned-learning.png"
 import pellSoftwareLogo from "../../../Assets/companyLogos/pellsoftware.png"
@@ -25,7 +27,9 @@ const companyLogoObject = {
   cisco: ciscoLogo,
   goldmansachs: goldmanLogo,
   google: googleLogo,
+  hatchworks : hatchworksLogo,
   hubspot: hubspotLogo,
+  njpath : njpathLogo,
   nvidia: nvidiaLogo,
   patternedlearning : patternedLearningLogo,
   pellsoftware: pellSoftwareLogo,
