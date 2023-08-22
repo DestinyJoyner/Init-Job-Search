@@ -20,7 +20,6 @@
     }
     &_title {
         grid-row: 2;
-        font-weight: 600;
         font-size: 15px;
     }
     &_company {
@@ -28,13 +27,24 @@
     }
     &_city {
         grid-row: 4;
+        
     }
     &_logo {
         height: 45px;
     }
     &_applicants {
         font-size: 30px;
-        font-weight: 600;
-        // justify-self: center;
+        & >*{
+            position: relative;
+        }
+        & span {
+            bottom: .5vh;
+            right: 1vw;
+        }
+        & svg {
+            top: .5vh;
+            height: 1.2em;
+            width: 1.2em;
+        }
     }
 }
