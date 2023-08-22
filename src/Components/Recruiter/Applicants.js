@@ -13,7 +13,7 @@ import "./Applicants.css";
 export default function Applicants() {
   const {  recruiterID,  setShowAccess, jobID, isSignedIn, } = useJobProvider();
   const { recruiterJobs, showAccess } = useRecruiterProvider()
-  const { isRecruiterAcc  } = useContextProvider()
+  const { isRecruiterAcc, setLoading, loading  } = useContextProvider()
   const {setAppHeader} = useNavProvider()
   const navigate = useNavigate();
   const [applicants, setApplicants] = useState([]);
@@ -34,12 +34,18 @@ export default function Applicants() {
     }
     else {
       setAppHeader("Applicants")
+     
     }
     }, [])
+
+    useEffect(() => {
+        setLoading(false)
+      
+    }, [loading])
 // applicants page add skills or corresponding skills for applicant/ space for more info on job posting etc..... -> alter color scheme???
 
   return (
-    showAccess &&
+    showAccess && !loading &&
       <div className="job-applicant-page">
       {/* <Header header={"Job Applicants"} /> */}
       <section className="job-applicant-job-details">

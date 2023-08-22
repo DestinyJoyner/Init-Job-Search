@@ -1,7 +1,8 @@
 .about {
   height: 92vh;
   width: 100%;
-  grid-template-rows: 15vh 75vh;
+  grid-template-rows: 10vh 6vh 75vh;
+  row-gap: 2vh;
   text-align: center;
 }
 
@@ -9,31 +10,18 @@
   width: 90%;
   height: 1px;
 }
-
-.dev-icons {
-  grid-template-columns: repeat(2,1fr);
-  width: 70%;
- align-self: center;
+.about .loginHeader {
+  max-height: 8vh;
+  row-gap: .2vh;
 }
-
-.devicon {
-  height: 85px;
-  border: 3px solid var(--init-blue);
-  border-radius: 50%;
+.about .loginHeader_logo {
+  height: 60px;
 }
-
-.devLogo {
-  height: 85px;
-  width: 85px;
-  border: 3px solid var(--init-blue);
-  border-radius: 50%;
-  background-color: #a1a09f;
+.about .sliderButton_container {
+  grid-row: 2;
 }
-.devLogo img {
-  height: 78px;
-  position: relative;
-  left: .2vw;
-  top: .2vh;
+.about .sliderButton_buttons_button, .about .sliderButton_slider {
+  height: 5vh;
 }
 
 .dev-cards h2 {
@@ -52,24 +40,27 @@
 
 .indiv-card,
 .emptyState {
+  height: 70vh;
+  align-self: flex-start;
   border-radius: 20px;
-  height: 98%;
+  /* height: 98%; */
   width: 90%;
   background-color: var(--init-darkmint);
 }
 
 /* EMPTY STATE */
 .emptyState {
-  grid-template-rows: 12% 35% 2% 40% 2% 8%;
+  grid-template-rows: 35% 2% 52% 2% 8%;
   align-items: center;
 }
 .emptyState h2 {
-  width: 90%;
-  font-size: 22px;
+  /* height:50px */
+  /* width: 90%;
+  font-size: 22px; */
 }
 
 .emptyState p {
-  grid-row: 4;
+  grid-row: 3;
   font-size: 18px;
   width: 85%;
   height: 95%;
@@ -108,12 +99,12 @@
 .about-bcrypt {
   color: rgb(115, 113, 113);
 }
-.emptyState img {
+.emptyState_img {
   height: 200px;
   border-radius: 20px;
 }
 .emptyState .skills-component {
-  grid-row: 6;
+  grid-row: 5;
   height: 5vh;
   align-items: center;
   background-color: var(--init-background);
@@ -126,15 +117,16 @@
   width: 1.8em;
 }
 .emptyState hr:first-of-type{
-  grid-row: 3;
+  grid-row: 2;
 }
 .emptyState hr:nth-of-type(2){
-  grid-row: 5;
+  grid-row: 4;
 }
 
 /* DEV-CARD */
 .indiv-card {
-  grid-template-rows: 10% 5% 30% 5% 38% 2% 10%;
+  grid-row: 3;
+  grid-template-rows: 10% 5% 25% 5% 42% 2% 10%;
 }
 .indiv-card h2 {
   font-size: 30px;
@@ -145,7 +137,7 @@
 }
 .indiv-card img {
   height: 140px;
-  border-radius: 50%;
+  border-radius: 20px;
 }
 .indiv-card p {
   grid-row: 5;

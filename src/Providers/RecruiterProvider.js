@@ -25,6 +25,7 @@ function RecruiterProvider({ children }) {
   const [unlockRec, setUnlockRec] = useState(false);
 
   useEffect(() => {
+    setLoading(true)
     if (recruiterID) {
       axios
         .get(`${API}/recruiters/${recruiterID}`)

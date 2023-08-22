@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useNavProvider } from "../../../Providers/NavProvider.js";
 import SkillsComponent from "../../Job/SkillsComponent.js";
+import SliderButtons from "../../SliderButton/SliderButtons.js"
+import LoginHeader from "../../Login/LoginHeader/LoginHeader.js"
 import { team } from "./AboutData";
-import logo from "../../../Assets/LOGO.png"
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import "./AboutPage.css";
@@ -11,6 +12,7 @@ import "./AboutPage.css";
 function AboutPage() {
   const { setAppHeader } = useNavProvider()
   const [profileCard, setProfileCard] = useState(team["2"]);
+  const [toggleView, setToggleView] = useState("init")
 
   const iconArr = [
     <BsGithub />,
@@ -18,39 +20,32 @@ function AboutPage() {
     <GrMail className="about-mail" />,
   ];
 
-  function aboutCard(e) {
-    if (profileCard.id === +e.target.id) {
-      setProfileCard(team["2"]);
-    } else {
-      setProfileCard(team[e.target.id]);
-    }
-  }
-
   useEffect(() => setAppHeader("About inIT"), [])
+
+  useEffect(() => {
+    if(toggleView === "init"){
+      setProfileCard(team["2"])
+    }
+    else {
+      setProfileCard(team["1"])
+    }
+  }, [toggleView])
 
   return (
     <div className="about grid-center">
-      <div className="dev-icons grid-center">
-        <img
-          id="1"
-          className="devicon"
-          src={team["1"].img}
-          onClick={(event) => aboutCard(event)}
-        ></img>
-        <span className="devLogo">
-        <img
-          id="2"
-          className=""
-          src={logo}
-          onClick={(event) => aboutCard(event)}
-        />
-        </span>
-        
-      </div>
-      {profileCard.id === 2 ? (
+
+      <LoginHeader />
+    
+        <SliderButtons 
+        button1={"Init"}
+        button2={"Developer"}
+        setFunction={setToggleView}/>
+
+     
+      {profileCard.id ===  2 ? (
         <div className="emptyState grid-center">
-          <h2>{profileCard.name}</h2>
-          <img src={profileCard.img}></img>
+
+          <img src={profileCard.img} className="emptyState_img"></img>
           <p>{profileCard.bio}</p>
           <hr />
           <SkillsComponent justList={true} skillsArr={profileCard.links} />
