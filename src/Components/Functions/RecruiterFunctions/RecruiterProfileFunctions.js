@@ -8,7 +8,7 @@ function getTwoHighestAppliedToJobs(recruiterJobs) {
         (a, b) => b.users.length - a.users.length
       );
 
-    return recruiterJobsHighestApplicantsDesc;
+    return recruiterJobsHighestApplicantsDesc.splice(0,3);
   }
 
   export {
