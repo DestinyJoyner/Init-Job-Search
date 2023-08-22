@@ -184,3 +184,7 @@
 .dark .filter-bar-toggle , .dark .filter-bar-toggle span {
   color: var(--init-gold);
 }
+
+.dark .filter-bar-expanded .skills-checkboxes label span {
+  color: var(--init-background);
+}
