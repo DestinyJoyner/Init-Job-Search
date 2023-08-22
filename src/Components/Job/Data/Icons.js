@@ -53,6 +53,8 @@ const emailInvalid = <BiError color ={"rgb(186, 26, 26)"} size={"1.4em"} />
 // Edit
 const editPencil = <GrEdit />
 
+const userIcon = <CgProfile />
+
 export {
     jobCompany,
     jobLocation,
@@ -73,5 +75,6 @@ export {
     loginEmail,
     emailValid,
     emailInvalid,
-    editPencil
+    editPencil,
+    userIcon
 }

@@ -1,0 +1,57 @@
+.recruiterTopJobs {
+  text-indent: 0.5vw;
+  padding: 0.5vh 1vh;
+  padding-right: 2vh;
+  // min-width: 38vw;
+  width: fit-content;
+  height: 12vh;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgb(83, 215, 199) 55%,
+    rgba(12, 189, 189, 1) 100%
+  );
+  // background-color: var(--init-mint);
+  border: 1px solid var(--init-darkmint);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 55% 45%;
+  column-gap: 3vw;
+  grid-template-rows: 45% 20% 20% 14%;
+
+  &_title,
+  &_company,
+  &_city {
+    grid-column: span 2;
+    font-size: 15px;
+  }
+  &_title {
+    grid-row: 2;
+    font-size: 16px;
+  }
+  &_company {
+    grid-row: 3;
+  }
+  &_city {
+    grid-row: 4;
+  }
+  &_logo {
+    height: 45px;
+  }
+  &_applicants {
+    font-size: 24px;
+    justify-self: center;
+    & > * {
+      position: relative;
+    }
+    & span {
+      bottom: 0.4vh;
+      right: 1vw;
+    }
+    & svg {
+      top: 0.5vh;
+      height: 1.2em;
+      width: 1.2em;
+    }
+  }
+}

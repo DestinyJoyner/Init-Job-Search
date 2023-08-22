@@ -1,0 +1,172 @@
+.recruiterProfile {
+  height: 92vh;
+  width: 100%;
+  grid-template-rows:
+    12vh 1vh 5vh 13vh
+    6vh 42vh 6vh;
+  row-gap: 1vh;
+
+  &_header {
+    height: 100%;
+    width: 100%;
+    padding-top: 3vh;
+    display: grid;
+    align-items: center;
+    justify-items: left;
+    font-size: 22px;
+    grid-template-columns: 1.2fr 3fr;
+    grid-template-rows: 4vh 4vh 4vh;
+    column-gap: 3vw;
+
+    &_badge {
+      grid-column: 2;
+      grid-row: 3;
+      align-self: center;
+      & span {
+        font-size: 16px;
+        // font-style: italic;
+        font-weight: 600;
+        position: relative;
+        bottom: 0.3vh;
+        left: 2vw;
+      }
+      & svg {
+        background-color: white;
+        border-radius: 50%;
+        height: 0.8em;
+        width: 0.8em;
+      }
+    }
+    &_name {
+      grid-column: 2;
+      grid-row: 1;
+      font-weight: 600;
+      font-size: 24px;
+    }
+    &_company {
+      grid-column: 2;
+      grid-row: 2;
+      font-size: 20px;
+
+      &_logo {
+        grid-column: 1;
+        grid-row: 1/4;
+        height: 85px;
+        justify-self: center;
+        border-radius: 20px;
+        max-width: 100px;
+      }
+    }
+  }
+
+  &_jobsPosted {
+    &_header {
+      display: grid;
+      grid-template-columns: 2fr 0.5fr;
+      width: 94%;
+      justify-items: left;
+      position: relative;
+      bottom: 1vh;
+
+      & svg {
+        height: 2.3em;
+        width: 2.3em;
+        color: var(--init-blue);
+        position: relative;
+        bottom: 0.5vh;
+      }
+      & h2 {
+        font-size: 24px;
+        margin-left: 1vw;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &_topJobs {
+    height: 100%;
+    width: 94%;
+    padding: 2vh 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4vw;
+    position: relative;
+    bottom: 2vh;
+    &_header {
+      justify-self: left;
+      margin-left: 4vw;
+      position: relative;
+      bottom: 1vh;
+      & h2 {
+        font-weight: 500;
+      }
+    }
+  }
+
+  & hr {
+    border: 1px solid var(--init-darkmint);
+    width: 90%;
+  }
+
+  &_jobsList {
+    width: 94%;
+    display: grid;
+    grid-template-rows: max-content;
+    row-gap: 1vh;
+    overflow-y: scroll;
+    height: 42vh;
+    padding-bottom: 2vh;
+    border-top: 2px solid var(--init-darkmint);
+    border-bottom: 2px solid var(--init-darkmint);
+    position: relative;
+    bottom: 1vh;
+  }
+
+  &_new-job-link {
+    justify-self: center;
+    font-size: 26px;
+    width: 98%;
+    text-align: center;
+  }
+}
+
+// Dark Mode
+
+.dark .recruiterProfile {
+  &_header {
+    &_badge {
+      & svg {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+  &_jobsPosted {
+    &_header {
+      & svg {
+        color: var(--init-gold);
+      }
+    }
+  }
+  &_jobsList {
+    border-color: var(--init-darkmint);
+  }
+  &_new-job-link {
+    color: var(--init-gold);
+  }
+}
+// .dark .recruiter-profile-top svg {
+//   fill: var(--init-background);
+//   stroke: var(--init-background);
+// }
+
+// .dark .recruiter-profile-top {
+//   border-color: var(--init-darkmint);
+// }
+
+// .dark .recruiter-profile-new-job {
+//   color: var(--init-gold);
+// }

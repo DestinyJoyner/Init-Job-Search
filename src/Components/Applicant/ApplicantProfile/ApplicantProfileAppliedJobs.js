@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { convertDate } from "../../Functions/ConvertFunctions/ConversionFunctions";
+import ApplicantProfileAppliedJobsCard from "./ApplicantProfileAppliedJobsCard.js"
+import { v4 as uuidv4 } from "uuid";
 
 function ApplicantProfileAppliedJobs({ applicantJobs }) {
     
@@ -9,28 +9,17 @@ function ApplicantProfileAppliedJobs({ applicantJobs }) {
         My Applications:
       </span>
       <section className="applicantProfile_appliedJobs_container">
-        {applicantJobs.length > 0 ? (
-          applicantJobs.map(({ id, title, company, date_applied }) => (
-            <div className="applicantProfile_appliedJobs_container_card">
-              <Link
-                className="applicantProfile_appliedJobs_container_card_title"
-                to={`/jobs/${id}`}
-              >
-                {title}
-              </Link>
-              <span className="applicantProfile_appliedJobs_container_card_company">
-                {company}
-              </span>
-              <span className="applicantProfile_appliedJobs_container_card_applied">
-                Date Applied
-              </span>
-              <span className="applicantProfile_appliedJobs_container_card_date">
-                {convertDate(date_applied)}
-              </span>
-            </div>
-          ))
-        ) : (
-          <span className="applicantProfile_appliedJobs_noJobs">No Job Applications to Display</span>
+        {applicantJobs.length > 0 ? 
+        (
+          applicantJobs.map(jobsCard => <ApplicantProfileAppliedJobsCard 
+          key ={uuidv4()}
+          jobCardObj={jobsCard}
+          />) 
+          ) :
+         (
+          <span className="applicantProfile_appliedJobs_noJobs">
+            No Job Applications to Display
+          </span>
         )}
       </section>
     </div>

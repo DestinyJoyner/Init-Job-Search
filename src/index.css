@@ -16,7 +16,7 @@
 }
 
 body {
-  max-width: 398px;
+  max-width: 415px;
   /* margin: 0 auto; */
 }
 
@@ -115,4 +115,9 @@ textarea:focus {
   all: unset;
   color: grey;
   opacity: .5;
+}
+
+/* font styles */
+.bold {
+  font-weight: 600;
 }

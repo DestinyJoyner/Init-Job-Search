@@ -7,7 +7,7 @@ import LoginForm from "../LoginForm/LoginForm";
 import "./LoginPage.scss";
 
 function LoginPage() {
-  const { setLoading, isSignedIn, isRecruiterAcc } = useContextProvider();
+  const { setLoading,loading, isSignedIn, isRecruiterAcc } = useContextProvider();
   const { setAppHeader } = useNavProvider();
   const navigate = useNavigate();
   const [failedLogin, setFailedLogin] = useState(false);
@@ -18,11 +18,16 @@ function LoginPage() {
       navigate(isSignedIn ? "/user" : "/recruiter");
     } else {
       setAppHeader("Log In");
-      setLoading(false);
+      
     }
   }, []);
 
+  useEffect(() => {
+    setLoading(false)
+  },[loading])
+
   return (
+    !loading &&
     <div className="loginPage grid-center">
       <LoginHeader />
 
