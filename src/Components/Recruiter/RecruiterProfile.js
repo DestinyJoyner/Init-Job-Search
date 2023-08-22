@@ -19,6 +19,12 @@ export default function RecruiterProfile() {
     setAppHeader("Profile");
   }, []);
 
+  useEffect(() => {
+    if (recruiterDetails.id) {
+      setLoading(false);
+    }
+  }, [recruiterDetails]);
+
   if (!isRecruiterAcc) {
     return <NoAccess />;
   }
