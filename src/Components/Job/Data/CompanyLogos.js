@@ -4,11 +4,13 @@ import blackstoneLogo from "../../../Assets/companyLogos/blackstone.png";
 import citiLogo from "../../../Assets/companyLogos/citi.png";
 import ciscoLogo from "../../../Assets/companyLogos/cisco.png";
 import noLogo from "../../../Assets/companyLogos/default-company.png";
+import geeksandfriesLogo from "../../../Assets/companyLogos/geeksandfries.jpeg"
 import goldmanLogo from "../../../Assets/companyLogos/goldman-sachs.png";
 import googleLogo from "../../../Assets/companyLogos/google.png";
 import hubspotLogo from "../../../Assets/companyLogos/hubspot.png";
 import nikeLogo from "../../../Assets/companyLogos/nike.png"
 import nvidiaLogo from "../../../Assets/companyLogos/nvidia.png";
+import patternedLearningLogo from "../../../Assets/companyLogos/patterned-learning.png"
 import pellSoftwareLogo from "../../../Assets/companyLogos/pellsoftware.png"
 import pelotonLogo from "../../../Assets/companyLogos/peloton.png"
 import salesforceLogo from "../../../Assets/companyLogos/salesforce.png"
@@ -25,6 +27,7 @@ const companyLogoObject = {
   google: googleLogo,
   hubspot: hubspotLogo,
   nvidia: nvidiaLogo,
+  patternedlearning : patternedLearningLogo,
   pellsoftware: pellSoftwareLogo,
   silverstartechnology: silverStarLogo,
   shopify: shopifyLogo,
@@ -34,7 +37,8 @@ const companyLogoObject = {
   peloton: pelotonLogo,
   appinventiv: appinventivLogo,
   apple : appleLogo,
-  salesforce : salesforceLogo
+  salesforce : salesforceLogo,
+  geeksandfries : geeksandfriesLogo
 };
 
 const defaultCompany = noLogo;

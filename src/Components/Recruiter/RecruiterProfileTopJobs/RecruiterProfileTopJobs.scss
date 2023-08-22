@@ -1,7 +1,8 @@
 .recruiterTopJobs {
     text-indent: .5vw;
     padding: .5vh 1vh;
-    width: 50vw;
+    width: fit-content;
+    height: 12vh;
     border-radius: 20px;
 //     background: linear-gradient(
 //     90deg,
@@ -17,11 +18,11 @@ background-color: var(--init-mint);
 
     &_title, &_company, &_city {
         grid-column: span 2;
-        font-size: 14px;
+        font-size: 15px;
     }
     &_title {
         grid-row: 2;
-        font-size: 15px;
+        font-size: 16px;
     }
     &_company {
         grid-row: 3;

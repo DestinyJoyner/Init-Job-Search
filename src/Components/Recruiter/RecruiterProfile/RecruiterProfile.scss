@@ -1,8 +1,8 @@
 .recruiterProfile {
   height: 92vh;
   width: 100%;
-  grid-template-rows: 12vh 1vh 5vh 15vh
-  6vh 40vh 6vh;
+  grid-template-rows: 12vh 1vh 5vh 13vh
+  6vh 42vh 6vh;
   row-gap: 1vh;
  
 
@@ -30,9 +30,20 @@
       grid-column: 2;
       grid-row: 3;
       align-self: center;
-      font-size: 16px;
-      font-style: italic;
+      & span {
+        font-size: 16px;
+      // font-style: italic;
       font-weight: 600;
+      position: relative;
+      bottom: .3vh;
+      left: 2vw;
+      }
+      & svg {
+        background-color: white;
+        border-radius: 50%;
+        height: .8em;
+        width: .8em;
+      }
      
     }
     &_name {
@@ -107,6 +118,7 @@
     column-gap: 4vw;
     position: relative;
       bottom: 2vh;
+      // background-color: white;
   }
 
   & hr {
@@ -120,7 +132,7 @@
     grid-template-rows: max-content;
     row-gap: 1vh;
     overflow-y: scroll;
-    height: 40vh;
+    height: 42vh;
     padding-bottom: 2vh;
     border-top: 2px solid var(--init-darkmint);
     border-bottom: 2px solid var(--init-darkmint);

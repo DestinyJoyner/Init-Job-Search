@@ -20,7 +20,8 @@ function RecruiterProfileHeader({recruiterDetails}) {
           alt="recruiter-company"
         />
         <span className="recruiterProfile_header_badge">
-        Recruiter
+        {recruiter} 
+        <span>Recruiter</span>
         </span>
       
       </div>
