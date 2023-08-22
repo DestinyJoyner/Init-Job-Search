@@ -1,7 +1,8 @@
 .recruiterProfile {
   height: 92vh;
   width: 100%;
-  grid-template-rows: 14vh 5vh 15vh 55vh 7vh;
+  grid-template-rows: 12vh 1vh 5vh 15vh
+  6vh 40vh 6vh;
   row-gap: 1vh;
  
 
@@ -23,7 +24,7 @@
     // background-color: #59FFDE;
     // background: linear-gradient(30deg, var(--init-background) 10%,var(--init-mint) 80%, rgba(255,222,89,1) 90%);
    
-    border-bottom: 2px solid var(--init-darkmint);
+    // border-bottom: 2px solid var(--init-darkmint);
 
     &_badge {
       grid-column: 2;
@@ -65,21 +66,36 @@
       grid-template-columns: 2fr 0.5fr;
       width: 94%;
       justify-items: left;
+      position: relative;
+      bottom: 1vh;
 
       & svg {
         height: 2.3em;
         width: 2.3em;
         color: var(--init-blue);
+        position: relative;
+      bottom: .5vh;
       }
       & h2 {
         font-size: 24px;
-        align-self: center;
+        // align-self: center;
         margin-left: 1vw;
+        // text-decoration: underline;
+        // text-decoration-color: var(--init-darkmint);
       }
     }
   }
 
   &_topJobs {
+    &_header {
+      justify-self: left;
+      margin-left: 4vw;
+      position: relative;
+      bottom: 1vh;
+      // padding-top: .8vh;
+      // text-decoration: underline;
+    }
+
     height: 100%;
     width: 94%;
     padding: 1vh 0;
@@ -89,11 +105,13 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     column-gap: 4vw;
+    position: relative;
+      bottom: 2vh;
   }
 
   & hr {
     border: 1px solid var(--init-darkmint);
-    width: 98%;
+    width: 90%;
   }
 
   &_jobsList {
@@ -102,10 +120,12 @@
     grid-template-rows: max-content;
     row-gap: 1vh;
     overflow-y: scroll;
-    height: 52vh;
+    height: 40vh;
     padding-bottom: 2vh;
-    border-top: 2px solid var(--init-charcoal);
-    border-bottom: 2px solid var(--init-charcoal);
+    border-top: 2px solid var(--init-darkmint);
+    border-bottom: 2px solid var(--init-darkmint);
+    position: relative;
+      bottom: 1vh;
   }
 
   &_new-job-link {

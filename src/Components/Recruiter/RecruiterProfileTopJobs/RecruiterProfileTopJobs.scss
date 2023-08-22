@@ -3,12 +3,13 @@
     padding: .5vh 1vh;
     width: 50vw;
     border-radius: 20px;
-    background: linear-gradient(
-    90deg,
-    rgb(83, 215, 199) 55%,
-    rgba(12, 189, 189, 1) 100%
-  );
-    border: 1px solid var(--init-mint);
+//     background: linear-gradient(
+//     90deg,
+//     rgb(83, 215, 199) 55%,
+//     rgba(12, 189, 189, 1) 100%
+//   );
+background-color: var(--init-mint);
+    border: 1px solid var(--init-darkmint);
     display: grid;
     align-items: center;
     grid-template-columns: 60% 40%;

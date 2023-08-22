@@ -39,11 +39,10 @@ export default function RecruiterProfile() {
       <div className="recruiterProfile grid-center center">
         <RecruiterProfileHeader recruiterDetails={recruiterDetails} />
 
-        {/* <hr /> */}
+        <hr />
 
-        <div className="recruiterProfile_jobsPosted_header">
-          <h2>Jobs Posted ({recruiterJobs.length})</h2>
-          <Link to="/jobs/new">{addJob}</Link>
+        <div className="recruiterProfile_topJobs_header">
+          <h2>Popular Jobs</h2>
         </div>
 
         { recruiterTopJobs.length > 0 &&
@@ -55,6 +54,10 @@ export default function RecruiterProfile() {
 }
         </section>
 }
+<div className="recruiterProfile_jobsPosted_header">
+          <h2>Jobs Posted ({recruiterJobs.length})</h2>
+          <Link to="/jobs/new">{addJob}</Link>
+        </div>
 
         <div className="recruiterProfile_jobsList">
           {recruiterJobs.length > 0 ? (
