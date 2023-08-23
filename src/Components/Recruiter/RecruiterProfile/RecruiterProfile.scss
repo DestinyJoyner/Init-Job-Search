@@ -2,9 +2,14 @@
   height: 92vh;
   width: 100%;
   grid-template-rows:
-    12vh 1vh 5vh 13vh
+    12vh 1vh 5vh 15vh
     6vh 42vh 6vh;
   row-gap: 1vh;
+
+  & h2 {
+    font-weight: 500;
+    font-size: 18px;
+  }
 
   &_header {
     height: 100%;
@@ -75,11 +80,11 @@
         position: relative;
         bottom: 0.5vh;
       }
-      & h2 {
-        font-size: 24px;
-        margin-left: 1vw;
-        font-weight: 500;
-      }
+      // & h2 {
+      //   font-size: 24px;
+      //   margin-left: 1vw;
+      //   font-weight: 500;
+      // }
     }
   }
 
@@ -89,7 +94,7 @@
     padding: 2vh 0;
     overflow-x: auto;
     overflow-y: hidden;
-    white-space: nowrap;
+    // white-space: nowrap;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 4vw;
@@ -100,9 +105,6 @@
       margin-left: 4vw;
       position: relative;
       bottom: 1vh;
-      & h2 {
-        font-weight: 500;
-      }
     }
   }
 

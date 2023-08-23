@@ -7,7 +7,7 @@ import { useRecruiterProvider } from "../../../Providers/RecruiterProvider";
 import RecruiterJob from "../RecruiterJob.js";
 import RecruiterProfileHeader from "./RecruiterProfileHeader";
 import RecruiterProfileTopJobs from "../RecruiterProfileTopJobs/RecruiterProfileTopJobs";
-import NoAccess from "../../App/NoAccess";
+import NoAccess from "../../App/NoAccess/NoAccess.js";
 import { getTwoHighestAppliedToJobs } from "../../Functions/RecruiterFunctions/RecruiterProfileFunctions";
 import { addJob } from "../../Job/Data/Icons";
 

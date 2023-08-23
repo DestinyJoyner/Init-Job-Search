@@ -30,10 +30,10 @@ function RecruiterProfileTopJobs({ jobObj }) {
         </span>
       </Link>
 
-      <span 
+      {/* <span 
       className="recruiterTopJobs_city">
         {convertCities(city)}
-      </span>
+      </span> */}
     </div>
   );
 }
