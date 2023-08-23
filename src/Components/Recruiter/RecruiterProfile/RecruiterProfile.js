@@ -8,6 +8,7 @@ import RecruiterJob from "../RecruiterJob.js";
 import RecruiterProfileHeader from "./RecruiterProfileHeader";
 import RecruiterProfileTopJobs from "../RecruiterProfileTopJobs/RecruiterProfileTopJobs";
 import NoAccess from "../../App/NoAccess/NoAccess.js";
+import Dropdown from "../../Job/Inputs/Dropdown";
 import { getTwoHighestAppliedToJobs } from "../../Functions/RecruiterFunctions/RecruiterProfileFunctions";
 import { addJob } from "../../Job/Data/Icons";
 
@@ -18,8 +19,33 @@ export default function RecruiterProfile() {
   const { recruiterDetails, recruiterJobs } = useRecruiterProvider();
   const { setAppHeader } = useNavProvider();
 
-  const recruiterTopJobs = getTwoHighestAppliedToJobs(recruiterJobs)
+  const [recruiterSortJobs, setRecruiterSortJobs] = useState("")
 
+  const recruiterSortOptionsArr = [
+    {
+      val: "",
+      name: "Sort Jobs"
+
+    },
+    {
+      val: "date",
+      name: "Date Posted"
+    },
+    {
+      val: "company",
+      name: "Company (Asc)"
+    },
+    {
+      val: "title",
+      name: "Job Title (Asc)"
+    },
+    {
+      val: "applicants",
+      name: "Num. of Applicants"
+    }
+  ]
+
+  const recruiterTopJobs = getTwoHighestAppliedToJobs(recruiterJobs);
 
   useEffect(() => {
     setAppHeader("Profile");
@@ -45,17 +71,24 @@ export default function RecruiterProfile() {
           <h2>Popular Jobs</h2>
         </div>
 
-        { recruiterTopJobs.length > 0 &&
+        {recruiterTopJobs.length > 0 && (
           <section className="recruiterProfile_topJobs">
-            {
-            recruiterTopJobs.map(jobObj => <RecruiterProfileTopJobs 
-              key={uuidv4()}
-            jobObj={jobObj}/>)
-}
-        </section>
-}
-<div className="recruiterProfile_jobsPosted_header">
-          <h2>Jobs Posted ({recruiterJobs.length})</h2>
+            {recruiterTopJobs.map((jobObj) => (
+              <RecruiterProfileTopJobs key={uuidv4()} jobObj={jobObj} />
+            ))}
+          </section>
+        )}
+        <div className="recruiterProfile_jobsPosted_header">
+          <h2>
+            Jobs Posted ({recruiterJobs.length})
+          </h2>
+          <Dropdown 
+          idVal={"recruiterSort"}
+          value={recruiterSortJobs}
+          onChange={(event) => setRecruiterSortJobs(event.target.value)}
+          optionsArray={recruiterSortOptionsArr}/>
+
+
           <Link to="/jobs/new">{addJob}</Link>
         </div>
 

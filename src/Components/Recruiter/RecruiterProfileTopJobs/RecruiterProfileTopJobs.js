@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import convertCompanyForLogo from "../../Job/Data/CompanyLogos";
-import { convertCities } from "../../Functions/ConvertFunctions/ConversionFunctions";
 import { userIcon } from "../../Job/Data/Icons";
 import "./RecruiterProfileTopJobs.scss";
 
 function RecruiterProfileTopJobs({ jobObj }) {
-  const { title, company, city, users, id } = jobObj;
+  const { title, company, users, id } = jobObj;
 
   const companyLogo = convertCompanyForLogo(company.toLowerCase());
 
@@ -29,11 +28,6 @@ function RecruiterProfileTopJobs({ jobObj }) {
             ({users.length})
         </span>
       </Link>
-
-      {/* <span 
-      className="recruiterTopJobs_city">
-        {convertCities(city)}
-      </span> */}
     </div>
   );
 }

@@ -78,7 +78,7 @@ a {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="url"] {
+input[type="url"], select {
   border: none;
   border-bottom: 2px solid var(--init-mint);
   background-color: unset;
@@ -98,6 +98,9 @@ input[type="submit"] {
   font-weight: 600;
 }
 
+select {
+  border-bottom: none;
+}
 select:focus {
   outline: none;
 }

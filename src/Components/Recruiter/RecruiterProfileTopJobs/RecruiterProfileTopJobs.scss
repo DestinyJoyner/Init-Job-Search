@@ -2,17 +2,11 @@
   text-indent: 0.5vw;
   padding: 0.5vh 1vh;
   padding-right: 2vh;
-  // min-width: 38vw;
   width: 50vw;
   height: 15vh;
   border-radius: 10px;
-  // background: linear-gradient(
-  //   90deg,
-  //   rgb(83, 215, 199) 55%,
-  //   rgba(12, 189, 189, 1) 100%
-  // );
   background-color: #b3daf1;
-  // border: 1px solid var(--init-darkmint);
+  border: 1px solid #0c65bd;
   display: grid;
   align-items: center;
   grid-template-columns: 55% 45%;
@@ -20,9 +14,7 @@
   grid-template-rows: 50% 25% 20%;
   row-gap: .5vh;
 
-  & a {
-    // color: var(--init-gold);
-  }
+
 
   &_title,
   &_company,
@@ -57,11 +49,11 @@
       position: relative;
     }
     & span {
-      bottom: 0.4vh;
+      bottom: 0.5vh;
       right: 1vw;
     }
     & svg {
-      top: 0.5vh;
+      
       height: 1em;
       width: 1em;
     }
