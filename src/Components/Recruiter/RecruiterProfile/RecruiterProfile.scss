@@ -67,6 +67,7 @@
 
   &_jobsPosted {
     &_header {
+      grid-row: 5;
       display: grid;
       grid-template-columns: 1.2fr 1fr .5fr;
       width: 94%;
@@ -120,6 +121,7 @@
   }
 
   &_jobsList {
+    grid-row:6;
     width: 94%;
     display: grid;
     grid-template-rows: max-content;
@@ -134,6 +136,7 @@
   }
 
   &_new-job-link {
+    grid-row: 7;
     justify-self: center;
     font-size: 28px;
     width: 98%;

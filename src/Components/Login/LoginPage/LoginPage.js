@@ -18,7 +18,7 @@ function LoginPage() {
       navigate(isSignedIn ? "/user" : "/recruiter");
     } else {
       setAppHeader("Log In");
-      
+      setLoading(false)
     }
   }, []);
 

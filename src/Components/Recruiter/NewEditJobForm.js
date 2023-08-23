@@ -131,6 +131,7 @@ const { editAccess } = useRecruiterProvider()
       if (!edit) {
         setFormError(false);
         obj.jobDetails.full_remote = `${obj.jobDetails.full_remote}`;
+        console.log(obj)
         axios
           .post(`${API}/jobs`, obj)
           .then(({ data }) => navigate(`/jobs/${data.id}`))

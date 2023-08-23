@@ -20,6 +20,7 @@ function RecruiterProvider({ children }) {
 
   const [recruiterDetails, setRecruiterDetails] = useState({});
   const [recruiterJobs, setRecruiterJobs] = useState([]);
+  const [recruiterJobsWithUsers, setRecruiterJobsWithUsers] = useState([])
   const [editAccess, setEditAccess] = useState(false);
   const [showAccess, setShowAccess] = useState(isRecruiterAcc);
   const [unlockRec, setUnlockRec] = useState(false);
@@ -31,7 +32,8 @@ function RecruiterProvider({ children }) {
         .get(`${API}/recruiters/${recruiterID}`)
         .then(({ data }) => {
           setRecruiterDetails(data)
-          setRecruiterJobs(data["jobs_posted"]);
+          setRecruiterJobs(data["jobs_posted"])
+          setRecruiterJobsWithUsers(data["jobs_posted"]);
           if (jobID) {
             const applicantAccess = data["jobs_posted"].find(
               ({ id }) => id === +jobID
@@ -67,6 +69,9 @@ function RecruiterProvider({ children }) {
       value={{
         recruiterDetails,
         recruiterJobs,
+        setRecruiterJobs,
+        recruiterJobsWithUsers,
+        setRecruiterJobsWithUsers,
         editAccess,
         showAccess,
         setUnlockRec,
