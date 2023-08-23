@@ -25,10 +25,16 @@ function handleRecruiterJobSort(
   setDropdownFunction(sortValue);
 
   if (sortValue === "applicants") {
-    const sortByApplicants = jobListWithUsers.sort(
-      (a, b) => b.users.length - a.users.length
-    );
-    setJobListFuction(sortByApplicants);
+      const sortByApplicants = jobListWithUsers.sort(
+        (a, b) => {
+          if(a.users && b.users){
+            return b.users.length - a.users.length
+          }
+          }
+      );
+      setJobListFuction(sortByApplicants);
+    
+    
   } else {
     axios
       .get(`${API}/recruiters-jobs/${recruiterID}?sort=${sortValue}`)
