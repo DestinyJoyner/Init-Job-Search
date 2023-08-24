@@ -4,7 +4,7 @@ import { useUserProvider } from "../../../Providers/UserProvider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import ApplicantProfile from "../ApplicantProfile/ApplicantProfile";
 import ApplicantProfileRecruiterView from "../ApplicantProfile/ApplicantProfileRecruiterView";
-import NoAccess from "../../App/NoAccess";
+import NoAccess from "../../App/NoAccess/NoAccess.js";
 
 import "./ApplicantProfilePage.scss";
 

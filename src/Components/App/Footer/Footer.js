@@ -1,8 +1,8 @@
 import { FaGithubSquare } from "react-icons/fa";
 import { GrLinkedin, GrMail } from "react-icons/gr";
-import initWhite from "../../Assets/init-no-text.png";
-import blueTree from "../App/HomePage/Images/init-tree-blue.png";
-import pursuit from "../../Assets/pursuit-init-blue.png";
+import initWhite from "../../../Assets/init-no-text.png";
+import blueTree from "../../App/HomePage/Images/init-tree-blue.png";
+import pursuit from "../../../Assets/pursuit-init-blue.png";
 import "./Footer.css";
 
 export default function Footer() {

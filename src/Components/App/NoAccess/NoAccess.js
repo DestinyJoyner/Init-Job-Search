@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useContextProvider } from "../../Providers/Provider";
-import logo from "../../Assets/LOGO.png";
+import { useContextProvider } from "../../../Providers/Provider";
+import logo from "../../../Assets/LOGO.png";
 import "./NoAccess.scss";
 
 function NoAccess() {

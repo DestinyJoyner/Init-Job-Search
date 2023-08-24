@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { convertCities } from "../Functions/ConvertFunctions/ConversionFunctions";
 import convertCompanyForLogo from "../Job/Data/CompanyLogos.js"
+import { userIcon } from "../Job/Data/Icons";
 
 import "./RecruiterJob.css";
 
@@ -17,14 +18,16 @@ export default function RecruiterJob({ jobObject }) {
       <Link to={`/jobs/${id}`} className="recruiter-job-title">
           {title}
         </Link>
-      <div className="recruiter-job-details">
+
+        <span className="recruiter-job-company">{company}</span>
+      {/* <div className="recruiter-job-details">
         <span className="recruiter-job-company">{company}</span>
         <span className="recruiter-job-city">{convertCities(city)}</span>
-      </div>
+      </div> */}
         <div
           className="recruiter-job-applicants"
         >
-          <span>Applicants</span>
+          <span>{userIcon}</span>
           <Link className="applicant-count"
           to={`/jobs/${id}/applicants`}
           >

@@ -82,13 +82,13 @@ function handleRecruiterRegisterForm(
     profile: {
       first_name: first_name,
       last_name: last_name,
-      organization: organization,
+      organization: organization
     },
     login: {
       email: email,
       password: password,
-      isRecruiter: isRecruiter,
-    },
+      isRecruiter: isRecruiter
+    }
   };
 
   axios
@@ -100,6 +100,7 @@ function handleRecruiterRegisterForm(
       setUser(null);
     })
     .then(() => {
+      console.log(reqObj["login"])
       axios
         .post(`${API}/recruiters-logins`, reqObj["login"])
         .then(({ data }) => {

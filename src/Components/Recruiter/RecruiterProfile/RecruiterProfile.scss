@@ -2,9 +2,15 @@
   height: 92vh;
   width: 100%;
   grid-template-rows:
-    12vh 1vh 5vh 13vh
-    6vh 42vh 6vh;
+    12vh 1vh 7vh 15vh
+    7vh 38vh 8vh;
   row-gap: 1vh;
+  align-items: center;
+
+  & h2 {
+    font-weight: 500;
+    font-size: 18px;
+  }
 
   &_header {
     height: 100%;
@@ -61,24 +67,30 @@
 
   &_jobsPosted {
     &_header {
+      grid-row: 5;
       display: grid;
-      grid-template-columns: 2fr 0.5fr;
+      grid-template-columns: 1.2fr 1fr .5fr;
       width: 94%;
       justify-items: left;
-      position: relative;
-      bottom: 1vh;
+      align-items: center;
 
       & svg {
-        height: 2.3em;
-        width: 2.3em;
+        height: 2.5em;
+        width: 2.5em;
         color: var(--init-blue);
         position: relative;
-        bottom: 0.5vh;
+        top: 0.3vh;
+        left: 4vw;
+        
       }
       & h2 {
-        font-size: 24px;
-        margin-left: 1vw;
+        height: fit-content;
+      }
+      & select {
+        width: 90%;
+        font-size: 17px;
         font-weight: 500;
+        
       }
     }
   }
@@ -89,7 +101,7 @@
     padding: 2vh 0;
     overflow-x: auto;
     overflow-y: hidden;
-    white-space: nowrap;
+    // white-space: nowrap;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 4vw;
@@ -100,36 +112,36 @@
       margin-left: 4vw;
       position: relative;
       bottom: 1vh;
-      & h2 {
-        font-weight: 500;
-      }
     }
   }
 
   & hr {
-    border: 1px solid var(--init-darkmint);
+    border: 1px solid #0c65bd;
     width: 90%;
   }
 
   &_jobsList {
+    grid-row:6;
     width: 94%;
     display: grid;
     grid-template-rows: max-content;
-    row-gap: 1vh;
+    row-gap: 2vh;
     overflow-y: scroll;
-    height: 42vh;
-    padding-bottom: 2vh;
-    border-top: 2px solid var(--init-darkmint);
-    border-bottom: 2px solid var(--init-darkmint);
-    position: relative;
-    bottom: 1vh;
+    height: 35vh;
+    padding: 2vh 0;
+    border-top: 2px solid #0c65bd;
+    border-bottom: 2px solid #0c65bd;
+    // position: relative;
+    // bottom: 1vh;
   }
 
   &_new-job-link {
+    grid-row: 7;
     justify-self: center;
-    font-size: 26px;
+    font-size: 28px;
     width: 98%;
     text-align: center;
+    margin-bottom: 2vh;
   }
 }
 
