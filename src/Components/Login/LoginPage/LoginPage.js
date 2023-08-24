@@ -23,7 +23,7 @@ function LoginPage() {
   }, []);
 
   useEffect(() => {
-    setLoading(false)
+    // setLoading(false)
   },[loading])
 
   return (

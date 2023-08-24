@@ -20,12 +20,13 @@ function RegistrationPage() {
   }, []);
 
   useEffect(() => {
-    setLoading(false)
+    // setLoading(false)
   },[loading])
 
   useEffect(() => {}, [userType]);
 
   return (
+    !loading &&
     <div className="registrationPage grid-center">
       <LoginHeader />
 
