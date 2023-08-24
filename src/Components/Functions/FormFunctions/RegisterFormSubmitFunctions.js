@@ -49,11 +49,11 @@ function handleApplicantRegisterForm(
 }
 
 // applicant form 2 submit (put)
-const handleApplicantFormTwoSubmit = (e, formObj, skillsArr, navigate) => {
+const handleApplicantFormTwoSubmit = (e, formObj, skillsArr, userID, navigate) => {
   e.preventDefault();
   const { id } = formObj;
   axios
-    .put(`${API}/users/${id}`, {
+    .put(`${API}/users/${userID}`, {
       profile: formObj,
       skills: skillsArr,
     })

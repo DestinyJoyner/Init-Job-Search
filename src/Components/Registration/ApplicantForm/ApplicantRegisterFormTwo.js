@@ -15,13 +15,14 @@ import "./ApplicantFormTwo.scss";
 function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
   const { setAppHeader } = useNavProvider();
   const { applicantDetails } = useUserProvider();
-  const { setLoading } = useContextProvider()
+  const { setLoading, userID } = useContextProvider()
   const navigate = useNavigate();
   const [applicantFormTwo, setApplicantFormTwo] = useState(applicantDetails);
   const [applicantFormSkills, setApplicantFormSkills] = useState([]);
 
   useEffect(() => {
     setAppHeader("Add Profile Details");
+    setLoading(true)
     setHideSliderButtons(true);
   }, []);
 
@@ -41,6 +42,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
             event,
             applicantFormTwo,
             applicantFormSkills,
+            userID,
             navigate
           )
         }

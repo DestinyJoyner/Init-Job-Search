@@ -50,11 +50,11 @@ function checkIfEditsMade(originalObj, editedObj) {
   return false;
 }
 
-function applicantSubmitEditForm(e, originalObj, editedObj, navigate) {
+function applicantSubmitEditForm(e, originalObj, editedObj, applicantSkillsArr, navigate) {
   e.preventDefault();
   const editedDetailsObj = {
     profile: editedObj,
-    skills: editedObj.skills,
+    skills: applicantSkillsArr,
   };
 
   axios

@@ -45,6 +45,7 @@ function ApplicantProfileEditForm() {
           event,
           applicantDetails,
           applicantEditForm,
+          applicantSkillIds,
           navigate
         )
       }
