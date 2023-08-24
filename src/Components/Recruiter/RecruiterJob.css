@@ -75,7 +75,8 @@
 
 /* DARK MODE */
 .dark .recruiter-job {
-    border: 1px solid var(--init-darkmint);
+    /* border: 1px solid var(--init-darkmint); */
+    border: 1px solid #0c65bd;
     background-color: unset;
 }
 
@@ -97,4 +98,5 @@
 
 .dark .recruiter-job-applicants span svg {
     color: var(--init-darkmint);
+    color: #0c65bd;
 }

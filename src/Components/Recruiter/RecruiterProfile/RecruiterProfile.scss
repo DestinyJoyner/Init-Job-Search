@@ -160,14 +160,17 @@
     &_header {
       & svg {
         color: var(--init-gold);
+        // color: #0feded;
       }
     }
   }
   &_jobsList {
-    border-color: var(--init-darkmint);
+    // border-color: var(--init-darkmint);
+    // border-color: #0feded;
   }
   &_new-job-link {
     color: var(--init-gold);
+    // color: #0feded;
   }
 }
 // .dark .recruiter-profile-top svg {
@@ -182,3 +185,12 @@
 // .dark .recruiter-profile-new-job {
 //   color: var(--init-gold);
 // }
+
+.dark .recruiterProfile {
+  // border-color: #0feded;
+}
+
+.dark .recruiterProfile a {
+  // color: #0f7fed;
+  // color: #0feded;
+}
