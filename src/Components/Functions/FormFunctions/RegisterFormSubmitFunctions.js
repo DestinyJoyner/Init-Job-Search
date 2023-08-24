@@ -14,6 +14,7 @@ function handleApplicantRegisterForm(
   setRegisterTwoForm
 ) {
   e.preventDefault();
+  setRegisterTwoForm(true);
 
   const { first_name, last_name, education, email, password } = formObj;
 
@@ -33,7 +34,7 @@ function handleApplicantRegisterForm(
   axios
     .post(`${API}/users`, reqObj)
     .then(({ data }) => {
-      setRegisterTwoForm(true);
+      // setRegisterTwoForm(true);
       setRecruiter(null);
       setSignedIn(true);
       setRecruiterAcc(false);

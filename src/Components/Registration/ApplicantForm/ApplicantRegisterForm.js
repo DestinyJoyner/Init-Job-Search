@@ -18,7 +18,7 @@ function ApplicantRegisterForm({ setHideSliderButtons }) {
     setApplicantFormTwoAccess(false);
   }, []);
 
-  return !applicantFormTwoAccess ? (
+  return (!applicantFormTwoAccess ? (
     <RegisterForm
       formType={"applicant"}
       formObj={applicantForm}
@@ -28,6 +28,7 @@ function ApplicantRegisterForm({ setHideSliderButtons }) {
     <UserProvider>
       <ApplicantRegisterFormTwo setHideSliderButtons={setHideSliderButtons} />
     </UserProvider>
+  )
   );
 }
 

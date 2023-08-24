@@ -23,11 +23,11 @@ function LoginPage() {
   }, []);
 
   useEffect(() => {
-    // setLoading(false)
+    setLoading(false)
   },[loading])
 
   return (
-    !loading &&
+    // !loading &&
     <div className="loginPage grid-center">
       <LoginHeader />
 
