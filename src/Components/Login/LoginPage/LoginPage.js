@@ -14,11 +14,12 @@ function LoginPage() {
   const [failedLoginMessage, setFailedLoginMessage] = useState("");
 
   useEffect(() => {
+    // setLoading(true)
     if (isSignedIn || isRecruiterAcc) {
       navigate(isSignedIn ? "/user" : "/recruiter");
     } else {
       setAppHeader("Log In");
-      setLoading(false)
+      // setLoading(false)
     }
   }, []);
 
