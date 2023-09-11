@@ -59,3 +59,27 @@
     }
   }
 }
+
+
+@media (min-width: 450px)  {
+  .recruiterTopJobs {
+    text-indent: 0;
+    width: 15vw;
+    height: 13vh;
+    column-gap: 2vw;
+    grid-template-rows: 40% 35% 20%;
+
+    &_title {
+    width: 95%;
+    }
+
+    &_logo {
+      height: 35px;
+    }
+    &_applicants {
+      & span {
+        margin-left: 1vw;
+      }
+    }
+  }
+}

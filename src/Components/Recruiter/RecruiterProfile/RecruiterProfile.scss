@@ -194,3 +194,14 @@
   // color: #0f7fed;
   // color: #0feded;
 }
+
+@media (min-width: 450px) {
+  .recruiterProfile {
+    &_topJobs {
+      column-gap: 2vw;
+      &_header {
+        margin-left: 1vw;
+      }
+    }
+  }
+}
