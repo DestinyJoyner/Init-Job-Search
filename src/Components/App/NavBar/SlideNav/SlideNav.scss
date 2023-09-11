@@ -138,14 +138,41 @@
   }
 }
 
-@media (max-width:500px) {
+// @media (max-width:500px) {
+//   .slideNav {
+//     &_header {
+//       right: 5vw;
+//     }
+//     &_close {
+//       transform: translate3d(450px, 0, 0); 
+//       clip-path: none;
+//     }
+//   }
+// }
+
+@media (min-width: 450px) {
   .slideNav {
-    &_header {
-      right: 5vw;
+    &_open {
+      transform: none;
+     visibility: visible;
+      
     }
+  
     &_close {
-      transform: translate3d(450px, 0, 0); 
-      clip-path: none;
+      transform: none;
+    visibility: hidden;
+    }
+    &_container {
+      max-width: 400px;
+      left: unset;
+  }
+
+  &_link {
+    margin-left: 0vw;
+
+    &_icons {
+      margin-right: 4vw;
     }
   }
+}
 }
