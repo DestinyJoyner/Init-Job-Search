@@ -172,10 +172,24 @@
 
 @media (min-width: 450px)  {
   .applicantProfile {
+    .sliderButton_container {
+      margin-right: 2vw;
+    }
     &_header {
       &_about {
         margin-left: 1vw;
       }
     }
+    &_appliedJobs {
+        &_container {
+          &_card {
+            &_applied {
+              display: flex;
+              font-size: 14px;
+            }
+          }
+        }
+    }
+
   }
 }
