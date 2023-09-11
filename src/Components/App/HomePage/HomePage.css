@@ -593,4 +593,71 @@
   .home-scroll-container {
     width: 2vw;
   }
+  /* second home slide */
+  .nav-screen {
+    left: 2vw;
+  }
+  .nav-screen span {
+    right: 1vw;
+  }
+  .nav-screen svg {
+    left: 3vw;
+  }
+  .navbar-screen {
+    right: 1vw;
+  }
+  
+  .profile-screen span {
+    bottom: 2vh;
+    left: 2vw;
+  }
+  .profile-screen svg {
+    right: 1vw;
+  }
+  .profile-screenshot {
+    left: 0vw;
+  }
+  .home-app-guide .home-links-div .home-sign {
+    left: 5vw;
+  }
+  /* third slide */
+  .job-screen {
+    left: 8vw;
+  }
+  .job-screen span {
+    right: 6vw;
+  }
+  .job-screen svg {
+    left: -5vw;
+  }
+  .job-screenshot {
+   left: 1vw;
+  }
+  
+  .search-screen {
+    right: 0vw;
+  }
+  .search-screen svg {
+    left: 5vw;
+    bottom: 6vh;
+  }
+  .search-screenshot {
+    height: 154px;
+    right: 1vw;
+    bottom: 3vh;
+  }
+  
+  .applied-screen svg {
+    left: 7vw;
+    bottom: 10vh;
+  }
+  .applied-screenshot {
+    right: 1vw;
+   bottom: 2vh;
+  }
+  
+  .home-guide-2 .home-links-div .home-sign {
+    left: 5vw;
+  }
+
 }
