@@ -655,9 +655,28 @@
     right: 1vw;
    bottom: 2vh;
   }
-  
+
   .home-guide-2 .home-links-div .home-sign {
     left: 5vw;
   }
+  /* final slide */
+  .home-final .home-register {
+    left: 1vw;
+  }
+  .misc4 {
+    left: 1vw;
+  }
+  .misc4 img {
+    right: 2vw;
+  }
+  .home-final .final-quote {
+    position: relative;
+    right: 1vw;
+  }
+  
+  .init-tree-final {
+    right: 2vw;
+  }
+
 
 }
