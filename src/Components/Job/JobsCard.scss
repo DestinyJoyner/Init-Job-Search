@@ -94,3 +94,13 @@
   }
 }
 
+@media (min-width: 450px) {
+  .jobCard {
+    &_details,
+    &_skills,
+    &_location {
+      margin-left: 1vw;
+    }
+  }
+}
+
