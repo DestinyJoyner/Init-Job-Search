@@ -5,7 +5,7 @@
   height: 92vh;
   /* width: 100%; */
   /* width: inherit; */
-  max-width: 390px;
+  /* max-width: 390px; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -81,7 +81,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right:0;
   bottom: 0;
 }
 .home-landing h2 {
@@ -572,4 +572,25 @@
 
 .dark .misc4 {
   border-color: var(--init-mint);
+}
+
+
+@media (min-width: 450px) {
+  .misc2 {
+    right: 1vw;
+  }
+  .misc2 img {
+    right: 3vw;
+  }
+  
+  .blue-tree {
+    left: 5vw;
+  }
+  .home-register, .home-sign, .text-scroll {
+    position: relative;
+    left: 1vw;
+  }
+  .home-scroll-container {
+    width: 2vw;
+  }
 }

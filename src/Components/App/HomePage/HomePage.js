@@ -31,10 +31,10 @@ function HomePage() {
   useEffect(() => {
     setAppHeader("Welcome to inIT")
 
-    const timeout = setInterval(() => {
-      setTextSwitch(true);
-      setLoading(false)
-    }, 4000);
+    // const timeout = setInterval(() => {
+    //   setTextSwitch(true);
+    //   setLoading(false)
+    // }, 4000);
   }, [])
 
   return (
