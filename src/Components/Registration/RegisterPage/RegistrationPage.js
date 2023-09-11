@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import { useContextProvider } from "../../../Providers/Provider";
 import LoginHeader from "../../Login/LoginHeader/LoginHeader.js";
@@ -9,14 +9,20 @@ import RecruiterRegisterForm from "../RecruiterForm/RecruiterRegisterForm";
 import "./RegistrationPage.scss";
 
 function RegistrationPage() {
-  const {setLoading,loading} = useContextProvider()
+  const {setLoading,loading, isSignedIn, isRecruiterAcc} = useContextProvider()
   const { setAppHeader } = useNavProvider();
+  const navigate = useNavigate()
   const [userType, setUserType] = useState("applicant");
   const [hideSliderButtons, setHideSliderButtons] = useState(false)
 
   useEffect(() => {
-    setAppHeader("Register")
+    if (isSignedIn || isRecruiterAcc) {
+      navigate(isSignedIn ? "/user" : "/recruiter");
+    } else {
+      setAppHeader("Register")
     setLoading(false)
+    }
+    
   }, []);
 
   useEffect(() => {
