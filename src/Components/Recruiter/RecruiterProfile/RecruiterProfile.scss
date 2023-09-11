@@ -203,5 +203,12 @@
         margin-left: 1vw;
       }
     }
+    &_jobsPosted {
+      &_header {
+        & svg {
+          left: 1.5vw;
+        }
+      }
+    }
   }
 }

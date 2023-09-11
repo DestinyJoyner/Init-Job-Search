@@ -100,3 +100,16 @@
     color: var(--init-darkmint);
     color: #0c65bd;
 }
+
+@media (min-width: 450px) {
+    .recruiter-job {
+        height: 10vh;
+    }
+    .recruiter-job-applicants {
+        column-gap: .5vw;
+        justify-self: right;
+    }
+    .recruiter-job-company, .recruiter-job-title {
+        margin-left: 1vw;
+    }
+}
