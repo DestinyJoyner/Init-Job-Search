@@ -1,6 +1,7 @@
 .darkModeSwitch {
   position: relative;
   display: grid;
+  grid-template-columns: 50% 50%;
   width: 70px;
   height: 34px;
   margin-bottom: 10px;
@@ -46,7 +47,8 @@
 
   &_button {
     position: relative;
-    left: 25vw;
+    left: 15vw;
+  
     top: 0.5vh;
     font-size: 20px;
     color: var(--init-background);
@@ -59,7 +61,8 @@
   .darkModeSwitch {
     margin-left: 0vw;
     &_button {
-      left: 8vw;
+      left: 0;
+      margin-left: 50px;
     }
   }
 }
