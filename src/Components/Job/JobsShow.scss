@@ -202,3 +202,19 @@
     color: var(--init-dark);
   }
 }
+
+
+@media (min-width: 450px) {
+  .jobShow {
+    .sliderButton {
+      &_container {
+        margin-left: 0vw;
+  }
+    }
+    &_jobDetails {
+      &_overview {
+        margin-left: 2.5vw;
+      }
+    }
+}
+}
