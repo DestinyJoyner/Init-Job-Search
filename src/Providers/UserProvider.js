@@ -31,6 +31,7 @@ function UserProvider({ children }) {
   useEffect(() => {
     setLoading(true);
     if (userID) {
+      // console.log("user Id", userID)
       axios
         .get(`${API}/users/${userID}`)
         .then(({ data }) => {
@@ -40,7 +41,7 @@ function UserProvider({ children }) {
         })
         .catch((error) => {
           console.log(error);
-          navigate("/not-found");
+          // navigate("/not-found");
         });
 
       axios

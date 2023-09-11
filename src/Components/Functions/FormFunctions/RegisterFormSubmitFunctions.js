@@ -52,6 +52,7 @@ function handleApplicantRegisterForm(
 const handleApplicantFormTwoSubmit = (e, formObj, skillsArr, userID, navigate) => {
   e.preventDefault();
   const { id } = formObj;
+  // console.log(formObj)
   axios
     .put(`${API}/users/${userID}`, {
       profile: formObj,
