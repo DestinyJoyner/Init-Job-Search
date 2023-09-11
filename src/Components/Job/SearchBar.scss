@@ -60,6 +60,7 @@
 /* DARK MODE */
 .dark .searchComponent {
     &_searchBar {
+    
         &_input {
             color: var(--init-background);
             &::placeholder {
@@ -84,7 +85,7 @@
                 right: 3vw;
             }
             &_input {
-                text-indent: 2vw;
+                text-indent: 20px;
             }
             &_filterIcon {
                 right: 0vw;
