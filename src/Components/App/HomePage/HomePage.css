@@ -101,7 +101,8 @@
   margin-right: 8vw;
 }
 .home-landing hr {
-  width: 85%;margin-right: 8vw;
+  width: 85%;
+  margin-right: 8vw;
   border: 2px solid var(--init-gold);
   height: 0;
 }
@@ -576,6 +577,16 @@
 
 
 @media (min-width: 450px) {
+  .home-landing {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .home-landing h2, .home-landing hr, .home-landing span {
+    margin-right: 0vw;
+  }
+  .home-landing .home-logo {
+    left: 1vw;
+  }
   .misc2 {
     right: 1vw;
   }
