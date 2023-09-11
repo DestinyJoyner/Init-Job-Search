@@ -34,3 +34,9 @@ padding: .7vw;
 .dark .app-header h1 {
     color: var(--init-charcoal);
 }
+
+@media (min-width: 450px) {
+  .app-header .app-header-back {
+    margin-left: 1vw;
+   }
+}

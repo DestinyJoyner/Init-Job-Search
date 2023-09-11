@@ -18,7 +18,7 @@ function DarkModeSlider() {
       setTheme("light");
       setIsChecked(false);
     }
-    navbarClick();
+    // navbarClick();
   };
 
   return (

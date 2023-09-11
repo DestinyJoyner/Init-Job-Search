@@ -169,3 +169,13 @@
 .dark .applicantProfile a {
   color: var(--init-gold);
 }
+
+@media (min-width: 450px)  {
+  .applicantProfile {
+    &_header {
+      &_about {
+        margin-left: 1vw;
+      }
+    }
+  }
+}

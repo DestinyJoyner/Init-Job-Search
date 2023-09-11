@@ -62,3 +62,18 @@
     color: var(--init-background);
   }
 }
+
+@media (min-width: 450px) {
+  .loginForm {
+    &_checkbox {
+      margin-left: 5vw;
+      &_label {
+        column-gap: 2vw;
+        & svg {
+          left: 5vw;
+        }
+      }
+      
+    }
+  }
+}

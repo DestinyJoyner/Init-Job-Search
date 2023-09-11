@@ -50,6 +50,11 @@
   height: 78px;
 }
 
+@media (min-width: 450px) {
+  .nav-footer {
+    margin-left: 0vw;
+  }
+}
 
 
 

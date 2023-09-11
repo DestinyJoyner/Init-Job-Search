@@ -308,4 +308,37 @@
 }
 
 
-
+@media (min-width: 450px) {
+  .job-form-page {
+   position: relative;
+   right: 2vw;
+  }
+  .job-form-remote, .job-form-location input[type="checkbox"] {
+    right: 3vw;
+  }
+  .job-form textarea {
+    width: 110%;
+   
+  }
+  .task-container {
+    width: 100%;
+  }
+  .task-header {
+    margin-left: 2vw;
+  } 
+  .task-line .task-remove {
+    left: 1vw;
+  }
+  .job-form .skills-checkboxes {
+    margin-left: 1vw;
+  }
+  .job-form .skills-checkboxes label {
+    margin-left: 1vw;
+  }
+  .job-form .skills-checkboxes label span {
+    margin-left: 1vw;
+  }
+  .job-form-submit {
+    margin-left: 2vw;
+  }
+}

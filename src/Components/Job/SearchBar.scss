@@ -76,3 +76,22 @@
     }   
 }
 
+@media (min-width: 450px) {
+    .searchComponent {
+        &_searchBar {
+            &_label {
+                position: relative;
+                right: 3vw;
+            }
+            &_input {
+                text-indent: 2vw;
+            }
+            &_filterIcon {
+                right: 0vw;
+            }
+        }
+        &_submit {
+            margin-left: 3vw;
+        }
+    }
+}

@@ -54,3 +54,12 @@
     width: 200px;
   }
 }
+
+@media (min-width: 450px) {
+  .darkModeSwitch {
+    margin-left: 0vw;
+    &_button {
+      left: 8vw;
+    }
+  }
+}

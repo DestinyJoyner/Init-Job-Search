@@ -16,6 +16,14 @@
   background-color: var(--init-gold); 
  }
 
+ @media (min-width: 450px) {
+  .navBar {
+    &_burger {
+      margin-right: 1vw;
+    }
+  }
+ }
+
 
 
 

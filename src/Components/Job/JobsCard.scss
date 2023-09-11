@@ -79,6 +79,11 @@
     border-radius: 20px;
     background-color: white;
 
+    // & .skills-component {
+    //   margin-top: .3vh;
+    //   align-items: center;
+    // }
+
     & .skills-component {
       width: 100%;
       height: 100%;
@@ -90,6 +95,23 @@
         height: 1.4em;
         width: 1.4em;
       }
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  .jobCard {
+    &_details,
+    &_skills,
+    &_location {
+      margin-left: 1vw;
+    }
+    &_location {
+      column-gap: 1vw;
+    }
+
+    & .skills-component {
+      column-gap: 1vw;
     }
   }
 }

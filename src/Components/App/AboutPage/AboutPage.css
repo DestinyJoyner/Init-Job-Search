@@ -213,3 +213,12 @@
   background-color: var(--init-dark);
   border-color: var(--init-gold);
 }
+
+@media (min-width: 450px) {
+  .emptyState_img {
+    height: 180px;
+}
+.about .sliderButton_container {
+  margin-top: 1.5vh;
+}
+}
