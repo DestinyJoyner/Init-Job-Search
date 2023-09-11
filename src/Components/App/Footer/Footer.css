@@ -10,7 +10,7 @@
   width: 95%;
   color: var(--init-background);
   /* font-size: 15px; */
-  margin-left: 2vw;
+  margin-left: 5vw;
 }
 
 .footer-init {
@@ -52,7 +52,7 @@
 
 @media (min-width: 450px) {
   .nav-footer {
-    margin-left: 0vw;
+    margin-left: 2vw;
   }
 }
 
