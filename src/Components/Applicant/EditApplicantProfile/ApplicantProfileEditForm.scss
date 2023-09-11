@@ -68,3 +68,16 @@
     bottom: 2vh;
   }
 }
+
+@media (min-width: 450px)  {
+  .applicantProfileEditForm {
+    .skillsCheckboxes {
+      .skills-checkboxes {
+        column-gap: 1vw;
+        & span {
+          margin-left: 1vw;
+        }
+      }
+    }
+  }
+}
