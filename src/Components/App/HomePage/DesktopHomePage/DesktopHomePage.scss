@@ -1,18 +1,12 @@
 .desktopHome {
-  // background-color: yellow;
   display: grid;
   grid-template-rows: auto;
   row-gap: 5%;
   justify-items: center;
-  // height: ;
   padding: 5vh 0;
-  // overflow-y:visible;
   padding-bottom: 20vh;
-  // border: 1px solid red;
-  
 
   &_header {
-    // border: 1px solid red;
     width: 75%;
     height: 220px;
     align-self: center;
@@ -32,6 +26,10 @@
       grid-row: 1;
       display: grid;
       row-gap: 10%;
+
+      &_mission {
+        font-size: 22px;
+      }
     }
 
     &_button {
@@ -49,52 +47,52 @@
   }
 
   &_content_init {
-    width: 70%;
+    width: 75%;
     height: 65vh;
+    padding-bottom: 3vh;
     border-radius: 20px;
     background-color: var(--init-mint);
     display: grid;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
 
     &_stock2 {
       height: 200px;
       border-radius: 10px;
+      align-self: center;
     }
 
     &_question {
       font-weight: 600;
       font-size: 35px;
-      // margin-left: 30px;
       font-family: "Cabin";
       color: var(--init-gold);
-      // border: 1px solid red;
     }
 
     &_answer {
-        width: 95%;
-        display: grid;
-        row-gap: 5%;
-        font-size: 16px;
-        & li {
-          font-family: Poppins;
-        }
-        
+      width: 95%;
+      font-size: 17px;
+      font-family: Poppins;
     }
 
-    &_one, &_two {
+    &_one,
+    &_two {
       grid-row: 1;
       display: flex;
       width: 90%;
-      column-gap: 40px ;
+      column-gap: 30px;
       &_text {
+        display: grid;
+        row-gap: 1vh;
         max-width: 70%;
       }
     }
     &_two {
       grid-row: 2;
-      
+      & a {
+        font-size: 20px;
+      }
     }
   }
 }

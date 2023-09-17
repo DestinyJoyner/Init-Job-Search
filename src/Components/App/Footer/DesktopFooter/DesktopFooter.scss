@@ -4,7 +4,7 @@
   width: 94%;
   margin-top: 3vh;
   padding: 2vh 0;
-  height: 280px;
+  height: 320px;
   display: grid;
   grid-template-columns: 45% 55%;
   column-gap: 2vw;
@@ -37,20 +37,8 @@
       width: fit-content;
     }
 
-    &_links {
+    .contactLinks {
       grid-row: 4;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      column-gap: 20px;
-      & svg {
-        height: 1.8em;
-        width: 1.8em;
-        color: var(--init-blue);
-      }
-      &_pursuit {
-        height: 30px;
-      }
     }
   }
 
