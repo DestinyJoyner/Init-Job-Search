@@ -7,8 +7,8 @@
   // height: ;
   padding: 5vh 0;
   // overflow-y:visible;
-  padding-bottom: 15vh;
-  border: 1px solid red;
+  padding-bottom: 20vh;
+  // border: 1px solid red;
   
 
   &_header {
@@ -49,8 +49,8 @@
   }
 
   &_content_init {
-    width: 85%;
-    height: 60vh;
+    width: 70%;
+    height: 65vh;
     border-radius: 20px;
     background-color: var(--init-mint);
     display: grid;

@@ -1,58 +1,78 @@
 .desktopFooter {
-    border: 1px solid var(--init-darkmint);
-    border-top: none;
-    width: 85%;
-    margin-top: 1vh;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    height: 250px;
+  border-top: 1px solid var(--init-darkmint);
+  border-bottom: 1px solid var(--init-darkmint);
+  width: 94%;
+  margin-top: 3vh;
+  padding: 2vh 0;
+  height: 280px;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  column-gap: 2vw;
+
+  & h2 {
+    color: var(--init-darkmint);
+    margin: 0;
+  }
+
+  &_developer {
+    grid-column: 2;
     display: grid;
-    grid-template-columns: 45% 55%;
+    grid-template-rows: 15% 55% 15% 15%;
+    align-items: center;
 
-    & h2 {
-        color: var(--init-darkmint);
-        margin: 0;
-        // margin-left: 3vw;
-        grid-row: 1;
-        grid-column: span ;
+    &_bio {
+      display: flex;
+      width: 93%;
+      column-gap: 5px;
+      grid-row: 2;
+
+      & img {
+        height: 150px;
+        border-radius: 50%;
+      }
     }
 
-    &_developer {
-        display: grid;
-        grid-template-columns: 65% 35%;
-        grid-template-rows: 10% 70% 20%;
-        row-gap: 5px;
-        align-items: center;
-
-        & img {
-            grid-column: 2;
-            grid-row: 2;
-            height: 170px;
-            border-radius: 50%;
-            justify-self: center;
-        }
-
-        &_bio {
-            grid-column: 1;
-            grid-row: 2;
-        }
-
-        &_links {
-            grid-column: 1;
-            grid-row: 3;
-            border-top: 1px solid var(--init-darkmint);
-            align-self: flex-start;
-            padding-top: 1vh;
-        }
-
-        &_name {
-            grid-column: 2;
-            grid-row: 3;
-            font-weight: 600;
-            font-size: 22px;
-            text-align: center;
-            align-self: flex-start;
-            margin-left: 1vw;
-        }
+    &_contact {
+      grid-row: 3;
+      width: fit-content;
     }
+
+    &_links {
+      grid-row: 4;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      column-gap: 20px;
+      & svg {
+        height: 1.8em;
+        width: 1.8em;
+        color: var(--init-blue);
+      }
+      &_pursuit {
+        height: 30px;
+      }
+    }
+  }
+
+  &_about {
+    width: auto;
+    display: grid;
+    grid-template-rows: 15% 38% 15% 30%;
+    align-items: center;
+
+    &_tech {
+      display: grid;
+      row-gap: 1vh;
+      .skills-component {
+        margin-top: 1vh;
+        width: fit-content;
+        column-gap: 15px;
+
+        & svg {
+          height: 1.8em;
+          width: 1.8em;
+        }
+      }
+    }
+  }
 }
