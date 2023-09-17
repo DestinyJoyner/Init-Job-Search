@@ -20,7 +20,33 @@ function DesktopHomePage(props) {
         <button className="desktopHome_header_button">SEARCH JOBS NOW!</button>
       </section>
 
-      <section className="desktopHome_content">Bottom</section>
+      <section className="desktopHome_content_init">
+
+        <section className="desktopHome_content_init_one">
+        <span className="desktopHome_content_init_question">
+            Why Choose inIT?
+        </span>
+        <ul className="desktopHome_content_init_answer">
+           <li>40% of software developers struggle to find work within a year of boot camp or college completion</li> 
+           <li>Identifying jobs for entry-level developers with little to no experience can be difficult</li>
+           <li>Other job search engines, harbor a "social media" environment that can prove tedious and overwhelming </li>
+        </ul>
+        </section>
+
+        <section className="desktopHome_content_init_two">
+        <span className="desktopHome_content_init_question">
+            Our Mission?
+        </span>
+        <ul className="desktopHome_content_init_answer">
+           <li>40% of software developers struggle to find work within a year of boot camp or college completion</li> 
+           <li>Identifying jobs for entry-level developers with little to no experience can be difficult</li>
+           <li>Other job search engines, harbor a "social media" environment that can prove tedious and overwhelming </li>
+        </ul>
+        </section>
+       
+      </section>
+
+      <section className="desktopHome_content">About</section>
     </div>
   );
 }
