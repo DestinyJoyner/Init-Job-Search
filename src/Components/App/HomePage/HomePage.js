@@ -18,6 +18,7 @@ import screen4 from "./Images/job-screen-full.png";
 import screen5 from "./Images/filter-screen.png";
 import "./HomePage.css";
 
+
 function HomePage() {
   const {setLoading} = useContextProvider()
   const {setAppHeader} = useNavProvider()
@@ -36,7 +37,7 @@ function HomePage() {
       setLoading(false)
     }, 4000);
   }, [])
-
+ 
   return (
     <div ref={refElement} className="home">
       <ScrollArrow element={refElement} />

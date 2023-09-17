@@ -1,6 +1,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
 import NavProvider from "./NavProvider";
+import { useWindowSizeProvider } from "./WindowSizeProvider";
 import Nav from "../Components/App/NavBar/Nav";
 import Loading from "../Components/App/LoadingPage/Loading.js"
 
@@ -12,6 +13,8 @@ export function useContextProvider() {
 const API = process.env.REACT_APP_API_URL;
 
 function Provider({ children }) {
+  const { isDesktopView } = useWindowSizeProvider()
+
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const localUserID = localStorage.getItem("userID");
@@ -41,7 +44,7 @@ useEffect(() => {
   // setLoading(true)
 },[])
   return (
-    <div className={`${theme}`}>
+    <div className={isDesktopView ?`${theme} desktop` : `${theme} mobile`}>
       <ContextData.Provider
         value={{
           API,
