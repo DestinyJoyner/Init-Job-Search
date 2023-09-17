@@ -1,0 +1,40 @@
+.nav-footer {
+  grid-row: 10;
+  align-self: flex-end;
+  display: grid;
+  align-items: flex-end;
+  justify-items: left;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 4vh 5vh;
+  height: 10vh;
+  width: 95%;
+  color: var(--init-background);
+  margin-left: 5vw;
+
+  &_init {
+    height: 2vh;
+  }
+  &_tree {
+    grid-column: 2;
+    grid-row: 1/3;
+    height: 78px;
+  }
+
+  .contactLinks {
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    top: 1.3vh;
+  }
+}
+
+@media (min-width: 450px) {
+  .nav-footer {
+    margin-left: 2vw;
+  }
+}
+
+
+
+
+

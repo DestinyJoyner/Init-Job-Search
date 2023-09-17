@@ -43,7 +43,7 @@ function DesktopFooter() {
         <h2 className="desktopFooter_developer_contact">
           Contact Me
         </h2>
-        <ContactLinks />
+        <ContactLinks pursuit={true} />
       </section>
 
     </div>

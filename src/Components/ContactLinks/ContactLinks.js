@@ -1,9 +1,9 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
-import pursuit from "../../Assets/pursuit-blue-logo.jpg"
+import pursuitLogo from "../../Assets/pursuit-blue-logo.jpg"
 import "./ContactLinks.scss"
 
-function ContactLinks() {
+function ContactLinks({pursuit}) {
     return (
         <section className="contactLinks">
           <a href="https://github.com/DestinyJoyner" target="blank">
@@ -18,9 +18,18 @@ function ContactLinks() {
           <a href="mailto:destinyjoyner@pursuit.org" target="_blank">
             <SiGmail />
           </a>
-          <a href="https://www.pursuit.org/mission-vision" target="_blank">
-          <img className="contactLinks_pursuit" src={pursuit} alt="pursuit-logo" />
-        </a>
+          {
+            pursuit && 
+            <a 
+            href="https://www.pursuit.org/mission-vision" 
+            target="_blank">
+              <img 
+              className="contactLinks_pursuit" 
+              src={pursuitLogo} 
+              alt="pursuit-logo" />
+            </a>
+          }
+          
         </section>
     );
 }
