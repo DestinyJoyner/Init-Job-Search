@@ -51,21 +51,26 @@
     border-radius: 20px;
     background-color: var(--init-mint);
     display: grid;
-    grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2,1fr);
     align-items: center;
+    justify-items: center;
+
+    &_stock2 {
+      height: 200px;
+      border-radius: 10px;
+    }
 
     &_question {
       font-weight: 600;
       font-size: 35px;
-      margin-left: 30px;
+      // margin-left: 30px;
       font-family: "Cabin";
       color: var(--init-gold);
       // border: 1px solid red;
     }
 
     &_answer {
-        width: 100%;
+        width: 95%;
         display: grid;
         row-gap: 5%;
         font-size: 16px;
@@ -73,24 +78,20 @@
           font-family: Poppins;
         }
         
-       
     }
 
-    &_one , &_two {
-      height: 80% ;
-    }
-
-    &_one {
-      grid-column: 1;
+    &_one, &_two {
       grid-row: 1;
-      // width: 60%;
-      // border: 1px solid blue;
+      display: flex;
+      width: 90%;
+      column-gap: 40px ;
+      &_text {
+        max-width: 70%;
+      }
     }
-
     &_two {
-      grid-column: 2;
       grid-row: 2;
-      margin-right: 20px;
+      
     }
   }
 }
