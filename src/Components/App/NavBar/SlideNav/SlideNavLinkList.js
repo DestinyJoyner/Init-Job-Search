@@ -2,7 +2,7 @@ import { useContextProvider } from "../../../../Providers/Provider";
 import { useNavProvider } from "../../../../Providers/NavProvider";
 import SlideNavLink from "./SlideNavLink";
 
-function SlideNavLinkList() {
+function SlideNavLinkList({icons}) {
   const {
     isSignedIn,
     isRecruiterAcc,
@@ -37,23 +37,37 @@ function SlideNavLinkList() {
         <SlideNavLink
           path={isSignedIn ? "/user" : "/recruiter"}
           label={"Profile"}
+          showIcon={icons}
         />
       )}
 
       {!isSignedIn && !isRecruiterAcc && (
-        <SlideNavLink path={"/register"} label={"Register"} />
+        <SlideNavLink 
+        path={"/register"} 
+        label={"Register"}
+        showIcon={icons} />
       )}
 
-      <SlideNavLink path={"/"} label={"Home"} />
+      <SlideNavLink 
+      path={"/"} 
+      label={"Home"}
+      showIcon={icons} />
 
-      <SlideNavLink path={"/jobs"} label={"Jobs"} />
+      <SlideNavLink 
+      path={"/jobs"} 
+      label={"Jobs"}
+      showIcon={icons} />
 
-      <SlideNavLink path={"/about"} label={"About"} />
+      <SlideNavLink 
+      path={"/about"} 
+      label={"About"}
+      showIcon={icons} />
 
       {(isSignedIn || isRecruiterAcc) && (
         <SlideNavLink
           path={"/login"}
           label={"Logout"}
+          showIcon={icons}
           clickfunction={logoutClick}
         />
       )}

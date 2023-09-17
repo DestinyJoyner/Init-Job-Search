@@ -10,7 +10,7 @@ import {
   navRegister,
 } from "../../../Job/Data/Icons";
 
-function SlideNavLink({ path, label, clickfunction }) {
+function SlideNavLink({ path, label, clickfunction, showIcon }) {
   const { navbarClick } = useNavProvider();
 
   const navIconObj = {
@@ -31,7 +31,9 @@ function SlideNavLink({ path, label, clickfunction }) {
         !clickfunction ? navbarClick() : clickfunction();
       }}
     >
-      {navIconObj[label]}
+      
+      { showIcon !== false && navIconObj[label]}
+
       <span>{label}</span>
     </Link>
   );

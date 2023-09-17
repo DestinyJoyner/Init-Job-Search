@@ -1,0 +1,12 @@
+.app-header {
+  grid-column: 2;
+  width: 100%;
+  color: var(--init-gold);
+  text-align: center;
+}
+
+ /* darkmode */
+.dark .app-header {
+    color: var(--init-charcoal);
+}
+

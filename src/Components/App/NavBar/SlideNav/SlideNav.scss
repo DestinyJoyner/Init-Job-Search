@@ -3,25 +3,19 @@
 .slideNav {
   background-color: var(--init-darkmint);
   display: grid;
-  grid-column: 2;
+  grid-column: 1;
   grid-template-rows: 20vh 5vh repeat(5, 10vh) 5vh 8vh 10vh;
   align-items: center;
   width: 100%;
   height: 100vh;
-  // padding-left: 20px;
-  // clip-path: inset(10% 10% 10% 10%);
-
+ 
   &_open {
     transform: translate3d(0vw, 0, 0);
     overflow: hidden;
-    
   }
 
   &_close {
-    // transform: translate3d(var(--slidenav), 0, 0); 
-    transform: translate3d(100%, 0, 0); 
-    // translate: (100% 0);
-    // clip-path: inset(100% 0%);
+    transform: translate3d(-105vw, 0, 0); 
   }
 
   &_container {
@@ -30,17 +24,16 @@
     position: fixed;
     left: 0;
     top: 0;
-    width: 106%;
+    width: 100%;
     height: 100vh;
-    grid-template-columns: 15% 80%;
+    grid-template-columns: 85% 15%;
     z-index: 100;
     transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
     animation-duration: 3s;
-    // clip-path: inset(100% 50%);
   }
 
   &_transparent {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
     height: 100%;
     width: 100%;
@@ -48,16 +41,12 @@
   }
 
   &_header {
-  
     grid-row: 1;
     display: grid;
     grid-template-rows: 1fr 1fr;
     align-items: center;
     height: 100%;
     width: 100%;
-    // position: relative;
-    // right: 5vw;
-
 
     &_logo {
       grid-column: 2;
@@ -85,14 +74,14 @@
   }
 
   &_closeButton {
-    grid-column: 3;
+    grid-column: 1;
     grid-row: 1;
     align-self: center;
     height: 2.5em;
     width: 2.5em;
     color: var(--init-blue);
     position: relative;
-    right: 1vw;
+    left: 1vw;
   }
 
   &_divider {
@@ -138,51 +127,4 @@
   &_closeButton {
     color: var(--init-gold);
   }
-}
-
-// @media (max-width:500px) {
-//   .slideNav {
-//     &_header {
-//       right: 5vw;
-//     }
-//     &_close {
-//       transform: translate3d(450px, 0, 0); 
-//       clip-path: none;
-//     }
-//   }
-// }
-
-@media (min-width: 450px) {
-  .slideNav {
-    width: 105%;
-    &_open {
-      transform: none;
-     visibility: visible;
-      
-    }
-  
-    &_close {
-      transform: none;
-    visibility: hidden;
-    }
-    &_container {
-      left: unset;
-  }
-
-  &_header {
-    right: 1.6vw;
-  }
-
-  &_link {
-    margin-left: 0vw;
-
-    &_icons {
-      margin-right: 3vw;
-    }
-  }
-
-  &_divider {
-    margin-left: 1vw;
-  }
-}
 }

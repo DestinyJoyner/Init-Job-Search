@@ -3,6 +3,7 @@ import axios from "axios";
 import NavProvider from "./NavProvider";
 import { useWindowSizeProvider } from "./WindowSizeProvider";
 import Nav from "../Components/App/NavBar/Nav";
+import DesktopNav from "../Components/App/NavBar/DesktopNav/DesktopNav";
 import Loading from "../Components/App/LoadingPage/Loading.js"
 
 export const ContextData = createContext();
@@ -43,6 +44,11 @@ function Provider({ children }) {
 useEffect(() => {
   // setLoading(true)
 },[])
+
+// useEffect(() => {
+//   setLoading(true)
+// },[isDesktopView])
+
   return (
     <div className={isDesktopView ?`${theme} desktop` : `${theme} mobile`}>
       <ContextData.Provider
@@ -65,7 +71,11 @@ useEffect(() => {
         }}
       >
         <NavProvider>
-          <Nav />
+          {
+            isDesktopView ? 
+            <DesktopNav /> :
+            <Nav />
+          }
           {loading && <Loading />} 
           {children}
         </NavProvider>
