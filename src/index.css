@@ -31,7 +31,7 @@
 }
 
 .desktop {
-  height: 100vh;
+  height: 100%;
   overflow-y: scroll;
 }
 

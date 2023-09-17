@@ -11,6 +11,9 @@ export const team = {
     bio:
     <>Born and raised in New York City, Destiny always had a flare for solving math and logic puzzles.<br/> She is intrigued by the vast opportunities that virtual augmentation enables users to experience. <br/> By continuously expanding her programming knowledge, Destiny aims to build immersive worlds inside of the virtual universe.
     </>,
+    bio2: <>As a full stack web developer from Harlem New York, my journey into coding began with customizing my Myspace page back in high school. This led me to attend the Rose Hulman Institute of Technology where I studied computer science. <br/>
+    In June 2023, I completed Pursuit, an intensive Google funded, 1 year software engineering program where I honed my web development skills using JavaScript, NodeJs, and React. 
+    </> ,
     links: [
       "https://github.com/DestinyJoyner",
       "https://www.linkedin.com/in/destinyjoyner/",

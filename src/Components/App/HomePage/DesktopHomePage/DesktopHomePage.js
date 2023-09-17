@@ -1,3 +1,4 @@
+import DesktopFooter from "../../Footer/DesktopFooter/DesktopFooter";
 import logo from "../../../../Assets/LOGO.png";
 import stockImage2 from "../Images/init-stock(3).jpg";
 import "./DesktopHomePage.scss";
@@ -78,7 +79,7 @@ function DesktopHomePage(props) {
         </section>
       </section>
 
-      <section className="desktopHome_content">About</section>
+     <DesktopFooter />
     </div>
   );
 }

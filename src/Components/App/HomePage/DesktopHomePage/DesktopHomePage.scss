@@ -1,11 +1,14 @@
 .desktopHome {
   // background-color: yellow;
   display: grid;
-  grid-template-rows: 20% 50% 30%;
-  row-gap: 10%;
+  grid-template-rows: auto;
+  row-gap: 5%;
   justify-items: center;
-  height: 100%;
+  // height: ;
   padding: 5vh 0;
+  // overflow-y:visible;
+  padding-bottom: 15vh;
+  border: 1px solid red;
   
 
   &_header {
