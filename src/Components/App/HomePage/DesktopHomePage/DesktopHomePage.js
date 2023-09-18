@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DesktopFooter from "../../Footer/DesktopFooter/DesktopFooter";
 import logo from "../../../../Assets/LOGO.png";
 import stockImage1 from "../Images/init-stock(1).jpg"
@@ -6,6 +6,7 @@ import stockImage2 from "../Images/init-stock(2).jpg";
 import "./DesktopHomePage.scss";
 
 function DesktopHomePage() {
+  const navigate = useNavigate()
   return (
     <div className="desktopHome">
       <section className="desktopHome_header">
@@ -19,7 +20,9 @@ function DesktopHomePage() {
           </span>
         </span>
 
-        <button className="desktopHome_header_button">SEARCH JOBS NOW!</button>
+        <button className="desktopHome_header_button"
+        onClick={() => navigate("/jobs")}>
+          SEARCH JOBS NOW!</button>
       </section>
 
       <section className="desktopHome_content_init">

@@ -141,3 +141,8 @@ textarea:focus {
 .bold {
   font-weight: 600;
 }
+
+/* buttons */
+button:hover {
+  cursor: pointer;
+}
