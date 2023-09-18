@@ -18,7 +18,7 @@ function JobsIndexDesktop(props) {
           <SearchBar />
         </SearchBarProvider>
 
-        <div className="jobsIndexDesktop_two">profile card</div>
+      
 
         <aside className="jobsIndexDesktop_filter">
             <span className="jobsIndexDesktop_filter_header">Filter Options</span>
