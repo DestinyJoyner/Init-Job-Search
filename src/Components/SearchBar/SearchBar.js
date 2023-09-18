@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useJobProvider } from "../../Providers/JobProvider";
-import FilterBar from "./FilterBar";
+import { useSearchBarProvider } from "../../Providers/SearchBarProvider";
+import FilterBar from "../FilterBar/FilterBar";
 import searchLogo from "../../Assets/footer-logo.png";
 import {
   handleSearchBar,
@@ -11,15 +12,15 @@ import "./SearchBar.scss";
 
 function SearchBar({withFilterOptions}) {
   const { setSearchQueryRoute, setQueryStart } = useJobProvider();
-
+  const { searchOptions, setSearchOptions} = useSearchBarProvider()
   const [search, setSearch] = useState("");
   const [showFilterBar, setShowFilterBar] = useState(false);
-  const [searchOptions, setSearchOptions] = useState({
-    searchbar: "",
-    isRemote: false,
-    city: "",
-    skills: [],
-  });
+  // const [searchOptions, setSearchOptions] = useState({
+  //   searchbar: "",
+  //   isRemote: false,
+  //   city: "",
+  //   skills: [],
+  // });
 
   return (
     <form
@@ -66,8 +67,8 @@ function SearchBar({withFilterOptions}) {
       </label>
       {showFilterBar && (
         <FilterBar
-          searchOptions={searchOptions}
-          setSearchOptions={setSearchOptions}
+          // searchOptions={searchOptions}
+          // setSearchOptions={setSearchOptions}
         />
       )}
       <button className="searchComponent_submit" type="submit">

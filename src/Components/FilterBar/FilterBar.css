@@ -189,7 +189,7 @@
   color: var(--init-background);
 }
 
-@media (min-width: 450px) {
+/* @media (min-width: 450px) {
   .filter-bar {
     margin-left: 4vw;
     width: 85%;
@@ -204,4 +204,4 @@
   .filter-bar-expanded .skills-checkboxes {
     column-gap: 1.5vw;
   }
-}
+} */

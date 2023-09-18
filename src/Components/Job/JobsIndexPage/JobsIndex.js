@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import SearchBarProvider from "../../../Providers/SearchBarProvider.js";
 import { useContextProvider } from "../../../Providers/Provider.js";
 import { useNavProvider } from "../../../Providers/NavProvider.js";
 import { useJobProvider } from "../../../Providers/JobProvider.js";
 import { v4 as uuidv4 } from "uuid";
 import JobsCard from "../JobsCard.js";
-import SearchBar from "../SearchBar.js";
+import SearchBar from "../../SearchBar/SearchBar.js";
 import NoSearchResults from "../../App/NoSearchResults/NoSearchResults.js";
 import { handlePagination } from "../../Functions/SearchFunctions/JobsIndexFunctions.js";
 import "./JobsIndex.scss";
@@ -33,7 +34,9 @@ useEffect(() => {
 
   return (
     <div className="jobsIndex">
-      <SearchBar withFilterOptions={true}/>
+      <SearchBarProvider>
+        <SearchBar withFilterOptions={true}/>
+      </SearchBarProvider>
       <section className="jobsIndex_buttons">
       <button
         className={hidePrevButton ? "hide" : " jobsIndex_buttons_prev show"}

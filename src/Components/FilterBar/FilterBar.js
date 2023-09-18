@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import SkillsComponent from "./SkillsComponent";
-import Dropdown from "./Inputs/Dropdown.js"
-import { dropdownCities } from "./Data/Cities.js";
+import { useSearchBarProvider } from "../../Providers/SearchBarProvider";
+import SkillsComponent from "../Job/SkillsComponent";
+import Dropdown from "../Job/Inputs/Dropdown.js"
+import { dropdownCities } from "../Job/Data/Cities.js";
 import {
   handleSearchBar,
   handleSkillSelection,
@@ -11,12 +12,14 @@ import { BiChevronDown } from "react-icons/bi"
 import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
-
-function FilterBar({ searchOptions, setSearchOptions}) {
+// { searchOptions, setSearchOptions}
+function FilterBar() {
+  const { searchOptions, setSearchOptions } = useSearchBarProvider()
   const [filterOptions, setFilterOptions] = useState(false);
   const [cityDropdown, setCityDropdown] = useState("");
   const [remoteSearch, setRemoteSearch] = useState(false);
   const [skillView, setSkillView] = useState(false);
+
 
   function remoteClick(event){
     event.preventDefault()
