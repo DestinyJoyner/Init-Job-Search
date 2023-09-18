@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useContextProvider } from "../../Providers/Provider.js";
-import { useNavProvider } from "../../Providers/NavProvider.js";
-import { useJobProvider } from "../../Providers/JobProvider.js";
+import { useContextProvider } from "../../../Providers/Provider.js";
+import { useNavProvider } from "../../../Providers/NavProvider.js";
+import { useJobProvider } from "../../../Providers/JobProvider.js";
 import { v4 as uuidv4 } from "uuid";
-import JobsCard from "./JobsCard";
-import SearchBar from "./SearchBar.js";
-import NoSearchResults from "../App/NoSearchResults/NoSearchResults.js";
-import { handlePagination } from "../Functions/SearchFunctions/JobsIndexFunctions.js";
+import JobsCard from "../JobsCard.js";
+import SearchBar from "../SearchBar.js";
+import NoSearchResults from "../../App/NoSearchResults/NoSearchResults.js";
+import { handlePagination } from "../../Functions/SearchFunctions/JobsIndexFunctions.js";
 import "./JobsIndex.scss";
 
 function JobsIndex() {
