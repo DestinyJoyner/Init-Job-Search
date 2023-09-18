@@ -9,7 +9,7 @@ import {
 import { IoOptionsSharp } from "react-icons/io5";
 import "./SearchBar.scss";
 
-function SearchBar() {
+function SearchBar({withFilterOptions}) {
   const { setSearchQueryRoute, setQueryStart } = useJobProvider();
 
   const [search, setSearch] = useState("");
@@ -55,10 +55,14 @@ function SearchBar() {
             )
           }
         />
-        <IoOptionsSharp
+        {
+          withFilterOptions &&
+          <IoOptionsSharp
           onClick={() => setShowFilterBar(!showFilterBar)}
           className="searchComponent_searchBar_filterIcon"
         />
+        }
+       
       </label>
       {showFilterBar && (
         <FilterBar

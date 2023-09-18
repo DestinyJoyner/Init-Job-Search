@@ -33,7 +33,7 @@ useEffect(() => {
 
   return (
     <div className="jobsIndex">
-      <SearchBar />
+      <SearchBar withFilterOptions={true}/>
       <section className="jobsIndex_buttons">
       <button
         className={hidePrevButton ? "hide" : " jobsIndex_buttons_prev show"}
