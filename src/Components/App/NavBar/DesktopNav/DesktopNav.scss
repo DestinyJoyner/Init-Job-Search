@@ -1,8 +1,51 @@
 .desktopNav {
-    height: 8vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--init-mint);
+  height: 8vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--init-mint);
+  border-bottom: 1px solid var(--init-gold);
+  display: grid;
+  grid-template-columns: 25% repeat(4, 15%) 10%;
+  align-items: center;
+  justify-items: center;
+
+  & a {
+    margin-top: .6vh;
+    & :hover {
+      color: var(--init-gold);
+    }
+  }
+  .loginHeader {
+    all: unset;
+    display: flex;
+    &_logo {
+      height: 8vh;
+      background-color: var(--init-background);
+      padding: 0 1vw;
+      border-bottom: 1px solid var(--init-background);
+    }
+    &_slogan {
+      color: var(--init-gold);
+      background-color: var(--init-mint);
+      font-size: 19px;
+      text-align: center;
+      align-self: center;
+      margin-left: 0.5vw;
+    }
+  }
+
+  .darkModeSwitch {
+    margin: 0;
+  }
+}
+
+.dark .desktopNav {
+    .loginHeader {
+        &_logo {
+            background-color: var(--init-dark);
+            border-color: var(--init-dark);
+        }
+    }
 }

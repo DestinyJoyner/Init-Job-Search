@@ -46,15 +46,38 @@
   }
 
   &_button {
-    position: relative;
-    left: 15vw;
-  
-    top: 0.5vh;
-    font-size: 20px;
-    color: var(--init-background);
     grid-column: 2;
     width: 200px;
+    & span {
+      position: relative;
+      left: 15vw;
+      top: 0.5vh;
+      font-size: 20px;
+      color: var(--init-background);
+    }
+
+    & svg {
+      position: relative;
+      transform: rotate(180deg);
+      color: var(--init-blue);
+      width: 1.8em;
+      height: 1.8em;
+      top: 0.2vh;
+    }
   }
+}
+
+.dark .darkModeSwitch {
+  &_slider {
+    &:before {
+      background-color: var(--init-gold);
+    }
+  }
+  // &_button {
+  //   & svg {
+  //     color: var(--init-dark);
+  //   }
+  // }
 }
 
 @media (min-width: 450px) {

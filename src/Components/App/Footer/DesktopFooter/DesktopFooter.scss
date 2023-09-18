@@ -64,3 +64,14 @@
     }
   }
 }
+
+
+.dark .desktopFooter {
+  &_developer {
+    .contactLinks {
+      & svg {
+        color: var(--init-gold);
+      }
+    }
+  }
+}

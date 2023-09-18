@@ -30,7 +30,10 @@ function SlideNavLinkList({icons}) {
   return (
     <>
       {!isSignedIn && !isRecruiterAcc && (
-        <SlideNavLink path={"/login"} label={"Login"} />
+        <SlideNavLink 
+        path={"/login"} 
+        label={"Login"}
+        showIcon={icons} />
       )}
 
       {(isSignedIn || isRecruiterAcc) && (
@@ -58,10 +61,10 @@ function SlideNavLinkList({icons}) {
       label={"Jobs"}
       showIcon={icons} />
 
-      <SlideNavLink 
+      { icons !== false && <SlideNavLink 
       path={"/about"} 
       label={"About"}
-      showIcon={icons} />
+      showIcon={icons} />}
 
       {(isSignedIn || isRecruiterAcc) && (
         <SlideNavLink

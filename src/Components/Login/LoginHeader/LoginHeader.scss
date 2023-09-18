@@ -3,7 +3,9 @@
     grid-row: 1;
     justify-items: center;
     row-gap: 1vh;
-
+    & :hover {
+      cursor: pointer;
+    }
     &_logo{
       height: 12vh;
       max-width: 15vh;
