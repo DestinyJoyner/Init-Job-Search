@@ -42,10 +42,21 @@
 }
 
 .dark .desktopNav {
+    background-color: var(--init-gold);
+    & a {
+        color: var(--init-dark);
+        & :hover {
+          color: var(--init-darkmint);
+        }
+      }
     .loginHeader {
         &_logo {
             background-color: var(--init-dark);
             border-color: var(--init-dark);
+        }
+        &_slogan {
+            color: var(--init-charcoal);
+      background-color: var(--init-gold);
         }
     }
 }
