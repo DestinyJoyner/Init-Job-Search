@@ -21,7 +21,7 @@
   grid-row: 2;
 }
 .about .sliderButton_buttons_button, .about .sliderButton_slider {
-  height: 5vh;
+  height: 4vh;
 }
 
 .dev-cards h2 {
@@ -53,11 +53,7 @@
   grid-template-rows: 35% 2% 52% 2% 8%;
   align-items: center;
 }
-.emptyState h2 {
-  /* height:50px */
-  /* width: 90%;
-  font-size: 22px; */
-}
+
 
 .emptyState p {
   grid-row: 3;
@@ -148,22 +144,19 @@
   padding-bottom: 5px;
 }
 
-.dev-socials {
+.about .contactLinks{
   height: 100%;
   width: 90%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.dev-socials svg {
+.about .contactLinks svg {
   height: 2.2em;
   width: 2.2em;
   fill: var(--init-gold);
 }
-.dev-socials .about-mail{
-  height: 2.7em;
-  width: 2.7em;
-}
+
 
 /* dark mode */
 .dark .devicon {

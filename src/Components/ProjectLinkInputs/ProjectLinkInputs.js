@@ -1,7 +1,7 @@
 import RegisterTextInput from "../FormInputs/RegisterFormInputs/RegisterTextInput";
 import RegisterUrlInput from "../FormInputs/RegisterFormInputs/RegisterUrlInput";
 import RegisterTextAreaInput from "../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
-import { asterisk } from "../Job/Data/Icons";
+import { asterisk } from "../App/Data/Icons";
 import "./ProjectLinkInputs.scss"
 
 function ProjectLinkInputs({stateVar, setFunction}) {

@@ -1,0 +1,253 @@
+.jobsIndexDesktop {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 10% 90%;
+    height: 86vh;
+    width: 94%;
+    margin-top: 3vh;
+    padding-bottom: 8vh;
+    row-gap: 20px;
+    column-gap: 20px;
+
+    .searchComponent {
+        grid-column: 2;
+        grid-row: 1;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 100%;
+        &_searchBar {
+            &_label {
+                grid-column: 1; 
+                grid-template-columns: .2fr 5fr ;
+                align-items: center;
+            }
+            &_logo {
+                top:0;
+                left: 3.5vw;
+                height: 45px;
+            }
+            &_input {
+                grid-column: 2;
+                width: 100%;
+                left: 5vw;
+                margin:0;
+                text-indent: 0vw;
+            }
+        }
+        &_submit {
+           grid-column: 2;
+           justify-self: center;
+           &:hover {
+            color: var(--init-gold);
+           }
+        }
+    }
+
+    &_filter {
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        grid-template-rows: 12% 85% 3%;
+        border: 1px solid var(--init-mint);
+        background-color: var(--init-gray-background);
+
+        &_header {
+           font-size: 18px ;
+           font-weight: 600;
+        background-color: var(--init-background);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 7px;
+          text-align: center;
+           border-bottom: 1px solid var(--init-mint);
+           &_title {
+            margin-top: 1.5vh;
+           }
+        }
+        &_helpText {
+            font-size: 11px;
+            font-style: italic;
+            padding: 0 5px;
+        }
+    
+        .filter-bar {
+            width: 100%;
+            grid-row: 2;
+            grid-template-columns: 100%;
+            grid-template-rows: 70% 15% 10%;
+            padding: 1vh 0;
+            align-items: center;
+    
+            & select {
+                grid-row: 2;
+                margin: 0;
+                border-top: 1px solid var(--init-blue);
+                border-bottom: 1px solid var(--init-blue);
+                height: 50px;
+                width: 75%;
+            }
+            .filter-checkbox {
+                grid-row: 3;
+                display: flex;
+                align-items: center;
+                column-gap: 15px;
+                border-bottom: 1px solid var(--init-mint);
+                border-top: 1px solid var(--init-mint);
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                & input {
+                    width: 20px;
+                    height: 20px;
+                }
+                & span {
+                    font-size: 20px;
+                }
+            }
+            .filter-skills, .filter-skills svg {
+                display: none;
+            }
+            .filter-skills span {
+                right: 0;
+                top: 0;
+                 padding: 0;
+                 border-bottom: 1px solid var(--init-mint);
+                 padding: 0 1vw .3vh 1vw;
+            }
+          
+            .filter-bar-expanded {
+                grid-column: unset;
+                grid-row: 1;
+                visibility: visible;
+                overflow: visible;
+                height: 100%;
+                width: 100%;
+                border: none;
+                grid-template-rows: 10% 90%;
+                background-color: unset;
+                border-bottom: 1px solid var(--init-mint);
+            }
+            .filter-bar-toggle:hover, .filter-bar-toggle span:hover {
+                cursor: pointer;
+            }
+            .filter-bar-toggle {
+                top: 1vh;
+            }
+            .filter-bar-toggle span {
+                font-size: 20px;
+                left: .5vw; 
+                bottom: .8vh;
+                grid-row: 1;
+            }
+            .filter-bar-expanded .skills-component {
+                grid-row: 2;
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 2vh;
+                padding: 2vh 0;
+                margin: 0;
+            }
+            .filter-bar-expanded .skills-component svg {
+                height: 1.8em;
+                width: 1.8em;
+            }
+            .filter-bar-expanded .skills-checkboxes {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 4vh;
+                column-gap: .5vw;
+                margin-top: 0vh;
+                justify-self: center;
+            }
+            .filter-bar-expanded .skills-checkboxes label {
+                width: fit-content;
+            }
+            .filter-bar-expanded .skills-checkboxes label input {
+                height: 18px;
+                width: 18px;
+            }
+            .filter-bar-expanded .skills-checkboxes label span {
+                font-size: 15px;
+                left: .5vw;
+            }
+        }
+        .searchComponent_submit {
+            grid-column: unset;
+            grid-row: 3 ;
+            align-self: flex-end;
+            justify-self: right;
+            padding: 0 10px 0 0;
+        }
+    }
+  
+    &_jobsList {
+        grid-column: 2;
+        grid-row: 2/4;
+        // border: 1px solid red;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 3vw;
+        row-gap: 5vh;
+        padding: 1vh 2vw;
+        height: min-content;
+
+        .jobCard {
+            height: 220px;
+            grid-template-columns: 70% 30% ;
+            grid-template-rows: 55% 20% 25%;
+            padding-left: 2vh;
+             &_logo {
+                grid-column: 2;
+                grid-row: 1;
+                // align-self: flex-start;
+                // padding: 1vh;
+                justify-self: center;
+                // height: auto;
+             }
+            //  &_details,
+             &_skills,
+             &_location {
+               margin-left: .5vw;
+               
+             }
+             &_details {
+                margin: 0;
+                grid-column: 1;
+                grid-row: 1;
+                grid-template-rows: 30% 70%;
+                &_title {
+                    grid-row: 2;
+                   overflow-wrap: break-word;
+                   font-size: 22px;
+                   
+                 }
+                 &_company {
+                    grid-row: 1;
+                    font-size: 17px;
+                 }
+             } 
+             &_location {
+                grid-column: span 2;
+                grid-row: 2;
+                width: 100%;
+                font-size: 16px;
+                // justify-content: space-between;
+                column-gap: 4vw;
+                margin: 0;
+                &_remote {
+                    padding: 0;
+                }
+                
+             }
+             &_skills {
+                grid-row: 3;
+                grid-column: span 2;
+                width: 90%;
+                & .skills-component {
+                    & svg {
+                        height: 1.8em;
+                        width: 1.8em;
+                    }
+                }
+             }
+        }
+    }
+}

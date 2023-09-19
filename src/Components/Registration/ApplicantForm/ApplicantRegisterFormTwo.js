@@ -9,7 +9,7 @@ import RegisterUrlInput from "../../FormInputs/RegisterFormInputs/RegisterUrlInp
 import SkillsCheckboxes from "../../SkillsCheckboxes/SkillsCheckboxes";
 import { handleSkillsCheckbox } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
 import { handleApplicantFormTwoSubmit } from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
-import { asterisk } from "../../Job/Data/Icons";
+import { asterisk } from "../../App/Data/Icons";
 import "./ApplicantFormTwo.scss";
 
 function ApplicantRegisterFormTwo({ setHideSliderButtons }) {

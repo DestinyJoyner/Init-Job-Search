@@ -1,6 +1,6 @@
 import SkillsComponent from "../Job/SkillsComponent";
 import { handleSkillsCheckbox } from "../Functions/FormFunctions/RegisterFormFunctions";
-import { asterisk } from "../Job/Data/Icons";
+import { asterisk } from "../App/Data/Icons";
 import "./SkillsCheckboxes.scss"
 
 function SkillsCheckboxes({skillsIdArr, setSkillIdArr, formStateVar, formSetFunction}) {

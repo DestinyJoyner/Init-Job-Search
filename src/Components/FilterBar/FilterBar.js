@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import SkillsComponent from "./SkillsComponent";
-import Dropdown from "./Inputs/Dropdown.js"
-import { dropdownCities } from "./Data/Cities.js";
+
+import SkillsComponent from "../Job/SkillsComponent";
+import Dropdown from "../Job/Inputs/Dropdown.js"
+import { dropdownCities } from "../App/Data/Cities";
 import {
   handleSearchBar,
   handleSkillSelection,
@@ -11,12 +12,14 @@ import { BiChevronDown } from "react-icons/bi"
 import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
+// { searchOptions, setSearchOptions}
+function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
 
-function FilterBar({ searchOptions, setSearchOptions}) {
   const [filterOptions, setFilterOptions] = useState(false);
   const [cityDropdown, setCityDropdown] = useState("");
   const [remoteSearch, setRemoteSearch] = useState(false);
   const [skillView, setSkillView] = useState(false);
+
 
   function remoteClick(event){
     event.preventDefault()
@@ -28,10 +31,38 @@ function FilterBar({ searchOptions, setSearchOptions}) {
 
   return (
     <div className="filter-bar">
-       <button 
+      {
+        !remoteCheckbox ?
+        <button 
+        id="isRemote"
+        className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
+        onClick={(e) => remoteClick(e)}>REMOTE
+        </button> :
+        <label 
+        htmlFor="filter-checkbox" className="filter-checkbox">
+          <input
+            id="isRemote"
+            type="checkbox"
+            value={remoteSearch}
+            checked={remoteSearch}
+            onChange={(event) =>
+              handleSearchBar(
+                event,
+                remoteSearch,
+                setRemoteSearch,
+                searchOptions,
+                setSearchOptions
+              )
+            }
+          />
+          <span>Remote</span>
+        </label>
+
+      }
+       {/* <button 
       id="isRemote"
       className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
-      onClick={(e) => remoteClick(e)}>REMOTE</button>
+      onClick={(e) => remoteClick(e)}>REMOTE</button> */}
       {/* <button 
       id="isRemote"
       className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}

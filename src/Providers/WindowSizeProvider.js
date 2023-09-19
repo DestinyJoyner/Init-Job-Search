@@ -8,9 +8,9 @@ export function useWindowSizeProvider() {
 
 function WindowSizeProvider({children}) {
     // Guide -> https://stackoverflow.com/questions/19014250/rerender-view-on-browser-resize-with-react
-
+    const initialPageWidth = window.innerWidth > 850 ? true : false
     const [width, setWidth] = useState(0);
-    const [isDesktopView, setIsDesktopView] = useState()
+    const [isDesktopView, setIsDesktopView] = useState(initialPageWidth)
 
     useLayoutEffect(() => {
       function updateWidth() {

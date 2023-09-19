@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { useNavProvider } from "../../../Providers/NavProvider.js";
 import SkillsComponent from "../../Job/SkillsComponent.js";
 import SliderButtons from "../../SliderButton/SliderButtons.js"
 import LoginHeader from "../../Login/LoginHeader/LoginHeader.js"
+import ContactLinks from "../../ContactLinks/ContactLinks.js";
 import { team } from "./AboutData";
-import { BsLinkedin, BsGithub } from "react-icons/bs";
-import { GrMail } from "react-icons/gr";
 import "./AboutPage.css";
 
 function AboutPage() {
@@ -14,13 +12,7 @@ function AboutPage() {
   const [profileCard, setProfileCard] = useState(team["2"]);
   const [toggleView, setToggleView] = useState("init")
 
-  const iconArr = [
-    <BsGithub />,
-    <BsLinkedin />,
-    <GrMail className="about-mail" />,
-  ];
-
-  useEffect(() => setAppHeader("About inIT"), [])
+  useEffect(() => setAppHeader("About"), [])
 
   useEffect(() => {
     if(toggleView === "init"){
@@ -59,14 +51,7 @@ function AboutPage() {
           <h3>{profileCard.role}</h3>
           <p>{profileCard.bio}</p>
           <hr />
-          <div className="dev-socials">
-            {profileCard.links.length > 0 &&
-              profileCard.links.map((el, i) => (
-                <a key={uuidv4()} href={el} target="_blank">
-                  {iconArr[i]}
-                </a>
-              ))}
-          </div>
+          <ContactLinks pursuit={false} />
         </div>
       )}
     </div>

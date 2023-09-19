@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
-import { useContextProvider } from "../../Providers/Provider.js";
-import { useNavProvider } from "../../Providers/NavProvider.js";
-import { useJobProvider } from "../../Providers/JobProvider.js";
+import SearchBarProvider from "../../../Providers/SearchBarProvider.js";
+import { useContextProvider } from "../../../Providers/Provider.js";
+import { useNavProvider } from "../../../Providers/NavProvider.js";
+import { useJobProvider } from "../../../Providers/JobProvider.js";
+import { useSearchBarProvider } from "../../../Providers/SearchBarProvider.js";
 import { v4 as uuidv4 } from "uuid";
-import JobsCard from "./JobsCard";
-import SearchBar from "./SearchBar.js";
-import NoSearchResults from "../App/NoSearchResults/NoSearchResults.js";
-import { handlePagination } from "../Functions/SearchFunctions/JobsIndexFunctions.js";
+import JobsCard from "../JobsCard/JobsCard.js";
+import SearchBar from "../../SearchBar/SearchBar.js";
+import NoSearchResults from "../../App/NoSearchResults/NoSearchResults.js";
+import { handlePagination } from "../../Functions/SearchFunctions/JobsIndexFunctions.js";
 import "./JobsIndex.scss";
 
 function JobsIndex() {
   const { setAppHeader } = useNavProvider();
   const { setLoading } = useContextProvider()
+  const { searchOptions, setSearchOptions } = useSearchBarProvider();
   const { jobs, queryStart, setQueryStart, jobQuery } = useJobProvider();
 
   const [hideNextButton, setHideNextButton] = useState(false);
@@ -33,7 +36,12 @@ useEffect(() => {
 
   return (
     <div className="jobsIndex">
-      <SearchBar />
+      {/* <SearchBarProvider> */}
+        <SearchBar 
+        withFilterOptions={true}
+        searchOptions = {searchOptions}
+        setSearchOptions={setSearchOptions}/>
+      {/* </SearchBarProvider> */}
       <section className="jobsIndex_buttons">
       <button
         className={hidePrevButton ? "hide" : " jobsIndex_buttons_prev show"}

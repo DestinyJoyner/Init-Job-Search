@@ -1,0 +1,14 @@
+.contactLinks {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    column-gap: 20px;
+    & svg {
+        height: 1.8em;
+        width: 1.8em;
+        color: var(--init-blue);
+      }
+      &_pursuit {
+        height: 30px;
+      }
+}

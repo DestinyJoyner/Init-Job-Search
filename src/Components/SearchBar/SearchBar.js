@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useJobProvider } from "../../Providers/JobProvider";
-import FilterBar from "./FilterBar";
+import { useSearchBarProvider } from "../../Providers/SearchBarProvider";
+import FilterBar from "../FilterBar/FilterBar";
 import searchLogo from "../../Assets/footer-logo.png";
 import {
   handleSearchBar,
@@ -9,17 +10,17 @@ import {
 import { IoOptionsSharp } from "react-icons/io5";
 import "./SearchBar.scss";
 
-function SearchBar() {
+function SearchBar({withFilterOptions, searchOptions, setSearchOptions}) {
   const { setSearchQueryRoute, setQueryStart } = useJobProvider();
-
+  // const { searchOptions, setSearchOptions} = useSearchBarProvider()
   const [search, setSearch] = useState("");
   const [showFilterBar, setShowFilterBar] = useState(false);
-  const [searchOptions, setSearchOptions] = useState({
-    searchbar: "",
-    isRemote: false,
-    city: "",
-    skills: [],
-  });
+  // const [searchOptions, setSearchOptions] = useState({
+  //   searchbar: "",
+  //   isRemote: false,
+  //   city: "",
+  //   skills: [],
+  // });
 
   return (
     <form
@@ -55,10 +56,14 @@ function SearchBar() {
             )
           }
         />
-        <IoOptionsSharp
+        {
+          withFilterOptions &&
+          <IoOptionsSharp
           onClick={() => setShowFilterBar(!showFilterBar)}
           className="searchComponent_searchBar_filterIcon"
         />
+        }
+       
       </label>
       {showFilterBar && (
         <FilterBar

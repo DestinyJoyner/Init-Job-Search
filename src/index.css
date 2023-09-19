@@ -20,12 +20,28 @@
   --init-rust: rgb(186, 26, 26);
   --init-charcoal: rgb(22, 16, 16);
   --init-faded-gray: rgb(79, 77, 77);
+  --init-gray-background: rgba(183, 183, 183, 0.3);
   --slidenav:calc(100vw - 450px);
+}
+
+body {
+  /* height: auto;
+  overflow: scroll;
+  min-height: 100%; */
+
 }
 
 .mobile {
   max-width: 400px;
+  height: 100vh;
   margin: 0 auto;
+}
+
+
+.desktop {
+  margin-top: 8vh;
+  /* border: 1px solid red; */
+
 }
 
 /* DARK/LIGHT THEME*/
@@ -131,4 +147,9 @@ textarea:focus {
 /* font styles */
 .bold {
   font-weight: 600;
+}
+
+/* buttons */
+button:hover {
+  cursor: pointer;
 }

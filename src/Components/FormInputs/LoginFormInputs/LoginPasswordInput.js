@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ShowHidePasswordButton from "../../ShowHidePassword/ShowHidePasswordButton";
 import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions";
-import { loginPassword } from "../../Job/Data/Icons";
+import { loginPassword } from "../../App/Data/Icons";
 
 function LoginPasswordInput({formKey, placeholder, value, stateVar, setFunction}) {
     const [showPassword, setShowPassword] = useState(false);

@@ -1,0 +1,123 @@
+.desktopHome {
+  display: grid;
+  grid-template-rows: auto;
+  row-gap: 5%;
+  justify-items: center;
+  padding: 5vh 0;
+  padding-bottom: 30vh;
+
+  &_header {
+    width: 85%;
+    height: 220px;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 70% 30%;
+    align-items: center;
+
+    &_logo {
+      height: 200px;
+      grid-column: 1;
+      grid-row: 1/3;
+      justify-self: center;
+    }
+
+    &_text {
+      grid-column: 2;
+      grid-row: 1;
+      display: grid;
+      row-gap: 10%;
+
+      &_mission {
+        font-size: 22px;
+      }
+    }
+
+    &_disclaimer {
+      width: 60%;
+      font-family: Poppins;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    &_button {
+      all: unset;
+      text-align: center;
+      width: 200px;
+      padding: 5px;
+      border-radius: 20px;
+      background: linear-gradient(
+        90deg,
+        rgb(83, 215, 199) 55%,
+        rgba(12, 189, 189, 1) 100%
+      );
+    }
+  }
+
+  &_content_init {
+    width: 75%;
+    // height: 65vh;
+    height: auto;
+    padding-bottom: 3vh;
+    border-radius: 20px;
+    background-color: var(--init-mint);
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+
+    &_stock2 {
+      height: 200px;
+      border-radius: 10px;
+      align-self: center;
+    }
+
+    &_question {
+      font-weight: 600;
+      font-size: 35px;
+      font-family: "Cabin";
+      color: var(--init-gold);
+    }
+
+    &_answer {
+      width: 95%;
+      font-size: 17px;
+      font-family: Poppins;
+    }
+
+    &_one,
+    &_two {
+      grid-row: 1;
+      display: flex;
+      width: 90%;
+      column-gap: 30px;
+      &_text {
+        display: grid;
+        row-gap: 1vh;
+        max-width: 70%;
+      }
+    }
+    &_two {
+      grid-row: 2;
+      & a {
+        font-size: 20px;
+      }
+    }
+  }
+  &_features {
+    text-align: center;
+    width: 100%;
+    row-gap: 10px;
+    & span {
+      margin-bottom: 2vh;
+      width: 60%;
+    }
+    &_thumbnails {
+      display: flex;
+      width: 90%;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-top: 2vh;
+    }
+  }
+}

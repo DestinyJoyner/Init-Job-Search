@@ -1,6 +1,6 @@
 import ShowHidePasswordButton from "../../ShowHidePassword/ShowHidePasswordButton";
 import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions";
-import { asterisk, emailInvalid, emailValid } from "../../Job/Data/Icons";
+import { asterisk, emailInvalid, emailValid } from "../../App/Data/Icons";
 
 function RegisterPasswordInput({
   label,

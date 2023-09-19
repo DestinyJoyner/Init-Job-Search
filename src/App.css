@@ -1,5 +1,9 @@
 .App {
-  height: 92vh;
-  overflow-y: scroll;
+ /* min-height: 100%; */
+ /* height: auto; */
+ /* height: inherit; */
+ /* border: 1px solid red; */
+  /* height: 92vh; */
+  /* overflow-y: scroll; */
   max-width: inherit;
 }
