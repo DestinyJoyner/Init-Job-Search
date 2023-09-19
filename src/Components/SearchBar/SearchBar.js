@@ -10,9 +10,9 @@ import {
 import { IoOptionsSharp } from "react-icons/io5";
 import "./SearchBar.scss";
 
-function SearchBar({withFilterOptions}) {
+function SearchBar({withFilterOptions, searchOptions, setSearchOptions}) {
   const { setSearchQueryRoute, setQueryStart } = useJobProvider();
-  const { searchOptions, setSearchOptions} = useSearchBarProvider()
+  // const { searchOptions, setSearchOptions} = useSearchBarProvider()
   const [search, setSearch] = useState("");
   const [showFilterBar, setShowFilterBar] = useState(false);
   // const [searchOptions, setSearchOptions] = useState({
@@ -67,8 +67,8 @@ function SearchBar({withFilterOptions}) {
       </label>
       {showFilterBar && (
         <FilterBar
-          // searchOptions={searchOptions}
-          // setSearchOptions={setSearchOptions}
+          searchOptions={searchOptions}
+          setSearchOptions={setSearchOptions}
         />
       )}
       <button className="searchComponent_submit" type="submit">

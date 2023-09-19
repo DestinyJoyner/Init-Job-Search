@@ -13,8 +13,8 @@ import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
 // { searchOptions, setSearchOptions}
-function FilterBar({remoteCheckbox}) {
-  const { searchOptions, setSearchOptions } = useSearchBarProvider()
+function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
+  // const { searchOptions, setSearchOptions } = useSearchBarProvider()
   const [filterOptions, setFilterOptions] = useState(false);
   const [cityDropdown, setCityDropdown] = useState("");
   const [remoteSearch, setRemoteSearch] = useState(false);
