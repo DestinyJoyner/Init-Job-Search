@@ -4,8 +4,10 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 200;
   // background-color: var(--init-mint);
   background-color: var(--init-background);
+  // background-color: black;
 
   border-bottom: 1px solid var(--init-gold);
   display: grid;

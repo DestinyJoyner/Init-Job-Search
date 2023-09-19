@@ -1,15 +1,16 @@
 import "./FeatureThumbnail.scss"
 
-function FeatureThumbnail(props) {
+function FeatureThumbnail({thumbnailObj}) {
+    const {icon, text} = thumbnailObj
     return (
         <div className='featureThumbnail grid-center'>
             <div className="featureThumbnail_icon_container grid-center">
                 <div className="featureThumbnail_icon">
-                image
+                {icon}
                 </div>
             </div>
             <span className="featureThumbnail_text">
-                text
+                {text}
             </span>
         </div>
     );

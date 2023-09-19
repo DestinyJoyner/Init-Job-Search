@@ -4,10 +4,10 @@
   row-gap: 5%;
   justify-items: center;
   padding: 5vh 0;
-  padding-bottom: 20vh;
+  padding-bottom: 30vh;
 
   &_header {
-    width: 75%;
+    width: 85%;
     height: 220px;
     align-self: center;
     display: grid;
@@ -94,6 +94,22 @@
       & a {
         font-size: 20px;
       }
+    }
+  }
+  &_features {
+    text-align: center;
+    width: 100%;
+    row-gap: 10px;
+    & span {
+      margin-bottom: 2vh;
+      width: 60%;
+    }
+    &_thumbnails {
+      display: flex;
+      width: 90%;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-top: 2vh;
     }
   }
 }

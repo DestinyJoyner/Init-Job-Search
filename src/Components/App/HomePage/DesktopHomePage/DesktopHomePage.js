@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import DesktopFooter from "../../Footer/DesktopFooter/DesktopFooter";
 import FeatureThumbnail from "../../../FeatureThumbnail/FeatureThumbnail.js";
+import { thumbnailArr } from "../../Data/FeatureThumbnailArray";
 import logo from "../../../../Assets/LOGO.png";
 import stockImage1 from "../Images/init-stock(1).jpg"
 import stockImage2 from "../Images/init-stock(2).jpg";
@@ -17,7 +19,7 @@ function DesktopHomePage() {
             Land your first tech opportunity with inIT!
           </h2>
           <span className="desktopHome_header_text_mission">
-            "Directly connecting employers looking to fill entry level positions, with sotware engineers on the hunt for their first role in the tech industry"
+            Whether you are an entry-level engineer looking to jump start your career in tech, or a recruiter looking to fill entry-level positions at a company, inIT is here to connect you!
           </span>
         </span>
 
@@ -67,12 +69,19 @@ function DesktopHomePage() {
         </section>
       </section>
 
-      <section className="desktopHome_features">
+      <section className="desktopHome_features grid-center">
         <h3>Start Your Tech Career With inIT</h3>
 
         <span>We remove the hassle in beginning your career in tech, connecting you directly with opportunities at your skill level.</span>
 
-      <FeatureThumbnail />
+        <section className="desktopHome_features_thumbnails">
+          {
+            thumbnailArr.map(obj => <FeatureThumbnail 
+              key= {uuidv4()} 
+              thumbnailObj={obj}/>)
+          }
+        </section>
+
 
       </section>
 

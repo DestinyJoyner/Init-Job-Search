@@ -1,14 +1,24 @@
 .featureThumbnail {
-    border: 1px solid red;
-    width: 200px;
-    height: 130px;
+    width: 220px;
+   
     &_icon {
+        & svg {
+            height: 2.2em;
+            width: 2.2em;
+            transform: rotate(45deg);
+        }
         
         &_container {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            border: 1px solid var(--init-mint);
+            width: 85px;
+            height: 85px;
+            border-radius: 50px 0px 50px 0px;
+            transform: rotate(-45deg);
+            border: 3px solid var(--init-mint);
         }
+    }
+    &_text {
+        text-align: center;
+        margin-top: 4vh;
+        
     }
 }
