@@ -27,6 +27,7 @@ function DesktopHomePage() {
         onClick={() => navigate("/jobs")}>
           SEARCH JOBS NOW!</button>
       </section>
+      <span className="desktopHome_header_disclaimer">**inIT is was designed in MOBILE VIEW first. Desktop components are currently in the process of being designed. Currently, for best viewing of inIT resize the window to under 850px. </span>
 
       <section className="desktopHome_content_init">
 
