@@ -3,6 +3,7 @@ import SearchBarProvider from "../../../Providers/SearchBarProvider.js";
 import { useContextProvider } from "../../../Providers/Provider.js";
 import { useNavProvider } from "../../../Providers/NavProvider.js";
 import { useJobProvider } from "../../../Providers/JobProvider.js";
+import { useSearchBarProvider } from "../../../Providers/SearchBarProvider.js";
 import { v4 as uuidv4 } from "uuid";
 import JobsCard from "../JobsCard.js";
 import SearchBar from "../../SearchBar/SearchBar.js";
@@ -13,6 +14,7 @@ import "./JobsIndex.scss";
 function JobsIndex() {
   const { setAppHeader } = useNavProvider();
   const { setLoading } = useContextProvider()
+  const { searchOptions, setSearchOptions } = useSearchBarProvider();
   const { jobs, queryStart, setQueryStart, jobQuery } = useJobProvider();
 
   const [hideNextButton, setHideNextButton] = useState(false);
@@ -34,9 +36,12 @@ useEffect(() => {
 
   return (
     <div className="jobsIndex">
-      <SearchBarProvider>
-        <SearchBar withFilterOptions={true}/>
-      </SearchBarProvider>
+      {/* <SearchBarProvider> */}
+        <SearchBar 
+        withFilterOptions={true}
+        searchOptions = {searchOptions}
+        setSearchOptions={setSearchOptions}/>
+      {/* </SearchBarProvider> */}
       <section className="jobsIndex_buttons">
       <button
         className={hidePrevButton ? "hide" : " jobsIndex_buttons_prev show"}
