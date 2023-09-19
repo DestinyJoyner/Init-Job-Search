@@ -49,7 +49,8 @@
 
   &_content_init {
     width: 75%;
-    height: 65vh;
+    // height: 65vh;
+    height: auto;
     padding-bottom: 3vh;
     border-radius: 20px;
     background-color: var(--init-mint);
