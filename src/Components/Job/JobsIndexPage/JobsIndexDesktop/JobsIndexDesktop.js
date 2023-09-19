@@ -6,31 +6,30 @@ import SearchBarProvider from "../../../../Providers/SearchBarProvider";
 import { v4 as uuidv4 } from "uuid";
 import SearchBar from "../../../SearchBar/SearchBar.js";
 import FilterBar from "../../../FilterBar/FilterBar";
-import JobsCard from "../../JobsCard";
+import JobsCard from "../../JobsCard/JobsCard";
 import NoSearchResults from "../../../App/NoSearchResults/NoSearchResults";
 import { handleSearchFilterSubmit } from "../../../Functions/SearchFunctions/SearchBarFunctions";
 import "./JobsIndexDesktop.scss";
 
 function JobsIndexDesktop() {
   const { setLoading, loading } = useContextProvider();
-  const { setSearchQueryRoute, queryStart, setQueryStart, jobQuery } = useJobProvider();
+  const { setSearchQueryRoute, queryStart, setQueryStart, jobQuery } =
+    useJobProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
 
   useEffect(() => {
     setLoading(false);
   }, [jobQuery]);
 
-  useEffect(() => {
-
-  },[queryStart, jobQuery.length])
+  useEffect(() => {}, [queryStart, jobQuery.length]);
 
   return (
     !loading && (
       <div className="jobsIndexDesktop center">
-        {/* <SearchBarProvider> */}
-          <SearchBar searchOptions = {searchOptions}
-          setSearchOptions={setSearchOptions}/>
-        {/* </SearchBarProvider> */}
+        <SearchBar
+          searchOptions={searchOptions}
+          setSearchOptions={setSearchOptions}
+        />
 
         <aside className="jobsIndexDesktop_filter">
           <span className="jobsIndexDesktop_filter_header">
@@ -42,15 +41,15 @@ function JobsIndexDesktop() {
             </span>
           </span>
 
-          {/* <SearchBarProvider> */}
-            <FilterBar remoteCheckbox={true}
-            searchOptions = {searchOptions}
-            setSearchOptions={setSearchOptions} />
-          {/* </SearchBarProvider> */}
+          <FilterBar
+            remoteCheckbox={true}
+            searchOptions={searchOptions}
+            setSearchOptions={setSearchOptions}
+          />
 
           <button
             className="searchComponent_submit"
-            onClick={(event) => 
+            onClick={(event) =>
               handleSearchFilterSubmit(
                 event,
                 searchOptions,
@@ -63,13 +62,17 @@ function JobsIndexDesktop() {
           </button>
         </aside>
 
-        <div className="jobsIndexDesktop_four">
-        {
-        jobQuery.length > 0 ?
-          jobQuery.map((obj) => <JobsCard key={uuidv4()} jobObj={obj} />) 
-          :
-        <NoSearchResults />
-        }</div>
+        <div className="jobsIndexDesktop_jobsList">
+          {jobQuery.length > 0 ? (
+            jobQuery.map((obj) => 
+            <JobsCard 
+            key={uuidv4()} 
+            jobObj={obj} />
+            )
+          ) : (
+            <NoSearchResults />
+          )}
+        </div>
       </div>
     )
   );

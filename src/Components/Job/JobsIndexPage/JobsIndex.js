@@ -5,7 +5,7 @@ import { useNavProvider } from "../../../Providers/NavProvider.js";
 import { useJobProvider } from "../../../Providers/JobProvider.js";
 import { useSearchBarProvider } from "../../../Providers/SearchBarProvider.js";
 import { v4 as uuidv4 } from "uuid";
-import JobsCard from "../JobsCard.js";
+import JobsCard from "../JobsCard/JobsCard.js";
 import SearchBar from "../../SearchBar/SearchBar.js";
 import NoSearchResults from "../../App/NoSearchResults/NoSearchResults.js";
 import { handlePagination } from "../../Functions/SearchFunctions/JobsIndexFunctions.js";

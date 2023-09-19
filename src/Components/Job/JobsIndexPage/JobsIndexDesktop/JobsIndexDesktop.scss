@@ -178,8 +178,75 @@
         }
     }
   
-    &_four {
+    &_jobsList {
         grid-column: 2;
         grid-row: 2/4;
+        // border: 1px solid red;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 3vw;
+        row-gap: 5vh;
+        padding: 1vh 2vw;
+        height: min-content;
+
+        .jobCard {
+            height: 220px;
+            grid-template-columns: 70% 30% ;
+            grid-template-rows: 55% 20% 25%;
+             &_logo {
+                grid-column: 2;
+                grid-row: 1;
+                // align-self: flex-start;
+                padding: 1vh;
+                justify-self: center;
+                // height: auto;
+             }
+            //  &_details,
+             &_skills,
+             &_location {
+               margin-left: .5vw;
+               
+             }
+             &_details {
+                margin: 0;
+                grid-column: 1;
+                grid-row: 1;
+                grid-template-rows: 30% 70%;
+                &_title {
+                    grid-row: 2;
+                   overflow-wrap: break-word;
+                   font-size: 22px;
+                   
+                 }
+                 &_company {
+                    grid-row: 1;
+                    font-size: 17px;
+                 }
+             } 
+             &_location {
+                grid-column: span 2;
+                grid-row: 2;
+                width: 100%;
+                font-size: 16px;
+                // justify-content: space-between;
+                column-gap: 4vw;
+                margin: 0;
+                &_remote {
+                    padding: 0;
+                }
+                
+             }
+             &_skills {
+                grid-row: 3;
+                grid-column: span 2;
+                width: 90%;
+                & .skills-component {
+                    & svg {
+                        height: 1.8em;
+                        width: 1.8em;
+                    }
+                }
+             }
+        }
     }
 }
