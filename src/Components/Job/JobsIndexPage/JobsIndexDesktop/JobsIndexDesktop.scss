@@ -193,11 +193,12 @@
             height: 220px;
             grid-template-columns: 70% 30% ;
             grid-template-rows: 55% 20% 25%;
+            padding-left: 2vh;
              &_logo {
                 grid-column: 2;
                 grid-row: 1;
                 // align-self: flex-start;
-                padding: 1vh;
+                // padding: 1vh;
                 justify-self: center;
                 // height: auto;
              }
