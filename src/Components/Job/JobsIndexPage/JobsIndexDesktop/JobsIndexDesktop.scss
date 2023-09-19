@@ -3,14 +3,12 @@
     grid-template-columns: 20% 80%;
     grid-template-rows: 10% 90%;
     height: 86vh;
-    width: 90%;
+    width: 94%;
     margin-top: 3vh;
     padding-bottom: 8vh;
     row-gap: 20px;
     column-gap: 20px;
-    & > * {
-        border: 1px solid red;
-    }
+
     .searchComponent {
         grid-column: 2;
         grid-row: 1;
@@ -48,59 +46,78 @@
         grid-column: 1;
         grid-row: 1/3;
         display: grid;
-        grid-template-rows: 10% 90%;
+        grid-template-rows: 12% 80% 6%;
+        border: 1px solid var(--init-mint);
+        background-color: rgba(183, 183, 183, 0.3);
 
         &_header {
            font-size: 18px ;
            font-weight: 600;
-           align-self: center;
-           background-color: var(--init-mint);
-           padding: 25px 0;
-           padding-left: 5px;
+        background-color: var(--init-background);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 7px;
+          text-align: center;
+           border-bottom: 1px solid var(--init-mint);
+           &_title {
+            margin-top: 1.5vh;
+           }
+        }
+        &_helpText {
+            font-size: 11px;
+            font-style: italic;
+            padding: 0 5px;
         }
     
         .filter-bar {
             width: 100%;
             grid-row: 2;
             grid-template-columns: 100%;
-            grid-template-rows: 10% 10% 70%;
-            border: 1px solid purple;
+            grid-template-rows: 70% 15% 15%;
+            padding: 1vh 0;
             align-items: center;
     
             & select {
-                grid-row: 1;
-                margin: 0;
-                border-bottom: 1px solid var(--init-mint);
-                width: 90%;
-            }
-            .filter-remote-button {
                 grid-row: 2;
-                top: 0;
+                margin: 0;
+                border-top: 1px solid var(--init-blue);
+                border-bottom: 1px solid var(--init-blue);
+                height: 50px;
+                width: 75%;
+            }
+            .filter-checkbox {
+                grid-row: 3;
+                display: flex;
+                align-items: center;
+                column-gap: 15px;
+                border-bottom: 1px solid var(--init-mint);
+                border-top: 1px solid var(--init-mint);
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                & input {
+                    width: 20px;
+                    height: 20px;
+                }
+                & span {
+                    font-size: 20px;
+                }
+            }
+            .filter-skills, .filter-skills svg {
+                display: none;
+            }
+            .filter-skills span {
                 right: 0;
-                height: fit-content;
+                top: 0;
+                 padding: 0;
+                 border-bottom: 1px solid var(--init-mint);
+                 padding: 0 1vw .3vh 1vw;
             }
-            .remote-clicked {
-                padding: 10px;
-            }
-            .filter-skills {
-                display: none;
-                // grid-column: unset;
-                // grid-row: 3;
-                // align-self: flex-start;
-            }
-            // .filter-skills span {
-            //     right: 0;
-            //     top: 0;
-            //      padding: 0;
-            //      border-bottom: 1px solid var(--init-mint);
-            //      padding: 0 1vw .3vh 1vw;
-            // }
-            .filter-skills svg {
-                display: none;
-            }
+          
             .filter-bar-expanded {
                 grid-column: unset;
-                grid-row: 3;
+                grid-row: 1;
                 visibility: visible;
                 overflow: visible;
                 height: 100%;
@@ -108,47 +125,58 @@
                 border: none;
                 grid-template-rows: 10% 90%;
                 background-color: unset;
-                // border: 1px solid red;
+                border-bottom: 1px solid var(--init-mint);
+            }
+            .filter-bar-toggle:hover, .filter-bar-toggle span:hover {
+                cursor: pointer;
+            }
+            .filter-bar-toggle {
+                top: 1vh;
             }
             .filter-bar-toggle span {
                 font-size: 20px;
                 left: .5vw; 
+                bottom: .8vh;
                 grid-row: 1;
             }
             .filter-bar-expanded .skills-component {
                 grid-row: 2;
-                background-color: rgba(126, 126, 126, 0.3) ;
                 grid-template-columns: repeat(2, 1fr);
                 row-gap: 2vh;
-                padding: 4vh 0;
+                padding: 2vh 0;
                 margin: 0;
             }
+            .filter-bar-expanded .skills-component svg {
+                height: 1.8em;
+                width: 1.8em;
+            }
             .filter-bar-expanded .skills-checkboxes {
-                grid-template-columns: 1fr;
-                column-gap: 0;
-                padding: 1vh 0;
-                margin-top: 1vh;
-                background-color: rgba(126, 126, 126, 0.3) ;
-                // justify-items: left;
-             
+                grid-template-columns: 1fr 1fr;
+                row-gap: 4vh;
+                column-gap: .5vw;
+                margin-top: 0vh;
+                justify-self: center;
             }
             .filter-bar-expanded .skills-checkboxes label {
-                margin-right:3vw;
-                
+                width: fit-content;
             }
             .filter-bar-expanded .skills-checkboxes label input {
-                height: 22px;
-                width: 22px;
+                height: 18px;
+                width: 18px;
+            }
+            .filter-bar-expanded .skills-checkboxes label span {
+                font-size: 15px;
+                left: .5vw;
             }
         }
-
+        .searchComponent_submit {
+            grid-column: unset;
+            grid-row: 3 ;
+            align-self: flex-end;
+            justify-self: right;
+            padding: 0 10px 0 0;
+        }
     }
-
-    
-    // &_two {
-    //     grid-column: 1;
-    //     grid-row: 1/3;
-    // }
   
     &_four {
         grid-column: 2;

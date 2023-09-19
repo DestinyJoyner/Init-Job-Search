@@ -1,6 +1,4 @@
-import { useContext, createContext, useState, useEffect } from "react";
-import { useContextProvider } from "./Provider.js";
-
+import { useContext, createContext, useState } from "react";
 export const SearchBarContextData = createContext();
 export function useSearchBarProvider() {
   return useContext(SearchBarContextData);

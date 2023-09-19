@@ -13,7 +13,7 @@ import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
 // { searchOptions, setSearchOptions}
-function FilterBar() {
+function FilterBar({remoteCheckbox}) {
   const { searchOptions, setSearchOptions } = useSearchBarProvider()
   const [filterOptions, setFilterOptions] = useState(false);
   const [cityDropdown, setCityDropdown] = useState("");
@@ -31,10 +31,38 @@ function FilterBar() {
 
   return (
     <div className="filter-bar">
-       <button 
+      {
+        !remoteCheckbox ?
+        <button 
+        id="isRemote"
+        className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
+        onClick={(e) => remoteClick(e)}>REMOTE
+        </button> :
+        <label 
+        htmlFor="filter-checkbox" className="filter-checkbox">
+          <input
+            id="isRemote"
+            type="checkbox"
+            value={remoteSearch}
+            checked={remoteSearch}
+            onChange={(event) =>
+              handleSearchBar(
+                event,
+                remoteSearch,
+                setRemoteSearch,
+                searchOptions,
+                setSearchOptions
+              )
+            }
+          />
+          <span>Remote</span>
+        </label>
+
+      }
+       {/* <button 
       id="isRemote"
       className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
-      onClick={(e) => remoteClick(e)}>REMOTE</button>
+      onClick={(e) => remoteClick(e)}>REMOTE</button> */}
       {/* <button 
       id="isRemote"
       className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
