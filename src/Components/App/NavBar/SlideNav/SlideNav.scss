@@ -128,3 +128,23 @@
     color: var(--init-gold);
   }
 }
+
+
+@media (min-width : 500px) {
+  .slideNav {
+    &_container {
+      transform: none;
+      left: unset;
+    }
+    &_open {
+      visibility: visible;
+      // transform: translate3d(0vw, 0, 0);
+      // overflow: hidden;
+    }
+  
+    &_close {
+      visibility: hidden;
+      // transform: translate3d(-105vw, 0, 0); 
+    }
+  }
+}
