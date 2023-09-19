@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useContextProvider } from "../../../../../Providers/Provider";
-import { useNavProvider } from "../../../../../Providers/NavProvider";
+import { useContextProvider } from "../../Providers/Provider";
+import { useNavProvider } from "../../Providers/NavProvider";
 import { VscColorMode } from "react-icons/vsc"
 import "./DarkModeSlider.scss";
 

@@ -1,6 +1,6 @@
 import { useNavProvider } from "../../../../Providers/NavProvider";
 import SlideNavLinkList from "./SlideNavLinkList";
-import DarkModeSlider from "./DarkModeSlider/DarkModeSlider";
+import DarkModeSlider from "../../../DarkModeSlider/DarkModeSlider";
 import Footer from "../../Footer/Footer";
 import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../../../Assets/LOGO.png"

@@ -1,6 +1,6 @@
 import { useWindowSizeProvider } from "../Providers/WindowSizeProvider.js";
 import JobsIndex from "../Components/Job/JobsIndexPage/JobsIndex.js";
-import JobsIndexDesktop from "../Components/Job/JobsIndexPage/JobsIndexDesktop/JobsIndexDesktop.js";
+import DesktopJobsIndex from "../Components/Job/JobsIndexPage/DesktopJobsIndex/DesktopJobsIndex.js";
 import JobProvider from "../Providers/JobProvider.js";
 import SearchBarProvider from "../Providers/SearchBarProvider.js";
 
@@ -11,7 +11,7 @@ function Jobs() {
       <SearchBarProvider>
       {
         isDesktopView ?
-        <JobsIndexDesktop /> :
+        <DesktopJobsIndex /> :
         <JobsIndex />
       }
       </SearchBarProvider>

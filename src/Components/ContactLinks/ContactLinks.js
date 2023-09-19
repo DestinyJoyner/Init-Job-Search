@@ -3,10 +3,10 @@ import { SiGmail } from "react-icons/si";
 import pursuitLogo from "../../Assets/pursuit-blue-logo.jpg"
 import "./ContactLinks.scss"
 
-function ContactLinks({pursuit}) {
+function ContactLinks({pursuit, init}) {
     return (
         <section className="contactLinks">
-          <a href="https://github.com/DestinyJoyner" target="blank">
+          <a href={!init ? "https://github.com/DestinyJoyner" : "https://github.com/DestinyJoyner/Init-Job-Search"} target="blank">
             <BsGithub />
           </a>
           <a

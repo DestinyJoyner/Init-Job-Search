@@ -9,9 +9,9 @@ import FilterBar from "../../../FilterBar/FilterBar";
 import JobsCard from "../../JobsCard/JobsCard";
 import NoSearchResults from "../../../App/NoSearchResults/NoSearchResults";
 import { handleSearchFilterSubmit } from "../../../Functions/SearchFunctions/SearchBarFunctions";
-import "./JobsIndexDesktop.scss";
+import "./DesktopJobsIndex.scss";
 
-function JobsIndexDesktop() {
+function DesktopJobsIndex() {
   const { setLoading, loading } = useContextProvider();
   const { setSearchQueryRoute, queryStart, setQueryStart, jobQuery } =
     useJobProvider();
@@ -78,4 +78,4 @@ function JobsIndexDesktop() {
   );
 }
 
-export default JobsIndexDesktop;
+export default DesktopJobsIndex;

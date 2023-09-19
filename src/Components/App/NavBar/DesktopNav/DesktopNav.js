@@ -1,6 +1,6 @@
 import SlideNavLinkList from "../SlideNav/SlideNavLinkList";
 import LoginHeader from "../../../Login/LoginHeader/LoginHeader";
-import DarkModeSlider from "../SlideNav/DarkModeSlider/DarkModeSlider";
+import DarkModeSlider from "../../../DarkModeSlider/DarkModeSlider";
 import ContactLinks from "../../../ContactLinks/ContactLinks";
 import "./DesktopNav.scss"
 
@@ -10,7 +10,7 @@ function DesktopNav() {
             <LoginHeader />
             <SlideNavLinkList icons={false}/>
             <DarkModeSlider text={false} /> 
-            <ContactLinks />
+            <ContactLinks init={true} />
         </nav>
     );
 }
