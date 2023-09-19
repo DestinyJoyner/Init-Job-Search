@@ -1,4 +1,4 @@
-import {dropdownCities} from "../../Job/Data/Cities.js"
+import {dropdownCities} from "../../App/Data/Cities.js"
 
 function convertDate(str){
     const strArr= str.split("T")[0].split("-")

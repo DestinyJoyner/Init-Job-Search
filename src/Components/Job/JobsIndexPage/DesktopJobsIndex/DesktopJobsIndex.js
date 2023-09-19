@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useContextProvider } from "../../../../Providers/Provider";
 import { useJobProvider } from "../../../../Providers/JobProvider";
 import { useSearchBarProvider } from "../../../../Providers/SearchBarProvider";
-import SearchBarProvider from "../../../../Providers/SearchBarProvider";
 import { v4 as uuidv4 } from "uuid";
 import SearchBar from "../../../SearchBar/SearchBar.js";
 import FilterBar from "../../../FilterBar/FilterBar";

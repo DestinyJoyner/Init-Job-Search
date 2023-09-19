@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import DesktopFooter from "../../Footer/DesktopFooter/DesktopFooter";
+import FeatureThumbnail from "../../../FeatureThumbnail/FeatureThumbnail.js";
 import logo from "../../../../Assets/LOGO.png";
 import stockImage1 from "../Images/init-stock(1).jpg"
 import stockImage2 from "../Images/init-stock(2).jpg";
@@ -64,6 +65,15 @@ function DesktopHomePage() {
             </p>
           </div>
         </section>
+      </section>
+
+      <section className="desktopHome_features">
+        <h3>Start Your Tech Career With inIT</h3>
+
+        <span>We remove the hassle in beginning your career in tech, connecting you directly with opportunities at your skill level.</span>
+
+      <FeatureThumbnail />
+
       </section>
 
      <DesktopFooter />

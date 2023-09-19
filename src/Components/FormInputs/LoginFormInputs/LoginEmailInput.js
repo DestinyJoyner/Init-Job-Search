@@ -1,5 +1,5 @@
 import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions";
-import { loginEmail } from "../../Job/Data/Icons";
+import { loginEmail } from "../../App/Data/Icons";
 
 function LoginEmailInput({formKey, value, placeholder, stateVar, setFunction}) {
     return (

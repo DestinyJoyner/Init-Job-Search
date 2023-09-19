@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import convertCompanyForLogo from "../../Job/Data/CompanyLogos";
-import { userIcon } from "../../Job/Data/Icons";
+import convertCompanyForLogo from "../../App/Data/CompanyLogos";
+import { userIcon } from "../../App/Data/Icons";
 import "./RecruiterProfileTopJobs.scss";
 
 function RecruiterProfileTopJobs({ jobObj }) {

@@ -4,7 +4,7 @@ import {
   handleFormInput,
   registrationEmailCheck,
 } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
-import { emailInvalid, emailValid, asterisk } from "../../Job/Data/Icons.js";
+import { emailInvalid, emailValid, asterisk } from "../../App/Data/Icons.js";
 
 function RegisterEmailInput({
   userType,

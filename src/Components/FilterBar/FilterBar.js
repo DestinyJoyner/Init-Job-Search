@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useSearchBarProvider } from "../../Providers/SearchBarProvider";
+
 import SkillsComponent from "../Job/SkillsComponent";
 import Dropdown from "../Job/Inputs/Dropdown.js"
-import { dropdownCities } from "../Job/Data/Cities.js";
+import { dropdownCities } from "../App/Data/Cities";
 import {
   handleSearchBar,
   handleSkillSelection,
@@ -14,7 +14,7 @@ import "./FilterBar.css";
 
 // { searchOptions, setSearchOptions}
 function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
-  // const { searchOptions, setSearchOptions } = useSearchBarProvider()
+
   const [filterOptions, setFilterOptions] = useState(false);
   const [cityDropdown, setCityDropdown] = useState("");
   const [remoteSearch, setRemoteSearch] = useState(false);

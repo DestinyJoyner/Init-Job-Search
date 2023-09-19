@@ -1,5 +1,5 @@
 import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions";
-import { recruiter } from "../../Job/Data/Icons";
+import { recruiter } from "../../App/Data/Icons";
 
 function LoginCheckbox({formKey, value, stateVar, setFunction}) {
     return (

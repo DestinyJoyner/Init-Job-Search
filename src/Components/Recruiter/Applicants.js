@@ -7,7 +7,7 @@ import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
 import { v4 as uuidv4 } from "uuid";
 
 import ApplicantCard from "./ApplicantCard";
-import { jobCompany, jobLocation } from "../Job/Data/Icons";
+import { jobCompany, jobLocation } from "../App/Data/Icons";
 import "./Applicants.css";
 
 export default function Applicants() {

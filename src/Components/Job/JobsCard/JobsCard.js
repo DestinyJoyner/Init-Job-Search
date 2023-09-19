@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SkillsComponent from "../SkillsComponent";
 import { convertCities } from "../../Functions/ConvertFunctions/ConversionFunctions";
-import convertCompanyForLogo from "../Data/CompanyLogos";
+import convertCompanyForLogo from "../../App/Data/CompanyLogos";
 import "./JobsCard.scss";
 
 function JobsCard({ jobObj }) {

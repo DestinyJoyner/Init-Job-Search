@@ -8,7 +8,7 @@ import {
   navLogout,
   navProfile,
   navRegister,
-} from "../../../Job/Data/Icons";
+} from "../../Data/Icons";
 
 function SlideNavLink({ path, label, clickfunction, showIcon }) {
   const { navbarClick } = useNavProvider();

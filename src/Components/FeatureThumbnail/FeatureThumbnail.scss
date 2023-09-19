@@ -1,0 +1,14 @@
+.featureThumbnail {
+    border: 1px solid red;
+    width: 200px;
+    height: 130px;
+    &_icon {
+        
+        &_container {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 1px solid var(--init-mint);
+        }
+    }
+}

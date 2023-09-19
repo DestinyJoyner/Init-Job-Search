@@ -4,7 +4,7 @@ import {
   handleTasks,
   removeTask,
 } from "../../Functions/FormFunctions/JobFormFunctions.js";
-import { asterisk } from "../Data/Icons.js";
+import { asterisk } from "../../App/Data/Icons.js";
 import { HiMinusCircle } from "react-icons/hi";
 
 function TextInput({

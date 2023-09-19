@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { convertCities } from "../Functions/ConvertFunctions/ConversionFunctions";
-import convertCompanyForLogo from "../Job/Data/CompanyLogos.js"
-import { userIcon } from "../Job/Data/Icons";
+import convertCompanyForLogo from "../App/Data/CompanyLogos.js"
+import { userIcon } from "../App/Data/Icons";
 
 import "./RecruiterJob.css";
 

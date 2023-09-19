@@ -8,7 +8,8 @@ import { v4 as uuidv4 } from "uuid";
 import SliderButtons from "../SliderButton/SliderButtons.js";
 import SkillsComponent from "./SkillsComponent";
 import { convertDate, convertCities } from "../Functions/ConvertFunctions/ConversionFunctions";
-import convertCompanyForLogo from "./Data/CompanyLogos";
+
+import convertCompanyForLogo from "../App/Data/CompanyLogos";
 import "./JobsShow.scss";
 
 function JobsShow() {

@@ -1,5 +1,5 @@
-import convertCompanyForLogo from "../../Job/Data/CompanyLogos";
-import { recruiter } from "../../Job/Data/Icons";
+import convertCompanyForLogo from "../../App/Data/CompanyLogos";
+import { recruiter } from "../../App/Data/Icons";
 
 function RecruiterProfileHeader({recruiterDetails}) {
     const { first_name, last_name, organization} = recruiterDetails

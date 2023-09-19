@@ -1,5 +1,5 @@
 import { handleFormInput } from "../../Functions/FormFunctions/RegisterFormFunctions.js"
-import { asterisk } from "../../Job/Data/Icons.js";
+import { asterisk } from "../../App/Data/Icons.js";
 
 function RegisterTextInput({label, value, formKey, stateVar, setFunction }) {
     return (

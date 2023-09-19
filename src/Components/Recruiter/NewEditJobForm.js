@@ -10,10 +10,10 @@ import TextArea from "../Job/Inputs/TextArea";
 import Checkbox from "../Job/Inputs/Checkbox";
 import Dropdown from "../Job/Inputs/Dropdown";
 import SkillsComponent from "../Job/SkillsComponent.js";
-import { dropdownCities } from "../Job/Data/Cities";
+import { dropdownCities } from "../App/Data/Cities";
 import { handleSearchBar } from "../Functions/SearchFunctions/SearchBarFunctions";
 import { convertTasks, convertSkills } from "../Functions/ConvertFunctions/ConversionFunctions";
-import { asterisk } from "../Job/Data/Icons.js";
+import { asterisk } from "../App/Data/Icons.js";
 import { IoMdAddCircle } from "react-icons/io";
 import "./NewEditJobForm.css";
 

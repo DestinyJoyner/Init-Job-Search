@@ -10,8 +10,8 @@ import RecruiterProfileTopJobs from "../RecruiterProfileTopJobs/RecruiterProfile
 import NoAccess from "../../App/NoAccess/NoAccess.js";
 import Dropdown from "../../Job/Inputs/Dropdown";
 import { getTwoHighestAppliedToJobs, handleRecruiterJobSort } from "../../Functions/RecruiterFunctions/RecruiterProfileFunctions";
-import { recruiterSortOptionsArr } from "../../Job/Data/RecruiterSortObj";
-import { addJob } from "../../Job/Data/Icons";
+import { recruiterSortOptionsArr } from "../../App/Data/RecruiterSortObj";
+import { addJob } from "../../App/Data/Icons";
 
 import "./RecruiterProfile.scss";
 

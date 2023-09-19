@@ -1,5 +1,5 @@
 import { handleTextChange } from "../../Functions/FormFunctions/JobFormFunctions.js"
-import { asterisk } from "../Data/Icons.js"
+import { asterisk } from "../../App/Data/Icons.js"
 
 function TextArea({ label, formId, stateVar, setFunction, placeholder, required }) {
 
