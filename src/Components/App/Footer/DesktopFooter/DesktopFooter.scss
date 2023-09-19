@@ -2,7 +2,7 @@
   border-top: 1px solid var(--init-darkmint);
   border-bottom: 1px solid var(--init-darkmint);
   background-color: var(--init-gray-background);
-  width: 94%;
+  width: 90%;
   padding: 2vh ;
   height: 320px;
   display: grid;
@@ -17,19 +17,31 @@
   &_developer {
     grid-column: 2;
     display: grid;
-    grid-template-rows: 15% 55% 15% 15%;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 13% 52% 20% 15%;
     align-items: center;
 
     &_bio {
-      display: flex;
-      width: 93%;
-      column-gap: 5px;
+      // display: flex;
+      width: 98%;
+      // column-gap: 5px;
+      grid-column:  span 2;
       grid-row: 2;
 
-      & img {
-        height: 150px;
-        border-radius: 50%;
-      }
+      // & img {
+      //   height: 150px;
+      //   border-radius: 50%;
+      // }
+    }
+    &_photo {
+      height: 130px;
+      border-radius: 50%;
+      grid-column: 2;
+      grid-row: 3/5;
+      justify-self: left;
+      position: relative;
+      right: 5vw;
+      bottom: 1vh;
     }
 
     &_contact {

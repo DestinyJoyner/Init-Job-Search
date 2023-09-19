@@ -36,10 +36,14 @@ function DesktopFooter() {
         <span 
         className="desktopFooter_developer_bio">
           {developerBio}
-          <img 
+          {/* <img 
           src={developerImage} 
-          alt="developer-image" />
+          alt="developer-image" /> */}
         </span>
+        <img 
+          src={developerImage} 
+          alt="developer-image"
+          className="desktopFooter_developer_photo" />
         <h2 className="desktopFooter_developer_contact">
           Contact Me
         </h2>
