@@ -40,6 +40,9 @@ function DesktopJobsIndex() {
             </span>
           </span>
 
+          <span className="jobsIndexDesktop_filter_category_skills">Skills:</span>
+          <span className="jobsIndexDesktop_filter_category_location">Location:</span>
+          <span className="jobsIndexDesktop_filter_category_remote"><span>Remote Work:</span></span>
           <FilterBar
             remoteCheckbox={true}
             searchOptions={searchOptions}
