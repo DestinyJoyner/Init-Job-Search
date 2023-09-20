@@ -101,13 +101,13 @@
                 & span {
                     padding-left: .6vw;
                     position: relative;
-                    bottom: 1.3vh;
+                    // bottom: 1.3vh;
                     text-decoration: underline;
                     text-decoration-color: var(--init-charcoal);
                 }
             }
             &_location {
-                top: 42.5vh;
+                top: 44vh;
             }
             &_skills {
                 top: .8vh;
@@ -124,8 +124,8 @@
             width: 100%;
             grid-row: 3;
             grid-template-columns: 100%;
-            grid-template-rows: 57% 
-            6% 12% 5% 14%;
+            grid-template-rows: 60% 
+            6% 14% 6% 10%;
             padding: 1vh 0;
             align-items: center;
     
@@ -138,8 +138,8 @@
                 height: 50px;
                 width: 65%;
                 justify-self: left;
-                margin-left: 1vw;
-                margin-bottom: 1vh ;
+                // margin-left: 1vw;
+                margin-bottom: 3vh ;
                 
             }
             .filter-checkbox {
@@ -147,7 +147,8 @@
                 display: flex;
                 align-items: center;
                 column-gap: 15px;
-                padding-top: .5vh;
+                // padding-top: .5vh;
+                margin-bottom: 3vh ;
                 // border-bottom: 1px solid var(--init-mint);
                 // border-top: 1px solid var(--init-mint);
                 width: 100%;
@@ -238,8 +239,8 @@
             margin-left: 0;
             text-align: center;
             position: relative;
-            bottom: 3.2vh;
-            padding-top: 2vh;
+            bottom: 2vh;
+            padding-top: 1.5vh;
             font-size: 24px;
 
             &:hover {
