@@ -64,6 +64,9 @@ function DesktopJobsIndex() {
           </button>
         </aside>
 
+        <span className="jobsIndexDesktop_jobsList_header">
+          Search Results:
+        </span>
         <div className="jobsIndexDesktop_jobsList">
           {jobQuery.length > 0 ? (
             jobQuery.map((obj) => 
