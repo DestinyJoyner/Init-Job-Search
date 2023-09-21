@@ -153,3 +153,50 @@ textarea:focus {
 button:hover {
   cursor: pointer;
 }
+
+/* TEMPORARY DESKTOP VIEWS FOR TBD COMPONENTS */
+.desktop .applicantProfile {
+  width: 30%;
+  margin: 0 auto;
+  padding: 3vh 0;
+  padding-bottom: 6vh;
+  &_applicantDetails {
+    row-gap: 0;
+  }
+}
+
+.desktop .applicantProfileEditForm {
+  width: 50%;
+  margin: 0 auto;
+  padding: 3vh 0;
+  padding-bottom: 6vh;
+}
+
+.desktop .registrationPage {
+  width: 50%;
+  margin: 0 auto;
+  padding: 2vh 0;
+}
+
+.desktop .loginPage {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 3vh;
+}
+
+.desktop .recruiterProfile {
+  width: 35%;
+  margin: 0 auto;
+  padding-top: 3vh;
+}
+
+.desktop .job-form-page {
+  width: 50%;
+  margin: 0 auto;
+  padding: 2vh 0;
+}
+
+.desktop .jobShow {
+  width: 30%;
+  margin: 0 auto;
+}

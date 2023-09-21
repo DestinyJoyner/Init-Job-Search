@@ -10,7 +10,7 @@ function PaginationButtons() {
     useJobProvider();
   const [hideNextButton, setHideNextButton] = useState(false);
   const [hidePrevButton, setHidePrevButton] = useState(
-    queryStart ? false : true
+    queryStart !== 0 ? false : true
   );
 
   useEffect(() => {
@@ -27,6 +27,12 @@ function PaginationButtons() {
   }, [queryStart, jobQuery.length]);
 
   useEffect(() => {}, [queryLimit]);
+
+  useEffect(()=> {
+    if(queryStart === 0){
+      setHideNextButton(false)
+    }
+  },[])
 
   return (
     <div className="paginationButtons">
