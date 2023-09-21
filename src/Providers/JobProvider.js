@@ -1,6 +1,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useContextProvider } from "./Provider.js";
+import { useWindowSizeProvider } from "./WindowSizeProvider.js";
 import { convertSkills } from "../Components/Functions/ConvertFunctions/ConversionFunctions.js";
 
 export const JobContextData = createContext();
@@ -10,6 +11,7 @@ export function useJobProvider() {
 
 function JobProvider({ children }) {
   const { API, axios, setLoading } = useContextProvider();
+  const { isDesktopView } = useWindowSizeProvider()
   const { jobID } = useParams();
   const [jobs, setJobs] = useState([])
   const [jobDetails, setJobDetails] = useState({});
@@ -17,8 +19,9 @@ function JobProvider({ children }) {
   // Search
   const [jobQuery, setJobQuery] = useState([]);
   const [queryStart, setQueryStart] = useState(0);
+  const [queryLimit, setQueryLimit] = useState(isDesktopView ? 6 : 4)
 
-  const defaultJobSearchQuery = `${API}/jobs?start=${queryStart}&limit=4`;
+  const defaultJobSearchQuery = `${API}/jobs?start=${queryStart}&limit=${queryLimit}`;
   const [searchQueryRoute, setSearchQueryRoute] = useState("");
 
   useEffect(() => {
@@ -56,12 +59,17 @@ function JobProvider({ children }) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`)
+      .get(`${API}/jobs?start=${queryStart}&limit=${queryLimit}${searchQueryRoute}`)
       .then(({ data }) => setJobQuery(data))
       .catch((err) => console.log(err));
 
     // console.log(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`, "api search query")
-  }, [queryStart, searchQueryRoute]);
+  }, [queryStart, searchQueryRoute, queryLimit]);
+
+  useEffect(() => {
+    const limit = isDesktopView ? 6 : 4
+    setQueryLimit(limit)
+  },[isDesktopView])
 
   return (
     <JobContextData.Provider
@@ -77,6 +85,7 @@ function JobProvider({ children }) {
         setSearchQueryRoute,
         jobDetails,
         jobSkills,
+        queryLimit
       }}
     >
       {children}

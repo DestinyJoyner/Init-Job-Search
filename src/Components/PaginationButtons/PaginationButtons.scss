@@ -1,0 +1,15 @@
+.paginationButtons {
+    width: 80%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+    & >* {
+      all: unset;
+      color: var(--init-blue);
+      font-weight: 600;
+      font-size: 40px;
+      &:hover {
+        color: var(--init-mint);
+      }
+    }
+}

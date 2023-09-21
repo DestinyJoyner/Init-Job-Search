@@ -22,7 +22,8 @@
     padding: 0;
     margin-top: 1vh;
     & :hover {
-      color: var(--init-gold);
+      // color: var(--init-gold);
+      color: var(--init-darkmint);
     }
   }
   .loginHeader {
@@ -45,6 +46,8 @@
       text-align: center;
       align-self: center;
       width: auto;
+      // text-indent: 1px;
+      padding-left: 2px;
       // margin-left: 0.5vw;
      
     //  height: 100%;

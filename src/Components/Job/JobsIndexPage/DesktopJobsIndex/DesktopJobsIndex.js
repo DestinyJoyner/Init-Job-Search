@@ -7,12 +7,13 @@ import SearchBar from "../../../SearchBar/SearchBar.js";
 import FilterBar from "../../../FilterBar/FilterBar";
 import JobsCard from "../../JobsCard/JobsCard";
 import NoSearchResults from "../../../App/NoSearchResults/NoSearchResults";
+import PaginationButtons from "../../../PaginationButtons/PaginationButtons.js"
 import { handleSearchFilterSubmit } from "../../../Functions/SearchFunctions/SearchBarFunctions";
 import "./DesktopJobsIndex.scss";
 
 function DesktopJobsIndex() {
   const { setLoading, loading } = useContextProvider();
-  const { setSearchQueryRoute, queryStart, setQueryStart, jobQuery } =
+  const { setSearchQueryRoute, setQueryStart, jobQuery} =
     useJobProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
 
@@ -20,7 +21,11 @@ function DesktopJobsIndex() {
     setLoading(false);
   }, [jobQuery]);
 
-  useEffect(() => {}, [queryStart, jobQuery.length]);
+  // useEffect(() => {
+
+  // },[queryLimit])
+
+  // useEffect(() => {}, [queryStart, jobQuery.length]);
 
   return (
     !loading && (
@@ -40,6 +45,9 @@ function DesktopJobsIndex() {
             </span>
           </span>
 
+          <span className="jobsIndexDesktop_filter_category_skills">Skills:</span>
+          <span className="jobsIndexDesktop_filter_category_location">Location:</span>
+          <span className="jobsIndexDesktop_filter_category_remote"><span>Remote Work:</span></span>
           <FilterBar
             remoteCheckbox={true}
             searchOptions={searchOptions}
@@ -61,8 +69,11 @@ function DesktopJobsIndex() {
           </button>
         </aside>
 
+        <span className="jobsIndexDesktop_jobsList_header">
+          Search Results:
+        </span>
         <div className="jobsIndexDesktop_jobsList">
-          {jobQuery.length > 0 ? (
+          {jobQuery.length !== 0 ? (
             jobQuery.map((obj) => 
             <JobsCard 
             key={uuidv4()} 
@@ -71,7 +82,9 @@ function DesktopJobsIndex() {
           ) : (
             <NoSearchResults />
           )}
+          <PaginationButtons />
         </div>
+        
       </div>
     )
   );
