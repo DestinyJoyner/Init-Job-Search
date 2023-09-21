@@ -13,7 +13,7 @@ import "./DesktopJobsIndex.scss";
 
 function DesktopJobsIndex() {
   const { setLoading, loading } = useContextProvider();
-  const { setSearchQueryRoute, queryStart, setQueryStart, jobQuery, queryLimit } =
+  const { setSearchQueryRoute, setQueryStart, jobQuery} =
     useJobProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
 
@@ -82,8 +82,9 @@ function DesktopJobsIndex() {
           ) : (
             <NoSearchResults />
           )}
+          <PaginationButtons />
         </div>
-        <PaginationButtons />
+        
       </div>
     )
   );
