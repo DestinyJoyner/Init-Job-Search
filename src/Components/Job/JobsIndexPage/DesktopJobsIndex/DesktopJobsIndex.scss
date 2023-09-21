@@ -352,6 +352,17 @@
 
 
 .dark .jobsIndexDesktop {
+    &_jobsList {
+        .paginationButtons {
+            &>* {
+                color: var(--init-gold);
+                &:hover {
+                    color: var(--init-darkmint);
+                }
+            }
+            
+        }
+    }
     &_filter {
         &_header {
             color: var(--init-charcoal);
