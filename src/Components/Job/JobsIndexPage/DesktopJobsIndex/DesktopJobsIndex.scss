@@ -282,7 +282,7 @@
         .jobCard {
             height: 220px;
             grid-template-columns: 70% 30% ;
-            grid-template-rows: 55% 20% 25%;
+            grid-template-rows: 60% 18% 22%;
             padding-left: 2vh;
              &_logo {
                 grid-column: 2;
@@ -302,7 +302,7 @@
                 margin: 0;
                 grid-column: 1;
                 grid-row: 1;
-                grid-template-rows: 30% 70%;
+                grid-template-rows: 15% 65% 20%;
                 &_title {
                     grid-row: 2;
                    overflow-wrap: break-word;
@@ -312,6 +312,13 @@
                  &_company {
                     grid-row: 1;
                     font-size: 17px;
+                    margin-top: 1vh;
+                 }
+                 &_preview {
+                    font-size: 12px;
+                    max-height: 5vh;
+                    overflow: hidden;
+                    font-weight: 100;
                  }
              } 
              &_location {
@@ -321,7 +328,7 @@
                 font-size: 16px;
                 // justify-content: space-between;
                 column-gap: 4vw;
-                margin: 0;
+                margin: 1vh 0 0 0;
                 &_remote {
                     padding: 0;
                 }

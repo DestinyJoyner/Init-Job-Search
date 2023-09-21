@@ -8,5 +8,8 @@
       color: var(--init-blue);
       font-weight: 600;
       font-size: 40px;
+      &:hover {
+        color: var(--init-mint);
+      }
     }
 }
