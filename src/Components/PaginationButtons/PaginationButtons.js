@@ -12,6 +12,9 @@ function PaginationButtons() {
         if(jobQuery.length !== queryLimit){
             setHideNextButton(true)
         }
+        else if(((jobQuery.length === queryLimit) && (queryStart + (2*queryLimit)) > jobs.length)){
+          setHideNextButton(true)
+        }
         else {
           setHideNextButton(false)
         }
