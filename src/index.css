@@ -200,3 +200,9 @@ button:hover {
   width: 30%;
   margin: 0 auto;
 }
+
+.desktop .job-applicant-page {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 3vh;
+}

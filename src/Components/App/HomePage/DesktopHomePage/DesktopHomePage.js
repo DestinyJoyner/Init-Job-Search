@@ -6,6 +6,7 @@ import { thumbnailArr } from "../../Data/FeatureThumbnailArray";
 import logo from "../../../../Assets/LOGO.png";
 import stockImage1 from "../Images/init-stock(1).jpg"
 import stockImage2 from "../Images/init-stock(2).jpg";
+import { emailInvalid } from "../../Data/Icons";
 import "./DesktopHomePage.scss";
 
 function DesktopHomePage() {
@@ -26,8 +27,27 @@ function DesktopHomePage() {
         <button className="desktopHome_header_button"
         onClick={() => navigate("/jobs")}>
           SEARCH JOBS NOW!</button>
+
+      {/* <div className="desktopHome_header_accountLinks">
+      <Link to="/login">
+          <span>Log In</span>
+        </Link>
+        <Link to="/register">
+          <span>Register</span>
+        </Link>
+      </div> */}
+          
       </section>
-      <span className="desktopHome_header_disclaimer">**inIT is was designed in MOBILE VIEW first. Desktop components are currently in the process of being designed. Currently, for best viewing of inIT resize the window to under 850px. </span>
+
+      {/* <div className="desktopHome_header_accountLinks">
+      <Link to="/login">
+          <span>LOG IN</span>
+        </Link>
+        <Link to="/register">
+          <span>REGISTER</span>
+        </Link>
+      </div> */}
+      <span className="desktopHome_header_disclaimer">**{emailInvalid}inIT is was designed in MOBILE VIEW first. Some desktop components are currently in the process of being designed. Currently, for best viewing of inIT resize the window to under 850px or open in a MOBILE browser. </span>
 
       <section className="desktopHome_content_init">
 
