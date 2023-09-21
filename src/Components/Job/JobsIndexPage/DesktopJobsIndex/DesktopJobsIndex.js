@@ -7,12 +7,13 @@ import SearchBar from "../../../SearchBar/SearchBar.js";
 import FilterBar from "../../../FilterBar/FilterBar";
 import JobsCard from "../../JobsCard/JobsCard";
 import NoSearchResults from "../../../App/NoSearchResults/NoSearchResults";
+import PaginationButtons from "../../../PaginationButtons/PaginationButtons.js"
 import { handleSearchFilterSubmit } from "../../../Functions/SearchFunctions/SearchBarFunctions";
 import "./DesktopJobsIndex.scss";
 
 function DesktopJobsIndex() {
   const { setLoading, loading } = useContextProvider();
-  const { setSearchQueryRoute, queryStart, setQueryStart, jobQuery } =
+  const { setSearchQueryRoute, queryStart, setQueryStart, jobQuery, queryLimit } =
     useJobProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
 
@@ -20,7 +21,11 @@ function DesktopJobsIndex() {
     setLoading(false);
   }, [jobQuery]);
 
-  useEffect(() => {}, [queryStart, jobQuery.length]);
+  // useEffect(() => {
+
+  // },[queryLimit])
+
+  // useEffect(() => {}, [queryStart, jobQuery.length]);
 
   return (
     !loading && (
@@ -68,7 +73,7 @@ function DesktopJobsIndex() {
           Search Results:
         </span>
         <div className="jobsIndexDesktop_jobsList">
-          {jobQuery.length > 0 ? (
+          {jobQuery.length !== 0 ? (
             jobQuery.map((obj) => 
             <JobsCard 
             key={uuidv4()} 
@@ -78,6 +83,7 @@ function DesktopJobsIndex() {
             <NoSearchResults />
           )}
         </div>
+        <PaginationButtons />
       </div>
     )
   );
