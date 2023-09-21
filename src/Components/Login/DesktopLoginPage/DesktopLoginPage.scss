@@ -1,0 +1,34 @@
+.desktopLoginPage {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 8vh;
+    padding: 3vh 0;
+    // padding: 2vh 0;
+    // border: 1px solid red;
+    // border-radius: 20px;
+    // overflow: hidden;
+
+    &_image {
+        background-color: var(--init-mint);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-right: none;
+        box-shadow: -2px 0px 5px black;
+        // margin-left: 1vw;
+
+    }
+
+    .loginPage {
+        // border: 3px inset black ;
+        box-shadow: 2px 0px 5px black;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-left: none;
+        grid-column: 2;
+        // margin-right: 2vw;
+       
+    }
+}
