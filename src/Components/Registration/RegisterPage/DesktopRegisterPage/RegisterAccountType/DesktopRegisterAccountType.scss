@@ -21,10 +21,8 @@
         }
     }
     
-   
     & h2 {
         top: 6vh;
-        // margin: 6vh 0 0 2vw;
         color: var(--init-gold);
         font-size: 36px;
     }
@@ -33,18 +31,26 @@
         right: 1vw;
         height: 130px;
         width: 130px;
-        // margin: 2vh 2vh 0 0;
         justify-self: right;
         border-radius: 50px 0px 50px 0px;
         transform: rotate(-45deg);
         border: 3px solid var(--init-gold);
         overflow: hidden;
-        & img {
+        &>* {
             position:relative;
+            transform: rotate(45deg);
+        }
+        &_applicant {
             right: 6.9vw;
             bottom: 5.8vh;
             height: 190px;
-            transform: rotate(45deg);
+            
+        }
+        &_recruiter {
+            height: 185px;
+            bottom: 6vh;
+            right: 6.5vw;
+
         }
     }
     & ul {
@@ -58,4 +64,5 @@
             right: 1vw;
         }
     }
+    
 }

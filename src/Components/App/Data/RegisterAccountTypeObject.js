@@ -1,11 +1,11 @@
- import recruiterStockImage from "../../../Assets/register-recruiter.jpeg"
+ import recruiterStockImage from "../../../Assets/recruiter-handshake.webp"
  import applicantStockImage from "../../../Assets/register-applicant.jpg"
 
  const registerAccountTypeObj = {
     applicant : {
         image : applicantStockImage,
         listItems : [
-            "Embrace a worry-free approach, as inIT exclusively features entry-level positions that welcome applicants without any prior professional work history.",
+            "Embrace a worry-free approach, as you browse entry-level positions that welcome applicants without any prior professional work history.",
             "Explore entry-level job opportunities aligned with your skillset.",
             "Highlight your most impressive portfolio projects to capture recruiters' attention.",
             "Simplify the job application process with one-click submissions for positions matching your skill level.",
