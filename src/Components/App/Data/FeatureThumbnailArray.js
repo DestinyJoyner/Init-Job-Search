@@ -1,7 +1,7 @@
 import {CgWebsite} from "react-icons/cg"
 import {AiOutlineFileSearch} from "react-icons/ai"
 import {IoOptionsSharp} from "react-icons/io5"
-import {GrHistory} from "react-icons/gr"
+import {MdOutlineHistory} from "react-icons/md"
 
 const thumbnailArr = [
     {
@@ -17,7 +17,7 @@ const thumbnailArr = [
         text: "Filter search by skills, location, and remote work"
     },
     {
-        icon : <GrHistory />,
+        icon : <MdOutlineHistory />,
         text: "Track your application history"
     }
 ]

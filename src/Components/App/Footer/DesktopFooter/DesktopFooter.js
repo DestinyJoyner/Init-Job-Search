@@ -31,6 +31,8 @@ function DesktopFooter() {
         </span>
       </section>
 
+      <hr />
+
       <section className="desktopFooter_developer">
         <h2>About The Developer</h2>
         <span 

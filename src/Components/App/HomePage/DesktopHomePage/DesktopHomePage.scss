@@ -1,19 +1,22 @@
 .desktopHome {
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: auto 2vh auto auto auto;
   row-gap: 2%;
   justify-items: center;
-  padding: 5vh 0;
-  padding-bottom: 30vh;
+  padding-top: 1.5vh;
+  padding-bottom: 22vh;
 
   &_header {
-    width: 85%;
+    width: 100%;
     height: 220px;
     align-self: center;
     display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 70% 30%;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 75% 25%;
     align-items: center;
+    background-color: var(--init-gray-background);
+    border-bottom: 1px solid var(--init-darkmint);
+    border-top: 1px solid var(--init-darkmint);
 
     &_logo {
       height: 200px;
@@ -35,8 +38,8 @@
 
     &_disclaimer {
       width: 60%;
-      padding: 3vh 0;
-      // height: 2vh;
+     position: relative;
+     bottom: 2vh;
       font-family: Poppins;
       font-weight: 600;
       font-size: 14px;
@@ -49,6 +52,8 @@
 
     &_button {
       all: unset;
+      grid-column: 2;
+      grid-row: 2;
       text-align: center;
       width: 200px;
       padding: 5px;
@@ -61,32 +66,49 @@
     }
 
     &_accountLinks {
-      // grid-column: 2;
-      
-      justify-self: right;
-      display: flex;
-      column-gap: 10vw;
-      // justify-content: space-evenly;
-      width: 43%;
-      font-size: 32px;
-      &>*{
+      grid-column: 1;
+      grid-row: 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      justify-items: center;
+      align-self: flex-end;
+      position: relative;
+      top: 1vh;
+      width: 90%;
+      row-gap: 3vh;
+      &> a{
         color: var(--init-blue);
+        grid-row: 2;
+        font-size: 26px;
         &:hover {
-          color: var(--init-darkmint);
+          color: var(--init-gold);
+          
         }
+      }
+      &_header {
+        grid-column: span 2;
+        font-weight: 600;
+        font-size: 35px;
+        font-family: Poppins;
+        color: var(--init-gold);
       }
     }
   }
 
   &_content_init {
-    width: 75%;
-    // height: 65vh;
-    height: auto;
-    padding-bottom: 3vh;
+    width: 90%;
+    overflow: hidden;
+    height: max-content;
+    // padding-bottom: 3vh;
+    padding: 5vh 0 10vh 0;
     border-radius: 20px;
     background-color: var(--init-mint);
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 80% 20%;
+    grid-template-rows: repeat(2, 1fr) .5fr;
+    row-gap: 5%;
+    // column-gap: 2%;
     align-items: center;
     justify-items: center;
 
@@ -115,16 +137,61 @@
       display: flex;
       width: 90%;
       column-gap: 30px;
+      // border-right: 1px solid var(--init-gold);
       &_text {
         display: grid;
         row-gap: 1vh;
         max-width: 70%;
       }
     }
+    &_one {
+      margin-bottom: 4vh;
+    }
     &_two {
       grid-row: 2;
       & a {
         font-size: 20px;
+      }
+    }
+
+    &_aside {
+      border-left: 1px solid var(--init-gold);
+      grid-row: 1/4;
+      grid-column: 2;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 5% 80% 15%;
+      align-items: center;
+      & > * {
+        font-family: Poppins;
+      }
+      & span {
+        font-size: 22px;
+        justify-self: center;
+        font-weight: 600;
+        color: var(--init-gold);
+        text-decoration: underline;
+      }
+      & ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        & li {
+          list-style: none;
+      
+          font-weight: 600;
+          margin-bottom: .5vh;
+          position: relative;
+          right: 1vw;
+        }
+      }
+      & img {
+        height: 150px;
+        justify-self: center;
+        position: relative;
+        top: 3vh;
       }
     }
   }
@@ -139,10 +206,24 @@
     }
     &_thumbnails {
       display: flex;
-      width: 90%;
+      width: 100%;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      margin-top: 2vh;
+      margin-top: 3vh;
     }
   }
+}
+
+.dark .desktopHome {
+&_header {
+  &_button {
+    // background:unset;
+    // background-color: var(--init-gold);
+    color: var(--init-dark);
+  }
+} 
+&_content_init {
+  background-color: var(--init-darkmint);
+}
+ 
 }
