@@ -151,3 +151,27 @@
       }
     }
 }
+
+@media (max-width: 1200px) {
+  .desktopLoginPage {
+    &_content {
+      &_left {
+        &_container {
+          bottom: 37vh;
+        left: 14vw;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1080px){
+  .desktopLoginPage {
+    &_content {
+      &_left {
+        &_container {
+          display: none;
+        }
+      }
+    }
+  }
+}
