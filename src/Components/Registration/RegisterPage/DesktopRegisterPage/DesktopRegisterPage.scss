@@ -1,0 +1,76 @@
+.desktopRegisterPage {
+    // width: 90%;
+    // margin: 0 auto;
+    &_content {
+        // width: 90%;
+       
+        padding: 3vh 0 0 0;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 100%;
+        // background: linear-gradient(90deg, rgba(222,239,249,1) 35%, rgba(65,152,205,1) 100%);
+        &>* {
+            box-shadow: 0px 0px 10px black; 
+        }
+
+        .registrationPage {
+            grid-column: 1;
+            grid-row: 1;
+            width: 90%;
+            height: 88%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            
+            &_userType {
+                row-gap: 2vh;
+                & span {
+                    grid-row: 1;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                .sliderButton {
+                    &_container {
+                        .buttonSelected {
+                            color: white;
+                        }
+                    }
+                   
+                    &_buttons {
+                        height: 5vh;
+                        border: 1px solid var(--init-recruiter-blue);
+                        &_button {
+                            height: 5vh;
+                        }
+                    }
+                    &_slider {
+                        height: 5vh;
+                        background-color: var(--init-recruiter-blue);
+                      }
+                }
+            }
+            .loginHeader {
+                display: none;
+            }
+            .registerForm {
+                grid-row: 3;
+                & input {
+                    border-color: var(--init-recruiter-blue);
+                }
+            }
+        }
+
+        &_right {
+            grid-column: 2;
+           height: 92%;
+           width: 96%;
+           border-top-right-radius: 20px;
+           border-bottom-right-radius: 20px;
+           background: linear-gradient(90deg, rgba(222,239,249,1) 15%, rgba(65,152,205,1) 100%);
+            // background-color: red;
+        }
+    }
+
+    
+
+    
+}
