@@ -33,6 +33,26 @@
       row-gap: 2%;
       margin-left: 1vw;
       padding-bottom: 0;
+
+      &_container {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        grid-row: 5;
+        position: relative;
+        bottom: 35vh;
+        left: 12vw;
+        border-radius: 60px 0px 60px 0px;
+            transform: rotate(-45deg);
+            border: 3px solid var(--init-gold);
+            &_image {
+                position: relative;
+                top: 10h;
+                right: 4vw;    
+                height: 240px;
+                transform: rotate(45deg);
+            }
+      }
       
       &_header {
         grid-row: 1;
@@ -97,8 +117,6 @@
     left: 2vw;
     padding: 2vh 1vw 2vh 1vw;
     
-    // padding-right: 1vw;
-
     &_error {
         font-size: 20px;
     }

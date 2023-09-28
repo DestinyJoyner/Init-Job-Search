@@ -1,11 +1,17 @@
 import LoginPage from "../LoginPage/LoginPage.js";
+import loginStock from "../../../Assets/desktop-login-stock.jpg"
 import "./DesktopLoginPage.scss";
 
-function DesktopLoginPage(props) {
+function DesktopLoginPage() {
   return (
     <div className="desktopLoginPage">
       <section className="desktopLoginPage_content">
         <section className="desktopLoginPage_content_left grid-center">
+
+            <div className="desktopLoginPage_content_left_container">
+            <img src={loginStock} alt="login-stock" className="desktopLoginPage_content_left_container_image"/>
+            </div>
+         
 
             <div className="desktopLoginPage_content_left_header">
               <span className="desktopLoginPage_content_left_header_top">Welcome Back To inIT</span>
