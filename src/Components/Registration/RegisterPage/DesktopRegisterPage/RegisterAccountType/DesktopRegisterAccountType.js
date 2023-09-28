@@ -30,7 +30,7 @@ function DesktopRegisterAccountType({ accountToggle }) {
         <h1>How inIt Works for you: </h1>
       </section>
 
-      <h2>As {header}...</h2>
+      <h2>Register as <br/> {header}...</h2>
 
       <div className="desktopRegisterAccountType_image">
         <img

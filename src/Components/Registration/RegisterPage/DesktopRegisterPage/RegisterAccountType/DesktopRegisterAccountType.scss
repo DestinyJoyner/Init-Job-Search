@@ -22,13 +22,15 @@
     }
     
     & h2 {
-        top: 6vh;
+        top: 4vh;
+        left: 2vw;
         color: var(--init-gold);
         font-size: 36px;
+        width: fit-content;
     }
     &_image {
-        bottom: 1vh;
-        right: 1vw;
+        bottom: 8vh;
+        right: 2vw;
         height: 130px;
         width: 130px;
         justify-self: right;
@@ -56,7 +58,7 @@
     & ul {
         border-left: 1px solid var(--init-gold);
         width: 70%;
-        bottom: 5vh;
+        bottom: 8vh;
         & li {
             position: inherit;
             margin-bottom: 3vh;
@@ -74,4 +76,53 @@
     }
   
   }
+}
+
+@media (max-width: 1300px) {
+    .desktopRegisterAccountType {
+        margin: 0;
+        &_image {
+            height: 100px;
+            width: 100px;
+            right: 2vw;
+            &_applicant {
+                height: 150px;
+                right: 6.5vw;
+               bottom: 4.5vh;
+            }
+            &_recruiter {
+                height: 145px;
+            bottom: 4.8vh;
+            right: 4.5vw;
+            }
+        }
+        & ul {
+          bottom: 2vh;
+            margin-left: 1vw;
+            width: 90%;
+            column-gap: 2%;
+            & li {
+                right: 2vw;
+            }
+        }
+    }
+}
+
+@media (max-width:1060px) {
+    .desktopRegisterAccountType {
+        &_image {
+            display: none;
+        }
+        & ul {
+              top: 8vh;
+        }
+    }
+}
+
+@media (max-width:965px) {
+    .desktopRegisterAccountType {
+        &_header {
+            display: none;
+        }
+}
 }
