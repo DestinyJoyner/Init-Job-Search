@@ -1,58 +1,90 @@
 .desktopLoginPage {
   display: grid;
   width: 94%;
+  height: 91vh;
   margin: 9vh auto 0 auto;
-  padding: 3vh 0 3vh 0;
   justify-items: center;
-  //   background-color: var(--init-mint);
+  align-items: center;
 
   &_content {
     border-radius: 20px;
     width: 80%;
-    // box-shadow: 0px 0px 10px black;
+    height: 90%;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: var(--init-mint);
-    padding: 5vh;
+    background: linear-gradient(
+        90deg,
+        rgb(83, 215, 199) 20%,
+        rgba(12, 189, 189, 1) 50%
+      );
+    padding: 2vh;
+    box-shadow: 0px 0px 10px black;
+    
     & > * {
-      box-shadow: 0px 0px 10px black;
+        height: 100%;
     }
     &_left {
-      display: grid;
-    //   grid-template-columns: 1fr 2fr 1fr;
-    //   grid-template-rows: 100%;
+      grid-template-rows: 20% 20% 5% 45% 5%;
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
-      background-image: url("../../../../public/desktop-login-stock.jpg");
-      background-size: cover;
-      overflow: hidden;
+      width: 90%;
+      row-gap: 2%;
+      margin-left: 1vw;
+      padding-bottom: 0;
       
-    //   background-color: var(--init-mint);
-    //   background: linear-gradient(
-    //     90deg,
-    //     rgba(12, 189, 189, 1) 35%,
-    //     rgb(83, 215, 199) 100%
-    //   );
-      &_transparent {
-        // grid-column: span 3;
-        height: 100%;
-        background-color: rgba(30, 30, 30, 0.557) ;
-        // display: grid;
-        & span {
-            // justify-self: center;
-            font-size: 52px;
-            // position: relative;
-            // top: 2vh;
-            font-weight: 600;
-            line-height: 10vh;
-            font-family: Poppins;
-            text-align: center;
+      &_header {
+        grid-row: 1;
+        font-family: Poppins;
+        display: grid;
+        text-align: center;
+        &_top {
             color: var(--init-gold);
-          }
+             font-size: 38px;
+            font-weight: 600;
+        }
+        &_bottom {
+            font-size: 24px;
+            opacity: .8;
+        }
       }
 
-      
+      &_subHeader {
+        grid-row: 2;
+        justify-self: left;
+        display: grid;
+        row-gap: 15px;
+        &_top {
+            font-size: 22px;
+            color: var(--init-gold);
+            font-weight: 600;
+        }
+        &_bottom {
+            font-size: 15px;
+        }
+      }
+
+      &_featureHeader {
+        grid-row: 3;
+        font-size: 24px;
+        color: var(--init-gold);
+        justify-self: left;
+        font-weight: 600;
+      }
+
+      &_featureList {
+        grid-row: 4;
+        border-left: 2px solid var(--init-gold);
+        height: 100%;
+        justify-self: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        & li {
+            list-style: none;
+        }
+      }
     }
   }
 
@@ -60,5 +92,30 @@
     background-color: var(--init-background);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    position: relative;
+    bottom: 2vh;
+    left: 2vw;
+    padding: 2vh 1vw 2vh 1vw;
+    
+    // padding-right: 1vw;
+
+    &_error {
+        font-size: 20px;
+    }
+    
+    .loginForm {
+        margin-top: 6vh;
+        &_submitButton:hover {
+            cursor: pointer;
+        }
+    }
   }
+}
+
+.dark .desktopLoginPage {
+    .loginPage {
+        .loginForm {
+            // all: unset;
+        }
+    }
 }
