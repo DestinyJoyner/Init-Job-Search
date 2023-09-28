@@ -1,34 +1,64 @@
 .desktopLoginPage {
-    display: grid;
-    grid-template-columns: 55% 45%;
+  display: grid;
+  width: 94%;
+  margin: 9vh auto 0 auto;
+  padding: 3vh 0 3vh 0;
+  justify-items: center;
+  //   background-color: var(--init-mint);
+
+  &_content {
+    border-radius: 20px;
     width: 80%;
-    height: 100%;
-    margin: 0 auto;
-    margin-top: 8vh;
-    padding: 3vh 0;
-    // padding: 2vh 0;
-    // border: 1px solid red;
-    // border-radius: 20px;
-    // overflow: hidden;
-
-    &_image {
-        background-color: var(--init-mint);
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        border-right: none;
-        box-shadow: -2px 0px 5px black;
-        // margin-left: 1vw;
-
+    // box-shadow: 0px 0px 10px black;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--init-mint);
+    padding: 5vh;
+    & > * {
+      box-shadow: 0px 0px 10px black;
     }
+    &_left {
+      display: grid;
+    //   grid-template-columns: 1fr 2fr 1fr;
+    //   grid-template-rows: 100%;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      background-image: url("../../../../public/desktop-login-stock.jpg");
+      background-size: cover;
+      overflow: hidden;
+      
+    //   background-color: var(--init-mint);
+    //   background: linear-gradient(
+    //     90deg,
+    //     rgba(12, 189, 189, 1) 35%,
+    //     rgb(83, 215, 199) 100%
+    //   );
+      &_transparent {
+        // grid-column: span 3;
+        height: 100%;
+        background-color: rgba(30, 30, 30, 0.557) ;
+        // display: grid;
+        & span {
+            // justify-self: center;
+            font-size: 52px;
+            // position: relative;
+            // top: 2vh;
+            font-weight: 600;
+            line-height: 10vh;
+            font-family: Poppins;
+            text-align: center;
+            color: var(--init-gold);
+          }
+      }
 
-    .loginPage {
-        // border: 3px inset black ;
-        box-shadow: 2px 0px 5px black;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        border-left: none;
-        grid-column: 2;
-        // margin-right: 2vw;
-       
+      
     }
+  }
+
+  .loginPage {
+    background-color: var(--init-background);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
 }

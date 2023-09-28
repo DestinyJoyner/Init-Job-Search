@@ -1,6 +1,6 @@
 .loginPage {
   font-size: 20px;
-  grid-template-rows: 20vh 40vh 12vh 10vh;
+  grid-template-rows: 20vh 40vh auto 10vh;
   padding-bottom: 4vh;
 
   &_error {

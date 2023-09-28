@@ -1,17 +1,20 @@
 .desktopNav {
-  height: 8vh;
+  height: 9vh;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 200;
+  // background-color: var(--init-lightblue);
   // background-color: var(--init-mint);
   background-color: var(--init-background);
+  box-shadow: 0 1px 5px black;
+  // padding: .5vh 0;
   // background-color: black;
 
-  border-bottom: 1px solid var(--init-gold);
+  // border-bottom: 1px solid var(--init-gold);
   display: grid;
-  grid-template-columns: 25% repeat(4, 9%) 20% 6% 9%;
+  grid-template-columns: 27% repeat(4, 9%) 16% 6% 9%;
   align-items: center;
   justify-items: center;
 
@@ -32,22 +35,29 @@
     height: 100%;
     align-items: center;
     background-color: var(--init-mint);
-    padding-right: 1vh;
+    // padding-right: 1vh;
+    // padding: .5vh 0;
     &_logo {
       height: 8vh;
       background-color: var(--init-background);
-      padding: 0 1vw;
+      padding: .5vh 1vw .5vh 0;
+      position: relative;
+      right: 1vw;
       // border-bottom: 1px solid var(--init-background);
     }
     &_slogan {
       color: var(--init-gold);
+      // border-right: 1px solid var(--init-blue);
+      text-shadow: 0 0 0 var(--init-blue);
       // background-color: var(--init-mint);
       font-size: 19px;
       text-align: center;
       align-self: center;
-      width: auto;
+      width: 70%;
+      // padding: 0 .5vw;
       // text-indent: 1px;
-      padding-left: 2px;
+
+      // padding-left: 2px;
       // margin-left: 0.5vw;
      
     //  height: 100%;

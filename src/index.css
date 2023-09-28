@@ -15,6 +15,8 @@
   --init-darkmint: #0cbdbd;
   --init-gold: #ffde59;
   --init-blue: #0914ae;
+  --init-lightblue: #b1d9f3;
+  --init-recruiter-blue: #4198cd;
   --init-background: #deeff9;
   --init-dark: #050525;
   --init-rust: rgb(186, 26, 26);
@@ -39,7 +41,7 @@ body {
 
 
 .desktop {
-  margin-top: 8vh;
+  margin-top: 9vh;
   /* border: 1px solid red; */
 
 }
