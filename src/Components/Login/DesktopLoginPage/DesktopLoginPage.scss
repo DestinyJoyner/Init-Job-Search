@@ -131,9 +131,23 @@
 }
 
 .dark .desktopLoginPage {
-    .loginPage {
-        .loginForm {
-            // all: unset;
+  &_content {
+    box-shadow: 0px 0px 10px var(--init-darkmint);
+    background: unset;
+    background-color: var(--init-darkmint);
+
+    &_left {
+      &_header {
+        &_bottom {
+            opacity: 1;
         }
+      }
+    }
+  }
+    .loginPage {
+      background-color: var(--init-dark);
+      &_register {
+        color: var(--init-gold);
+      }
     }
 }

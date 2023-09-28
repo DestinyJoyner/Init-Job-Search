@@ -66,3 +66,12 @@
     }
     
 }
+
+.dark .desktopRegisterAccountType {
+  & ul {
+    & li {
+        color: var(--init-background);
+    }
+  
+  }
+}

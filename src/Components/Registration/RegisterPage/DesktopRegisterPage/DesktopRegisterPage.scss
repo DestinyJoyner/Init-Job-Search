@@ -91,3 +91,18 @@
     }
   }
 }
+
+.dark .desktopRegisterPage {
+    &_content {
+        & >* {
+            box-shadow: 0px 0px 10px var(--init-darkmint);
+        }
+        &_right {
+            // color: var(--init-charcoal);
+            background: unset;
+            background-color: var(--init-darkmint);
+        }
+    }
+   
+    
+}

@@ -85,3 +85,14 @@
     }
   }
 }
+
+.dark .registerForm {
+  & >* input {
+      color: var(--init-background);
+  }
+  .formInput {
+    &_submitButton {
+      color: var(--init-gold);
+    }
+  }
+}
