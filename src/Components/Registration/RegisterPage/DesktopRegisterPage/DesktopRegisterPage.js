@@ -1,4 +1,5 @@
 import RegistrationPage from "../RegistrationPage";
+import DesktopRegisterAccountType from "./RegisterAccountType/DesktopRegisterAccountType";
 import "./DesktopRegisterPage.scss"
 
 function DesktopRegisterPage(props) {
@@ -6,7 +7,7 @@ function DesktopRegisterPage(props) {
         <div className="desktopRegisterPage">
             <div className="desktopRegisterPage_content">
                 <section className="desktopRegisterPage_content_right">
-                    stuff
+                    <DesktopRegisterAccountType />
                 </section>
 
                 <RegistrationPage />
