@@ -2,8 +2,31 @@
     // background-color: red;
     // margin-top: 10vh;
     display: grid;
-    grid-template-rows: 30% 10% 50% 10%;
+    grid-template-rows: 30% 12% 50% 10%;
+    grid-template-columns: 60% 40%;
+    // row-gap: 2%;
     min-height: 100vh;
     width: 90%;
     margin: 0 auto;
+
+    .desktopJobShowHeader {
+        grid-column: span 2;
+        grid-row: 1;
+    }
+
+    .desktopSkillsComponent {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .jobShow_actionButtons {
+        grid-column: 2;
+        grid-row: 2;
+        width: 100%;
+       
+        &:hover {
+            cursor: pointer;
+        }
+        
+    }
 }

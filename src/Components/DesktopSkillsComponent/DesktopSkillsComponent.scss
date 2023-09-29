@@ -1,0 +1,49 @@
+.desktopSkillsComponent {
+display: grid;
+grid-template-columns: 30% 65%;
+align-items: center;
+// justify-self: center;
+// width: 50%;
+background-color: white;
+align-self: center;
+height: 80%;
+// border-bottom: 2px solid var(--init-mint);
+border: 2px solid var(--init-mint);
+// padding: 1vh;
+border-radius: 60px;
+// padding: .5vh 0;
+    &_header {
+        font-size: 20px;
+        grid-column: 1;
+        font-weight: 600;
+        text-align: center;
+
+    }
+
+    &_skills {
+        grid-column: 2;
+        display: flex;
+        justify-content: space-evenly;
+
+    &_skill {
+        display: grid;
+        margin-top: 1vh;
+        row-gap: .8vh;
+        justify-items: center;
+
+        &_name {
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        & svg {
+            height: 2.3em;
+            width: 2.3em;
+        }
+      
+    }
+    }
+    
+    
+    
+}

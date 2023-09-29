@@ -6,6 +6,7 @@ import { useNavProvider } from "../../../Providers/NavProvider";
 import { useJobProvider } from "../../../Providers/JobProvider";
 // import { useRecruiterProvider } from "../../../Providers/RecruiterProvider";
 import SkillsComponent from "../SkillsComponent";
+import DesktopSkillsComponent from "../../DesktopSkillsComponent/DesktopSkillsComponent";
 import JobsShowHeader from "./JobsShowHeader/JobsShowHeader";
 import JobsShowDetails from "./JobsShowDetails/JobsShowDetails";
 import JobsShowActionButtons from "./JobsShowActionButtons/JobsShowActionButtons";
@@ -19,13 +20,12 @@ function JobsShow() {
   const { API, axios, userID, isRecruiterAcc, isSignedIn, setLoading, loading } =
     useContextProvider();
   const { setAppHeader } = useNavProvider();
-  const { jobID, jobDetails, jobSkills } =
+  const { jobID, jobDetails, jobSkills, desktopJobSkills } =
     useJobProvider();
   // const { editAccess } = useRecruiterProvider()
   // const navigate = useNavigate();
   const [applied, setApplied] = useState(false);
   const [jobDetailsToggle, setJobDetailsToggle] = useState("description");
-
 
   useEffect(() => {
     setAppHeader("Job Details")
@@ -51,7 +51,11 @@ function JobsShow() {
         }
        
 
-        <SkillsComponent skillsArr={jobSkills} justList={true} />
+        {
+          !isDesktopView ?
+          <SkillsComponent skillsArr={jobSkills} justList={true} /> :
+          <DesktopSkillsComponent desktopJobSkills={desktopJobSkills}/>
+        }
 
         {
           !isDesktopView ? 

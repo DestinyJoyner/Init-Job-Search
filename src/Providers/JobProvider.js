@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useContextProvider } from "./Provider.js";
 import { useWindowSizeProvider } from "./WindowSizeProvider.js";
 import { convertSkills } from "../Components/Functions/ConvertFunctions/ConversionFunctions.js";
+import { desktopSkillIconAndName } from "../Components/App/Data/Skills.js";
 
 export const JobContextData = createContext();
 export function useJobProvider() {
@@ -16,6 +17,7 @@ function JobProvider({ children }) {
   const [jobs, setJobs] = useState([])
   const [jobDetails, setJobDetails] = useState({});
   const [jobSkills, setJobSkills] = useState([]);
+  const [desktopJobSkills, setDesktopJobSkills] = useState([])
   // Search
   const [jobQuery, setJobQuery] = useState([]);
   const [queryStart, setQueryStart] = useState(0);
@@ -50,6 +52,7 @@ function JobProvider({ children }) {
         .then(({ data }) => {
           setJobDetails(data);
           setJobSkills(convertSkills(data.skills));
+          setDesktopJobSkills(desktopSkillIconAndName(data.skills))
         })
         .catch((err) => console.log(err));
     }
@@ -85,6 +88,7 @@ function JobProvider({ children }) {
         setSearchQueryRoute,
         jobDetails,
         jobSkills,
+        desktopJobSkills,
         queryLimit
       }}
     >

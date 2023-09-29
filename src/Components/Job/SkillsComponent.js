@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { skillClick } from "../Functions/SearchFunctions/SearchBarFunctions";
 import { skillsColorObject, skillsObject } from "../App/Data/Skills.js";
 import "./SkillsComponent.css";
+import { all } from "axios";
 
 function SkillsComponent({
   skillsArr,
