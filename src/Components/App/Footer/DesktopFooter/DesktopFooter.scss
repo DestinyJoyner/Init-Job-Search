@@ -113,3 +113,33 @@
     }
   }
 }
+
+@media (max-width:1050px) {
+  .desktopFooter {
+    // grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr;
+    height: auto;
+    row-gap: 5vh;
+    padding-bottom: 5vh;
+
+    & hr {
+      display: none;
+    }
+    & h2 {
+      margin-bottom: 2vh;
+    }
+
+    &_developer {
+      grid-column: 1;
+      &_photo {
+        display: none;
+      }
+      .contactLinks {
+        bottom: 2vh;
+      }
+    }
+    &_about {
+      grid-template-rows: 15% 30% 25% 30%;
+    }
+  }
+}
