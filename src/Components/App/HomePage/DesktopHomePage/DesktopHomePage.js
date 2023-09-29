@@ -6,6 +6,7 @@ import { thumbnailArr } from "../../Data/FeatureThumbnailArray";
 import logo from "../../../../Assets/LOGO.png";
 import stockImage1 from "../Images/init-stock(1).jpg"
 import stockImage2 from "../Images/init-stock(2).jpg";
+import goldTree from "../Images/init-tree-gold.png"
 import { emailInvalid } from "../../Data/Icons";
 import "./DesktopHomePage.scss";
 
@@ -27,29 +28,40 @@ function DesktopHomePage() {
         <button className="desktopHome_header_button"
         onClick={() => navigate("/jobs")}>
           SEARCH JOBS NOW!</button>
-
-      {/* <div className="desktopHome_header_accountLinks">
-      <Link to="/login">
-          <span>Log In</span>
-        </Link>
-        <Link to="/register">
-          <span>Register</span>
-        </Link>
-      </div> */}
           
       </section>
 
-      {/* <div className="desktopHome_header_accountLinks">
+      <span className="desktopHome_header_disclaimer">**{emailInvalid}inIT is was designed in MOBILE VIEW first. Some desktop components are currently in the process of being designed. Currently, for best viewing of inIT resize the window to under 850px or open in a MOBILE browser. </span>
+
+      <section className="desktopHome_content_init">
+
+      <aside className="desktopHome_content_init_aside">
+        <span>Features:</span>
+        <ul>
+          <li>No Professional Experience Required</li>
+          <li>Entry Level Positions</li>
+          <li>Hassle Free Job Search</li>
+          <li>Search Jobs Based on Skill Set</li>
+          <li>Simplified and Focused Profiles</li>
+          <li>Showcase Your Personal Projects</li>
+          <li>One-Click Apply</li>
+          <li>Track Your Applications</li>
+          <li>Get Started Today!</li>
+
+        </ul>
+
+        <img src={goldTree} alt="gold-tree" />
+      </aside>
+
+        <div className="desktopHome_header_accountLinks">
+          <span className="desktopHome_header_accountLinks_header">Begin Your Journey into Tech Today</span>
       <Link to="/login">
           <span>LOG IN</span>
         </Link>
         <Link to="/register">
           <span>REGISTER</span>
         </Link>
-      </div> */}
-      <span className="desktopHome_header_disclaimer">**{emailInvalid}inIT is was designed in MOBILE VIEW first. Some desktop components are currently in the process of being designed. Currently, for best viewing of inIT resize the window to under 850px or open in a MOBILE browser. </span>
-
-      <section className="desktopHome_content_init">
+      </div>
 
         <section className="desktopHome_content_init_one">
           <div className="desktopHome_content_init_one_text">
@@ -91,7 +103,7 @@ function DesktopHomePage() {
       </section>
 
       <section className="desktopHome_features grid-center">
-        <h3>Start Your Tech Career With inIT</h3>
+        <h3>Launch Your Tech Career With inIT</h3>
 
         <span>We remove the hassle in beginning your career in tech, connecting you directly with opportunities at your skill level.</span>
 

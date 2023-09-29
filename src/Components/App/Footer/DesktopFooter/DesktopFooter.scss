@@ -2,12 +2,25 @@
   border-top: 1px solid var(--init-darkmint);
   border-bottom: 1px solid var(--init-darkmint);
   background-color: var(--init-gray-background);
-  width: 90%;
-  padding: 2vh ;
-  height: 320px;
+  width: 100%;
+  padding: 2vh 0 ;
+  height: 300px;
   display: grid;
-  grid-template-columns: 50% 50%;
-  column-gap: 2vw;
+  grid-template-columns: 45% 2% 45%;
+  margin: 0 auto;
+  column-gap: 3%;
+  // justify-items: center;
+
+  & hr {
+    grid-column: 2;
+    border: 1px solid var(--init-darkmint);
+    margin-left: 2vw;
+    width: 0;
+  }
+
+  &>* {
+    margin-left: 3vw;
+  }
 
   & h2 {
     color: var(--init-darkmint);
@@ -15,7 +28,7 @@
   }
 
   &_developer {
-    grid-column: 2;
+    grid-column: 3;
     display: grid;
     grid-template-columns: 65% 35%;
     grid-template-rows: 13% 52% 20% 15%;
@@ -27,6 +40,8 @@
       // column-gap: 5px;
       grid-column:  span 2;
       grid-row: 2;
+      position: relative;
+      bottom: 2vh;
 
       // & img {
       //   height: 150px;
@@ -47,10 +62,14 @@
     &_contact {
       grid-row: 3;
       width: fit-content;
+      position: relative;
+      bottom: 2vh;
     }
 
     .contactLinks {
       grid-row: 4;
+      position: relative;
+      bottom: 3vh;
     }
   }
 
@@ -81,9 +100,46 @@
 .dark .desktopFooter {
   &_developer {
     .contactLinks {
-      & svg {
-        color: var(--init-gold);
+      background-color: var(--init-background);
+      padding: 0vh 2vh;
+      border-radius: 10px;
+      & >* {
+        margin-top: 1vh;
       }
+      & svg {
+        // margin-top: 1vh;
+        // color: var(--init-gold);
+      }
+    }
+  }
+}
+
+@media (max-width:1050px) {
+  .desktopFooter {
+    // grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr;
+    height: auto;
+    row-gap: 5vh;
+    padding-bottom: 5vh;
+
+    & hr {
+      display: none;
+    }
+    & h2 {
+      margin-bottom: 2vh;
+    }
+
+    &_developer {
+      grid-column: 1;
+      &_photo {
+        display: none;
+      }
+      .contactLinks {
+        bottom: 2vh;
+      }
+    }
+    &_about {
+      grid-template-rows: 15% 30% 25% 30%;
     }
   }
 }

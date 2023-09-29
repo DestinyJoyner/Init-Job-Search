@@ -8,7 +8,8 @@ import ApplicantRegisterForm from "../ApplicantForm/ApplicantRegisterForm.js";
 import RecruiterRegisterForm from "../RecruiterForm/RecruiterRegisterForm";
 import "./RegistrationPage.scss";
 
-function RegistrationPage() {
+function RegistrationPage({accountToggle,
+  setAccountToggle}) {
   const {setLoading,loading, isSignedIn, isRecruiterAcc} = useContextProvider()
   const { setAppHeader } = useNavProvider();
   const navigate = useNavigate()
@@ -29,7 +30,8 @@ function RegistrationPage() {
     setLoading(false)
   },[loading])
 
-  useEffect(() => {}, [userType]);
+  useEffect(() => {
+  }, [userType]);
 
   return (
     // !loading &&
@@ -42,6 +44,8 @@ function RegistrationPage() {
           button1={"Applicant"}
           button2={"Recruiter"}
           setFunction={setUserType}
+          accountToggle={accountToggle}
+          setAccountToggle={setAccountToggle}
         />
         <span>Select an Account Type</span>
       </section>}

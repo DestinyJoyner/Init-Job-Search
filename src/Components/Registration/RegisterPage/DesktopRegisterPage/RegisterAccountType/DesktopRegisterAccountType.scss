@@ -1,0 +1,128 @@
+.desktopRegisterAccountType {
+    display: grid;
+    margin: 3vh 0 0 3vw ;
+
+    & >*{
+        position: relative;
+    }
+    &_header {
+        display: flex;
+        width: 85%;
+        column-gap: 20px;
+        align-items: center;
+        &_logo{
+            height: 120px;
+        }
+        & h1 {
+            color: white;
+            font-size: 38px;
+            width: 70%;
+            text-align: center;
+        }
+    }
+    
+    & h2 {
+        top: 4vh;
+        left: 2vw;
+        color: var(--init-gold);
+        font-size: 36px;
+        width: fit-content;
+    }
+    &_image {
+        bottom: 8vh;
+        right: 2vw;
+        height: 130px;
+        width: 130px;
+        justify-self: right;
+        border-radius: 50px 0px 50px 0px;
+        transform: rotate(-45deg);
+        border: 3px solid var(--init-gold);
+        overflow: hidden;
+        &>* {
+            position:relative;
+            transform: rotate(45deg);
+        }
+        &_applicant {
+            right: 6.9vw;
+            bottom: 5.8vh;
+            height: 190px;
+            
+        }
+        &_recruiter {
+            height: 185px;
+            bottom: 6vh;
+            right: 6.5vw;
+
+        }
+    }
+    & ul {
+        border-left: 1px solid var(--init-gold);
+        width: 70%;
+        bottom: 8vh;
+        & li {
+            position: inherit;
+            margin-bottom: 3vh;
+            list-style: none;
+            right: 1vw;
+        }
+    }
+    
+}
+
+.dark .desktopRegisterAccountType {
+  & ul {
+    & li {
+        color: var(--init-background);
+    }
+  
+  }
+}
+
+@media (max-width: 1300px) {
+    .desktopRegisterAccountType {
+        margin: 0;
+        &_image {
+            height: 100px;
+            width: 100px;
+            right: 2vw;
+            &_applicant {
+                height: 150px;
+                right: 6.5vw;
+               bottom: 4.5vh;
+            }
+            &_recruiter {
+                height: 145px;
+            bottom: 4.8vh;
+            right: 4.5vw;
+            }
+        }
+        & ul {
+          bottom: 2vh;
+            margin-left: 1vw;
+            width: 90%;
+            column-gap: 2%;
+            & li {
+                right: 2vw;
+            }
+        }
+    }
+}
+
+@media (max-width:1060px) {
+    .desktopRegisterAccountType {
+        &_image {
+            display: none;
+        }
+        & ul {
+              top: 8vh;
+        }
+    }
+}
+
+@media (max-width:965px) {
+    .desktopRegisterAccountType {
+        &_header {
+            display: none;
+        }
+}
+}

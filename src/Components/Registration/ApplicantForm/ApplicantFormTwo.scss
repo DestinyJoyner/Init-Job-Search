@@ -65,3 +65,25 @@
     font-style: italic;
   }
 }
+
+.dark .applicantFormTwo {
+  &_form {
+    .skillsCheckboxes .skills-checkboxes {
+      border-color: var(--init-gold);
+    }
+    &_input {
+      &_textarea_label {
+        & textarea {
+          border-color: var(--init-gold);
+          &::placeholder {
+            color: var(--init-background);
+          }
+        }
+      }
+    }
+    &_submitButton {
+      color: var(--init-gold);
+    }
+    
+  }
+}
