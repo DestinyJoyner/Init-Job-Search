@@ -1,0 +1,49 @@
+.desktopJobShowHeader {
+    width: 100%;
+    background-color: var(--init-mint);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
+
+    &_companyLogo {
+        grid-column: 1;
+        height: 200px;
+        justify-self: center;
+    }
+    &_details {
+        grid-column: 2;
+        height: 90%;
+        width: fit-content;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 50% repeat(2,25%);
+        align-items: center;
+
+        & svg {
+            fill: var(--init-charcoal);
+            stroke: var(--init-charcoal);
+            height: 2.5em;
+            width: 2.5em;
+        }
+        &_text {
+            font-size: 24px;
+            
+        }
+        &_title {
+            grid-column: span 2;
+            grid-row: 1;
+            font-size: 40px;
+        }
+        &_city, &_company {
+            display: flex;
+            align-items: center;
+            column-gap: 1vw;
+        }
+
+    }
+    
+}

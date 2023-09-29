@@ -9,7 +9,10 @@ import SkillsComponent from "../SkillsComponent";
 import JobsShowHeader from "./JobsShowHeader/JobsShowHeader";
 import JobsShowDetails from "./JobsShowDetails/JobsShowDetails";
 import JobsShowActionButtons from "./JobsShowActionButtons/JobsShowActionButtons";
+
+import DesktopJobsShowHeader from "./DesktopJobsShowHeader/DesktopJobsShowHeader";
 import "./JobsShow.scss";
+import "./DesktopJobShow.scss"
 
 function JobsShow() {
   const {isDesktopView} = useWindowSizeProvider()
@@ -36,15 +39,15 @@ function JobsShow() {
     }
   }, []);
 
-  useEffect(() => setLoading(false), [jobDetails])
+  useEffect(() => setLoading(false), [jobDetails, isDesktopView, loading])
 
   return (
     !loading && (
-      <div className="jobShow">
+      <div className={!isDesktopView ?"jobShow" : "desktopJobShow"}>
         {
           !isDesktopView ?
           <JobsShowHeader jobDetails={jobDetails} /> :
-          <span>desktop header</span>
+          <DesktopJobsShowHeader jobDetails={jobDetails} />
         }
        
 
