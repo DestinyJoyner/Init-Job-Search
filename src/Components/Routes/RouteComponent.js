@@ -4,7 +4,8 @@ import ApplicantEdit from "../../Pages/ApplicantEdit.js";
 import Error from "../../Pages/Error.js";
 import Home from "../../Pages/Home.js";
 import Jobs from "../../Pages/Jobs.js";
-import JobsShow from "../Job/JobsShow.js";
+import JobsShowPage from "../../Pages/JobsShowPage.js";
+// import JobsShow from "../Job/JobsShow.js";
 import Applicant from "../../Pages/Applicant.js";
 import JobProvider from "../../Providers/JobProvider.js";
 import RecruiterProvider from "../../Providers/RecruiterProvider.js";
@@ -38,15 +39,7 @@ function RouteComponent() {
           <RecruiterProvider ><JobForm edit={false} /></RecruiterProvider>} />
           <Route path=":jobID">
             <Route
-              index
-              element={
-                <JobProvider>
-                  <RecruiterProvider>
-                  <JobsShow />
-                  </RecruiterProvider>
-                </JobProvider>
-              }
-            />
+              index element= {<JobsShowPage />}/>
             <Route path="applicants" element={<JobApplicants />} />
             <Route path="edit" element={<RecruiterProvider><JobForm edit={true} /> </RecruiterProvider>} />
           </Route>

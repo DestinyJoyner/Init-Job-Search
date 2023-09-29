@@ -1,0 +1,61 @@
+.jobShow {
+
+    &_jobDetails {
+        grid-row: 3;
+        width: 96%;
+        display: grid;
+        grid-template-rows: 5vh auto;
+        row-gap: 2vh;
+
+        &_overview {
+            overflow-y: scroll;
+            width: 92%;
+            padding: 1vh 0;
+            min-height: fit-content;
+            max-height: 52vh;
+            margin-left: 6vw;
+            font-size: 17px;
+      
+            &_description {
+              display: grid;
+      
+              &_disclaimer {
+                font-size: 16px;
+                position: relative;
+                bottom: 0.5vh;
+                font-weight: 600;
+                padding-bottom: 0.5vh;
+              }
+            }
+      
+            &_tasks {
+              margin-top: 2vh;
+              padding-inline-start: 20px;
+              list-style-position: outside;
+              display: flex;
+              flex-direction: column;
+              row-gap: 2vh;
+              width: 88%;
+            }
+          }
+
+        .sliderButton {
+            &_container {
+              justify-self: center;
+              margin-left: 3vw;
+            }
+        
+            &_buttons {
+              height: 5vh;
+        
+              &_button {
+                height: 5vh;
+              }
+            }
+            &_slider {
+              height: 5vh;
+            }
+          }
+
+    }
+}
