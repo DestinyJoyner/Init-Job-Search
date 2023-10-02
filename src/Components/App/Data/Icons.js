@@ -5,17 +5,22 @@ import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk, CgProfile  } from "react-icons/cg";
 import {FaUserTie} from "react-icons/fa"
 import { AiOutlineHome, AiOutlineClose  } from "react-icons/ai";
-import { MdWorkOutline, MdOutlineMail, MdLockOutline } from "react-icons/md";
+import { MdWorkOutline, MdOutlineMail, MdLockOutline, MdOutlineHomeWork,MdLocationOn } from "react-icons/md";
 import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
 import { BiInfoCircle, BiError } from "react-icons/bi";
 import { IoShieldCheckmarkOutline } from "react-icons/io5"
 import { GrEdit } from "react-icons/gr"
+import {TbReportMoney} from "react-icons/tb"
 
-const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
+const jobCompany = <HiOutlineBuildingOffice2 size={"20px"}  />
 
-const jobLocation = <GoLocation size={"20px"} color={"#41cdbc"} />
+const jobLocation = <MdLocationOn size={"20px"}  />
+
+const jobRemote = <MdOutlineHomeWork />
 
 const jobApplied = <BsClipboardCheck color={"black"} size={"40px"} />
+
+const jobSalary = <TbReportMoney />
 
 const loginEmail = <MdOutlineMail />
 const loginPassword = <MdLockOutline />
@@ -59,6 +64,8 @@ export {
     jobCompany,
     jobLocation,
     jobApplied,
+    jobRemote,
+    jobSalary,
     searchIcon,
     asterisk,
     bulletPoint,

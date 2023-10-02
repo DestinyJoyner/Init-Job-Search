@@ -1,0 +1,115 @@
+.desktopJobShowDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 17% 80%;
+  row-gap: 3%;
+  background-color: var(--init-gray-background);
+  height: 100%;
+  margin-top: 5vh;
+  padding-bottom: 5vh;
+
+  .desktopSkillsComponent {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    border-bottom: 1px solid var(--init-mint);
+  }
+
+  .jobShow_actionButtons {
+    grid-column: 2;
+    width: 100%;
+    grid-row: 1;
+    background-color: var(--init-mint);
+    border-bottom: 1px solid var(--init-mint);
+    &_notSignedIn, &_applied, &_apply, &_edit {
+        &:hover {
+          color: var(--init-gold);
+          cursor: pointer;
+        }
+    }
+  }
+
+  &_text {
+    grid-column: span 2;
+    grid-row: 2;
+    width: 96%;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 70% 25%;
+    column-gap: 5%;
+    &_header {
+      text-decoration: underline;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    &_details,
+    &_aside {
+      border-radius: 20px;
+      border: 1px solid var(--init-mint);
+    }
+    &_details {
+      grid-column: 1;
+      background-color: white;
+      display: grid;
+      grid-template-rows: auto 2% auto;
+      align-items: center;
+      min-height: 100%;
+      height: fit-content;
+      & hr {
+        border: 1px solid var(--init-mint);
+        height: 0;
+        width: 85%;
+        justify-self: center;
+      }
+      &_description,
+      &_tasks {
+        display: grid;
+        grid-template-rows: 15% 85%;
+        padding: 5vh 2vw 0 2vw;
+        margin-left: 1vw;
+        height: 100%;
+        row-gap: 5%;
+      }
+      &_tasks {
+        grid-template-rows: 10% 90%;
+        & li {
+          margin-bottom: 2vh;
+        }
+      }
+    }
+    &_aside {
+      grid-column: 2;
+      background-color: var(--init-mint);
+      display: grid;
+      grid-template-rows: 5% 80% 10%;
+      row-gap: 2%;
+      align-items: center;
+      
+      padding: 2vh;
+      &_header {
+        justify-self: center;
+        text-decoration: underline;
+        color: var(--init-gold);
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      &_list {
+        margin-top: 5vh;
+        grid-row: 2;
+        border-left: 1px solid var(--init-gold);
+        height: 100%;
+        padding-left: 1vw;
+      }
+      & a {
+        grid-row: 3;
+        justify-self: right;
+        text-decoration: underline;
+        &:hover {
+          cursor: pointer;
+          color: var(--init-gold);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.jobShow {
+    &_header {
+        width: 98%;
+        height: 100%;
+        justify-self: center;
+        grid-template-rows: 40% 15% 20% 15% 5%;
+        padding-top: 2vh;
+    
+        &_logo {
+          height: 80px;
+          max-width: 100%;
+          grid-row: 1;
+          padding: 8px;
+          border-radius: 20px;
+        }
+    
+        &_company {
+          grid-row: 2;
+          font-size: 18px;
+          margin-top: 1vh;
+        }
+        &_title {
+          grid-row: 3;
+        }
+        &_location {
+          grid-row: 4;
+          display: flex;
+          column-gap: 4vw;
+          align-items: center;
+    
+          &_remote {
+            padding: 2px 5px;
+            border-radius: 10px;
+          }
+        }
+        & hr {
+          grid-row: 5;
+          border: 1px solid var(--init-darkmint);
+          width: 90%;
+        }
+      }
+}

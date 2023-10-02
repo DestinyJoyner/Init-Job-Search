@@ -10,7 +10,7 @@ import googleLogo from "../../../Assets/companyLogos/google.png";
 import hatchworksLogo from "../../../Assets/companyLogos/hatchworks.png"
 import hubspotLogo from "../../../Assets/companyLogos/hubspot.png";
 import nikeLogo from "../../../Assets/companyLogos/nike.png"
-import njpathLogo from "../../../Assets/companyLogos/njpath.png"
+import njpathLogo from "../../../Assets/companyLogos/path.png"
 import nvidiaLogo from "../../../Assets/companyLogos/nvidia.png";
 import patternedLearningLogo from "../../../Assets/companyLogos/patterned-learning.png"
 import pellSoftwareLogo from "../../../Assets/companyLogos/pellsoftware.png"

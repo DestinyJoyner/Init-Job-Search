@@ -102,4 +102,13 @@ const skillsColorObject = {
   ],
 };
 
-export { skillsObject, skillsColorObject };
+function desktopSkillIconAndName (skillArrOfObj) {
+  const skillNameAndIcon = skillArrOfObj.map(obj => {
+      const [key, value] = Object.entries(obj)[0]
+      const skillIcon = skillsColorObject[key]
+      return {name: value, icon:skillIcon}
+  })
+  return skillNameAndIcon
+}
+
+export { skillsObject, skillsColorObject, desktopSkillIconAndName };

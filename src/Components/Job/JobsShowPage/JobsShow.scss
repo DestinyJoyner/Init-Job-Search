@@ -1,0 +1,94 @@
+.jobShow {
+  display: grid;
+  grid-template-rows: 25vh 8vh 48vh 0.2vh 8vh;
+  row-gap: 0.5vh;
+  justify-items: left;
+  height: 92vh;
+  width: 100%;
+  color: var(--init-charcoal);
+  // padding-bottom: 2vh;
+
+  .skills-component {
+    grid-row: 2;
+    align-items: center;
+    justify-self: center;
+    border-radius: 20px;
+    background-color: white;
+    width: 86%;
+    height: 50%;
+    align-self: center;
+    margin: 0.6vh 0;
+    border: 2px solid var(--init-mint);
+    & svg {
+      height: 1.9em;
+      width: 1.9em;
+    }
+  }
+
+  .jobDetailSelected,
+  .jobShow_header_location_remote {
+    background-color: var(--init-darkmint);
+    color: var(--init-gold);
+    font-weight: 600;
+  }
+
+  &_divider {
+    width: 90%;
+    border: 1px solid var(--init-darkmint);
+    justify-self: center;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+/* DARK MODE */
+.dark .jobShow {
+  &_header {
+    color: var(--init-background);
+    &_logo {
+      background-color: var(--init-background);
+    }
+  }
+  &_jobDetails {
+    &_buttons {
+      color: var(--init-background);
+    }
+    &_overview {
+      color: var(--init-background);
+    }
+  }
+  &_actionButtons {
+    & > *,
+    &_notSignedIn a {
+      color: var(--init-gold);
+    }
+  }
+
+  .skills-component {
+    background-color: var(--init-background);
+  }
+
+  .jobDetailSelected,
+  .jobShow_header_location_remote {
+    background-color: var(--init-gold);
+    color: var(--init-dark);
+  }
+}
+
+
+@media (min-width: 450px) {
+  .jobShow {
+    .sliderButton {
+      &_container {
+        margin-left: 0vw;
+  }
+    }
+    &_jobDetails {
+      &_overview {
+        margin-left: 2.5vw;
+      }
+    }
+}
+}

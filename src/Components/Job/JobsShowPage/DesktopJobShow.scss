@@ -1,0 +1,61 @@
+.desktopJobShow {
+    min-height: 100vh;
+    // height: 100%;
+    display: grid;
+    grid-template-rows: 25% 75%;
+    grid-template-columns: 60% 40%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 9vh;
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    align-items: center;
+
+    .desktopJobShowHeader, .desktopJobShowDetails {
+        box-shadow: 0px 0px 10px black;
+    }
+    .desktopJobShowHeader {
+        grid-column: span 2;
+        grid-row: 1;
+    }
+    .desktopJobShowDetails {
+        grid-row: 2;
+        grid-column: span 2;
+        border: 1px solid var(--init-mint);
+        border-top: none;
+    }
+}
+
+.dark .desktopJobShow {
+    .desktopJobShowHeader, .desktopJobShowDetails {
+        border-color: var(--init-darkmint);
+        box-shadow: 0px 0px 10px var(--init-darkmint);
+    }
+    .desktopJobShowDetails {
+        .desktopSkillsComponent {
+            background-color: var(--init-dark);
+            & svg {
+                background-color: var(--init-background);
+                border-color: var(--init-background);
+            }
+        }
+        .jobShow_actionButtons {
+           
+            background-color: var(--init-gold);
+            border-bottom: 1px solid var(--init-darkmint);
+            &_notSignedIn, &_applied, &_apply, &_edit {
+                color: var(--init-dark);
+                &:hover {
+                  color: var(--init-darkmint);
+                }
+            }
+          }
+          &_text {
+            color: var(--init-charcoal);
+            &_aside {
+                background-color: var(--init-darkmint);
+               
+            }
+          }
+    }
+}

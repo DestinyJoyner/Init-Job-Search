@@ -96,11 +96,18 @@
   }
 
   &_link {
-    color: var(--init-blue);
-    font-size: 22px;
+    &_Login, &_Home, &_Register,&_Jobs, &_About,&_Profile,&_Logout {
+      font-size: 22px;
+      color: var(--init-blue);
     margin-left: 2vw;
     width: fit-content;
     padding-left: 20px;
+
+    & span {
+      position: relative;
+      bottom: 0.7vh;
+    }
+    }
 
     &_icons {
       margin-right: 6vw;
@@ -109,10 +116,6 @@
       height: 30px;
     }
 
-    & span {
-      position: relative;
-      bottom: 0.7vh;
-    }
   }
 }
 
