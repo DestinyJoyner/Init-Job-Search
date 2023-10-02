@@ -1,108 +1,107 @@
 .desktopJobShowHeader {
-    width: 100%;
-    // background-color: var(--init-mint);
-    background-image: url("../../../../../public/desktop-jobShowHeader-background.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: -310px ;
-    height: 100%;
+  width: 100%;
+  // background-color: var(--init-mint);
+  background-image: url("../../../../../public/desktop-jobShowHeader-background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -310px;
+  height: 100%;
+  // margin-top: 3vh;
+  // display: grid;
+  // grid-template-columns: 5% 25% 60% 10%;
+  // grid-template-rows: 80% 20%;
+
+  border: 1px solid var(--init-mint);
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+  overflow: hidden;
+
+  &_container {
+    background-color: rgba(33, 33, 33, 0.822);
     // margin-top: 3vh;
-    // display: grid;
-    // grid-template-columns: 5% 25% 60% 10%;
-    // grid-template-rows: 80% 20%;
-    
-    border: 1px solid var(--init-mint);
-    border-top-right-radius: 40px;
-    border-top-left-radius: 40px;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 5% 25% 60% 10%;
+    grid-template-rows: 80% 20%;
+    align-items: center;
+    color: white;
+  }
+  &_companyLogo {
+    grid-column: 2;
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 3px solid var(--init-mint);
+    padding-right: 2vw;
+    height: 85%;
 
-    &_container {
-        background-color: rgba(33, 33, 33, 0.822);
-        // margin-top: 3vh;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 5% 25% 60% 10%;
-        grid-template-rows: 80% 20%;
-        align-items: center;
-        color: white;
-
+    row-gap: 5%;
+    &_icon {
+      height: 130px;
+      justify-self: center;
+      background-color: var(--init-background);
+      border-radius: 10px;
+      padding: 3px;
     }
-    &_companyLogo {
-        grid-column: 2;
-        grid-row: 1/3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-right: 3px solid var(--init-mint);
-        padding-right: 2vw;
-        height: 85%;
-        
-        row-gap: 5%;
-       &_icon {
-        height: 130px;
-        justify-self: center;
-       }
-        &_name {
-            justify-self: center;
-            font-size: 30px;
-            font-weight: 600;
-            // color: white;
-        }
+    &_name {
+      justify-self: center;
+      font-size: 30px;
+      font-weight: 600;
+      // color: white;
     }
-    &_details {
-        grid-column: 3;
-        grid-row: 1/3;
-        height: 100%;
-        display: grid;
-        grid-template-rows: 37% 23% 40%;
-        align-items: center;
-        justify-items: center;
-        
+  }
+  &_details {
+    grid-column: 3;
+    grid-row: 1/3;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 37% 23% 40%;
+    align-items: center;
+    justify-items: center;
 
-        &_text {
-            font-size: 20px;
-            
-        }
-        &_title {
-            grid-row: 1;
-            font-size: 34px;
-        }
-
-        &_location {
-            grid-row: 2;
-            display: flex;
-            column-gap: 8vw;
-        }
-        &_city {
-            width: fit-content;
-        }
-        &_remote {
-           width: fit-content;
-        }
-
-        &_city, &_remote {
-            display: flex;
-            align-items: center;
-            column-gap: 1vw;
-            & svg {
-                height: 1.8em;
-                width: 1.8em;
-            }
-        }
-        &_remote {
-            font-size: 20px;
-            & svg {
-                height: 1.5em;
-                width: 1.5em;
-            }
-        }
-
+    &_text {
+      font-size: 20px;
     }
-    // .desktopSkillsComponent {
-    //     grid-row: 3;
-    //     height: fit-content;
-    //     width: fit-content;
-    // }
-    
+    &_title {
+      grid-row: 1;
+      font-size: 34px;
+    }
+
+    &_location {
+      grid-row: 2;
+      display: flex;
+      column-gap: 8vw;
+    }
+    &_city {
+      width: fit-content;
+    }
+    &_remote {
+      width: fit-content;
+    }
+
+    &_city,
+    &_remote,
+    &_salary {
+      display: flex;
+      align-items: center;
+      column-gap: 1vw;
+      & svg {
+        height: 1.8em;
+        width: 1.8em;
+      }
+    }
+    &_remote {
+      font-size: 20px;
+      & svg {
+        height: 1.5em;
+        width: 1.5em;
+      }
+    }
+
+    &_salary {
+      grid-row: 3;
+    }
+  }
 }

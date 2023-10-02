@@ -10,6 +10,7 @@ import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
 import { BiInfoCircle, BiError } from "react-icons/bi";
 import { IoShieldCheckmarkOutline } from "react-icons/io5"
 import { GrEdit } from "react-icons/gr"
+import {TbReportMoney} from "react-icons/tb"
 
 const jobCompany = <HiOutlineBuildingOffice2 size={"20px"}  />
 
@@ -18,6 +19,8 @@ const jobLocation = <MdLocationOn size={"20px"}  />
 const jobRemote = <MdOutlineHomeWork />
 
 const jobApplied = <BsClipboardCheck color={"black"} size={"40px"} />
+
+const jobSalary = <TbReportMoney />
 
 const loginEmail = <MdOutlineMail />
 const loginPassword = <MdLockOutline />
@@ -62,6 +65,7 @@ export {
     jobLocation,
     jobApplied,
     jobRemote,
+    jobSalary,
     searchIcon,
     asterisk,
     bulletPoint,

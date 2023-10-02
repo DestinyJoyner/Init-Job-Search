@@ -1,7 +1,7 @@
 import DesktopSkillsComponent from "../../../DesktopSkillsComponent/DesktopSkillsComponent";
 import convertCompanyForLogo from "../../../App/Data/CompanyLogos";
 import { convertCities } from "../../../Functions/ConvertFunctions/ConversionFunctions";
-import { jobCompany, jobLocation, jobRemote } from "../../../App/Data/Icons";
+import { jobCompany, jobLocation, jobRemote, jobSalary } from "../../../App/Data/Icons";
 import "./DesktopJobsShowHeader.scss"
 
 function DesktopJobsShowHeader({jobDetails, desktopJobSkills}) {
@@ -37,9 +37,10 @@ const companyCity = city ? convertCities(city.toLowerCase()) : ""
 }
                 </section>
               
-              
-                
-                {/* <DesktopSkillsComponent desktopJobSkills={desktopJobSkills} /> */}
+              <span className="desktopJobShowHeader_details_salary">
+                {jobSalary}
+                <span className="desktopJobShowHeader_details_text">Position Mean Salary : $65K - $93K</span>
+              </span>
             </div>
 
             </div>

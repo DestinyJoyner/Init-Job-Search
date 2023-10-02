@@ -21,14 +21,11 @@
     grid-row: 1;
     background-color: var(--init-mint);
     border-bottom: 1px solid var(--init-mint);
-    &_notSignedIn {
-      & a {
-        font-size: 28px;
-        color: var(--init-blue);
+    &_notSignedIn, &_applied, &_apply, &_edit {
         &:hover {
-            color: var(--init-gold);
+          color: var(--init-gold);
+          cursor: pointer;
         }
-      }
     }
   }
 
@@ -45,7 +42,8 @@
       font-size: 20px;
       font-weight: 600;
     }
-    &_details, &_aside {
+    &_details,
+    &_aside {
       border-radius: 20px;
       border: 1px solid var(--init-mint);
     }
@@ -55,6 +53,8 @@
       display: grid;
       grid-template-rows: auto 2% auto;
       align-items: center;
+      min-height: 100%;
+      height: fit-content;
       & hr {
         border: 1px solid var(--init-mint);
         height: 0;
@@ -65,36 +65,51 @@
       &_tasks {
         display: grid;
         grid-template-rows: 15% 85%;
-        row-gap: 5%;
         padding: 5vh 2vw 0 2vw;
         margin-left: 1vw;
         height: 100%;
+        row-gap: 5%;
       }
       &_tasks {
+        grid-template-rows: 10% 90%;
         & li {
-          margin-bottom: 3vh;
+          margin-bottom: 2vh;
         }
       }
     }
     &_aside {
-        grid-column: 2;
-        background-color: var(--init-mint);
-        display: grid;
-        grid-template-rows: 80% 10%;
-        row-gap: 10%;
-        align-items: center;
-        // border-left: 1px solid var(--init-gold);
-        padding: 2vh;
-        & a {
-            grid-row: 2;
-            justify-self: right;
-            text-decoration: underline;
-            &:hover {
-                cursor: pointer;
-                color: var(--init-gold);
-            }
+      grid-column: 2;
+      background-color: var(--init-mint);
+      display: grid;
+      grid-template-rows: 5% 80% 10%;
+      row-gap: 2%;
+      align-items: center;
+      
+      padding: 2vh;
+      &_header {
+        justify-self: center;
+        text-decoration: underline;
+        color: var(--init-gold);
+        font-size: 20px;
+        font-weight: 600;
+      }
 
+      &_list {
+        margin-top: 5vh;
+        grid-row: 2;
+        border-left: 1px solid var(--init-gold);
+        height: 100%;
+        padding-left: 1vw;
+      }
+      & a {
+        grid-row: 3;
+        justify-self: right;
+        text-decoration: underline;
+        &:hover {
+          cursor: pointer;
+          color: var(--init-gold);
         }
+      }
     }
   }
 }

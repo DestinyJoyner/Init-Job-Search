@@ -47,6 +47,12 @@ function DesktopJobsShowDetails({jobDetails, applied, setApplied, desktopJobSkil
             </section>
 
             <aside className="desktopJobShowDetails_text_aside">
+                <span className="desktopJobShowDetails_text_aside_header">
+                    Content tba
+                </span>
+                <div className="desktopJobShowDetails_text_aside_list">
+                    list items
+                </div>
                 <Link to="/jobs">{"<"} Back to Jobs</Link>
             </aside>
            
