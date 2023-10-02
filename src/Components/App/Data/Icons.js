@@ -11,9 +11,9 @@ import { BiInfoCircle, BiError } from "react-icons/bi";
 import { IoShieldCheckmarkOutline } from "react-icons/io5"
 import { GrEdit } from "react-icons/gr"
 
-const jobCompany = <HiOutlineBuildingOffice2 size={"20px"} color={"#41cdbc"} />
+const jobCompany = <HiOutlineBuildingOffice2 size={"20px"}  />
 
-const jobLocation = <MdLocationOn size={"20px"} color={"#41cdbc"} />
+const jobLocation = <MdLocationOn size={"20px"}  />
 
 const jobRemote = <MdOutlineHomeWork />
 

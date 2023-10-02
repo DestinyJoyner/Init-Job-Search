@@ -10,7 +10,7 @@ import DesktopSkillsComponent from "../../DesktopSkillsComponent/DesktopSkillsCo
 import JobsShowHeader from "./JobsShowHeader/JobsShowHeader";
 import JobsShowDetails from "./JobsShowDetails/JobsShowDetails";
 import JobsShowActionButtons from "./JobsShowActionButtons/JobsShowActionButtons";
-
+import DesktopJobsShowDetails from "./DesktopJobsShowDetails/DesktopJobsShowDetails";
 import DesktopJobsShowHeader from "./DesktopJobsShowHeader/DesktopJobsShowHeader";
 import "./JobsShow.scss";
 import "./DesktopJobShow.scss"
@@ -47,14 +47,14 @@ function JobsShow() {
         {
           !isDesktopView ?
           <JobsShowHeader jobDetails={jobDetails} /> :
-          <DesktopJobsShowHeader jobDetails={jobDetails} />
+          <DesktopJobsShowHeader jobDetails={jobDetails} 
+          />
         }
        
 
         {
-          !isDesktopView ?
-          <SkillsComponent skillsArr={jobSkills} justList={true} /> :
-          <DesktopSkillsComponent desktopJobSkills={desktopJobSkills}/>
+          !isDesktopView &&
+          <SkillsComponent skillsArr={jobSkills} justList={true} /> 
         }
 
         {
@@ -63,15 +63,19 @@ function JobsShow() {
           jobDetails={jobDetails}
           jobDetailsToggle={jobDetailsToggle}
           setJobDetailsToggle={setJobDetailsToggle} /> :
-          <span>desktop</span>
+          <DesktopJobsShowDetails jobDetails={jobDetails}
+          applied={applied}
+        setApplied={setApplied}
+        desktopJobSkills={desktopJobSkills}/>
         }
-
-       
-        <hr className="jobShow_divider" />
         
+        { !isDesktopView &&
+        <>
+        <hr className="jobShow_divider" />
         <JobsShowActionButtons 
         applied={applied}
         setApplied={setApplied} />
+        </>}
   
       </div>
     )

@@ -1,49 +1,48 @@
 .desktopSkillsComponent {
-display: grid;
-grid-template-columns: 30% 65%;
-align-items: center;
-// justify-self: center;
-// width: 50%;
-background-color: white;
-align-self: center;
-height: 80%;
-// border-bottom: 2px solid var(--init-mint);
-border: 2px solid var(--init-mint);
-// padding: 1vh;
-border-radius: 60px;
-// padding: .5vh 0;
-    &_header {
-        font-size: 20px;
-        grid-column: 1;
-        font-weight: 600;
-        text-align: center;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 15% 70%;
+  row-gap: 10%;
+  background-color: white;
+  &_header {
+    font-size: 20px;
+    grid-column: span 2;
+    grid-row: 1;
+    font-weight: 600;
+    margin: 2.5vh 0 0 1vw;
+    text-decoration: underline;
+  }
 
-    }
-
-    &_skills {
-        grid-column: 2;
-        display: flex;
-        justify-content: space-evenly;
+  &_skills {
+    grid-column: 2;
+    justify-self: center;
+    grid-row: 2;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2vh;
+    padding: 0 2vw;
 
     &_skill {
-        display: grid;
-        margin-top: 1vh;
-        row-gap: .8vh;
-        justify-items: center;
+      display: grid;
+      margin-top: 1vh;
+      row-gap: 0.8vh;
+      justify-items: center;
 
-        &_name {
-            font-size: 20px;
-            font-style: italic;
-        }
+      &_name {
+        font-size: 16px;
+        font-style: italic;
+      }
 
-        & svg {
-            height: 2.3em;
-            width: 2.3em;
-        }
-      
+      & svg {
+        height: 2.3em;
+        width: 2.3em;
+        padding: 2px;
+        border-radius: 10px;
+        border: 2px outset rgba(33, 33, 33, 0.822);
+        box-shadow: 0px 0px 1px white;
+      }
     }
-    }
-    
-    
-    
+  }
 }

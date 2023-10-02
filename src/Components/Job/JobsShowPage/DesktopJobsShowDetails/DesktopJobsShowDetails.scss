@@ -1,0 +1,100 @@
+.desktopJobShowDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 17% 80%;
+  row-gap: 3%;
+  background-color: var(--init-gray-background);
+  height: 100%;
+  margin-top: 5vh;
+  padding-bottom: 5vh;
+
+  .desktopSkillsComponent {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    border-bottom: 1px solid var(--init-mint);
+  }
+
+  .jobShow_actionButtons {
+    grid-column: 2;
+    width: 100%;
+    grid-row: 1;
+    background-color: var(--init-mint);
+    border-bottom: 1px solid var(--init-mint);
+    &_notSignedIn {
+      & a {
+        font-size: 28px;
+        color: var(--init-blue);
+        &:hover {
+            color: var(--init-gold);
+        }
+      }
+    }
+  }
+
+  &_text {
+    grid-column: span 2;
+    grid-row: 2;
+    width: 96%;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 70% 25%;
+    column-gap: 5%;
+    &_header {
+      text-decoration: underline;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    &_details, &_aside {
+      border-radius: 20px;
+      border: 1px solid var(--init-mint);
+    }
+    &_details {
+      grid-column: 1;
+      background-color: white;
+      display: grid;
+      grid-template-rows: auto 2% auto;
+      align-items: center;
+      & hr {
+        border: 1px solid var(--init-mint);
+        height: 0;
+        width: 85%;
+        justify-self: center;
+      }
+      &_description,
+      &_tasks {
+        display: grid;
+        grid-template-rows: 15% 85%;
+        row-gap: 5%;
+        padding: 5vh 2vw 0 2vw;
+        margin-left: 1vw;
+        height: 100%;
+      }
+      &_tasks {
+        & li {
+          margin-bottom: 3vh;
+        }
+      }
+    }
+    &_aside {
+        grid-column: 2;
+        background-color: var(--init-mint);
+        display: grid;
+        grid-template-rows: 80% 10%;
+        row-gap: 10%;
+        align-items: center;
+        // border-left: 1px solid var(--init-gold);
+        padding: 2vh;
+        & a {
+            grid-row: 2;
+            justify-self: right;
+            text-decoration: underline;
+            &:hover {
+                cursor: pointer;
+                color: var(--init-gold);
+            }
+
+        }
+    }
+  }
+}
