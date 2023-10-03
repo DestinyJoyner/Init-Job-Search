@@ -8,16 +8,20 @@ import {
   handleSearchBar,
   handleSkillSelection,
 } from "../Functions/SearchFunctions/SearchBarFunctions.js";
+import { convertCitySearchValToDropdown } from "../Functions/ConvertFunctions/ConversionFunctions";
 import { BiChevronDown } from "react-icons/bi"
 import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
 // { searchOptions, setSearchOptions}
 function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
+  
+  const { city, isRemote} = searchOptions
+  const dropdownVal = convertCitySearchValToDropdown(city)
 
   const [filterOptions, setFilterOptions] = useState(false);
-  const [cityDropdown, setCityDropdown] = useState("");
-  const [remoteSearch, setRemoteSearch] = useState(false);
+  const [cityDropdown, setCityDropdown] = useState(dropdownVal);
+  const [remoteSearch, setRemoteSearch] = useState(isRemote);
   const [skillView, setSkillView] = useState(false);
 
 

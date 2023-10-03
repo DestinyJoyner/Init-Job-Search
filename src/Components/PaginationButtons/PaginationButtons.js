@@ -26,6 +26,9 @@ function PaginationButtons() {
     if(queryStart + queryLimit >= searchResultCount){
       setHideNextButton(true)
     }
+    else {
+      setHideNextButton(false)
+    }
   
   }, [queryStart, jobQuery.length]);
 

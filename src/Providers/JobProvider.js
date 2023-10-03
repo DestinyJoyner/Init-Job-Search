@@ -80,6 +80,16 @@ function JobProvider({ children }) {
   useEffect(() => {
     const limit = isDesktopView ? 6 : 4
     setQueryLimit(limit)
+
+    setLoading(true);
+    axios
+      .get(`${API}/jobs?start=0&limit=${limit}${searchQueryRoute}`)
+      .then(({ data }) => {
+        const searchCount = data.shift()
+        setSearchResultCount(+searchCount.count)
+        setJobQuery(data)})
+      
+      .catch((err) => console.log(err));
   },[isDesktopView])
 
   return (
