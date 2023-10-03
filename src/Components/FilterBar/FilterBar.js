@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import SkillsComponent from "../Job/SkillsComponent";
@@ -16,7 +16,7 @@ import "./FilterBar.css";
 // { searchOptions, setSearchOptions}
 function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
   
-  const { city, isRemote} = searchOptions
+  const { city, isRemote } = searchOptions
   const dropdownVal = convertCitySearchValToDropdown(city)
 
   const [filterOptions, setFilterOptions] = useState(false);
@@ -32,6 +32,8 @@ function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
       ...searchOptions, ["isRemote"] : !searchOptions["isRemote"]
     })
   }
+
+
 
   return (
     <div className="filter-bar">
@@ -63,38 +65,7 @@ function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
         </label>
 
       }
-       {/* <button 
-      id="isRemote"
-      className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
-      onClick={(e) => remoteClick(e)}>REMOTE</button> */}
-      {/* <button 
-      id="isRemote"
-      className={!remoteSearch ?"filter-remote-button" : "filter-remote-button remote-clicked"}
-      onClick={(event) => handleSearchBar(
-        event,
-        remoteSearch,
-        setRemoteSearch,
-        searchOptions,
-        setSearchOptions
-      ) }>REMOTE</button> */}
-      {/* <label htmlFor="filter-checkbox" className="filter-checkbox">
-          <input
-            id="isRemote"
-            type="checkbox"
-            value={remoteSearch}
-            checked={remoteSearch}
-            onChange={(event) =>
-              handleSearchBar(
-                event,
-                remoteSearch,
-                setRemoteSearch,
-                searchOptions,
-                setSearchOptions
-              )
-            }
-          />
-          <span>Remote</span>
-        </label> */}
+
        <Dropdown
           idVal={"city"}
           stateVar={cityDropdown}

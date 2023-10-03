@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useContextProvider } from "../../../../Providers/Provider";
 import { useJobProvider } from "../../../../Providers/JobProvider";
 import { useSearchBarProvider } from "../../../../Providers/SearchBarProvider";
@@ -8,6 +8,7 @@ import FilterBar from "../../../FilterBar/FilterBar";
 import JobsCard from "../../JobsCard/JobsCard";
 import NoSearchResults from "../../../App/NoSearchResults/NoSearchResults";
 import PaginationButtons from "../../../PaginationButtons/PaginationButtons.js"
+import {MdFilterAltOff} from "react-icons/md"
 import { handleSearchFilterSubmit } from "../../../Functions/SearchFunctions/SearchBarFunctions";
 import "./DesktopJobsIndex.scss";
 
@@ -21,9 +22,22 @@ function DesktopJobsIndex() {
     setLoading(false);
   }, [jobQuery]);
 
+ 
+
+  function clearFilterOptions (e) {
+    // e.preventDefault()
+    const resetObj = {
+      searchbar: searchOptions.searchbar,
+      isRemote: false,
+      city : "",
+      skills: []
+    }
+    setSearchOptions(resetObj)
+  }
+
   // useEffect(() => {
 
-  // },[queryLimit])
+  // },[searchOptions])
 
   // useEffect(() => {}, [queryStart, jobQuery.length]);
 
@@ -48,10 +62,17 @@ function DesktopJobsIndex() {
           <span className="jobsIndexDesktop_filter_category_skills">Skills:</span>
           <span className="jobsIndexDesktop_filter_category_location">Location:</span>
           <span className="jobsIndexDesktop_filter_category_remote"><span>Remote Work:</span></span>
+
+          <button 
+          onClick={() => {}}className="jobsIndexDesktop_filter_clearButton">
+            <span>Reset Filters</span>  <MdFilterAltOff />
+          </button>
+
           <FilterBar
             remoteCheckbox={true}
             searchOptions={searchOptions}
             setSearchOptions={setSearchOptions}
+            
           />
 
           <button

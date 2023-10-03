@@ -65,9 +65,11 @@ function JobProvider({ children }) {
   // useEffect for job pagination
   useEffect(() => {
     setLoading(true);
+    
     axios
       .get(`${API}/jobs?start=${queryStart}&limit=${queryLimit}${searchQueryRoute}`)
       .then(({ data }) => {
+        console.log(data[0].query)
         const searchCount = data.shift()
         setSearchResultCount(+searchCount.count)
         setJobQuery(data)})
