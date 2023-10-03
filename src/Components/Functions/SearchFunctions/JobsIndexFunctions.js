@@ -1,10 +1,10 @@
-function handlePagination(e, stateVar, setFunction, buttonSetFunction1, buttonSetFunction2, allJobs, limit) {
+function handlePagination(e, stateVar, setFunction, buttonSetFunction1, buttonSetFunction2, searchCount, limit) {
     const buttonValue = e.target.value;
   
     if (buttonValue === "next") {
       buttonSetFunction2(false);
-      if (stateVar + limit <= allJobs.length) {
-        stateVar + (2*limit) >= allJobs.length
+      if (stateVar + limit <= searchCount) {
+        stateVar + (2*limit) >= searchCount
           ? buttonSetFunction1(false)
           : buttonSetFunction1(true);
 
