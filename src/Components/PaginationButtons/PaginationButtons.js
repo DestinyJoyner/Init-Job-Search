@@ -20,6 +20,7 @@ function PaginationButtons() {
   },[])
 
   useEffect(() => {
+    console.log(jobQuery.length, queryLimit, searchResultCount, queryStart)
     if(jobQuery.length < queryLimit){
       setHideNextButton(true)
     }
