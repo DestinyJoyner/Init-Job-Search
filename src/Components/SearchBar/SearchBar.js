@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState} from "react";
 import { useJobProvider } from "../../Providers/JobProvider";
-import { useSearchBarProvider } from "../../Providers/SearchBarProvider";
 import FilterBar from "../FilterBar/FilterBar";
 import searchLogo from "../../Assets/footer-logo.png";
 import {
@@ -12,8 +11,7 @@ import "./SearchBar.scss";
 
 function SearchBar({withFilterOptions, searchOptions, setSearchOptions}) {
   const { setSearchQueryRoute, setQueryStart } = useJobProvider();
-  // const { searchOptions, setSearchOptions} = useSearchBarProvider()
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(searchOptions.searchbar);
   const [showFilterBar, setShowFilterBar] = useState(false);
   // const [searchOptions, setSearchOptions] = useState({
   //   searchbar: "",
@@ -21,6 +19,8 @@ function SearchBar({withFilterOptions, searchOptions, setSearchOptions}) {
   //   city: "",
   //   skills: [],
   // });
+
+
 
   return (
     <form

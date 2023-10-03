@@ -28,10 +28,16 @@ function convertTasks(str) {
     }
   }
 
+  function convertCitySearchValToDropdown(str) {
+    const match = dropdownCities.find(({val}) => str === val.toLowerCase().replaceAll(" ", ""))
+    
+    return match.val 
+  }
 
 export {
     convertDate,
     convertTasks,
     convertCities,
-    convertSkills
+    convertSkills,
+    convertCitySearchValToDropdown
 }

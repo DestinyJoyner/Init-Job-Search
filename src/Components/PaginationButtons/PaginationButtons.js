@@ -1,30 +1,15 @@
 import { useState, useEffect } from "react";
 import { useJobProvider } from "../../Providers/JobProvider";
-import { useWindowSizeProvider } from "../../Providers/WindowSizeProvider";
 import { handlePagination } from "../Functions/SearchFunctions/JobsIndexFunctions";
 import "./PaginationButtons.scss";
 
 function PaginationButtons() {
-  const { isDesktopView } = useWindowSizeProvider()
-  const { jobs, queryStart, setQueryStart, jobQuery, queryLimit } =
+  const { queryStart, setQueryStart, jobQuery, queryLimit, searchResultCount } =
     useJobProvider();
   const [hideNextButton, setHideNextButton] = useState(false);
   const [hidePrevButton, setHidePrevButton] = useState(
     queryStart !== 0 ? false : true
   );
-
-  useEffect(() => {
-    if (jobQuery.length !== queryLimit) {
-      setHideNextButton(true);
-    } else if (
-      jobQuery.length === queryLimit &&
-      queryStart + 2 * queryLimit > jobs.length
-    ) {
-      setHideNextButton(true);
-    } else {
-      setHideNextButton(false);
-    }
-  }, [queryStart, jobQuery.length]);
 
   useEffect(() => {}, [queryLimit]);
 
@@ -33,6 +18,24 @@ function PaginationButtons() {
       setHideNextButton(false)
     }
   },[])
+
+  useEffect(() => {
+
+  if(jobQuery.length === 0){
+    setHideNextButton(true)
+  }
+    if(jobQuery.length < queryLimit){
+      setHideNextButton(true)
+    }
+    if(queryStart + queryLimit >= searchResultCount){
+      setHideNextButton(true)
+    }
+    // else {
+    //   console.log("false")
+    //   setHideNextButton(false)
+    // }
+  
+  }, [queryStart, jobQuery.length]);
 
   return (
     <div className="paginationButtons">
@@ -46,7 +49,7 @@ function PaginationButtons() {
             setQueryStart,
             setHidePrevButton,
             setHideNextButton,
-            jobs,
+            searchResultCount,
             queryLimit
           )
         }
@@ -63,7 +66,7 @@ function PaginationButtons() {
             setQueryStart,
             setHideNextButton,
             setHidePrevButton,
-            jobs,
+            searchResultCount,
             queryLimit
           )
         }

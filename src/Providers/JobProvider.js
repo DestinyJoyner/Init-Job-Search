@@ -23,6 +23,8 @@ function JobProvider({ children }) {
   const [queryStart, setQueryStart] = useState(0);
   const [queryLimit, setQueryLimit] = useState(isDesktopView ? 6 : 4)
 
+  const [searchResultCount, setSearchResultCount] = useState(5)
+
   const defaultJobSearchQuery = `${API}/jobs?start=${queryStart}&limit=${queryLimit}`;
   const [searchQueryRoute, setSearchQueryRoute] = useState("");
 
@@ -39,6 +41,8 @@ function JobProvider({ children }) {
       .get(defaultJobSearchQuery)
       .then(({ data }) => {
         if (data.length > 0) {
+          const searchCount = data.shift()
+          setSearchResultCount(+searchCount.count)
           setJobQuery(data);
         }
       })
@@ -61,9 +65,15 @@ function JobProvider({ children }) {
   // useEffect for job pagination
   useEffect(() => {
     setLoading(true);
+    
     axios
       .get(`${API}/jobs?start=${queryStart}&limit=${queryLimit}${searchQueryRoute}`)
-      .then(({ data }) => setJobQuery(data))
+      .then(({ data }) => {
+        console.log(data[0].query)
+        const searchCount = data.shift()
+        setSearchResultCount(+searchCount.count)
+        setJobQuery(data)})
+      
       .catch((err) => console.log(err));
 
     // console.log(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`, "api search query")
@@ -72,6 +82,16 @@ function JobProvider({ children }) {
   useEffect(() => {
     const limit = isDesktopView ? 6 : 4
     setQueryLimit(limit)
+
+    setLoading(true);
+    axios
+      .get(`${API}/jobs?start=0&limit=${limit}${searchQueryRoute}`)
+      .then(({ data }) => {
+        const searchCount = data.shift()
+        setSearchResultCount(+searchCount.count)
+        setJobQuery(data)})
+      
+      .catch((err) => console.log(err));
   },[isDesktopView])
 
   return (
@@ -89,7 +109,8 @@ function JobProvider({ children }) {
         jobDetails,
         jobSkills,
         desktopJobSkills,
-        queryLimit
+        queryLimit,
+        searchResultCount
       }}
     >
       {children}
