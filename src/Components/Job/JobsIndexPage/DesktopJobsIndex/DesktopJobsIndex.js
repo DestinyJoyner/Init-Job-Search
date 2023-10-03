@@ -14,9 +14,10 @@ import "./DesktopJobsIndex.scss";
 
 function DesktopJobsIndex() {
   const { setLoading, loading } = useContextProvider();
-  const { setSearchQueryRoute, setQueryStart, jobQuery} =
+  const { setSearchQueryRoute, setQueryStart, jobQuery, searchResultCount} =
     useJobProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
+
 
   useEffect(() => {
     setLoading(false);
@@ -91,7 +92,7 @@ function DesktopJobsIndex() {
         </aside>
 
         <span className="jobsIndexDesktop_jobsList_header">
-          Search Results:
+          Results ({searchResultCount}):
         </span>
         <div className="jobsIndexDesktop_jobsList">
           {jobQuery.length !== 0 ? (
