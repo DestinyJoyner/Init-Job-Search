@@ -1,8 +1,16 @@
+import { useEffect } from "react";
+import { useContextProvider } from "../../../Providers/Provider.js";
 import LoginPage from "../LoginPage/LoginPage.js";
 import loginStock from "../../../Assets/desktop-login-stock.jpg"
 import "./DesktopLoginPage.scss";
 
 function DesktopLoginPage() {
+  const {setLoading} = useContextProvider()
+
+  useEffect(() => {
+    setLoading(false)
+  },[])
+
   return (
     <div className="desktopLoginPage">
       <section className="desktopLoginPage_content">

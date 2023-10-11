@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useContextProvider } from "../../../../Providers/Provider";
 import RegistrationPage from "../RegistrationPage";
 import DesktopRegisterAccountType from "./RegisterAccountType/DesktopRegisterAccountType";
 import "./DesktopRegisterPage.scss"
 
 function DesktopRegisterPage(props) {
+    const {setLoading} = useContextProvider()
     const [accountToggle, setAccountToggle] = useState(true)
+
+    useEffect(() => {
+        setLoading(false)
+      },[])
+
 
     return (
         <div className="desktopRegisterPage">

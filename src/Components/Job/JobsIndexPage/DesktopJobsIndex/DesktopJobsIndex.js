@@ -18,10 +18,13 @@ function DesktopJobsIndex() {
     useJobProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
 
+  const [resultType, setResultType] = useState("Jobs")
 
   useEffect(() => {
     setLoading(false);
+    
   }, [jobQuery]);
+
 
  
 
@@ -92,7 +95,7 @@ function DesktopJobsIndex() {
         </aside>
 
         <span className="jobsIndexDesktop_jobsList_header">
-          Results ({searchResultCount}):
+          {resultType} ({searchResultCount}):
         </span>
         <div className="jobsIndexDesktop_jobsList">
           {jobQuery.length !== 0 ? (

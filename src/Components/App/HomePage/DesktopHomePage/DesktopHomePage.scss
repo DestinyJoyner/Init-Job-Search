@@ -11,7 +11,7 @@
     height: 220px;
     align-self: center;
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 35% 50% 15%;
     grid-template-rows: 75% 25%;
     align-items: center;
     background-color: var(--init-gray-background);
@@ -28,6 +28,7 @@
     &_text {
       grid-column: 2/4;
       grid-row: 1;
+      width: 80%;
       display: grid;
       row-gap: 10%;
 

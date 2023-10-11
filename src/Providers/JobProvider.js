@@ -69,9 +69,10 @@ function JobProvider({ children }) {
     axios
       .get(`${API}/jobs?start=${queryStart}&limit=${queryLimit}${searchQueryRoute}`)
       .then(({ data }) => {
-        console.log(data[0].query)
-        const searchCount = data.shift()
-        setSearchResultCount(+searchCount.count)
+        
+        const searchCount = data.shift()[0].count
+        // console.log(searchCount)
+        setSearchResultCount(+searchCount)
         setJobQuery(data)})
       
       .catch((err) => console.log(err));
@@ -87,8 +88,10 @@ function JobProvider({ children }) {
     axios
       .get(`${API}/jobs?start=0&limit=${limit}${searchQueryRoute}`)
       .then(({ data }) => {
-        const searchCount = data.shift()
-        setSearchResultCount(+searchCount.count)
+        // console.log(data[0])
+        const searchCount = data.shift()[0].count
+        
+        setSearchResultCount(+searchCount)
         setJobQuery(data)})
       
       .catch((err) => console.log(err));

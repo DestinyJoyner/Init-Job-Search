@@ -36,6 +36,7 @@
     border-right: 3px solid var(--init-mint);
     padding-right: 2vw;
     height: 85%;
+    width: 100%;
 
     row-gap: 5%;
     &_icon {
@@ -49,6 +50,7 @@
       justify-self: center;
       font-size: 30px;
       font-weight: 600;
+      
       // color: white;
     }
   }

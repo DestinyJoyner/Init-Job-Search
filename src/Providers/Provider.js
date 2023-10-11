@@ -41,9 +41,9 @@ function Provider({ children }) {
 
   axios.defaults.headers.common["authorization"] = `Bearer ${authToken}`;
 
-useEffect(() => {
-  // setLoading(true)
-},[])
+// useEffect(() => {
+//   setLoading(false)
+// },[loading])
 
 // useEffect(() => {
 //   setLoading(true)

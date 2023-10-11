@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { useContextProvider } from "../../../../Providers/Provider";
 import DesktopFooter from "../../Footer/DesktopFooter/DesktopFooter";
 import FeatureThumbnail from "../../../FeatureThumbnail/FeatureThumbnail.js";
 import { thumbnailArr } from "../../Data/FeatureThumbnailArray";
@@ -11,7 +13,13 @@ import { emailInvalid } from "../../Data/Icons";
 import "./DesktopHomePage.scss";
 
 function DesktopHomePage() {
+  const {setLoading} = useContextProvider()
   const navigate = useNavigate()
+
+  useEffect(() => {
+  setLoading(false)
+},[])
+
   return (
     <div className="desktopHome">
       <section className="desktopHome_header">

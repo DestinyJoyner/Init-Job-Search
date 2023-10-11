@@ -21,6 +21,13 @@
     grid-row: 1;
     background-color: var(--init-mint);
     border-bottom: 1px solid var(--init-mint);
+
+
+     & a {
+      font-size: 28px;
+     }
+
+
     &_notSignedIn, &_applied, &_apply, &_edit {
         &:hover {
           color: var(--init-gold);
@@ -51,27 +58,34 @@
       grid-column: 1;
       background-color: white;
       display: grid;
-      grid-template-rows: auto 2% auto;
-      align-items: center;
+      grid-template-rows: auto 5% auto;
+      // align-items: center;
       min-height: 100%;
-      height: fit-content;
+      padding: 2vh 2vw 2vh 2vw;
       & hr {
         border: 1px solid var(--init-mint);
         height: 0;
         width: 85%;
         justify-self: center;
+        align-self: center;
       }
       &_description,
       &_tasks {
         display: grid;
-        grid-template-rows: 15% 85%;
-        padding: 5vh 2vw 0 2vw;
+        grid-template-rows: 15% 80%;
+        // padding: 0vh 2vw 0 2vw;
         margin-left: 1vw;
-        height: 100%;
         row-gap: 5%;
+        
+        max-height: 100%;
+
+        // height: auto;
+        align-items: center;
+
       }
       &_tasks {
-        grid-template-rows: 10% 90%;
+        grid-template-rows: 10% 85%;
+        padding-bottom: 2vh;
         & li {
           margin-bottom: 2vh;
         }
