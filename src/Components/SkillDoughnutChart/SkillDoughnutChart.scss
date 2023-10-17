@@ -1,0 +1,12 @@
+.skillDoughnutChart {
+    display: grid;
+    height: 220px;
+    &_percentage {
+        align-self: center;
+        justify-self: center;
+        position: relative;
+        bottom: 14vh;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}

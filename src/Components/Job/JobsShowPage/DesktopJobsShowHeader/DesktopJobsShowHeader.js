@@ -39,7 +39,7 @@ const companyCity = city ? convertCities(city.toLowerCase()) : ""
               
               <span className="desktopJobShowHeader_details_salary">
                 {jobSalary}
-                <span className="desktopJobShowHeader_details_text">Position Mean Salary : $65K - $93K</span>
+                <span className="desktopJobShowHeader_details_text">Average Salary : $65K - $93K</span>
               </span>
             </div>
 

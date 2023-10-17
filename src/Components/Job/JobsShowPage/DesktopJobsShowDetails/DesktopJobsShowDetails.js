@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import DesktopSkillsComponent from "../../../DesktopSkillsComponent/DesktopSkillsComponent";
 import JobsShowActionButtons from "../JobsShowActionButtons/JobsShowActionButtons";
+import SkillDoughnutChart from "../../../SkillDoughnutChart/SkillDoughnutChart";
 import "./DesktopJobsShowDetails.scss"
 
 function DesktopJobsShowDetails({jobDetails, applied, setApplied, desktopJobSkills}) {
     const TASK = process.env.REACT_APP_TASK_BREAK;
-    const { details, tasks} = jobDetails
+    const { details, tasks, city} = jobDetails
     
     return (
         <div className='desktopJobShowDetails'>
@@ -31,7 +32,7 @@ function DesktopJobsShowDetails({jobDetails, applied, setApplied, desktopJobSkil
             <span className="desktopJobShowDetails_text_header">
                 Tasks
             </span>
-            <div className="desktopJobShowDetails_text_details_tasks_content">
+            <ul className="desktopJobShowDetails_text_details_tasks_content">
             {
             jobDetails.tasks &&
             jobDetails.tasks.split(`${TASK}`).map((el) => {
@@ -42,21 +43,26 @@ function DesktopJobsShowDetails({jobDetails, applied, setApplied, desktopJobSkil
                   </li>)}
            })
         }
-            </div>
+            </ul>
             </div>
             </section>
 
             <aside className="desktopJobShowDetails_text_aside">
-                <span className="desktopJobShowDetails_text_aside_header">
-                    Content tba
-                </span>
-                <div className="desktopJobShowDetails_text_aside_list">
-                    list items
+                <SkillDoughnutChart />
+                <div className="desktopJobShowDetails_text_aside_relatedJobs">
+                    <span className="desktopJobShowDetails_text_aside_relatedJobs_header">
+                        Jobs Near {city}
+                    </span>
                 </div>
-                <Link to="/jobs">{"<"} Back to Jobs</Link>
+            
             </aside>
+            <Link
+        className="desktopJobShowDetails_backButton" 
+        to="/jobs">{"<"} 
+        <span>Back to Jobs</span></Link>
            
         </section>
+       
           
         </div>
     );

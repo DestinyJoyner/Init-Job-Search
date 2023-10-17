@@ -9,7 +9,7 @@
     
         & > * {
           all: unset;
-          font-size: 30px;
+          // font-size: 30px;
           color: var(--init-blue);
           font-weight: 600;
         }
@@ -21,7 +21,7 @@
         &_notSignedIn {
           display: flex;
           width: 100%;
-          font-size: 24px;
+          font-size: 26px;
           justify-content: space-evenly;
         }
       }

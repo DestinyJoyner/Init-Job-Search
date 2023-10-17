@@ -1,18 +1,20 @@
 .desktopJobShowDetails {
+  padding-left: 1vw;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 17% 80%;
-  row-gap: 3%;
-  background-color: var(--init-gray-background);
-  height: 100%;
-  margin-top: 5vh;
-  padding-bottom: 5vh;
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 15% 85%;
+  // row-gap: 1%;
+  background-color: white;
+  // height: 100%;
+  height: max-content;
+  min-height: 100%;
+  // padding-bottom: 2vh;
+ 
 
   .desktopSkillsComponent {
     grid-column: 1;
     grid-row: 1;
     width: 100%;
-    border-bottom: 1px solid var(--init-mint);
   }
 
   .jobShow_actionButtons {
@@ -20,13 +22,6 @@
     width: 100%;
     grid-row: 1;
     background-color: var(--init-mint);
-    border-bottom: 1px solid var(--init-mint);
-
-
-     & a {
-      font-size: 28px;
-     }
-
 
     &_notSignedIn, &_applied, &_apply, &_edit {
         &:hover {
@@ -39,91 +34,88 @@
   &_text {
     grid-column: span 2;
     grid-row: 2;
-    width: 96%;
-    justify-self: center;
+    width: 100%;
+    // justify-self: center;
     display: grid;
-    grid-template-columns: 70% 25%;
-    column-gap: 5%;
+    grid-template-columns: 65% 32%;
+    column-gap: 3%;
+    border-top: 1px solid var(--init-mint);
+    grid-template-rows: auto 5vh;
     &_header {
-      text-decoration: underline;
+  
+      width: fit-content;
       font-size: 20px;
       font-weight: 600;
     }
-    &_details,
-    &_aside {
-      border-radius: 20px;
-      border: 1px solid var(--init-mint);
-    }
+
     &_details {
       grid-column: 1;
-      background-color: white;
-      display: grid;
-      grid-template-rows: auto 5% auto;
-      // align-items: center;
-      min-height: 100%;
-      padding: 2vh 2vw 2vh 2vw;
+      padding-top: 6vh;
+      display: flex;
+      flex-direction: column;
+      row-gap: 8%;
+      height: auto;
+  
       & hr {
-        border: 1px solid var(--init-mint);
+        border: .5px solid var(--init-mint);
         height: 0;
-        width: 85%;
+        width: 100%;
         justify-self: center;
-        align-self: center;
+
       }
       &_description,
       &_tasks {
-        display: grid;
-        grid-template-rows: 15% 80%;
-        // padding: 0vh 2vw 0 2vw;
-        margin-left: 1vw;
-        row-gap: 5%;
-        
-        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        row-gap: 2vh;
 
-        // height: auto;
-        align-items: center;
-
-      }
-      &_tasks {
-        grid-template-rows: 10% 85%;
-        padding-bottom: 2vh;
-        & li {
-          margin-bottom: 2vh;
+        &_content {
+          list-style-position: outside;
+          font-size: 18px;
+          & li {
+            margin-bottom: 2vh;
+          }
         }
       }
+    
+       
+      
+    
     }
     &_aside {
       grid-column: 2;
-      background-color: var(--init-mint);
+      grid-row: span 2;
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+      padding-top: 1vh;
+      // height: 80%;
       display: grid;
-      grid-template-rows: 5% 80% 10%;
-      row-gap: 2%;
+      grid-template-rows: auto;
       align-items: center;
-      
-      padding: 2vh;
-      &_header {
-        justify-self: center;
-        text-decoration: underline;
-        color: var(--init-gold);
-        font-size: 20px;
-        font-weight: 600;
-      }
-
-      &_list {
-        margin-top: 5vh;
-        grid-row: 2;
-        border-left: 1px solid var(--init-gold);
-        height: 100%;
-        padding-left: 1vw;
-      }
-      & a {
-        grid-row: 3;
-        justify-self: right;
-        text-decoration: underline;
-        &:hover {
-          cursor: pointer;
-          color: var(--init-gold);
-        }
-      }
+      justify-items: center;
+      border-left: 1px solid var(--init-mint);
+      // background-color: var(--init-gray-background);
+      padding-left: 1vw;
+     
+     
     }
+  }
+
+  &_backButton {
+    grid-row: 2;
+    font-size: 19px;
+    align-self: center;
+    // justify-self: right;
+    & span {
+      margin-left: 1vw;
+      text-decoration: underline;
+    }
+    &:hover {
+      cursor: pointer;
+      color: var(--init-darkmint);
+    }
+    
+    
   }
 }

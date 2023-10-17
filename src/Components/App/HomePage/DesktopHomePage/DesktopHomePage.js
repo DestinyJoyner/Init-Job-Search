@@ -23,10 +23,11 @@ function DesktopHomePage() {
   return (
     <div className="desktopHome">
       <section className="desktopHome_header">
+        <div className="desktopHome_header_container">
         <img className="desktopHome_header_logo" src={logo} alt="init-logo" />
         <span className="desktopHome_header_text">
           <h2 className="desktopHome_header_text_title">
-            Land your first tech opportunity with inIT!
+            Land Your First Tech Opportunity With inIT!
           </h2>
           <span className="desktopHome_header_text_mission">
             Whether you are an entry-level engineer looking to jump start your career in tech, or a recruiter looking to fill entry-level positions at a company, inIT is here to connect you!
@@ -36,7 +37,7 @@ function DesktopHomePage() {
         <button className="desktopHome_header_button"
         onClick={() => navigate("/jobs")}>
           SEARCH JOBS NOW!</button>
-          
+          </div>
       </section>
 
       <span className="desktopHome_header_disclaimer">**{emailInvalid}inIT is was designed in MOBILE VIEW first. Some desktop components are currently in the process of being designed. Currently, for best viewing of inIT resize the window to under 850px or open in a MOBILE browser. </span>

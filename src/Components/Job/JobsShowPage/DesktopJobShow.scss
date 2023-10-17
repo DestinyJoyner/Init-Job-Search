@@ -1,15 +1,13 @@
 .desktopJobShow {
+    height: auto;
     min-height: 100vh;
-    // height: 100%;
     display: grid;
-    grid-template-rows: 25% 75%;
+    grid-template-rows: 30% 90%;
     grid-template-columns: 60% 40%;
-    width: 80%;
-    // height: 120vh;
+    width: 90%;
     margin: 0 auto;
     margin-top: 9vh;
-    padding-top: 3vh;
-    padding-bottom: 5vh;
+    padding: 6vh 0 10% 0;
     align-items: center;
 
     .desktopJobShowHeader, .desktopJobShowDetails {

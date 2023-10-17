@@ -1,53 +1,40 @@
 .desktopSkillsComponent {
-display: grid;
-grid-template-columns: 30% 70%;
-grid-template-rows: 15% 70% ;
-row-gap: 10%;
-background-color: white;
-    &_header {
-        font-size: 20px;
-        grid-column: span 2;
-        grid-row: 1;
-        font-weight: 600;
-        margin: 2.5vh 0 0 1vw ;
-        text-decoration: underline;
-    }
+  display: flex;
+  align-items: center;
+  width: 100%;
+  column-gap: 3vw;
+  &_header {
+    font-size: 20px;
+    width: fit-content;
+    font-weight: 600;
+  }
 
-    &_skills {
-        grid-column: 2;
-        justify-self: center;
-        grid-row: 2;
-        display: flex;
-        width: 100%;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-bottom: 2vh;
-        padding: 0 2vw;
-
+  &_skills {
+    display: flex;
+    column-gap: 4vw;
+    width: max-content;
+    justify-content: space-evenly;
+    align-items: center;
 
     &_skill {
-        display: grid;
-        margin-top: 1vh;
-        row-gap: .8vh;
-        justify-items: center;
+      display: grid;
+      margin-top: 1vh;
+      row-gap: 0.8vh;
+      justify-items: center;
 
-        &_name {
-            font-size: 16px;
-            font-style: italic;
-        }
+      &_name {
+        font-size: 17px;
+        font-style: italic;
+      }
 
-        & svg {
-            height: 2.3em;
-            width: 2.3em;
-            padding: 2px;
-            border-radius: 10px;
-            border: 2px outset rgba(33, 33, 33, 0.822);
-            box-shadow: 0px 0px 1px white;
-        }
-      
+      & svg {
+        height: 2.3em;
+        width: 2.3em;
+        padding: 3px;
+        border-radius: 10px;
+        border: 2px outset rgba(33, 33, 33, 0.822);
+        box-shadow: 0px 0px 1px white;
+      }
     }
-    }
-    
-    
-    
+  }
 }
