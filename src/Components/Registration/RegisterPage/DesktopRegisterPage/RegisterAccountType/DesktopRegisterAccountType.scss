@@ -1,6 +1,8 @@
 .desktopRegisterAccountType {
     display: grid;
-    margin: 3vh 0 0 3vw ;
+    padding-top: 1vh;
+    padding-left: 2vw;
+    // margin: 3vh 0 0 3vw ;
 
     & >*{
         position: relative;
@@ -58,7 +60,7 @@
     & ul {
         border-left: 1px solid var(--init-gold);
         width: 70%;
-        bottom: 8vh;
+        bottom: 6vh;
         & li {
             position: inherit;
             margin-bottom: 3vh;

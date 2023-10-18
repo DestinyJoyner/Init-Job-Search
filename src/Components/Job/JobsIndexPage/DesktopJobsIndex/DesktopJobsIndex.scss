@@ -153,7 +153,8 @@
                 margin: 0;
                 color: var(--init-blue);
                 height: 50px;
-                width: 65%;
+                // width: 65%;
+                width: fit-content;
                 justify-self: left;
                 margin-bottom: 4vh ;
             }
