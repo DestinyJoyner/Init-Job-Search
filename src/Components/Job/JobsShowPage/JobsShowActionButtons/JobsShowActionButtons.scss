@@ -9,7 +9,6 @@
     
         & > * {
           all: unset;
-          // font-size: 30px;
           color: var(--init-blue);
           font-weight: 600;
         }
@@ -21,8 +20,12 @@
         &_notSignedIn {
           display: flex;
           width: 100%;
-          font-size: 26px;
+          font-size: 20px;
           justify-content: space-evenly;
+          & >*:hover {
+            color: var(--init-gold);
+            cursor: pointer;
+          }
         }
       }
 }

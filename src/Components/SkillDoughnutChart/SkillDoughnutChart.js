@@ -21,8 +21,8 @@ function SkillDoughnutChart() {
       {
         label: "Skill Match",
         data: [skillMatches.length, jobSkills.length - skillMatches.length],
-        backgroundColor: ["#ffde59", "#41cdbc"],
-        borderColor: ["#ffde59", "#41cdbc"],
+        backgroundColor: ["#41cdbc","#ffde59"],
+        borderColor: ["#41cdbc", "#ffde59"],
       },
     ],
   };

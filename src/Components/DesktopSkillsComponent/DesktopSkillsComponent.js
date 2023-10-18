@@ -4,7 +4,7 @@ function DesktopSkillsComponent({desktopJobSkills}) {
 
     return (
         <div className="desktopSkillsComponent">
-            <span className="desktopSkillsComponent_header">Preferred Skills:</span>
+            <span className="desktopSkillsComponent_header">Preferred Skills</span>
             <section className="desktopSkillsComponent_skills">
             {
                 desktopJobSkills.map(({name, icon}) => 

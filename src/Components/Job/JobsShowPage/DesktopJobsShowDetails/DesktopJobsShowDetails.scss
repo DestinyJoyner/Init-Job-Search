@@ -25,18 +25,26 @@
       width: 85%;
       text-align: center;
       font-size: 26px;
-      display: grid;
+      // display: grid;
       align-items: center;
-    }
-
-    &_notSignedIn,
-    &_applied,
-    &_apply,
-    &_edit {
       &:hover {
         color: var(--init-gold);
         cursor: pointer;
       }
+    }
+    & button {
+      &:first-of-type {
+        justify-self: right;
+      }
+      &:last-of-type {
+        justify-self: left;
+      }
+    }
+
+    &_applied,
+    &_apply,
+    &_edit {
+      display: grid;
     }
   }
 
