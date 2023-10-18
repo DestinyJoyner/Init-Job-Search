@@ -1,12 +1,33 @@
 .skillDoughnutChart {
+    align-self: center;
     display: grid;
-    height: 220px;
+    align-items: center;
+    justify-items: center;
+    height: fit-content;
+
+    & h3 {
+        text-align: center;
+        margin-bottom: 2vh;
+    }
+
     &_percentage {
         align-self: center;
         justify-self: center;
         position: relative;
-        bottom: 14vh;
+        bottom: 11.5vh;
         font-size: 24px;
         font-weight: 600;
     }
+    .skills-component {
+        width: 90%;
+        border-bottom: 1px solid var(--init-mint);
+        padding-bottom: 3vh;
+        & svg {
+            height: 2em;
+            width: 2em;
+            padding: 3px;
+            border-radius: 10px;
+        }
+    }
+
 }
