@@ -14,15 +14,16 @@ function DesktopFooter() {
     <div className="desktopFooter">
 
       <section 
-      className="desktopFooter_about">
-        <h2>About inIT</h2>
+      className="desktopFooter_init">
         <span 
-        className="desktopFooter_about_bio">
+        className="desktopFooter_init_about">
+           <h2>About inIT</h2>
           {initBio}
         </span>
-        <h2>Technologies Used</h2>
+        
         <span 
-        className="desktopFooter_about_tech">
+        className="desktopFooter_init_tech">
+          <h2>Technologies Used</h2>
           {initTech}
           <SkillsComponent 
           justList={true} 
@@ -34,22 +35,24 @@ function DesktopFooter() {
       <hr />
 
       <section className="desktopFooter_developer">
-        <h2>About The Developer</h2>
+        {/* <h2>About The Developer</h2> */}
         <span 
         className="desktopFooter_developer_bio">
+          <h2>About The Developer</h2>
           {developerBio}
-          {/* <img 
-          src={developerImage} 
-          alt="developer-image" /> */}
+         
         </span>
         <img 
           src={developerImage} 
           alt="developer-image"
           className="desktopFooter_developer_photo" />
-        <h2 className="desktopFooter_developer_contact">
+          <div className="desktopFooter_developer_contact">
+          <h2>
           Contact Me
         </h2>
         <ContactLinks pursuit={true} />
+          </div>
+       
       </section>
 
     </div>
