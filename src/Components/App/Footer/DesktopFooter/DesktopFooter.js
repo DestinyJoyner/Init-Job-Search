@@ -35,7 +35,6 @@ function DesktopFooter() {
       <hr />
 
       <section className="desktopFooter_developer">
-        {/* <h2>About The Developer</h2> */}
         <span 
         className="desktopFooter_developer_bio">
           <h2>About The Developer</h2>

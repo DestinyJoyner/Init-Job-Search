@@ -13,7 +13,6 @@ import { BiChevronDown } from "react-icons/bi"
 import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
-// { searchOptions, setSearchOptions}
 function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
   
   const { city, isRemote } = searchOptions
@@ -33,7 +32,10 @@ function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
     })
   }
 
-
+useEffect(() => {
+  setRemoteSearch(isRemote)
+  setCityDropdown(convertCitySearchValToDropdown(city))
+},[searchOptions])
 
   return (
     <div className="filter-bar">

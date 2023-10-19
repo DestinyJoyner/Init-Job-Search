@@ -4,7 +4,7 @@
   background-color: var(--init-gray-background);
   width: 100%;
   padding: 2vh 0;
-  height: 320px;
+  height: 350px;
   display: grid;
   grid-template-columns: 2% 45% 2% 49%;
 
@@ -50,11 +50,11 @@
     &_contact {
       grid-column: 1;
       grid-row: 2;
-      // width: fit-content;
       display: flex;
       flex-direction: column;
       row-gap: 2vh;
       position: relative;
+      bottom: 2vh;
 
       .contactLinks {
         width: 60%;
@@ -73,6 +73,7 @@
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     row-gap: 3%;
+    align-items: center;
     &_about {
       grid-row: 1;
       display: flex;
@@ -84,7 +85,8 @@
       grid-row: 2;
       display: flex;
       flex-direction: column;
-      row-gap: 1vh;
+      row-gap: 2vh;
+      align-self: center;
       .skills-component {
         margin-top: 1vh;
         justify-content: space-between;

@@ -24,12 +24,8 @@ function DesktopJobsIndex() {
     setLoading(false);
     
   }, [jobQuery]);
-
-
  
-
-  function clearFilterOptions (e) {
-    // e.preventDefault()
+  function clearFilterOptions () {
     const resetObj = {
       searchbar: searchOptions.searchbar,
       isRemote: false,
@@ -38,12 +34,6 @@ function DesktopJobsIndex() {
     }
     setSearchOptions(resetObj)
   }
-
-  // useEffect(() => {
-
-  // },[searchOptions])
-
-  // useEffect(() => {}, [queryStart, jobQuery.length]);
 
   return (
     !loading && (
@@ -68,7 +58,7 @@ function DesktopJobsIndex() {
           <span className="jobsIndexDesktop_filter_category_remote"><span>Remote Work:</span></span>
 
           <button 
-          onClick={() => {}}className="jobsIndexDesktop_filter_clearButton">
+          onClick={() => {clearFilterOptions()}}className="jobsIndexDesktop_filter_clearButton">
             <span>Reset Filters</span>  <MdFilterAltOff />
           </button>
 
@@ -76,7 +66,6 @@ function DesktopJobsIndex() {
             remoteCheckbox={true}
             searchOptions={searchOptions}
             setSearchOptions={setSearchOptions}
-            
           />
 
           <button
