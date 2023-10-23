@@ -3,6 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 import { useUserProvider } from "../../Providers/UserProvider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import SkillsComponent from "../Job/SkillsComponent";
+import {BiSolidRectangle} from "react-icons/bi"
 import "./SkillDoughnutChart.scss";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -41,16 +42,22 @@ function SkillDoughnutChart() {
   };
   return (
     <div className="skillDoughnutChart">
-      <h3>You have {skillMatchPercent}% Skill Compability with this Job </h3>
+      <h3><BiSolidRectangle />Skill Compatibility</h3>
       <>
-        <Doughnut data={data} options={options}></Doughnut>
+        <Doughnut data={data} options={options}
+        
+        ></Doughnut>
       </>
 
       <span className="skillDoughnutChart_percentage">
         {skillMatchPercent}%
       </span>
 
+      <div className="skillDoughnutChart_skills">
+        <span className="skillDoughnutChart_skills_header">Qualifying Skills</span>
       <SkillsComponent justList={true} skillsArr={skillMatches} />
+      </div>
+      
     </div>
   );
 }

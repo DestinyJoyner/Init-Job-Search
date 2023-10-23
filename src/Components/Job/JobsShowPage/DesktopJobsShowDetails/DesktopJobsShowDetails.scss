@@ -60,27 +60,29 @@
       width: fit-content;
       font-size: 20px;
       font-weight: 600;
+      // border-bottom: 1px solid black;
     }
 
     &_details {
       grid-column: 1;
       margin: 3vh 0 3vh 1vw;
       border-radius: 10px;
-      padding: 6vh 2vw 2vh 2vw;
+      padding: 0vh 2vw 2vh 2vw;
       display: flex;
       flex-direction: column;
-      row-gap: 5%;
+      justify-content: space-evenly;
+      // row-gap: 5%;
       height: auto;
       background-color: white;
 
       & hr {
-        border: 0.5px solid var(--init-mint);
+        border: .5px solid var(--init-mint);
         height: 0;
         width: 100%;
         justify-self: center;
       }
       &_description,
-      &_tasks {
+      &_tasks, &_company {
         display: flex;
         flex-direction: column;
         justify-content: left;
@@ -95,58 +97,7 @@
         }
       }
     }
-    &_aside {
-      grid-column: 2;
-      margin: 3vh;
-      background-color: white;
-      border-radius: 10px;
-      display: grid;
-      grid-template-rows: fit-content auto 3vh;
-      justify-items: center;
-
-      &_relatedJobs {
-        height: auto;
-        display: grid;
-        grid-template-rows: 20% 80%;
-        padding-left: 1vw;
-        width: 90%;
-        justify-self: center;
-        justify-items: left;
-
-        &_header {
-          font-weight: 600;
-          font-size: 20px;
-          display: flex;
-          align-items: center;
-          & svg {
-            margin-right: 0.3vw;
-          }
-        }
-        &_list {
-          width: 100%;
-          grid-row: 2;
-          display: grid;
-
-          & > * {
-            margin-top: 2vh;
-          }
-        }
-      }
-    }
+ 
   }
 
-  &_backButton {
-    font-size: 16px;
-    align-self: flex-end;
-    justify-self: right;
-    margin: 0 1vw 1vh 0;
-    & span {
-      margin-left: 1vw;
-      text-decoration: underline;
-    }
-    &:hover {
-      cursor: pointer;
-      color: var(--init-darkmint);
-    }
-  }
 }

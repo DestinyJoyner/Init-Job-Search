@@ -1,33 +1,82 @@
 .skillDoughnutChart {
-    align-self: center;
+    // align-self: center;
+    // padding-top: 3vh;
     display: grid;
     align-items: center;
     justify-items: center;
-    height: fit-content;
+    width: 90%;
+    border-bottom: 1px solid var(--init-mint);
+    // height: fit-content;
+    & canvas, &_skills {
+        position: relative;
+    }
 
     & h3 {
         text-align: center;
-        margin-bottom: 2vh;
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        font-size: 20px;
+        margin: 0;
+        // margin-bottom: 2vh;
+        grid-column: 1;
+        & svg {
+            color: var(--init-darkmint);
+            height: 1.5em;
+            width: 1.5em;
+        }
+    }
+
+    & canvas {
+        grid-row: 2/4;
+        grid-column: 1;
+        bottom: 2vh;
+        // align-self: flex-start;
     }
 
     &_percentage {
+        grid-row: 3;
+        grid-column: 1;
         align-self: center;
         justify-self: center;
         position: relative;
-        bottom: 11.5vh;
+        bottom: 12vh;
         font-size: 24px;
         font-weight: 600;
     }
-    .skills-component {
-        width: 90%;
-        border-bottom: 1px solid var(--init-mint);
-        padding-bottom: 3vh;
-        & svg {
-            height: 2em;
-            width: 2em;
-            padding: 3px;
-            border-radius: 10px;
+
+    &_skills {
+        grid-row: 4;
+        grid-column: 1;
+        // border-bottom: 1px solid var(--init-mint);
+        // height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 3vh;
+        bottom: 3vh;
+        
+        &_header {
+            // padding-left: 1vw;
+            text-align: center;
+            font-weight: 600;
+        font-size: 20px;
         }
+
+
+        .skills-component {
+            // width: 90%;
+            
+            // padding-bottom: 3vh;
+            & svg {
+                height: 2.2em;
+                width: 2.2em;
+                padding: 3px;
+                border-radius: 10px;
+            }
+        }
+
     }
+    
 
 }

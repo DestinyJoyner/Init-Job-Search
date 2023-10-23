@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { useContextProvider } from "../../../../Providers/Provider";
+
 import DesktopSkillsComponent from "../../../DesktopSkillsComponent/DesktopSkillsComponent";
 import JobsShowActionButtons from "../JobsShowActionButtons/JobsShowActionButtons";
-import SkillDoughnutChart from "../../../SkillDoughnutChart/SkillDoughnutChart";
+import DesktopJobShowDetailsAside from "./DesktopJobShowDetailsAside/DesktopJobShowDetailsAside";
+import DesktopJobShowCompanyDetails from "./DesktopJobShowCompanyDetails/DesktopJobShowCompanyDetails";
 import { jobLocation } from "../../../App/Data/Icons";
 
 import "./DesktopJobsShowDetails.scss";
@@ -15,27 +15,9 @@ function DesktopJobsShowDetails({
   setApplied,
   desktopJobSkills,
 }) {
-  const { API, axios } = useContextProvider();
+
   const TASK = process.env.REACT_APP_TASK_BREAK;
-  const { details, tasks, city } = jobDetails;
-
-  const [relatedJobs, setRelatedJobs] = useState([]);
-
-  useEffect(() => {
-    if (city) {
-      const convertCity = city.replaceAll(" ", "").toLowerCase();
-      axios
-        .get(`${API}/jobs?start=0&limit=4&city=${convertCity}`)
-        .then(({ data }) => {
-          data.shift();
-          const filterRelatedJobs = data.filter(
-            ({ id }) => id !== jobDetails.id
-          );
-          setRelatedJobs(filterRelatedJobs);
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [jobDetails]);
+  const { details, tasks } = jobDetails;
   
   return (
     <div className="desktopJobShowDetails">
@@ -70,38 +52,21 @@ function DesktopJobsShowDetails({
                 })}
             </ul>
           </div>
+
+          <hr className="desktopJobShowDetails_text_details_divider" />
+
+          <div className="desktopJobShowDetails_text_details_company">
+            <span className="desktopJobShowDetails_text_header">About This Company </span>
+
+          <DesktopJobShowCompanyDetails
+          jobDetails={jobDetails} />
+
+          </div>
         </section>
 
-        <aside className="desktopJobShowDetails_text_aside">
-          <SkillDoughnutChart />
+        <DesktopJobShowDetailsAside jobDetails={jobDetails} />
 
-          <div className="desktopJobShowDetails_text_aside_relatedJobs">
-            <span className="desktopJobShowDetails_text_aside_relatedJobs_header">
-              {jobLocation} Jobs Near {city}
-            </span>
-            <ul className="desktopJobShowDetails_text_aside_relatedJobs_list">
-              {relatedJobs.length > 0 ? (
-                relatedJobs.map(({ title, company, id }) => (
-                  <li key={uuidv4()}>
-                    <Link to={`/jobs/${id}`}>
-                      {title}, <br />
-                      {company}
-                    </Link>
-                  </li>
-                ))
-              ) : (
-                <span className="desktopJobShowDetails_text_aside_relatedJobs_list_none">
-                  No Jobs to Display
-                </span>
-              )}
-            </ul>
-          </div>
-
-          <Link className="desktopJobShowDetails_backButton" to="/jobs">
-            {"<"}
-            <span>Back to Jobs</span>
-          </Link>
-        </aside>
+     
       </section>
     </div>
   );
