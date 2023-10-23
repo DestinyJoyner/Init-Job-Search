@@ -8,6 +8,7 @@ import FilterBar from "../../../FilterBar/FilterBar";
 import JobsCard from "../../JobsCard/JobsCard";
 import NoSearchResults from "../../../App/NoSearchResults/NoSearchResults";
 import PaginationButtons from "../../../PaginationButtons/PaginationButtons.js"
+import SearchResultsCounter from "../../../SearchResultsCounter/SearchResultsCounter";
 import {MdFilterAltOff} from "react-icons/md"
 import { handleSearchFilterSubmit } from "../../../Functions/SearchFunctions/SearchBarFunctions";
 import "./DesktopJobsIndex.scss";
@@ -17,8 +18,6 @@ function DesktopJobsIndex() {
   const { setSearchQueryRoute, setQueryStart, jobQuery, searchResultCount} =
     useJobProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
-
-  const [resultType, setResultType] = useState("Jobs")
 
   useEffect(() => {
     setLoading(false);
@@ -84,8 +83,10 @@ function DesktopJobsIndex() {
         </aside>
 
         <span className="jobsIndexDesktop_jobsList_header">
-          {resultType} ({searchResultCount}):
+          Jobs ({searchResultCount})
+          <SearchResultsCounter />
         </span>
+        
         <div className="jobsIndexDesktop_jobsList">
           {jobQuery.length !== 0 ? (
             jobQuery.map((obj) => 
@@ -96,6 +97,7 @@ function DesktopJobsIndex() {
           ) : (
             <NoSearchResults />
           )}
+          {/* <SearchResultsCounter /> */}
           <PaginationButtons />
         </div>
         

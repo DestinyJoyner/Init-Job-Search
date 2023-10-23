@@ -275,11 +275,17 @@
     &_header {
       grid-row: 2;
       grid-column: 2;
-      padding-left: 1vw;
+      padding: 0 2vw 0 1vw;
       font-weight: 600;
       font-size: 18px;
       font-family: Poppins;
+      display: flex;
+      justify-content: space-between;
+    .searchResultsCounter {
+        font-weight: 100;
     }
+    }
+   
 
     .paginationButtons {
       grid-column: 3;
@@ -291,6 +297,14 @@
         font-size: 46px;
       }
     }
+    // .searchResultsCounter {
+    //     grid-row: 3;
+    //     grid-column: 2;
+        
+    //     position: relative;
+    //     bottom: 3vh;
+        
+    // }
 
     .jobCard {
       height: 220px;
