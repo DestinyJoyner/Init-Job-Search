@@ -1,0 +1,18 @@
+.navBarLinkDropDown {
+    background-color: #84D0C8 ;
+    background-color: var(--init-background);
+    border: 2px solid red;
+    height: 100px;
+    width:max-content;
+    z-index:1000;
+    position: absolute;
+    // top: 6vh;
+    // padding-top: 10vh;
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+    padding: 1vh 2vw;
+    & span {
+       font-weight: 100;
+    }
+}
