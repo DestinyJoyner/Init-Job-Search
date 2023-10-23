@@ -18,7 +18,7 @@ import pelotonLogo from "../../../Assets/companyLogos/peloton.png"
 import salesforceLogo from "../../../Assets/companyLogos/salesforce.png"
 import silverStarLogo from "../../../Assets/companyLogos/silverstar.jpeg"
 import shopifyLogo from "../../../Assets/companyLogos/shopify.png";
-import techItEasyLogo from "../../../Assets/companyLogos/techIteasyCode.png"
+import willcodeforfoodLogo from "../../../Assets/companyLogos/techIteasyCode.png"
 import umbrellaCorpLogo from "../../../Assets/companyLogos/umbrellacorporation.png"
 
 const companyLogoObject = {
@@ -35,14 +35,15 @@ const companyLogoObject = {
   pellsoftware: pellSoftwareLogo,
   silverstartechnology: silverStarLogo,
   shopify: shopifyLogo,
-  techiteasy : techItEasyLogo,
+  techiteasy : willcodeforfoodLogo,
   umbrellacorporation : umbrellaCorpLogo,
   nike : nikeLogo,
   peloton: pelotonLogo,
   appinventiv: appinventivLogo,
   apple : appleLogo,
   salesforce : salesforceLogo,
-  geeksandfries : geeksandfriesLogo
+  geeksandfries : geeksandfriesLogo,
+  willcodeforfood: willcodeforfoodLogo
 };
 
 const defaultCompany = noLogo;

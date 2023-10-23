@@ -28,6 +28,7 @@
 
 body {
   height: auto;
+  min-height: 100vh;
   /* height: auto;
   overflow: scroll;
   min-height: 100%; */

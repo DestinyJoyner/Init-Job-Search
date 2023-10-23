@@ -4,6 +4,8 @@
   grid-template-rows: 12% 88%;
   background-color: var(--init-gray-background);
   min-height: 100%;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 
   .desktopSkillsComponent {
     grid-column: 1;

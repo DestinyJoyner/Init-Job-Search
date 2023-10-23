@@ -10,22 +10,32 @@
     & canvas, &_skills {
         position: relative;
     }
-
-    & h3 {
-        text-align: center;
+    &_chartHeader {
         display: flex;
+        flex-direction: column;
+        row-gap: 3px;
         align-items: center;
-        column-gap: 5px;
-        font-size: 20px;
-        margin: 0;
-        // margin-bottom: 2vh;
-        grid-column: 1;
-        & svg {
-            color: var(--init-darkmint);
-            height: 1.5em;
-            width: 1.5em;
+        & span {
+            width: 80%;
+            text-align: center;
+            font-family: Poppins;
+        }
+        & h3 {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+            font-size: 20px;
+            margin: 0;
+            width: fit-content;
+            & svg {
+                color: var(--init-darkmint);
+                height: 1.5em;
+                width: 1.5em;
+            }
         }
     }
+
+    
 
     & canvas {
         grid-row: 2/4;

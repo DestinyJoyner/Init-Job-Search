@@ -9,7 +9,8 @@
             grid-column: 1; 
             grid-row: 1/3;
             height: 100px;
-            justify-self: center;
+            max-width: 130px;
+            // justify-self: center;
          }
          &_companyName {
             grid-column: 2;
