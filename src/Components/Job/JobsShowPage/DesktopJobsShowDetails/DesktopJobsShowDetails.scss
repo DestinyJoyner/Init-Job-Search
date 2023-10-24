@@ -1,18 +1,18 @@
 .desktopJobShowDetails {
   display: grid;
   grid-template-columns: 55% 45%;
-  grid-template-rows: 12% 88%;
-  background-color: var(--init-gray-background);
+  grid-template-rows: 10% 88%;
   min-height: 100%;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
 
+  .desktopSkillsComponent, .jobShow_actionButtons {
+    border-bottom: 1px solid var(--init-mint);
+  }
   .desktopSkillsComponent {
     grid-column: 1;
     grid-row: 1;
     width: 100%;
     background-color: white;
-    padding-left: 1vw;
+    padding-left: 3vw;
   }
 
   .jobShow_actionButtons {
@@ -24,7 +24,7 @@
     & > * {
       background-color: var(--init-mint);
       height: 100%;
-      width: 85%;
+      width: 95%;
       text-align: center;
       font-size: 26px;
       // display: grid;
@@ -51,6 +51,7 @@
   }
 
   &_text {
+  
     grid-column: span 2;
     grid-row: 2;
     width: 100%;
@@ -66,6 +67,7 @@
     }
 
     &_details {
+      border: 1px solid var(--init-mint);
       grid-column: 1;
       margin: 3vh 0 3vh 1vw;
       border-radius: 10px;

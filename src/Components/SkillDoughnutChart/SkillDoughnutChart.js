@@ -1,5 +1,6 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import { useContextProvider } from "../../Providers/Provider";
 import { useUserProvider } from "../../Providers/UserProvider";
 import { useJobProvider } from "../../Providers/JobProvider";
 import SkillsComponent from "../Job/SkillsComponent";
@@ -10,6 +11,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function SkillDoughnutChart() {
   const { applicantSkillIds } = useUserProvider();
+  const {isRecruiterAcc, isSignedIn} = useContextProvider()
   const { jobSkills } = useJobProvider();
   const skillMatches = applicantSkillIds.filter((el) => jobSkills.includes(el));
   const skillMatchPercent = Math.floor(
@@ -47,25 +49,36 @@ function SkillDoughnutChart() {
           <BiSolidRectangle />
           Skill Compatibility
         </h3>
-        <span>
+        {
+          isSignedIn  ? <span>
           You have {skillMatchPercent}% skill compatibility with this job{" "}
-        </span>
+        </span> :
+        isRecruiterAcc ? <span>Feature unavailable for Recruiter Accounts</span> :
+        <span>Sign in to see your skill compatibility with this job</span>
+        }
+        
       </section>
       
       <>
         <Doughnut data={data} options={options}></Doughnut>
       </>
 
-      <span className="skillDoughnutChart_percentage">
+      {isSignedIn &&
+        <span className="skillDoughnutChart_percentage">
         {skillMatchPercent}%
       </span>
+}
 
+    {
+      skillMatches.length > 0 &&
       <div className="skillDoughnutChart_skills">
         <span className="skillDoughnutChart_skills_header">
           Qualifying Skills
         </span>
         <SkillsComponent justList={true} skillsArr={skillMatches} />
       </div>
+    }
+      
     </div>
   );
 }

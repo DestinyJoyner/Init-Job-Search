@@ -4,14 +4,13 @@ import RegistrationPage from "../RegistrationPage";
 import DesktopRegisterAccountType from "./RegisterAccountType/DesktopRegisterAccountType";
 import "./DesktopRegisterPage.scss"
 
-function DesktopRegisterPage(props) {
+function DesktopRegisterPage() {
     const {setLoading} = useContextProvider()
     const [accountToggle, setAccountToggle] = useState(true)
 
     useEffect(() => {
         setLoading(false)
       },[])
-
 
     return (
         <div className="desktopRegisterPage">

@@ -27,8 +27,6 @@
     }
 
     & a {
-      // font-size: 21px;
-      // width: fit-content;
       margin: 0;
       padding: 0;
       position: relative;
@@ -38,7 +36,6 @@
       } 
       & span {
         & svg {
-          // color: var(--init-charcoal);
          position: relative;
          top: .5vh;
          left: .5vw;
@@ -65,7 +62,6 @@
   .contactLinks {
     grid-column: 8;
     grid-row: 1;
-    // border: 1px solid red;
     & a:nth-of-type(3) {
       display: none;
     }
@@ -126,12 +122,12 @@
 
 @media (max-width: 1150px) {
   .desktopNav {
-    grid-template-columns: 10% 10% repeat(4, 10%) 20% 10% 20%;
+    grid-template-columns: 10% 5% repeat(4, 13%) 5% 10% 10%;
   }
 }
 
 @media (max-width:975px) {
   .desktopNav {
-    grid-template-columns: 10% 2% repeat(4, 15%) 10% 15% 10%;
+    grid-template-columns: 10% 2% repeat(4, 15%) 2% 10% 10%;
   }
 }

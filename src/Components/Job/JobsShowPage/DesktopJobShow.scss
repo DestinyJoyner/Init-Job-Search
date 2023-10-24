@@ -4,16 +4,14 @@
     display: grid;
     grid-template-rows: 30% 110%;
     grid-template-columns: 60% 40%;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 9vh;
-    padding: 6vh 0 25% 0;
+    padding-bottom: 30%;
+    // padding: 6vh 0 25% 0;
     align-items: center;
-    height: max-content;
+    height: auto;
 
-    .desktopJobShowHeader, .desktopJobShowDetails {
-        box-shadow: 0px 0px 10px black;
-    }
     .desktopJobShowHeader {
         grid-column: span 2;
         grid-row: 1;
@@ -21,8 +19,6 @@
     .desktopJobShowDetails {
         grid-row: 2;
         grid-column: span 2;
-        border: 1px solid var(--init-mint);
-        border-top: none;
     }
 }
 

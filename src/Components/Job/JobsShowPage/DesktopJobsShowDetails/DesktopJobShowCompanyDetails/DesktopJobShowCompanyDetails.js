@@ -17,7 +17,7 @@ function DesktopJobShowCompanyDetails({jobDetails})
             const companyQueryValue = company.replaceAll(" ","").toLowerCase()
         axios.get(`${API}/company/${companyQueryValue}`)
         .then(({data}) => {
-            console.log(data)
+            
             setCompanyDetails(data)})
         .catch(err => console.log(err))
         }

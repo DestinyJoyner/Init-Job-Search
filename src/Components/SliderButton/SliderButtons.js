@@ -1,7 +1,13 @@
 import { useState } from "react";
 import "./SliderButtons.scss";
 
-function SliderButtons({ button1, button2, setFunction, accountToggle, setAccountToggle }) {
+function SliderButtons({
+  button1,
+  button2,
+  setFunction,
+  accountToggle,
+  setAccountToggle,
+}) {
   const [slider, setSlider] = useState(true);
 
   function handleButtonClick(e) {
@@ -16,8 +22,12 @@ function SliderButtons({ button1, button2, setFunction, accountToggle, setAccoun
       setFunction(buttonValue2);
       setSlider(false);
     }
-    if(accountToggle !== undefined){
-      setAccountToggle(!accountToggle)
+
+    if (accountToggle && buttonValue !== "applicant") {
+      setAccountToggle(false);
+    }
+    if (!accountToggle && buttonValue !== "recruiter") {
+      setAccountToggle(true);
     }
   }
 

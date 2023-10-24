@@ -1,92 +1,79 @@
 .skillDoughnutChart {
-    // align-self: center;
-    // padding-top: 3vh;
-    display: grid;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 90%;
+  border-bottom: 1px solid var(--init-mint);
+  height: 100%;
+  & canvas,
+  &_skills {
+    position: relative;
+  }
+  &_chartHeader {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
     align-items: center;
-    justify-items: center;
-    width: 90%;
-    border-bottom: 1px solid var(--init-mint);
-    // height: fit-content;
-    & canvas, &_skills {
-        position: relative;
+    & span {
+      width: 80%;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 18px;
     }
-    &_chartHeader {
-        display: flex;
-        flex-direction: column;
-        row-gap: 3px;
-        align-items: center;
-        & span {
-            width: 80%;
-            text-align: center;
-            font-family: Poppins;
-        }
-        & h3 {
-            display: flex;
-            align-items: center;
-            column-gap: 5px;
-            font-size: 20px;
-            margin: 0;
-            width: fit-content;
-            & svg {
-                color: var(--init-darkmint);
-                height: 1.5em;
-                width: 1.5em;
-            }
-        }
+    & h3 {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+      font-size: 22px;
+      margin: 0;
+      width: fit-content;
+      & svg {
+        color: var(--init-darkmint);
+        height: 1.5em;
+        width: 1.5em;
+      }
+    }
+  }
+
+  & canvas {
+    grid-row: 2/4;
+    grid-column: 1;
+    bottom: 2vh;
+  }
+
+  &_percentage {
+    grid-row: 2/4;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    bottom: 1.8vh;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &_skills {
+    grid-row: 4;
+    grid-column: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
+    bottom: 3vh;
+
+    &_header {
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
     }
 
-    
-
-    & canvas {
-        grid-row: 2/4;
-        grid-column: 1;
-        bottom: 2vh;
-        // align-self: flex-start;
+    .skills-component {
+      & svg {
+        height: 2.2em;
+        width: 2.2em;
+        padding: 3px;
+        border-radius: 10px;
+      }
     }
-
-    &_percentage {
-        grid-row: 3;
-        grid-column: 1;
-        align-self: center;
-        justify-self: center;
-        position: relative;
-        bottom: 12.7vh;
-        font-size: 24px;
-        font-weight: 600;
-    }
-
-    &_skills {
-        grid-row: 4;
-        grid-column: 1;
-        // border-bottom: 1px solid var(--init-mint);
-        // height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        row-gap: 3vh;
-        bottom: 3vh;
-        
-        &_header {
-            // padding-left: 1vw;
-            text-align: center;
-            font-weight: 600;
-        font-size: 20px;
-        }
-
-
-        .skills-component {
-            // width: 90%;
-            
-            // padding-bottom: 3vh;
-            & svg {
-                height: 2.2em;
-                width: 2.2em;
-                padding: 3px;
-                border-radius: 10px;
-            }
-        }
-
-    }
-    
-
+  }
 }
