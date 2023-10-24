@@ -1,129 +1,107 @@
 .desktopJobShowDetails {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 17% 80%;
-  row-gap: 3%;
-  background-color: var(--init-gray-background);
-  height: 100%;
-  margin-top: 5vh;
-  padding-bottom: 5vh;
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 10% 88%;
+  min-height: 100%;
 
+  .desktopSkillsComponent, .jobShow_actionButtons {
+    border-bottom: 1px solid var(--init-mint);
+  }
   .desktopSkillsComponent {
     grid-column: 1;
     grid-row: 1;
     width: 100%;
-    border-bottom: 1px solid var(--init-mint);
+    background-color: white;
+    padding-left: 3vw;
   }
 
   .jobShow_actionButtons {
     grid-column: 2;
     width: 100%;
     grid-row: 1;
-    background-color: var(--init-mint);
-    border-bottom: 1px solid var(--init-mint);
+    background-color: white;
+    justify-self: center;
+    & > * {
+      background-color: var(--init-mint);
+      height: 100%;
+      width: 95%;
+      text-align: center;
+      font-size: 26px;
+      // display: grid;
+      align-items: center;
+      &:hover {
+        color: var(--init-gold);
+        cursor: pointer;
+      }
+    }
+    & button {
+      &:first-of-type {
+        justify-self: right;
+      }
+      &:last-of-type {
+        justify-self: left;
+      }
+    }
 
-
-     & a {
-      font-size: 28px;
-     }
-
-
-    &_notSignedIn, &_applied, &_apply, &_edit {
-        &:hover {
-          color: var(--init-gold);
-          cursor: pointer;
-        }
+    &_applied,
+    &_apply,
+    &_edit {
+      display: grid;
     }
   }
 
   &_text {
+  
     grid-column: span 2;
     grid-row: 2;
-    width: 96%;
-    justify-self: center;
+    width: 100%;
     display: grid;
-    grid-template-columns: 70% 25%;
-    column-gap: 5%;
+    grid-template-columns: 70% 30%;
+    min-height: 100%;
+    grid-template-rows: auto;
     &_header {
-      text-decoration: underline;
+      width: fit-content;
       font-size: 20px;
       font-weight: 600;
+      // border-bottom: 1px solid black;
     }
-    &_details,
-    &_aside {
-      border-radius: 20px;
-      border: 1px solid var(--init-mint);
-    }
+
     &_details {
+      border: 1px solid var(--init-mint);
       grid-column: 1;
+      margin: 3vh 0 3vh 1vw;
+      border-radius: 10px;
+      padding: 0vh 2vw 2vh 2vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      // row-gap: 5%;
+      height: auto;
       background-color: white;
-      display: grid;
-      grid-template-rows: auto 5% auto;
-      // align-items: center;
-      min-height: 100%;
-      padding: 2vh 2vw 2vh 2vw;
+
       & hr {
-        border: 1px solid var(--init-mint);
+        border: .5px solid var(--init-mint);
         height: 0;
-        width: 85%;
+        width: 100%;
         justify-self: center;
-        align-self: center;
       }
       &_description,
-      &_tasks {
-        display: grid;
-        grid-template-rows: 15% 80%;
-        // padding: 0vh 2vw 0 2vw;
-        margin-left: 1vw;
-        row-gap: 5%;
-        
-        max-height: 100%;
+      &_tasks, &_company {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        row-gap: 2vh;
 
-        // height: auto;
-        align-items: center;
-
-      }
-      &_tasks {
-        grid-template-rows: 10% 85%;
-        padding-bottom: 2vh;
-        & li {
-          margin-bottom: 2vh;
+        &_content {
+          list-style-position: outside;
+          font-size: 18px;
+          & li {
+            margin-bottom: 2vh;
+          }
         }
       }
     }
-    &_aside {
-      grid-column: 2;
-      background-color: var(--init-mint);
-      display: grid;
-      grid-template-rows: 5% 80% 10%;
-      row-gap: 2%;
-      align-items: center;
-      
-      padding: 2vh;
-      &_header {
-        justify-self: center;
-        text-decoration: underline;
-        color: var(--init-gold);
-        font-size: 20px;
-        font-weight: 600;
-      }
-
-      &_list {
-        margin-top: 5vh;
-        grid-row: 2;
-        border-left: 1px solid var(--init-gold);
-        height: 100%;
-        padding-left: 1vw;
-      }
-      & a {
-        grid-row: 3;
-        justify-self: right;
-        text-decoration: underline;
-        &:hover {
-          cursor: pointer;
-          color: var(--init-gold);
-        }
-      }
-    }
+ 
   }
+
 }

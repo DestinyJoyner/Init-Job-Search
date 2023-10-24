@@ -8,6 +8,7 @@ import FilterBar from "../../../FilterBar/FilterBar";
 import JobsCard from "../../JobsCard/JobsCard";
 import NoSearchResults from "../../../App/NoSearchResults/NoSearchResults";
 import PaginationButtons from "../../../PaginationButtons/PaginationButtons.js"
+import SearchResultsCounter from "../../../SearchResultsCounter/SearchResultsCounter";
 import {MdFilterAltOff} from "react-icons/md"
 import { handleSearchFilterSubmit } from "../../../Functions/SearchFunctions/SearchBarFunctions";
 import "./DesktopJobsIndex.scss";
@@ -18,18 +19,12 @@ function DesktopJobsIndex() {
     useJobProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
 
-  const [resultType, setResultType] = useState("Jobs")
-
   useEffect(() => {
     setLoading(false);
     
   }, [jobQuery]);
-
-
  
-
-  function clearFilterOptions (e) {
-    // e.preventDefault()
+  function clearFilterOptions () {
     const resetObj = {
       searchbar: searchOptions.searchbar,
       isRemote: false,
@@ -38,12 +33,6 @@ function DesktopJobsIndex() {
     }
     setSearchOptions(resetObj)
   }
-
-  // useEffect(() => {
-
-  // },[searchOptions])
-
-  // useEffect(() => {}, [queryStart, jobQuery.length]);
 
   return (
     !loading && (
@@ -68,7 +57,7 @@ function DesktopJobsIndex() {
           <span className="jobsIndexDesktop_filter_category_remote"><span>Remote Work:</span></span>
 
           <button 
-          onClick={() => {}}className="jobsIndexDesktop_filter_clearButton">
+          onClick={() => {clearFilterOptions()}}className="jobsIndexDesktop_filter_clearButton">
             <span>Reset Filters</span>  <MdFilterAltOff />
           </button>
 
@@ -76,7 +65,6 @@ function DesktopJobsIndex() {
             remoteCheckbox={true}
             searchOptions={searchOptions}
             setSearchOptions={setSearchOptions}
-            
           />
 
           <button
@@ -95,8 +83,10 @@ function DesktopJobsIndex() {
         </aside>
 
         <span className="jobsIndexDesktop_jobsList_header">
-          {resultType} ({searchResultCount}):
+          Jobs ({searchResultCount})
+          <SearchResultsCounter />
         </span>
+        
         <div className="jobsIndexDesktop_jobsList">
           {jobQuery.length !== 0 ? (
             jobQuery.map((obj) => 
@@ -107,6 +97,7 @@ function DesktopJobsIndex() {
           ) : (
             <NoSearchResults />
           )}
+          {/* <SearchResultsCounter /> */}
           <PaginationButtons />
         </div>
         

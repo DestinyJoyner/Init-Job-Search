@@ -8,6 +8,7 @@ function DesktopNav() {
     return (
         <nav className='desktopNav'>
             <LoginHeader />
+            <span></span>
             <SlideNavLinkList icons={false}/>
             <DarkModeSlider text={false} /> 
             <ContactLinks init={true} />

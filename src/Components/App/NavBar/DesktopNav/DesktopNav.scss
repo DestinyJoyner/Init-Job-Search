@@ -5,65 +5,77 @@
   left: 0;
   width: 100%;
   z-index: 200;
-  overflow: hidden;
-  background-color: var(--init-background);
+  // overflow: hidden;
+  // background-color: var(--init-background);
+  background-color: #84D0C8 ;
+  // background: linear-gradient(
+  //   90deg,
+  //   rgb(83, 215, 199) 60%,
+  //   rgba(12, 189, 189, 1) 90%
+  // );
   box-shadow: 0 1px 5px black;
   display: grid;
-  grid-template-columns: 22% repeat(4, 9%) 20% 8% 9%;
+  grid-template-columns: 15% 8% repeat(4, 12%) 8% 9% 10%;
   align-items: center;
   justify-items: center;
 
-  & a {
-    font-size: 18px;
-    width: fit-content;
-    margin: 0;
-    padding: 0;
-    & :hover {
-      color: var(--init-darkmint);
-    } 
+  .desktopNavBarLinks {
+    font-size: 21px;
+    &_Home {
+      grid-column: 3;
+        grid-row: 1;
+    }
+
+    & a {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      top: .5vh;
+      & :hover {
+        color: var(--init-gold);
+      } 
+      & span {
+        & svg {
+         position: relative;
+         top: .5vh;
+         left: .5vw;
+        }
+      }
+    }
   }
-  .slideNav_link_Home {
-    grid-column: 2;
-      grid-row: 1;
-  }
+ 
   .loginHeader {
     all: unset;
     display: flex;
-    height: 100%;
     width: 100%;
-    align-items: center;
-    background-color: var(--init-mint);
-    row-gap: 0;
-  
+    height: 100%;
+    justify-content: center;
+    background-color: var(--init-background);
     &_logo {
-      height: 8vh;
-      padding: .5vh 0 1vh;
-      background-color: var(--init-background);
-
+      height: 8.5vh;
     }
     &_slogan {
-      color: var(--init-gold);
-      text-shadow: 0 0 0 var(--init-charcoal);
-      font-size: 19px;
-      text-align: center;
+      display: none;
     }
   }
 
   .contactLinks {
-    grid-column: 7;
+    grid-column: 8;
     grid-row: 1;
-
     & a:nth-of-type(3) {
       display: none;
     }
     & svg {
-      height: 1.2em;
-      width: 1.2em;
+      height: 1.7em;
+      width: 1.7em;
+      position: relative;
+      top: .4vh;
+    
     }
   }
   .darkModeSwitch {
     margin: 0;
-    grid-column: 8;
+    grid-column: 9;
     &_slider {
       background-color: var(--init-blue);
       &::before {
@@ -75,8 +87,10 @@
 }
 
 .dark .desktopNav {
+  background: unset;
     background-color: var(--init-gold);
     border-color: var(--init-darkmint);
+    box-shadow: 0 1px 5px var(--init-background);
     & a {
         color: var(--init-dark);
         & :hover {
@@ -84,7 +98,7 @@
         }
       }
     .loginHeader {
-      background-color: var(--init-gold);
+      background-color: var(--init-dark);
         &_logo {
             background-color: var(--init-dark);
         }
@@ -106,8 +120,14 @@
     }
 }
 
-@media (max-width:955px) {
+@media (max-width: 1150px) {
   .desktopNav {
-    grid-template-columns: 30% repeat(4, 9%) 5% 10% 20%;
+    grid-template-columns: 10% 5% repeat(4, 13%) 5% 10% 10%;
+  }
+}
+
+@media (max-width:975px) {
+  .desktopNav {
+    grid-template-columns: 10% 2% repeat(4, 15%) 2% 10% 10%;
   }
 }

@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavProvider } from "../../../../Providers/NavProvider";
+import NavBarLinkDropDown from "../NavBarLinkDropDown/NavBarLinkDropDown";
 import {
   navAbout,
   navHome,
@@ -31,10 +33,9 @@ function SlideNavLink({ path, label, clickfunction, showIcon }) {
         !clickfunction ? navbarClick() : clickfunction();
       }}
     >
-      
-      { showIcon !== false && navIconObj[label]}
+      {showIcon !== false && navIconObj[label]}
 
-      <span>{label}</span>
+      <span>{label} </span>
     </Link>
   );
 }

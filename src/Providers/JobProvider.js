@@ -12,18 +12,18 @@ export function useJobProvider() {
 
 function JobProvider({ children }) {
   const { API, axios, setLoading } = useContextProvider();
-  const { isDesktopView } = useWindowSizeProvider()
+  const { isDesktopView } = useWindowSizeProvider();
   const { jobID } = useParams();
-  const [jobs, setJobs] = useState([])
+  const [jobs, setJobs] = useState([]);
   const [jobDetails, setJobDetails] = useState({});
   const [jobSkills, setJobSkills] = useState([]);
-  const [desktopJobSkills, setDesktopJobSkills] = useState([])
+  const [desktopJobSkills, setDesktopJobSkills] = useState([]);
   // Search
   const [jobQuery, setJobQuery] = useState([]);
   const [queryStart, setQueryStart] = useState(0);
-  const [queryLimit, setQueryLimit] = useState(isDesktopView ? 6 : 4)
+  const [queryLimit, setQueryLimit] = useState(isDesktopView ? 6 : 4);
 
-  const [searchResultCount, setSearchResultCount] = useState(5)
+  const [searchResultCount, setSearchResultCount] = useState(0);
 
   const defaultJobSearchQuery = `${API}/jobs?start=${queryStart}&limit=${queryLimit}`;
   const [searchQueryRoute, setSearchQueryRoute] = useState("");
@@ -41,8 +41,16 @@ function JobProvider({ children }) {
       .get(defaultJobSearchQuery)
       .then(({ data }) => {
         if (data.length > 0) {
-          const searchCount = data.shift()
-          setSearchResultCount(+searchCount.count)
+          const resultCount = data.shift()[0];
+
+          if (resultCount) {
+            const searchCount = resultCount.count;
+            setSearchResultCount(+searchCount);
+          } else {
+            setSearchResultCount(0);
+          }
+          // const searchCount = data.shift();
+          // setSearchResultCount(+searchCount.count);
           setJobQuery(data);
         }
       })
@@ -56,7 +64,7 @@ function JobProvider({ children }) {
         .then(({ data }) => {
           setJobDetails(data);
           setJobSkills(convertSkills(data.skills));
-          setDesktopJobSkills(desktopSkillIconAndName(data.skills))
+          setDesktopJobSkills(desktopSkillIconAndName(data.skills));
         })
         .catch((err) => console.log(err));
     }
@@ -65,37 +73,51 @@ function JobProvider({ children }) {
   // useEffect for job pagination
   useEffect(() => {
     setLoading(true);
-    
-    axios
-      .get(`${API}/jobs?start=${queryStart}&limit=${queryLimit}${searchQueryRoute}`)
-      .then(({ data }) => {
-        
-        const searchCount = data.shift()[0].count
-        // console.log(searchCount)
-        setSearchResultCount(+searchCount)
-        setJobQuery(data)})
-      
-      .catch((err) => console.log(err));
 
-    // console.log(`${API}/jobs?start=${queryStart}&limit=4${searchQueryRoute}`, "api search query")
+    axios
+      .get(
+        `${API}/jobs?start=${queryStart}&limit=${queryLimit}${searchQueryRoute}`
+      )
+      .then(({ data }) => {
+        const resultCount = data.shift()[0];
+
+        if (resultCount) {
+          const searchCount = resultCount.count;
+          setSearchResultCount(+searchCount);
+        } else {
+          setSearchResultCount(0);
+        }
+        setJobQuery(data);
+      })
+
+      .catch((err) => console.log(err));
   }, [queryStart, searchQueryRoute, queryLimit]);
 
   useEffect(() => {
-    const limit = isDesktopView ? 6 : 4
-    setQueryLimit(limit)
+    const limit = isDesktopView ? 6 : 4;
+    setQueryLimit(limit);
 
     setLoading(true);
     axios
       .get(`${API}/jobs?start=0&limit=${limit}${searchQueryRoute}`)
       .then(({ data }) => {
-        // console.log(data[0])
-        const searchCount = data.shift()[0].count
-        
-        setSearchResultCount(+searchCount)
-        setJobQuery(data)})
-      
+
+        const resultCount = data.shift()[0];
+
+        if (resultCount) {
+          const searchCount = resultCount.count;
+          setSearchResultCount(+searchCount);
+        } else {
+          setSearchResultCount(0);
+        }
+        // const searchCount = data.shift()[0].count;
+
+        // setSearchResultCount(+searchCount);
+        setJobQuery(data);
+      })
+
       .catch((err) => console.log(err));
-  },[isDesktopView])
+  }, [isDesktopView]);
 
   return (
     <JobContextData.Provider
@@ -113,7 +135,7 @@ function JobProvider({ children }) {
         jobSkills,
         desktopJobSkills,
         queryLimit,
-        searchResultCount
+        searchResultCount,
       }}
     >
       {children}

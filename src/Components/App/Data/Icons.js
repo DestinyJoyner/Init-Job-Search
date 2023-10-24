@@ -1,6 +1,6 @@
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { GoLocation } from "react-icons/go";
-import { BsClipboardCheck, BsFillCircleFill, BsFillPlusCircleFill, BsCheck  } from "react-icons/bs";
+import { BsClipboardCheck, BsFillCircleFill, BsFillPlusCircleFill, BsCheck, BsGlobe  } from "react-icons/bs";
 import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk, CgProfile  } from "react-icons/cg";
 import {FaUserTie} from "react-icons/fa"
@@ -60,6 +60,8 @@ const editPencil = <GrEdit />
 
 const userIcon = <CgProfile />
 
+const website = <BsGlobe />
+
 export {
     jobCompany,
     jobLocation,
@@ -83,5 +85,6 @@ export {
     emailValid,
     emailInvalid,
     editPencil,
-    userIcon
+    userIcon,
+    website
 }

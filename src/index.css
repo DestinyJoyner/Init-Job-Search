@@ -27,6 +27,8 @@
 }
 
 body {
+  height: auto;
+  min-height: 100vh;
   /* height: auto;
   overflow: scroll;
   min-height: 100%; */
@@ -42,6 +44,9 @@ body {
 
 .desktop {
   margin-top: 9vh;
+  height: auto;
+  padding-bottom: 5%;
+  
   /* min-height: 100vh; */
   /* border: 1px solid red; */
 
