@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import "./NavBarLinkDropDown.scss"
 
-function NavBarLinkDropDown({dropdownLinks, setShowNavDropdown}) {
-    const testLinks = ["view profile", "edit profile",  ]
+function NavBarLinkDropDown({dropdownLinks}) {
+
+
     return (
+        dropdownLinks &&
         <div className="navBarLinkDropDown">
             {
-                testLinks.map(el => <span>{el}</span>)
+                dropdownLinks.map(({value, route}) => <Link to={route} key={uuidv4()}>{value}</Link>)
             }
             
         </div>

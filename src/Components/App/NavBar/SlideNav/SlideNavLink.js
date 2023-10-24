@@ -11,11 +11,9 @@ import {
   navProfile,
   navRegister,
 } from "../../Data/Icons";
-import {BiChevronDown} from "react-icons/bi"
 
-function SlideNavLink({ path, label, clickfunction, showIcon, dropdownLinks }) {
+function SlideNavLink({ path, label, clickfunction, showIcon }) {
   const { navbarClick } = useNavProvider();
-  const [showNavDropdown, setShowNavDropdown] = useState(false)
 
   const navIconObj = {
     Home: navHome,
@@ -34,18 +32,10 @@ function SlideNavLink({ path, label, clickfunction, showIcon, dropdownLinks }) {
       onClick={() => {
         !clickfunction ? navbarClick() : clickfunction();
       }}
-      onMouseEnter={() => setShowNavDropdown(true)}
-      onMouseLeave={() => setShowNavDropdown(false)}
     >
-      
-      { showIcon !== false && navIconObj[label]}
+      {showIcon !== false && navIconObj[label]}
 
-      <span>{label} <BiChevronDown /></span>
-      {
-        showNavDropdown &&
-        <NavBarLinkDropDown dropdownLinks={dropdownLinks}
-        setShowNavDropdown={setShowNavDropdown} />
-      }
+      <span>{label} </span>
     </Link>
   );
 }
