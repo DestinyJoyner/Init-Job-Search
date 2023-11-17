@@ -27,6 +27,8 @@ function ApplicantProfileEditForm() {
   const navigate = useNavigate();
   const [buttonAccess, setButtonAccess] = useState(false);
 
+  // console.log(applicantEditForm["project"])
+
   useEffect(() => {
     if (applicantEditForm.id) {
       setLoading(false);

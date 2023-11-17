@@ -30,8 +30,7 @@ function JobProvider({ children }) {
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(`${API}/jobs`)
+    axios.get(`${API}/jobs`)
       .then(({ data }) => {
         setJobs(data);
       })

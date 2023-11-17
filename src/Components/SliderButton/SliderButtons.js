@@ -23,12 +23,15 @@ function SliderButtons({
       setSlider(false);
     }
 
-    if (accountToggle && buttonValue !== "applicant") {
-      setAccountToggle(false);
+    if(accountToggle != undefined){
+      if (accountToggle && buttonValue !== "applicant") {
+        setAccountToggle(false);
+      }
+      if (!accountToggle && buttonValue !== "recruiter") {
+        setAccountToggle(true);
+      }
     }
-    if (!accountToggle && buttonValue !== "recruiter") {
-      setAccountToggle(true);
-    }
+    
   }
 
   return (

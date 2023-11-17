@@ -11,8 +11,7 @@ function SkillProvider({ children }) {
   const [allSkills, setAllSkills] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`${API}/skills`)
+    axios.get(`${API}/skills`)
       .then(({ data }) => setAllSkills(data))
       .catch((error) => console.log(error));
   }, []);

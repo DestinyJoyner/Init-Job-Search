@@ -2,6 +2,7 @@ import { useUserProvider } from "../../../Providers/UserProvider";
 
 function ApplicantProfileDetails({ applicantDetails }) {
   const { education, project_one, project_two } = applicantDetails;
+  console.log(applicantDetails, "profile")
   const { applicantEmail } = useUserProvider();
   
   return (
