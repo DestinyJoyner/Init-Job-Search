@@ -34,7 +34,7 @@ function Provider({ children }) {
   
   // authToken will be manually hardcoded for now
   const [authToken, setAuthToken] = useState(
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRqQGVtYWlsLmNvbSIsImlhdCI6MTcwMTEyNzI5MiwiZXhwIjoxNzAzNzE5MjkyfQ.UbHiF-6xQli6ABXgGnoUTi8Cig9Zlp8LToOYoZmjLug"
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRqQGVtYWlsLmNvbSIsImlhdCI6MTcwNzA2NTU5MiwiZXhwIjoxNzA5NjU3NTkyfQ.45voDrnt1uZGA8xrxab3JfPLOxbfB5CP4zSlFHlOeec"
   );
 
   const [loading, setLoading] = useState(false)

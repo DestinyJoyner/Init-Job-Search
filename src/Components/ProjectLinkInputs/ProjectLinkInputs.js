@@ -7,9 +7,9 @@ import "./ProjectLinkInputs.scss"
 
 function ProjectLinkInputs({stateVar, setFunction}) {
 
-  const remainingChars = stateVar["project"]["project_description"] ? 1000 - stateVar["project"]["project_description"].length : 1000
+  const remainingChars = stateVar["project"] ? 1000 - stateVar["project"]["project_description"].length : 1000
 
-  useEffect(() => {},[stateVar["project"]["project_description"]])
+  // useEffect(() => {},[stateVar["project"]["project_description"]])
 
 // console.log(stateVar)
   function handleProjectInput (e) {
@@ -57,7 +57,7 @@ function ProjectLinkInputs({stateVar, setFunction}) {
       <textarea
       onChange={(event) => handleProjectInput(event)}
       type="url"
-      value= {stateVar["project"]["project_decription"]}
+      value= {stateVar["project"]["project_description"]}
       id={"project_description"}
       placeholder="Share a description about your project">
       </textarea>

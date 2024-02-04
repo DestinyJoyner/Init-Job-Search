@@ -1,10 +1,10 @@
 import { useUserProvider } from "../../../Providers/UserProvider";
 
 function ApplicantProfileDetails({ applicantDetails }) {
-  const { education, project_one, project_two } = applicantDetails;
-  console.log(applicantDetails, "profile")
+  const { education, project } = applicantDetails;
+  // console.log(applicantDetails, "profile");
   const { applicantEmail } = useUserProvider();
-  
+
   return (
     <div className="applicantProfile_applicantDetails">
       <section className="applicantProfile_sectionHeader">
@@ -13,36 +13,26 @@ function ApplicantProfileDetails({ applicantDetails }) {
           {education}
         </span>
       </section>
-
-      <div className="applicantProfile_applicantDetails_projects">
-        <span className="applicantProfile_sectionHeader_text">
-          Technical Projects:
-        </span>
-        <section className="applicantProfile_sectionHeader">
-          <a
-            className="applicantProfile_applicantDetails_projects_link"
-            href={project_one}
-            target="_blank"
-          >
-            Technical Project
-          </a>
-          <span className="applicantProfile_sectionHeader_text_span">
-            Details about project tbd
+      {project && (
+        <div className="applicantProfile_applicantDetails_projects">
+          <span className="applicantProfile_sectionHeader_text">
+            Technical Project:
           </span>
-        </section>
-        <section className="applicantProfile_sectionHeader">
-          <a
-            className="applicantProfile_applicantDetails_projects_link"
-            href={project_two}
-            target="_blank"
-          >
-            Technical Project
-          </a>
-          <span className="applicantProfile_sectionHeader_text_span">
-            Details about Project tbd
-          </span>
-        </section>
-      </div>
+          <section className="applicantProfile_sectionHeader">
+            <a
+              className="applicantProfile_applicantDetails_projects_link"
+              href={project["project_link"]}
+              target="_blank"
+            >
+              {project["project_name"]}
+            </a>
+            <span className="applicantProfile_sectionHeader_text_span">
+              {project["project_description"]}
+            </span>
+          </section>
+        
+        </div>
+      )}
 
       <section className="applicantProfile_sectionHeader">
         <span className="applicantProfile_sectionHeader_text">Contact Me:</span>

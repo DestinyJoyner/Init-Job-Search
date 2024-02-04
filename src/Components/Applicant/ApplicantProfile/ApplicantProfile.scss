@@ -90,8 +90,8 @@
 
   &_applicantDetails,
   &_appliedJobs {
-    align-self: normal;
-    text-indent: 1vw;
+    // align-self: normal;
+    // text-indent: 1vw;
     border-radius: 10px;
     padding-top: 1vh;
     height: fit-content;
@@ -101,7 +101,7 @@
     display: grid;
   }
   &_applicantDetails {
-    grid-template-rows: 8vh 29vh 6vh;
+    grid-template-rows: 20% 60% 20%;
     row-gap: 1vh;
     .applicantProfile_sectionHeader {
       &_text {
