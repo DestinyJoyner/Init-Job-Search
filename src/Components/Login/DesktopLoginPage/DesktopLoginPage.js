@@ -12,6 +12,7 @@ function DesktopLoginPage() {
   },[])
 
   return (
+   
     <div className="desktopLoginPage">
       <section className="desktopLoginPage_content">
         <section className="desktopLoginPage_content_left grid-center">

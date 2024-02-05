@@ -45,9 +45,9 @@ function Provider({ children }) {
 //   setLoading(false)
 // },[loading])
 
-// useEffect(() => {
-//   setLoading(true)
-// },[isDesktopView])
+useEffect(() => {
+  setLoading(loading)
+},[isDesktopView])
 
   return (
     <div className={isDesktopView ?`${theme} desktop` : `${theme} mobile`}>
