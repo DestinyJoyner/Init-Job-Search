@@ -4,23 +4,30 @@
     background-color: white;
     border: 1px solid var(--init-mint);
     border-radius: 10px;
-    display: grid;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+    align-items: center;
+    grid-template-rows: fit-content auto;
     justify-items: center;
     width: fit-content;
 
+    hr {
+      height: 0;
+      width: 80%;
+      border: 1px solid var(--init-mint);
+    }
 
     &_relatedJobs {
       height: auto;
       display: grid;
       grid-template-rows: 20% 80%;
-      padding: 3vh 0 0 1vw ;
       width: 90%;
       justify-self: center;
       justify-items: center;
       &_header {
         font-weight: 600;
-        font-size: 20px;
+        font-size: 22px;
         display: flex;
         align-items: center;
         & svg {
@@ -38,19 +45,6 @@
         }
       }
     }
-    &_backButton {
-        font-size: 16px;
-        align-self: flex-end;
-        justify-self: right;
-        margin: 0 1vw 1vh 0;
-        & span {
-          margin-left: 1vw;
-          text-decoration: underline;
-        }
-        &:hover {
-          cursor: pointer;
-          color: var(--init-darkmint);
-        }
-      }
+    
   }
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 import DesktopSkillsComponent from "../../../DesktopSkillsComponent/DesktopSkillsComponent";
@@ -68,6 +69,11 @@ function DesktopJobsShowDetails({
 
      
       </section>
+
+      <Link className="desktopJobShowDetails_backButton" to="/jobs">
+            {"<"}
+            <span>Back to Jobs</span>
+          </Link>
     </div>
   );
 }

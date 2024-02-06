@@ -102,5 +102,19 @@
     }
  
   }
+  &_backButton {
+    font-size: 22px;
+    align-self: flex-end;
+    justify-self: right;
+    margin: 0 1vw 1vh 0;
+    & span {
+      margin-left: 1vw;
+      text-decoration: underline;
+    }
+    &:hover {
+      cursor: pointer;
+      color: var(--init-darkmint);
+    }
+  }
 
 }
