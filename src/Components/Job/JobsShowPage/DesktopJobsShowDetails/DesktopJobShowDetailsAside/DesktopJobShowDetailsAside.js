@@ -53,11 +53,6 @@ function DesktopJobShowDetailsAside({jobDetails}) {
               )}
             </ul>
           </div>
-
-          {/* <Link className="desktopJobShowDetailsAside_backButton" to="/jobs">
-            {"<"}
-            <span>Back to Jobs</span>
-          </Link> */}
         </aside>
     );
 }
