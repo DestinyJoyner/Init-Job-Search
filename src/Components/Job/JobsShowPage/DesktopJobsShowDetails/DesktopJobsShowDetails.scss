@@ -4,7 +4,8 @@
   grid-template-rows: 10% 88%;
   min-height: 100%;
 
-  .desktopSkillsComponent, .jobShow_actionButtons {
+  .desktopSkillsComponent,
+  .jobShow_actionButtons {
     border-bottom: 1px solid var(--init-mint);
   }
   .desktopSkillsComponent {
@@ -27,7 +28,6 @@
       width: 95%;
       text-align: center;
       font-size: 26px;
-      // display: grid;
       align-items: center;
       &:hover {
         color: var(--init-gold);
@@ -51,7 +51,6 @@
   }
 
   &_text {
-  
     grid-column: span 2;
     grid-row: 2;
     width: 100%;
@@ -62,7 +61,6 @@
       width: fit-content;
       font-size: 20px;
       font-weight: 600;
-      // border-bottom: 1px solid black;
     }
 
     &_details {
@@ -74,18 +72,18 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      // row-gap: 5%;
       height: auto;
       background-color: white;
 
       & hr {
-        border: .5px solid var(--init-mint);
+        border: 0.5px solid var(--init-mint);
         height: 0;
         width: 100%;
         justify-self: center;
       }
       &_description,
-      &_tasks, &_company {
+      &_tasks,
+      &_company {
         display: flex;
         flex-direction: column;
         justify-content: left;
@@ -100,7 +98,6 @@
         }
       }
     }
- 
   }
   &_backButton {
     font-size: 22px;
@@ -116,5 +113,4 @@
       color: var(--init-darkmint);
     }
   }
-
 }
