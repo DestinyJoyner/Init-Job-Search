@@ -199,7 +199,13 @@ const { editAccess } = useRecruiterProvider()
             placeholder={"Job Title"}
           />
 
-          <FilterDatalist />
+          <FilterDatalist
+          label={"Company"}
+          formId={"company"}
+          stateVar={jobForm}
+          setFunction={setJobForm}
+          required={true}
+          placeholder={"Company"} />
           {/* <TextInput
             label={"Company"}
             formId={"company"}
