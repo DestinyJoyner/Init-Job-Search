@@ -5,10 +5,7 @@ function TextArea({ label, formId, stateVar, setFunction, placeholder, required 
 
   return (
     <label htmlFor={formId}>
-      <span className="job-form-label job-textarea">
-        {label}
-        {required && asterisk}
-      </span>
+      
 
       <textarea
         className="input-box"
@@ -18,6 +15,10 @@ function TextArea({ label, formId, stateVar, setFunction, placeholder, required 
         onChange={(event) => handleTextChange(event, stateVar, setFunction)}
         required
       />
+      <span className="job-form-label job-textarea">
+        {label}
+        {required && asterisk}
+      </span>
     </label>
   );
 }

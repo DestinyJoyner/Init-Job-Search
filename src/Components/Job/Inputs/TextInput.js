@@ -25,10 +25,6 @@ function TextInput({
 
   return (
     <label htmlFor={formId}>
-      <span className="job-form-label">
-        {label}
-        {required && asterisk}
-      </span>
       <input
         className="input-box"
         type="text"
@@ -43,6 +39,10 @@ function TextInput({
         onBlur={task ? () => handleTaskBlur() : null}
         required = {!task ? true : false}
       />
+      <span className="job-form-label">
+        {label}
+        {required && asterisk}
+      </span>
       {task && (
         <HiMinusCircle
           className="task-remove"

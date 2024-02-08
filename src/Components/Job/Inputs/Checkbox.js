@@ -12,14 +12,17 @@ function Checkbox({label, formId, stateVar, setFunction}) {
    }
 
     return (
-        <label htmlFor={formId}>
-            <span className="job-form-label job-form-remote">{label}</span>
+        <label className="jobForm_label_checkbox" htmlFor={formId}>
+            {/* className="job-form-label job-form-remote" */}
+           
             <input
             type="checkbox"
             value={formId} 
             checked={stateVar[formId]=== "true" || stateVar[formId] === true ? true : false }
             onChange={(event) => handleCheckBox(event, stateVar, setFunction)}
             />
+             <span 
+            >{label}</span>
         </label>
     );
 }

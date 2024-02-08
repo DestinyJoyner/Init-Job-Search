@@ -206,15 +206,7 @@ const { editAccess } = useRecruiterProvider()
           setFunction={setJobForm}
           required={true}
           placeholder={"Company"} />
-          {/* <TextInput
-            label={"Company"}
-            formId={"company"}
-            stateVar={jobForm}
-            setFunction={setJobForm}
-            required={true}
-            placeholder={"Company"}
-          /> */}
-
+         
           <section className="job-form-location">
             <label htmlFor="city" className="job-form-label-dropdown">
               <span>City{asterisk}</span>
