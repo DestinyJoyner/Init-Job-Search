@@ -9,6 +9,7 @@ import TextInput from "../Job/Inputs/TextInput";
 import TextArea from "../Job/Inputs/TextArea";
 import Checkbox from "../Job/Inputs/Checkbox";
 import Dropdown from "../Job/Inputs/Dropdown";
+import FilterDatalist from "../Job/Inputs/FilterDatalist.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
 import { dropdownCities } from "../App/Data/Cities";
 import { handleSearchBar } from "../Functions/SearchFunctions/SearchBarFunctions";
@@ -198,14 +199,15 @@ const { editAccess } = useRecruiterProvider()
             placeholder={"Job Title"}
           />
 
-          <TextInput
+          <FilterDatalist />
+          {/* <TextInput
             label={"Company"}
             formId={"company"}
             stateVar={jobForm}
             setFunction={setJobForm}
             required={true}
             placeholder={"Company"}
-          />
+          /> */}
 
           <section className="job-form-location">
             <label htmlFor="city" className="job-form-label-dropdown">
