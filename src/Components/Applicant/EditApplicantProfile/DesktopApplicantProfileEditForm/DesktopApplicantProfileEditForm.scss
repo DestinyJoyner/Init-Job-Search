@@ -1,3 +1,32 @@
 .desktopApplicantEditForm {
-    
+    display: flex;
+    column-gap: 1vh;
+    .applicantProfileEditForm {
+        all: unset;
+        width: 100%;
+        margin: 2vh auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 2vh;
+        
+        .registerFormInput_label, .applicantFormTwo_form_input_textarea_label,
+        .applicantFormTwo_form_input_url_label  {
+            & span {
+              font-size: 16px;
+              font-weight: 600;
+            }
+        }
+
+        & label {
+            & textarea {
+                // width: 70%;
+                // height: 10vh;
+                // justify-self: center;
+                // border-radius: 20px;
+                // border-width: 2px;
+            }
+        }
+        
+    }
+
 }
