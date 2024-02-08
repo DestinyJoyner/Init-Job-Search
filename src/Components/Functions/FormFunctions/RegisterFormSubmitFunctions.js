@@ -99,9 +99,7 @@ function handleRecruiterRegisterForm(
       setUser(null);
     })
     .then(() => {
-      console.log(reqObj["login"])
-      axios
-        .post(`${API}/recruiters-logins`, reqObj["login"])
+      axios.post(`${API}/recruiters-logins`, reqObj["login"])
         .then(({ data }) => {
           setToken(data.token);
           navigate("/jobs/new");
