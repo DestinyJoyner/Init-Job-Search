@@ -234,7 +234,9 @@ const { editAccess } = useRecruiterProvider()
             />
           </section>
 
-          <TextArea
+        <section className="jobForm_details">
+          <label className="jobForm_details_border_label">Job Details{asterisk}</label>
+        <TextArea
             label={"Job Details"}
             formId={"details"}
             stateVar={jobForm}
@@ -274,11 +276,14 @@ const { editAccess } = useRecruiterProvider()
               />
             </section>
           </div>
+        </section>
+          
 
           <section className="job-form-skills">
+          <label className="jobForm_details_border_label">Skills Req.{asterisk}</label>
             <span>
-              <span>Min. 1, Max. 4 Skills req.</span>
-              {asterisk}
+              <span>Min. 1, Max. 4 Skills req.{asterisk}</span>
+              
             </span>
             <SkillsComponent
               checkbox={true}
