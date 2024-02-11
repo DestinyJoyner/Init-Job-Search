@@ -6,8 +6,8 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 6vh 6vh 10vh 4vh 30vh 21vh 3vh;
-  row-gap: 2.5vh;
+  grid-template-rows: 6vh 6vh 10vh 30vh 21vh 3vh;
+  row-gap: 3vh;
   column-gap: 3vw;
 
   .registerFormInput_label {
@@ -38,7 +38,7 @@
   .applicantFormTwo_form_input_textarea_label {
     & span {
       position: relative;
-      left: 1vw;
+      // left: 1vw;
     }
   }
 
@@ -54,14 +54,24 @@
       }
     }
   }
+  &_project {
+    grid-row: 4;
+    border: 2px solid var(--init-mint);
+    grid-column: span 2;
+    width: 96%;
+    & >* {
+      margin-left: 2vw;
+    }
+  }
 
   .skillsCheckboxes {
-    grid-row: 6;
+    grid-row: 5;
     grid-column: span 2;
     height: 18vh;
   }
 
   &_submitButton {
+    grid-row: 6;
     font-size: 26px;
     text-align: left;
     position: relative;

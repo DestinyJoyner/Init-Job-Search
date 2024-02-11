@@ -95,10 +95,13 @@ function ApplicantProfileEditForm() {
         placeholder={"Tell recruiters about yourself..."}
       />
 
+<section className="applicantProfileEditForm_project">
+<label className="jobForm_details_border_label">Project Details</label>
       <ProjectLinkInputs
         stateVar={applicantEditForm}
         setFunction={setApplicantEditForm}
       />
+      </section>
 
       <SkillsCheckboxes
         skillsIdArr={applicantSkillIds}

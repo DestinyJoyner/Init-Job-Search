@@ -134,7 +134,7 @@
 } */
 
 .jobForm_details {
-  margin-top: 2vh;
+  margin-top: 1vh;
   width: 90%;
   height: 38vh;
   display: flex;
@@ -142,6 +142,8 @@
   justify-content: space-evenly;
   align-items: center;
   border: 2px solid var(--init-mint);
+  /* border-radius: 20px; */
+  /* padding: .5vh; */
   /* row-gap: 1vh; */
 }
 .jobForm_details_border_label {
@@ -167,6 +169,7 @@
 .job-form textarea {
   background-color: var(--init-background);
   border-width: 1.5px;
+  /* border-radius: 20px; */
   width: 95%;
   height: 12vh;
   padding: unset;
@@ -269,6 +272,8 @@
 
 .job-form-skills {
   border: 2px solid var(--init-mint);
+  /* border-radius: 20px;
+  padding: .5vh; */
   height: 21vh;
 }
 .job-form .skills-checkboxes {
