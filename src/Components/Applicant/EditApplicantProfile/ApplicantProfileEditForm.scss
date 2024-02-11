@@ -6,8 +6,8 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 6vh 6vh 10vh 30vh 21vh 3vh;
-  row-gap: 3vh;
+  grid-template-rows: 5vh 5vh 13vh 28vh 22vh 3vh;
+  row-gap: 3.5vh;
   column-gap: 3vw;
 
   .registerFormInput_label {
@@ -36,6 +36,7 @@
   }
 
   .applicantFormTwo_form_input_textarea_label {
+  
     & span {
       position: relative;
       // left: 1vw;
@@ -45,9 +46,10 @@
   & label {
     & textarea {
       width: 94%;
-      font-size: 16px;
+      font-size: 14px;
       margin-top: 1vh;
-      height: 6vh;
+      height: 8vh;
+      border-width: 2px;
       &::placeholder {
         font-size: 16px;
         font-style: italic;
@@ -62,12 +64,22 @@
     & >* {
       margin-left: 2vw;
     }
+    .applicantFormTwo_form_input_textarea_label {
+      &_text:first-of-type {
+        all: unset;
+        font-size: 14px;
+      }
+      & textarea {
+        padding: 0;
+      }
+    }
   }
 
   .skillsCheckboxes {
     grid-row: 5;
     grid-column: span 2;
     height: 18vh;
+
   }
 
   &_submitButton {
@@ -75,7 +87,7 @@
     font-size: 26px;
     text-align: left;
     position: relative;
-    bottom: 2vh;
+    bottom: 4vh;
   }
 }
 
@@ -83,7 +95,8 @@
   .applicantProfileEditForm {
     .skillsCheckboxes {
       .skills-checkboxes {
-        column-gap: 1vw;
+        column-gap: 3vw;
+        overflow-y: unset;
         & span {
           margin-left: 1vw;
         }

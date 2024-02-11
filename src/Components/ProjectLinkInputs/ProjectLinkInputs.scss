@@ -1,54 +1,6 @@
-.projectLinkInputs {
-  &_header {
-    border-bottom: 1px solid (var(--init-mint));
-    grid-row: 4;
-    grid-column: span 2;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 65% 35%;
-    margin-bottom: 2vh;
-    &_label {
-      grid-row: 1;
-      grid-column: 1;
-      font-size: 18px;
-      font-weight: 600;
-    }
-    &_helpText {
-      grid-row: 1;
-      grid-column: 2;
-      font-size: 14px;
-      font-style: italic;
-    }
-  }
-  &_details {
-    background-color: rgba(226, 226, 226, 0.735);
-    border: 2px solid var(--init-mint);
-    padding: 0vh 1vh;
-    padding-bottom: 5vh;
-    grid-row: 5;
-    grid-column: span 2;
-    overflow-y: scroll;
-    height: 30vh;
-    display: grid;
-    row-gap: 5vh;
-    width: 92%;
-
-    &_one,
-    &_two {
-      display: grid;
-      grid-template-rows: 7vh 7vh 8vh;
-      row-gap: 2vh;
-      & label {
-        & textarea {
-          width: 98%;
-        }
-      }
-      .registerFormInput_label {
-        grid-column: span 2;
-        & input {
-          width: 98%;
-        }
-      }
-    }
-  }
+.projectFormInputs {
+ display: flex;
+ flex-direction: column;
+ position: relative;
+ bottom: 1vh;
 }
