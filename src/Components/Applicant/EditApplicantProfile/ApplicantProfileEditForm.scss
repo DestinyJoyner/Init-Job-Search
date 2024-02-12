@@ -36,7 +36,6 @@
   }
 
   .applicantFormTwo_form_input_textarea_label {
-  
     & span {
       position: relative;
       // left: 1vw;
@@ -61,7 +60,7 @@
     border: 2px solid var(--init-mint);
     grid-column: span 2;
     width: 96%;
-    & >* {
+    & > * {
       margin-left: 2vw;
     }
     .applicantFormTwo_form_input_textarea_label {
@@ -79,21 +78,19 @@
     grid-row: 5;
     grid-column: span 2;
     height: 18vh;
-
   }
 
   &_submitButton {
     grid-row: 6;
     font-size: 26px;
     text-align: left;
-    position: relative;
-    bottom: 4vh;
   }
 }
 
-@media (min-width: 450px)  {
+@media (min-width: 450px) {
   .applicantProfileEditForm {
     .skillsCheckboxes {
+      width: 96%;
       .skills-checkboxes {
         column-gap: 3vw;
         overflow-y: unset;
@@ -101,6 +98,15 @@
           margin-left: 1vw;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .applicantProfileEditForm {
+    &_submitButton {
+      position: relative;
+      bottom: 4vh;
     }
   }
 }

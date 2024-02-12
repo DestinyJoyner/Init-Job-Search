@@ -1,9 +1,12 @@
-
+import { useEffect, useState } from "react"
+import { useContextProvider } from "../../Providers/Provider"
 import "./ProjectLinkInputs.scss"
 
 function ProjectLinkInputs({stateVar, setFunction}) {
+const {userID} = useContextProvider()
 
   const remainingChars = stateVar["project"] ? 1000 - stateVar["project"]["project_description"].length : 1000
+ 
 
   function handleProjectInput (e) {
     const value = e.target.value

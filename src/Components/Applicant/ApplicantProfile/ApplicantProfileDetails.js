@@ -1,8 +1,8 @@
 import { useUserProvider } from "../../../Providers/UserProvider";
+import { Link } from "react-router-dom";
 
 function ApplicantProfileDetails({ applicantDetails }) {
   const { education, project } = applicantDetails;
-  // console.log(applicantDetails, "profile");
   const { applicantEmail } = useUserProvider();
 
   return (
@@ -19,17 +19,23 @@ function ApplicantProfileDetails({ applicantDetails }) {
             Technical Project:
           </span>
           <section className="applicantProfile_sectionHeader">
-            <a
+            {
+              project["project_link"] ? 
+              <a
               className="applicantProfile_applicantDetails_projects_link"
               href={project["project_link"]}
               target="_blank"
             >
-              {project["project_name"]}
+              {project["project_name"] || "Project Name"}
             </a>
-            <span className="applicantProfile_sectionHeader_text_span">
-              {project["project_description"]}
-            </span>
+            :
+            <Link className="applicantProfile_applicantDetails_projects_link" to="/user/edit">{project["project_name"] || "Add Project Details"}</Link>
+            }
+            
+              
+      
           </section>
+          <span className="applicantProfile_applicantDetails_projects_description"><b>{project["project_name"]}</b><br/>{project["project_description"] || "Add Project Description" }</span>
         
         </div>
       )}
