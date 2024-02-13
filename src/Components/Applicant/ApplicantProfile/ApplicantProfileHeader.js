@@ -1,7 +1,7 @@
 import SkillsComponent from "../../Job/SkillsComponent";
 
 function ApplicantProfileHeader({applicantDetails, applicantSkills}) {
-    const {id, first_name, last_name, bio, } = applicantDetails
+    const {id, first_name, last_name, bio, position } = applicantDetails
 
     const firstInitial = id ? applicantDetails["first_name"].charAt(0): "";
     const lastInitial = id ?applicantDetails["last_name"].charAt(0): "";
@@ -14,7 +14,7 @@ function ApplicantProfileHeader({applicantDetails, applicantSkills}) {
           </div>
           <div className="applicantProfile_header_details">
             <span className="applicantProfile_header_details_name">{first_name} {last_name}</span>
-            <span className="applicantProfile_header_details_role">ROLE</span>
+            <span className="applicantProfile_header_details_role">{position}</span>
             <SkillsComponent justList={true}
             skillsArr={applicantSkills}/>
           </div>

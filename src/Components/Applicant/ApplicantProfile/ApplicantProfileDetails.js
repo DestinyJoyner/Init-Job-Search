@@ -1,10 +1,10 @@
 import { useUserProvider } from "../../../Providers/UserProvider";
+import { Link } from "react-router-dom";
 
 function ApplicantProfileDetails({ applicantDetails }) {
-  const { education, project_one, project_two } = applicantDetails;
-  console.log(applicantDetails, "profile")
+  const { education, project } = applicantDetails;
   const { applicantEmail } = useUserProvider();
-  
+
   return (
     <div className="applicantProfile_applicantDetails">
       <section className="applicantProfile_sectionHeader">
@@ -13,36 +13,32 @@ function ApplicantProfileDetails({ applicantDetails }) {
           {education}
         </span>
       </section>
-
-      <div className="applicantProfile_applicantDetails_projects">
-        <span className="applicantProfile_sectionHeader_text">
-          Technical Projects:
-        </span>
-        <section className="applicantProfile_sectionHeader">
-          <a
-            className="applicantProfile_applicantDetails_projects_link"
-            href={project_one}
-            target="_blank"
-          >
-            Technical Project
-          </a>
-          <span className="applicantProfile_sectionHeader_text_span">
-            Details about project tbd
+      {project && (
+        <div className="applicantProfile_applicantDetails_projects">
+          <span className="applicantProfile_sectionHeader_text">
+            Technical Project:
           </span>
-        </section>
-        <section className="applicantProfile_sectionHeader">
-          <a
-            className="applicantProfile_applicantDetails_projects_link"
-            href={project_two}
-            target="_blank"
-          >
-            Technical Project
-          </a>
-          <span className="applicantProfile_sectionHeader_text_span">
-            Details about Project tbd
-          </span>
-        </section>
-      </div>
+          <section className="applicantProfile_sectionHeader">
+            {
+              project["project_link"] ? 
+              <a
+              className="applicantProfile_applicantDetails_projects_link"
+              href={project["project_link"]}
+              target="_blank"
+            >
+              {project["project_name"] || "Project Name"}
+            </a>
+            :
+            <Link className="applicantProfile_applicantDetails_projects_link" to="/user/edit">{project["project_name"] || "Add Project Details"}</Link>
+            }
+            
+              
+      
+          </section>
+          <span className="applicantProfile_applicantDetails_projects_description"><b>{project["project_name"]}</b><br/>{project["project_description"] || "Add Project Description" }</span>
+        
+        </div>
+      )}
 
       <section className="applicantProfile_sectionHeader">
         <span className="applicantProfile_sectionHeader_text">Contact Me:</span>

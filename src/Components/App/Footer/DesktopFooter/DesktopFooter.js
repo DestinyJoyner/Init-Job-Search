@@ -24,15 +24,12 @@ function DesktopFooter() {
         <span 
         className="desktopFooter_init_tech">
           <h2>Technologies Used</h2>
-          {initTech}
           <SkillsComponent 
           justList={true} 
           skillsArr={initSkills} 
           />
         </span>
       </section>
-
-      <hr />
 
       <section className="desktopFooter_developer">
         <span 

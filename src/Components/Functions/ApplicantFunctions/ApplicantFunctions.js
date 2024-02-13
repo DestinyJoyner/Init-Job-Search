@@ -57,8 +57,7 @@ function applicantSubmitEditForm(e, originalObj, editedObj, applicantSkillsArr, 
     skills: applicantSkillsArr,
   };
 
-  axios
-    .put(`${API}/users/${originalObj.id}`, editedDetailsObj)
+  axios.put(`${API}/users/${originalObj.id}`, editedDetailsObj)
     .then(() => navigate("/user"))
     .catch((err) => console.log(err));
 }

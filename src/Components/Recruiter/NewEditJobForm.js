@@ -9,6 +9,7 @@ import TextInput from "../Job/Inputs/TextInput";
 import TextArea from "../Job/Inputs/TextArea";
 import Checkbox from "../Job/Inputs/Checkbox";
 import Dropdown from "../Job/Inputs/Dropdown";
+import FilterDatalist from "../Job/Inputs/FilterDatalist.js";
 import SkillsComponent from "../Job/SkillsComponent.js";
 import { dropdownCities } from "../App/Data/Cities";
 import { handleSearchBar } from "../Functions/SearchFunctions/SearchBarFunctions";
@@ -198,15 +199,14 @@ const { editAccess } = useRecruiterProvider()
             placeholder={"Job Title"}
           />
 
-          <TextInput
-            label={"Company"}
-            formId={"company"}
-            stateVar={jobForm}
-            setFunction={setJobForm}
-            required={true}
-            placeholder={"Company"}
-          />
-
+          <FilterDatalist
+          label={"Company"}
+          formId={"company"}
+          stateVar={jobForm}
+          setFunction={setJobForm}
+          required={true}
+          placeholder={"Company"} />
+         
           <section className="job-form-location">
             <label htmlFor="city" className="job-form-label-dropdown">
               <span>City{asterisk}</span>
@@ -234,7 +234,9 @@ const { editAccess } = useRecruiterProvider()
             />
           </section>
 
-          <TextArea
+        <section className="jobForm_details">
+          <label className="jobForm_details_border_label">Job Details{asterisk}</label>
+        <TextArea
             label={"Job Details"}
             formId={"details"}
             stateVar={jobForm}
@@ -274,11 +276,14 @@ const { editAccess } = useRecruiterProvider()
               />
             </section>
           </div>
+        </section>
+          
 
           <section className="job-form-skills">
+          <label className="jobForm_details_border_label">Skills Req.{asterisk}</label>
             <span>
-              <span>Min. 1, Max. 4 Skills req.</span>
-              {asterisk}
+              <span>Min. 1, Max. 4 Skills req.{asterisk}</span>
+              
             </span>
             <SkillsComponent
               checkbox={true}

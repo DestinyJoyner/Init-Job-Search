@@ -1,13 +1,13 @@
 .applicantProfileEditForm {
-  height: 89vh;
+  height: 92vh;
   width: 96%;
   padding-top: 1vh;
   padding-bottom: 5vh;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 6vh 6vh 10vh 4vh 30vh 21vh 3vh;
-  row-gap: 2.5vh;
+  grid-template-rows: 5vh 5vh 13vh 28vh 22vh 3vh;
+  row-gap: 3vh;
   column-gap: 3vw;
 
   .registerFormInput_label {
@@ -18,13 +18,13 @@
       font-size: 18px;
       width: 90%;
       &::placeholder {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
   .applicantFormTwo_form_input_url_label {
     & input::placeholder {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
   .applicantFormTwo_form_input_textarea_label,
@@ -38,7 +38,13 @@
   .applicantFormTwo_form_input_textarea_label {
     & span {
       position: relative;
-      left: 1vw;
+      // border: 1px solid red;
+      &:nth-child(2){
+        margin-left: 3vw;
+        // justify-self: right;
+        // margin-right: 2vw;
+      }
+      // left: 1vw;
     }
   }
 
@@ -46,38 +52,65 @@
     & textarea {
       width: 94%;
       font-size: 16px;
-      margin-top: 1vh;
-      height: 6vh;
+      // margin-top: 1vh;
+      height: 8vh;
+      border-width: 2px;
       &::placeholder {
         font-size: 16px;
         font-style: italic;
       }
     }
   }
+  &_project {
+    grid-row: 4;
+    // border: 2px solid var(--init-mint);
+    grid-column: span 2;
+    width: 96%;
+    .applicantFormTwo_form_input_textarea_label {
+      &_text:first-of-type {
+        all: unset;
+        font-size: 14px;
+      }
+      & textarea {
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
 
   .skillsCheckboxes {
-    grid-row: 6;
+    grid-row: 5;
     grid-column: span 2;
     height: 18vh;
   }
 
   &_submitButton {
+    grid-row: 6;
     font-size: 26px;
     text-align: left;
-    position: relative;
-    bottom: 2vh;
   }
 }
 
-@media (min-width: 450px)  {
+@media (min-width: 450px) {
   .applicantProfileEditForm {
     .skillsCheckboxes {
+      width: 96%;
       .skills-checkboxes {
-        column-gap: 1vw;
+        column-gap: 3vw;
+        overflow-y: unset;
         & span {
           margin-left: 1vw;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .applicantProfileEditForm {
+    &_submitButton {
+      position: relative;
+      bottom: 3vh;
     }
   }
 }

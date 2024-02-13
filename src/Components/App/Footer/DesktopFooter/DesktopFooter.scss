@@ -6,14 +6,7 @@
   padding: 2vh 0;
   height: 350px;
   display: grid;
-  grid-template-columns: 2% 45% 2% 49%;
-
-  & hr {
-    grid-column: 3;
-    border: 1px solid var(--init-darkmint);
-    width: 0;
-    justify-self: center;
-  }
+  grid-template-columns: 1fr 1fr;
 
   & h2 {
     color: var(--init-darkmint);
@@ -21,8 +14,8 @@
   }
 
   &_developer {
-    grid-column: 4;
-    margin-left: 1vw;
+    grid-column: 2;
+    margin: 2vh;
     display: grid;
     grid-template-columns: 65% 35%;
     grid-template-rows: repeat(2, 1fr);
@@ -33,10 +26,8 @@
       display: flex;
       flex-direction: column;
       row-gap: 1vh;
-      width: 98%;
       grid-column: span 2;
       grid-row: 1;
-      position: relative;
     }
     &_photo {
       height: 150px;
@@ -52,9 +43,7 @@
       grid-row: 2;
       display: flex;
       flex-direction: column;
-      row-gap: 2vh;
-      position: relative;
-      bottom: 2vh;
+      row-gap: 1vh;
 
       .contactLinks {
         width: 60%;
@@ -69,11 +58,13 @@
   }
 
   &_init {
-    grid-column: 2;
+    grid-column: 1;
+    margin: 2vh;
+    border-right: 2px solid var(--init-darkmint);
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    row-gap: 3%;
     align-items: center;
+
     &_about {
       grid-row: 1;
       display: flex;
@@ -85,7 +76,7 @@
       grid-row: 2;
       display: flex;
       flex-direction: column;
-      row-gap: 2vh;
+      row-gap: 1vh;
       align-self: center;
       .skills-component {
         margin-top: 1vh;
@@ -114,28 +105,55 @@
   }
 }
 
+@media (max-width: 1120px) {
+  .desktopFooter {
+    &_developer {
+      &_photo {
+        height: 130px;
+        bottom: 2vh;
+      }
+    }
+  }
+}
+
 @media (max-width: 1050px) {
   .desktopFooter {
-    // grid-template-columns: repeat(2,1fr);
     grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 1vh;
     height: auto;
-    row-gap: 5vh;
-    padding-bottom: 5vh;
 
-    & hr {
-      display: none;
+    & > * {
+      width: 75%;
+      border: none;
+      text-align: center;
     }
-    & h2 {
-      margin-bottom: 2vh;
+
+    &_init {
+      &_tech {
+        width: 75%;
+        justify-self: center;
+        margin-top: 2vh;
+
+        .skills-component {
+          justify-content: space-evenly;
+          margin: 0 auto;
+        }
+      }
     }
 
     &_developer {
       grid-column: 1;
+
       &_photo {
-        display: none;
+        height: 120px;
+        top: 2vh;
+      }
+      &_contact {
+        justify-self: center;
       }
       .contactLinks {
-        bottom: 2vh;
+        column-gap: 4vh;
       }
     }
     &_about {

@@ -15,6 +15,10 @@ import Login from "../../Pages/Login.js";
 import JobForm from "../../Pages/JobForm.js";
 import JobApplicants from "../../Pages/JobApplicants.js";
 
+
+import UserProvider from "../../Providers/UserProvider.js";
+import ApplicantRegisterFormTwo from "../Registration/ApplicantForm/ApplicantRegisterFormTwo.js";
+
 function RouteComponent() {
   return (
     <Routes>

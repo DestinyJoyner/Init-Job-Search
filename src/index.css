@@ -183,7 +183,7 @@ button:hover {
 .desktop .registrationPage {
   width: 50%;
   margin: 0 auto;
-  padding: 2vh 0;
+  /* padding: 2vh 0; */
 }
 
 /* .desktop .loginPage {

@@ -31,7 +31,7 @@ function DesktopJobShowDetailsAside({jobDetails}) {
     return (
         <aside className="desktopJobShowDetailsAside">
           <SkillDoughnutChart />
-
+          <hr />
           <div className="desktopJobShowDetailsAside_relatedJobs">
             <span className="desktopJobShowDetailsAside_relatedJobs_header">
               {jobLocation} Jobs Near {city}
@@ -53,11 +53,6 @@ function DesktopJobShowDetailsAside({jobDetails}) {
               )}
             </ul>
           </div>
-
-          <Link className="desktopJobShowDetailsAside_backButton" to="/jobs">
-            {"<"}
-            <span>Back to Jobs</span>
-          </Link>
         </aside>
     );
 }

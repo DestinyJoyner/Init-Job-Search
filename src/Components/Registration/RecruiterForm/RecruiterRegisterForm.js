@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RegisterForm from "../RegisterForm/RegisterForm";
 
-function RecruiterRegisterForm(props) {
+function RecruiterRegisterForm() {
   const [recruiterForm, setRecruiterForm] = useState({
     first_name: "",
     last_name: "",

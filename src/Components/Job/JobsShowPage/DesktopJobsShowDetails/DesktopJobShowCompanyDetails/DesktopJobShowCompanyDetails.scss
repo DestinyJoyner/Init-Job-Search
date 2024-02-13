@@ -3,7 +3,8 @@
     
     &_header {
         display: grid;
-        grid-template-columns: 20% 80%;
+        grid-template-columns: max-content auto;
+        column-gap: 5%;
         align-items: center;
          &_companyLogo {
             grid-column: 1; 

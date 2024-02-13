@@ -77,7 +77,7 @@
       &_text {
         height: fit-content;
         max-height: 10vh;
-        overflow-y: scroll;
+        overflow-y:auto;
       }
     }
   }
@@ -90,19 +90,17 @@
 
   &_applicantDetails,
   &_appliedJobs {
-    align-self: normal;
-    text-indent: 1vw;
     border-radius: 10px;
-    padding-top: 1vh;
-    height: fit-content;
+    height: 45vh;
     max-height: 48vh;
     width: 94%;
-    overflow-y: scroll;
+    overflow-y:auto;
     display: grid;
   }
   &_applicantDetails {
-    grid-template-rows: 8vh 29vh 6vh;
+    grid-template-rows: 18% 58% 15%;
     row-gap: 1vh;
+    
     .applicantProfile_sectionHeader {
       &_text {
         font-size: 24px;
@@ -112,11 +110,21 @@
       }
     }
     &_projects {
-      display: grid;
-      grid-template-rows: 5vh 12vh 12vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      row-gap: 1vh;
+      height: 100%;
       &_link {
+        grid-row: 2;
         font-size: 22px;
+        color: var(--init-blue);
       }
+      &_description {
+        grid-row: 3;
+        overflow-y:auto;
+      }
+      
     }
   }
 

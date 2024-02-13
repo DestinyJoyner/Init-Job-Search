@@ -26,8 +26,9 @@ function RecruiterProvider({ children }) {
   const [unlockRec, setUnlockRec] = useState(false);
 
   useEffect(() => {
-    setLoading(true)
+    // setLoading(true)
     if (recruiterID) {
+      setLoading(true)
       axios
         .get(`${API}/recruiters/${recruiterID}`)
         .then(({ data }) => {
@@ -48,6 +49,7 @@ function RecruiterProvider({ children }) {
         .catch((err) => console.log(err));
     }
     if (jobID && recruiterID) {
+      setLoading(true)
       axios
         .get(`${API}/jobs/${jobID}`)
         .then(({ data }) => {
@@ -61,6 +63,8 @@ function RecruiterProvider({ children }) {
         .catch((err) => console.log(err));
     }
   }, [recruiterID, jobID]);
+
+
 
  
 

@@ -1,0 +1,32 @@
+.jobForm_label_datalist {
+    display: grid;
+    // color: red;
+    grid-template-rows: repeat(3,1fr);
+
+    & span {
+        grid-row: 2;
+    }
+
+    & input {
+        height: 30px;
+        font-size: 16px;
+        width: 100%;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        background-color: var(--init-background);
+
+        &:focus {
+            background-color: var(--init-background);
+        }
+    }
+
+    & datalist {
+        background-color: var(--init-background);
+
+        &:focus {
+            background-color: var(--init-background);
+        }
+    }
+   
+}

@@ -6,6 +6,7 @@ import { useNavProvider } from "../../../Providers/NavProvider";
 import SkillsComponent from "../../Job/SkillsComponent";
 import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
 import RegisterUrlInput from "../../FormInputs/RegisterFormInputs/RegisterUrlInput";
+import ProjectLinkInputs from "../../ProjectLinkInputs/ProjectLinkInputs.js";
 import SkillsCheckboxes from "../../SkillsCheckboxes/SkillsCheckboxes";
 import { handleSkillsCheckbox } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
 import { handleApplicantFormTwoSubmit } from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
@@ -34,7 +35,9 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
   return (
     <div className="applicantFormTwo grid-center">
       <span className="applicantFormTwo_header">
-        {asterisk}Details can be updated at any time from your profile{asterisk}
+      <Link to="/jobs">Skip & Begin Job Search</Link>
+      <span>{asterisk}Details can be updated at any time from your profile{asterisk}</span>
+        
       </span>
       <form
         onSubmit={(event) =>
@@ -48,16 +51,33 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
         }
         className="applicantFormTwo_form"
       >
+         <div className="applicantFormTwo_form_bio">
+        <span className="skillsCheckboxes_label">
+          Bio
+        </span>
         <RegisterTextAreaInput
-          label={"Bio"}
+          label={"About Me"}
           formKey={"bio"}
           value={applicantFormTwo["bio"]}
           placeholder={"Tell us about yourself..."}
           stateVar={applicantFormTwo}
           setFunction={setApplicantFormTwo}
         />
+        </div>
+        {/* <RegisterTextAreaInput
+          label={"About Me"}
+          formKey={"bio"}
+          value={applicantFormTwo["bio"]}
+          placeholder={"Tell us about yourself..."}
+          stateVar={applicantFormTwo}
+          setFunction={setApplicantFormTwo}
+        /> */}
 
-        <RegisterUrlInput
+        <ProjectLinkInputs
+        stateVar={applicantFormTwo}
+        setFunction={setApplicantFormTwo} />
+
+        {/* <RegisterUrlInput
           label={"Portfolio Project 1"}
           formKey={"project_one"}
           value={applicantFormTwo["project_one"]}
@@ -71,7 +91,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           value={applicantFormTwo["project_two"]}
           stateVar={applicantFormTwo}
           setFunction={setApplicantFormTwo}
-        />
+        /> */}
 
         <SkillsCheckboxes 
          skillsIdArr={applicantFormSkills} 
@@ -106,7 +126,6 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           value="Submit & View Profile"
         />
       </form>
-      <Link to="/jobs">Skip & Begin Job Search</Link>
     </div>
   );
 }
