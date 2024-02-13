@@ -1,13 +1,7 @@
 .applicantProfile {
   height: 91vh;
-  // //   padding-bottom: 3vh;
   grid-template-rows: 28vh 8vh 48vh 8vh;
-  //   background: linear-gradient(
-  //     90deg,
-  //     rgb(83, 215, 199) 55%,
-  //     rgba(12, 189, 189, 1) 100%
-  //   );
-
+  
   &_sectionHeader {
     display: flex;
     flex-direction: column;

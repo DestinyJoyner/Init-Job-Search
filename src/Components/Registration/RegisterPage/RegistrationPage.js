@@ -58,7 +58,7 @@ function RegistrationPage({accountToggle,
       )}
 
      {!hideSliderButtons &&
-      <span>
+      <span className="registrationPage_signIn">
       Already have an Account?
       <Link to="/login"> Log in </Link>
         </span>}

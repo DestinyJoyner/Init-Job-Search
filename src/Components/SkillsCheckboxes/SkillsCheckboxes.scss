@@ -30,12 +30,11 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(4,1fr);
       column-gap: 2vw;
+
       & label {
-        
         display: flex;
         align-items: center;
-        
-
+      
         & input {
           height: 1.2em;
           width: 1.2em;

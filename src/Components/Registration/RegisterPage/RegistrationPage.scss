@@ -1,5 +1,5 @@
 .registrationPage {
-  grid-template-rows: 10vh 8vh 75vh 5vh;
+  grid-template-rows: 10vh 8vh 68vh 5vh;
   row-gap: .5vh;
 
   .loginHeader {
@@ -33,6 +33,10 @@
           height: 3.5vh;
         }
       }
+  }
+  &_signIn {
+    position: relative;
+    bottom: 2vh;
   }
 }
 

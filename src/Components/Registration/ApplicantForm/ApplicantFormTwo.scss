@@ -1,21 +1,18 @@
 .applicantFormTwo {
   grid-row: 1/5;
   width: 100%;
-  // margin-top: 3vh;
+  margin-top: 5vh;
+  padding-top: 1vh;
   grid-template-rows: 6vh 92vh;
- 
 
   &_header {
     grid-row: 1;
     display: flex;
     flex-direction: column;
-    // padding-top: 3vh;
-    // height: 100%;
-    row-gap: .5vh;
+    row-gap: 0.5vh;
     align-items: center;
 
     & a {
-      // font-style: italic;
       text-transform: uppercase;
       font-size: 18px;
       color: var(--init-blue);
@@ -35,8 +32,7 @@
     width: 100%;
     margin-bottom: 2vh;
 
-    & >* {
-
+    & > * {
       margin: 0 1vw;
     }
     & > * input,
@@ -44,57 +40,50 @@
       font-size: 18px;
     }
 
-    & >*input::placeholder, & textarea::placeholder {
+    & > *input::placeholder,
+    & textarea::placeholder {
       font-size: 16px;
     }
 
-    & >* input {
+    & > * input {
       width: 90%;
     }
     &_input {
-      &_textarea_label{
+      &_textarea_label {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
 
         &_text {
           grid-column: 1;
           grid-row: 2;
           font-size: 14px;
-        
         }
 
         &_helpText {
           font-style: italic;
           font-size: 14px;
         }
-        
+
         & textarea {
           grid-row: 1;
           grid-column: span 2;
           height: 8vh;
-          padding: .5vh;
+          padding: 0.5vh;
         }
-
       }
     }
 
     .projectFormInputs {
-      // border: 1px solid red;
       grid-row: 2;
       display: flex;
       flex-direction: column;
-      row-gap: .5vh;
+      row-gap: 0.5vh;
       &_header {
         width: 98%;
       }
-
       & label:nth-of-type(2) {
         padding-bottom: 2vh;
       }
-      // bottom: 0;
-      // padding-bottom: 2vh;
-      // border-bottom: 1px solid var(--init-mint);
-
     }
     .skillsCheckboxes {
       height: 24vh;
@@ -106,13 +95,11 @@
     &_submitButton {
       font-size: 22px;
       justify-self: left;
-      // margin-top: 1vh;
       padding: 0;
       position: relative;
       bottom: 1vh;
     }
   }
- 
 }
 
 .dark .applicantFormTwo {
@@ -133,6 +120,5 @@
     &_submitButton {
       color: var(--init-gold);
     }
-    
   }
 }
