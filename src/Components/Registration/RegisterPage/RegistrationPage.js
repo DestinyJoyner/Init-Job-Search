@@ -36,7 +36,7 @@ function RegistrationPage({accountToggle,
   return (
     // !loading &&
     <div className="registrationPage grid-center">
-      <LoginHeader />
+      { !hideSliderButtons && <LoginHeader />}
 
      { !hideSliderButtons &&
      <section className="registrationPage_userType">

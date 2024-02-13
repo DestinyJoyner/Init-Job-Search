@@ -90,22 +90,17 @@
 
   &_applicantDetails,
   &_appliedJobs {
-    // align-self: normal;
-    // text-indent: 1vw;
     border-radius: 10px;
-    // padding-top: 1vh;
     height: 45vh;
     max-height: 48vh;
     width: 94%;
     overflow-y:auto;
-    // overflow-y: scroll;
     display: grid;
   }
   &_applicantDetails {
     grid-template-rows: 18% 58% 15%;
     row-gap: 1vh;
-    // min-height: 20vh;
-    // max-height: 46vh;
+    
     .applicantProfile_sectionHeader {
       &_text {
         font-size: 24px;

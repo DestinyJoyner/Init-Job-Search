@@ -20,16 +20,16 @@
      
       border-top: 1px solid var(--init-mint);
       border-bottom: 1px solid var(--init-mint);
-      overflow-y: scroll;
+      overflow-y: auto;
       grid-row: 2;
       grid-column: span 2;
-      width:100%;
+      width:98%;
       height: 100%;
       display: grid;
       align-items: center;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(4,1fr);
-      column-gap: 3vw;
+      column-gap: 2vw;
       & label {
         
         display: flex;

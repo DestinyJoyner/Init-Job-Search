@@ -23,6 +23,15 @@ const {userID} = useContextProvider()
     return (
       stateVar.project &&
       <div className="projectFormInputs">
+        <div className="projectFormInputs_header">
+        <span className="skillsCheckboxes_label">
+          My Project Details
+        </span>
+        <span className="skillsCheckboxes_helpText">
+         Showcase a project
+        </span>
+        </div>
+
       <label className="registerFormInput_label">
         <span>Project Name</span>
       <input 
