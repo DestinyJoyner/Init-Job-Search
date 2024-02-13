@@ -1,5 +1,5 @@
 .applicantProfileEditForm {
-  height: 89vh;
+  height: 92vh;
   width: 96%;
   padding-top: 1vh;
   padding-bottom: 5vh;
@@ -7,7 +7,7 @@
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 5vh 5vh 13vh 28vh 22vh 3vh;
-  row-gap: 3.5vh;
+  row-gap: 3vh;
   column-gap: 3vw;
 
   .registerFormInput_label {
@@ -18,13 +18,13 @@
       font-size: 18px;
       width: 90%;
       &::placeholder {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
   .applicantFormTwo_form_input_url_label {
     & input::placeholder {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
   .applicantFormTwo_form_input_textarea_label,
@@ -38,6 +38,12 @@
   .applicantFormTwo_form_input_textarea_label {
     & span {
       position: relative;
+      // border: 1px solid red;
+      &:nth-child(2){
+        margin-left: 3vw;
+        // justify-self: right;
+        // margin-right: 2vw;
+      }
       // left: 1vw;
     }
   }
@@ -45,8 +51,8 @@
   & label {
     & textarea {
       width: 94%;
-      font-size: 14px;
-      margin-top: 1vh;
+      font-size: 16px;
+      // margin-top: 1vh;
       height: 8vh;
       border-width: 2px;
       &::placeholder {
@@ -57,12 +63,9 @@
   }
   &_project {
     grid-row: 4;
-    border: 2px solid var(--init-mint);
+    // border: 2px solid var(--init-mint);
     grid-column: span 2;
     width: 96%;
-    & > * {
-      margin-left: 2vw;
-    }
     .applicantFormTwo_form_input_textarea_label {
       &_text:first-of-type {
         all: unset;
@@ -70,6 +73,7 @@
       }
       & textarea {
         padding: 0;
+        width: 100%;
       }
     }
   }
@@ -106,7 +110,7 @@
   .applicantProfileEditForm {
     &_submitButton {
       position: relative;
-      bottom: 4vh;
+      bottom: 3vh;
     }
   }
 }

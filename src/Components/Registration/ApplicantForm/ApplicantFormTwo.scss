@@ -2,7 +2,7 @@
   grid-row: 1/5;
   width: 100%;
   // margin-top: 3vh;
-  grid-template-rows: 8vh 92vh;
+  grid-template-rows: 6vh 92vh;
  
 
   &_header {
@@ -29,10 +29,11 @@
     grid-row: 2;
     display: grid;
     align-items: center;
-    grid-template-rows: 14vh 38vh 24vh 8vh;
+    grid-template-rows: 13vh 38vh 24vh 7vh;
     background-color: var(--init-background);
     row-gap: 1vh;
     width: 100%;
+    margin-bottom: 2vh;
 
     & >* {
 
@@ -97,12 +98,18 @@
     }
     .skillsCheckboxes {
       height: 24vh;
+
+      .skills-checkboxes {
+        column-gap: 1vw;
+      }
     }
     &_submitButton {
       font-size: 22px;
       justify-self: left;
       // margin-top: 1vh;
       padding: 0;
+      position: relative;
+      bottom: 1vh;
     }
   }
  

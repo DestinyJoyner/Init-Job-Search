@@ -96,7 +96,7 @@ function ApplicantProfileEditForm() {
       />
 
 <section className="applicantProfileEditForm_project">
-<label className="jobForm_details_border_label">Project Details</label>
+{/* <label className="jobForm_details_border_label">Project Details</label> */}
       <ProjectLinkInputs
         stateVar={applicantEditForm}
         setFunction={setApplicantEditForm}
