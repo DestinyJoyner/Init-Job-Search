@@ -280,7 +280,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  column-gap: 1.8vw;
+  /* column-gap: 1.8vw; */
   row-gap: .5vh;
   height: 18vh;
   /* margin-bottom: 3vh; */
@@ -306,7 +306,7 @@
 .job-form-skills span span {
   position: relative;
   bottom: 0.3vw;
-  left: 13vw;
+  left: 8vw;
   /* margin-right: 3vw; */
   font-size: 12px;
   font-style: italic;
