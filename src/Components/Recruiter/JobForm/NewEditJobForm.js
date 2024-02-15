@@ -317,7 +317,7 @@ export default function NewEditJobForm({ edit }) {
           </section>
 
           <input
-            className="job-form-submit"
+            className="jobFormPage_form_submit"
             type="submit"
             value={edit ? "SAVE" : "SUBMIT"}
           />

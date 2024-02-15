@@ -1,21 +1,22 @@
 .jobFormPage {
   display: grid;
-  height: 95vh;
+  height: 98vh;
   justify-items: center;
   align-items: center;
   //   padding: 2vh 0 4vh 0;
 
   &_form {
     display: grid;
-    grid-template-rows: repeat(3, 6vh) 42vh 20vh 6vh;
-    row-gap: 1vh;
+    grid-template-rows: repeat(3, 6vh) 42vh 22vh 4vh;
+    row-gap: 1.1vh;
+    margin-top: 2vh;
     height: 100%;
     width: 100%;
     justify-items: center;
     align-items: center;
     background-color: var(--init-background);
 
-    & > * {
+    & > *  {
       width: 90%;
     }
 
@@ -66,6 +67,7 @@
       grid-template-columns: 60% 40%;
       width: 90%;
       align-items: center;
+      padding-bottom: 2vh;
 
       &_label_dropdown {
         position: relative;
@@ -90,8 +92,8 @@
 
     &_details {
       //   margin-top: 1vh;
-      width: 90%;
-      height: 40vh;
+    //   width: 90%;
+      height: 38vh;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -235,6 +237,20 @@
       }
     }
 
+    &_submit {
+        all: unset;
+        // height: 6vh;
+        width: fit-content;
+        position: relative;
+        // top: 1vh;
+        left: 4vw;
+        color: var(--init-blue);
+        justify-self: left;
+        /* margin-left: 3vw; */
+        font-size: 24px;
+        font-weight: 600;
+    }
+
     &_label {
       font-size: 12px;
       grid-row: 2;
@@ -253,7 +269,7 @@
         align-items: center;
         // justify-self: right;
         position: relative;
-        // bottom: 0.5vh;
+        bottom: 0.7vh;
 
         & input {
           justify-self: center;
@@ -265,49 +281,6 @@
   }
 }
 
-/* skills */
-
-.job-form-skills {
-  border: 2px solid var(--init-mint);
-  /* border-radius: 20px;
-    padding: .5vh; */
-  height: 21vh;
-}
-.job-form .skills-checkboxes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  /* column-gap: 1.8vw; */
-  row-gap: 0.5vh;
-  height: 18vh;
-  /* margin-bottom: 3vh; */
-  justify-items: left;
-}
-
-.job-form .skills-checkboxes label {
-  all: unset;
-  display: flex;
-  align-items: center;
-  /* height: 4.2vh; */
-  font-size: 17px;
-  /* margin-left: 3vw; */
-}
-/* .job-form .skills-checkboxes label span {
-    margin-left: 5vw;
-  } */
-.job-form .skills-checkboxes label input {
-  width: 1.5em;
-  height: 1.5em;
-}
-
-.job-form-skills span span {
-  position: relative;
-  bottom: 0.3vw;
-  left: 8vw;
-  /* margin-right: 3vw; */
-  font-size: 12px;
-  font-style: italic;
-}
 
 /* submit button */
 .job-form-submit {
