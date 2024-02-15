@@ -4,7 +4,7 @@ import { asterisk } from "../../App/Data/Icons.js"
 function TextArea({ label, formId, stateVar, setFunction, placeholder, required }) {
 
   return (
-    <label className="jobForm_label_textarea"
+    <label className="jobFormPage_label_textarea"
     htmlFor={formId}>
       <textarea
         className="input-box"

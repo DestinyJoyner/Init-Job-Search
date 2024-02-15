@@ -57,11 +57,11 @@
         position: relative;
       }
       &_header {
-        grid-row: 2;
-        bottom: 3vh;
+        grid-row: 1;
+        // bottom: 3vh;
       }
       &_form {
-        grid-row: 3;
+        grid-row: 2;
         &_submitButton {
           cursor: pointer;
         }

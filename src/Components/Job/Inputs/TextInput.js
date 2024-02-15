@@ -39,13 +39,13 @@ function TextInput({
         onBlur={task ? () => handleTaskBlur() : null}
         required = {!task ? true : false}
       />
-      <span className="job-form-label">
+      <span className="jobFormPage_label">
         {label}
         {required && asterisk}
       </span>
       {task && (
         <HiMinusCircle
-          className="task-remove"
+          className="jobFormPage_form_tasks_container_remove"
           size={"16px"}
           color={"#BA1A1A"}
           onClick={() => removeTask(stateVar, setFunction, index)}

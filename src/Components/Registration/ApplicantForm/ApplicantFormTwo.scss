@@ -1,8 +1,9 @@
 .applicantFormTwo {
-  grid-row: 1/5;
+  // grid-row: 1/5;
+  // background-color: red;
   width: 100%;
   margin-top: 5vh;
-  padding-top: 1vh;
+  // padding-top: 1vh;
   grid-template-rows: 6vh 92vh;
 
   &_header {
@@ -11,6 +12,8 @@
     flex-direction: column;
     row-gap: 0.5vh;
     align-items: center;
+    position: relative;
+    bottom: 5vh;
 
     & a {
       text-transform: uppercase;
@@ -23,11 +26,12 @@
     }
   }
   &_form {
-    grid-row: 2;
+    // grid-row: 2;
+    // background-color: red;
     display: grid;
     align-items: center;
     grid-template-rows: 13vh 38vh 24vh 7vh;
-    background-color: var(--init-background);
+    // background-color: var(--init-background);
     row-gap: 1vh;
     width: 100%;
     margin-bottom: 2vh;
@@ -86,6 +90,7 @@
       }
     }
     .skillsCheckboxes {
+      grid-row: 3;
       height: 24vh;
 
       .skills-checkboxes {
@@ -93,6 +98,7 @@
       }
     }
     &_submitButton {
+      grid-row: 4;
       font-size: 22px;
       justify-self: left;
       padding: 0;

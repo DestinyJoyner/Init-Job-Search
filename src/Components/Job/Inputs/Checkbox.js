@@ -12,9 +12,7 @@ function Checkbox({label, formId, stateVar, setFunction}) {
    }
 
     return (
-        <label className="jobForm_label_checkbox" htmlFor={formId}>
-            {/* className="job-form-label job-form-remote" */}
-           
+        <label className="jobFormPage_form_label_checkbox" htmlFor={formId}>
             <input
             type="checkbox"
             value={formId} 

@@ -1,0 +1,375 @@
+.jobFormPage {
+  display: grid;
+  height: 95vh;
+  justify-items: center;
+  align-items: center;
+  padding: 2vh 0 4vh 0;
+
+  &_form {
+    display: grid;
+    grid-template-rows: repeat(2, 6vh) 9vh 42vh 20vh 6vh;
+    row-gap: 1vh;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    background-color: var(--init-background);
+
+    & > * {
+      width: 90%;
+    }
+
+    & select,
+    & input[type="text"],
+    .task-container {
+      border-right: none;
+      border-left: none;
+      background-color: var(--init-background);
+    }
+
+    & input[type="text"] {
+      border-top: none;
+      grid-row: 1;
+      width: 100%;
+      padding-bottom: 2px;
+      font-size: 18px;
+    }
+    & label {
+      row-gap: 0.5vh;
+    }
+
+    & textarea {
+      background-color: var(--init-background);
+      border-width: 1.5px;
+      width: 95%;
+      height: 12vh;
+      padding: unset;
+      font-size: 18px;
+
+      &::placeholder {
+        padding: 0.5vh;
+        font-size: 16px;
+      }
+    }
+    & input:focus,
+    select,
+    textarea:focus {
+      outline: none;
+    }
+
+    &_location,
+    &_label_dropdown {
+      position: relative;
+      grid-column: 1;
+      grid-row: 1;
+      top: 3.5vh;
+      font-size: 12px;
+    }
+    &_location {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      width: 90%;
+      align-items: center;
+
+      &_dropdown {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1;
+        top: 3.5vh;
+        font-size: 12px;
+      }
+      & select {
+        grid-column: 1;
+        grid-row: 1;
+        border: none;
+        border-bottom: 2px solid var(--init-mint);
+        width: 90%;
+        height: 60%;
+        text-align: left;
+        font-size: 16px;
+        position: relative;
+        bottom: 1vh;
+      }
+    }
+
+    &_details {
+      margin-top: 1vh;
+      width: 90%;
+      height: 38vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      border: 2px solid var(--init-mint);
+
+      &_border {
+        &_label {
+          position: relative;
+          width: unset;
+          padding: 0 10px;
+          font-size: 18px;
+          height: fit-content;
+          bottom: 1.6vh;
+          left: 1vh;
+          align-self: flex-start;
+          background-color: var(--init-background);
+        }
+      }
+
+      &_tasks {
+        width: 95%;
+        display: grid;
+        height: 20vh;
+        position: relative;
+  
+        &_header {
+          font-size: 16px;
+          display: grid;
+          grid-template-columns: 40% 50% 10%;
+          width: 100%;
+          position: relative;
+  
+          & span:nth-child(2) {
+            justify-self: right;
+            margin-right: 2vw;
+            color: var(--init-blue);
+          }
+  
+          &_req {
+            font-style: italic;
+            font-size: 12px;
+            color: var(--init-rust);
+            position: relative;
+            top: 0.3vh;
+            right: 1.5vh;
+          }
+  
+          & svg {
+            position: relative;
+          }
+        }
+  
+        &_container {
+          border-bottom: 1px solid var(--init-blue);
+          width: 100%;
+          max-height: 15vh;
+          overflow-x: hidden;
+          display: grid;
+          grid-auto-rows: 7vh;
+  
+          &_line,
+          &_remove {
+            border: 1px solid red;
+            grid-column: 2;
+            position: relative;
+            justify-self: center;
+            top: 0.5vh;
+            left: 2vw;
+          }
+          &_line {
+            & label {
+              display: grid;
+              grid-template-columns: 85% 10%;
+              width: 100%;
+              margin-left: 1vw;
+            }
+          }
+  
+          & input[type="text"] {
+            height: 3vh;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    &_label {
+      font-size: 12px;
+      grid-row: 2;
+
+      &_textarea {
+        height: 15vh;
+        position: relative;
+        bottom: 1vh;
+        width: 95%;
+
+        &_span {
+        }
+      }
+
+      &_checkbox {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: right;
+        position: relative;
+        bottom: 0.5vh;
+
+        & input {
+          justify-self: center;
+          height: 2em;
+          width: 2em;
+        }
+      }
+    }
+  }
+}
+
+
+/* skills */
+
+.job-form-skills {
+  border: 2px solid var(--init-mint);
+  /* border-radius: 20px;
+    padding: .5vh; */
+  height: 21vh;
+}
+.job-form .skills-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  /* column-gap: 1.8vw; */
+  row-gap: 0.5vh;
+  height: 18vh;
+  /* margin-bottom: 3vh; */
+  justify-items: left;
+}
+
+.job-form .skills-checkboxes label {
+  all: unset;
+  display: flex;
+  align-items: center;
+  /* height: 4.2vh; */
+  font-size: 17px;
+  /* margin-left: 3vw; */
+}
+/* .job-form .skills-checkboxes label span {
+    margin-left: 5vw;
+  } */
+.job-form .skills-checkboxes label input {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.job-form-skills span span {
+  position: relative;
+  bottom: 0.3vw;
+  left: 8vw;
+  /* margin-right: 3vw; */
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* submit button */
+.job-form-submit {
+  all: unset;
+  height: 6vh;
+  width: 30%;
+  position: relative;
+  top: 1vh;
+  left: 1vw;
+  color: var(--init-blue);
+  justify-self: left;
+  /* margin-left: 3vw; */
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.job-form input,
+.job-form textarea,
+.job-form select {
+  border-color: var(--init-mint);
+}
+
+.job-form-error {
+  color: var(--init-rust);
+  font-size: 20px;
+  position: relative;
+  bottom: 4vh;
+  left: 13vw;
+}
+
+/* dark mode */
+.dark .job-form-header {
+  background-color: var(--init-gold);
+  color: black;
+}
+
+.dark .job-form input[type="text"],
+.dark .job-form textarea,
+.dark .job-form select,
+.dark .task-container,
+.dark .task-container input {
+  border-color: var(--init-mint);
+  background-color: var(--init-dark);
+  color: white;
+}
+
+.dark .job-form ::placeholder {
+  color: var(--init-background);
+  opacity: 0.4;
+}
+
+.dark .job-form input[type="text"]:focus,
+.dark .job-form textarea:focus {
+  background-color: var(--init-dark);
+}
+
+.dark .job-form input[type="checkbox"] {
+  accent-color: var(--init-gold);
+}
+
+.dark .job-form-label {
+  color: var(--init-gold);
+}
+
+.dark .job-form-skills span span {
+  color: var(--init-gold);
+}
+
+.dark .task-header span {
+  color: var(--init-gold);
+}
+
+.dark .job-form-submit {
+  color: var(--init-gold);
+}
+
+.dark .task-remove {
+  color: var(--init-rust);
+}
+
+@media (min-width: 450px) {
+  .job-form-page {
+    /* position: relative;
+     right: 2vw; */
+  }
+  .job-form-remote,
+  .job-form-location input[type="checkbox"] {
+    /* right: 3vw; */
+  }
+  .job-form textarea {
+    /* width: 110%; */
+  }
+  .task-container {
+    width: 100%;
+  }
+  .task-header {
+    margin-left: 2vw;
+  }
+  .task-line .task-remove {
+    left: 1vw;
+  }
+  .job-form .skills-checkboxes {
+    margin-left: 1vw;
+  }
+  .job-form .skills-checkboxes label {
+    margin-left: 1vw;
+  }
+  .job-form .skills-checkboxes label span {
+    margin-left: 1vw;
+  }
+  .job-form-submit {
+    margin-left: 2vw;
+  }
+}

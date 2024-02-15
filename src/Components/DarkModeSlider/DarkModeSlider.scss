@@ -68,11 +68,6 @@
 }
 
 .dark .darkModeSwitch {
-  &_slider {
-    &:before {
-      // background-color: var(--init-mint);
-    }
-  }
   &_button {
     & svg {
       color: var(--init-dark);

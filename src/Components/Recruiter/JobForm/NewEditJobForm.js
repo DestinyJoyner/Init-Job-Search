@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { useContextProvider } from "../../Providers/Provider";
-import { useNavProvider } from "../../Providers/NavProvider";
-import { useJobProvider } from "../../Providers/JobProvider";
-import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
-import TextInput from "../Job/Inputs/TextInput";
-import TextArea from "../Job/Inputs/TextArea";
-import Checkbox from "../Job/Inputs/Checkbox";
-import Dropdown from "../Job/Inputs/Dropdown";
-import FilterDatalist from "../Job/Inputs/FilterDatalist.js";
-import SkillsComponent from "../Job/SkillsComponent.js";
-import { dropdownCities } from "../App/Data/Cities";
-import { handleSearchBar } from "../Functions/SearchFunctions/SearchBarFunctions";
-import { convertTasks, convertSkills } from "../Functions/ConvertFunctions/ConversionFunctions";
-import { asterisk } from "../App/Data/Icons.js";
+import { useContextProvider } from "../../../Providers/Provider.js";
+import { useNavProvider } from "../../../Providers/NavProvider.js";
+import { useJobProvider } from "../../../Providers/JobProvider.js";
+import { useRecruiterProvider } from "../../../Providers/RecruiterProvider.js";
+import TextInput from "../../Job/Inputs/TextInput.js";
+import TextArea from "../../Job/Inputs/TextArea.js";
+import Checkbox from "../../Job/Inputs/Checkbox.js";
+import Dropdown from "../../Job/Inputs/Dropdown.js";
+import FilterDatalist from "../../Job/Inputs/FilterDatalist.js";
+import SkillsComponent from "../../Job/SkillsComponent.js";
+import { dropdownCities } from "../../App/Data/Cities.js";
+import { handleSearchBar } from "../../Functions/SearchFunctions/SearchBarFunctions.js";
+import { convertTasks, convertSkills } from "../../Functions/ConvertFunctions/ConversionFunctions.js";
+import { asterisk } from "../../App/Data/Icons.js";
 import { IoMdAddCircle } from "react-icons/io";
-import "./NewEditJobForm.css";
+import "./NewEditJobForm.scss";
 
 export default function NewEditJobForm({ edit }) {
   const { jobID } = useJobProvider();
@@ -188,8 +188,8 @@ const { editAccess } = useRecruiterProvider()
 
   return (
     ((isRecruiterAcc && !edit) || editAccess || !loading)&& (
-      <div className="job-form-page">
-        <form className="job-form" onSubmit={(event) => handleSubmit(event)}>
+      <div className="jobFormPage">
+        <form className="jobFormPage_form" onSubmit={(event) => handleSubmit(event)}>
           <TextInput
             label={"Job Title"}
             formId={"title"}
@@ -207,8 +207,8 @@ const { editAccess } = useRecruiterProvider()
           required={true}
           placeholder={"Company"} />
          
-          <section className="job-form-location">
-            <label htmlFor="city" className="job-form-label-dropdown">
+          <section className="jobFormPage_form_location">
+            <label htmlFor="city" className="jobFormPage_form_location_label_dropdown">
               <span>City{asterisk}</span>
             </label>
             <Dropdown
@@ -234,8 +234,8 @@ const { editAccess } = useRecruiterProvider()
             />
           </section>
 
-        <section className="jobForm_details">
-          <label className="jobForm_details_border_label">Job Details{asterisk}</label>
+        <section className="jobFormPage_form_details">
+          <label className="jobFormPage_form_details_border_label">Job Details{asterisk}</label>
         <TextArea
             label={"Job Details"}
             formId={"details"}
@@ -246,10 +246,10 @@ const { editAccess } = useRecruiterProvider()
           />
 
           {/* Tasks */}
-          <div className="job-form-tasks">
-            <div className="task-container">
+          <div className="jobFormPage_form_details_tasks">
+            <div className="jobFormPage_form_details_tasks_container">
               {taskArr.map((el, i) => (
-                <section className="task-line" key={uuidv4()}>
+                <section className="jobFormPage_form_details_tasks_container_line" key={uuidv4()}>
                   <TextInput
                     key={uuidv4()}
                     label={"Job Tasks"}
@@ -264,8 +264,8 @@ const { editAccess } = useRecruiterProvider()
                 </section>
               ))}
             </div>
-            <section className="task-header">
-              <span className="task-req">Min. 1 Job Task req.</span>
+            <section className="jobFormPage_form_details_tasks_header">
+              <span className="jobFormPage_form_details_tasks_header_req">Min. 1 Job Task req.</span>
               <span onClick={(event) => taskButton(event)}>
                 Click to Add A Task
               </span>
