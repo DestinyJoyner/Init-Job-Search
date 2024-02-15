@@ -3,8 +3,17 @@
   height: 98vh;
   justify-items: center;
   align-items: center;
-  //   padding: 2vh 0 4vh 0;
 
+  &_error {
+    color: var(--init-rust);
+    font-size: 22px;
+    font-weight: 600;
+    justify-self: right;
+    position: relative;
+    bottom: 5.8vh;
+    right: 8vw;
+    // left: 13vw;
+  }
   &_form {
     display: grid;
     grid-template-rows: repeat(3, 6vh) 42vh 22vh 4vh;
@@ -282,34 +291,7 @@
 }
 
 
-/* submit button */
-.job-form-submit {
-  all: unset;
-  height: 6vh;
-  width: 30%;
-  position: relative;
-  top: 1vh;
-  left: 1vw;
-  color: var(--init-blue);
-  justify-self: left;
-  /* margin-left: 3vw; */
-  font-size: 24px;
-  font-weight: 600;
-}
 
-.job-form input,
-.job-form textarea,
-.job-form select {
-  border-color: var(--init-mint);
-}
-
-.job-form-error {
-  color: var(--init-rust);
-  font-size: 20px;
-  position: relative;
-  bottom: 4vh;
-  left: 13vw;
-}
 
 /* dark mode */
 .dark .job-form-header {

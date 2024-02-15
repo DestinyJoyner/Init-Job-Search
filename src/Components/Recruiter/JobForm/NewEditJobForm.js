@@ -323,7 +323,7 @@ export default function NewEditJobForm({ edit }) {
           />
         </form>
         {formError && (
-          <span className="job-form-error">"Form is incomplete"</span>
+          <span className="jobFormPage_error">Form is Incomplete!</span>
         )}
       </div>
     )
