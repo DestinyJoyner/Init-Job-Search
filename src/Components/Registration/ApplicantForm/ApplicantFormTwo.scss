@@ -1,5 +1,5 @@
 .applicantFormTwo {
-  // grid-row: 1/5;
+  grid-row: 1/5;
   // background-color: red;
   width: 100%;
   margin-top: 5vh;
@@ -12,8 +12,8 @@
     flex-direction: column;
     row-gap: 0.5vh;
     align-items: center;
-    position: relative;
-    bottom: 5vh;
+    // position: relative;
+    // bottom: 5vh;
 
     & a {
       text-transform: uppercase;
