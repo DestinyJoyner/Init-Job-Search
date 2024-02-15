@@ -1,7 +1,6 @@
 .jobForm_label_datalist {
     display: grid;
-    // color: red;
-    grid-template-rows: repeat(3,1fr);
+    height: fit-content;
 
     & span {
         grid-row: 2;

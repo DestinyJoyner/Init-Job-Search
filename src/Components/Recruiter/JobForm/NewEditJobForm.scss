@@ -7,11 +7,12 @@
 
   &_form {
     display: grid;
-    grid-template-rows: repeat(2, 6vh) 9vh 42vh 20vh 6vh;
+    grid-template-rows: repeat(3, 6vh) 42vh 20vh 6vh;
     row-gap: 1vh;
     height: 100%;
     width: 100%;
     justify-items: center;
+    align-items: center;
     background-color: var(--init-background);
 
     & > * {
@@ -59,21 +60,14 @@
       outline: none;
     }
 
-    &_location,
-    &_label_dropdown {
-      position: relative;
-      grid-column: 1;
-      grid-row: 1;
-      top: 3.5vh;
-      font-size: 12px;
-    }
     &_location {
+      grid-row: 3;
       display: grid;
       grid-template-columns: 60% 40%;
       width: 90%;
       align-items: center;
 
-      &_dropdown {
+      &_label_dropdown {
         position: relative;
         grid-column: 1;
         grid-row: 1;
@@ -90,7 +84,7 @@
         text-align: left;
         font-size: 16px;
         position: relative;
-        bottom: 1vh;
+        // bottom: 1vh;
       }
     }
 
@@ -206,15 +200,14 @@
       row-gap: 0.5vh;
       height: 100%;
 
-      &_req{
-font-size: 12px;
-font-style: italic;
-width: fit-content;
-justify-self: right;
-position: relative;
-bottom: 2.5vh;
-    
-}
+      &_req {
+        font-size: 12px;
+        font-style: italic;
+        width: fit-content;
+        justify-self: right;
+        position: relative;
+        bottom: 2.5vh;
+      }
 
       .skills-checkboxes {
         display: grid;
@@ -230,16 +223,15 @@ bottom: 2.5vh;
         & label {
           all: unset;
           width: 100%;
-            display: flex;
-            align-items: center;
-            column-gap: 1vw;
+          display: flex;
+          align-items: center;
+          column-gap: 1vw;
           font-size: 17px;
           & input {
             width: 1.5em;
             height: 1.5em;
           }
         }
-
       }
     }
 
@@ -252,9 +244,6 @@ bottom: 2.5vh;
         position: relative;
         bottom: 1vh;
         width: 95%;
-
-        &_span {
-        }
       }
 
       &_checkbox {
@@ -262,9 +251,9 @@ bottom: 2.5vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-self: right;
+        // justify-self: right;
         position: relative;
-        bottom: 0.5vh;
+        // bottom: 0.5vh;
 
         & input {
           justify-self: center;

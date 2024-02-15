@@ -26,7 +26,7 @@ function TextInput({
   return (
     <label htmlFor={formId}>
       <input
-        className="jobFormPage_input_text"
+        className="jobFormPage_form_input_text"
         type="text"
         value={task ? taskTest[index] : stateVar[formId]}
         id={formId}
