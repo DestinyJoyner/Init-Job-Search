@@ -13,17 +13,27 @@ import FilterDatalist from "../../Job/Inputs/FilterDatalist.js";
 import SkillsComponent from "../../Job/SkillsComponent.js";
 import { dropdownCities } from "../../App/Data/Cities.js";
 import { handleSearchBar } from "../../Functions/SearchFunctions/SearchBarFunctions.js";
-import { convertTasks, convertSkills } from "../../Functions/ConvertFunctions/ConversionFunctions.js";
+import {
+  convertTasks,
+  convertSkills,
+} from "../../Functions/ConvertFunctions/ConversionFunctions.js";
 import { asterisk } from "../../App/Data/Icons.js";
 import { IoMdAddCircle } from "react-icons/io";
 import "./NewEditJobForm.scss";
 
 export default function NewEditJobForm({ edit }) {
   const { jobID } = useJobProvider();
-const { editAccess } = useRecruiterProvider()
+  const { editAccess } = useRecruiterProvider();
   const { setAppHeader } = useNavProvider();
-  const { API, axios, recruiterID, isSignedIn, isRecruiterAcc, setLoading, loading } =
-    useContextProvider();
+  const {
+    API,
+    axios,
+    recruiterID,
+    isSignedIn,
+    isRecruiterAcc,
+    setLoading,
+    loading,
+  } = useContextProvider();
   const navigate = useNavigate();
   const [originalData, setOriginalData] = useState({});
   const [jobDropdown, setJobDropdown] = useState("");
@@ -132,7 +142,7 @@ const { editAccess } = useRecruiterProvider()
       if (!edit) {
         setFormError(false);
         obj.jobDetails.full_remote = `${obj.jobDetails.full_remote}`;
-        console.log(obj)
+        console.log(obj);
         axios
           .post(`${API}/jobs`, obj)
           .then(({ data }) => navigate(`/jobs/${data.id}`))
@@ -173,7 +183,7 @@ const { editAccess } = useRecruiterProvider()
         .catch((err) => console.log(err));
     } else {
       setAppHeader("Post New Job");
-      setLoading(false)
+      setLoading(false);
     }
     if (isSignedIn || !isRecruiterAcc) {
       navigate("/not-found");
@@ -181,15 +191,18 @@ const { editAccess } = useRecruiterProvider()
   }, [loading]);
 
   useEffect(() => {
-    if(jobForm.id){
-      setLoading(false)
+    if (jobForm.id) {
+      setLoading(false);
     }
-  }, [jobForm])
+  }, [jobForm]);
 
   return (
-    ((isRecruiterAcc && !edit) || editAccess || !loading)&& (
+    ((isRecruiterAcc && !edit) || editAccess || !loading) && (
       <div className="jobFormPage">
-        <form className="jobFormPage_form" onSubmit={(event) => handleSubmit(event)}>
+        <form
+          className="jobFormPage_form"
+          onSubmit={(event) => handleSubmit(event)}
+        >
           <TextInput
             label={"Job Title"}
             formId={"title"}
@@ -200,15 +213,19 @@ const { editAccess } = useRecruiterProvider()
           />
 
           <FilterDatalist
-          label={"Company"}
-          formId={"company"}
-          stateVar={jobForm}
-          setFunction={setJobForm}
-          required={true}
-          placeholder={"Company"} />
-         
+            label={"Company"}
+            formId={"company"}
+            stateVar={jobForm}
+            setFunction={setJobForm}
+            required={true}
+            placeholder={"Company"}
+          />
+
           <section className="jobFormPage_form_location">
-            <label htmlFor="city" className="jobFormPage_form_location_label_dropdown">
+            <label
+              htmlFor="city"
+              className="jobFormPage_form_location_label_dropdown"
+            >
               <span>City{asterisk}</span>
             </label>
             <Dropdown
@@ -234,57 +251,64 @@ const { editAccess } = useRecruiterProvider()
             />
           </section>
 
-        <section className="jobFormPage_form_details">
-          <label className="jobFormPage_form_details_border_label">Job Details{asterisk}</label>
-        <TextArea
-            label={"Job Details"}
-            formId={"details"}
-            stateVar={jobForm}
-            setFunction={setJobForm}
-            required={true}
-            placeholder={"Enter Job Overview details here"}
-          />
+          <section className="jobFormPage_form_details">
+            <label className="jobFormPage_form_details_border_label">
+              Job Details{asterisk}
+            </label>
+            <TextArea
+              label={"Job Details"}
+              formId={"details"}
+              stateVar={jobForm}
+              setFunction={setJobForm}
+              required={true}
+              placeholder={"Enter Job Overview details here"}
+            />
 
-          {/* Tasks */}
-          <div className="jobFormPage_form_details_tasks">
-            <div className="jobFormPage_form_details_tasks_container">
-              {taskArr.map((el, i) => (
-                <section className="jobFormPage_form_details_tasks_container_line" key={uuidv4()}>
-                  <TextInput
+            {/* Tasks */}
+            <div className="jobFormPage_form_details_tasks">
+              <div className="jobFormPage_form_details_tasks_container">
+                {taskArr.map((el, i) => (
+                  <section
+                    className="jobFormPage_form_details_tasks_container_line"
                     key={uuidv4()}
-                    label={"Job Tasks"}
-                    formId={"tasks"}
-                    stateVar={taskArr}
-                    setFunction={setTaskArr}
-                    required={true}
-                    placeholder={`Job Task (${i + 1})`}
-                    index={i}
-                    task={true}
-                  />
-                </section>
-              ))}
+                  >
+                    <TextInput
+                      key={uuidv4()}
+                      label={"Job Tasks"}
+                      formId={"tasks"}
+                      stateVar={taskArr}
+                      setFunction={setTaskArr}
+                      required={true}
+                      placeholder={`Job Task (${i + 1})`}
+                      index={i}
+                      task={true}
+                    />
+                  </section>
+                ))}
+              </div>
+              <section className="jobFormPage_form_details_tasks_header">
+                <span className="jobFormPage_form_details_tasks_header_req">
+                  Min. 1 Job Task req.
+                </span>
+                <span onClick={(event) => taskButton(event)}>
+                  Click to Add A Task
+                </span>
+                <IoMdAddCircle
+                  size={"20px"}
+                  color={"#41cdbc"}
+                  onClick={(event) => taskButton(event)}
+                />
+              </section>
             </div>
-            <section className="jobFormPage_form_details_tasks_header">
-              <span className="jobFormPage_form_details_tasks_header_req">Min. 1 Job Task req.</span>
-              <span onClick={(event) => taskButton(event)}>
-                Click to Add A Task
-              </span>
-              <IoMdAddCircle
-                size={"20px"}
-                color={"#41cdbc"}
-                onClick={(event) => taskButton(event)}
-              />
-            </section>
-          </div>
-        </section>
-          
+          </section>
 
-          <section className="job-form-skills">
-          <label className="jobForm_details_border_label">Skills Req.{asterisk}</label>
-            <span>
-              <span>Min. 1, Max. 4 Skills req.{asterisk}</span>
-              
-            </span>
+          <section className="jobFormPage_form_skills">
+            <label className="jobFormPage_form_details_border_label">
+              Skills Req.{asterisk}
+            </label>
+
+            <span className="jobFormPage_form_skills_req">Min. 1, Max. 4 Skills req.{asterisk}</span>
+
             <SkillsComponent
               checkbox={true}
               checkedArr={skills}

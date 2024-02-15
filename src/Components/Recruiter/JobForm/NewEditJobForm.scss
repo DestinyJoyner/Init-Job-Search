@@ -3,7 +3,7 @@
   height: 95vh;
   justify-items: center;
   align-items: center;
-  padding: 2vh 0 4vh 0;
+  //   padding: 2vh 0 4vh 0;
 
   &_form {
     display: grid;
@@ -26,12 +26,14 @@
       background-color: var(--init-background);
     }
 
-    & input[type="text"] {
-      border-top: none;
-      grid-row: 1;
-      width: 100%;
-      padding-bottom: 2px;
-      font-size: 18px;
+    &_input {
+      &_text {
+        border-top: none;
+        grid-row: 1;
+        width: 100%;
+        padding-bottom: 2px;
+        font-size: 18px;
+      }
     }
     & label {
       row-gap: 0.5vh;
@@ -40,10 +42,11 @@
     & textarea {
       background-color: var(--init-background);
       border-width: 1.5px;
-      width: 95%;
+      width: 98%;
       height: 12vh;
       padding: unset;
-      font-size: 18px;
+      padding: 0.5vh;
+      font-size: 16px;
 
       &::placeholder {
         padding: 0.5vh;
@@ -92,13 +95,14 @@
     }
 
     &_details {
-      margin-top: 1vh;
+      //   margin-top: 1vh;
       width: 90%;
-      height: 38vh;
+      height: 40vh;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
+      row-gap: 1vh;
       border: 2px solid var(--init-mint);
 
       &_border {
@@ -108,6 +112,7 @@
           padding: 0 10px;
           font-size: 18px;
           height: fit-content;
+          width: fit-content;
           bottom: 1.6vh;
           left: 1vh;
           align-self: flex-start;
@@ -120,52 +125,54 @@
         display: grid;
         height: 20vh;
         position: relative;
-  
+
         &_header {
           font-size: 16px;
           display: grid;
           grid-template-columns: 40% 50% 10%;
           width: 100%;
-          position: relative;
-  
+          height: fit-content;
+
+          & > * {
+            position: relative;
+          }
+
           & span:nth-child(2) {
             justify-self: right;
-            margin-right: 2vw;
+            top: 0.2vh;
+            // margin-right: 2vw;
             color: var(--init-blue);
           }
-  
+
           &_req {
             font-style: italic;
             font-size: 12px;
             color: var(--init-rust);
-            position: relative;
-            top: 0.3vh;
-            right: 1.5vh;
+            top: 0.5vh;
+            // right: 1.5vh;
           }
-  
+
           & svg {
-            position: relative;
+            top: 0.1vh;
+            justify-self: right;
           }
         }
-  
+
         &_container {
           border-bottom: 1px solid var(--init-blue);
           width: 100%;
-          max-height: 15vh;
+          max-height: 20vh;
           overflow-x: hidden;
           display: grid;
           grid-auto-rows: 7vh;
-  
+
           &_line,
           &_remove {
-            border: 1px solid red;
-            grid-column: 2;
+            grid-column: span 2;
             position: relative;
-            justify-self: center;
-            top: 0.5vh;
-            left: 2vw;
           }
           &_line {
+            width: 100%;
             & label {
               display: grid;
               grid-template-columns: 85% 10%;
@@ -173,12 +180,66 @@
               margin-left: 1vw;
             }
           }
-  
+
           & input[type="text"] {
             height: 3vh;
             font-size: 15px;
+            grid-column: 1;
+          }
+          .jobFormPage_label {
+            grid-column: 1;
+            grid-row: 2;
+          }
+          & svg {
+            grid-row: span 2;
+            align-self: center;
+            justify-self: center;
           }
         }
+      }
+    }
+
+    &_skills {
+      border: 2px solid var(--init-mint);
+      display: grid;
+      flex-direction: column;
+      row-gap: 0.5vh;
+      height: 100%;
+
+      &_req{
+font-size: 12px;
+font-style: italic;
+width: fit-content;
+justify-self: right;
+position: relative;
+bottom: 2.5vh;
+    
+}
+
+      .skills-checkboxes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1vw;
+        width: 100%;
+        row-gap: 0.5vh;
+        height: 17vh;
+        justify-items: left;
+        position: relative;
+        bottom: 2.3vh;
+        left: 1vw;
+        & label {
+          all: unset;
+          width: 100%;
+            display: flex;
+            align-items: center;
+            column-gap: 1vw;
+          font-size: 17px;
+          & input {
+            width: 1.5em;
+            height: 1.5em;
+          }
+        }
+
       }
     }
 
@@ -214,7 +275,6 @@
     }
   }
 }
-
 
 /* skills */
 
