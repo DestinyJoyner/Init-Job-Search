@@ -9,8 +9,8 @@ import JobFormTextInput from "../../FormInputs/JobFormInputs/JobFormTextInput/Jo
 import JobFormDataList from "../../FormInputs/JobFormInputs/JobFormDataListInput/JobFormDataList.js";
 import JobFormTextArea from "../../FormInputs/JobFormInputs/JobFormTextArea/JobFormTextArea.js";
 import JobFormCheckbox from "../../FormInputs/JobFormInputs/JobFormCheckbox/JobFormCheckbox.js";
+import JobFormDropdown from "../../FormInputs/JobFormInputs/JobFormDropdown/JobFormDropdown.js";
 
-import Checkbox from "../../Job/Inputs/Checkbox.js";
 import Dropdown from "../../Job/Inputs/Dropdown.js";
 
 import SkillsComponent from "../../Job/SkillsComponent.js";
@@ -226,13 +226,13 @@ export default function NewEditJobForm({ edit }) {
           />
 
           <section className="jobFormPage_form_location">
-            <label
+            {/* <label
               htmlFor="city"
               className="jobFormPage_form_location_label_dropdown"
             >
               <span>City{asterisk}</span>
-            </label>
-            <Dropdown
+            </label> */}
+            <JobFormDropdown
               idVal={"city"}
               stateVar={jobDropdown}
               optionsArray={dropdownCities}
