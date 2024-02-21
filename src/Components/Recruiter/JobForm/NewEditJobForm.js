@@ -6,11 +6,13 @@ import { useNavProvider } from "../../../Providers/NavProvider.js";
 import { useJobProvider } from "../../../Providers/JobProvider.js";
 import { useRecruiterProvider } from "../../../Providers/RecruiterProvider.js";
 import JobFormTextInput from "../../FormInputs/JobFormInputs/JobFormTextInput/JobFormTextInput.js";
-import TextArea from "../../Job/Inputs/TextArea.js";
+import JobFormDataList from "../../FormInputs/JobFormInputs/JobFormDataListInput/JobFormDataList.js";
+import JobFormTextArea from "../../FormInputs/JobFormInputs/JobFormTextArea/JobFormTextArea.js";
+
+
 import Checkbox from "../../Job/Inputs/Checkbox.js";
 import Dropdown from "../../Job/Inputs/Dropdown.js";
-import FilterDatalist from "../../Job/Inputs/FilterDatalist.js";
-import JobFormDataList from "../../FormInputs/JobFormInputs/JobFormDataListInput/JobFormDataList.js";
+
 import SkillsComponent from "../../Job/SkillsComponent.js";
 import { dropdownCities } from "../../App/Data/Cities.js";
 import { handleSearchBar } from "../../Functions/SearchFunctions/SearchBarFunctions.js";
@@ -257,7 +259,7 @@ export default function NewEditJobForm({ edit }) {
             <label className="jobFormPage_form_details_border_label">
               Job Details{asterisk}
             </label>
-            <TextArea
+            <JobFormTextArea
               label={"Job Details"}
               formId={"details"}
               stateVar={jobForm}
