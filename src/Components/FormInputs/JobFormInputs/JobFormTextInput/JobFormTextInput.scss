@@ -1,0 +1,31 @@
+.jobFormTextInput {
+
+    & input {
+        grid-row: 1;
+        width: 100%;
+        padding-bottom: 2px;
+        font-size: 18px;
+        background-color: var(--init-background);
+    }
+
+    &_taskIcon {
+        grid-row: span 2;
+        align-self: center;
+        justify-self: center;
+      }
+
+
+}
+
+.dark .jobFormTextInput {
+    & input {
+        border-color: var(--init-darkmint);
+        background-color: var(--init-dark);
+        color: white;
+
+        &::placeholder {
+            color: var(--init-background);
+            font-style: italic;
+        }
+    }
+}

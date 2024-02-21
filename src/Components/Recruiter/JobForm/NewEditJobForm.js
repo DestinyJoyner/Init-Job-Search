@@ -5,11 +5,12 @@ import { useContextProvider } from "../../../Providers/Provider.js";
 import { useNavProvider } from "../../../Providers/NavProvider.js";
 import { useJobProvider } from "../../../Providers/JobProvider.js";
 import { useRecruiterProvider } from "../../../Providers/RecruiterProvider.js";
-import TextInput from "../../Job/Inputs/TextInput.js";
+import JobFormTextInput from "../../FormInputs/JobFormInputs/JobFormTextInput/JobFormTextInput.js";
 import TextArea from "../../Job/Inputs/TextArea.js";
 import Checkbox from "../../Job/Inputs/Checkbox.js";
 import Dropdown from "../../Job/Inputs/Dropdown.js";
 import FilterDatalist from "../../Job/Inputs/FilterDatalist.js";
+import JobFormDataList from "../../FormInputs/JobFormInputs/JobFormDataListInput/JobFormDataList.js";
 import SkillsComponent from "../../Job/SkillsComponent.js";
 import { dropdownCities } from "../../App/Data/Cities.js";
 import { handleSearchBar } from "../../Functions/SearchFunctions/SearchBarFunctions.js";
@@ -20,6 +21,7 @@ import {
 import { asterisk } from "../../App/Data/Icons.js";
 import { IoMdAddCircle } from "react-icons/io";
 import "./NewEditJobForm.scss";
+import "./DarkModeNewEditJobForm.scss"
 
 export default function NewEditJobForm({ edit }) {
   const { jobID } = useJobProvider();
@@ -203,7 +205,7 @@ export default function NewEditJobForm({ edit }) {
           className="jobFormPage_form"
           onSubmit={(event) => handleSubmit(event)}
         >
-          <TextInput
+          <JobFormTextInput
             label={"Job Title"}
             formId={"title"}
             stateVar={jobForm}
@@ -212,7 +214,7 @@ export default function NewEditJobForm({ edit }) {
             placeholder={"Job Title"}
           />
 
-          <FilterDatalist
+          <JobFormDataList
             label={"Company"}
             formId={"company"}
             stateVar={jobForm}
@@ -272,7 +274,7 @@ export default function NewEditJobForm({ edit }) {
                     className="jobFormPage_form_details_tasks_container_line"
                     key={uuidv4()}
                   >
-                    <TextInput
+                    <JobFormTextInput
                       key={uuidv4()}
                       label={"Job Tasks"}
                       formId={"tasks"}

@@ -140,6 +140,7 @@ textarea:focus {
 
 .dark input {
   border-color: var(--init-gold);
+  background-color: var(--init-dark); 
 }
 .dark input::placeholder {
   color: var(--init-background);

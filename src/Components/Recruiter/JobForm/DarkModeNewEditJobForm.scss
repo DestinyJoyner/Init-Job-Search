@@ -1,0 +1,17 @@
+.dark .jobFormPage {
+    & >* {
+        background-color: unset;
+        // color: unset;
+    }
+    &_form {
+        background-color: var(--init-dark);
+        // color: var(--init-background);
+
+        & label {
+            & input::placeholder, textarea::placeholder, &_border_label {
+                background-color: var(--init-dark); 
+            }
+        }
+        
+    }
+}
