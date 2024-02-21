@@ -40,20 +40,6 @@
       row-gap: 0.5vh;
     }
 
-    & textarea {
-    //   background-color: var(--init-background);
-    //   border-width: 1.5px;
-    //   width: 98%;
-    //   height: 12vh;
-    //   padding: unset;
-    //   padding: 0.5vh;
-    //   font-size: 16px;
-
-    //   &::placeholder {
-    //     padding: 0.5vh;
-    //     font-size: 16px;
-    //   }
-    }
     & input:focus,
     select,
     textarea:focus {
@@ -249,28 +235,6 @@
       font-size: 12px;
       grid-row: 2;
 
-    //   &_textarea {
-    //     height: 15vh;
-    //     position: relative;
-    //     bottom: 1vh;
-    //     width: 95%;
-    //   }
-
-      &_checkbox {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        // justify-self: right;
-        position: relative;
-        bottom: 0.7vh;
-
-        & input {
-          justify-self: center;
-          height: 2em;
-          width: 2em;
-        }
-      }
     }
   }
 }

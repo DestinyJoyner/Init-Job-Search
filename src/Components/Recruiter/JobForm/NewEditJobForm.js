@@ -8,7 +8,7 @@ import { useRecruiterProvider } from "../../../Providers/RecruiterProvider.js";
 import JobFormTextInput from "../../FormInputs/JobFormInputs/JobFormTextInput/JobFormTextInput.js";
 import JobFormDataList from "../../FormInputs/JobFormInputs/JobFormDataListInput/JobFormDataList.js";
 import JobFormTextArea from "../../FormInputs/JobFormInputs/JobFormTextArea/JobFormTextArea.js";
-
+import JobFormCheckbox from "../../FormInputs/JobFormInputs/JobFormCheckbox/JobFormCheckbox.js";
 
 import Checkbox from "../../Job/Inputs/Checkbox.js";
 import Dropdown from "../../Job/Inputs/Dropdown.js";
@@ -247,7 +247,7 @@ export default function NewEditJobForm({ edit }) {
               }
             />
 
-            <Checkbox
+            <JobFormCheckbox
               label={"Remote Work"}
               formId={"full_remote"}
               stateVar={jobForm}
