@@ -17,8 +17,8 @@
   &_form {
     display: grid;
     grid-template-rows: repeat(3, 6vh) 42vh 22vh 4vh;
-    row-gap: 1.1vh;
-    margin-top: 2vh;
+    row-gap: 1.5vh;
+    margin-top: 2.5vh;
     height: 100%;
     width: 100%;
     justify-items: center;
@@ -28,6 +28,21 @@
     & > *  {
       width: 90%;
     }
+
+    &_border {
+        &_label {
+          position: relative;
+          width: unset;
+          padding: 0 10px;
+          font-size: 18px;
+          height: fit-content;
+          width: fit-content;
+          bottom: 1.6vh;
+          left: 1vh;
+          align-self: flex-start;
+          background-color: var(--init-background);
+        }
+      }
 
     .task-container {
       border-right: none;
@@ -45,34 +60,6 @@
       outline: none;
     }
 
-    &_location {
-      grid-row: 3;
-      display: grid;
-      grid-template-columns: 60% 40%;
-      width: 90%;
-      align-items: center;
-    //   padding-bottom: 2vh;
-
-      &_label_dropdown {
-        // position: relative;
-        // grid-column: 1;
-        // grid-row: 1;
-        // top: 3.5vh;
-        // font-size: 12px;
-      }
-      & select {
-        // grid-column: 1;
-        // grid-row: 1;
-        // border: none;
-        // border-bottom: 2px solid var(--init-mint);
-        // width: 90%;
-        // height: 60%;
-        // text-align: left;
-        // font-size: 16px;
-        // position: relative;
-        // bottom: 1vh;
-      }
-    }
 
     &_details {
       //   margin-top: 1vh;
@@ -85,20 +72,6 @@
       row-gap: 1vh;
       border: 2px solid var(--init-mint);
 
-      &_border {
-        &_label {
-          position: relative;
-          width: unset;
-          padding: 0 10px;
-          font-size: 18px;
-          height: fit-content;
-          width: fit-content;
-          bottom: 1.6vh;
-          left: 1vh;
-          align-self: flex-start;
-          background-color: var(--init-background);
-        }
-      }
 
       &_tasks {
         width: 95%;
@@ -242,6 +215,19 @@
 .dark .jobFormPage {
     &_label {
         color: var(--init-gold);
+    }
+
+    &_form {
+        &_border {
+            &_label {
+              background-color: var(--init-dark);
+              color: var(--init-gold);
+            }
+          }
+
+          &_skills, &_details {
+            border-color: var(--init-gold);
+          }
     }
 }
 

@@ -11,10 +11,9 @@ import JobFormTextArea from "../../FormInputs/JobFormInputs/JobFormTextArea/JobF
 import JobFormCheckbox from "../../FormInputs/JobFormInputs/JobFormCheckbox/JobFormCheckbox.js";
 import JobFormDropdown from "../../FormInputs/JobFormInputs/JobFormDropdown/JobFormDropdown.js";
 
-import Dropdown from "../../Job/Inputs/Dropdown.js";
+import JobFormLocation from "./JobFormLocation/JobFormLocation.js";
 
 import SkillsComponent from "../../Job/SkillsComponent.js";
-import { dropdownCities } from "../../App/Data/Cities.js";
 import { handleSearchBar } from "../../Functions/SearchFunctions/SearchBarFunctions.js";
 import {
   convertTasks,
@@ -24,6 +23,7 @@ import { asterisk } from "../../App/Data/Icons.js";
 import { IoMdAddCircle } from "react-icons/io";
 import "./NewEditJobForm.scss";
 import "./DarkModeNewEditJobForm.scss"
+
 
 export default function NewEditJobForm({ edit }) {
   const { jobID } = useJobProvider();
@@ -201,7 +201,7 @@ export default function NewEditJobForm({ edit }) {
   }, [jobForm]);
 
   return (
-    ((isRecruiterAcc && !edit) || editAccess || !loading) && (
+    ((isRecruiterAcc && !edit) || editAccess) && !loading && (
       <div className="jobFormPage">
         <form
           className="jobFormPage_form"
@@ -225,47 +225,25 @@ export default function NewEditJobForm({ edit }) {
             placeholder={"Company"}
           />
 
-          <section className="jobFormPage_form_location">
-            {/* <label
-              htmlFor="city"
-              className="jobFormPage_form_location_label_dropdown"
-            >
-              <span>City{asterisk}</span>
-            </label> */}
-            <JobFormDropdown
-              idVal={"city"}
-              stateVar={jobDropdown}
-              optionsArray={dropdownCities}
-              onChange={(event) =>
-                handleSearchBar(
-                  event,
-                  jobDropdown,
-                  setJobDropdown,
-                  jobForm,
-                  setJobForm
-                )
-              }
-            />
-
-            <JobFormCheckbox
-              label={"Remote Work"}
-              formId={"full_remote"}
-              stateVar={jobForm}
-              setFunction={setJobForm}
-            />
-          </section>
+        <JobFormLocation 
+        stateVar = {jobDropdown}
+        setFunction = {setJobDropdown}
+        formStateVar = {jobForm}
+        formSetFunction = {setJobForm}
+        />
+         
 
           <section className="jobFormPage_form_details">
-            <label className="jobFormPage_form_details_border_label">
+            <label className="jobFormPage_form_border_label">
               Job Details{asterisk}
             </label>
             <JobFormTextArea
-              label={"Job Details"}
+              label={"Job Description"}
               formId={"details"}
               stateVar={jobForm}
               setFunction={setJobForm}
               required={true}
-              placeholder={"Enter Job Overview details here"}
+              placeholder={"Enter Job Description here"}
             />
 
             {/* Tasks */}
@@ -307,7 +285,7 @@ export default function NewEditJobForm({ edit }) {
           </section>
 
           <section className="jobFormPage_form_skills">
-            <label className="jobFormPage_form_details_border_label">
+            <label className="jobFormPage_form_border_label">
               Skills Req.{asterisk}
             </label>
 
