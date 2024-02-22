@@ -1,14 +1,14 @@
 .jobFormTextArea {
   height: 15vh;
   position: relative;
-  bottom: 1vh;
+  bottom: 3vh;
   width: 95%;
 
   &_textarea {
     background-color: var(--init-background);
     border-width: 1.5px;
     width: 98%;
-    height: 12vh;
+    height: 13vh;
     padding: unset;
     padding: 0.5vh;
     font-size: 16px;

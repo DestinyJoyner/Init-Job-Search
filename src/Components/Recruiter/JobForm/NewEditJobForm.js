@@ -8,13 +8,12 @@ import { useRecruiterProvider } from "../../../Providers/RecruiterProvider.js";
 import JobFormTextInput from "../../FormInputs/JobFormInputs/JobFormTextInput/JobFormTextInput.js";
 import JobFormDataList from "../../FormInputs/JobFormInputs/JobFormDataListInput/JobFormDataList.js";
 import JobFormTextArea from "../../FormInputs/JobFormInputs/JobFormTextArea/JobFormTextArea.js";
-import JobFormCheckbox from "../../FormInputs/JobFormInputs/JobFormCheckbox/JobFormCheckbox.js";
-import JobFormDropdown from "../../FormInputs/JobFormInputs/JobFormDropdown/JobFormDropdown.js";
 
 import JobFormLocation from "./JobFormLocation/JobFormLocation.js";
+import JobFormDetails from "./JobFormDetails/JobFormDetails.js";
 
 import SkillsComponent from "../../Job/SkillsComponent.js";
-import { handleSearchBar } from "../../Functions/SearchFunctions/SearchBarFunctions.js";
+
 import {
   convertTasks,
   convertSkills,
@@ -66,10 +65,10 @@ export default function NewEditJobForm({ edit }) {
     }
   }
 
-  function taskButton(e) {
-    e.preventDefault();
-    setTaskArr([...taskArr, ""]);
-  }
+  // function taskButton(e) {
+  //   e.preventDefault();
+  //   setTaskArr([...taskArr, ""]);
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -232,8 +231,14 @@ export default function NewEditJobForm({ edit }) {
         formSetFunction = {setJobForm}
         />
          
+         <JobFormDetails 
+         tasksStateVar={taskArr}
+          tasksSetFunction={setTaskArr} 
+          formStateVar={jobForm} 
+          formSetFunction={setJobForm}
+         />
 
-          <section className="jobFormPage_form_details">
+         {/* <section className="jobFormPage_form_details">
             <label className="jobFormPage_form_border_label">
               Job Details{asterisk}
             </label>
@@ -246,7 +251,7 @@ export default function NewEditJobForm({ edit }) {
               placeholder={"Enter Job Description here"}
             />
 
-            {/* Tasks */}
+           
             <div className="jobFormPage_form_details_tasks">
               <div className="jobFormPage_form_details_tasks_container">
                 {taskArr.map((el, i) => (
@@ -282,7 +287,7 @@ export default function NewEditJobForm({ edit }) {
                 />
               </section>
             </div>
-          </section>
+          </section> */}
 
           <section className="jobFormPage_form_skills">
             <label className="jobFormPage_form_border_label">
