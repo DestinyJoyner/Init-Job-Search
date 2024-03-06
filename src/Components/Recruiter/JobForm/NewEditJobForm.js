@@ -11,6 +11,7 @@ import JobFormTextArea from "../../FormInputs/JobFormInputs/JobFormTextArea/JobF
 
 import JobFormLocation from "./JobFormLocation/JobFormLocation.js";
 import JobFormDetails from "./JobFormDetails/JobFormDetails.js";
+import JobFormSkills from "./JobFormSkills/JobFormSkills.js";
 
 import SkillsComponent from "../../Job/SkillsComponent.js";
 
@@ -238,6 +239,10 @@ export default function NewEditJobForm({ edit }) {
           formSetFunction={setJobForm}
          />
 
+         <JobFormSkills 
+         handleSkills={handleSkills}
+         skills={skills}/>
+
          {/* <section className="jobFormPage_form_details">
             <label className="jobFormPage_form_border_label">
               Job Details{asterisk}
@@ -289,7 +294,7 @@ export default function NewEditJobForm({ edit }) {
             </div>
           </section> */}
 
-          <section className="jobFormPage_form_skills">
+          {/* <section className="jobFormPage_form_skills">
             <label className="jobFormPage_form_border_label">
               Skills Req.{asterisk}
             </label>
@@ -301,7 +306,7 @@ export default function NewEditJobForm({ edit }) {
               checkedArr={skills}
               checkBoxHandle={(event) => handleSkills(event)}
             />
-          </section>
+          </section> */}
 
           <input
             className="jobFormPage_form_submit"

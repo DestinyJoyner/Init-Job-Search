@@ -44,11 +44,11 @@
         }
       }
 
-    .task-container {
-      border-right: none;
-      border-left: none;
-      background-color: var(--init-background);
-    }
+    // .task-container {
+    //   border-right: none;
+    //   border-left: none;
+    //   background-color: var(--init-background);
+    // }
 
     & label {
       row-gap: 0.5vh;
@@ -61,7 +61,7 @@
     }
 
 
-    &_details {
+   /*  &_details {
       //   margin-top: 1vh;
     //   width: 90%;
       height: 38vh;
@@ -145,49 +145,49 @@
           }
         }
       }
-    }
+    } */
 
-    &_skills {
-      border: 2px solid var(--init-mint);
-      display: grid;
-      flex-direction: column;
-      row-gap: 0.5vh;
-      height: 100%;
+    // &_skills {
+    //   border: 2px solid var(--init-mint);
+    //   display: grid;
+    //   flex-direction: column;
+    //   row-gap: 0.5vh;
+    //   height: 100%;
 
-      &_req {
-        font-size: 12px;
-        font-style: italic;
-        width: fit-content;
-        justify-self: right;
-        position: relative;
-        bottom: 2.5vh;
-      }
+    //   &_req {
+    //     font-size: 12px;
+    //     font-style: italic;
+    //     width: fit-content;
+    //     justify-self: right;
+    //     position: relative;
+    //     bottom: 2.5vh;
+    //   }
 
-      .skills-checkboxes {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 1vw;
-        width: 100%;
-        row-gap: 0.5vh;
-        height: 17vh;
-        justify-items: left;
-        position: relative;
-        bottom: 2.3vh;
-        left: 1vw;
-        & label {
-          all: unset;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          column-gap: 1vw;
-          font-size: 17px;
-          & input {
-            width: 1.5em;
-            height: 1.5em;
-          }
-        }
-      }
-    }
+    //   .skills-checkboxes {
+    //     display: grid;
+    //     grid-template-columns: repeat(3, 1fr);
+    //     column-gap: 1vw;
+    //     width: 100%;
+    //     row-gap: 0.5vh;
+    //     height: 17vh;
+    //     justify-items: left;
+    //     position: relative;
+    //     bottom: 2.3vh;
+    //     left: 1vw;
+    //     & label {
+    //       all: unset;
+    //       width: 100%;
+    //       display: flex;
+    //       align-items: center;
+    //       column-gap: 1vw;
+    //       font-size: 17px;
+    //       & input {
+    //         width: 1.5em;
+    //         height: 1.5em;
+    //       }
+    //     }
+    //   }
+    // }
 
     &_submit {
         all: unset;
