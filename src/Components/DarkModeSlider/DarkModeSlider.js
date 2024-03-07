@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useContextProvider } from "../../Providers/Provider";
 import { useNavProvider } from "../../Providers/NavProvider";
-import { VscColorMode } from "react-icons/vsc"
+import { VscColorMode } from "react-icons/vsc";
 import "./DarkModeSlider.scss";
 
-function DarkModeSlider({text}) {
+function DarkModeSlider({ text }) {
   const { setTheme } = useContextProvider();
   const { navbarClick, darkModeSwitch } = useNavProvider();
 
@@ -33,12 +33,10 @@ function DarkModeSlider({text}) {
         />
         <span className="darkModeSwitch_slider"></span>
       </div>
- 
-    
-        <span className="darkModeSwitch_button">{ text !== false ? <span>Dark Mode</span> : <VscColorMode />}</span> 
-        
-      
-      
+
+      <span className="darkModeSwitch_button">
+        {text !== false ? <span>Dark Mode</span> : <VscColorMode />}
+      </span>
     </label>
   );
 }

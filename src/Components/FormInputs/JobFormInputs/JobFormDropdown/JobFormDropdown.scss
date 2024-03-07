@@ -1,0 +1,34 @@
+.jobFormDropdown {
+  &_select {
+    border-right: none;
+    border-left: none;
+    background-color: var(--init-background);
+    grid-column: 1;
+    grid-row: 1;
+    border: none;
+    border-bottom: 2px solid var(--init-mint);
+    width: 90%;
+    height: 60%;
+    text-align: left;
+    font-size: 16px;
+    // position: relative;
+  }
+  &_label {
+    align-self: center;
+    // position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dark .jobFormDropdown {
+  &_select {
+    background-color: var(--init-dark);
+    color: white;
+  }
+  &_label {
+    color: var(--init-gold);
+  }
+}

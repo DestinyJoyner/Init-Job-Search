@@ -11,6 +11,9 @@ function ApplicantRegisterForm({ setHideSliderButtons }) {
     education: "",
     email: "",
     password: "",
+    project: {
+      
+    }
   });
 
   useEffect(() => {

@@ -1,0 +1,13 @@
+.jobFormCheckbox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  & input {
+    justify-self: center;
+    height: 2em;
+    width: 2em;
+  }
+}

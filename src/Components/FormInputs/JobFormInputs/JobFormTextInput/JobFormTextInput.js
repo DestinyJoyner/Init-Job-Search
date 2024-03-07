@@ -3,11 +3,12 @@ import {
   handleTextChange,
   handleTasks,
   removeTask,
-} from "../../Functions/FormFunctions/JobFormFunctions.js";
-import { asterisk } from "../../App/Data/Icons.js";
+} from "../../../Functions/FormFunctions/JobFormFunctions.js";
+import { asterisk } from "../../../App/Data/Icons.js";
 import { HiMinusCircle } from "react-icons/hi";
+import "./JobFormTextInput.scss"
 
-function TextInput({
+function JobFormTextInput({
   label,
   formId,
   stateVar,
@@ -24,9 +25,8 @@ function TextInput({
   }
 
   return (
-    <label htmlFor={formId}>
+    <label className = "jobFormTextInput" htmlFor={formId}>
       <input
-        className="jobFormPage_form_input_text"
         type="text"
         value={task ? taskTest[index] : stateVar[formId]}
         id={formId}
@@ -45,7 +45,7 @@ function TextInput({
       </span>
       {task && (
         <HiMinusCircle
-          className="jobFormPage_form_tasks_container_remove"
+          className="jobFormTextInput_taskIcon"
           size={"16px"}
           color={"#BA1A1A"}
           onClick={() => removeTask(stateVar, setFunction, index)}
@@ -55,4 +55,4 @@ function TextInput({
   );
 }
 
-export default TextInput;
+export default JobFormTextInput;

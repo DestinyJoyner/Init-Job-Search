@@ -1,0 +1,93 @@
+.jobFormTasks {
+    width: 96%;
+        display: grid;
+        max-height: 18vh;
+        position: relative;
+        bottom: 1vh;
+
+    &_header {
+        grid-row: 3;
+        font-size: 16px;
+          display: grid;
+          grid-template-columns: 40% 50% 10%;
+          width: 100%;
+          height: fit-content;
+          position: relative;
+          top: 1vh;
+
+          & > * {
+            position: relative;
+          }
+
+          & span:nth-child(2) {
+            justify-self: right;
+            top: 0.2vh;
+            // margin-right: 2vw;
+            color: var(--init-blue);
+          }
+
+          &_req {
+            font-style: italic;
+            font-size: 12px;
+            color: var(--init-rust);
+            top: 0.5vh;
+            // right: 1.5vh;
+          }
+
+          & svg {
+            top: 0.1vh;
+            justify-self: right;
+            color: var(--init-blue)
+          }
+    }
+
+    &_container {
+      // padding: .5vh;
+      border: 1px solid darkgray;
+      
+      width: 100%;
+      max-height: 20vh;
+      overflow-x: hidden;
+      display: grid;
+      grid-auto-rows: 7vh;
+
+      &_line,
+      &_remove {
+        grid-column: span 2;
+        position: relative;
+      }
+      &_line {
+        width: 100%;
+        & label {
+          display: grid;
+          grid-template-columns: 85% 10%;
+          width: 100%;
+          margin-left: .5vw;
+        }
+      }
+
+      & input[type="text"] {
+        height: 3vh;
+        font-size: 15px;
+        grid-column: 1;
+      }
+      .jobFormPage_label {
+        grid-column: 1;
+        grid-row: 2;
+      }
+    }
+}
+
+.dark .jobFormTasks {
+  &_header {
+    & span {
+      color: var(--init-background);
+    }
+    & svg {
+      fill: var(--init-gold);
+    }
+  }
+  &_container {
+    border-color: var(--init-darkmint);
+  }
+}

@@ -1,0 +1,18 @@
+.jobFormDetails {
+    height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      row-gap: 1vh;
+      border: 2px solid var(--init-mint);
+
+      .jobFormPage_form_border_label {
+        bottom: 2.8vh;
+      }
+}
+
+.dark .jobFormDetails {
+    // border: 1px solid var(--init-gold);
+    // border: none;
+}

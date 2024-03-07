@@ -1,0 +1,35 @@
+.jobFormTextArea {
+  height: 15vh;
+  position: relative;
+  bottom: 3vh;
+  width: 95%;
+
+  &_textarea {
+    background-color: var(--init-background);
+    border-color: darkgray;;
+    border-width: 1px;
+    width: 98%;
+    height: 13vh;
+    padding: unset;
+    padding: .5vh ;
+    font-size: 16px;
+
+    &::placeholder {
+      padding: 0.5vh;
+      font-size: 16px;
+    }
+  }
+}
+
+.dark .jobFormTextArea {
+    &_textarea {
+        border-color: var(--init-darkmint);
+        background-color: var(--init-dark);
+        color: white;
+
+        &::placeholder {
+            color: var(--init-background);
+            font-style: italic;
+        }
+    }
+}

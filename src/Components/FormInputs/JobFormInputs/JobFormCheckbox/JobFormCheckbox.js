@@ -1,6 +1,7 @@
 import { useState } from "react";
+import "./JobFormCheckbox.scss"
 
-function Checkbox({label, formId, stateVar, setFunction}) {
+function JobFormCheckbox({label, formId, stateVar, setFunction}) {
     const [checkbox, setCheckbox] = useState(stateVar["full_remote"])
 
     // handleCheckbox
@@ -12,7 +13,7 @@ function Checkbox({label, formId, stateVar, setFunction}) {
    }
 
     return (
-        <label className="jobFormPage_form_label_checkbox" htmlFor={formId}>
+        <label className="jobFormCheckbox" htmlFor={formId}>
             <input
             type="checkbox"
             value={formId} 
@@ -25,4 +26,4 @@ function Checkbox({label, formId, stateVar, setFunction}) {
     );
 }
 
-export default Checkbox;
+export default JobFormCheckbox;

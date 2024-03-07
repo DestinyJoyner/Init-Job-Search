@@ -50,7 +50,7 @@
     width: 200px;
     & span {
       position: relative;
-      left: 1vw;
+      left: 13vw;
       top: .6vh;
       font-size: 20px;
       color: var(--init-background);
@@ -68,11 +68,6 @@
 }
 
 .dark .darkModeSwitch {
-  &_slider {
-    &:before {
-      // background-color: var(--init-mint);
-    }
-  }
   &_button {
     & svg {
       color: var(--init-dark);

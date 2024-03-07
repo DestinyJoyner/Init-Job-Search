@@ -5,7 +5,6 @@ import Error from "../../Pages/Error.js";
 import Home from "../../Pages/Home.js";
 import Jobs from "../../Pages/Jobs.js";
 import JobsShowPage from "../../Pages/JobsShowPage.js";
-// import JobsShow from "../Job/JobsShow.js";
 import Applicant from "../../Pages/Applicant.js";
 import JobProvider from "../../Providers/JobProvider.js";
 import RecruiterProvider from "../../Providers/RecruiterProvider.js";
@@ -14,10 +13,6 @@ import Register from "../../Pages/Register.js";
 import Login from "../../Pages/Login.js";
 import JobForm from "../../Pages/JobForm.js";
 import JobApplicants from "../../Pages/JobApplicants.js";
-
-
-import UserProvider from "../../Providers/UserProvider.js";
-import ApplicantRegisterFormTwo from "../Registration/ApplicantForm/ApplicantRegisterFormTwo.js";
 
 function RouteComponent() {
   return (

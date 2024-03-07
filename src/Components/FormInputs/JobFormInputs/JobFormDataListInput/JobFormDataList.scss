@@ -1,4 +1,4 @@
-.jobForm_label_datalist {
+.jobFormDataList {
     display: grid;
     height: fit-content;
 
@@ -25,6 +25,19 @@
 
         &:focus {
             background-color: var(--init-background);
+        }
+    }
+}
+
+.dark .jobFormDataList {
+    & input {
+        background-color: var(--init-dark);
+        color: white;
+        border-color: var(--init-darkmint);
+        
+        &::placeholder {
+            color: var(--init-background);
+            font-style: italic;
         }
     }
    
