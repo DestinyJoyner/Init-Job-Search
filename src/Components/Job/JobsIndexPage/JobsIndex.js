@@ -12,7 +12,7 @@ import "./JobsIndex.scss";
 
 function JobsIndex() {
   const { setAppHeader } = useNavProvider();
-  const { setLoading } = useContextProvider();
+  const { setLoading, loading } = useContextProvider();
   const { searchOptions, setSearchOptions } = useSearchBarProvider();
   const { jobQuery } = useJobProvider();
 
@@ -26,6 +26,7 @@ function JobsIndex() {
 
 
   return (
+    !loading &&
     <div className="jobsIndex">
       <SearchBar
         withFilterOptions={true}
