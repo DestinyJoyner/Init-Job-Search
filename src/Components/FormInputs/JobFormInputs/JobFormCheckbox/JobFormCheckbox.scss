@@ -11,12 +11,3 @@
     width: 2em;
   }
 }
-
-.dark .jobFormCheckbox {
-  & input {
-    accent-color: var(--init-darkmint);
-  }
-  & span {
-    color: var(--init-gold);
-  }
-}

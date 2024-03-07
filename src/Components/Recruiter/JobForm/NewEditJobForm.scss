@@ -16,7 +16,7 @@
   }
   &_form {
     display: grid;
-    grid-template-rows: repeat(3, 6vh) 42vh 22vh 4vh;
+    grid-template-rows: repeat(3, 6vh) 44vh 22vh 5vh;
     row-gap: 1.5vh;
     margin-top: 2.5vh;
     height: 100%;
@@ -25,30 +25,24 @@
     align-items: center;
     background-color: var(--init-background);
 
-    & > *  {
+    & > * {
       width: 90%;
     }
 
     &_border {
-        &_label {
-          position: relative;
-          width: unset;
-          padding: 0 10px;
-          font-size: 18px;
-          height: fit-content;
-          width: fit-content;
-          bottom: 1.6vh;
-          left: 1vh;
-          align-self: flex-start;
-          background-color: var(--init-background);
-        }
+      &_label {
+        position: relative;
+        width: unset;
+        padding: 0 10px;
+        font-size: 18px;
+        height: fit-content;
+        width: fit-content;
+        bottom: 1.6vh;
+        left: 1vh;
+        align-self: flex-start;
+        background-color: var(--init-background);
       }
-
-    // .task-container {
-    //   border-right: none;
-    //   border-left: none;
-    //   background-color: var(--init-background);
-    // }
+    }
 
     & label {
       row-gap: 0.5vh;
@@ -60,225 +54,41 @@
       outline: none;
     }
 
-
-   /*  &_details {
-      //   margin-top: 1vh;
-    //   width: 90%;
-      height: 38vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      row-gap: 1vh;
-      border: 2px solid var(--init-mint);
-
-
-      &_tasks {
-        width: 95%;
-        display: grid;
-        height: 20vh;
-        position: relative;
-
-        &_header {
-          font-size: 16px;
-          display: grid;
-          grid-template-columns: 40% 50% 10%;
-          width: 100%;
-          height: fit-content;
-
-          & > * {
-            position: relative;
-          }
-
-          & span:nth-child(2) {
-            justify-self: right;
-            top: 0.2vh;
-            // margin-right: 2vw;
-            color: var(--init-blue);
-          }
-
-          &_req {
-            font-style: italic;
-            font-size: 12px;
-            color: var(--init-rust);
-            top: 0.5vh;
-            // right: 1.5vh;
-          }
-
-          & svg {
-            top: 0.1vh;
-            justify-self: right;
-          }
-        }
-
-        &_container {
-          border-bottom: 1px solid var(--init-blue);
-          width: 100%;
-          max-height: 20vh;
-          overflow-x: hidden;
-          display: grid;
-          grid-auto-rows: 7vh;
-
-          &_line,
-          &_remove {
-            grid-column: span 2;
-            position: relative;
-          }
-          &_line {
-            width: 100%;
-            & label {
-              display: grid;
-              grid-template-columns: 85% 10%;
-              width: 100%;
-              margin-left: 1vw;
-            }
-          }
-
-          & input[type="text"] {
-            height: 3vh;
-            font-size: 15px;
-            grid-column: 1;
-          }
-          .jobFormPage_label {
-            grid-column: 1;
-            grid-row: 2;
-          }
-        }
-      }
-    } */
-
-    // &_skills {
-    //   border: 2px solid var(--init-mint);
-    //   display: grid;
-    //   flex-direction: column;
-    //   row-gap: 0.5vh;
-    //   height: 100%;
-
-    //   &_req {
-    //     font-size: 12px;
-    //     font-style: italic;
-    //     width: fit-content;
-    //     justify-self: right;
-    //     position: relative;
-    //     bottom: 2.5vh;
-    //   }
-
-    //   .skills-checkboxes {
-    //     display: grid;
-    //     grid-template-columns: repeat(3, 1fr);
-    //     column-gap: 1vw;
-    //     width: 100%;
-    //     row-gap: 0.5vh;
-    //     height: 17vh;
-    //     justify-items: left;
-    //     position: relative;
-    //     bottom: 2.3vh;
-    //     left: 1vw;
-    //     & label {
-    //       all: unset;
-    //       width: 100%;
-    //       display: flex;
-    //       align-items: center;
-    //       column-gap: 1vw;
-    //       font-size: 17px;
-    //       & input {
-    //         width: 1.5em;
-    //         height: 1.5em;
-    //       }
-    //     }
-    //   }
-    // }
-
     &_submit {
-        all: unset;
-        // height: 6vh;
-        width: fit-content;
-        position: relative;
-        // top: 1vh;
-        left: 4vw;
-        color: var(--init-blue);
-        justify-self: left;
-        /* margin-left: 3vw; */
-        font-size: 24px;
-        font-weight: 600;
+      all: unset;
+      width: fit-content;
+      position: relative;
+      left: 4vw;
+      color: var(--init-blue);
+      justify-self: left;
+      font-size: 28px;
+      font-weight: 600;
     }
 
     &_label {
       font-size: 12px;
       grid-row: 2;
-
     }
   }
 }
 
-
 .dark .jobFormPage {
-    &_label {
+  &_label {
+    color: var(--init-gold);
+  }
+
+  &_form {
+    &_border {
+      &_label {
+        background-color: var(--init-dark);
         color: var(--init-gold);
+      }
     }
-
-    &_form {
-        &_border {
-            &_label {
-              background-color: var(--init-dark);
-              color: var(--init-gold);
-            }
-          }
-
-          &_skills, &_details {
-            border-color: var(--init-gold);
-          }
+    & input[type="checkbox"] {
+      accent-color: var(--init-gold);
     }
+    &_submit {
+      color: var(--init-gold);
+    }
+  }
 }
-
-/* dark mode */
-.dark .job-form-header {
-  background-color: var(--init-gold);
-  color: black;
-}
-
-.dark .job-form input[type="text"],
-.dark .job-form textarea,
-.dark .job-form select,
-.dark .task-container,
-.dark .task-container input {
-  border-color: var(--init-mint);
-  background-color: var(--init-dark);
-  color: white;
-}
-
-.dark .job-form ::placeholder {
-  color: var(--init-background);
-  opacity: 0.4;
-}
-
-.dark .job-form input[type="text"]:focus,
-.dark .job-form textarea:focus {
-  background-color: var(--init-dark);
-}
-
-.dark .job-form input[type="checkbox"] {
-  accent-color: var(--init-gold);
-}
-
-.dark .job-form-label {
-  color: var(--init-gold);
-}
-
-.dark .job-form-skills span span {
-  color: var(--init-gold);
-}
-
-.dark .task-header span {
-  color: var(--init-gold);
-}
-
-.dark .job-form-submit {
-  color: var(--init-gold);
-}
-
-.dark .task-remove {
-  color: var(--init-rust);
-}
-
-

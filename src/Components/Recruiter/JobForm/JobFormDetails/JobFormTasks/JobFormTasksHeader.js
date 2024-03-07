@@ -12,7 +12,6 @@ function JobFormTasksHeader({ tasksStateVar, tasksSetFunction }) {
       <span onClick={(event) => taskButton(event)}>Click to Add A Task</span>
       <IoMdAddCircle
         size={"20px"}
-        color={"#41cdbc"}
         onClick={(event) => taskButton(event)}
       />
     </section>

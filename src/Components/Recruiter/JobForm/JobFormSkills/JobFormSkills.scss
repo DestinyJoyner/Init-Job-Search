@@ -40,18 +40,3 @@
         }
       }
 }
-
-.dark .jobFormSkills {
-    &_req {
-        color: unset;
-        color: var(--init-rust);
-    }
-
-    .skills-checkboxes {
-        & label {
-            & input {
-                accent-color: var(--init-gold);
-            }
-        }
-    }
-}
