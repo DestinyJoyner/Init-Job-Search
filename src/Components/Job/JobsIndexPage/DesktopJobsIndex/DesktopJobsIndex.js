@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useContextProvider } from "../../../../Providers/Provider";
 import { useJobProvider } from "../../../../Providers/JobProvider";
 import { useSearchBarProvider } from "../../../../Providers/SearchBarProvider";
@@ -21,7 +21,6 @@ function DesktopJobsIndex() {
 
   useEffect(() => {
     setLoading(false);
-    
   }, [jobQuery]);
  
   function clearFilterOptions () {
