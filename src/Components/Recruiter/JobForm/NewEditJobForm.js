@@ -1,29 +1,20 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import { useContextProvider } from "../../../Providers/Provider.js";
 import { useNavProvider } from "../../../Providers/NavProvider.js";
 import { useJobProvider } from "../../../Providers/JobProvider.js";
 import { useRecruiterProvider } from "../../../Providers/RecruiterProvider.js";
 import JobFormTextInput from "../../FormInputs/JobFormInputs/JobFormTextInput/JobFormTextInput.js";
 import JobFormDataList from "../../FormInputs/JobFormInputs/JobFormDataListInput/JobFormDataList.js";
-import JobFormTextArea from "../../FormInputs/JobFormInputs/JobFormTextArea/JobFormTextArea.js";
-
 import JobFormLocation from "./JobFormLocation/JobFormLocation.js";
 import JobFormDetails from "./JobFormDetails/JobFormDetails.js";
 import JobFormSkills from "./JobFormSkills/JobFormSkills.js";
-
-import SkillsComponent from "../../Job/SkillsComponent.js";
-
 import {
   convertTasks,
   convertSkills,
 } from "../../Functions/ConvertFunctions/ConversionFunctions.js";
-import { asterisk } from "../../App/Data/Icons.js";
-import { IoMdAddCircle } from "react-icons/io";
 import "./NewEditJobForm.scss";
-import "./DarkModeNewEditJobForm.scss"
-
+import "./DarkModeNewEditJobForm.scss";
 
 export default function NewEditJobForm({ edit }) {
   const { jobID } = useJobProvider();
@@ -65,11 +56,6 @@ export default function NewEditJobForm({ edit }) {
       setJobForm({ ...jobForm, ["skills"]: remove });
     }
   }
-
-  // function taskButton(e) {
-  //   e.preventDefault();
-  //   setTaskArr([...taskArr, ""]);
-  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -201,7 +187,8 @@ export default function NewEditJobForm({ edit }) {
   }, [jobForm]);
 
   return (
-    ((isRecruiterAcc && !edit) || editAccess) && !loading && (
+    ((isRecruiterAcc && !edit) || editAccess) &&
+    !loading && (
       <div className="jobFormPage">
         <form
           className="jobFormPage_form"
@@ -225,23 +212,21 @@ export default function NewEditJobForm({ edit }) {
             placeholder={"Company"}
           />
 
-        <JobFormLocation 
-        stateVar = {jobDropdown}
-        setFunction = {setJobDropdown}
-        formStateVar = {jobForm}
-        formSetFunction = {setJobForm}
-        />
-         
-         <JobFormDetails 
-         tasksStateVar={taskArr}
-          tasksSetFunction={setTaskArr} 
-          formStateVar={jobForm} 
-          formSetFunction={setJobForm}
-         />
+          <JobFormLocation
+            stateVar={jobDropdown}
+            setFunction={setJobDropdown}
+            formStateVar={jobForm}
+            formSetFunction={setJobForm}
+          />
 
-         <JobFormSkills 
-         handleSkills={handleSkills}
-         skills={skills}/>
+          <JobFormDetails
+            tasksStateVar={taskArr}
+            tasksSetFunction={setTaskArr}
+            formStateVar={jobForm}
+            formSetFunction={setJobForm}
+          />
+
+          <JobFormSkills handleSkills={handleSkills} skills={skills} />
 
           <input
             className="jobFormPage_form_submit"
