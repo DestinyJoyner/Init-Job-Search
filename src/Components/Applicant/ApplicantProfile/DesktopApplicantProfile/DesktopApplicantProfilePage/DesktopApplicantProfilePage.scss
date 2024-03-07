@@ -1,0 +1,35 @@
+.desktopApplicantProfilePage {
+  padding: 2vh;
+
+  // HEADER
+  .applicantProfile_header {
+    all: unset;
+    height: 30vh;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    &_icon {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    &_about {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      padding: 10px;
+      row-gap: 2vh;
+      .applicantProfile_sectionHeader_text {
+        font-size: 22px;
+      }
+      &_text {
+        font-size: 18px;
+      }
+    }
+    &_details {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+
+  
+}

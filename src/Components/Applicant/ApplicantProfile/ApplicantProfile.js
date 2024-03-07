@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useContextProvider } from "../../../Providers/Provider";
-import ApplicantProfileHeader from "./ApplicantProfileHeader";
+import ApplicantProfileHeader from "./ApplicantProfileHeader/ApplicantProfileHeader.js";
 import SliderButtons from "../../SliderButton/SliderButtons";
 import ApplicantProfileDetails from "./ApplicantProfileDetails";
 import ApplicantProfileAppliedJobs from "./ApplicantProfileAppliedJobs";

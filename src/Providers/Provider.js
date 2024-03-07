@@ -34,7 +34,7 @@ function Provider({ children }) {
   
   // authToken will be manually hardcoded for now
   const [authToken, setAuthToken] = useState(
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRqQGVtYWlsLmNvbSIsImlhdCI6MTcwNzA2NTU5MiwiZXhwIjoxNzA5NjU3NTkyfQ.45voDrnt1uZGA8xrxab3JfPLOxbfB5CP4zSlFHlOeec"
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRqQGVtYWlsLmNvbSIsImlhdCI6MTcwOTg0MjQ0NywiZXhwIjoxNzEyNDM0NDQ3fQ.TNm2i5Mfcjbi4GL4q9Uy28UNd6_hYQlg0QQQ4sUIdsQ"
   );
 
   const [loading, setLoading] = useState(false)
@@ -48,6 +48,8 @@ function Provider({ children }) {
 useEffect(() => {
   setLoading(loading)
 },[isDesktopView])
+
+
 
   return (
     <div className={isDesktopView ?`${theme} desktop` : `${theme} mobile`}>

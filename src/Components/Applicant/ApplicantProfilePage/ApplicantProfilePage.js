@@ -9,7 +9,7 @@ import NoAccess from "../../App/NoAccess/NoAccess.js";
 import "./ApplicantProfilePage.scss";
 
 function ApplicantProfilePage(props) {
-  const { setLoading, isRecruiterAcc, userID } = useContextProvider();
+  const { setLoading, loading, isRecruiterAcc, userID } = useContextProvider();
   const { applicantDetails, applicantJobs } = useUserProvider();
   const { setAppHeader } = useNavProvider();
 
@@ -28,7 +28,9 @@ function ApplicantProfilePage(props) {
     return <NoAccess />;
   }
 
+
   return (
+   
   <div className="applicantProfile_page">
     {
       !isRecruiterAcc ? 
