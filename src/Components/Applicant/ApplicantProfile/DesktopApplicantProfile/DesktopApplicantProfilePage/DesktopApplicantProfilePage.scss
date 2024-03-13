@@ -1,10 +1,22 @@
 .desktopApplicantProfilePage {
   padding: 2vh;
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  grid-template-rows: 30vh 40vh 25vh;
+  row-gap: 2vh;
+  height: 100vh;
+
+  & >* {
+    // background-color: rgb(255, 251, 251);
+  }
 
   // HEADER
   .applicantProfile_header {
     all: unset;
+    grid-column: 2/4;
+    grid-row: 1;
     height: 30vh;
+    // width: 100%;
     display: grid;
     grid-template-columns: 30% 70%;
     align-items: center;
@@ -31,5 +43,25 @@
     }
   }
 
-  
+//   project/education details
+.applicantProfile_applicantDetails {
+    grid-column: 2;
+    grid-row: 3;
+}
+//   Applied Jobs
+.applicantProfile_appliedJobs {
+    grid-column: 2;
+        grid-row: 2;
+    &_container {
+        // width: 45%;
+        max-height: 34vh;
+        overflow-y: scroll;
+        padding: 1vh;
+        
+        // border: 1px solid red;
+        
+    }
+}
+
+
 }

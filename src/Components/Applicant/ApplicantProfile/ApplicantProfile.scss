@@ -158,6 +158,15 @@
         display: grid;
         grid-template-columns: 57% 43%;
         grid-template-rows: 1fr 1fr;
+        &_details {
+          grid-column: span 2;
+          width: 100%;
+          justify-self: left;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
         &_title {
           font-size: 19px;
           grid-row: 1;

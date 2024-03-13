@@ -16,7 +16,7 @@ function ApplicantProfileDetails({ applicantDetails }) {
       {project && (
         <div className="applicantProfile_applicantDetails_projects">
           <span className="applicantProfile_sectionHeader_text">
-            Technical Project:
+            Project Highlight:
           </span>
           <section className="applicantProfile_sectionHeader">
             {
