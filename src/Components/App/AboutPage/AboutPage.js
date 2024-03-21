@@ -5,6 +5,7 @@ import SliderButtons from "../../SliderButton/SliderButtons.js"
 import LoginHeader from "../../Login/LoginHeader/LoginHeader.js"
 import ContactLinks from "../../ContactLinks/ContactLinks.js";
 import { team } from "./AboutData";
+import initLogo from "../../../Assets/LOGO.png"
 import "./AboutPage.css";
 
 function AboutPage() {
@@ -36,8 +37,7 @@ function AboutPage() {
      
       {profileCard.id ===  2 ? (
         <div className="emptyState grid-center">
-
-          <img src={profileCard.img} className="emptyState_img"></img>
+          <img src={initLogo} className="emptyState_img"/>
           <p>{profileCard.bio}</p>
           <hr />
           <SkillsComponent justList={true} skillsArr={profileCard.links} />
@@ -49,7 +49,7 @@ function AboutPage() {
           <h4 className="devPronoun">{profileCard.pronoun}</h4>
           <img className="devicon2" src={profileCard.img}></img>
           <h3>{profileCard.role}</h3>
-          <p>{profileCard.bio}</p>
+          <p>{profileCard.bio2}</p>
           <hr />
           <ContactLinks pursuit={false} />
         </div>
