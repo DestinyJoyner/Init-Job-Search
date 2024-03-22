@@ -27,6 +27,7 @@ export const team = {
     bio:<>
     Many entry level developers aren't properly connected with opportunities at their skill level due to opportunites being misrepresented as entry level, but in fact require prior work experience. <br/><br/>For these developers, often with no on the job experience other than their training and a single portfolio project, this results in a demoralizing and daunting job search experience. <br/><br/><span className="about-init">inIT</span> aims to alleviate this process by connecting recent college and bootcamp  graduates with entry-level software engineering positions based on their technical skill set and all opportunities hosted on inIT require little or no prior work experience. In order to grow in the tech industry, you must first lay down some roots. Let inIT blossom your tech career!
     </>,
+    bio2: <> inIt is a job search web engine  designed for recent college and boot camp graduates looking for their first role in tech. Some of inIT's features include a fully responsive web design, extensive search filtering options and a UX/UI that supports both recruiter and applicant roles</>,
     links: [1,2,3,90,91,0],
   },
 };
