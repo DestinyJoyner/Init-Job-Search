@@ -45,6 +45,7 @@ function LoginPage() {
         New to inIT? <br />
         Create an account
       </Link>
+      <span className="loginPage_demo">Demo the app: <br/> email: applicant@init.com<br/>password:initDemo24!</span>
     </div>
   );
 }
