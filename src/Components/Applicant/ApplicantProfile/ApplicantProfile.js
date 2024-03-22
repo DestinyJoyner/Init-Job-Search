@@ -19,7 +19,7 @@ function ApplicantProfile() {
     if(applicantDetails.id){
         setLoading(false)
     }
-  },[applicantDetails])
+  },[applicantDetails, loading])
  
   return (
     !loading && (
