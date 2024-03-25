@@ -19,8 +19,8 @@ export default function LoginForm({setFailedLogin, setFailedMessage}) {
   const navigate = useNavigate();
 
   const [loginForm, setLoginForm] = useState({
-    email: "",
-    password: "",
+    email: "applicant@init.com",
+    password: "initDemo24!",
     isRecruiter: false,
   });
 
