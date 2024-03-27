@@ -5,6 +5,7 @@ import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import SkillsComponent from "../../Job/SkillsComponent";
 import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
+import RegisterTextInput from "../../FormInputs/RegisterFormInputs/RegisterTextInput.js";
 import RegisterUrlInput from "../../FormInputs/RegisterFormInputs/RegisterUrlInput";
 import ProjectLinkInputs from "../../ProjectLinkInputs/ProjectLinkInputs.js";
 import SkillsCheckboxes from "../../SkillsCheckboxes/SkillsCheckboxes";
@@ -15,27 +16,36 @@ import "./ApplicantFormTwo.scss";
 
 function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
   const { setAppHeader } = useNavProvider();
-  const { applicantDetails } = useUserProvider();
-  const { setLoading, userID } = useContextProvider()
+  const { applicantDetails, setApplicantDetails } = useUserProvider();
+  const { setLoading, userID, axios, API } = useContextProvider()
   const navigate = useNavigate();
   const [applicantFormTwo, setApplicantFormTwo] = useState(applicantDetails);
   const [applicantFormSkills, setApplicantFormSkills] = useState([]);
-
+console.log(userID)
   useEffect(() => {
     setAppHeader("Add Profile Details");
     setLoading(true)
     setHideSliderButtons(true);
+    axios.get(`${API}/users/${userID}`)
+    .then(({data}) =>setApplicantFormTwo(data))
+    .catch(err => console.log(err))
+
+    setApplicantFormTwo(applicantDetails);
+    setLoading(false)
   }, []);
 
   useEffect(() => {
-    setApplicantFormTwo(applicantDetails);
-    setLoading(false)
+    // axios.get(`${API}/users/${userID}`)
+    // .then(({data}) => console.log(data, "register"))
+    // .catch(err => console.log(err))
+
+    // setApplicantFormTwo(applicantDetails);
+    // setLoading(false)
   }, [applicantDetails]);
 
   return (
     <div className="applicantFormTwo grid-center">
       <span className="applicantFormTwo_header">
-      <Link to="/jobs">Skip & Begin Job Search</Link>
       <span>{asterisk}Details can be updated at any time from your profile{asterisk}</span>
         
       </span>
@@ -63,6 +73,13 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           stateVar={applicantFormTwo}
           setFunction={setApplicantFormTwo}
         />
+         <RegisterTextInput
+        label={"Title/Role/Position"}
+        value={applicantFormTwo["position"]}
+        formKey={"position"}
+        stateVar={applicantFormTwo}
+        setFunction={setApplicantFormTwo}
+      />
         </div>
         {/* <RegisterTextAreaInput
           label={"About Me"}
@@ -120,11 +137,15 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           />
         </section> */}
 
+        <section className="applicantFormTwo_form_buttons">
         <input
-          className="applicantFormTwo_form_submitButton"
+          className="applicantFormTwo_form_buttons_submitButton"
           type="submit"
           value="Submit & View Profile"
         />
+        <Link to="/jobs">SKIP</Link>
+        </section>
+        
       </form>
     </div>
   );

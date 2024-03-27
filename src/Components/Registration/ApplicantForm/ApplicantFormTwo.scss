@@ -1,45 +1,35 @@
 .applicantFormTwo {
   grid-row: 1/5;
-  // background-color: red;
   width: 100%;
   margin-top: 5vh;
-  // padding-top: 1vh;
-  grid-template-rows: 6vh 92vh;
+  grid-template-rows: 2vh 98vh;
+  & > * {
+    position: relative;
+  }
 
   &_header {
     grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5vh;
-    align-items: center;
-    // position: relative;
-    // bottom: 5vh;
+    top: 2vh;
 
-    & a {
-      text-transform: uppercase;
-      font-size: 18px;
-      color: var(--init-blue);
-    }
     & span {
       font-size: 13px;
       font-weight: 600;
     }
   }
   &_form {
-    // grid-row: 2;
-    // background-color: red;
+    grid-row: 2;
     display: grid;
     align-items: center;
-    grid-template-rows: 13vh 38vh 24vh 7vh;
-    // background-color: var(--init-background);
+    grid-template-rows: 15vh 37vh 20vh 7vh;
     row-gap: 1vh;
     width: 100%;
     margin-bottom: 2vh;
 
     & > * {
       margin: 0 1vw;
+      position: relative;
     }
-    & > * input,
+    & > * input[type="text"],
     textarea {
       font-size: 18px;
     }
@@ -52,6 +42,12 @@
     & > * input {
       width: 90%;
     }
+
+    &_bio {
+      display: grid;
+      padding-bottom: 1vh;
+      bottom: 1vh;
+    }
     &_input {
       &_textarea_label {
         display: grid;
@@ -60,7 +56,7 @@
         &_text {
           grid-column: 1;
           grid-row: 2;
-          font-size: 14px;
+          font-size: 16px;
         }
 
         &_helpText {
@@ -91,19 +87,40 @@
     }
     .skillsCheckboxes {
       grid-row: 3;
-      height: 24vh;
+      height: 20vh;
 
       .skills-checkboxes {
         column-gap: 1vw;
       }
     }
-    &_submitButton {
+
+    &_buttons {
       grid-row: 4;
-      font-size: 22px;
       justify-self: left;
+      width: 96%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      text-align: left;
       padding: 0;
       position: relative;
       bottom: 1vh;
+      // right: 1vh;
+
+      & > * {
+        font-size: 24px;
+        padding: unset;
+        cursor: pointer;
+      }
+      &_submitButton {
+        text-align: unset;
+        text-align: left;
+      }
+      & a {
+        padding-right: 2vh;
+      }
     }
   }
 }

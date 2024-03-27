@@ -3,14 +3,13 @@
 
   &_content {
     width: 90%;
-    height:88vh;
+    height: 88vh;
     margin: 0 auto;
     overflow: hidden;
     display: grid;
     grid-template-columns: 48% 52%;
     border-radius: 20px;
     box-shadow: 0px 0px 10px black;
- 
 
     .registrationPage {
       grid-column: 2;
@@ -49,55 +48,27 @@
       }
     }
 
-    .applicantFormTwo {
-      margin-top: 0;
-      grid-row: 1/5;
-      grid-template-rows: 8vh 72vh 5vh;
-      & > * {
-        position: relative;
-      }
-      &_header {
-        grid-row: 1;
-        bottom: 5vh;
-      }
-      &_form {
-        grid-row: 2;
-        &_submitButton {
-          cursor: pointer;
-        }
-      }
-      & a {
-        grid-row: 1;
-        grid-column: 1;
-        bottom: 4vh;
-        font-size: 18px;
-      }
-    }
-
     &_right {
       grid-column: 1;
       height: 100%;
       width: 100%;
       background: linear-gradient(
         90deg,
-        rgb(83, 215, 199)  20%,
-        rgba(12, 189, 189, 1) 50%,
-        
+        rgb(83, 215, 199) 20%,
+        rgba(12, 189, 189, 1) 50%
       );
     }
   }
 }
 
 .dark .desktopRegisterPage {
-    &_content {
-        & >* {
-            box-shadow: 0px 0px 10px var(--init-darkmint);
-        }
-        &_right {
-            background: unset;
-            background-color: var(--init-darkmint);
-        }
+  &_content {
+    & > * {
+      box-shadow: 0px 0px 10px var(--init-darkmint);
     }
-   
-    
+    &_right {
+      background: unset;
+      background-color: var(--init-darkmint);
+    }
+  }
 }
