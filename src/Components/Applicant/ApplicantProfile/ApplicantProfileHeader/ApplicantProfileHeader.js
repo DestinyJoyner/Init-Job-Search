@@ -21,19 +21,19 @@ function ApplicantProfileHeader({applicantDetails, applicantSkills}) {
             <span className="applicantProfile_header_details_role">{position}</span>
             
             {/* need to seperate skills section from name and rolle */}
-            {/* <SkillsComponent justList={true}
-            skillsArr={applicantSkills}/> */}
+            <SkillsComponent justList={true}
+            skillsArr={applicantSkills}/>
           </div>
             {/* for desktop list out full name w/ without icons??? */}
-          <SkillsComponent justList={true}
-            skillsArr={applicantSkills}/>
+          {/* <SkillsComponent justList={true}
+            skillsArr={applicantSkills}/> */}
 
           <div className="applicantProfile_sectionHeader applicantProfile_header_about">
             <span className="applicantProfile_sectionHeader_text">Bio:</span>
             <p className="applicantProfile_header_about_text">{bio} </p>
 
-           {/*  { isDesktopView && <span className="applicantProfile_sectionHeader_text">Education:</span>}
-            { isDesktopView && <p className="applicantProfile_header_about_text">{education} </p>} */}
+            { isDesktopView && <span className="applicantProfile_sectionHeader_text">Education:</span>}
+            { isDesktopView && <p className="applicantProfile_header_about_text">{education} </p>}
           </div>
 
           {/* <div className="applicantProfile_sectionHeader applicantProfile_header_education">
