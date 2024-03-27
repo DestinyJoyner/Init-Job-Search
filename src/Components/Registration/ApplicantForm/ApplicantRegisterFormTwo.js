@@ -3,13 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
-import SkillsComponent from "../../Job/SkillsComponent";
 import RegisterTextAreaInput from "../../FormInputs/RegisterFormInputs/RegisterTextAreaInput";
 import RegisterTextInput from "../../FormInputs/RegisterFormInputs/RegisterTextInput.js";
-import RegisterUrlInput from "../../FormInputs/RegisterFormInputs/RegisterUrlInput";
 import ProjectLinkInputs from "../../ProjectLinkInputs/ProjectLinkInputs.js";
 import SkillsCheckboxes from "../../SkillsCheckboxes/SkillsCheckboxes";
-import { handleSkillsCheckbox } from "../../Functions/FormFunctions/RegisterFormFunctions.js";
 import { handleApplicantFormTwoSubmit } from "../../Functions/FormFunctions/RegisterFormSubmitFunctions";
 import { asterisk } from "../../App/Data/Icons";
 import "./ApplicantFormTwo.scss";
@@ -21,11 +18,12 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
   const navigate = useNavigate();
   const [applicantFormTwo, setApplicantFormTwo] = useState(applicantDetails);
   const [applicantFormSkills, setApplicantFormSkills] = useState([]);
-console.log(userID)
+
   useEffect(() => {
     setAppHeader("Add Profile Details");
     setLoading(true)
     setHideSliderButtons(true);
+
     axios.get(`${API}/users/${userID}`)
     .then(({data}) =>setApplicantFormTwo(data))
     .catch(err => console.log(err))
@@ -81,61 +79,15 @@ console.log(userID)
         setFunction={setApplicantFormTwo}
       />
         </div>
-        {/* <RegisterTextAreaInput
-          label={"About Me"}
-          formKey={"bio"}
-          value={applicantFormTwo["bio"]}
-          placeholder={"Tell us about yourself..."}
-          stateVar={applicantFormTwo}
-          setFunction={setApplicantFormTwo}
-        /> */}
 
         <ProjectLinkInputs
         stateVar={applicantFormTwo}
         setFunction={setApplicantFormTwo} />
 
-        {/* <RegisterUrlInput
-          label={"Portfolio Project 1"}
-          formKey={"project_one"}
-          value={applicantFormTwo["project_one"]}
-          stateVar={applicantFormTwo}
-          setFunction={setApplicantFormTwo}
-        />
-
-        <RegisterUrlInput
-          label={"Portfolio Project 2"}
-          formKey={"project_two"}
-          value={applicantFormTwo["project_two"]}
-          stateVar={applicantFormTwo}
-          setFunction={setApplicantFormTwo}
-        /> */}
-
         <SkillsCheckboxes 
          skillsIdArr={applicantFormSkills} 
          setSkillIdArr={setApplicantFormSkills} formStateVar={applicantFormTwo} formSetFunction={setApplicantFormTwo}
         />
-
-        {/* <section className="applicantFormTwo_form_skills">
-          <span className="applicantFormTwo_form_skills_header">
-            My Skills & Technologies
-          </span>
-          <span className="applicantFormTwo_form_skills_helpText">
-            {asterisk}Select up to 4
-          </span>
-          <SkillsComponent
-            checkbox={true}
-            checkedArr={applicantFormSkills}
-            checkBoxHandle={(event) =>
-              handleSkillsCheckbox(
-                event,
-                applicantFormSkills,
-                setApplicantFormSkills,
-                applicantFormTwo,
-                setApplicantFormTwo
-              )
-            }
-          />
-        </section> */}
 
         <section className="applicantFormTwo_form_buttons">
         <input

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { useWindowSizeProvider } from "../../Providers/WindowSizeProvider.js";
 
 import SkillsComponent from "../Job/SkillsComponent";
 import Dropdown from "../Job/Inputs/Dropdown.js"
@@ -14,14 +15,14 @@ import { MdChangeCircle } from "react-icons/md";
 import "./FilterBar.css";
 
 function FilterBar({remoteCheckbox, searchOptions, setSearchOptions}) {
-  
+  const {isDesktopView} = useWindowSizeProvider()
   const { city, isRemote } = searchOptions
   const dropdownVal = convertCitySearchValToDropdown(city)
 
   const [filterOptions, setFilterOptions] = useState(false);
   const [cityDropdown, setCityDropdown] = useState(dropdownVal);
   const [remoteSearch, setRemoteSearch] = useState(isRemote);
-  const [skillView, setSkillView] = useState(false);
+  const [skillView, setSkillView] = useState(isDesktopView ? true :false);
 
 
   function remoteClick(event){

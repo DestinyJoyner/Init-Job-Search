@@ -38,7 +38,6 @@ function SkillsComponent({
     );
   }
   if (checkbox) {
-    console.log(allSkills)
     return (
       <div className="skills-checkboxes">
         {allSkills.map((obj) => (
