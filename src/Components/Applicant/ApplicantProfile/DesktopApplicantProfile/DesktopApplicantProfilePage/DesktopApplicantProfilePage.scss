@@ -1,7 +1,7 @@
 .desktopApplicantProfilePage {
-  padding: 2vh;
+  // padding: 2vh;
   display: grid;
-  grid-template-columns: 20% 40% 40%;
+  grid-template-columns: 15% 85%;
   grid-template-rows: 30vh 40vh 25vh;
   row-gap: 2vh;
   height: 100vh;
@@ -10,6 +10,16 @@
     // background-color: rgb(255, 251, 251);
   }
 
+  &_banner {
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+
+  &_content {
+    grid-column: 2;
+    grid-row: 1/4;
+    padding: 0 2vw;
+  }
   // HEADER
   .applicantProfile_header {
     all: unset;

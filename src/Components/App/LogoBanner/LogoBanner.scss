@@ -1,0 +1,54 @@
+.logoBanner {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 8vh repeat(4,1fr);
+    height: 100%;
+    background-color: var(--init-darkmint);
+    background: linear-gradient(
+        90deg,
+        rgba(12, 189, 189, 1) 45%,
+        rgb(83, 215, 199) 100%
+      );
+
+    & span {
+        grid-column: span 2;
+        grid-row: 1;
+    }
+    & img {
+        height: 120px;
+        display: none;
+        
+
+      
+    }
+
+    &_one, &_three {
+        transform: rotate(-10deg);
+        // border-radius: 0px 55px 0px 55px;
+    }
+
+    &_two, &_four {
+        transform: rotate(10deg);
+        // border-radius:  55px 0px 55px 0px;
+    }
+
+    &_one {
+grid-column: 1;
+grid-row: 2;
+
+    }
+
+    &_two {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    &_three {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    &_four {
+        grid-column: 2;
+        grid-row: 5;
+    }
+}
