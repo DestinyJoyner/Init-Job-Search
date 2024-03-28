@@ -18,108 +18,18 @@
 
   &_content {
     grid-column: 2;
-    // grid-row: 1/4;
-    // padding: 1vh 0vw;
     display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 22vh 50vh 20vh;
+    row-gap: 2vh;
   
-  // HEADER
-  .applicantProfile_header {
-    all: unset;
-    // grid-column: 2/4;
-    grid-row: 1;
-    height: 20vh;
-    
-    // width: 100%;
-    display: grid;
-    grid-template-columns: 15% repeat(2,1fr);
-    row-gap: 1vh;
-    align-items: center;
-    background-color: white;
-    // padding: 0 1%;
-    &_icon {
-      grid-column: 1;
-      grid-row: 1/3;
-      justify-self: center;
-      width: 120px;
-      height: 120px;
-    }
-
-    &_about, &_details {
-      display: grid;
-      grid-template-columns: 60% 35%;
-      align-items: center;
-      column-gap: 3%;
-      width: 100%;
-      height: 100%;
-    }
-    &_about {
-      grid-column: 2/4;
-      grid-row: 2;
-      margin-left: 0;
-      row-gap: unset;
-
-      .applicantProfile_sectionHeader_text {
-        font-size: 22px;
-      }
-      &_text {
-        font-size: 18px;
-      }
-
-      .applicantProfile_sectionHeader_text:first-of-type {
-        grid-column: 1;
-      }
-      .applicantProfile_header_about_text:first-of-type{
-        grid-column: 1;
-        grid-row: 2;
-      }
-    }
-    &_details {
-      grid-column: 2/4;
-      grid-row: 1;
-      padding-left: 0;
-      // column-gap: 1%;
-      grid-template-rows: 55% 40%;
-
-      &_name {
-        font-size: 32px;
-      }
-       &_role {
-        grid-column: 1;
-        grid-row: 2;
-        font-size: 20px;
-       }
-
-    }
-    .desktopSkillsComponent {
-      justify-self: left;
-      grid-column: 3;
-      grid-row: 1;
-      border: none;
-     
-     }
-
-  }
-  }
-
 //   project/education details
 .applicantProfile_applicantDetails {
     // grid-column: 2;
     grid-row: 3;
 }
-//   Applied Jobs
-.applicantProfile_appliedJobs {
-    // grid-column: 2;
-        grid-row: 2;
-    &_container {
-        // width: 45%;
-        max-height: 34vh;
-        overflow-y: scroll;
-        padding: 1vh;
-        
-        // border: 1px solid red;
-        
-    }
+
+
+
 }
-
-
 }
