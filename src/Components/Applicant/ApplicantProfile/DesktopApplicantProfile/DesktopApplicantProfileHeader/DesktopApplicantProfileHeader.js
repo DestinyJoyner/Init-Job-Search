@@ -1,12 +1,14 @@
 import { useUserProvider } from "../../../../../Providers/UserProvider";
 import DesktopSkillsComponent from "../../../../DesktopSkillsComponent/DesktopSkillsComponent";
-import {ApplicantProfileHeaderLabel} from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions"
+import {applicantProfileHeaderLabel} from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions"
+import { MdOutlineMail } from "react-icons/md";
+import { MdOutlineSchool } from "react-icons/md";
 import "./DesktopApplicantProfileHeader.scss"
 
 function DesktopApplicantProfileHeader({desktopApplicantProfileDetails}) {
     const {applicantEmail} = useUserProvider()
 
-    const { firstInitial, lastInitial, first_name, last_name, desktopSkills, position, education} = desktopApplicantProfileDetails
+    const { firstInitial, lastInitial, first_name, last_name, desktopSkills, position, education, bio} = desktopApplicantProfileDetails
 
     return (
         <div className="desktopApplicantProfileHeader">
@@ -16,20 +18,22 @@ function DesktopApplicantProfileHeader({desktopApplicantProfileDetails}) {
             </section>
 
             <section className="desktopApplicantProfileHeader_name">
+                <div className="desktopApplicantProfileHeader_name_email">
                 <h3>{first_name} {last_name} </h3>
+                <a href={`mailto:${applicantEmail}`}><MdOutlineMail /></a>
+                </div>
+                
                 <span>{position}</span>
+
+                <span><MdOutlineSchool/>{education}</span>
             </section>
 
-            <section className="desktopApplicantProfileHeader_education">
-                {ApplicantProfileHeaderLabel("Education", education)}
+            <section className="desktopApplicantProfileHeader_bio">
+                {bio}
             </section>
 
             <DesktopSkillsComponent
               desktopJobSkills={desktopSkills} profileView={true} />
-
-            <section className="desktopApplicantProfileHeader_email">
-                {ApplicantProfileHeaderLabel("Contact", applicantEmail)}
-            </section>
 
         </div>
     );

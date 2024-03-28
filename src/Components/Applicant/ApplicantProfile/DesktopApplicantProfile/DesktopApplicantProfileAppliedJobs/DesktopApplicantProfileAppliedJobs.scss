@@ -27,7 +27,6 @@
 
         &_card {
             width: 50vw;
-            // border: 1px solid red;
             display: grid;
             grid-template-columns: 15%  75%;
             grid-template-rows: repeat(2,1fr) 1vh;

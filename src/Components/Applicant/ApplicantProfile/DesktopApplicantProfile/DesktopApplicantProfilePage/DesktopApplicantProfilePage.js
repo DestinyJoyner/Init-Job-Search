@@ -7,6 +7,7 @@ import { applicantProfileConversion } from "../../../../Functions/ApplicantFunct
 import ApplicantProfileDetails from "../../ApplicantProfileDetails.js";
 import DesktopApplicantProfileAppliedJobs from "../DesktopApplicantProfileAppliedJobs/DesktopApplicantProfileAppliedJobs.js";
 import LogoBanner from "../../../../App/LogoBanner/LogoBanner.js";
+import { applicantProfileHeaderLabel } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import "./DesktopApplicantProfilePage.scss"
 
 function DesktopApplicantProfilePage() {
@@ -29,10 +30,16 @@ function DesktopApplicantProfilePage() {
             </section>
 
             <section className="desktopApplicantProfilePage_content">
+
             <DesktopApplicantProfileHeader desktopApplicantProfileDetails = {desktopApplicantProfileDetails} />
+
+            {/* <section className="desktopApplicantProfilePage_content_bio">
+                {applicantProfileHeaderLabel("Bio", applicantDetails.bio)}
+            </section> */}
+
+            
         
         <DesktopApplicantProfileAppliedJobs applicantJobs={applicantJobs}/>
-        {/* <ApplicantProfileAppliedJobs applicantJobs={applicantJobs} /> */}
 
         <ApplicantProfileDetails applicantDetails={applicantDetails} />
             </section>

@@ -29,7 +29,7 @@ function applicantProfileConversion (detailsObj) {
     }
 }
 
-function ApplicantProfileHeaderLabel (label, content) {
+function applicantProfileHeaderLabel (label, content) {
     return (
         <>
         <span className="applicantProfile_sectionHeader_text">{label}:</span>
@@ -42,5 +42,5 @@ function ApplicantProfileHeaderLabel (label, content) {
 
 export {
     applicantProfileConversion,
-    ApplicantProfileHeaderLabel
+    applicantProfileHeaderLabel
 }
