@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useContextProvider } from "../../../../../Providers/Provider.js";
 import { useUserProvider } from "../../../../../Providers/UserProvider.js";
+import DesktopApplicantProfileHeader from "../DesktopApplicantProfileHeader/DesktopApplicantProfileHeader.js";
+import { applicantProfileConversion } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import ApplicantProfileHeader from "../../ApplicantProfileHeader/ApplicantProfileHeader.js"
 import ApplicantProfileDetails from "../../ApplicantProfileDetails.js";
 import ApplicantProfileAppliedJobs from "../../ApplicantProfileAppliedJobs.js";
@@ -11,8 +13,9 @@ function DesktopApplicantProfilePage() {
     const {loading, setLoading} = useContextProvider()
     const {applicantDetails, applicantSkillIds, applicantJobs} = useUserProvider()
 
+    const desktopApplicantProfileDetails = applicantProfileConversion(applicantDetails)
+
     useEffect(() => {
-       
         if(applicantDetails.id){
             setLoading(false)
         }
@@ -25,8 +28,9 @@ function DesktopApplicantProfilePage() {
             </section>
 
             <section className="desktopApplicantProfilePage_content">
-            <ApplicantProfileHeader applicantDetails={applicantDetails}
-            applicantSkills={applicantSkillIds} />
+            {/* <ApplicantProfileHeader applicantDetails={applicantDetails}
+            applicantSkills={applicantSkillIds} /> */}
+            <DesktopApplicantProfileHeader desktopApplicantProfileDetails = {desktopApplicantProfileDetails} />
         
         <ApplicantProfileAppliedJobs applicantJobs={applicantJobs} />
 

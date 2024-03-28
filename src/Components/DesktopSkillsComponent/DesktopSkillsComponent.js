@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 import "./DesktopSkillsComponent.scss"
-function DesktopSkillsComponent({desktopJobSkills}) {
+function DesktopSkillsComponent({desktopJobSkills, profileView}) {
 
     return (
         <div className="desktopSkillsComponent">
-            <span className="desktopSkillsComponent_header">Preferred Skills</span>
+            { !profileView &&<span className="desktopSkillsComponent_header">Preferred Skills</span>}
             <section className="desktopSkillsComponent_skills">
             {
                 desktopJobSkills.map(({name, icon}) => 
