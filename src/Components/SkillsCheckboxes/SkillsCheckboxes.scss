@@ -6,7 +6,7 @@
     height: 15vh;
     &_label {
       grid-row: 1;
-      grid-column: 1;
+      grid-column: span 2;
       font-size: 18px;
       font-weight: 600;
     }
@@ -18,7 +18,7 @@
     }
     .skills-checkboxes {
      
-      border-top: 1px solid var(--init-mint);
+      // border-top: 1px solid var(--init-mint);
       border-bottom: 1px solid var(--init-mint);
       overflow-y: auto;
       grid-row: 2;

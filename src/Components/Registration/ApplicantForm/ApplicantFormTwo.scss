@@ -9,7 +9,7 @@
 
   &_header {
     grid-row: 1;
-    top: 2vh;
+    // top: 2vh;
 
     & span {
       font-size: 13px;
@@ -20,8 +20,8 @@
     grid-row: 2;
     display: grid;
     align-items: center;
-    grid-template-rows: 15vh 37vh 20vh 7vh;
-    row-gap: 1vh;
+    grid-template-rows: 20vh 35vh 18vh 5vh;
+    row-gap: 2.2vh;
     width: 100%;
     margin-bottom: 2vh;
 
@@ -44,9 +44,10 @@
     }
 
     &_bio {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       padding-bottom: 1vh;
-      bottom: 1vh;
+      // bottom: 1vh;
     }
     &_input {
       &_textarea_label {
@@ -87,7 +88,7 @@
     }
     .skillsCheckboxes {
       grid-row: 3;
-      height: 20vh;
+      height: 18vh;
 
       .skills-checkboxes {
         column-gap: 1vw;
@@ -106,7 +107,7 @@
       text-align: left;
       padding: 0;
       position: relative;
-      bottom: 1vh;
+      bottom: 1.6vh;
       // right: 1vh;
 
       & > * {
