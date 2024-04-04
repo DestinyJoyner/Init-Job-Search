@@ -9,6 +9,7 @@
     grid-template-columns: 60% 40%;
     grid-template-rows: 22vh 10vh 45vh 30vh;
     row-gap: 1vh;
+    column-gap: 1vw;
     background-color: var(--init-background);
 
     & > * {
@@ -37,6 +38,45 @@
           width: 1.8em;
         }
       }
+    }
+
+    &_link {
+      grid-column: 2;
+      grid-row: 2;
+      all: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .applicantProfile_edit {
+        font-size: 32px;
+        display: flex;
+        column-gap: 2vh;
+
+        & svg {
+          height: 1em;
+          width: 1em;
+        }
+      }
+     
+    }
+
+    &_resume {
+      grid-row: 3;
+      grid-column: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 22px;
+      background-color: unset;
+      background: linear-gradient(
+        90deg,
+        rgba(12, 189, 189, 1) 45%,
+        rgb(83, 215, 199) 100%
+      );
+      color: var(--init-gold);
+      text-transform: uppercase;
     }
   }
 }
