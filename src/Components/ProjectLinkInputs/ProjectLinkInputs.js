@@ -19,7 +19,7 @@ function ProjectLinkInputs({ stateVar, setFunction }) {
     });
   }
 
-  console.log(stateVar)
+  // console.log(stateVar)
   return (
     stateVar.project && (
       <div className="projectFormInputs">
