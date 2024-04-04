@@ -3,7 +3,7 @@ import { GoLocation } from "react-icons/go";
 import { BsClipboardCheck, BsFillCircleFill, BsFillPlusCircleFill, BsCheck, BsGlobe  } from "react-icons/bs";
 import {CiSearch} from  "react-icons/ci"
 import { CgAsterisk, CgProfile  } from "react-icons/cg";
-import {FaUserTie} from "react-icons/fa"
+import { FaUserTie, FaHandshake } from "react-icons/fa"
 import { AiOutlineHome, AiOutlineClose  } from "react-icons/ai";
 import { MdWorkOutline, MdOutlineMail, MdLockOutline, MdOutlineHomeWork,MdLocationOn } from "react-icons/md";
 import { FiLogIn, FiLogOut, FiUserPlus } from "react-icons/fi";
@@ -11,6 +11,7 @@ import { BiInfoCircle, BiError } from "react-icons/bi";
 import { IoShieldCheckmarkOutline } from "react-icons/io5"
 import { GrEdit } from "react-icons/gr"
 import {TbReportMoney} from "react-icons/tb"
+
 
 const jobCompany = <HiOutlineBuildingOffice2 size={"20px"}  />
 
@@ -62,6 +63,8 @@ const userIcon = <CgProfile />
 
 const website = <BsGlobe />
 
+const handshake = <FaHandshake />
+
 export {
     jobCompany,
     jobLocation,
@@ -86,5 +89,6 @@ export {
     emailInvalid,
     editPencil,
     userIcon,
-    website
+    website,
+    handshake
 }
