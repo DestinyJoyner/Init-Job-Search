@@ -1,19 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecruiterProvider } from "../../../../Providers/RecruiterProvider";
 import { useContextProvider } from "../../../../Providers/Provider";
 import LogoBanner from "../../../App/LogoBanner/LogoBanner"
 import RecruiterProfileHeader from "../RecruiterProfileHeader";
-import { applicantProfileHeaderLabel } from "../../../Functions/ApplicantFunctions/ApplicantProfileFunctions";
+
 import "./DesktopRecruiterProfile.scss"
 
 function DesktopRecruiterProfile(props) {
-    const { isRecruiterAcc, setLoading, loading, recruiterID } = useContextProvider();
+    const { isRecruiterAcc, setLoading, loading, recruiterID, axios, API } = useContextProvider();
     const { recruiterDetails, recruiterJobs, setRecruiterJobs, recruiterJobsWithUsers, setRecruiterJobsWithUsers } = useRecruiterProvider()
 
-console.log(recruiterJobsWithUsers)
+    const [companyDetails, setCompanyDetails] = useState({})
+
+    const totalApplicants = recruiterJobsWithUsers.reduce((acc,{users}) =>{
+        return acc+= users.length
+    },0)
 useEffect(() => {
     if(recruiterDetails.id){
+        const companyName = recruiterDetails.organization.replaceAll(" ","")
+        axios.get(`${API}/company/${companyName.toLowerCase()}`)
+        .then(({data}) => setCompanyDetails(data))
+        .catch(err => console.log(err))
+
         setLoading(false)
     }
 },[recruiterDetails])
@@ -24,7 +33,7 @@ useEffect(() => {
             <LogoBanner />
 
             <section className="desktopRecruiterProfilePage_content">
-            <RecruiterProfileHeader recruiterDetails={recruiterDetails} />
+            <RecruiterProfileHeader recruiterDetails={recruiterDetails} recruiterJobs={recruiterJobs} totalApplicants={totalApplicants} />
 
             <section className="desktopRecruiterProfilePage_content_bottomHeader">
         
@@ -32,8 +41,8 @@ useEffect(() => {
           <Link to="/jobs/new">Post Opportunity</Link>
           </div>
 
-          <div className="desktopRecruiterProfilePage_content_bottomHeader_about"> fetch for company info
-          </div>
+          <p className="desktopRecruiterProfilePage_content_bottomHeader_about"> {companyDetails.company_description}
+          </p>
 
           </section>
             </section>
