@@ -1,0 +1,25 @@
+.desktopApplicantProfilePage_content_project {
+grid-column: 1;
+padding-left: 2vh;
+display: flex;
+flex-direction: column;
+row-gap: 2vh;
+
+
+    &_details {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1vh;
+        
+        & h3 {
+            font-size: 28px;
+        }
+        & a {
+            font-size: 22px;
+        }
+        & span {
+            font-size: 18px;
+        }
+
+    }
+}

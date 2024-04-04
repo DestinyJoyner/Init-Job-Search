@@ -12,12 +12,22 @@ function ApplicantProfileAppliedJobsCard({ jobCardObj }) {
       >
         {title}
       </Link>
+
+      {/* make this one section display flex it */}
+      <section className="applicantProfile_appliedJobs_container_card_details">
       <span className="applicantProfile_appliedJobs_container_card_company">
         {company}
       </span>
       <span className="applicantProfile_appliedJobs_container_card_applied">
         Applied: <b>{convertDate(date_applied)}</b>
       </span>
+      </section>
+      {/* <span className="applicantProfile_appliedJobs_container_card_company">
+        {company}
+      </span>
+      <span className="applicantProfile_appliedJobs_container_card_applied">
+        Applied: <b>{convertDate(date_applied)}</b>
+      </span> */}
     </div>
   );
 }

@@ -6,7 +6,7 @@ function ApplicantProfileAppliedJobs({ applicantJobs }) {
   return (
     <div className="applicantProfile_appliedJobs">
       <span className="applicantProfile_sectionHeader_text">
-        My Applications:
+        Job Search Activity:
       </span>
       <section className="applicantProfile_appliedJobs_container">
         {applicantJobs.length > 0 ? 

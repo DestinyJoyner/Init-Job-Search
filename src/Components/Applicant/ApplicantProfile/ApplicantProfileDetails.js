@@ -1,22 +1,26 @@
 import { useUserProvider } from "../../../Providers/UserProvider";
+import { useWindowSizeProvider } from "../../../Providers/WindowSizeProvider";
 import { Link } from "react-router-dom";
 
 function ApplicantProfileDetails({ applicantDetails }) {
   const { education, project } = applicantDetails;
+  const {isDesktopView} = useWindowSizeProvider()
   const { applicantEmail } = useUserProvider();
 
   return (
     <div className="applicantProfile_applicantDetails">
+    {!isDesktopView &&
       <section className="applicantProfile_sectionHeader">
         <span className="applicantProfile_sectionHeader_text">Education:</span>
         <span className="applicantProfile_sectionHeader_text_span">
           {education}
         </span>
       </section>
+}
       {project && (
         <div className="applicantProfile_applicantDetails_projects">
           <span className="applicantProfile_sectionHeader_text">
-            Technical Project:
+            Project Highlight:
           </span>
           <section className="applicantProfile_sectionHeader">
             {

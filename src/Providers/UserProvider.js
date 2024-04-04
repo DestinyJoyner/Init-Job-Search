@@ -9,7 +9,7 @@ export function useUserProvider() {
 
 function UserProvider({ children }) {
   const navigate = useNavigate();
-  const { userID, API, axios, isSignedIn, setLoading } = useContextProvider();
+  const { userID, setUserID, API, axios, isSignedIn, setLoading } = useContextProvider();
   const [editForm, setEditForm] = useState({});
   const [userSkills, setUserSkills] = useState([]);
   const [userJobs, setUserJobs] = useState([]);
@@ -52,6 +52,13 @@ function UserProvider({ children }) {
         .catch((error) => console.log(error));
     }
   }, [isSignedIn, userID]);
+
+  // useEffect(() => {
+  //   const localUserID = localStorage.getItem("userID");
+  //   if(localUserID){
+  //     setUserID(localUserID)
+  //   }
+  // },[])
 
   return (
     <UserContextData.Provider

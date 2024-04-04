@@ -63,6 +63,7 @@ function JobProvider({ children }) {
         .then(({ data }) => {
           setJobDetails(data);
           setJobSkills(convertSkills(data.skills));
+          // console.log(data.skills)
           setDesktopJobSkills(desktopSkillIconAndName(data.skills));
         })
         .catch((err) => console.log(err));

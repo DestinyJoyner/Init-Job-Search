@@ -1,0 +1,57 @@
+.desktopApplicantProfileHeader {
+  grid-row: 1;
+  grid-column: span 2;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 18% 40% 40%;
+  grid-template-rows: 45% 55%;
+  background-color: white;
+  max-height: 24vh;
+  font-size: 20px;
+
+  .applicantProfile_header_icon {
+    grid-column: 1;
+    grid-row: 1/3;
+    justify-self: center;
+  }
+
+  &_name {
+    padding-top: 1vh;
+    grid-column: 2/4;
+    grid-row: 1;
+
+    & h3 {
+      font-size: 28px;
+    }
+    & span {
+      font-size: 20px;
+    }
+  }
+
+  &_details {
+    grid-column: 3;
+    grid-row: 1;
+    padding-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    & span,
+    &_email {
+      display: flex;
+      align-items: center;
+      column-gap: 1vw;
+    }
+
+    & svg {
+      color: black;
+      height: 1.5em;
+      width: 1.5em;
+    }
+  }
+
+  &_bio {
+    grid-column: 2/4;
+    grid-row: 2;
+  }
+}
