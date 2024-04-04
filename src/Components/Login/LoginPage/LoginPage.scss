@@ -1,8 +1,13 @@
 .loginPage {
   font-size: 20px;
-  grid-template-rows: 20vh 40vh auto 10vh;
+  grid-template-rows: 20vh 40vh auto 10vh 5vh;
   padding-bottom: 4vh;
 
+  &_demo {
+    grid-row: 5;
+    font-size: 14px;
+    margin-top: 3vh;
+  }
   &_error {
     text-align: center;
     color: var(--init-rust);

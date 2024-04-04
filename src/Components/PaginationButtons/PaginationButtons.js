@@ -17,7 +17,7 @@ function PaginationButtons() {
     if(queryStart === 0){
       setHideNextButton(false)
     }
-  },[])
+  },[jobQuery.length])
 
   useEffect(() => {
 

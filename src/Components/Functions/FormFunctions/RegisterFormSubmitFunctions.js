@@ -14,7 +14,7 @@ function handleApplicantRegisterForm(
   setRegisterTwoForm
 ) {
   e.preventDefault();
-  setRegisterTwoForm(true);
+  // setRegisterTwoForm(true);
 
   const { first_name, last_name, education, email, password } = formObj;
 
@@ -23,17 +23,24 @@ function handleApplicantRegisterForm(
       first_name: first_name,
       last_name: last_name,
       education: education,
+      project : {
+        project_name: "",
+        project_link: "",
+        project_description:""
+    }
     },
     login: {
       email: email,
       password: password,
     },
     skills: [],
+
   };
 
   axios.post(`${API}/users`, reqObj)
     .then(({ data }) => {
       // setRegisterTwoForm(true);
+      localStorage.setItem("userID", data.id)
       setRecruiter(null);
       setSignedIn(true);
       setRecruiterAcc(false);
@@ -42,6 +49,7 @@ function handleApplicantRegisterForm(
     .then(() => {
       axios.post(`${API}/logins`, reqObj["login"]).then(({ data }) => {
         setToken(data.token);
+        setRegisterTwoForm(true);
       });
     })
     .catch((err) => console.log(err));

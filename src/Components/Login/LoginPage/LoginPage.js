@@ -45,6 +45,7 @@ function LoginPage() {
         New to inIT? <br />
         Create an account
       </Link>
+     
     </div>
   );
 }
