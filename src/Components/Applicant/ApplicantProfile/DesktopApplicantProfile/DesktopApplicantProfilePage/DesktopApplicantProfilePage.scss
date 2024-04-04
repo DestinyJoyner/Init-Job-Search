@@ -1,35 +1,42 @@
 .desktopApplicantProfilePage {
-  // padding: 2vh;
   display: grid;
-  grid-template-columns: 15% 85%;
-  // grid-template-rows: 30vh 40vh 25vh;
-  // row-gap: 2vh;
   height: 100vh;
-
-  & >* {
-    // background-color: rgb(255, 251, 251);
-  }
-
-  &_banner {
-    grid-column: 1;
-    // height: 100vh;
-    // grid-row: 1/4;
-  }
+  padding: 1vh 2vw 3vh 2vw;
 
   &_content {
     grid-column: 2;
     display: grid;
-    grid-template-columns: 65% 35%;
-    grid-template-rows: 25vh 50vh 20vh;
-    row-gap: 2vh;
-  
-//   project/education details
-.applicantProfile_applicantDetails {
-    // grid-column: 2;
-    grid-row: 3;
-}
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 22vh 10vh 45vh 30vh;
+    row-gap: 1vh;
+    background-color: var(--init-background);
 
+    & > * {
+      background-color: white;
+      border: 1px solid var(--init-mint);
+      border-radius: 10px;
 
+      .applicantProfile_sectionHeader_text {
+        font-size: 20px;
+        padding-top: 1vh;
+      }
+    }
 
-}
+    &_skills {
+      display: flex;
+      width: 98%;
+      column-gap: 3vw;
+      grid-column: 1;
+      grid-row: 2;
+      margin: 0 auto;
+      padding-left: 1vw;
+
+      .desktopSkillsComponent {
+        & svg {
+          height: 1.8em;
+          width: 1.8em;
+        }
+      }
+    }
+  }
 }

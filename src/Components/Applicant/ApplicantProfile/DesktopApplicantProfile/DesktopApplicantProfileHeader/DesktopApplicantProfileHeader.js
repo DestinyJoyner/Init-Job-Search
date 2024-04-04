@@ -10,7 +10,6 @@ function DesktopApplicantProfileHeader({ desktopApplicantProfileDetails }) {
     lastInitial,
     first_name,
     last_name,
-    desktopSkills,
     position,
     education,
     bio,
