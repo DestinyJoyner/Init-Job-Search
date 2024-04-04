@@ -35,7 +35,6 @@ function UserProvider({ children }) {
       axios
         .get(`${API}/users/${userID}`)
         .then(({ data }) => {
-          console.log(data, "fetch")
           setApplicantDetails(data);
           setApplicantEditForm(data);
           setApplicantSkillIds(data.skills["skill_ids"]);

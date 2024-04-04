@@ -1,0 +1,10 @@
+.desktopApplicantProfileProject {
+grid-column: 1;
+
+    &_details {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1vh;
+
+    }
+}

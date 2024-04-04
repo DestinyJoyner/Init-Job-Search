@@ -2,50 +2,48 @@ import { useEffect } from "react";
 import { useContextProvider } from "../../../../../Providers/Provider.js";
 import { useUserProvider } from "../../../../../Providers/UserProvider.js";
 import DesktopApplicantProfileHeader from "../DesktopApplicantProfileHeader/DesktopApplicantProfileHeader.js";
-import { applicantProfileConversion } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
-
-import ApplicantProfileDetails from "../../ApplicantProfileDetails.js";
 import DesktopApplicantProfileAppliedJobs from "../DesktopApplicantProfileAppliedJobs/DesktopApplicantProfileAppliedJobs.js";
+import DesktopApplicantProfileProject from "../DesktopApplicantProfileProject/DesktopApplicantProfileProject.js";
 import LogoBanner from "../../../../App/LogoBanner/LogoBanner.js";
+import { applicantProfileConversion } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { applicantProfileHeaderLabel } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
-import "./DesktopApplicantProfilePage.scss"
+import "./DesktopApplicantProfilePage.scss";
 
 function DesktopApplicantProfilePage() {
-    const {loading, setLoading} = useContextProvider()
-    const {applicantDetails, applicantSkillIds, applicantJobs} = useUserProvider()
+  const { loading, setLoading } = useContextProvider();
+  const { applicantDetails, applicantSkillIds, applicantJobs } =
+    useUserProvider();
 
-    const desktopApplicantProfileDetails = applicantProfileConversion(applicantDetails)
+  const desktopApplicantProfileDetails =
+    applicantProfileConversion(applicantDetails);
 
-    console.log(applicantJobs, "jobs")
-    useEffect(() => {
-        if(applicantDetails.id){
-            setLoading(false)
-        }
-    },[applicantDetails])
-    
-    return (
-        <div className='desktopApplicantProfilePage'>
-            <section className="desktopApplicantProfilePage_banner">
-                <LogoBanner />
-            </section>
+  useEffect(() => {
+    if (applicantDetails.id) {
+      setLoading(false);
+    }
+  }, [applicantDetails]);
 
-            <section className="desktopApplicantProfilePage_content">
+  return (
+  
+    <div className="desktopApplicantProfilePage">
+      <section className="desktopApplicantProfilePage_banner">
+        <LogoBanner />
+      </section>
 
-            <DesktopApplicantProfileHeader desktopApplicantProfileDetails = {desktopApplicantProfileDetails} />
+      <section className="desktopApplicantProfilePage_content">
 
-            {/* <section className="desktopApplicantProfilePage_content_bio">
-                {applicantProfileHeaderLabel("Bio", applicantDetails.bio)}
-            </section> */}
+        <DesktopApplicantProfileHeader
+          desktopApplicantProfileDetails={desktopApplicantProfileDetails}
+        />
 
-            
-        
-        <DesktopApplicantProfileAppliedJobs applicantJobs={applicantJobs}/>
+        <DesktopApplicantProfileAppliedJobs applicantJobs={applicantJobs} />
 
-        <ApplicantProfileDetails applicantDetails={applicantDetails} />
-            </section>
-            
-        </div>
-    );
+        {
+          applicantDetails.project &&
+          <DesktopApplicantProfileProject applicantProject={applicantDetails.project}/>}
+      </section>
+    </div>
+  );
 }
 
 export default DesktopApplicantProfilePage;

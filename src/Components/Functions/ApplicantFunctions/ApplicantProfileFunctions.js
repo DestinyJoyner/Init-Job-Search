@@ -29,11 +29,15 @@ function applicantProfileConversion (detailsObj) {
     }
 }
 
-function applicantProfileHeaderLabel (label, content) {
+function applicantProfileHeaderLabel (label, content, project) {
     return (
         <>
         <span className="applicantProfile_sectionHeader_text">{label}:</span>
-            <p className="applicantProfile_header_about_text">{content} </p>
+        { !project ?
+            <p className="applicantProfile_header_about_text">{content} </p> :
+            <div className="desktopApplicantProfileProject_details">{content}</div>
+        }
+            
             </>
     )
 
