@@ -6,7 +6,6 @@ import DesktopApplicantProfileHeader from "../DesktopApplicantProfileHeader/Desk
 import DesktopApplicantProfileAppliedJobs from "../DesktopApplicantProfileAppliedJobs/DesktopApplicantProfileAppliedJobs.js";
 import DesktopApplicantProfileProject from "../DesktopApplicantProfileProject/DesktopApplicantProfileProject.js";
 import DesktopSkillsComponent from "../../../../DesktopSkillsComponent/DesktopSkillsComponent.js";
-import LogoBanner from "../../../../App/LogoBanner/LogoBanner.js";
 import { applicantProfileConversion } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { applicantProfileHeaderLabel } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { FaRegEdit } from "react-icons/fa";
@@ -28,10 +27,7 @@ function DesktopApplicantProfilePage() {
 
   return (
     <div className="desktopApplicantProfilePage">
-      {/* <section className="desktopApplicantProfilePage_banner">
-        <LogoBanner />
-      </section> */}
-
+     
       <section className="desktopApplicantProfilePage_content">
         <DesktopApplicantProfileHeader
           desktopApplicantProfileDetails={desktopApplicantProfileDetails}

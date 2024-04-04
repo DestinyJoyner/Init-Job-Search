@@ -9,12 +9,13 @@ function SkillsCheckboxes({skillsIdArr, setSkillIdArr, formStateVar, formSetFunc
 
     return (
         <section className="skillsCheckboxes">
-        <span className="skillsCheckboxes_label">
-          My Skills & Technologies
-        </span>
-        <span className="skillsCheckboxes_helpText">
+        <span className="skillsCheckboxes_label projectFormInputs_header">
+          <span>My Skills & Technologies </span>
+          <span className="skillsCheckboxes_helpText">
           {asterisk}Select up to 4
         </span>
+        </span>
+        
         <SkillProvider>
         <SkillsComponent
           checkbox={true}

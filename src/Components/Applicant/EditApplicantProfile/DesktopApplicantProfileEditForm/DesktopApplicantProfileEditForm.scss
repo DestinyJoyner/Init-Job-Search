@@ -1,32 +1,74 @@
 .desktopApplicantEditForm {
-    display: flex;
-    column-gap: 1vh;
-    .applicantProfileEditForm {
-        all: unset;
-        width: 100%;
-        margin: 2vh auto;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        row-gap: 2vh;
-        
-        .registerFormInput_label, .applicantFormTwo_form_input_textarea_label,
-        .applicantFormTwo_form_input_url_label  {
-            & span {
-              font-size: 16px;
-              font-weight: 600;
-            }
-        }
+  display: grid;
+  grid-template-columns: 15% 80%;
+  column-gap: 3%;
 
-        & label {
-            & textarea {
-                // width: 70%;
-                // height: 10vh;
-                // justify-self: center;
-                // border-radius: 20px;
-                // border-width: 2px;
-            }
-        }
-        
+  .logoBanner {
+    height: inherit;
+  }
+  .applicantProfileEditForm {
+    all: unset;
+    width: 100%;
+    margin: 2vh 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.8vh;
+    max-height: 100vh;
+
+    .registerFormInput_label,
+    .applicantFormTwo_form_input_textarea_label,
+    .applicantFormTwo_form_input_url_label {
+      & span {
+        font-size: 16px;
+        font-weight: 600;
+      }
     }
 
+    .projectFormInputs_header {
+      //         background: linear-gradient(
+      //     90deg,
+      //     rgba(12, 189, 189, 1) 45%,
+      //     rgb(83, 215, 199) 100%
+      //   );
+      background-color: var(--init-navbar);
+      color: var(--init-dark);
+      padding: 0.5vh 3vw 0.5vh 0;
+    }
+
+    &_project {
+      .projectFormInputs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1vh;
+        padding-bottom: 1.5vh;
+
+        &_header {
+          grid-column: span 2;
+        }
+
+        .applicantFormTwo_form_input_textarea_label {
+          & textarea {
+            padding-left: 0.3vw;
+            padding-top: 0.3vh;
+          }
+        }
+      }
+    }
+
+    .skillsCheckboxes {
+      &_label {
+        font-size: 20px;
+      }
+      .skills-checkboxes {
+        margin-top: 2vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: unset;
+      }
+    }
+
+    &_submitButton {
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
 }

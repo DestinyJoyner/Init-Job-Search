@@ -31,7 +31,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
     setApplicantFormTwo(applicantDetails);
     setLoading(false)
   }, []);
-
+// console.log(applicantDetails)
   useEffect(() => {
     // axios.get(`${API}/users/${userID}`)
     // .then(({data}) => console.log(data, "register"))
