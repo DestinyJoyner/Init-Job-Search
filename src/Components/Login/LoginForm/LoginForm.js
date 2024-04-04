@@ -28,6 +28,14 @@ export default function LoginForm({setFailedLogin, setFailedMessage}) {
     setFailedLogin(false);
   }, [loginForm]);
 
+  useEffect(() => {
+    setLoginForm({
+      email: "applicant@init.com",
+      password: "initDemo24!",
+      isRecruiter: false,
+    })
+  },[])
+
   return (
       <form
         className="loginForm grid-center"
