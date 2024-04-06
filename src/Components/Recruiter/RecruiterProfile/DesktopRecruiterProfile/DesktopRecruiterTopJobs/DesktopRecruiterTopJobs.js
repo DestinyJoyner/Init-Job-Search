@@ -7,9 +7,9 @@ import "./DesktopRecruiterTopJobs.scss"
 function DesktopRecruiterTopJobs({recruiterJobs}) {
     const [recruiterTopJobs, setRecruiterTopJobs] = useState([])
 
-    useEffect(() => {
-        setRecruiterTopJobs(getTwoHighestAppliedToJobs(recruiterJobs))
-    },[recruiterTopJobs])
+    // useEffect(() => {
+    //     setRecruiterTopJobs(getTwoHighestAppliedToJobs(recruiterJobs))
+    // },[recruiterTopJobs])
 
     return (
         <div className="desktopRecruiterTopJobs">

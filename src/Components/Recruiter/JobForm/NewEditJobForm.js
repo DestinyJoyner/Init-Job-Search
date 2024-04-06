@@ -132,9 +132,9 @@ export default function NewEditJobForm({ edit }) {
       if (!edit) {
         setFormError(false);
         obj.jobDetails.full_remote = `${obj.jobDetails.full_remote}`;
-        console.log(obj);
-        axios
-          .post(`${API}/jobs`, obj)
+        // console.log(obj);
+        
+          axios.post(`${API}/jobs`, obj)
           .then(({ data }) => navigate(`/jobs/${data.id}`))
           .catch((err) => console.log(err));
       }
