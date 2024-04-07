@@ -2,7 +2,7 @@ import { useWindowSizeProvider } from "../../../Providers/WindowSizeProvider";
 import convertCompanyForLogo from "../../App/Data/CompanyLogos";
 import { recruiter, handshake } from "../../App/Data/Icons";
 
-function RecruiterProfileHeader({recruiterDetails, recruiterJobs, totalApplicants}) {
+function RecruiterProfileHeader({recruiterDetails, recruiterJobs, companyDetails}) {
     const { first_name, last_name, organization} = recruiterDetails
     // console.log(recruiterDetails)
     const {isDesktopView} = useWindowSizeProvider()
@@ -26,18 +26,16 @@ function RecruiterProfileHeader({recruiterDetails, recruiterJobs, totalApplicant
           src={companyLogo}
           alt="recruiter-company"
         />
-        <span className="recruiterProfile_header_badge">
-        {/* {recruiter}  */}
-        {/* {handshake} */}
-        <span>Recruiter</span>
+        <span className="recruiterProfile_header_role">
+        Recruiter
         </span>
 
       {
         isDesktopView &&
-        <div className="recruiterProfile_header_stats">
-            <span className="recruiterProfile_header_stats_jobs">Jobs Posted: <b>{recruiterJobs.length}</b></span>
-            <span className="recruiterProfile_header_stats_jobs">Total Applicants: <b>{totalApplicants}</b></span>
-          </div>
+        <p className="recruiterProfile_header_company_about">
+              {" "}
+              {companyDetails.company_description}
+            </p>
       }
       
       </div>

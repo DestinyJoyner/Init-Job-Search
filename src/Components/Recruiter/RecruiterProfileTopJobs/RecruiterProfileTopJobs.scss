@@ -1,65 +1,36 @@
 .recruiterTopJobs {
-  text-indent: 0.5vw;
   padding: 0.5vh 1vh;
-  padding-right: 2vh;
-  width: 20vw;
-  height: 18vh;
+  padding-right: 1vh;
+  width: 24vw;
+  height: 13vh;
   border-radius: 10px;
-  background-color: #b3daf1;
-  border: 1px solid #0c65bd;
+  border: 1px solid var(--init-recruiter-blue);
   display: grid;
+  grid-template-columns: 15% 85%;
+  column-gap: 1vw;
+  grid-template-rows: fit-content;
   align-items: center;
-  grid-template-columns: 55% 45%;
-  column-gap: 3vw;
-  grid-template-rows: 50% 25% 20%;
-  row-gap: .5vh;
+  row-gap: 0.5vh;
 
-
-
-  &_title,
-  &_company,
-  &_city {
-    grid-column: span 2;
-    font-size: 15px;
-  }
-  &_title {
-    grid-row: 2;
-    font-size: 16px;
-    
-  }
-  &_company {
-    grid-row: 3;
-    font-weight: 100;
-    color: var(--init-faded-gray);
-    align-self: flex-start;
-  }
-  &_city {
-    grid-row: 4;
-  }
-  &_logo {
+  & img {
     height: 45px;
-    background-color: #def9f6;
-    border-radius: 10px;
-    padding: .6vh;
   }
+
+  &_details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5vh;
+    &_title {
+      font-size: 18px;
+    }
+  }
+
   &_applicants {
-    font-size: 22px;
-    justify-self: center;
-    & > * {
-      position: relative;
-    }
-    & span {
-      bottom: 0.5vh;
-      right: 1vw;
-    }
-    & svg {
-      
-      height: 1em;
-      width: 1em;
-    }
+    grid-column: 2;
+    justify-self: right;
+    padding-right: 2vw;
   }
 }
-
 
 /* @media (min-width: 450px)  {
   .recruiterTopJobs {

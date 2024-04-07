@@ -1,137 +1,80 @@
 .desktopRecruiterProfilePage {
-    display: grid;
-    grid-template-columns: 15% 85%;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  background-color: white;
 
-    &_content {
-
-  
-
+  &_content {
+    display: flex;
+    flex-direction: column;
+    .recruiterProfile {
+      grid-column: 2;
+      &_header {
         display: grid;
-        row-gap: 2vh;
-        .recruiterProfile {
-            grid-column: 2;
-            &_header {
-                display: grid;
-                align-items: center;
-                grid-template-columns: 20% 35% 35% ;
-                grid-template-rows: 75% 25%;
-                height: 15vh;
-                padding-top: 1vh;
-    
-                &_name {
-                    display: flex;
-                    column-gap: 3vh;
-                    align-items: center;
-                    font-size: 28px;
-                    & svg {
-                        height: 1.5em;
-                        width: 1.5em;
-                        background-color: unset;
-                        margin-top: 1vh;
-                    }
-                }
+        align-items: center;
+        grid-template-columns: 30% 68%;
+        grid-template-rows: 5vh 5vh 5vh 7vh;
+        column-gap: 1vw;
+        row-gap: 0.5vh;
+        height: fit-content;
+        padding: 1vh 0 2vh 0;
+        background-color: var(--init-recruiter-blue);
+        color: var(--init-background);
 
-                &_company {
-                    grid-column: 1;
-                    grid-row: 2;
-                    justify-self: center;
-                    font-weight: 600;
-                    &_logo{
-                        grid-column: 1;
-                        grid-row: 1;
-                        height: 110px;
-                    }
-                   
-                }
-
-                &_badge {
-                    grid-row: 2;
-                    grid-column: 2;
-                    & span {
-                        font-size: 22px;
-                        position: unset;
-                        font-weight: 400;
-                    }
-
-                   
-                }
-
-                &_stats {
-                    grid-row: 1/3;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-evenly;
-                    height: 80%;
-                    border-left: 1px solid #0E7B95;
-                    padding-left: 2vw;
-                }
-
-                
-            }
-        }
-
-        &_bottomHeader {
-            display: grid;
-            grid-template-columns: 62% 38%;
-            max-height: 15vh;
-            padding-left: 1vw;
+        &_name {
+          display: flex;
+          column-gap: 3vh;
+          align-items: center;
+          font-size: 28px;
+          & svg {
+            height: 1.5em;
+            width: 1.5em;
+            background-color: unset;
             margin-top: 1vh;
-            
-
-           
-
-            &_newJob {
-                grid-column: 2;
-                width: 85%;
-                height: 100%;
-                justify-self: center;
-                
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               font-size: 28px;
-            //    background-color: white;
-            
-                & a {
-                    grid-row: 1;
-                    color: var(--init-background);
-                    background-color:  #0E7B95;
-                    height: 15vh;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 100%;
-                    // border-radius: 10px;
-
-                    &:hover {
-                        color: var(--init-gold);
-                        font-size: 30px;
-                    }
-                }
-            }
-
-            &_about {
-                grid-column: 1;
-                grid-row: 1;
-               text-indent: 1vw;
-               padding: .3vw .5vw .5vw .5vw;
-               font-size: 15px;
-               overflow-y: scroll;
-            //    background-color: white;
-            //    border-radius: 10px;
-            //    border: 1px solid #0E7B95;
-               &::-webkit-scrollbar {
-                background: transparent; /* Set the color of the scrollbar handle */
-               
-              }
-              &::-webkit-scrollbar-thumb {
-                background: #0E7B95; 
-                // border-top-right-radius: 10px;
-                
-              }
-  
-            }
+          }
         }
+
+        &_company {
+          grid-column: 1;
+          grid-row: 4;
+          justify-self: center;
+          font-weight: 600;
+          &_logo {
+            grid-column: 1;
+            grid-row: 1/4;
+            height: 110px;
+            // background-color: rgba(63, 63, 63, 0.565);
+            padding: 2px;
+          }
+
+          &_about {
+            grid-column: 2;
+            grid-row: 3/5;
+            height: 94%;
+            width: 96%;
+            padding: 0 1vw 2vh 0;
+            font-size: 16px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+              background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+            //   background: var(--init-darkmint);
+            background: var(--init-background);
+              border-radius: 10px;
+            }
+          }
+        }
+
+        &_role {
+          grid-row: 2;
+          grid-column: 2;
+          font-size: 19px;
+          position: unset;
+          font-weight: 400;
+          align-self: flex-start;
+        }
+      }
     }
-    
+  }
 }

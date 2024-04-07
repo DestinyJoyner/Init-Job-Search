@@ -10,22 +10,28 @@ function RecruiterProfileTopJobs({ jobObj }) {
 
   return (
     <div className="recruiterTopJobs">
-      <Link to={`/jobs/${id}`} className="recruiterTopJobs_title">
-        {title}
-      </Link>
 
-      <span className="recruiterTopJobs_company bold">{company}
-      </span>
+<img src={companyLogo} alt={company} className="recruiterTopJobs_logo" />
 
-      <img src={companyLogo} alt={company} className="recruiterTopJobs_logo" />
+      <section className="recruiterTopJobs_details">
+        <Link to={`/jobs/${id}`} className="recruiterTopJobs_details_title">{title}</Link>
+        <span className="recruiterTopJobs_details_company">{company}</span>
+      </section>
+
+      {/* <span className="recruiterTopJobs_company bold">
+     
+        
+      </span> */}
+
+     
 
       <Link
         to={`/jobs/${id}/applicants`}
         className="recruiterTopJobs_applicants"
       >
-        {userIcon}{" "}
+        View Applicants: {" "}
         <span>
-            ({users.length})
+            {users.length}
         </span>
       </Link>
     </div>

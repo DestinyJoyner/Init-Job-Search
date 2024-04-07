@@ -7,13 +7,13 @@ import "./DesktopRecruiterTopJobs.scss"
 function DesktopRecruiterTopJobs({recruiterJobs}) {
     const [recruiterTopJobs, setRecruiterTopJobs] = useState([])
 
-    // useEffect(() => {
-    //     setRecruiterTopJobs(getTwoHighestAppliedToJobs(recruiterJobs))
-    // },[recruiterTopJobs])
+    useEffect(() => {
+        setRecruiterTopJobs(getTwoHighestAppliedToJobs(recruiterJobs))
+    },[])
 
     return (
         <div className="desktopRecruiterTopJobs">
-            <span className="desktopRecruiterTopJobs_header">Top Jobs</span>
+            <span className="desktopRecruiterTopJobs_header">Top Posted Jobs</span>
         {recruiterTopJobs.length > 0 ? (
       <section className="desktopRecruiterTopJobs_topJobs">
         {recruiterTopJobs.map((jobObj) => (

@@ -4,8 +4,8 @@ import { useRecruiterProvider } from "../../../../Providers/RecruiterProvider";
 import { useContextProvider } from "../../../../Providers/Provider";
 import LogoBanner from "../../../App/LogoBanner/LogoBanner";
 import RecruiterProfileHeader from "../RecruiterProfileHeader";
+import DesktopRecruiterProfileBottomHeader from "./DesktopRecruiterProfileBottomHeader/DesktopRecruiterProfileBottomHeader";
 import DesktopRecruiterTopJobs from "./DesktopRecruiterTopJobs/DesktopRecruiterTopJobs";
-
 
 import "./DesktopRecruiterProfile.scss";
 
@@ -14,17 +14,11 @@ function DesktopRecruiterProfile(props) {
     useContextProvider();
   const {
     recruiterDetails,
-    recruiterJobs,
-    setRecruiterJobs,
-    recruiterJobsWithUsers,
-    setRecruiterJobsWithUsers,
+    recruiterJobs
   } = useRecruiterProvider();
 
   const [companyDetails, setCompanyDetails] = useState({});
 
-  const totalApplicants = recruiterJobsWithUsers.reduce((acc, { users }) => {
-    return (acc += users.length);
-  }, 0);
   useEffect(() => {
     if (recruiterDetails.id) {
       const companyName = recruiterDetails.organization.replaceAll(" ", "");
@@ -46,23 +40,26 @@ function DesktopRecruiterProfile(props) {
         <section className="desktopRecruiterProfilePage_content">
           <RecruiterProfileHeader
             recruiterDetails={recruiterDetails}
-            recruiterJobs={recruiterJobs}
-            totalApplicants={totalApplicants}
+            companyDetails = {companyDetails}
           />
 
-          <section className="desktopRecruiterProfilePage_content_bottomHeader">
+          <DesktopRecruiterProfileBottomHeader />
+
+          {/* <section className="desktopRecruiterProfilePage_content_bottomHeader">
             <div className="desktopRecruiterProfilePage_content_bottomHeader_newJob">
               <Link to="/jobs/new">Post Opportunity</Link>
             </div>
 
-            <p className="desktopRecruiterProfilePage_content_bottomHeader_about">
-              {" "}
-              {companyDetails.company_description}
-            </p>
-          </section>
+            <div className="recruiterProfile_bottomHeader_stats">
+            <IoStatsChart />
+            <span className="recruiterProfile_bottomHeader_stats_jobs"><b>Jobs Posted</b>: {recruiterJobs.length}</span>
+            <span className="recruiterProfile_bottomHeader_stats_jobs"><b>Total Applicants</b>: {totalApplicants}</span>
+          </div>
+
+          </section> */}
 
           <DesktopRecruiterTopJobs recruiterJobs={recruiterJobs}/>
-          
+
         </section>
 
       </div>

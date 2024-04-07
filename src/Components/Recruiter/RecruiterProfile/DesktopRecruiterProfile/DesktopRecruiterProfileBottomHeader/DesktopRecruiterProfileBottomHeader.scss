@@ -1,0 +1,56 @@
+.desktopRecruiterProfilePage_content {
+  &_bottomHeader {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    border-bottom: 1px solid var(--init-recruiter-blue);
+    
+
+    &_stats {
+      grid-column: 1;
+      grid-row: 1;
+      padding-left: 2vw;
+      display: grid;
+      grid-template-columns: 10% 90%;
+      align-items: center;
+
+      & svg {
+        grid-column: 1;
+        grid-row: 1;
+        height: 1.5em;
+        width: 1.5em;
+      }
+
+      &_jobs,
+      &_applicants {
+        grid-column: 2;
+        font-size: 18px;
+      }
+
+      &_jobs {
+        grid-row: 1;
+      }
+
+      &_applicants {
+        grid-row: 2;
+      }
+    }
+
+    &_newJob {
+      grid-column: 2;
+      grid-row: 1;
+      background-color: var(--init-darkmint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      height: 10vh;
+      color: white;
+
+      &:hover {
+        font-size: 34px;
+        color: (var(--init-gold));
+      }
+    }
+  }
+}
+
