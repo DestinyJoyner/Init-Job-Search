@@ -1,39 +1,47 @@
 import { Link } from "react-router-dom";
 import convertCompanyForLogo from "../../App/Data/CompanyLogos";
-import { userIcon } from "../../App/Data/Icons";
 import "./RecruiterProfileTopJobs.scss";
 
+import {convertCities} from "../../Functions/ConvertFunctions/ConversionFunctions"
+
 function RecruiterProfileTopJobs({ jobObj }) {
-  const { title, company, users, id } = jobObj;
+  const { title, company, city, users, id } = jobObj;
 
   const companyLogo = convertCompanyForLogo(company.toLowerCase());
-
+  const companyCity = convertCities(city)
   return (
-    <div className="recruiterTopJobs">
+    <div className="recruiterTopJobs init-card">
 
-<img src={companyLogo} alt={company} className="recruiterTopJobs_logo" />
+      <section className="recruiterTopJobs_company flex-align">
+      <img src={companyLogo} alt={company} className="recruiterTopJobs_logo" />
+      <span className="recruiterTopJobs_company_details">
+        <span className="recruiterTopJobs_company_details_name">
+        {company}</span>
 
-      <section className="recruiterTopJobs_details">
-        <Link to={`/jobs/${id}`} className="recruiterTopJobs_details_title">{title}</Link>
-        <span className="recruiterTopJobs_details_company">{company}</span>
-      </section>
-
-      {/* <span className="recruiterTopJobs_company bold">
-     
-        
-      </span> */}
-
-     
-
-      <Link
-        to={`/jobs/${id}/applicants`}
-        className="recruiterTopJobs_applicants"
-      >
-        View Applicants: {" "}
-        <span>
-            {users.length}
+        <span className="recruiterTopJobs_company_details_city flex-column">
+        {companyCity}</span>
         </span>
+      </section>
+      
+
+      <span className="recruiterTopJobs_title">
+        {title}
+      </span>
+
+    <section className="recruiterTopJobs_links flex-align">
+        <Link to={`/jobs/${id}`}>
+          Post Details
+        </Link>
+
+        <Link
+        to={`/jobs/${id}/applicants`}
+        className="recruiterTopJobs_links_applicants"
+      >
+       View Applicants
+       {/* <span>{users.length}</span> */}
       </Link>
+    </section>
+     
     </div>
   );
 }

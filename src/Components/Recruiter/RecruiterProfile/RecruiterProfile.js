@@ -45,28 +45,16 @@ export default function RecruiterProfile() {
 
         <hr />
 
-        <div className="recruiterProfile_topJobs_header">
-          <h2>Popular Jobs</h2>
-        </div>
-
-        {recruiterTopJobs.length > 0 ? (
-          <section className="recruiterProfile_topJobs">
-            {recruiterTopJobs.map((jobObj) => (
-              <RecruiterProfileTopJobs key={uuidv4()} jobObj={jobObj} />
-            ))}
-          </section>
-        ) :
-        <span>None of Your Current Jobs Have Applicants</span>}
         <div className="recruiterProfile_jobsPosted_header">
           <h2>
             Jobs Posted ({recruiterJobs.length})
           </h2>
+          
           <Dropdown 
           idVal={"recruiterSort"}
           value={recruiterSortJobs}
           onChange={(event) => handleRecruiterJobSort(event, setRecruiterSortJobs, setRecruiterJobs, recruiterJobsWithUsers, recruiterID)}
           optionsArray={recruiterSortOptionsArr}/>
-
 
           <Link to="/jobs/new">{addJob}</Link>
         </div>

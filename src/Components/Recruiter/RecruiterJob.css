@@ -1,9 +1,8 @@
 .recruiter-job {
     width: 96%;
-    height: 8vh;
+    height: 10vh;
     justify-self: center;
     grid-template-columns: 15% 60% 20%;
-    /* border-top: 2px solid var(--init-charcoal); */
     justify-items: left;
     padding: .5vh;
     background-color: white;
@@ -21,9 +20,6 @@
     min-width: 40px;
    max-width: 100%;
    justify-self: center;
-   /* background-color: var(--init-charcoal);
-   padding: 3px; */
-   /* border-radius: 10px; */
 }
 
 .recruiter-job-details {

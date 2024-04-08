@@ -1,8 +1,7 @@
 .desktopRecruiterProfilePage {
   display: grid;
   grid-template-columns: 15% 85%;
-  background-color: white;
-
+  
   &_content {
     display: flex;
     flex-direction: column;
@@ -17,8 +16,9 @@
         row-gap: 0.5vh;
         height: fit-content;
         padding: 1vh 0 2vh 0;
-        background-color: var(--init-recruiter-blue);
-        color: var(--init-background);
+        // background-color: var(--init-recruiter-blue);
+        // color: var(--init-background);
+        background-color: white;
 
         &_name {
           display: flex;

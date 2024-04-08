@@ -1,7 +1,7 @@
 const recruiterSortOptionsArr = [
     {
       val: "",
-      name: "Sort Jobs"
+      name: "Sort By"
 
     },
     {

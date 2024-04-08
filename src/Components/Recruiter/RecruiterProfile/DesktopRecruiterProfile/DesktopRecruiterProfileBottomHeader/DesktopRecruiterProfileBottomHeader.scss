@@ -3,6 +3,8 @@
     display: grid;
     grid-template-columns: 55% 45%;
     border-bottom: 1px solid var(--init-recruiter-blue);
+    border-top: 1px solid var(--init-recruiter-blue);
+    background-color: white;
     
 
     &_stats {
@@ -10,14 +12,15 @@
       grid-row: 1;
       padding-left: 2vw;
       display: grid;
-      grid-template-columns: 10% 90%;
+      grid-template-columns: 10% 85%;
+      column-gap: 2%;
       align-items: center;
 
       & svg {
         grid-column: 1;
-        grid-row: 1;
-        height: 1.5em;
-        width: 1.5em;
+        grid-row: 1/3;
+        height: 2em;
+        width: 2em;
       }
 
       &_jobs,
@@ -38,7 +41,7 @@
     &_newJob {
       grid-column: 2;
       grid-row: 1;
-      background-color: var(--init-darkmint);
+      background-color: var(--init-recruiter-blue);
       display: flex;
       align-items: center;
       justify-content: center;
