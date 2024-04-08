@@ -1,32 +1,33 @@
 .desktopRecruiterTopJobs {
-    // margin: 2vh 1vw 0 1vw;
-    height: 30vh;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2vh;
+
+  &>* {
+    position: relative;
+  }
+  &_header {
+    
+    bottom: 6vh;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0.5vw 1vw;
+    width: fit-content;
     display: flex;
-    flex-direction: column;
-    row-gap: 2vh;
+    align-items: center;
+    column-gap: 1vw;
 
-    &_header {
-        margin: 1vh 1vw 0 1vw;
-        
-        font-size: 24px;
-        font-weight: 600;
-        padding: .5vw 1vw;
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        column-gap: 1vw;
-
-        & svg {
-         height: 1.2em;
-         width: 1.2em;
-        }
-       
+    & svg {
+      height: 1.2em;
+      width: 1.2em;
     }
+  }
 
-    &_topJobs {
-        display: flex;
-        justify-content: space-between;
-        padding:  1vw;
-        background-color: var(--init-recruiter-blue);
-    }
+  &_topJobs {
+    bottom: 6vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+  }
 }

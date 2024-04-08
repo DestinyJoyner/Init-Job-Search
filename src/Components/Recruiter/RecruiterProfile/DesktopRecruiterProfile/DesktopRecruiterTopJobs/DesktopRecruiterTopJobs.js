@@ -19,7 +19,7 @@ function DesktopRecruiterTopJobs({ recruiterJobs }) {
       </span>
 
       {recruiterTopJobs.length > 0 ? (
-        <section className="desktopRecruiterTopJobs_topJobs">
+        <section className="desktopRecruiterTopJobs_topJobs init-card">
           {recruiterTopJobs.map((jobObj) => (
             <RecruiterProfileTopJobs key={uuidv4()} jobObj={jobObj} />
           ))}

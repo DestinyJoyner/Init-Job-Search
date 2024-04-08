@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Poppins:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&family=Ysabeau:ital,wght@1,400;1,500;1,600&display=swap");
 
 /* scrollbar? */
-::-webkit-scrollbar-track-piece:start {
-  background: transparent url('/public/transparent.png') repeat-y !important;
+::-webkit-scrollbar {
+  background: transparent;
 }
+::-webkit-scrollbar-thumb {
 
-::-webkit-scrollbar-track-piece:end {
-  background: transparent url('/public/transparent.png') repeat-y !important;
+background: var(--init-background);
+/* background-color: var(--init-dark); */
+  border-radius: 20px;
 }
 
 
@@ -124,6 +126,11 @@ a {
   display: grid;
   align-items: center;
   justify-items: center;
+}
+
+.grid-align {
+  display: grid;
+  align-items: center;
 }
 
 .flex-center {

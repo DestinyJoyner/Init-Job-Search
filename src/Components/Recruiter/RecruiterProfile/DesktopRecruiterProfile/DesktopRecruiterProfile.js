@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useRecruiterProvider } from "../../../../Providers/RecruiterProvider";
 import { useContextProvider } from "../../../../Providers/Provider";
 import LogoBanner from "../../../App/LogoBanner/LogoBanner";
-import RecruiterProfileHeader from "../RecruiterProfileHeader";
-import DesktopRecruiterProfileBottomHeader from "./DesktopRecruiterProfileBottomHeader/DesktopRecruiterProfileBottomHeader";
+import DesktopRecruiterProfileHeader from "./DesktopRecruiterProfileHeader/DesktopRecruiterProfileHeader";
+
 import DesktopRecruiterTopJobs from "./DesktopRecruiterTopJobs/DesktopRecruiterTopJobs";
 import DesktopRecruiterJobs from "./DesktopRecruiterJobs/DesktopRecruiterJobs";
 
@@ -37,15 +38,22 @@ function DesktopRecruiterProfile(props) {
   return (
     !loading && (
       <div className="desktopRecruiterProfilePage">
-        <LogoBanner />
+        {/* <LogoBanner /> */}
 
         <section className="desktopRecruiterProfilePage_content">
-          <RecruiterProfileHeader
+          <DesktopRecruiterProfileHeader
             recruiterDetails={recruiterDetails}
             companyDetails={companyDetails}
+            recruiterJobsWithUsers={recruiterJobsWithUsers}
+            recruiterJobs={recruiterJobs}
           />
 
-          <DesktopRecruiterProfileBottomHeader />
+          <Link
+            className="desktopRecruiterProfilePage_content_newPost flex-align"
+            to="/jobs/new"
+          >
+            New Post
+          </Link>
 
           <DesktopRecruiterTopJobs recruiterJobs={recruiterJobs} />
 
@@ -55,7 +63,6 @@ function DesktopRecruiterProfile(props) {
             setRecruiterJobs={setRecruiterJobs}
             recruiterJobs={recruiterJobs}
           />
-
         </section>
       </div>
     )
