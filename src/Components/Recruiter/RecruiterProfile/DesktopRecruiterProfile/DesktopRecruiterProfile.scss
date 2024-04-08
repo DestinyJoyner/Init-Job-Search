@@ -12,12 +12,13 @@
       color: white;
       font-size: 32px;
       height: 10vh;
-      width: 20vw;
+      width: fit-content;
+      padding: 0 2vw;
       justify-content: center;
       align-self: flex-end;
       margin: 1vh 2vw 0 0;
       &:hover {
-       padding: 0;
+        padding: 0 2vw;
         color: var(--init-recruiter-blue);
       }
     }

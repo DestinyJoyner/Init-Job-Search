@@ -2,12 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecruiterProvider } from "../../../../Providers/RecruiterProvider";
 import { useContextProvider } from "../../../../Providers/Provider";
-import LogoBanner from "../../../App/LogoBanner/LogoBanner";
 import DesktopRecruiterProfileHeader from "./DesktopRecruiterProfileHeader/DesktopRecruiterProfileHeader";
-
 import DesktopRecruiterTopJobs from "./DesktopRecruiterTopJobs/DesktopRecruiterTopJobs";
 import DesktopRecruiterJobs from "./DesktopRecruiterJobs/DesktopRecruiterJobs";
-
 import "./DesktopRecruiterProfile.scss";
 
 function DesktopRecruiterProfile(props) {
@@ -38,7 +35,6 @@ function DesktopRecruiterProfile(props) {
   return (
     !loading && (
       <div className="desktopRecruiterProfilePage">
-        {/* <LogoBanner /> */}
 
         <section className="desktopRecruiterProfilePage_content">
           <DesktopRecruiterProfileHeader
@@ -52,7 +48,7 @@ function DesktopRecruiterProfile(props) {
             className="desktopRecruiterProfilePage_content_newPost flex-align"
             to="/jobs/new"
           >
-            New Post
+            Post Opportunity
           </Link>
 
           <DesktopRecruiterTopJobs recruiterJobs={recruiterJobs} />

@@ -21,15 +21,16 @@ function DesktopRecruiterProfileHeader({
 
   return (
     <div className="desktopRecruiterProfileHeader grid-align">
+      <img src={companyLogo} alt={organization} />
+
       <section className="desktopRecruiterProfileHeader_details flex-column">
-        <img src={companyLogo} alt={organization} />
         <span className="desktopRecruiterProfileHeader_details_name">
           {first_name} {last_name}
         </span>
         <span className="desktopRecruiterProfileHeader_details_company">
           {organization}
         </span>
-        <span className="desktopRecruiterProfileHeader_details_badge">
+        <span className="desktopRecruiterProfileHeader_details_badge flex-align">
           <span>Recruiter </span>
           {handshake}
         </span>

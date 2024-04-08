@@ -6,10 +6,17 @@
 }
 ::-webkit-scrollbar-thumb {
 
-background: var(--init-background);
+  background: var(--init-darkmint);
 /* background-color: var(--init-dark); */
   border-radius: 20px;
 }
+
+.App ::-webkit-scrollbar-thumb {
+
+  
+  background: var(--init-background);
+
+  }
 
 
 /* compliment colors
@@ -93,10 +100,13 @@ a, button {
     border-radius: 5px; 
     transition: background-color 0.3s; 
     width: fit-content;
+    padding: 5px; 
+    position: relative;
+        right: .5vw;
 }
 
 a:hover, button:hover {
-  padding: 10px; 
+  /* padding: 10px;  */
   background-color: rgba(23, 22, 22, 0.2);
 }
 
