@@ -1,0 +1,85 @@
+.desktopRecruiterProfileHeader {
+  height: 28vh;
+  background: linear-gradient(
+    to bottom,
+    var(--init-recruiter-blue) 50%,
+    white 50%
+  );
+  grid-template-columns: 30% 70%;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 1vw;
+
+  & img {
+    grid-column: 1;
+    grid-row: 1;
+    height: 110px;
+    width: 120px;
+    background-color: rgba(243, 237, 237, 0.1);
+    border-radius: 5px;
+    border: 4px solid white;
+    padding: 3px;
+  }
+
+  &_details {
+    max-width: 100%;
+    row-gap: 0.2vh;
+    grid-row: 2;
+    
+
+    &_name {
+      font-weight: 600;
+      font-size: 28px;
+    }
+    &_company,
+    &_badge span {
+      color: var(--init-subheader-grey);
+      font-size: 20px;
+      
+    }
+    &_badge {
+      column-gap: .6vw;
+      & svg {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &_stats,
+  &_companyDetails {
+    grid-column: 2;
+  }
+
+  &_stats {
+    width:fit-content;
+    padding: 1vh 2vh 0 0;
+    justify-self: right;
+    grid-row: 1;
+    // align-self: flex-start;
+    color: white;
+    display: grid;
+    grid-template-columns: 10% 85%;
+    column-gap: 5vh;
+    row-gap: 0.5vh;
+    align-items: center;
+
+    & svg {
+      grid-column: 1;
+      grid-row: 1/3;
+      height: 2em;
+      width: 2em;
+    }
+
+    &_applicants,
+    &_jobs {
+      grid-column: 2;
+      font-size: 19px;
+    }
+  }
+
+  &_companyDetails {
+    grid-row: 2;
+    max-height: 100%;
+    overflow-y: scroll;
+    padding-right: 1vw;
+  }
+}

@@ -1,13 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Poppins:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&family=Ysabeau:ital,wght@1,400;1,500;1,600&display=swap");
 
 /* scrollbar? */
-::-webkit-scrollbar-track-piece:start {
-  background: transparent url('/public/transparent.png') repeat-y !important;
+::-webkit-scrollbar {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+
+background: var(--init-darkmint);
+/* background-color: var(--init-dark); */
+  border-radius: 20px;
 }
 
-::-webkit-scrollbar-track-piece:end {
-  background: transparent url('/public/transparent.png') repeat-y !important;
-}
+.App ::-webkit-scrollbar-thumb {
+
+  
+  background: var(--init-background);
+
+  }
 
 
 /* compliment colors
@@ -25,12 +34,13 @@
   --init-gold: #ffde59;
   --init-blue: #0914ae;
   --init-lightblue: #b1d9f3;
-  --init-recruiter-blue: #4198cd;
+  --init-recruiter-blue: #0E7B95;
   --init-background: #deeff9;
   --init-dark: #050525;
   --init-rust: rgb(186, 26, 26);
   --init-charcoal: rgb(22, 16, 16);
   --init-faded-gray: rgb(79, 77, 77);
+  --init-subheader-grey: #666666;
   --init-gray-background: rgba(183, 183, 183, 0.3);
   --slidenav:calc(100vw - 450px);
   --init-navbar : #84D0C8;
@@ -39,6 +49,7 @@
 body {
   height: auto;
   min-height: 100vh;
+  
   /* height: auto;
   overflow: scroll;
   min-height: 100%; */
@@ -54,13 +65,11 @@ body {
 
 .desktop {
   margin-top: 9vh;
-  height: auto;
+  padding-bottom: 9vh;
+}
 
-  padding-bottom: 5%;
-  
-  /* min-height: 100vh; */
-  /* border: 1px solid red; */
-
+.desktop input[type="submit"] {
+  cursor: pointer;
 }
 
 /* DARK/LIGHT THEME*/
@@ -73,6 +82,40 @@ body {
   background-color: var(--init-dark);
   color: var(--init-background);
 }
+
+/* GLOBAL STYLING MODIFIACTION CLASSES */
+
+/* card outline style */
+.init-card {
+  background-color: white;
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+/* hover effect in links and buttons */
+/* a, button {
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+    width: fit-content;
+    padding: 5px; 
+    position: relative;
+        right: .5vw;
+}
+
+a:hover, button:hover {
+  background-color: rgba(23, 22, 22, 0.2);
+} */
+
+
+
+
+
+
+
+
+
+
 
 /* LINKS*/
 a {
@@ -92,11 +135,27 @@ a {
   justify-items: center;
 }
 
+.grid-align {
+  display: grid;
+  align-items: center;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.flex-align {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* HIDE */
 .hide {

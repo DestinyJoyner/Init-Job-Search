@@ -1,0 +1,33 @@
+.desktopRecruiterTopJobs {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2vh;
+
+  &>* {
+    position: relative;
+  }
+  &_header {
+    
+    bottom: 6vh;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0.5vw 1vw;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    column-gap: 1vw;
+
+    & svg {
+      height: 1.2em;
+      width: 1.2em;
+    }
+  }
+
+  &_topJobs {
+    bottom: 6vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+  }
+}

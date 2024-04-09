@@ -1,0 +1,47 @@
+.desktopRecruiterJobs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5vh;
+  &_header {
+    margin: 1vh 1vw 0 1vw;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+    &_label {
+      font-size: 24px;
+      font-weight: 600;
+      padding: 1vw 0;
+      display: flex;
+      column-gap: 1vw;
+      align-items: center;
+    }
+  }
+
+  &_jobsList {
+    padding: 2vh 0 3vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5vh;
+    max-height: 72vh;
+    overflow-y: scroll;
+    position: relative;
+    bottom: 2vh;
+
+    &_sort {
+      display: flex;
+      column-gap: 2vw;
+      align-items: center;
+      align-self: flex-end;
+      margin-right: 5vw;
+      margin-bottom: 1vh;
+      font-size: 20px;
+      border-bottom: 2px solid var(--init-recruiter-blue);
+      padding-bottom: 1vh;
+      & select {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -2,9 +2,8 @@
   height: 92vh;
   width: 100%;
   grid-template-rows:
-    12vh 1vh 7vh 15vh
-    7vh 38vh 8vh;
-  row-gap: 1vh;
+    12vh 1vh 7vh 60vh 8vh;
+  row-gap:1vh;
   align-items: center;
 
   & h2 {
@@ -24,31 +23,24 @@
     grid-template-rows: 4vh 4vh 4vh;
     column-gap: 3vw;
 
-    &_badge {
-      grid-column: 2;
-      grid-row: 3;
-      align-self: center;
-      & span {
-        font-size: 16px;
-        // font-style: italic;
-        font-weight: 600;
-        position: relative;
-        bottom: 0.3vh;
-        left: 2vw;
-      }
-      & svg {
-        background-color: white;
-        border-radius: 50%;
-        height: 0.8em;
-        width: 0.8em;
-      }
-    }
     &_name {
       grid-column: 2;
       grid-row: 1;
       font-weight: 600;
       font-size: 24px;
+      display: flex;
+      align-items: center;
+      column-gap: 3vw;
+      & svg {
+        position: relative;
+        top: .5vh;
+      }
     }
+
+    &_role {
+      font-size: 16px;
+    }
+
     &_company {
       grid-column: 2;
       grid-row: 2;
@@ -67,26 +59,28 @@
 
   &_jobsPosted {
     &_header {
-      grid-row: 5;
+      grid-row: 3;
       display: grid;
-      grid-template-columns: 1.2fr 1fr .5fr;
+      grid-template-columns: 1fr .8fr .5fr;
       width: 94%;
       justify-items: left;
       align-items: center;
+      margin-top: 1vh;
 
       & svg {
-        height: 2.5em;
-        width: 2.5em;
+        height: 3.2em;
+        width: 3.2em;
         color: var(--init-blue);
         position: relative;
-        top: 0.3vh;
-        left: 4vw;
+        top: .8vh;
+        left: 3vw;
         
       }
       & h2 {
         height: fit-content;
       }
       & select {
+        
         width: 90%;
         font-size: 17px;
         font-weight: 500;
@@ -95,53 +89,32 @@
     }
   }
 
-  &_topJobs {
-    height: 100%;
-    width: 94%;
-    padding: 2vh 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    // white-space: nowrap;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 4vw;
-    position: relative;
-    bottom: 2vh;
-    &_header {
-      justify-self: left;
-      margin-left: 4vw;
-      position: relative;
-      bottom: 1vh;
-    }
-  }
-
   & hr {
-    border: 1px solid #0c65bd;
+    border: 1px solid var(--init-darkmint);
     width: 90%;
+    margin-top: 2vh;
   }
 
   &_jobsList {
-    grid-row:6;
+    grid-row:4;
     width: 94%;
     display: grid;
     grid-template-rows: max-content;
     row-gap: 2vh;
     overflow-y: scroll;
-    height: 35vh;
+    height: 55vh;
     padding: 2vh 0;
-    border-top: 2px solid #0c65bd;
-    border-bottom: 2px solid #0c65bd;
-    // position: relative;
-    // bottom: 1vh;
   }
 
   &_new-job-link {
-    grid-row: 7;
+    grid-row: 5;
     justify-self: center;
     font-size: 28px;
     width: 98%;
     text-align: center;
-    margin-bottom: 2vh;
+    border-top: 2px solid var(--init-darkmint);
+    width: 90%;
+    padding-top: 2vh;
   }
 }
 

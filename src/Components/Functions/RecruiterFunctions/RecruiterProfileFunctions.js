@@ -22,6 +22,7 @@ function handleRecruiterJobSort(
   recruiterID
 ) {
   const sortValue = e.target.value;
+
   setDropdownFunction(sortValue);
 
   if (sortValue === "applicants") {
@@ -41,6 +42,7 @@ function handleRecruiterJobSort(
       .then(({ data }) => setJobListFuction(data))
       .catch((err) => console.log(err));
   }
+  
 }
 
 export { getTwoHighestAppliedToJobs, handleRecruiterJobSort };
