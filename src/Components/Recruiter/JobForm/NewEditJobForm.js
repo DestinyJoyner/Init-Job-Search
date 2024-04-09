@@ -4,6 +4,8 @@ import { useContextProvider } from "../../../Providers/Provider.js";
 import { useNavProvider } from "../../../Providers/NavProvider.js";
 import { useJobProvider } from "../../../Providers/JobProvider.js";
 import { useRecruiterProvider } from "../../../Providers/RecruiterProvider.js";
+import {useWindowSizeProvider} from "../../../Providers/WindowSizeProvider.js"
+import LogoBanner from "../../App/LogoBanner/LogoBanner.js"
 import JobFormTextInput from "../../FormInputs/JobFormInputs/JobFormTextInput/JobFormTextInput.js";
 import JobFormDataList from "../../FormInputs/JobFormInputs/JobFormDataListInput/JobFormDataList.js";
 import JobFormLocation from "./JobFormLocation/JobFormLocation.js";
@@ -20,6 +22,7 @@ export default function NewEditJobForm({ edit }) {
   const { jobID } = useJobProvider();
   const { editAccess } = useRecruiterProvider();
   const { setAppHeader } = useNavProvider();
+  const { isDesktopView } = useWindowSizeProvider()
   const {
     API,
     axios,
@@ -189,7 +192,10 @@ export default function NewEditJobForm({ edit }) {
   return (
     ((isRecruiterAcc && !edit) || editAccess) &&
     !loading && (
-      <div className="jobFormPage">
+      <div className={ !isDesktopView ? "jobFormPage" : "jobFormPage jobFormPage_desktop"}>
+        {
+          isDesktopView && <LogoBanner />
+        }
         <form
           className="jobFormPage_form"
           onSubmit={(event) => handleSubmit(event)}
