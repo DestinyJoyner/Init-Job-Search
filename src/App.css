@@ -7,4 +7,6 @@
   /* overflow-y: scroll; */
   min-height: 100vh;
   max-width: inherit;
+  /* display: flex;
+  flex-direction: column; */
 }

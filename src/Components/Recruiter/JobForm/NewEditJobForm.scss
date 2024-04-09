@@ -3,10 +3,15 @@
   height: 98vh;
   justify-items: center;
   align-items: center;
+  
 
   &_desktop {
     display: grid;
     grid-template-columns: 15% 85%;
+    background-color: var(--init-background);
+
+    
+    height: 113vh;
     & form {
       position: relative;
       top: 1vh;
@@ -15,7 +20,7 @@
     width: 94%;
     justify-items: left;
 
-    .job-form-label, .jobFormPage_label, .jobFormDropdown_label span {
+    .job-form-label, .jobFormPage_label, .jobFormDropdown_label span, .jobFormCheckbox span {
       font-weight: 600;
       font-size: 18px;
     }
@@ -37,6 +42,12 @@
       
       .jobFormDropdown_label {
         width: 55%;
+      }
+      .jobFormCheckbox {
+        & input {
+          height: 30px;
+          width: 30px;
+        }
       }
 
     }
@@ -115,11 +126,37 @@
      .jobFormSkills {
       grid-column: span 2;
       grid-row: 4;
+      width: 96%;
+      border: 2px solid var(--init-darkmint);
+      margin-top: 5vh;
+      padding-bottom: 2vh;
+
+      .jobFormPage_form_border_label {
+        font-weight: 600;
+      }
+      &_req {
+        font-size: 16px;
+      }
+      .skills-checkboxes {
+        grid-template-columns: repeat(6,1fr);
+        
+      }
+     }
+     .jobFormPage_form_submit {
+      left: 0;
+      top: 2vh;
+      font-size: 34px;
+
      }
 
-
-    
     }
+    .jobFormPage_error {
+      left: 0;
+      right: 0;
+      grid-column: 2;
+      justify-self: center;
+      font-size: 32px;
+     }
   }
 
   &_error {

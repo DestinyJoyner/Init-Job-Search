@@ -6,7 +6,7 @@
 }
 ::-webkit-scrollbar-thumb {
 
-  background: var(--init-darkmint);
+background: var(--init-darkmint);
 /* background-color: var(--init-dark); */
   border-radius: 20px;
 }
@@ -49,6 +49,7 @@
 body {
   height: auto;
   min-height: 100vh;
+  
   /* height: auto;
   overflow: scroll;
   min-height: 100%; */
@@ -64,13 +65,11 @@ body {
 
 .desktop {
   margin-top: 9vh;
-  height: auto;
+  padding-bottom: 9vh;
+}
 
-  padding-bottom: 5%;
-  
-  /* min-height: 100vh; */
-  /* border: 1px solid red; */
-
+.desktop input[type="submit"] {
+  cursor: pointer;
 }
 
 /* DARK/LIGHT THEME*/
