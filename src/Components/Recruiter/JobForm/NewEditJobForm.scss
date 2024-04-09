@@ -11,7 +11,7 @@
       position: relative;
       top: 1vh;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: 8vh 8vh 54vh 20vh 10vh;
+    grid-template-rows: 8vh 8vh 60vh 20vh 10vh;
     width: 94%;
     justify-items: left;
 
@@ -47,19 +47,69 @@
       border: none;
       width: 100%;
       height: 100%;
-      margin-bottom: 12vh;
+      row-gap: 3vh;
+      // margin-bottom: 12vh;
+      position: relative;
+      bottom: 1vh;
       align-items: flex-start;
       .jobFormPage_form_border_label {
         visibility: hidden;
       }
       .jobFormTextArea {
-        height: 18vh;
+        height: 20vh;
         & textarea {
           height: 18vh;
           width: 100%;
           border: 2px solid var(--init-darkmint);
         }
-        
+      }
+      .jobFormTasks {
+        max-height: 30vh;
+        &_header{
+          align-items: center;
+          &_req {
+            font-size: 16px;
+          }
+          & span:last-of-type {
+           font-size: 20px;
+           font-weight: 600;
+          }
+          & svg {
+            justify-self: center;
+            height: 2em;
+            width: 2em;
+           }
+           & span:last-of-type, svg {
+            &:hover {
+              cursor: pointer;
+            }
+           } 
+
+        }
+        &_container {
+          border: 2px solid var(--init-darkmint);
+          padding: 1vh 0;
+          max-height: 26vh;
+          grid-auto-rows: 8vh;
+          overflow-y: scroll;
+          &::-webkit-scrollbar-thumb {
+            background: white;
+            }
+            &_line {
+              & label {
+                grid-template-columns: 90% 10%;
+              }
+              
+              & input[type="text"] {
+                font-size: 16px;
+                
+              }
+              .jobFormTextInput_taskIcon {
+                height: 1.5em;
+                width: 1.5em;
+              }
+            }
+        }
       }
      }
      .jobFormSkills {
