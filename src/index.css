@@ -94,8 +94,7 @@ body {
 }
 
 /* hover effect in links and buttons */
-a, button {
-    /* padding: 10px;  */
+/* a, button {
     border-radius: 5px; 
     transition: background-color 0.3s; 
     width: fit-content;
@@ -105,9 +104,8 @@ a, button {
 }
 
 a:hover, button:hover {
-  /* padding: 10px;  */
   background-color: rgba(23, 22, 22, 0.2);
-}
+} */
 
 
 
