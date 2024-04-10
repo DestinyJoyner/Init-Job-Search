@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useRecruiterProvider } from "../../../../Providers/RecruiterProvider";
 import { useContextProvider } from "../../../../Providers/Provider";
 import { useJobProvider } from "../../../../Providers/JobProvider";
+import ApplicantCard from "../ApplicantCard/ApplicantCard";
 import convertCompanyForLogo from "../../../App/Data/CompanyLogos";
 
 import "./DesktopApplicantListPage.scss"
@@ -74,6 +75,12 @@ function DesktopApplicantListPage(props) {
                    }
                 </div>
                 
+            </section>
+
+            <section className="desktopApplicantListPage_applicants flex-column">
+                {
+                    applicants.map(el => <ApplicantCard key ={uuidv4()} obj={el} /> )
+                }
             </section>
             
         </div>
