@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 15% 85%;
     row-gap: 1vh;
-    padding: 1vh 2vw 1vh 0;
+    padding: 1vh 2vw 1vh 2vw;
     &_header {
         grid-column: span 2;
         display: grid;
