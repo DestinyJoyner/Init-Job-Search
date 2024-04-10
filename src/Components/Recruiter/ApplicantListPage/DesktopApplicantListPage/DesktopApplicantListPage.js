@@ -22,6 +22,11 @@ function DesktopApplicantListPage(props) {
 
     const jobTasks = thisJob.tasks ? thisJob.tasks.split(taskSplit) : []
 
+    const jobSkills = thisJob.skills ? thisJob.skills.map(el => {
+        const value = Object.values(el)
+        return value[0]
+    }) : []
+
     useEffect(() => {
         const filter = recruiterJobs.find(({ id }) => id === +jobID);
         if (filter && filter.users) {
@@ -52,6 +57,11 @@ function DesktopApplicantListPage(props) {
                 <img src={companyLogo} alt={thisJob.company} />
                 <h3>{thisJob.title}</h3>
                 <span>{thisJob.company}</span>
+                <div className="desktopApplicantListPage_jobDetails_header_skills">
+                    {
+                       jobSkills.map(el => <span key={uuidv4()}className ="desktopApplicantListPage_jobDetails_header_skills_pill">{el}</span>) 
+                    }
+                </div>
                 </div>
         <span className="desktopApplicantListPage_jobDetails_label">Details</span>
                 <div className="desktopApplicantListPage_jobDetails_description">
