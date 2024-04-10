@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useJobProvider } from "../../Providers/JobProvider";
-import { useContextProvider } from "../../Providers/Provider";
-import { useNavProvider } from "../../Providers/NavProvider";
-import { useRecruiterProvider } from "../../Providers/RecruiterProvider";
+import { useJobProvider } from "../../../Providers/JobProvider";
+import { useContextProvider } from "../../../Providers/Provider";
+import { useNavProvider } from "../../../Providers/NavProvider";
+import { useRecruiterProvider } from "../../../Providers/RecruiterProvider";
 import { v4 as uuidv4 } from "uuid";
 
-import ApplicantCard from "./ApplicantCard";
-import { jobCompany, jobLocation } from "../App/Data/Icons";
-import "./Applicants.css";
+import ApplicantCard from "./ApplicantCard/ApplicantCard";
+import { jobCompany, jobLocation } from "../../App/Data/Icons";
+import "./ApplicantListPage.scss";
 
-export default function Applicants() {
+export default function ApplicantListPage() {
   const {  recruiterID,  setShowAccess, jobID, isSignedIn, } = useJobProvider();
   const { recruiterJobs, showAccess } = useRecruiterProvider()
   const { isRecruiterAcc, setLoading, loading  } = useContextProvider()
