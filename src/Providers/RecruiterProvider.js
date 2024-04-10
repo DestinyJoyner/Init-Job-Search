@@ -26,7 +26,7 @@ function RecruiterProvider({ children }) {
   const [unlockRec, setUnlockRec] = useState(false);
 
   useEffect(() => {
-    // setLoading(true)
+    setLoading(true)
     if (recruiterID) {
       setLoading(true)
       axios

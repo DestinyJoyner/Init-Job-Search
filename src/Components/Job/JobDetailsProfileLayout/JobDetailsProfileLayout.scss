@@ -1,0 +1,63 @@
+.jobDetailsProfileLayout {
+    border-right: 2px solid var(--init-charcoal);
+    background-color: white;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    row-gap: 1vh;
+    padding: 1vh 2vw 1vh 0;
+    &_header {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        align-items: center;
+    }
+    &_header {
+        & h3, & span {
+            grid-column: 2;
+        }
+
+        & h3 {
+            grid-row: 1;
+        }
+
+        & img {
+            grid-column: 1;
+            grid-row: 1/4;
+            height: 60px;
+        }
+
+        &_skills {
+            grid-row: 4;
+            grid-column: 2;
+            display: flex;
+            column-gap: 1vw;
+             &_pill {
+                width: fit-content;
+                background-color: rgba(23, 22, 22, 0.2);
+                border-radius: 20px;
+                padding: 2px 5px;
+             }
+        }
+    
+    }
+
+    &_description, &_tasks {
+        grid-column: 2;
+    }
+
+    &_tasks {
+        display: grid;
+        row-gap: 1vh;
+    }
+
+    &_label {
+        grid-column: span 2;
+        font-weight: 600;
+        font-size: 18px;
+
+        &:first-of-type {
+            margin-top: 2vh;
+        }
+    }
+    
+}
