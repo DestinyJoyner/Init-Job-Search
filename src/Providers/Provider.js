@@ -12,6 +12,7 @@ export function useContextProvider() {
 }
 
 const API = process.env.REACT_APP_API_URL;
+const TOKEN = process.env.REACT_APP_TOKEN
 
 function Provider({ children }) {
   const { isDesktopView } = useWindowSizeProvider()
@@ -33,11 +34,7 @@ function Provider({ children }) {
   const [recruiterID, setRecruiterID] = useState(localRecruiterID);
   
   // authToken will be manually hardcoded for now
-  const [authToken, setAuthToken] = useState(
-
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRqQGVtYWlsLmNvbSIsImlhdCI6MTcwOTg0MjQ0NywiZXhwIjoxNzEyNDM0NDQ3fQ.TNm2i5Mfcjbi4GL4q9Uy28UNd6_hYQlg0QQQ4sUIdsQ"
-
-  );
+  const [authToken, setAuthToken] = useState(TOKEN);
 
   const [loading, setLoading] = useState(false)
 
