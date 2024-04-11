@@ -47,7 +47,7 @@ function DesktopApplicantListPage(props) {
     <div className="desktopApplicantListPage">
         <DesktopApplicantListPageHeader />
 
-      <JobDetailsProfileLayout thisJob={thisJob} />
+      <JobDetailsProfileLayout jobID={jobID} />
 
       <section className="desktopApplicantListPage_applicants flex-column">
         {applicants.map((el) => (

@@ -5,16 +5,17 @@ import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import { useRecruiterProvider } from "../../../Providers/RecruiterProvider";
 import { v4 as uuidv4 } from "uuid";
+import JobDetailsProfileLayout from "../../Job/JobDetailsProfileLayout/JobDetailsProfileLayout";
 
 import ApplicantCard from "./ApplicantCard/ApplicantCard";
 import { jobCompany, jobLocation } from "../../App/Data/Icons";
 import "./ApplicantListPage.scss";
 
 export default function ApplicantListPage() {
-  const {  recruiterID,  setShowAccess, jobID, isSignedIn, } = useJobProvider();
-  const { recruiterJobs, showAccess } = useRecruiterProvider()
-  const { isRecruiterAcc, setLoading, loading  } = useContextProvider()
-  const {setAppHeader} = useNavProvider()
+  const { recruiterID, setShowAccess, jobID, isSignedIn } = useJobProvider();
+  const { recruiterJobs, showAccess } = useRecruiterProvider();
+  const { isRecruiterAcc, setLoading, loading } = useContextProvider();
+  const { setAppHeader } = useNavProvider();
   const navigate = useNavigate();
   const [applicants, setApplicants] = useState([]);
   const [thisJob, setThisJob] = useState({});
@@ -29,58 +30,35 @@ export default function ApplicantListPage() {
     }
   }, [jobID, recruiterJobs.length]);
   useEffect(() => {
-    if( !isRecruiterAcc ){
-      navigate("/not-found")
+    if (!isRecruiterAcc) {
+      navigate("/not-found");
+    } else {
+      setAppHeader("Job Applicants");
     }
-    else {
-      setAppHeader("Applicants")
-     
-    }
-    }, [])
+  }, []);
 
-    useEffect(() => {
-        setLoading(false)
-      
-    }, [loading])
-// applicants page add skills or corresponding skills for applicant/ space for more info on job posting etc..... -> alter color scheme???
+  useEffect(() => {
+    setLoading(false);
+  }, [loading]);
+  // applicants page add skills or corresponding skills for applicant/ space for more info on job posting etc..... -> alter color scheme???
 
   return (
-    showAccess && !loading &&
+    showAccess &&
+    !loading && (
       <div className="job-applicant-page">
-      {/* <Header header={"Job Applicants"} /> */}
-      <section className="job-applicant-job-details">
-        <Link to={`/jobs/${thisJob.id}`} className="applicant-title">
-          <h2>{thisJob.title}</h2>
-        </Link>
-        <span className="applicant-company">
-          {jobCompany}
-          {thisJob.company}
-        </span>
-        <span className="applicant-city">
-          {jobLocation}
-          {thisJob.city}
-        </span>
-        <span className="applicant-remote">
-          {thisJob.full_remote && "REMOTE"}
-        </span>
-      </section>
+        <JobDetailsProfileLayout jobID={jobID} />
 
-      <section className="applicant-list">
-        <h3>
-          {!applicants.length
-            ? "No Applicants"
-            : `Applicants (${applicants.length})`}
-        </h3>
-        {applicants.map((obj) => (
-          <ApplicantCard key={uuidv4()} obj={obj} />
-        ))}
-      </section>
-
-      <Link className="job-applicant-link" to={`/jobs/${thisJob.id}`}>
-        VIEW JOB DETAILS
-      </Link>
-    </div>
-    
-    
+        <section className="applicant-list">
+          <h3>
+            {!applicants.length
+              ? "No Applicants"
+              : `Applicants (${applicants.length})`}
+          </h3>
+          {applicants.map((obj) => (
+            <ApplicantCard key={uuidv4()} obj={obj} />
+          ))}
+        </section>
+      </div>
+    )
   );
 }

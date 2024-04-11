@@ -1,10 +1,33 @@
 .jobDetailsProfileLayout {
-    border-right: 2px solid var(--init-charcoal);
     background-color: white;
     display: grid;
     grid-template-columns: 15% 85%;
     row-gap: 1vh;
-    padding: 1vh 2vw 1vh 2vw;
+    padding: 2vh;
+    
+    &_expandLess, &_expandMore {
+        background-color: white;
+        margin: 0 1vw;
+        
+        & svg {
+            grid-column: 3;
+            grid-row: 1/4;
+            height: 2em;
+            width: 2em;
+            justify-self: right;
+            align-self: flex-end;
+        }
+    }
+    &_expandLess {
+        height: 15vh;
+        overflow-y: hidden;
+    }
+
+    &_expandMore {
+        height: max-content;
+        overflow-y: unset;
+    }
+
     &_header {
         grid-column: span 2;
         display: grid;
