@@ -1,0 +1,64 @@
+.job-applicant-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: max-content auto;
+  padding-top: 1vh;
+
+  .jobDetailsProfileLayout {
+    padding: 1vh 0;
+    overflow-x: hidden;
+    border-right: none;
+    &_header {
+      padding: 1vh 0;
+      grid-template-columns: 3% 85% 8%;
+      row-gap: 1vh;
+      & img {
+        height: 45px;
+        justify-self: center;
+      }
+    }
+    &_label {
+      margin-left: 3%;
+    }
+  }
+
+  .applicant-list {
+    display: grid;
+    grid-template-rows: 4vh;
+    grid-auto-rows: 10vh;
+    row-gap: 2vh;
+    justify-items: center;
+    overflow-y: scroll;
+    margin-top: 3vh;
+    padding-bottom: 4vh;
+
+    & h3 {
+      font-size: 20px;
+    }
+  }
+}
+
+/* dark mode */
+.dark .job-applicant-page .app-header {
+  background-color: #135b53;
+}
+.dark .job-applicant-job-details h2 {
+  color: #135b53;
+}
+.dark .job-applicant-link {
+  color: var(--init-gold);
+}
+.dark .applicant-list h2 {
+  color: var(--init-mint);
+}
+
+.dark .job-applicant-job-details {
+  background-color: var(--init-mint);
+}
+.dark .job-applicant-job-details svg {
+  fill: var(--init-dark);
+  stroke: var(--init-dark);
+}
+.dark .job-applicant-job-details {
+  color: #1d262b;
+}

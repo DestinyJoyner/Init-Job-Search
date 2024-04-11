@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useContextProvider } from "../../Providers/Provider";
-import user from "../../Assets/USER.png"
-import "./ApplicantCard.css"
+import { useContextProvider } from "../../../../Providers/Provider";
+import { FaUser } from "react-icons/fa";
+import "./ApplicantCard.scss"
 
 function ApplicantCard({obj}) {
     const navigate = useNavigate()
@@ -16,7 +16,7 @@ function ApplicantCard({obj}) {
     return (
         <div className="applicant-card" onClick={()=> applicantClick()}>
             <div className="applicant-icon">
-            <img src={user} alt="user-icon" />
+            <FaUser />
             </div>
             <span className="applicant-name">{first_name} {last_name}</span>
             <hr/>

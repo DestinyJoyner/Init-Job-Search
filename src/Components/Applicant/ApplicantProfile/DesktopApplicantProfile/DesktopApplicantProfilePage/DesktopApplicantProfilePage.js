@@ -6,6 +6,7 @@ import DesktopApplicantProfileHeader from "../DesktopApplicantProfileHeader/Desk
 import DesktopApplicantProfileAppliedJobs from "../DesktopApplicantProfileAppliedJobs/DesktopApplicantProfileAppliedJobs.js";
 import DesktopApplicantProfileProject from "../DesktopApplicantProfileProject/DesktopApplicantProfileProject.js";
 import DesktopSkillsComponent from "../../../../DesktopSkillsComponent/DesktopSkillsComponent.js";
+import RecruiterNoteApplicantProfile from "../../../../App/RecruiterNoteApplicantProfile/RecruiterNoteApplicantProfile.js";
 import { applicantProfileConversion } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { applicantProfileHeaderLabel } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { FaRegEdit } from "react-icons/fa";
@@ -18,7 +19,7 @@ function DesktopApplicantProfilePage() {
 
   const desktopApplicantProfileDetails =
     applicantProfileConversion(applicantDetails);
-  console.log(desktopApplicantProfileDetails);
+
   useEffect(() => {
     if (applicantDetails.id) {
       setLoading(false);
@@ -44,8 +45,8 @@ function DesktopApplicantProfilePage() {
         </div>
 
         <div className="desktopApplicantProfilePage_content_link">
-          {!userID && isRecruiterAcc ? (
-            <span>recruiter view</span>
+          {isRecruiterAcc ? (
+           <RecruiterNoteApplicantProfile />
           ) : (
             <Link className="applicantProfile_edit" to="/user/edit">
               EDIT PROFILE <FaRegEdit />
@@ -53,7 +54,8 @@ function DesktopApplicantProfilePage() {
           )}
         </div>
 
-        <DesktopApplicantProfileAppliedJobs applicantJobs={applicantJobs} />
+        {!isRecruiterAcc &&
+          <DesktopApplicantProfileAppliedJobs applicantJobs={applicantJobs} />}
 
         {applicantDetails.project && (
           <DesktopApplicantProfileProject

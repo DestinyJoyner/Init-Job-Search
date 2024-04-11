@@ -46,9 +46,9 @@ function ApplicantProfileDetails({ applicantDetails }) {
 
       <section className="applicantProfile_sectionHeader">
         <span className="applicantProfile_sectionHeader_text">Contact Me:</span>
-        <span className="applicantProfile_sectionHeader_text_span">
+        <a href={`mailto:${applicantEmail}`} className="applicantProfile_sectionHeader_text_span">
           {applicantEmail}
-        </span>
+        </a>
       </section>
     </div>
   );

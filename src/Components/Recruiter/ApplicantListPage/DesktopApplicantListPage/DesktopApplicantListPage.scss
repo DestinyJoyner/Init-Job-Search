@@ -1,0 +1,11 @@
+.desktopApplicantListPage {
+    display: grid;
+    grid-template-columns: 60% 40% ;
+    margin: 0 2vw;
+    row-gap: 3vh;
+
+    &_applicants {
+        padding-left: 2vw;
+        row-gap: 2vh;
+    }
+}

@@ -1,0 +1,13 @@
+.recruiterNoteApplicantProfile {
+    display: grid;
+    background-color: var(--init-recruiter-blue);
+    color: white;
+    padding: .5vh 0;
+    row-gap: .5vh;
+     & h4 {
+        justify-self: center;
+     }
+     & li {
+        padding: 0 1vw;
+     }
+}

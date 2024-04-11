@@ -6,13 +6,14 @@ import ApplicantProfileHeader from "./ApplicantProfileHeader/ApplicantProfileHea
 import SliderButtons from "../../SliderButton/SliderButtons";
 import ApplicantProfileDetails from "./ApplicantProfileDetails";
 import ApplicantProfileAppliedJobs from "./ApplicantProfileAppliedJobs";
+import RecruiterNoteApplicantProfile from "../../App/RecruiterNoteApplicantProfile/RecruiterNoteApplicantProfile.js"
 
 import "./ApplicantProfile.scss";
 
 function ApplicantProfile() {
   const { applicantDetails, applicantSkillIds, applicantJobs } =
     useUserProvider();
-  const { userID, loading, setLoading } = useContextProvider();
+  const { userID, loading, setLoading, isRecruiterAcc } = useContextProvider();
   const [profileInfoToggle, setProfileInfoToggle] = useState("details")
 
   useEffect(() => {
@@ -23,15 +24,17 @@ function ApplicantProfile() {
  
   return (
     !loading && (
-      <div className="applicantProfile grid-center">
+      <div className={!isRecruiterAcc ? "applicantProfile grid-center" : "applicantProfile_recruiterView grid-center"}>
         <ApplicantProfileHeader 
         applicantDetails={applicantDetails}
         applicantSkills={applicantSkillIds}/>
         
-        <SliderButtons 
+        { !isRecruiterAcc ? <SliderButtons 
         button1={"Details"}
         button2={"Activity"}
-        setFunction ={setProfileInfoToggle}/>
+        setFunction ={setProfileInfoToggle}/> :
+          <RecruiterNoteApplicantProfile />
+      }
 
         {
             profileInfoToggle === "details" ?
@@ -40,14 +43,14 @@ function ApplicantProfile() {
 
         }
 
-        {
+        { !isRecruiterAcc && (
             profileInfoToggle === "details" ?
             <Link
             className="applicantProfile_edit" 
             to="/user/edit">EDIT PROFILE</Link> :
             <Link
             className="applicantProfile_edit" 
-            to="/jobs">SEARCH JOBS</Link>
+            to="/jobs">SEARCH JOBS</Link> )
         }
        
       </div>

@@ -1,5 +1,8 @@
 .applicant-card {
-    border: 1px solid black;
+    border: 1px solid var(--init-recruiter-blue);
+    background-color: white;
+    overflow: hidden;
+    cursor: pointer;
     display: grid;
     grid-template-columns: 20% 80% ;
     grid-template-rows: 55% 10% 35%;
@@ -8,23 +11,23 @@
     column-gap: 2vw;
     align-items: center;
     justify-self: center;
-    border-radius: 14px;
+    border-radius: 5px;
 }
 
 .applicant-icon {
     grid-row: 1/4;
     grid-column: 1;
-    background-color: var(--init-mint);
-    background-color: #7cc4f5;
+    background-color: var(--init-recruiter-blue);
+    // background-color: #7cc4f5;
     display: grid;
     height: 100%;
     width: 100%;
-    border-top-left-radius: 14px;
-    border-bottom-left-radius: 14px;
 }
 
-.applicant-icon img {
-    height: 65px;
+.applicant-icon svg {
+    height: 3em;
+    width: 3em;
+    fill: white;
     justify-self: center;
     align-self: center;
 }
@@ -32,17 +35,14 @@
 .applicant-name {
     font-size: 20px;
     font-weight: 800;
-    color: var(--init-blue);
+    // color: var(--init-blue);
 }
 
 .applicant-card hr {
     width: 90%;
-    border: 1px solid var(--init-blue);
+    border: 1px solid var(--init-recruiter-blue);
 }
 
-.applicant-email {
-    color: rgb(79, 77, 77);;
-}
 
 /* dark mode */
 .dark .applicant-name {

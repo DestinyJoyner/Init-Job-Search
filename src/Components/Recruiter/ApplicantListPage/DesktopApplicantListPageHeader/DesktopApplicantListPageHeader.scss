@@ -1,0 +1,19 @@
+.desktopApplicantListPageHeader {
+    // background-color: red;
+    grid-column: span 2;
+    height: 15vh;
+    background-color: var(--init-recruiter-blue);
+    color: white;
+    margin-top: 1.5vh;
+    padding: 1vh 0 0 2vw;
+    row-gap: 2vh;
+    border-radius: 5px;
+
+    & h2 {
+        font-size: 26px;
+    }
+    & span {
+        // font-style: italic;
+        font-size: 18px;
+    }
+}
