@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useSearchBarProvider } from "../../../../Providers/SearchBarProvider";
+import SearchBar from "../../../SearchBar/SearchBar";
 import SlideNavLinkList from "../SlideNav/SlideNavLinkList";
 import LoginHeader from "../../../Login/LoginHeader/LoginHeader";
 import DarkModeSlider from "../../../DarkModeSlider/DarkModeSlider";
@@ -9,6 +11,7 @@ import "./DesktopNav.scss"
 
 
 function DesktopNav() {
+    const {searchOptions, setSearchOptions} = useSearchBarProvider()
     const [scrolling, setScrolling] = useState(false)
 
     function handleScroll () {
@@ -31,10 +34,13 @@ function DesktopNav() {
     },[])
 
     return (
-        <nav className={!scrolling ? `desktopNav init-card`: `desktopNav init-card scrollNav`}>
-            {!scrolling ? <LoginHeader /> : <span>searchbar</span>}
+        <nav className={!scrolling ? `desktopNav init-card`: `desktopNav scrollNav`}>
+            {!scrolling ? <LoginHeader /> : <SearchBar
+          searchOptions={searchOptions}
+          setSearchOptions={setSearchOptions}
+        />}
             <SlideNavLinkList icons={false}/>
-            <DarkModeSlider text={false} /> 
+            {/* <DarkModeSlider text={false} />  */}
             <FaQuestionCircle />
             {/* <ContactLinks init={true} /> */}
         </nav>

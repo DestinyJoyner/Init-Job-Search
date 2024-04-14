@@ -1,6 +1,8 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
 import NavProvider from "./NavProvider";
+import SearchBarProvider from "./SearchBarProvider.js";
+import JobProvider from "./JobProvider.js";
 import { useWindowSizeProvider } from "./WindowSizeProvider";
 import Nav from "../Components/App/NavBar/Nav";
 import DesktopNav from "../Components/App/NavBar/DesktopNav/DesktopNav";
@@ -72,6 +74,8 @@ useEffect(() => {
         }}
       >
         <NavProvider>
+          <JobProvider >
+          <SearchBarProvider>
           {
             isDesktopView ? 
             <DesktopNav /> :
@@ -79,6 +83,8 @@ useEffect(() => {
           }
           {loading && <Loading />} 
           {children}
+          </SearchBarProvider>
+          </JobProvider>
         </NavProvider>
         
       </ContextData.Provider>
