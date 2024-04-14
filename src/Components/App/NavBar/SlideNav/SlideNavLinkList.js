@@ -39,7 +39,7 @@ function SlideNavLinkList({ icons }) {
       {(isSignedIn || isRecruiterAcc) && (
         <DesktopNavBarLinks
           path={isSignedIn ? "/user" : "/recruiter"}
-          label={"Profile"}
+          label={isRecruiterAcc ? "Recruiters" :"Applicants"}
         />
       )}
 
@@ -47,7 +47,7 @@ function SlideNavLinkList({ icons }) {
         <DesktopNavBarLinks path={"/register"} label={"Register"} />
       )}
 
-      <DesktopNavBarLinks path={"/"} label={"Home"} />
+      { !isDesktopView && <DesktopNavBarLinks path={"/"} label={"Home"} />}
 
       <DesktopNavBarLinks path={"/jobs"} label={"Jobs"} />
 

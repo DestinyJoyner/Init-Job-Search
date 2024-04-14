@@ -50,7 +50,8 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
         }}
       >
         <span>
-          {label} {navBarLinkDropdownValues[path] && <BiChevronDown />}
+          {label} 
+          {/*{navBarLinkDropdownValues[path] && <BiChevronDown />} */}
         </span>
       </Link>
 
