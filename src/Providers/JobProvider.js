@@ -25,15 +25,15 @@ function JobProvider({ children }) {
 
   const [searchResultCount, setSearchResultCount] = useState(0);
 
-  const navbarSearch = localStorage.getItem("navbarSearch")
+  const navbarSearch = localStorage.getItem("navbarSearch");
 
   const defaultJobSearchQuery = `${API}/jobs?start=${queryStart}&limit=${queryLimit}`;
   const [searchQueryRoute, setSearchQueryRoute] = useState(navbarSearch || "");
 
-
   useEffect(() => {
     setLoading(true);
-    axios.get(`${API}/jobs`)
+    axios
+      .get(`${API}/jobs`)
       .then(({ data }) => {
         setJobs(data);
       })
@@ -76,7 +76,7 @@ function JobProvider({ children }) {
   // useEffect for job pagination
   useEffect(() => {
     setLoading(true);
-    
+
     axios
       .get(
         `${API}/jobs?start=${queryStart}&limit=${queryLimit}${searchQueryRoute}`
@@ -91,7 +91,6 @@ function JobProvider({ children }) {
           setSearchResultCount(0);
         }
         setJobQuery(data);
-        console.log(data)
       })
 
       .catch((err) => console.log(err));
@@ -105,7 +104,6 @@ function JobProvider({ children }) {
     axios
       .get(`${API}/jobs?start=0&limit=${limit}${searchQueryRoute}`)
       .then(({ data }) => {
-
         const resultCount = data.shift()[0];
 
         if (resultCount) {
@@ -124,12 +122,12 @@ function JobProvider({ children }) {
   }, [isDesktopView]);
 
   useEffect(() => {
-    if(navbarSearch){
-      setLoading(true)
-      setSearchQueryRoute(navbarSearch)
-      localStorage.removeItem("navbarSearch")
+    if (navbarSearch) {
+      setLoading(true);
+      setSearchQueryRoute(navbarSearch);
+      localStorage.removeItem("navbarSearch");
     }
-  },[])
+  }, []);
 
   return (
     <JobContextData.Provider

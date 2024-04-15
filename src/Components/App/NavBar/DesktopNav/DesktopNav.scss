@@ -121,17 +121,17 @@
         // bottom: 7vh;
       }
     }
-    & input:focus {
-      background-color: white;
-    }
+    // & input:focus {
+    //   background-color: white;
+    // }
     &_searchBar_input {
       grid-column: 1;
       // border-bottom: none;
       left: 0;
       margin-top: 0;
       // text-indent: 3px;
-      position: relative;
-      bottom: .2vh;
+      // position: relative;
+      // bottom: .2vh;
       width: 100%;
       border-width: 1px;
 

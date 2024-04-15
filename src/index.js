@@ -5,6 +5,7 @@ import Provider from "./Providers/Provider";
 import WindowSizeProvider from "./Providers/WindowSizeProvider";
 import SkillProvider from "./Providers/SkillProvider";
 import "./index.css";
+import ScrollToTop from "./Components/App/ScrollToTop/ScrollToTop";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -14,6 +15,7 @@ root.render(
       <WindowSizeProvider>
       <Provider>
         <SkillProvider>
+          <ScrollToTop />
           <App />
         </SkillProvider>
       </Provider>

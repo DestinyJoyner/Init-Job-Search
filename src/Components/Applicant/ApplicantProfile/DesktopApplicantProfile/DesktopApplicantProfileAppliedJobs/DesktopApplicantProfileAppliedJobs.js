@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import convertCompanyForLogo from "../../../../App/Data/CompanyLogos";
 import {convertDate} from "../../../../Functions/ConvertFunctions/ConversionFunctions"
 import "./DesktopApplicantProfileAppliedJobs.scss"
@@ -10,7 +11,7 @@ function DesktopApplicantProfileAppliedJobs({applicantJobs}) {
 
             <section className="desktopApplicantProfileAppliedJobs_list">
                 {
-                    applicantJobs.map(job => <div className="desktopApplicantProfileAppliedJobs_list_card">
+                    applicantJobs.map(job => <div className="desktopApplicantProfileAppliedJobs_list_card" key={uuidv4()}>
                         <img src = {convertCompanyForLogo(job.company.toLowerCase())} />
 
                         <span className="desktopApplicantProfileAppliedJobs_list_card_jobTitle">{job.title}</span>

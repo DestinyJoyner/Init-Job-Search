@@ -34,7 +34,7 @@ function applicantProfileHeaderLabel (label, content, project) {
         <>
         <span className="applicantProfile_sectionHeader_text">{label}</span>
         { !project ?
-            <p className="applicantProfile_header_about_text">{content}</p> :
+            <div className="applicantProfile_header_about_text">{content}</div> :
             <div className="desktopApplicantProfilePage_content_project_details">{content}</div>
         }
             

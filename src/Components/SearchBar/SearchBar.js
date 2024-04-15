@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useJobProvider } from "../../Providers/JobProvider";
 import FilterBar from "../FilterBar/FilterBar";
@@ -11,31 +11,28 @@ import { IoOptionsSharp } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import "./SearchBar.scss";
 
-function SearchBar({withFilterOptions, searchOptions, setSearchOptions, navbar}) {
+function SearchBar({
+  withFilterOptions,
+  searchOptions,
+  setSearchOptions,
+  navbar,
+}) {
   const { setSearchQueryRoute, setQueryStart } = useJobProvider();
   const [search, setSearch] = useState(searchOptions.searchbar);
   const [showFilterBar, setShowFilterBar] = useState(false);
 
-  const navigate = useNavigate()
-const location= useLocation()
-  // const [searchOptions, setSearchOptions] = useState({
-  //   searchbar: "",
-  //   isRemote: false,
-  //   city: "",
-  //   skills: [],
-  // });
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    if(navbar && location.pathname !== "/jobs"){
-      setSearch("")
+    if (navbar && location.pathname !== "/jobs") {
+      setSearch("");
     }
-  },[location.pathname])
+  }, [location.pathname]);
 
- 
-  if(navbar && location.pathname === "/jobs"){
-    return null
+  if (navbar && location.pathname === "/jobs") {
+    return null;
   }
- 
 
   return (
     <form
@@ -73,14 +70,12 @@ const location= useLocation()
             )
           }
         />
-        {
-          withFilterOptions &&
+        {withFilterOptions && (
           <IoOptionsSharp
-          onClick={() => setShowFilterBar(!showFilterBar)}
-          className="searchComponent_searchBar_filterIcon"
-        />
-        }
-       
+            onClick={() => setShowFilterBar(!showFilterBar)}
+            className="searchComponent_searchBar_filterIcon"
+          />
+        )}
       </label>
       {showFilterBar && (
         <FilterBar
