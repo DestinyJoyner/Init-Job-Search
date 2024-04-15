@@ -59,9 +59,12 @@ function handleSearchFilterSubmit(
   e,
   searchObj,
   setQueryFunction,
-  setQueryRouteFunction
+  setQueryRouteFunction,
+  navbar,
+  navigate
 ) {
   e.preventDefault();
+ 
   setQueryFunction(0);
   const { searchbar, isRemote, city, skills } = searchObj;
 
@@ -81,6 +84,12 @@ function handleSearchFilterSubmit(
     searchRoute += `&skills=${skillsStr}`;
   }
   setQueryRouteFunction(searchRoute);
+  // localStorage.removeItem("navbarSearch")
+  if(navbar){
+    localStorage.setItem("navbarSearch", searchRoute)
+    navigate("/jobs")
+  }
+  
 }
 
 export {

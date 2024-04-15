@@ -32,6 +32,8 @@ function SlideNavLinkList({ icons }) {
 
   return isDesktopView ? (
     <>
+  <DesktopNavBarLinks path={"/jobs"} label={"Jobs"} />
+
       {!isSignedIn && !isRecruiterAcc && (
         <DesktopNavBarLinks path={"/login"} label={"Login"} />
       )}
@@ -49,7 +51,7 @@ function SlideNavLinkList({ icons }) {
 
       { !isDesktopView && <DesktopNavBarLinks path={"/"} label={"Home"} />}
 
-      <DesktopNavBarLinks path={"/jobs"} label={"Jobs"} />
+      {/* <DesktopNavBarLinks path={"/jobs"} label={"Jobs"} /> */}
 
       {icons !== false && (
         <DesktopNavBarLinks path={"/about"} label={"About"} />

@@ -1,4 +1,5 @@
-import { useState} from "react";
+import { useState, useEffect} from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useJobProvider } from "../../Providers/JobProvider";
 import FilterBar from "../FilterBar/FilterBar";
 import searchLogo from "../../Assets/footer-logo.png";
@@ -7,12 +8,16 @@ import {
   handleSearchFilterSubmit,
 } from "../Functions/SearchFunctions/SearchBarFunctions";
 import { IoOptionsSharp } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
 import "./SearchBar.scss";
 
-function SearchBar({withFilterOptions, searchOptions, setSearchOptions}) {
+function SearchBar({withFilterOptions, searchOptions, setSearchOptions, navbar}) {
   const { setSearchQueryRoute, setQueryStart } = useJobProvider();
   const [search, setSearch] = useState(searchOptions.searchbar);
   const [showFilterBar, setShowFilterBar] = useState(false);
+
+  const navigate = useNavigate()
+const location= useLocation()
   // const [searchOptions, setSearchOptions] = useState({
   //   searchbar: "",
   //   isRemote: false,
@@ -20,7 +25,17 @@ function SearchBar({withFilterOptions, searchOptions, setSearchOptions}) {
   //   skills: [],
   // });
 
+  useEffect(() => {
+    if(navbar && location.pathname !== "/jobs"){
+      setSearch("")
+    }
+  },[location.pathname])
 
+ 
+  if(navbar && location.pathname === "/jobs"){
+    return null
+  }
+ 
 
   return (
     <form
@@ -30,7 +45,9 @@ function SearchBar({withFilterOptions, searchOptions, setSearchOptions}) {
           event,
           searchOptions,
           setQueryStart,
-          setSearchQueryRoute
+          setSearchQueryRoute,
+          navbar,
+          navigate
         )
       }
     >
@@ -72,7 +89,7 @@ function SearchBar({withFilterOptions, searchOptions, setSearchOptions}) {
         />
       )}
       <button className="searchComponent_submit" type="submit">
-        SEARCH
+        {!navbar ? "SEARCH" : <FaSearch />}
       </button>
     </form>
   );

@@ -35,10 +35,12 @@ function DesktopNav() {
 
     return (
         <nav className={!scrolling ? `desktopNav init-card`: `desktopNav scrollNav`}>
-            {!scrolling ? <LoginHeader /> : <SearchBar
+            <LoginHeader />
+           <SearchBar
           searchOptions={searchOptions}
           setSearchOptions={setSearchOptions}
-        />}
+          navbar={true}
+        />
             <SlideNavLinkList icons={false}/>
             {/* <DarkModeSlider text={false} />  */}
             <FaQuestionCircle />
