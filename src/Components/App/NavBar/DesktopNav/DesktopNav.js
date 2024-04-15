@@ -17,10 +17,10 @@ function DesktopNav() {
     function handleScroll () {
         const verticalScrollPosition = window.scrollY
 
-        if(verticalScrollPosition > 5){
+        if(verticalScrollPosition > 0){
             setScrolling(true)
         }
-        else if (verticalScrollPosition < 5){
+        else if (verticalScrollPosition === 0){
             setScrolling(false)
         }
     }
