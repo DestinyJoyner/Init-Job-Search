@@ -11,6 +11,8 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
   const { isRecruiterAcc } = useContextProvider();
   const [showNavDropdown, setShowNavDropdown] = useState(false);
 
+  const noDropdown = label !== "Applicants" && label !== "Recruiters"
+
   const jobNavOptions = isRecruiterAcc
     ? [
         { value: "Browse Jobs", route: "/jobs" },
@@ -39,7 +41,7 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
           ? ` desktopNavBarLinks desktopNavBarLinks_${label}`
           : "desktopNavBarLinks"
       }
-      onMouseEnter={() => setShowNavDropdown(true)}
+      onMouseEnter={() => setShowNavDropdown(!showNavDropdown)}
       onMouseLeave={() => setShowNavDropdown(false)}
     >
       <Link
@@ -57,8 +59,11 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
 
       {showNavDropdown && (
         <NavBarLinkDropDown 
-        dropdownLinks={navBarLinkDropdownValues[path]} />
+        dropdownLinks={navBarLinkDropdownValues[path]}
+        setShowNavDropdown={setShowNavDropdown} />
       )}
+      {/* <NavBarLinkDropDown 
+        dropdownLinks={navBarLinkDropdownValues[path]} /> */}
     </div>
   );
 }
