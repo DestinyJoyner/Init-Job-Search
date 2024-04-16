@@ -1,3 +1,7 @@
 .desktopNavBarLinks {
     position: relative;
+
+    &_buffer {
+        border: 1px solid red;
+    }
 }

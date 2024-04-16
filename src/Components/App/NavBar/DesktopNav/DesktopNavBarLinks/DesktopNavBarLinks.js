@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavProvider } from "../../../../../Providers/NavProvider";
 import { useContextProvider } from "../../../../../Providers/Provider";
 import NavBarLinkDropDown from "../../NavBarLinkDropDown/NavBarLinkDropDown";
+
+import { ImProfile } from "react-icons/im";
+import { FaEdit } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
 import { BiChevronDown } from "react-icons/bi";
 import "./DesktopNavBarLinks.scss";
 
@@ -10,8 +14,7 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
   const { navbarClick } = useNavProvider();
   const { isRecruiterAcc } = useContextProvider();
   const [showNavDropdown, setShowNavDropdown] = useState(false);
-
-  const noDropdown = label !== "Applicants" && label !== "Recruiters"
+  const [menuSelected, setMenuSelected] = useState(false);
 
   const jobNavOptions = isRecruiterAcc
     ? [
@@ -22,9 +25,21 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
 
   const navBarLinkDropdownValues = {
     "/user": [
-      { value: "View Profile", route: "/user" },
-      { value: "Edit Profile", route: "/user/edit" },
-      { value: "Delete Account", route: "/" },
+      { value:<div className="navBarLinkDropdown_links">
+      <ImProfile />
+      <span>View Profile</span>
+      <p>Explore your personal information, resume, job applications, and skills at a glance.</p>
+      </div> , route: "/user" },
+      { value: <div className="navBarLinkDropdown_links">
+      <FaEdit />
+      <span>Edit Profile</span>
+      <p>Edit your education, skills, projects, personal info, and resume to keep your profile up to date.</p>
+      </div>, route: "/user/edit" },
+      { value: <div className="navBarLinkDropdown_links">
+      <MdDeleteForever />
+      <span>Delete Profile</span>
+      <p>Permanently delete your profile and remove all current job applications from consideration.</p>
+      </div>, route: "/" },
     ],
     "/jobs": jobNavOptions,
     "/recruiter": [
@@ -34,6 +49,31 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
     ],
   };
 
+  const timeoutRef = useRef(null);
+
+  const handleLinkMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setShowNavDropdown(true);
+  };
+
+  const handleLinkMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      if (!menuSelected) {
+        setShowNavDropdown(false);
+      }
+    }, 600);
+  };
+
+  const handleMenuMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setMenuSelected(true);
+  };
+
+  const handleMenuMouseLeave = () => {
+    setMenuSelected(false);
+    setShowNavDropdown(false);
+  };
+
   return (
     <div
       className={
@@ -41,8 +81,6 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
           ? ` desktopNavBarLinks desktopNavBarLinks_${label}`
           : "desktopNavBarLinks"
       }
-      onMouseEnter={() => setShowNavDropdown(!showNavDropdown)}
-      onMouseLeave={() => setShowNavDropdown(false)}
     >
       <Link
         to={`${path}`}
@@ -50,20 +88,28 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
         onClick={() => {
           !clickfunction ? navbarClick() : clickfunction();
         }}
+        onMouseEnter={handleLinkMouseEnter}
+        onMouseLeave={handleLinkMouseLeave}
       >
         <span>
-          {label} 
-          {/*{navBarLinkDropdownValues[path] && <BiChevronDown />} */}
+          {label}
         </span>
       </Link>
 
       {showNavDropdown && (
-        <NavBarLinkDropDown 
-        dropdownLinks={navBarLinkDropdownValues[path]}
-        setShowNavDropdown={setShowNavDropdown} />
+        <NavBarLinkDropDown
+          dropdownLinks={navBarLinkDropdownValues[path]}
+          setShowNavDropdown={setShowNavDropdown}
+          handleMenuMouseEnter={handleMenuMouseEnter}
+          handleMenuMouseLeave={handleMenuMouseLeave}
+        />
       )}
-      {/* <NavBarLinkDropDown 
-        dropdownLinks={navBarLinkDropdownValues[path]} /> */}
+     {/* <NavBarLinkDropDown
+          dropdownLinks={navBarLinkDropdownValues[path]}
+          setShowNavDropdown={setShowNavDropdown}
+          handleMenuMouseEnter={handleMenuMouseEnter}
+          handleMenuMouseLeave={handleMenuMouseLeave}
+        /> */}
     </div>
   );
 }
