@@ -43,7 +43,7 @@ function DesktopNav() {
         />
             <SlideNavLinkList icons={false}/>
             {/* <DarkModeSlider text={false} />  */}
-            <FaQuestionCircle />
+            <FaQuestionCircle className="desktopNav_about" />
             {/* <ContactLinks init={true} /> */}
         </nav>
     );

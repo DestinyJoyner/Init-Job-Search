@@ -79,7 +79,7 @@
     }
  
   }
-  & svg {
+  &_about {
     grid-column: 6 ;
     height: 1.5em;
     width: 1.5em;
@@ -154,9 +154,9 @@
   background-color:var(--init-darkmint);
   // grid-template-columns: 8% 18% 50% 12% 7% 5%;
   
-  & >* a, svg {
-    height: 3vh;
-  }
+  // & >* a, svg {
+  //   height: 3vh;
+  // }
 
   .desktopNavBarLinks {
     margin-top: 1vh;
@@ -173,6 +173,10 @@
     // &:last-of-type {
     //   grid-column: 2;
     // }
+  }
+
+  .navBarLinkDropDown {
+    top: 6vh;
   }
 
   .loginHeader {

@@ -127,6 +127,11 @@ a:hover {
 background-color: rgba(23, 22, 22, 0.2);
 }
 
+/* possible mint hover background
+  background-color: #b7e3dfa4;
+  border: 1px solid var(--init-darkmint);
+*/
+
 
 
 
@@ -140,8 +145,8 @@ background-color: rgba(23, 22, 22, 0.2);
 /* LINKS*/
 a {
   text-decoration: none;
-  /* color: var(--init-blue); */
-  color: var(--init-link-color);
+  color: var(--init-blue);
+  /* color: var(--init-link-color); */
   font-weight: 600;
 }
 

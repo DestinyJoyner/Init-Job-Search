@@ -25,17 +25,17 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
 
   const navBarLinkDropdownValues = {
     "/user": [
-      { value:<div className="navBarLinkDropdown_links">
+      { value:<div className="navBarLinkDropDown_links">
       <ImProfile />
       <span>View Profile</span>
       <p>Explore your personal information, resume, job applications, and skills at a glance.</p>
       </div> , route: "/user" },
-      { value: <div className="navBarLinkDropdown_links">
+      { value: <div className="navBarLinkDropDown_links">
       <FaEdit />
       <span>Edit Profile</span>
       <p>Edit your education, skills, projects, personal info, and resume to keep your profile up to date.</p>
       </div>, route: "/user/edit" },
-      { value: <div className="navBarLinkDropdown_links">
+      { value: <div className="navBarLinkDropDown_links">
       <MdDeleteForever />
       <span>Delete Profile</span>
       <p>Permanently delete your profile and remove all current job applications from consideration.</p>
