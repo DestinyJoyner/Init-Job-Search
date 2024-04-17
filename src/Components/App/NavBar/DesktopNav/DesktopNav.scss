@@ -279,14 +279,14 @@
     }
 }
 
-@media (max-width: 1150px) {
-  .desktopNav {
-    grid-template-columns: 10% 5% repeat(4, 13%) 5% 10% 10%;
-  }
-}
+// @media (max-width: 1150px) {
+//   .desktopNav {
+//     grid-template-columns: 10% 5% repeat(4, 13%) 5% 10% 10%;
+//   }
+// }
 
-@media (max-width:975px) {
-  .desktopNav {
-    grid-template-columns: 10% 2% repeat(4, 15%) 2% 10% 10%;
-  }
-}
+// @media (max-width:975px) {
+//   .desktopNav {
+//     grid-template-columns: 10% 2% repeat(4, 15%) 2% 10% 10%;
+//   }
+// }

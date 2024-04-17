@@ -1,27 +1,21 @@
-import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useNavProvider } from "../../../../../Providers/NavProvider";
 import { useContextProvider } from "../../../../../Providers/Provider";
 import NavBarLinkDropDown from "../../NavBarLinkDropDown/NavBarLinkDropDown";
 
 import { ImProfile } from "react-icons/im";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaUserTie } from "react-icons/fa";
+import { AiFillFileAdd } from "react-icons/ai";
 import { MdDeleteForever } from "react-icons/md";
-import { BiChevronDown } from "react-icons/bi";
 import "./DesktopNavBarLinks.scss";
 
 function DesktopNavBarLinks({ path, label, clickfunction }) {
   const { navbarClick } = useNavProvider();
   const { isRecruiterAcc } = useContextProvider();
+  const location = useLocation()
   const [showNavDropdown, setShowNavDropdown] = useState(false);
   const [menuSelected, setMenuSelected] = useState(false);
-
-  const jobNavOptions = isRecruiterAcc
-    ? [
-        { value: "Browse Jobs", route: "/jobs" },
-        { value: "Post New Job", route: "/jobs/new" },
-      ]
-    : null;
 
   const navBarLinkDropdownValues = {
     "/user": [
@@ -29,7 +23,7 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
       <ImProfile />
       <span>View Profile</span>
       <p>Explore your personal information, resume, job applications, and skills at a glance.</p>
-      </div> , route: "/user" },
+      </div>, route: "/user" },
       { value: <div className="navBarLinkDropDown_links">
       <FaEdit />
       <span>Edit Profile</span>
@@ -41,11 +35,28 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
       <p>Permanently delete your profile and remove all current job applications from consideration.</p>
       </div>, route: "/" },
     ],
-    "/jobs": jobNavOptions,
     "/recruiter": [
-      { value: "View Profile", route: "/recruiter" },
-      { value: "Edit Profile", route: "/recruiter" },
-      { value: "Delete Account", route: "/" },
+      { value: <div className="navBarLinkDropDown_links">
+      <AiFillFileAdd />
+      <span>Post New Job</span>
+      <p>Share new opportunities for entry-level software engineers and connect with talent on our platform.</p>
+      </div>, route: "/jobs/new" },
+      { value: <div className="navBarLinkDropDown_links">
+      <FaUserTie />
+      <span>View Profile</span>
+      <p>Browse and oversee your job postings, company information, and evaluate applicants for your listings.</p>
+      </div>
+        , route: "/recruiter" },
+      // { value: <div className="navBarLinkDropDown_links">
+      // <FaEdit />
+      // <span>Edit Profile</span>
+      // <p>Update your organization information, and effortlessly manage your posted job listings.</p>
+      // </div>, route: "/recruiter" },
+      { value: <div className="navBarLinkDropDown_links">
+      <MdDeleteForever />
+      <span>Delete Profile</span>
+      <p>Permanently delete your profile and remove all current job postings from inIT.</p>
+      </div>, route: "/" },
     ],
   };
 
@@ -74,6 +85,9 @@ function DesktopNavBarLinks({ path, label, clickfunction }) {
     setShowNavDropdown(false);
   };
 
+  useEffect(() => {
+    setShowNavDropdown(false)
+  },[location.pathname])
   return (
     <div
       className={
