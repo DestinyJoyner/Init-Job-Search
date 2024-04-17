@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 15% 80%;
   column-gap: 3%;
+  width: 98vw;
+  margin-top: 1.5vh;
 
   .logoBanner {
     height: inherit;
@@ -12,7 +14,7 @@
     margin: 2vh 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 1.8vh;
+    row-gap: 3.5vh;
     max-height: 100vh;
 
     .registerFormInput_label,
@@ -25,11 +27,6 @@
     }
 
     .projectFormInputs_header {
-      //         background: linear-gradient(
-      //     90deg,
-      //     rgba(12, 189, 189, 1) 45%,
-      //     rgb(83, 215, 199) 100%
-      //   );
       background-color: var(--init-navbar);
       color: var(--init-dark);
       padding: 0.5vh 3vw 0.5vh 0;
@@ -39,7 +36,7 @@
       .projectFormInputs {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 1vh;
+        row-gap: 3vh;
         padding-bottom: 1.5vh;
 
         &_header {
