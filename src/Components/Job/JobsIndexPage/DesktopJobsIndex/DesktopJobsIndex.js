@@ -22,6 +22,10 @@ function DesktopJobsIndex() {
   useEffect(() => {
     setLoading(false);
   }, [jobQuery]);
+
+  useEffect(() => {
+    localStorage.removeItem("navbarSearch")
+  },[])
  
   function clearFilterOptions () {
     const resetObj = {

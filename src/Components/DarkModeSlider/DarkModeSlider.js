@@ -35,7 +35,7 @@ function DarkModeSlider({ text }) {
       </div>
 
       <span className="darkModeSwitch_button">
-        {text !== false ? <span>Dark Mode</span> : <VscColorMode />}
+        {text !== false ? <span>Dark Mode</span> : null}
       </span>
     </label>
   );

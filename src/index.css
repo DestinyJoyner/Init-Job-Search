@@ -43,13 +43,19 @@ background: var(--init-darkmint);
   --init-faded-gray: rgb(79, 77, 77);
   --init-subheader-grey: #666666;
   --init-gray-background: rgba(183, 183, 183, 0.3);
+  --init-link-color:#0b5e72;
   --slidenav:calc(100vw - 450px);
-  --init-navbar : #84D0C8;
+  /* --init-navbar : #84D0C8; */
+  /* --init-navbar : #0C65BD; */
 }
+
+/* applicant profile color??? #12A1C4 */
 
 body {
   height: auto;
   min-height: 100vh;
+  background-color: var(--init-background);
+  display: flex;
   
   /* height: auto;
   overflow: scroll;
@@ -65,7 +71,7 @@ body {
 
 
 .desktop {
-  margin-top: 9vh;
+  /* margin-top: 10vh; */
   padding-bottom: 9vh;
 }
 
@@ -108,6 +114,24 @@ a:hover, button:hover {
   background-color: rgba(23, 22, 22, 0.2);
 } */
 
+a{
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+  width: fit-content;
+  padding: 5px; 
+  position: relative;
+      right: .5vw;
+}
+
+a:hover {
+background-color: rgba(23, 22, 22, 0.2);
+}
+
+/* possible mint hover background
+  background-color: #b7e3dfa4;
+  border: 1px solid var(--init-darkmint);
+*/
+
 
 
 
@@ -121,7 +145,8 @@ a:hover, button:hover {
 /* LINKS*/
 a {
   text-decoration: none;
-  color: var(-init-blue);
+  color: var(--init-blue);
+  /* color: var(--init-link-color); */
   font-weight: 600;
 }
 
@@ -169,6 +194,7 @@ a {
 }
 
 /* INPUTS */
+
 
 input[type="text"],
 input[type="password"],

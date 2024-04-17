@@ -3,7 +3,7 @@ import "./LogoBanner.scss"
 
 function LogoBanner(props) {
     return (
-        <div className="logoBanner grid-center">
+        <div className="logoBanner">
             <span className="slideNav_header_slogan">Your first opportunity awaits</span>
             <img className="logoBanner_one" src={logo} alt="init-leaf" />
 

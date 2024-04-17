@@ -32,6 +32,8 @@ function SlideNavLinkList({ icons }) {
 
   return isDesktopView ? (
     <>
+  <DesktopNavBarLinks path={"/jobs"} label={"Jobs"} />
+
       {!isSignedIn && !isRecruiterAcc && (
         <DesktopNavBarLinks path={"/login"} label={"Login"} />
       )}
@@ -39,7 +41,7 @@ function SlideNavLinkList({ icons }) {
       {(isSignedIn || isRecruiterAcc) && (
         <DesktopNavBarLinks
           path={isSignedIn ? "/user" : "/recruiter"}
-          label={"Profile"}
+          label={isRecruiterAcc ? "Recruiters" :"Applicants"}
         />
       )}
 
@@ -47,9 +49,9 @@ function SlideNavLinkList({ icons }) {
         <DesktopNavBarLinks path={"/register"} label={"Register"} />
       )}
 
-      <DesktopNavBarLinks path={"/"} label={"Home"} />
+      { !isDesktopView && <DesktopNavBarLinks path={"/"} label={"Home"} />}
 
-      <DesktopNavBarLinks path={"/jobs"} label={"Jobs"} />
+      {/* <DesktopNavBarLinks path={"/jobs"} label={"Jobs"} /> */}
 
       {icons !== false && (
         <DesktopNavBarLinks path={"/about"} label={"About"} />

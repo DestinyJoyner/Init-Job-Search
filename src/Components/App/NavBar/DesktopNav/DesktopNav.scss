@@ -1,45 +1,41 @@
 .desktopNav {
   height: 9vh;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
   z-index: 200;
-  // overflow: hidden;
-  // background-color: var(--init-background);
-  background-color:var(--init-navbar) ;
-  // background: linear-gradient(
-  //   90deg,
-  //   rgb(83, 215, 199) 60%,
-  //   rgba(12, 189, 189, 1) 90%
-  // );
-  box-shadow: 0 1px 5px black;
   display: grid;
-  grid-template-columns: 15% 8% repeat(4, 12%) 8% 9% 10%;
+  grid-template-columns: 10% 14% 14% 14% 40% 8%;
   align-items: center;
   justify-items: center;
 
   .desktopNavBarLinks {
-    font-size: 21px;
-    &_Home {
-      grid-column: 3;
-        grid-row: 1;
-    }
+    margin-top: 1vh;
+    grid-row: 1;
 
-    & a {
-      margin: 0;
-      padding: 0;
-      position: relative;
-      top: .5vh;
-      & :hover {
-        color: var(--init-gold);
-      } 
-      & span {
-        & svg {
-         position: relative;
-         top: .5vh;
-         left: .5vw;
-        }
+    &:first-of-type {
+      grid-column: 2;
+      
+    }
+    &:nth-of-type(2) {
+      grid-column: 3;
+
+    }
+    &:last-of-type {
+      grid-column: 4;
+      
+    }
+    & .slideNav_link{
+  
+      &_Jobs, &_Logout, &_Recruiters, &_Applicants, &_Login, &_Register {
+        margin-left: 0;
+        padding-left: 0;
+        font-size: 21px;
+        width: fit-content;
+        padding-top: 13px;
+        padding-left: 7px;
+        font-size: 18px;
       }
     }
   }
@@ -47,10 +43,11 @@
   .loginHeader {
     all: unset;
     display: flex;
-    width: 100%;
+    align-items: center;
+    justify-self: center;
+    padding-left: 1vw;
     height: 100%;
-    justify-content: center;
-    background-color: var(--init-background);
+    grid-column: 1;
     &_logo {
       height: 8.5vh;
     }
@@ -58,34 +55,120 @@
       display: none;
     }
   }
-
-  .contactLinks {
-    grid-column: 8;
-    grid-row: 1;
-    & a:nth-of-type(3) {
-      display: none;
-    }
-    & svg {
-      height: 1.7em;
-      width: 1.7em;
-      position: relative;
-      top: .4vh;
-    
-    }
-  }
   .darkModeSwitch {
     margin: 0;
-    grid-column: 9;
+    height: 25px;
+    width: 60px;
+    grid-column: 5;
+
     &_slider {
       background-color: var(--init-blue);
       &::before {
+        height: 25px;
+        width: 25px;
+        bottom: 0;
+        left: 0;
         background-color: var(--init-background);
       }
+
+    }
+    &_button {
+      width: fit-content;
     }
  
   }
+  &_about {
+    grid-column: 6 ;
+    height: 1.5em;
+    width: 1.5em;
+    fill: var(--init-blue);
+  }
+
+  .searchComponent {
+    grid-column: 5;
+    grid-template-rows: 1fr;
+    grid-template-columns: 90% 10%;
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    justify-self: center;
+    &_submit {
+      grid-row: 1;
+      font-size: 16px;
+      margin: 0;
+      justify-self: center;
+      & svg {
+        fill: var(--init-subheader-grey);
+        height: 1.2em;
+        width: 1.2em;
+      }
+    }
+    & label {
+      background-color: white;
+      height: 4vh;
+      border-radius: 5px;
+      grid-template-columns: 100%;
+      &>* {
+        height: 4vh;
+      }
+      & img {
+        display: none;
+      }
+    }
+    &_searchBar_input {
+      grid-column: 1;
+      left: 0;
+      margin-top: 0;
+      width: 100%;
+      border-width: 1px;
+
+      &::placeholder {
+        font-size: 16px;
+      }
+      
+    }
+  }
 }
 
+// scroll Nav
+.scrollNav {
+  width: 100%;
+  left: 0;
+  height: 5vh;
+  transition: width 0.3s ease;
+  border-bottom: 1px solid #e0e0e0; 
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  background-color:var(--init-darkmint);
+  
+
+  .desktopNavBarLinks {
+    margin-top: 1vh;
+    grid-row: 1;
+  }
+
+  .navBarLinkDropDown {
+    top: 6vh;
+  }
+
+  .loginHeader {
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--init-background);
+    &_logo {
+      height: 4.5vh;
+    }
+  }
+
+  & a {
+    &:hover {
+      background-color: rgba(69, 69, 69, 0.2);;
+    }
+  }
+}
+
+
+// Dark Mode
 .dark .desktopNav {
   background: unset;
     background-color: var(--init-gold);
@@ -120,14 +203,3 @@
     }
 }
 
-@media (max-width: 1150px) {
-  .desktopNav {
-    grid-template-columns: 10% 5% repeat(4, 13%) 5% 10% 10%;
-  }
-}
-
-@media (max-width:975px) {
-  .desktopNav {
-    grid-template-columns: 10% 2% repeat(4, 15%) 2% 10% 10%;
-  }
-}
