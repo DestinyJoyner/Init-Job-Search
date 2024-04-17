@@ -1,0 +1,57 @@
+.desktopAboutPage {
+    display: grid;
+    align-items: center;
+    margin: 1.5vh 2vw 0 2vw;
+
+    & p {
+        color: var(--init-subheader-grey);
+    }
+
+    & hr {
+        grid-row: span 4;
+        width: 0;
+        justify-self: center;
+    }
+
+    &_header {
+        // border: 1px solid #e0e0e0; 
+        // box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+        // border-radius: 5px;
+        display: grid;
+        grid-template-columns: 30% 60% ;
+        align-items: center;
+        & img {
+            height: 200px;
+            justify-self: center;
+        }
+       & span {
+        font-size: 24px;
+        font-style: italic;
+       }
+    }
+
+    &_init {
+        display: grid;
+        grid-template-columns: 48% 4% 48%;
+        grid-template-rows: repeat(4,1fr);
+        &_left {
+            grid-column: 1;
+            grid-row: span 4;
+            display: grid;
+            row-gap: 2vh;
+        }
+        &_right {
+            grid-row: span 4;
+            & p {
+                font-size: 14px;
+            }
+            &_content {
+                display: grid;
+                row-gap: 1vh;
+                padding-bottom: .5vh;
+                border-bottom: 1px solid var(--init-subheader-grey);
+            }
+        }
+    }
+   
+}

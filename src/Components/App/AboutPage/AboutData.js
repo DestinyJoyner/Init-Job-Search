@@ -1,7 +1,7 @@
 import DJphoto from "../../../Assets/DJphoto.png"
 import group from "../../../Assets/init-team.png";
 
-export const team = {
+const team = {
   1: {
     id: 1,
     name: "Destiny Joyner",
@@ -24,9 +24,7 @@ export const team = {
     id: 2,
     name: "About the Application",
     img: group,
-    bio:<>
-    Many entry level developers aren't properly connected with opportunities at their skill level due to opportunites being misrepresented as entry level, but in fact require prior work experience. <br/><br/>For these developers, often with no on the job experience other than their training and a single portfolio project, this results in a demoralizing and daunting job search experience. <br/><br/><span className="about-init">inIT</span> aims to alleviate this process by connecting recent college and bootcamp  graduates with entry-level software engineering positions based on their technical skill set and all opportunities hosted on inIT require little or no prior work experience. In order to grow in the tech industry, you must first lay down some roots. Let inIT blossom your tech career!
-    </>,
+    bio:'inIT is the solution born from the frustration shared by countless entry-level developers navigating the labyrinthine landscape of job search portals and social media platforms cluttered with misleading opportunities. Too often, these platforms label positions as "entry-level," only to reveal hidden prerequisites for prior work experience. For budding developers fresh out of college or boot camps, armed solely with training and perhaps a single portfolio project, this revelation can be disheartening, casting a shadow over their job search journey. Recognizing this challenge, inIT emerges as a beacon of clarity and opportunity, dedicated to connecting recent graduates with genuine entry-level software engineering positions tailored to their technical proficiency. Unlike many platforms, every opportunity hosted on inIT is meticulously curated to require little to no prior work experience. We believe that to flourish in the tech industry, one must first find fertile ground to grow, and inIT aims to be that fertile ground, nurturing and propelling your tech career forward.',
     bio2: <> inIt is a job search web engine  designed for recent college and boot camp graduates looking for their first role in tech. Some of inIT's features include a fully responsive web design, extensive search filtering options and a UX/UI that supports both recruiter and applicant roles</>,
     links: [1,2,3,90,91,0],
   },
@@ -41,3 +39,21 @@ In June 2023, I completed <a href="https://www.pursuit.org/mission-vision" targe
     bio2: <span> inIt is a job search web engine  designed for recent college and boot camp graduates looking for their first role in tech. Some of inIT's features include a fully responsive web design, extensive search filtering options, UX/UI that supports both recruiter and applicant roles with full CRUD functionality on both profile and job postings.</span>,
     build: <span>inIT is a PERN stack application styled using SCSS/CSS3. inIt further utilizes BCrypt and JWT packages for it's authentication processes.</span>,
 */
+
+const desktopAboutInitTech = {
+  fe: {
+    header: "Front End Development",
+    subheader: "A responsive JavaScript React web app, built from scratch with HTML, JSX, and SCSS for BEM styling. No external CSS frameworks, just sleek UX/UI design for an intuitive experience.",
+    icons: [1,3,0]
+  },
+  be: {
+    header:"Back End Development",
+    subheader: "Powering inIT's functionality with a custom Express/Node.js API, PostgreSQL/SQL for robust database management, and fortified security through BCrypt and JWT authentication. Building a seamless foundation for data management and user protection.",
+    icons: [91,90,2,]
+  }
+}
+
+export {
+  team,
+  desktopAboutInitTech
+}

@@ -82,6 +82,12 @@
     height: 1.5em;
     width: 1.5em;
     fill: var(--init-blue);
+    padding: 5px;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(23, 22, 22, 0.2);
+      border-radius: 50%;
+    }
   }
 
   .searchComponent {
