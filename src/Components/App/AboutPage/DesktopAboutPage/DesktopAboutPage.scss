@@ -22,19 +22,31 @@
 
     &_header {
       display: flex;
-      justify-self: left;
+      justify-content: center;
       align-items: center;
       grid-row: 1;
+      grid-column: span 3;
 
       & img {
         height: 150px;
       }
-      & span {
-        font-size: 24px;
-        font-weight: 600;
-        font-style: italic;
-        align-self: flex-end;
+      &_text{
+        display: grid;
+        row-gap: 1vh;
+        width: 50%;
+        & h2 {
+            font-size: 24px;
+            font-weight: 600;
+            // font-style: italic;
+        }
+        & span {
+            color: var(--init-subheader-grey);
+            font-style: italic;
+            // align-self: flex-end;
+          }
+
       }
+     
     }
     &_left {
       grid-column: 1;
@@ -56,8 +68,16 @@
         padding: 3vh 2vh 3vh 1vw;
         border-bottom: 1px solid rgb(237, 237, 237);
 
+        .skills-component {
+            position: relative;
+            top: 1vh;
+        }
         & li {
             list-style:square;
+        }
+        & svg {
+            height: 1.5em;
+            width: 1.5em;
         }
       }
     }

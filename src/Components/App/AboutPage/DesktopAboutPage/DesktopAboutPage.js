@@ -11,7 +11,10 @@ function DesktopAboutPage(props) {
       <section className="desktopAboutPage_init">
         <section className="desktopAboutPage_init_header">
           <img src={logo} alt="init-logo" />
-          <span>Your first tech opportunity awaits.... </span>
+          <div className="desktopAboutPage_init_header_text">
+            <h2>Your first tech opportunity awaits....</h2> 
+            <span>"Bridging the gap between entry-level talent and employers hungry for fresh perspectives. inIT is not just a job search engine, it's a matchmaker, pairing bright-eyed graduates with companies eager to nurture and grow their talent."</span>
+            </div>
         </section>
 
         <div className="desktopAboutPage_init_left">
