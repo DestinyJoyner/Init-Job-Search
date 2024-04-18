@@ -1,0 +1,124 @@
+.desktopAboutPage {
+  display: grid;
+  align-items: center;
+  margin: 1.5vh 2vw 0 2vw;
+  
+  & p {
+    color: var(--init-subheader-grey);
+  }
+
+  &_init,
+  &_developer {
+    display: grid;
+    grid-template-columns: 49% 2% 49%;
+    & hr {
+      grid-column: 2;
+      width: 0;
+      justify-self: center;
+    }
+  }
+  &_init {
+    grid-template-rows: repeat(4, 1fr);
+
+    &_header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-row: 1;
+      grid-column: span 3;
+
+      & img {
+        height: 150px;
+      }
+      &_text{
+        display: grid;
+        row-gap: 1vh;
+        width: 50%;
+        & h2 {
+            font-size: 24px;
+            font-weight: 600;
+            // font-style: italic;
+        }
+        & span {
+            color: var(--init-subheader-grey);
+            font-style: italic;
+            // align-self: flex-end;
+          }
+
+      }
+     
+    }
+    &_left {
+      grid-column: 1;
+      grid-row: span 4;
+
+      display: grid;
+      row-gap: 2vh;
+      padding: 3vh 1vw 3vh 2vw;
+    }
+    &_right {
+      grid-column: 3;
+      grid-row: span 4;
+      & p {
+        font-size: 14px;
+      }
+      &_content {
+        display: grid;
+        row-gap: 1vh;
+        padding: 3vh 2vh 3vh 1vw;
+        border-bottom: 1px solid rgb(237, 237, 237);
+
+        .skills-component {
+            position: relative;
+            top: 1vh;
+        }
+        & li {
+            list-style:square;
+        }
+        & svg {
+            height: 1.5em;
+            width: 1.5em;
+        }
+      }
+    }
+    & hr {
+      grid-row: span 4;
+    }
+  }
+
+  &_developer {
+    &_left,
+    &_right {
+      padding: 5vh 0;
+      padding-left: 2vw;
+    }
+    &_left {
+      display: grid;
+      row-gap: 1vh;
+
+      .contactLinks {
+        margin-top: 1vh;
+        width: 100%;
+        justify-content: space-evenly;
+        column-gap: 0;
+
+        & a {
+          right: 0;
+          & svg,
+          img {
+            height: 2.7em;
+            width: 2.7em;
+          }
+        }
+      }
+    }
+    &_right {
+      grid-column: 3;
+      justify-items: center;
+      display: grid;
+      & img {
+        height: 300px;
+      }
+    }
+  }
+}

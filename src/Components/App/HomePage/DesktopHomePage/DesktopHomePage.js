@@ -152,7 +152,7 @@ function DesktopHomePage() {
         </section>
       </section>
 
-      <DesktopFooter />
+      {/* <DesktopFooter /> */}
     </div>
   );
 }

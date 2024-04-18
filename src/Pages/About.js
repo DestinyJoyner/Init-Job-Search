@@ -1,9 +1,11 @@
+import { useWindowSizeProvider } from "../Providers/WindowSizeProvider.js";
 import AboutPage from "../Components/App/AboutPage/AboutPage.js";
+import DesktopAboutPage from "../Components/App/AboutPage/DesktopAboutPage/DesktopAboutPage.js";
 
 function About() {
-  return (
-    <AboutPage />
-  );
+  const { isDesktopView } = useWindowSizeProvider();
+
+  return isDesktopView ? <DesktopAboutPage /> : <AboutPage />;
 }
 
 export default About;

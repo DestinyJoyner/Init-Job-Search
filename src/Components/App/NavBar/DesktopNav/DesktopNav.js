@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSearchBarProvider } from "../../../../Providers/SearchBarProvider";
 import SearchBar from "../../../SearchBar/SearchBar";
 import SlideNavLinkList from "../SlideNav/SlideNavLinkList";
@@ -13,6 +14,7 @@ import "./DesktopNav.scss"
 function DesktopNav() {
     const {searchOptions, setSearchOptions} = useSearchBarProvider()
     const [scrolling, setScrolling] = useState(false)
+    const navigate = useNavigate()
 
     function handleScroll () {
         const verticalScrollPosition = window.scrollY
@@ -43,7 +45,8 @@ function DesktopNav() {
         />
             <SlideNavLinkList icons={false}/>
             {/* <DarkModeSlider text={false} />  */}
-            <FaQuestionCircle className="desktopNav_about" />
+            <FaQuestionCircle className="desktopNav_about" 
+            onClick={() => navigate("/about") }/>
             {/* <ContactLinks init={true} /> */}
         </nav>
     );
