@@ -6,19 +6,23 @@ import {MdOutlineHistory} from "react-icons/md"
 const thumbnailArr = [
     {
         icon : <CgWebsite />,
-        text: "Showcase your projects"
+        text: "Showcase your projects",
+        header: "Portfolio"
     },
     {
         icon : <AiOutlineFileSearch />,
-        text: "Find and apply to entry-level jobs"
+        text: "Find and apply to entry-level jobs",
+        header: "Jobs"
     },
     {
         icon : <IoOptionsSharp />,
-        text: "Filter search by skills, location, and remote work"
+        text: "Filter search by skills, location, and remote work",
+        header: "Filters"
     },
     {
         icon : <MdOutlineHistory />,
-        text: "Track your application history"
+        text: "Track your application history",
+        header: "History"
     }
 ]
 

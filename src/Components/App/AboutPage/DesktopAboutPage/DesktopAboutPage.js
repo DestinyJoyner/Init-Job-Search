@@ -18,6 +18,7 @@ function DesktopAboutPage(props) {
         </section>
 
         <div className="desktopAboutPage_init_left">
+          <h2>About inIT</h2>
           <p>{team[2]["bio"]}</p>
         </div>
 
