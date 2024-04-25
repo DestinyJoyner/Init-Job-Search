@@ -1,139 +1,134 @@
 .desktopHome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 5vh;
-    margin: 2vw;
-    
-    padding: 2vw ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5vh;
+  margin: 2vw;
+  padding: 2vw;
 
-    &_header {
+  &_header {
+    display: grid;
+    grid-template-columns: 45% 55%;
+
+    &_left {
+      display: grid;
+      row-gap: 2vh;
+      & span {
+        font-size: 32px;
+      }
+      & li {
+        padding: 1vh 0;
         display: grid;
-        grid-template-columns: 45% 55%;
-        // width: 100%;
-        // margin: 1vw;
-        // padding: 1vw ;
+        grid-template-columns: 5% 95%;
+        align-items: center;
+        row-gap: 1vh;
+        column-gap: 3px;
 
-        &_left {
-            display: grid;
-            row-gap: 2vh;
-            & span {
-                font-size: 32px;
-            }
-            & li {
-                padding: 1vh 0;
-                display: grid;
-                grid-template-columns: 5% 95%;
-                align-items: center;
-                row-gap: 1vh;
-                column-gap: 3px;
-
-                & svg {
-                    grid-column: 1;
-                    grid-row: 1/3;
-                    fill: var(--init-darkmint);
-                }
-                & h4 {
-                    grid-column: 2;
-                    grid-row: 1;
-                    font-size: 22px;
-                }
-                & p {
-                    grid-column: 2;
-                    grid-row: 2;
-                    color: var(--init-subheader-grey);
-                    font-size: 16px;
-                }
-            }
+        & svg {
+          grid-column: 1;
+          grid-row: 1/3;
+          fill: var(--init-darkmint);
         }
-        &_right {
-            height: 100%;
-            background-image: url("../../../../../public/desktop-header.jpg");
-            background-size: cover;
-
-            &_container {
-                background-color: var(--init-black-transparent);
-                padding: 5px 10px 5px 0;
-                border-radius: 5px;
-                height: 97%;
-                
-                & img {
-                    height: 200px;
-                }
-
-                &_content {
-                    display: grid;
-                    row-gap: 2vh;
-                    & h3 {
-                        color: var(--init-gold);
-                        font-size: 30px;
-                        font-family: Poppins;
-                    }
-                    & p {
-                        color: white;
-                        font-size: 20px;
-                        font-family: Poppins;
-                    }
-                    &_buttons {
-                        margin-top: 1vh;
-                        display: flex;
-                        width: 100%;
-                        justify-content: space-around;
-                        & a {
-                            font-family: Poppins;
-                            padding: 10px;
-                            font-size: 22px;
-                            color: var(--init-blue);
-                            background-color: var(--init-darkmint);
-                            &:hover {
-                                color: var(--init-gold);
-                            }
-                        }
-                    }
-                }
-               
-            }
-
+        & h4 {
+          grid-column: 2;
+          grid-row: 1;
+          font-size: 22px;
         }
+        & p {
+          grid-column: 2;
+          grid-row: 2;
+          color: var(--init-subheader-grey);
+          font-size: 16px;
+        }
+      }
     }
+    &_right {
+      height: 100%;
+      background-image: url("../../../../../public/desktop-header.jpg");
+      background-size: cover;
 
-    &_features {
-        background-color: var(--init-darkmint);
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        column-gap: 5%;
-        padding: 2vh 3vw 4vh 3vw;
-        min-height: 32vh;
+      &_container {
+        background-color: var(--init-black-transparent);
+        padding: 5px 10px 5px 0;
         border-radius: 5px;
+        height: 97%;
 
-        &_mission, &_why {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            row-gap: 2vh;
-            & h2 {
-                color: var(--init-gold);
-                width: fit-content;
-                font-size: 35px;
-                font-family: Poppins;
-            }
-            & p {
-                font-family: Poppins;
-                font-size: 17px;
-                line-height: 3.5vh;
-            }
+        & img {
+          height: 200px;
         }
 
-        &_thumbnails {
+        &_content {
+          display: grid;
+          row-gap: 2vh;
+          & h3 {
+            color: var(--init-gold);
+            font-size: 30px;
+            font-family: Poppins;
+          }
+          & p {
+            color: white;
+            font-size: 20px;
+            font-family: Poppins;
+          }
+          &_buttons {
+            margin-top: 1vh;
             display: flex;
+            width: 100%;
             justify-content: space-around;
+            & a {
+              font-family: Poppins;
+              padding: 10px;
+              font-size: 22px;
+              color: var(--init-blue);
+              background-color: var(--init-darkmint);
+              &:hover {
+                color: var(--init-gold);
+              }
+            }
+          }
         }
-
-        .contactLinks {
-            grid-column: 2;
-            grid-row: 2;
-            align-self: flex-end;
-            justify-self: right;
-        }
+      }
     }
+  }
+
+  &_features {
+    background-color: var(--init-darkmint);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5%;
+    padding: 2vh 3vw 4vh 3vw;
+    min-height: 32vh;
+    border-radius: 5px;
+
+    &_mission,
+    &_why {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      row-gap: 2vh;
+      & h2 {
+        color: var(--init-gold);
+        width: fit-content;
+        font-size: 35px;
+        font-family: Poppins;
+      }
+      & p {
+        font-family: Poppins;
+        font-size: 17px;
+        line-height: 3.5vh;
+      }
+    }
+
+    &_thumbnails {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .contactLinks {
+      grid-column: 2;
+      grid-row: 2;
+      align-self: flex-end;
+      justify-self: right;
+    }
+  }
 }
