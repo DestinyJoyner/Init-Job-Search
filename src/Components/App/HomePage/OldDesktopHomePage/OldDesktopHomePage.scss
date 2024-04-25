@@ -1,0 +1,295 @@
+.desktopHome {
+    display: grid;
+    grid-template-rows: auto 2vh auto auto auto;
+    row-gap: 2%;
+    justify-items: center;
+    padding-bottom: 22vh;
+  
+    &_header {
+      width: 100%;
+      height: 300px;
+      align-self: center;
+      border-bottom: 1px solid var(--init-darkmint);
+      border-top: 1px solid var(--init-darkmint);
+  
+      &_container {
+        display: grid;
+        grid-template-columns: 25% 70%;
+        grid-template-rows: 75% 25%;
+        align-items: center;
+        background-color: rgba(39, 39, 39, 0.844);
+        height: 100%;
+      }
+      background-image: url("../../../../../public/desktop-header.jpg");
+      background-size: cover;
+      background-position-y: -200px;
+  
+      &_logo {
+        height: 200px;
+        grid-column: 1;
+        grid-row: 1/3;
+        justify-self: center;
+      }
+  
+      &_text {
+        justify-items: center;
+        text-align: center;
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 90%;
+  
+        & > * {
+          font-family: Poppins;
+        }
+  
+        & h2 {
+          color: var(--init-gold);
+          font-size: 34px;
+        }
+  
+        &_mission {
+          color: white;
+          font-size: 24px;
+          width: 90%;
+        }
+      }
+  
+      &_disclaimer {
+        width: 60%;
+        position: relative;
+        bottom: 2vh;
+        font-family: Poppins;
+        font-weight: 600;
+        font-size: 14px;
+        & svg {
+          position: relative;
+          top: 0.5vh;
+          margin-right: 0.5vw;
+        }
+      }
+  
+      &_buttons {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        justify-content: space-evenly;
+        &_button {
+          all: unset;
+          color: var(--init-blue);
+          font-weight: 600;
+          font-family: Poppins;
+          font-size: 18px;
+          justify-self: center;
+          text-align: center;
+          width: 210px;
+          height: 30px;
+          padding: 5px;
+          border-radius: 20px;
+          border: 2px solid var(--init-gold);
+          background: linear-gradient(
+            90deg,
+            rgb(83, 215, 199) 55%,
+            rgba(12, 189, 189, 1) 100%
+          );
+        }
+      }
+  
+      &_accountLinks {
+        grid-column: 1;
+        grid-row: 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+        align-self: flex-end;
+        position: relative;
+        top: 1vh;
+        width: 90%;
+        row-gap: 3vh;
+        & > a {
+          color: var(--init-blue);
+          grid-row: 2;
+          font-size: 26px;
+          &:hover {
+            color: var(--init-gold);
+          }
+        }
+  
+        &_header {
+          grid-column: span 2;
+          font-weight: 600;
+          font-size: 35px;
+          font-family: Poppins;
+          color: var(--init-gold);
+        }
+      }
+    }
+  
+    &_content_init {
+      width: 90%;
+      overflow: hidden;
+      height: max-content;
+      box-shadow: 0 0 10px black;
+      padding: 5vh 0 10vh 0;
+      border-radius: 20px;
+      background-color: var(--init-mint);
+      display: grid;
+      grid-template-columns: 80% 20%;
+      grid-template-rows: repeat(2, 1fr) 0.5fr;
+      row-gap: 5%;
+      align-items: center;
+      justify-items: center;
+  
+      &_stock2 {
+        height: 200px;
+        border-radius: 10px;
+        align-self: center;
+      }
+  
+      &_question {
+        font-weight: 600;
+        font-size: 35px;
+        font-family: Poppins;
+        color: var(--init-gold);
+      }
+  
+      &_answer {
+        width: 95%;
+        font-size: 17px;
+        font-family: Poppins;
+      }
+  
+      &_one,
+      &_two {
+        grid-row: 1;
+        display: flex;
+        width: 90%;
+        column-gap: 30px;
+  
+        &_text {
+          display: grid;
+          row-gap: 1vh;
+          max-width: 70%;
+        }
+      }
+      &_one {
+        margin-bottom: 4vh;
+      }
+      &_two {
+        grid-row: 2;
+        & a {
+          font-size: 20px;
+        }
+      }
+  
+      &_aside {
+        border-left: 1px solid var(--init-gold);
+        grid-row: 1/4;
+        grid-column: 2;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 5% 80% 15%;
+        align-items: center;
+        & > * {
+          font-family: Poppins;
+        }
+        & span {
+          font-size: 22px;
+          justify-self: center;
+          font-weight: 600;
+          color: var(--init-gold);
+          text-decoration: underline;
+        }
+        & ul {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          & li {
+            list-style: none;
+  
+            font-weight: 600;
+            margin-bottom: 0.5vh;
+            position: relative;
+            right: 1vw;
+          }
+        }
+        & img {
+          height: 150px;
+          justify-self: center;
+          position: relative;
+          top: 3vh;
+        }
+      }
+    }
+    &_features {
+      text-align: center;
+      width: 100%;
+      row-gap: 10px;
+      margin: 5vh 0;
+      & span {
+        margin-bottom: 2vh;
+        width: 60%;
+      }
+      &_thumbnails {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 3vh;
+      }
+    }
+  }
+  
+  .dark .desktopHome {
+    &_header {
+      &_button {
+        color: var(--init-dark);
+      }
+    }
+    &_content_init {
+      background-color: var(--init-darkmint);
+    }
+  }
+  
+  @media (max-width: 1080px) {
+    .desktopHome {
+      &_header {
+        &_text {
+          & h2 {
+            font-size: 30px;
+          }
+          &_mission {
+            font-size: 20px;
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1050px) {
+    .desktopHome {
+      padding-bottom: 30vh;
+      &_content_init {
+        grid-template-columns: 70% 30%;
+        row-gap: 1%;
+        &_one,
+        &_two {
+          &_text {
+            max-width: 100%;
+          }
+        }
+        & img {
+          display: none;
+        }
+      }
+    }
+  }
+  
