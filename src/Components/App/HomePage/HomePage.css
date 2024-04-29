@@ -108,7 +108,7 @@
 }
 
 .home .home-logo {
-  animation: fadeIn 4s;
+  /* animation: fadeIn 4s; */
   height: 50vh;
   margin-top: 5vh;
   grid-row: 3;

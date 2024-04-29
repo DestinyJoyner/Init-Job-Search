@@ -32,17 +32,17 @@ function HomePage() {
   useEffect(() => {
     setAppHeader("Welcome to inIT")
 
-    const timeout = setInterval(() => {
-      setTextSwitch(true);
-      setLoading(false)
-    }, 4000);
+    // const timeout = setInterval(() => {
+    //   setTextSwitch(true);
+    //   setLoading(false)
+    // }, 4000);
   }, [])
  
   return (
     <div ref={refElement} className="home">
       <ScrollArrow element={refElement} />
       <section>
-        <div 
+        {/* <div 
         onClick={() => {
           setLoading(false)
           setTextSwitch(true)
@@ -55,9 +55,9 @@ function HomePage() {
           <span className=" home-italic">
             "Your First Tech Opportunity Awaits!"
           </span>
-        </div>
+        </div> */}
         {/* AFTER FADE SLIDE*/}
-        <div className={!textSwitch ? "hidden" : "show home-mission"}>
+        <div className= "home-mission">
           <div className="misc1">
             <img className="mission-img" src={stock2} alt="home-img" />
           </div>

@@ -95,8 +95,9 @@
     background-color: var(--init-darkmint);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 1vh;
     column-gap: 5%;
-    padding: 2vh 3vw 4vh 3vw;
+    padding: 2vh 3vw 2vh 3vw;
     min-height: 32vh;
     border-radius: 5px;
 

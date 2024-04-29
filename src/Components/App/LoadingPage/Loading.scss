@@ -1,21 +1,25 @@
 .loadingPage {
-    height: 100vh;
- grid-template-rows: 35vh 20vh 40vh;
-    &_message{
-        grid-row: 2;
-        display: flex;
-        flex-direction: column;
-        row-gap: 2vh;
-        font-size: 20px;
-        font-weight: 600;
-        text-align: center;
-        &_logo {
-            height: 12vh;
-         }
-         
+  height: 90vh;
+  width: 98vw;
+  grid-template-rows: 90vh ;
+  &_message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2vh;
+    font-weight: 600;
+    &_logo {
+      height: 40vh;
+      max-width: 40vh;
     }
+    & p {
+      width: 70%;
+      text-align: center;
+      font-size: 22px;
+    }
+  }
 }
 
 .desktop .loadingPage {
-    margin-top: 8vh;
+  margin-top: 8vh;
 }

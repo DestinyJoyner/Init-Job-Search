@@ -38,7 +38,7 @@ function Provider({ children }) {
   // authToken will be manually hardcoded for now
   const [authToken, setAuthToken] = useState(TOKEN);
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   axios.defaults.headers.common["authorization"] = `Bearer ${authToken}`;
 
@@ -81,8 +81,9 @@ useEffect(() => {
             <DesktopNav /> :
             <Nav />
           }
-          {loading && <Loading />} 
+          {loading ? <Loading /> :
           {children}
+        }
           </SearchBarProvider>
           </JobProvider>
         </NavProvider>
