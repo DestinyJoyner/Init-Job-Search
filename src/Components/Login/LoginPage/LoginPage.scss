@@ -2,6 +2,7 @@
   font-size: 20px;
   grid-template-rows: 20vh 40vh auto 10vh 5vh;
   padding-bottom: 4vh;
+  // border: 1px solid red;
 
   &_demo {
     grid-row: 5;
@@ -13,6 +14,19 @@
     color: var(--init-rust);
     font-weight: 600;
     font-size: 26px;
+  }
+  &_loginLoad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1vh;
+    & img {
+      height: 13vh;
+      width: 20vw;
+    }
+    & span {
+      font-size: 14px;
+    }
   }
 
   &_register {

@@ -14,7 +14,7 @@ function DesktopLoginPage() {
   return (
    
     <div className="desktopLoginPage">
-      <section className="desktopLoginPage_content">
+      <section className="desktopLoginPage_content init-card">
         <section className="desktopLoginPage_content_left grid-center">
 
             <div className="desktopLoginPage_content_left_container">
