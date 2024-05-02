@@ -1,8 +1,15 @@
 import { useUserProvider } from "../../../../../Providers/UserProvider";
+import { Link } from "react-router-dom";
+import DesktopSkillsComponent from "../../../../DesktopSkillsComponent/DesktopSkillsComponent";
 import { MdOutlineMail, MdOutlineSchool } from "react-icons/md";
+import { FiBriefcase } from "react-icons/fi";
+import { FaRegEdit } from "react-icons/fa";
 import "./DesktopApplicantProfileHeader.scss";
 
-function DesktopApplicantProfileHeader({ desktopApplicantProfileDetails }) {
+function DesktopApplicantProfileHeader({
+  desktopApplicantProfileDetails,
+  isRecruiterAcc,
+}) {
   const { applicantEmail } = useUserProvider();
 
   const {
@@ -13,6 +20,7 @@ function DesktopApplicantProfileHeader({ desktopApplicantProfileDetails }) {
     position,
     education,
     bio,
+    desktopSkills,
   } = desktopApplicantProfileDetails;
 
   return (
@@ -22,26 +30,42 @@ function DesktopApplicantProfileHeader({ desktopApplicantProfileDetails }) {
         {lastInitial}
       </section>
 
-      <section className="desktopApplicantProfileHeader_name">
-        <h3>
-          {first_name} {last_name}{" "}
-        </h3>
-        <span>{position}</span>
-      </section>
-
       <section className="desktopApplicantProfileHeader_details">
-        <span>
+        <h3 className="desktopApplicantProfileHeader_details_name">
+          {first_name} {last_name}{" "}
+          {!isRecruiterAcc ? (
+            <Link
+              className="desktopApplicantProfileHeader_editLink"
+              to="/user/edit"
+            >
+              <FaRegEdit />
+            </Link>
+          ) : (
+            <section className="desktopApplicantProfileHeader_details_email">
+              <a href={`mailto:${applicantEmail}`}>
+                <MdOutlineMail />
+              </a>
+            </section>
+          )}
+        </h3>
+        <span className="desktopApplicantProfileHeader_details_position">
+          <FiBriefcase />
+          {position}
+        </span>
+        <span className="desktopApplicantProfileHeader_details_education">
           <MdOutlineSchool />
           {education}
         </span>
-
-        <section className="desktopApplicantProfileHeader_details_email">
-          <MdOutlineMail />
-          <a href={`mailto:${applicantEmail}`}>{applicantEmail}</a>
-        </section>
       </section>
 
       <section className="desktopApplicantProfileHeader_bio">{bio}</section>
+
+      <div className="desktopApplicantProfileHeader_skills">
+        <DesktopSkillsComponent
+          desktopJobSkills={desktopSkills}
+          profileView={true}
+        />
+      </div>
     </div>
   );
 }

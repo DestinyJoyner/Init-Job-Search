@@ -10,6 +10,7 @@ import RecruiterNoteApplicantProfile from "../../../../App/RecruiterNoteApplican
 import { applicantProfileConversion } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { applicantProfileHeaderLabel } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { FaRegEdit } from "react-icons/fa";
+import { GrDocumentPdf } from "react-icons/gr";
 import "./DesktopApplicantProfilePage.scss";
 
 function DesktopApplicantProfilePage() {
@@ -24,48 +25,46 @@ function DesktopApplicantProfilePage() {
     if (applicantDetails.id) {
       setLoading(false);
     }
+    else {
+      setLoading(true)
+    }
   }, [applicantDetails]);
 
   return (
+    !loading &&
     <div className="desktopApplicantProfilePage">
      
       <section className="desktopApplicantProfilePage_content">
         <DesktopApplicantProfileHeader
           desktopApplicantProfileDetails={desktopApplicantProfileDetails}
+          isRecruiterAcc={isRecruiterAcc}
         />
 
-        <div className="desktopApplicantProfilePage_content_skills">
-          {applicantProfileHeaderLabel(
-            "Proficient Skills",
-            <DesktopSkillsComponent
-              desktopJobSkills={desktopApplicantProfileDetails.desktopSkills}
-              profileView={true}
-            />
-          )}
-        </div>
+{!isRecruiterAcc && <Link
+            className="desktopApplicantProfilePage_content_browseJobs flex-align"
+            to="/jobs"
+          >
+            Browse Jobs
+          </Link>}
 
-        <div className="desktopApplicantProfilePage_content_link">
-          {isRecruiterAcc ? (
-           <RecruiterNoteApplicantProfile />
-          ) : (
-            <Link className="applicantProfile_edit" to="/user/edit">
-              EDIT PROFILE <FaRegEdit />
-            </Link>
-          )}
-        </div>
-
-        {!isRecruiterAcc &&
+<div className="desktopApplicantProfilePage_content_right">
+{!isRecruiterAcc &&
           <DesktopApplicantProfileAppliedJobs applicantJobs={applicantJobs} />}
+</div>
+        
 
+<div className="desktopApplicantProfilePage_content_left init-card">
         {applicantDetails.project && (
           <DesktopApplicantProfileProject
             applicantProject={applicantDetails.project}
           />
         )}
-
-<div className="desktopApplicantProfilePage_content_resume">
-  Resume Under Construction
+        <div className="desktopApplicantProfilePage_content_resume init-card">
+  <h4 className="desktopApplicantProfilePage_content_project_header">Resume <GrDocumentPdf/></h4>
+  <span>Coming Soon...</span>
 </div>
+</div>
+
       </section>
     </div>
   );
