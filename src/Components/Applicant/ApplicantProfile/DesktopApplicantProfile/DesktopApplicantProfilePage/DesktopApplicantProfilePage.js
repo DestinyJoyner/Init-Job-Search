@@ -34,31 +34,18 @@ function DesktopApplicantProfilePage() {
     !loading &&
     <div className="desktopApplicantProfilePage">
      
-      <section className="desktopApplicantProfilePage_content init-card">
+      <section className="desktopApplicantProfilePage_content">
         <DesktopApplicantProfileHeader
           desktopApplicantProfileDetails={desktopApplicantProfileDetails}
           isRecruiterAcc={isRecruiterAcc}
         />
 
-        {/* <div className="desktopApplicantProfilePage_content_skills">
-          {applicantProfileHeaderLabel(
-            "Proficient Skills:",
-            <DesktopSkillsComponent
-              desktopJobSkills={desktopApplicantProfileDetails.desktopSkills}
-              profileView={true}
-            />
-          )}
-        </div> */}
-
-        {/* <div className="desktopApplicantProfilePage_content_link">
-          {isRecruiterAcc ? (
-           <RecruiterNoteApplicantProfile />
-          ) : (
-            <Link className="applicantProfile_edit" to="/user/edit">
-              EDIT PROFILE <FaRegEdit />
-            </Link>
-          )}
-        </div> */}
+<Link
+            className="desktopApplicantProfilePage_content_browseJobs flex-align"
+            to="/jobs"
+          >
+            Browse Jobs
+          </Link>
 
 <div className="desktopApplicantProfilePage_content_right">
 {!isRecruiterAcc &&
@@ -66,22 +53,18 @@ function DesktopApplicantProfilePage() {
 </div>
         
 
-<div className="desktopApplicantProfilePage_content_left">
+<div className="desktopApplicantProfilePage_content_left init-card">
         {applicantDetails.project && (
           <DesktopApplicantProfileProject
             applicantProject={applicantDetails.project}
           />
         )}
-        <div className="desktopApplicantProfilePage_content_resume">
-  <h4 className="desktopApplicantProfilePage_content_project_header"><GrDocumentPdf/>Resume</h4>
+        <div className="desktopApplicantProfilePage_content_resume init-card">
+  <h4 className="desktopApplicantProfilePage_content_project_header">Resume <GrDocumentPdf/></h4>
   <span>Coming Soon...</span>
 </div>
 </div>
 
-{/* <div className="desktopApplicantProfilePage_content_resume init-card">
-  <h4 className="desktopApplicantProfilePage_content_project_header"><GrDocumentPdf/>Resume</h4>
-  <span>Coming Soon...</span>
-</div> */}
       </section>
     </div>
   );

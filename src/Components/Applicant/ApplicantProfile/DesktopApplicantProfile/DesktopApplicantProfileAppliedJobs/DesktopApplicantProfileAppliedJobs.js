@@ -8,9 +8,9 @@ import "./DesktopApplicantProfileAppliedJobs.scss"
 function DesktopApplicantProfileAppliedJobs({applicantJobs}) {
 
     return (
-        <div className="desktopApplicantProfileAppliedJobs">
+        <div className="desktopApplicantProfileAppliedJobs init-card">
             <h4 className="desktopApplicantProfileAppliedJobs_header">
-            <LiaClipboardListSolid /><span>Application Tracker</span> </h4>
+            Application Tracker </h4>
 
             <section className="desktopApplicantProfileAppliedJobs_list">
                 {

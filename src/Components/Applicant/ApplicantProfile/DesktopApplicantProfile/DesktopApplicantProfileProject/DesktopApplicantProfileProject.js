@@ -1,5 +1,4 @@
 import { VscProject } from "react-icons/vsc";
-import { applicantProfileHeaderLabel } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions";
 import "./DesktopApplicantProfileProject.scss";
 
 function DesktopApplicantProfileProject({ applicantProject }) {
@@ -14,14 +13,16 @@ function DesktopApplicantProfileProject({ applicantProject }) {
   );
 
   return (
-    <div className="desktopApplicantProfilePage_content_project">
-      <h4 className="desktopApplicantProfilePage_content_project_header"><VscProject />Project Showcase</h4>
-      {/* <h3>{project_name}</h3> */}
-      <a href={`${project_link}`} target="_blank"><h3>{project_name}</h3></a>
-      <span>{project_description}</span>
-     
+    <div className="desktopApplicantProfilePage_content_project init-card">
+      <h5 className="desktopApplicantProfilePage_content_project_header">
+        Project Showcase{" "}
+      </h5>
 
-      {/* {applicantProfileHeaderLabel("Technical Project", projectHtml, true)} */}
+      <VscProject />
+      <a href={`${project_link}`} target="_blank">
+        <h3>{project_name}</h3>
+      </a>
+      <span>{project_description}</span>
     </div>
   );
 }

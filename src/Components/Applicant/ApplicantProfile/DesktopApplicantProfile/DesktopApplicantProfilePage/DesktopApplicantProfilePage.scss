@@ -9,26 +9,51 @@
     // grid-column: 2;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 28vh 40vh 40vh;
+    grid-template-rows: 35vh 5vh 30vh 60vh;
     row-gap: 4vh;
     // column-gap: 2%;
     padding-bottom: 10vh;
     // background-color: var(--init-background);
 
-    &_right {
+    &_browseJobs {
       grid-column: 2;
-      grid-row: 2/4;
+      grid-row: 2;
+      justify-self: right;
+      height: 10vh;
+      width: 50%;
+      justify-content: center;
+      font-size: 28px;
+      position: relative;
+      bottom: 3.2vh;
+      
+      background-color: #81c2eeb4;
+      background-color: var(--init-mint);
+      &:hover{
+        color: var(--init-gold);
+      }
+    }
+
+    &_right {
+      grid-column: 1/3;
+      grid-row: 4;
     }
     &_left {
-      grid-column: 1;
-      grid-row: 2/4;
-      display: flex;
-      flex-direction: column;
-      // justify-content: space-evenly;
-      row-gap: 10vh;
+      grid-column: span 2;
+      grid-row: 3;
+     display: grid;
+     grid-template-columns: 50% 50%;
+     align-items: center;
+     justify-items: center;
       height: 100%;
-      border-right: 2px solid #e0e0e0;
-      padding-right: 2vw;
+      padding: 1vh 2vh;
+
+      &>* {
+        height: 86%;
+        padding: 1vh;
+        width: 80%;
+      }
+
+    
     }
     & > * {
       //   border: 1px solid #e0e0e0;
@@ -44,62 +69,24 @@
       }
     }
 
-    &_project,
-    &_resume {
-      margin-left: 1vw;
-    }
-
-    // &_skills {
-    //   display: flex;
-    //   align-items: center;
-    //   width: 100%;
-    //   column-gap: 3vw;
-    //   grid-column: 1;
-    //   grid-row: 2;
-    //   margin: 0 auto;
-    //   padding-left: 1vw;
-
-    //   .desktopSkillsComponent {
-    //     padding-top: .5vh;
-    //     & svg {
-    //       height: 1.8em;
-    //       width: 1.8em;
-    //     }
-    //   }
-    // }
-
-    // &_link {
-    //   grid-column: 2;
-    //   grid-row: 2;
-    //   all: unset;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-
-    //   .applicantProfile_edit {
-    //     font-size: 32px;
-    //     display: flex;
-    //     column-gap: 2vh;
-
-    //     & svg {
-    //       height: 1em;
-    //       width: 1em;
-    //     }
-    //   }
-
-    // }
 
     &_resume {
-      grid-row: 3;
-      grid-column: 1;
       display: flex;
       flex-direction: column;
-      // align-items: center;
-      // justify-content: center;
       row-gap: 2vh;
-      & h4,
+      & h4 {
+        display: flex;
+        justify-content: space-between;
+        & svg {
+          height: 3em;
+          width: 3em;
+          position: relative;
+          top: 3vh;
+          right: 2vw;
+        }
+      }
       & span {
-        padding-left: 1vw;
+        align-self: center;
       }
     }
   }
