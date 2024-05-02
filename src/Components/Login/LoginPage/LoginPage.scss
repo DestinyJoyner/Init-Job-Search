@@ -1,8 +1,7 @@
 .loginPage {
   font-size: 20px;
-  grid-template-rows: 20vh 40vh auto 10vh 5vh;
-  padding-bottom: 4vh;
-  // border: 1px solid red;
+  grid-template-rows: 20vh 42vh auto 10vh 3vh;
+  // padding-bottom: 4vh;
 
   &_demo {
     grid-row: 5;
@@ -22,9 +21,10 @@
     row-gap: 1vh;
     & img {
       height: 13vh;
-      width: 20vw;
+      width: 50vw;
     }
     & span {
+      text-align: center;
       font-size: 14px;
     }
   }
@@ -42,6 +42,13 @@
   &_register {
     color: var(--init-darkmint);
     border-color: var(--init-darkmint);
+  }
+}
+
+@media (max-width:450px) {
+  .loginPage {
+    width:98vw;
+  height:92vh;
   }
 }
 

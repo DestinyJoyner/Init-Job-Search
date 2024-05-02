@@ -109,9 +109,16 @@
 
     &_error {
       font-size: 20px;
+      padding: 2vh 0;
     }
     &_demo {
       margin-top: 1vh;
+    }
+    &_loginLoad {
+      & img {
+        height: 13vh;
+        width: 20vw;
+      }
     }
 
     .loginForm {
