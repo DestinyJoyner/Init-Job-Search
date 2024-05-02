@@ -1,37 +1,28 @@
 .desktopLoginPage {
   display: grid;
-  width: 94%;
-  height: 91vh;
-  margin: 9vh auto 0 auto;
+  width: 96%;
+  height: 98vh;
+  margin: 0 auto;
   justify-items: center;
   align-items: center;
 
   &_content {
-    border-radius: 20px;
-    width: 80%;
-    height: 90%;
-    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: var(--init-mint);
-    background: linear-gradient(
-        90deg,
-        rgb(83, 215, 199) 20%,
-        rgba(12, 189, 189, 1) 50%
-      );
-    padding: 2vh;
-    box-shadow: 0px 0px 10px black;
-    
-    & > * {
-        height: 100%;
-    }
+    height: 100%;
+
     &_left {
-      grid-template-rows: 20% 20% 5% 45% 5%;
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
-      width: 90%;
-      row-gap: 2%;
-      margin-left: 1vw;
+      grid-template-rows: 15% 12% 5% 45% 5%;
+      width: 100%;
+      // height: 100%;
+      row-gap: 3%;
+      background: linear-gradient(
+      90deg,
+      rgb(83, 215, 199) 20%,
+      rgba(12, 189, 189, 1) 50%
+    );
+
+      // margin-left: 1vw;
       padding-bottom: 0;
 
       &_container {
@@ -40,33 +31,33 @@
         overflow: hidden;
         grid-row: 5;
         position: relative;
-        bottom: 35vh;
-        left: 12vw;
+        bottom: 40vh;
+        left: 13vw;
         border-radius: 60px 0px 60px 0px;
-            transform: rotate(-45deg);
-            border: 3px solid var(--init-gold);
-            &_image {
-                position: relative;
-                top: 10h;
-                right: 4vw;    
-                height: 240px;
-                transform: rotate(45deg);
-            }
+        transform: rotate(-45deg);
+        border: 3px solid var(--init-gold);
+        &_image {
+          position: relative;
+          // top: 10vh;
+          right: 4vw;
+          height: 240px;
+          transform: rotate(45deg);
+        }
       }
-      
+
       &_header {
         grid-row: 1;
         font-family: Poppins;
         display: grid;
         text-align: center;
         &_top {
-            color: var(--init-gold);
-             font-size: 38px;
-            font-weight: 600;
+          color: var(--init-gold);
+          font-size: 38px;
+          font-weight: 600;
         }
         &_bottom {
-            font-size: 24px;
-            opacity: .8;
+          font-size: 24px;
+          opacity: 0.8;
         }
       }
 
@@ -74,14 +65,16 @@
         grid-row: 2;
         justify-self: left;
         display: grid;
-        row-gap: 15px;
+        row-gap: 5px;
+        padding-left: 2vw;
         &_top {
-            font-size: 22px;
-            color: var(--init-gold);
-            font-weight: 600;
+          font-size: 22px;
+          color: var(--init-gold);
+          font-weight: 600;
         }
         &_bottom {
-            font-size: 15px;
+          font-size: 16px;
+          width: 80%;
         }
       }
 
@@ -91,44 +84,48 @@
         color: var(--init-gold);
         justify-self: left;
         font-weight: 600;
+        padding-left: 2vw;
       }
 
       &_featureList {
+       margin-left: 2vw;
         grid-row: 4;
         border-left: 2px solid var(--init-gold);
         height: 100%;
         justify-self: left;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         & li {
-            list-style: none;
+          list-style: none;
         }
       }
     }
   }
 
   .loginPage {
-    background-color: var(--init-background);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
     position: relative;
-    bottom: 2vh;
-    left: 2vw;
-    padding: 2vh 1vw 2vh 1vw;
-    
+    height: fit-content;
+
     &_error {
-        font-size: 20px;
+      font-size: 20px;
+      padding: 2vh 0;
     }
     &_demo {
       margin-top: 1vh;
     }
-    
+    &_loginLoad {
+      & img {
+        height: 13vh;
+        width: 20vw;
+      }
+    }
+
     .loginForm {
-        margin-top: 6vh;
-        &_submitButton:hover {
-            cursor: pointer;
-        }
+      margin-top: 6vh;
+      &_submitButton:hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -142,17 +139,17 @@
     &_left {
       &_header {
         &_bottom {
-            opacity: 1;
+          opacity: 1;
         }
       }
     }
   }
-    .loginPage {
-      background-color: var(--init-dark);
-      &_register {
-        color: var(--init-gold);
-      }
+  .loginPage {
+    background-color: var(--init-dark);
+    &_register {
+      color: var(--init-gold);
     }
+  }
 }
 
 @media (max-width: 1200px) {
@@ -161,13 +158,13 @@
       &_left {
         &_container {
           bottom: 37vh;
-        left: 14vw;
+          left: 14vw;
         }
       }
     }
   }
 }
-@media (max-width: 1080px){
+@media (max-width: 1080px) {
   .desktopLoginPage {
     &_content {
       &_left {

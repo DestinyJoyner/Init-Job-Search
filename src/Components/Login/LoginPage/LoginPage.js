@@ -4,6 +4,8 @@ import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
 import LoginHeader from "../LoginHeader/LoginHeader";
 import LoginForm from "../LoginForm/LoginForm";
+import { asterisk } from "../../App/Data/Icons";
+import loadingGif from "../../../Assets/loading-screen-resize-crop.gif"
 import "./LoginPage.scss";
 
 function LoginPage() {
@@ -12,6 +14,9 @@ function LoginPage() {
   const navigate = useNavigate();
   const [failedLogin, setFailedLogin] = useState(false);
   const [failedLoginMessage, setFailedLoginMessage] = useState("");
+
+  // temporary until revamp loading component for entire app
+  const [loginLoad, setLoginLoad] = useState(false)
 
   useEffect(() => {
     // setLoading(true)
@@ -35,11 +40,18 @@ function LoginPage() {
       <LoginForm
         setFailedLogin={setFailedLogin}
         setFailedMessage={setFailedLoginMessage}
+        setLoginLoad={setLoginLoad}
       />
 
-      {failedLogin && (
-        <div className="loginPage_error">{failedLoginMessage}</div>
+      {(failedLogin && 
+        <div className="loginPage_error">{failedLoginMessage}</div>)
+        ||
+        (loginLoad && <div className="loginPage_loginLoad">
+        <span>{asterisk}Due to free web hosting, initial login can take up to 30secs</span>
+        <img src={loadingGif} alt="loading-spinner"/></div>
       )}
+
+    
 
       <Link to="/register" className="loginPage_register">
         New to inIT? <br />

@@ -8,7 +8,7 @@ import { handleLoginSubmit } from "../../Functions/FormFunctions/LoginFormSubmit
 import "./LoginForm.scss";
 import "../../FormInputs/LoginFormInputs/LoginFormInputs.scss"
 
-export default function LoginForm({setFailedLogin, setFailedMessage}) {
+export default function LoginForm({setFailedLogin, setFailedMessage, setLoginLoad}) {
   const {
     setRecruiterID,
     setIsSignedIn,
@@ -39,7 +39,9 @@ export default function LoginForm({setFailedLogin, setFailedMessage}) {
   return (
       <form
         className="loginForm grid-center"
-        onSubmit={(event) =>
+        onSubmit={(event) =>{
+          // event.preventDefault()
+          setLoginLoad(true)
           handleLoginSubmit(
             event,
             loginForm,
@@ -52,7 +54,7 @@ export default function LoginForm({setFailedLogin, setFailedMessage}) {
             setFailedMessage,
             navigate
           )
-        }
+        }}
       >
         <LoginEmailInput 
         formKey={"email"}
