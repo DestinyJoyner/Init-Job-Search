@@ -35,8 +35,7 @@ function DesktopApplicantProfileHeader({
         <Link
           className="desktopApplicantProfileHeader_editLink"
           to="/user/edit"
-        >
-          <FaRegEdit /> EDIT PROFILE
+        ><FaRegEdit /> 
         </Link>
       )}
 

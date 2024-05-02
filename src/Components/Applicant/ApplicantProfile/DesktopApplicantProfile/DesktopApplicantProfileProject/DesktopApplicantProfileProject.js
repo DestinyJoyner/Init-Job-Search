@@ -14,10 +14,10 @@ function DesktopApplicantProfileProject({ applicantProject }) {
   );
 
   return (
-    <div className="desktopApplicantProfilePage_content_project init-card">
+    <div className="desktopApplicantProfilePage_content_project">
       <h4 className="desktopApplicantProfilePage_content_project_header"><VscProject />Project Showcase</h4>
-      <h3>{project_name}</h3>
-      <a href={`${project_link}`}>Project Link</a>
+      {/* <h3>{project_name}</h3> */}
+      <a href={`${project_link}`} target="_blank"><h3>{project_name}</h3></a>
       <span>{project_description}</span>
      
 

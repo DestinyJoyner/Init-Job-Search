@@ -29,9 +29,15 @@
     grid-column: 1;
     grid-row: 3;
     justify-self: center;
-    display: flex;
-    align-items: center;
-    column-gap: 1vw;
+    margin-left: 1vw;
+    // display: flex;
+    // align-items: center;
+    // column-gap: 1vw;
+    & svg {
+      height: 1.5em;
+      width: 1.5em;
+      // margin-left: 1vw;
+    }
   }
 
   &_details {

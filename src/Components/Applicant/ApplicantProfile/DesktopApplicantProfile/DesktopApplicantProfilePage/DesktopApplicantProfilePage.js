@@ -10,6 +10,7 @@ import RecruiterNoteApplicantProfile from "../../../../App/RecruiterNoteApplican
 import { applicantProfileConversion } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { applicantProfileHeaderLabel } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
 import { FaRegEdit } from "react-icons/fa";
+import { GrDocumentPdf } from "react-icons/gr";
 import "./DesktopApplicantProfilePage.scss";
 
 function DesktopApplicantProfilePage() {
@@ -59,18 +60,28 @@ function DesktopApplicantProfilePage() {
           )}
         </div> */}
 
-        {!isRecruiterAcc &&
+<div className="desktopApplicantProfilePage_content_right">
+{!isRecruiterAcc &&
           <DesktopApplicantProfileAppliedJobs applicantJobs={applicantJobs} />}
+</div>
+        
 
+<div className="desktopApplicantProfilePage_content_left">
         {applicantDetails.project && (
           <DesktopApplicantProfileProject
             applicantProject={applicantDetails.project}
           />
         )}
-
-<div className="desktopApplicantProfilePage_content_resume init-card">
-  Resume Under Construction
+        <div className="desktopApplicantProfilePage_content_resume">
+  <h4 className="desktopApplicantProfilePage_content_project_header"><GrDocumentPdf/>Resume</h4>
+  <span>Coming Soon...</span>
 </div>
+</div>
+
+{/* <div className="desktopApplicantProfilePage_content_resume init-card">
+  <h4 className="desktopApplicantProfilePage_content_project_header"><GrDocumentPdf/>Resume</h4>
+  <span>Coming Soon...</span>
+</div> */}
       </section>
     </div>
   );
