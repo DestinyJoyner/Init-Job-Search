@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import DesktopSkillsComponent from "../../../../DesktopSkillsComponent/DesktopSkillsComponent";
 import { MdOutlineMail, MdOutlineSchool } from "react-icons/md";
 import { FiBriefcase } from "react-icons/fi";
+import { FaRegUser } from "react-icons/fa6";
 
 import { FaRegStar, FaRegEdit } from "react-icons/fa";
 import "./DesktopApplicantProfileHeader.scss";
@@ -31,13 +32,20 @@ function DesktopApplicantProfileHeader({
         {lastInitial}
       </section>
 
-      {!isRecruiterAcc && (
+      {!isRecruiterAcc ? (
         <Link
           className="desktopApplicantProfileHeader_editLink"
           to="/user/edit"
-        ><FaRegEdit /> 
+        >
+          EDIT PROFILE
+          {/* <FaRegEdit />  */}
         </Link>
-      )}
+      ) :
+      <section className="desktopApplicantProfileHeader_details_email">
+      <MdOutlineMail />
+      <a href={`mailto:${applicantEmail}`}>{applicantEmail}</a>
+    </section>
+      }
 
       <section className="desktopApplicantProfileHeader_details">
         <h3 className="desktopApplicantProfileHeader_details_name">
@@ -52,21 +60,31 @@ function DesktopApplicantProfileHeader({
           {education}
         </span>
 
-        <section className="desktopApplicantProfileHeader_details_email">
-          <MdOutlineMail />
-          <a href={`mailto:${applicantEmail}`}>{applicantEmail}</a>
-        </section>
-      </section>
-
-      <div className="desktopApplicantProfileHeader_skills">
-        <b>Skills:</b>
+        <div className="desktopApplicantProfileHeader_skills">
+        {/* <b>Skills:</b> */}
         <DesktopSkillsComponent
           desktopJobSkills={desktopSkills}
           profileView={true}
         />
       </div>
 
-      <section className="desktopApplicantProfileHeader_bio">{bio}</section>
+        {/* <section className="desktopApplicantProfileHeader_details_email">
+          <MdOutlineMail />
+          <a href={`mailto:${applicantEmail}`}>{applicantEmail}</a>
+        </section> */}
+      </section>
+
+      {/* <div className="desktopApplicantProfileHeader_skills">
+        <b>Skills:</b>
+        <DesktopSkillsComponent
+          desktopJobSkills={desktopSkills}
+          profileView={true}
+        />
+      </div> */}
+
+      <section className="desktopApplicantProfileHeader_bio">
+        <b>Bio:</b><br/> {bio}
+        </section>
     </div>
   );
 }
