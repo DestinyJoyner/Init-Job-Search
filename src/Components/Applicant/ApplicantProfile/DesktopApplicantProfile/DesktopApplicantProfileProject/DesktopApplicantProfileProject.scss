@@ -1,15 +1,28 @@
 .desktopApplicantProfilePage_content_project {
 grid-column: 1;
-padding-left: 2vh;
+padding: 1vh 0 0 1vw;
 display: flex;
 flex-direction: column;
 row-gap: 2vh;
 
+&_header {
+    display: flex;
+    align-items: center;
+    column-gap: 1vw;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 1vh 2vh;
+    width: fit-content;
+    background-color: var(--init-darkmint);
+    border-radius: 5px;
+    color: rgb(253, 253, 253);
+    & svg {
+        height: 1.2em;
+        width: 1.2em;
+        
+      }
+}
 
-    &_details {
-        display: flex;
-        flex-direction: column;
-        row-gap: 1vh;
         
         & h3 {
             font-size: 28px;
@@ -19,7 +32,8 @@ row-gap: 2vh;
         }
         & span {
             font-size: 18px;
+            width: 96%;
         }
 
-    }
+    
 }

@@ -1,21 +1,28 @@
 .desktopApplicantProfilePage {
   display: grid;
   height: 100vh;
-  padding: 1vh 2vw 3vh 2vw;
+  width: fit-content;
+  // padding: 1vh 2vw 3vh 2vw;
+  margin: 0 1vw;
+  
 
   &_content {
     // grid-column: 2;
     display: grid;
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 22vh 12vh 45vh 30vh;
-    row-gap: 2vh;
-    column-gap: 1vw;
-    background-color: var(--init-background);
+    grid-template-columns: 50% 48%;
+    grid-template-rows: 28vh 40vh 40vh;
+    row-gap: 4vh;
+    column-gap: 2%;
+    padding-bottom: 10vh;
+    // background-color: var(--init-background);
 
     & > * {
-      background-color: white;
-      border: 1px solid var(--init-mint);
-      border-radius: 10px;
+    //   border: 1px solid #e0e0e0; 
+    // box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    // border-radius: 5px;
+    //   // background-color: white;
+      // border: 1px solid var(--init-mint);
+      // border-radius: 10px;
 
       .applicantProfile_sectionHeader_text {
         font-size: 20px;
@@ -23,48 +30,53 @@
       }
     }
 
-    &_skills {
-      display: flex;
-      width: 98%;
-      column-gap: 3vw;
-      grid-column: 1;
-      grid-row: 2;
-      margin: 0 auto;
-      padding-left: 1vw;
-
-      .desktopSkillsComponent {
-        padding-top: .5vh;
-        & svg {
-          height: 1.8em;
-          width: 1.8em;
-        }
-      }
+    &_project, &_resume {
+      margin-left: 1vw;
     }
 
-    &_link {
-      grid-column: 2;
-      grid-row: 2;
-      all: unset;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    // &_skills {
+    //   display: flex;
+    //   align-items: center;
+    //   width: 100%;
+    //   column-gap: 3vw;
+    //   grid-column: 1;
+    //   grid-row: 2;
+    //   margin: 0 auto;
+    //   padding-left: 1vw;
 
-      .applicantProfile_edit {
-        font-size: 32px;
-        display: flex;
-        column-gap: 2vh;
+    //   .desktopSkillsComponent {
+    //     padding-top: .5vh;
+    //     & svg {
+    //       height: 1.8em;
+    //       width: 1.8em;
+    //     }
+    //   }
+    // }
 
-        & svg {
-          height: 1em;
-          width: 1em;
-        }
-      }
+    // &_link {
+    //   grid-column: 2;
+    //   grid-row: 2;
+    //   all: unset;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+
+    //   .applicantProfile_edit {
+    //     font-size: 32px;
+    //     display: flex;
+    //     column-gap: 2vh;
+
+    //     & svg {
+    //       height: 1em;
+    //       width: 1em;
+    //     }
+    //   }
      
-    }
+    // }
 
     &_resume {
       grid-row: 3;
-      grid-column: 2;
+      grid-column: 1;
       display: flex;
       align-items: center;
       justify-content: center;

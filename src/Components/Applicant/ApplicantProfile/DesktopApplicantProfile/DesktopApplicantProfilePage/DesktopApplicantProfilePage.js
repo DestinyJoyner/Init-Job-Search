@@ -24,27 +24,32 @@ function DesktopApplicantProfilePage() {
     if (applicantDetails.id) {
       setLoading(false);
     }
+    else {
+      setLoading(true)
+    }
   }, [applicantDetails]);
 
   return (
+    !loading &&
     <div className="desktopApplicantProfilePage">
      
-      <section className="desktopApplicantProfilePage_content">
+      <section className="desktopApplicantProfilePage_content init-card">
         <DesktopApplicantProfileHeader
           desktopApplicantProfileDetails={desktopApplicantProfileDetails}
+          isRecruiterAcc={isRecruiterAcc}
         />
 
-        <div className="desktopApplicantProfilePage_content_skills">
+        {/* <div className="desktopApplicantProfilePage_content_skills">
           {applicantProfileHeaderLabel(
-            "Proficient Skills",
+            "Proficient Skills:",
             <DesktopSkillsComponent
               desktopJobSkills={desktopApplicantProfileDetails.desktopSkills}
               profileView={true}
             />
           )}
-        </div>
+        </div> */}
 
-        <div className="desktopApplicantProfilePage_content_link">
+        {/* <div className="desktopApplicantProfilePage_content_link">
           {isRecruiterAcc ? (
            <RecruiterNoteApplicantProfile />
           ) : (
@@ -52,7 +57,7 @@ function DesktopApplicantProfilePage() {
               EDIT PROFILE <FaRegEdit />
             </Link>
           )}
-        </div>
+        </div> */}
 
         {!isRecruiterAcc &&
           <DesktopApplicantProfileAppliedJobs applicantJobs={applicantJobs} />}
@@ -63,7 +68,7 @@ function DesktopApplicantProfilePage() {
           />
         )}
 
-<div className="desktopApplicantProfilePage_content_resume">
+<div className="desktopApplicantProfilePage_content_resume init-card">
   Resume Under Construction
 </div>
       </section>

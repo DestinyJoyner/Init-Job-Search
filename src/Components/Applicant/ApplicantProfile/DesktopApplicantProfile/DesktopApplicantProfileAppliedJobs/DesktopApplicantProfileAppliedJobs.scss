@@ -1,10 +1,33 @@
 .desktopApplicantProfileAppliedJobs {
-  grid-column: 1;
-  grid-row: 3;
+  grid-column: 2;
+  grid-row: 2/4;
+  padding: 1vh 0 0 1vw;
+  margin-right: 1vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vh;
 
-  & h4 {
-    font-size: 24px;
-    padding: 1vh 0 1vh 2vh;
+  &_header{
+    display: flex;
+    align-items: center;
+    column-gap: 1vw;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 1vh 2vh;
+    width: fit-content;
+    // background-color:#229a9a;
+    background-color: var(--init-darkmint);
+    border-radius: 5px;
+    
+    & span, & svg {
+      color: rgb(253, 253, 253);
+      // color: var(--init-darkmint);
+    }
+    & svg {
+      height: 1.3em;
+      width: 1.3em;
+      
+    }
   }
   &_list {
     display: grid;
@@ -12,7 +35,8 @@
     height: 90%;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 100%;
+    width: 96%;
+    padding: 2vh 0;
 
     & img {
       max-height: 50px;
