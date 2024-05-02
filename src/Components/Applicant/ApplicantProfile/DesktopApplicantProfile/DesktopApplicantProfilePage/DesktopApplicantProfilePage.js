@@ -40,12 +40,12 @@ function DesktopApplicantProfilePage() {
           isRecruiterAcc={isRecruiterAcc}
         />
 
-<Link
+{!isRecruiterAcc && <Link
             className="desktopApplicantProfilePage_content_browseJobs flex-align"
             to="/jobs"
           >
             Browse Jobs
-          </Link>
+          </Link>}
 
 <div className="desktopApplicantProfilePage_content_right">
 {!isRecruiterAcc &&
