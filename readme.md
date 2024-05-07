@@ -17,9 +17,9 @@
 ## Table of Contents
 
 - [Introduction](#inIT-Job-Search-Engine)
-- [Live Site](#init-live-site)
-- [API Link](#init-api-link)
-- [Backend Repo](#init-backend-repo)
+- [Live Site](https://init-job-search-engine.netlify.app/)
+- [API Link](https://init-job-search.onrender.com/)
+- [Backend Repo](https://github.com/DestinyJoyner/Init-Job-Search-Backend)
 - [About](#welcome-to-init---where-opportunities-begin)
 - [User Stories](#user-stories)
 - [Setup Locally](#setup-locally)
