@@ -8,11 +8,11 @@
 
 ### Welcome to inIT - Where Opportunities Begin!
 
-#### Are you tired of scrolling through endless job boards, only to find positions that require years of experience you don't have? Look no further! Introducing inIT, the mobile-first job search engine designed to connect entry-level tech talent with employers eager to hire fresh faces.
+Are you tired of scrolling through endless job boards, only to find positions that require years of experience you don't have? Look no further! Introducing inIT, the mobile-first job search engine designed to connect entry-level tech talent with employers eager to hire fresh faces.
 
-#### At inIT, we believe that everyone deserves a shot at their dream job, even if they're just starting out. Founded by a lone wolf developer (yours truly) who knows the struggle of breaking into the tech industry, inIT is a labor of love aimed at helping recent coding bootcamp and college program graduates kick-start their careers.
+At inIT, we believe that everyone deserves a shot at their dream job, even if they're just starting out. Founded by a lone wolf developer (yours truly) who knows the struggle of breaking into the tech industry, inIT is a labor of love aimed at helping recent coding bootcamp and college program graduates kick-start their careers.
 
-#### Here at inIT, our mission is simple: to bridge the gap between entry-level talent and employers hungry for fresh perspectives. We're not just a job search engine – we're matchmakers, pairing bright-eyed graduates with companies eager to nurture and grow their talent.
+Here at inIT, our mission is simple: to bridge the gap between entry-level talent and employers hungry for fresh perspectives. We're not just a job search engine – we're matchmakers, pairing bright-eyed graduates with companies eager to nurture and grow their talent.
 
 ## Table of Contents
 
