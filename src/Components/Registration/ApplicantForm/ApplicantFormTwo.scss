@@ -7,6 +7,11 @@
     position: relative;
   }
 
+  ::-webkit-scrollbar-thumb {
+    background: var(--init-darkmint);
+  
+    }
+
   &_header {
     grid-row: 1;
     // top: 2vh;
@@ -89,9 +94,11 @@
     .skillsCheckboxes {
       grid-row: 3;
       height: 18vh;
+    
 
       .skills-checkboxes {
         column-gap: 1vw;
+        
       }
     }
 

@@ -16,7 +16,13 @@ function DesktopRecruiterProfileHeader({
     : null;
 
   const totalApplicants = recruiterJobsWithUsers.reduce((acc, { users }) => {
-    return (acc += users.length);
+    if(users){
+      return (acc += users.length);
+    }
+    else {
+      return acc
+    }
+    
   }, 0);
 
   return (

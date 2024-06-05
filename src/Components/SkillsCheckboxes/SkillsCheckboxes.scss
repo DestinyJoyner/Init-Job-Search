@@ -30,6 +30,7 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(4,1fr);
       column-gap: 2vw;
+      overflow-y: scroll;
 
       & label {
         display: flex;

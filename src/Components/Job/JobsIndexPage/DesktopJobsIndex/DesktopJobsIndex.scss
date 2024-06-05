@@ -152,6 +152,10 @@
       padding: 1vh 0 0 0;
       align-items: center;
 
+      .filter-bar-skills {
+        height: 100%;
+        overflow-y: scroll;
+      }
       & select {
         grid-row: 3;
         margin: 0;
@@ -202,6 +206,7 @@
       }
       .filter-bar-toggle {
         top: 2vh;
+        padding-bottom: 3vh;
       }
       .filter-bar-toggle span {
         font-size: 20px;
@@ -215,6 +220,7 @@
         row-gap: 2vh;
         padding: 2vh 0;
         margin: 0;
+        
       }
       .filter-bar-expanded .skills-component svg {
         height: 1.8em;
@@ -223,11 +229,12 @@
       }
       .filter-bar-expanded .skills-checkboxes {
         grid-template-columns: 1fr 1fr;
-        row-gap: 3vh;
+        // row-gap: 3vh;
         column-gap: 0.5vw;
         margin-top: 0vh;
         padding-top: 1vh;
         justify-self: center;
+       
       }
       .filter-bar-expanded .skills-checkboxes label {
         width: fit-content;
@@ -237,7 +244,7 @@
         width: 18px;
       }
       .filter-bar-expanded .skills-checkboxes label span {
-        font-size: 15px;
+        font-size: 14px;
         left: 0.5vw;
       }
     }

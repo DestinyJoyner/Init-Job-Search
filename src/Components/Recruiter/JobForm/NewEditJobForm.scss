@@ -3,6 +3,9 @@
   height: 98vh;
   justify-items: center;
   align-items: center;
+  ::-webkit-scrollbar-thumb {
+    background: var(--init-darkmint);
+    }
 
   &_desktop {
     margin-top: 1.5vh;
@@ -140,6 +143,9 @@
         }
         .skills-checkboxes {
           grid-template-columns: repeat(6, 1fr);
+          row-gap: 1vh;
+          overflow-y: scroll;
+          width: 98%;
         }
       }
       .jobFormPage_form_submit {

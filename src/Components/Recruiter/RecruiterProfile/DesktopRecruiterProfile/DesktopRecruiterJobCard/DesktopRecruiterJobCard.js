@@ -8,7 +8,7 @@ function DesktopRecruiterJobCard({ jobObj, setRecruiterSortJobs }) {
 
   const companyLogo = convertCompanyForLogo(company.toLowerCase());
 
-  const companyCity = convertCities(city);
+  const companyCity = convertCities(city)
 
   return (
     <div className="desktopRecruiterJobCard init-card">
@@ -31,7 +31,7 @@ function DesktopRecruiterJobCard({ jobObj, setRecruiterSortJobs }) {
           to={`/jobs/${id}/applicants`}
           className="desktopRecruiterJobCard_applicants"
         >
-          View Applicants: {users.length}
+          View Applicants: {users?users.length: 0}
         </Link>
       </section>
 
