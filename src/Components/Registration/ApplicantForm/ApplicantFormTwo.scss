@@ -51,10 +51,11 @@
     &_bio {
       display: flex;
       flex-direction: column;
-      padding-bottom: 1vh;
-      // bottom: 1vh;
+      // padding-bottom: 1vh;
+      bottom: 1vh;
     }
     &_input {
+
       &_textarea_label {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -152,4 +153,64 @@
       color: var(--init-gold);
     }
   }
+}
+
+.mobile .applicantFormTwo {
+  margin-top: 7vh;
+  grid-template-rows: 3vh 97vh;
+  &_header {
+    align-self: flex-start;
+    // border: 1px solid red;
+  }
+  &_form {
+    grid-row: 2;
+    display: grid;
+    align-items: center;
+    grid-template-rows: 20vh 36vh 20vh 5vh;
+    row-gap: 2vh;
+    bottom: 1vh;
+
+    &_bio {
+      row-gap: 1vh;
+    }
+
+    .skillsCheckboxes {
+      height: 100%;
+      .skills-checkboxes {
+        row-gap: 1vw;
+        
+        
+      }
+    }
+
+    // &_buttons {
+    //   grid-row: 4;
+    //   justify-self: left;
+    //   width: 96%;
+
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+
+    //   text-align: left;
+    //   padding: 0;
+    //   position: relative;
+    //   bottom: 1.6vh;
+    //   // right: 1vh;
+
+    //   & > * {
+    //     font-size: 24px;
+    //     padding: unset;
+    //     cursor: pointer;
+    //   }
+    //   &_submitButton {
+    //     text-align: unset;
+    //     text-align: left;
+    //   }
+    //   & a {
+    //     padding-right: 2vh;
+    //   }
+    // }
+   
+}
 }

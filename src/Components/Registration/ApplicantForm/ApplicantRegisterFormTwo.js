@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useWindowSizeProvider } from "../../../Providers/WindowSizeProvider.js";
 import { useUserProvider } from "../../../Providers/UserProvider";
 import { useContextProvider } from "../../../Providers/Provider";
 import { useNavProvider } from "../../../Providers/NavProvider";
@@ -12,6 +13,7 @@ import { asterisk } from "../../App/Data/Icons";
 import "./ApplicantFormTwo.scss";
 
 function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
+  const {isDesktop} = useWindowSizeProvider()
   const { setAppHeader } = useNavProvider();
   const { applicantDetails, setApplicantDetails } = useUserProvider();
   const { setLoading, userID, axios, API } = useContextProvider()
@@ -60,6 +62,13 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
         className="applicantFormTwo_form"
       >
          <div className="applicantFormTwo_form_bio">
+         <RegisterTextInput
+        label={"Title/Role/Position"}
+        value={applicantFormTwo["position"]}
+        formKey={"position"}
+        stateVar={applicantFormTwo}
+        setFunction={setApplicantFormTwo}
+      />
         <span className="skillsCheckboxes_label">
           Bio
         </span>
@@ -71,13 +80,13 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
           stateVar={applicantFormTwo}
           setFunction={setApplicantFormTwo}
         />
-         <RegisterTextInput
+         {/* <RegisterTextInput
         label={"Title/Role/Position"}
         value={applicantFormTwo["position"]}
         formKey={"position"}
         stateVar={applicantFormTwo}
         setFunction={setApplicantFormTwo}
-      />
+      /> */}
         </div>
 
         <ProjectLinkInputs
@@ -93,7 +102,7 @@ function ApplicantRegisterFormTwo({ setHideSliderButtons }) {
         <input
           className="applicantFormTwo_form_buttons_submitButton"
           type="submit"
-          value="Submit & View Profile"
+          value={isDesktop? "Submit & View Profile" : "Submit"}
         />
         <Link to="/jobs">SKIP</Link>
         </section>
