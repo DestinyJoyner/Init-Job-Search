@@ -40,7 +40,7 @@ function handleApplicantRegisterForm(
   axios.post(`${API}/users`, reqObj)
     .then(({ data }) => {
       // setRegisterTwoForm(true);
-      console.log("data", data)
+      // console.log("data", data)
       localStorage.setItem("userID", data.id)
       setRecruiter(null);
       setSignedIn(true);
