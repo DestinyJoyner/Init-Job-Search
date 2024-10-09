@@ -46,12 +46,12 @@ const desktopAboutInitTech = {
   fe: {
     header: "Front End Development",
     subheader: "A responsive JavaScript React web app, built from scratch with HTML, JSX, and SCSS for BEM styling. No external CSS frameworks, just sleek UX/UI design for an intuitive experience.",
-    icons: [1,3,0]
+    icons: [1,3,16]
   },
   be: {
     header:"Back End Development",
     subheader: "Powering inIT's functionality with a custom Express/Node.js API, PostgreSQL/SQL for robust database management, and fortified security through BCrypt and JWT authentication. Building a seamless foundation for data management and user protection.",
-    icons: [91,90,2,]
+    icons: [19,90,2,]
   },
   ff: {
     header: "Future Features",
