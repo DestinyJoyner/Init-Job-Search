@@ -6,6 +6,7 @@ import DesktopApplicantProfileHeader from "../DesktopApplicantProfileHeader/Desk
 import DesktopApplicantProfileAppliedJobs from "../DesktopApplicantProfileAppliedJobs/DesktopApplicantProfileAppliedJobs.js";
 import DesktopApplicantProfileProject from "../DesktopApplicantProfileProject/DesktopApplicantProfileProject.js";
 import ResumeUpload from "../../ResumeUpload/ResumeUpload.js";
+import {handleExtractedTextFromResumeFile} from "../../../../../utils/pdfUtils.js"
 import DesktopSkillsComponent from "../../../../DesktopSkillsComponent/DesktopSkillsComponent.js";
 import RecruiterNoteApplicantProfile from "../../../../App/RecruiterNoteApplicantProfile/RecruiterNoteApplicantProfile.js";
 import { applicantProfileConversion } from "../../../../Functions/ApplicantFunctions/ApplicantProfileFunctions.js";
@@ -67,7 +68,7 @@ function DesktopApplicantProfilePage() {
               <h4 className="desktopApplicantProfilePage_content_project_header">
                 Resume <GrDocumentPdf />
               </h4>
-              <ResumeUpload />
+              <ResumeUpload onFileUpload={handleExtractedTextFromResumeFile} />
             </div>
           </div>
         </section>

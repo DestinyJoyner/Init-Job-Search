@@ -8,7 +8,8 @@ function ResumeUpload({onFileUpload}) {
 
     // function to check for file on event trigger to update state of resumeFile
     const handleFileChange = (event) => {
-        const firstSelectedFile = event.target.file[0]
+        // console.log(event.target.files)
+        const firstSelectedFile = event.target.files[0]
         if(firstSelectedFile){
             setResumeFile(firstSelectedFile)
         }
@@ -23,11 +24,12 @@ function ResumeUpload({onFileUpload}) {
 
     return (
         <div className="resumeUpload">
-            <input 
+            <input className="resumeUpload_pdfInput" 
             type="file" 
             accept=".pdf"
             onChange={(e) =>handleFileChange(e)} />
-            <button onClick={() => handleUpload()}></button>
+            <button className="resumeUpload_submitButton" 
+            onClick={() => handleUpload()}>Upload</button>
         </div>
     );
 }

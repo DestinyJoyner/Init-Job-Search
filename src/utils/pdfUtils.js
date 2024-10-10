@@ -1,6 +1,6 @@
 import { PDFDocument } from "pdf-lib"; // Import PDFDocument from pdf-lib
 
-export const extractTextFromPDF = async (file) => {
+const extractTextFromPDF = async (file) => {
     const pdfData = await file.arrayBuffer(); 
     // Convert the file to an ArrayBuffer
         /* 
@@ -18,4 +18,13 @@ export const extractTextFromPDF = async (file) => {
 
     return textContent; // Return the extracted text
 };
+
+
+// function to be used on Applicant Profile page/ paaed as prop onto resume uplad component to handle the pdf resume file upload 
+
+export const handleExtractedTextFromResumeFile = async (resume) => {
+    const extractedText = await extractTextFromPDF(resume)
+    console.log(extractedText, "extracted text from pdf")
+
+}
 
