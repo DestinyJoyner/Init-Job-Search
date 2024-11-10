@@ -6,6 +6,7 @@ GlobalWorkerOptions.workerSrc: This line sets the workerSrc property to the URL 
 Using a CDN: The URL provided points to a version of the pdf.worker.js file hosted on a CDN (Content Delivery Network). This is a convenient way to include the worker without needing to host it yourself.
 
 */
+
 export const extractTextFromPDF = async (file) => {
   const pdfjs = await import("pdfjs-dist/build/pdf");
   pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.mjs`;
@@ -35,7 +36,10 @@ export const extractTextFromPDF = async (file) => {
 
 // function to be used on Applicant Profile page/ paaed as prop onto resume uplad component to handle the pdf resume file upload
 
-export const handleExtractedTextFromResumeFile = async (resume) => {
+export const handleExtractedTextFromResumeFile = async (resume,nerModel) => {
   const extractedText = await extractTextFromPDF(resume);
   console.log(extractedText, "extracted text from pdf");
+  const processResume = await nerModel(extractedText)
+  console.log(processResume, "processed text from ner")
+  return processResume
 };
