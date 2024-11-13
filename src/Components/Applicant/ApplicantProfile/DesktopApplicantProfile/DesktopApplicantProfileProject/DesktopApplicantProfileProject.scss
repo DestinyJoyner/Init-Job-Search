@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: 80% 20%;
   row-gap: 1vh;
+  max-height: 100%;
+  overflow-y: scroll;
 
   &_header {
     font-size: 18px;
